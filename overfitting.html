@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8.4 Overfitting | Behavior Analysis with Machine Learning and R</title>
+  <meta name="description" content="8.4 Overfitting | Behavior Analysis with Machine Learning and R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors or stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8.4 Overfitting | Behavior Analysis with Machine Learning and R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:description" content="8.4 Overfitting | Behavior Analysis with Machine Learning and R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors or stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8.4 Overfitting | Behavior Analysis with Machine Learning and R" />
+  
+  <meta name="twitter:description" content="8.4 Overfitting | Behavior Analysis with Machine Learning and R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors or stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
+  <meta name="twitter:image" content="images/cover.png" />
+
+<meta name="author" content="Enrique Garcia Ceja" />
+
+
+<meta name="date" content="2020-09-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="classification-with-neural-networks.html"/>
+<link rel="next" href="fine-tuning-a-neural-network.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/d3-4.9.0/d3.min.js"></script>
+<script src="libs/d3-tip-0.7.1/index-min.js"></script>
+<link href="libs/d3panels-1.4.9/d3panels.min.css" rel="stylesheet" />
+<script src="libs/d3panels-1.4.9/d3panels.min.js"></script>
+<script src="libs/qtlcharts_iplotCorr-0.11.6/iplotCorr.js"></script>
+<script src="libs/qtlcharts_iplotCorr-0.11.6/iplotCorr_noscat.js"></script>
+<script src="libs/iplotCorr-binding-0.11.6/iplotCorr.js"></script>
+<link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script>
+<script src="libs/dygraphs-1.1.1/shapes.js"></script>
+<script src="libs/moment-2.8.4/moment.js"></script>
+<script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+<script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
+<script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-178679335-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-178679335-1', { 'anonymize_ip': true });
+</script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="#">Behavior Analysis with Machine Learning and R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#supplemental-material"><i class="fa fa-check"></i>Supplemental Material</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#conventions"><i class="fa fa-check"></i>Conventions</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="what-is-machine-learning.html"><a href="what-is-machine-learning.html"><i class="fa fa-check"></i><b>1.1</b> What is Machine Learning?</a></li>
+<li class="chapter" data-level="1.2" data-path="taxonomy.html"><a href="taxonomy.html"><i class="fa fa-check"></i><b>1.2</b> Types of Machine Learning</a></li>
+<li class="chapter" data-level="1.3" data-path="terminology.html"><a href="terminology.html"><i class="fa fa-check"></i><b>1.3</b> Terminology</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="terminology.html"><a href="terminology.html#tables"><i class="fa fa-check"></i><b>1.3.1</b> Tables</a></li>
+<li class="chapter" data-level="1.3.2" data-path="terminology.html"><a href="terminology.html#variable-types"><i class="fa fa-check"></i><b>1.3.2</b> Variable types</a></li>
+<li class="chapter" data-level="1.3.3" data-path="terminology.html"><a href="terminology.html#predictive-models"><i class="fa fa-check"></i><b>1.3.3</b> Predictive Models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="pipeline.html"><a href="pipeline.html"><i class="fa fa-check"></i><b>1.4</b> Data Analysis Pipeline</a></li>
+<li class="chapter" data-level="1.5" data-path="trainingeval.html"><a href="trainingeval.html"><i class="fa fa-check"></i><b>1.5</b> Evaluating Predictive Models</a></li>
+<li class="chapter" data-level="1.6" data-path="simple-classification-example.html"><a href="simple-classification-example.html"><i class="fa fa-check"></i><b>1.6</b> Simple Classification Example</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="simple-classification-example.html"><a href="simple-classification-example.html#k-fold-cross-validation-example"><i class="fa fa-check"></i><b>1.6.1</b> K-fold Cross-Validation Example</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="simple-regression-example.html"><a href="simple-regression-example.html"><i class="fa fa-check"></i><b>1.7</b> Simple Regression Example</a></li>
+<li class="chapter" data-level="1.8" data-path="underfitting-and-overfitting.html"><a href="underfitting-and-overfitting.html"><i class="fa fa-check"></i><b>1.8</b> Underfitting and Overfitting</a></li>
+<li class="chapter" data-level="1.9" data-path="bias-and-variance.html"><a href="bias-and-variance.html"><i class="fa fa-check"></i><b>1.9</b> Bias and Variance</a></li>
+<li class="chapter" data-level="1.10" data-path="SummaryIntro.html"><a href="SummaryIntro.html"><i class="fa fa-check"></i><b>1.10</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a><ul>
+<li class="chapter" data-level="2.1" data-path="k-nearest-neighbors.html"><a href="k-nearest-neighbors.html"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-nearest Neighbors</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="k-nearest-neighbors.html"><a href="k-nearest-neighbors.html#indoor-location-with-wi-fi-signals"><i class="fa fa-check"></i><b>2.1.1</b> Indoor Location with Wi-Fi Signals</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="performance-metrics.html"><a href="performance-metrics.html"><i class="fa fa-check"></i><b>2.2</b> Performance Metrics</a></li>
+<li class="chapter" data-level="2.3" data-path="decision-trees.html"><a href="decision-trees.html"><i class="fa fa-check"></i><b>2.3</b> Decision Trees</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="decision-trees.html"><a href="decision-trees.html#activityRecognition"><i class="fa fa-check"></i><b>2.3.1</b> Activity Recognition with Smartphones</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="dynamic-time-warping.html"><a href="dynamic-time-warping.html"><i class="fa fa-check"></i><b>2.4</b> Dynamic Time Warping</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="dynamic-time-warping.html"><a href="dynamic-time-warping.html#sechandgestures"><i class="fa fa-check"></i><b>2.4.1</b> Hand Gesture Recognition</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="summaryClassification.html"><a href="summaryClassification.html"><i class="fa fa-check"></i><b>2.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ensemble.html"><a href="ensemble.html"><i class="fa fa-check"></i><b>3</b> Predicting Behavior with Ensemble Learning</a><ul>
+<li class="chapter" data-level="3.1" data-path="bagging.html"><a href="bagging.html"><i class="fa fa-check"></i><b>3.1</b> Bagging</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="bagging.html"><a href="bagging.html#activity-recognition-with-bagging"><i class="fa fa-check"></i><b>3.1.1</b> Activity recognition with Bagging</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="random-forest.html"><a href="random-forest.html"><i class="fa fa-check"></i><b>3.2</b> Random Forest</a></li>
+<li class="chapter" data-level="3.3" data-path="stacked-generalization.html"><a href="stacked-generalization.html"><i class="fa fa-check"></i><b>3.3</b> Stacked Generalization</a></li>
+<li class="chapter" data-level="3.4" data-path="multiviewhometasks.html"><a href="multiviewhometasks.html"><i class="fa fa-check"></i><b>3.4</b> Multi-view Stacking for Home Tasks Recognition</a></li>
+<li class="chapter" data-level="3.5" data-path="SummaryEnsemble.html"><a href="SummaryEnsemble.html"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="edavis.html"><a href="edavis.html"><i class="fa fa-check"></i><b>4</b> Exploring and Visualizing Behavioral Data</a><ul>
+<li class="chapter" data-level="4.1" data-path="talking-with-field-experts.html"><a href="talking-with-field-experts.html"><i class="fa fa-check"></i><b>4.1</b> Talking with field experts</a></li>
+<li class="chapter" data-level="4.2" data-path="summary-statistics.html"><a href="summary-statistics.html"><i class="fa fa-check"></i><b>4.2</b> Summary Statistics</a></li>
+<li class="chapter" data-level="4.3" data-path="class-distributions.html"><a href="class-distributions.html"><i class="fa fa-check"></i><b>4.3</b> Class Distributions</a></li>
+<li class="chapter" data-level="4.4" data-path="user-class-sparsity-matrix.html"><a href="user-class-sparsity-matrix.html"><i class="fa fa-check"></i><b>4.4</b> User-Class Sparsity Matrix</a></li>
+<li class="chapter" data-level="4.5" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>4.5</b> Boxplots</a></li>
+<li class="chapter" data-level="4.6" data-path="correlation-plots.html"><a href="correlation-plots.html"><i class="fa fa-check"></i><b>4.6</b> Correlation Plots</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="correlation-plots.html"><a href="correlation-plots.html#interactive-correlation-plots"><i class="fa fa-check"></i><b>4.6.1</b> Interactive Correlation Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="timeseries.html"><a href="timeseries.html"><i class="fa fa-check"></i><b>4.7</b> Timeseries</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="timeseries.html"><a href="timeseries.html#interactive-timeseries"><i class="fa fa-check"></i><b>4.7.1</b> Interactive Timeseries</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="multidimensional-scaling-mds.html"><a href="multidimensional-scaling-mds.html"><i class="fa fa-check"></i><b>4.8</b> Multidimensional Scaling (MDS)</a></li>
+<li class="chapter" data-level="4.9" data-path="heatmaps.html"><a href="heatmaps.html"><i class="fa fa-check"></i><b>4.9</b> Heatmaps</a></li>
+<li class="chapter" data-level="4.10" data-path="automated-eda.html"><a href="automated-eda.html"><i class="fa fa-check"></i><b>4.10</b> Automated EDA</a></li>
+<li class="chapter" data-level="4.11" data-path="SummaryExploratory.html"><a href="SummaryExploratory.html"><i class="fa fa-check"></i><b>4.11</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="preprocessing.html"><a href="preprocessing.html"><i class="fa fa-check"></i><b>5</b> Preprocessing Behavioral Data</a><ul>
+<li class="chapter" data-level="5.1" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>5.1</b> Missing Values</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="missing-values.html"><a href="missing-values.html#imputation"><i class="fa fa-check"></i><b>5.1.1</b> Imputation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="smoothing.html"><a href="smoothing.html"><i class="fa fa-check"></i><b>5.2</b> Smoothing</a></li>
+<li class="chapter" data-level="5.3" data-path="normalization.html"><a href="normalization.html"><i class="fa fa-check"></i><b>5.3</b> Normalization</a></li>
+<li class="chapter" data-level="5.4" data-path="imbalanced-classes.html"><a href="imbalanced-classes.html"><i class="fa fa-check"></i><b>5.4</b> Imbalanced Classes</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="imbalanced-classes.html"><a href="imbalanced-classes.html#random-oversampling"><i class="fa fa-check"></i><b>5.4.1</b> Random oversampling</a></li>
+<li class="chapter" data-level="5.4.2" data-path="imbalanced-classes.html"><a href="imbalanced-classes.html#smote"><i class="fa fa-check"></i><b>5.4.2</b> SMOTE</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="infoinjection.html"><a href="infoinjection.html"><i class="fa fa-check"></i><b>5.5</b> Information Injection</a></li>
+<li class="chapter" data-level="5.6" data-path="one-hot-encoding.html"><a href="one-hot-encoding.html"><i class="fa fa-check"></i><b>5.6</b> One-hot Encoding</a></li>
+<li class="chapter" data-level="5.7" data-path="SummaryPreprocessing.html"><a href="SummaryPreprocessing.html"><i class="fa fa-check"></i><b>5.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="unsupervised.html"><a href="unsupervised.html"><i class="fa fa-check"></i><b>6</b> Discovering Behaviors with Unsupervised Learning</a><ul>
+<li class="chapter" data-level="6.1" data-path="k-means-clustering.html"><a href="k-means-clustering.html"><i class="fa fa-check"></i><b>6.1</b> K-means clustering</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="k-means-clustering.html"><a href="k-means-clustering.html#studentresponses"><i class="fa fa-check"></i><b>6.1.1</b> Grouping Student Responses</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="the-silhouette-index.html"><a href="the-silhouette-index.html"><i class="fa fa-check"></i><b>6.2</b> The Silhouette Index</a></li>
+<li class="chapter" data-level="6.3" data-path="associationrules.html"><a href="associationrules.html"><i class="fa fa-check"></i><b>6.3</b> Mining Association Rules</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="associationrules.html"><a href="associationrules.html#finding-rules-for-criminal-behavior"><i class="fa fa-check"></i><b>6.3.1</b> Finding Rules for Criminal Behavior</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="SummaryUnsupervised.html"><a href="SummaryUnsupervised.html"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="representations.html"><a href="representations.html"><i class="fa fa-check"></i><b>7</b> Encoding Behavioral Data</a><ul>
+<li class="chapter" data-level="7.1" data-path="feature-vectors.html"><a href="feature-vectors.html"><i class="fa fa-check"></i><b>7.1</b> Feature Vectors</a></li>
+<li class="chapter" data-level="7.2" data-path="sectimeseries.html"><a href="sectimeseries.html"><i class="fa fa-check"></i><b>7.2</b> Timeseries</a></li>
+<li class="chapter" data-level="7.3" data-path="transactions.html"><a href="transactions.html"><i class="fa fa-check"></i><b>7.3</b> Transactions</a></li>
+<li class="chapter" data-level="7.4" data-path="images.html"><a href="images.html"><i class="fa fa-check"></i><b>7.4</b> Images</a></li>
+<li class="chapter" data-level="7.5" data-path="recurrence-plots.html"><a href="recurrence-plots.html"><i class="fa fa-check"></i><b>7.5</b> Recurrence Plots</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="recurrence-plots.html"><a href="recurrence-plots.html#computing-recurence-plots"><i class="fa fa-check"></i><b>7.5.1</b> Computing Recurence Plots</a></li>
+<li class="chapter" data-level="7.5.2" data-path="recurrence-plots.html"><a href="recurrence-plots.html#recurrence-plots-of-hand-gestures"><i class="fa fa-check"></i><b>7.5.2</b> Recurrence Plots of Hand Gestures</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="bag-of-words.html"><a href="bag-of-words.html"><i class="fa fa-check"></i><b>7.6</b> Bag-of-Words</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="bag-of-words.html"><a href="bag-of-words.html#bow-for-complex-activities."><i class="fa fa-check"></i><b>7.6.1</b> BoW for Complex Activities.</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="graphs.html"><a href="graphs.html"><i class="fa fa-check"></i><b>7.7</b> Graphs</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="graphs.html"><a href="graphs.html#complex-activities-as-graphs"><i class="fa fa-check"></i><b>7.7.1</b> Complex activities as graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="SummaryRepresentations.html"><a href="SummaryRepresentations.html"><i class="fa fa-check"></i><b>7.8</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="deeplearning.html"><a href="deeplearning.html"><i class="fa fa-check"></i><b>8</b> Predicting Behavior with Deep Learning</a><ul>
+<li class="chapter" data-level="8.1" data-path="ann.html"><a href="ann.html"><i class="fa fa-check"></i><b>8.1</b> Introduction to Artificial Neural Networks</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="ann.html"><a href="ann.html#sigmoid-and-relu-units"><i class="fa fa-check"></i><b>8.1.1</b> Sigmoid and ReLU units</a></li>
+<li class="chapter" data-level="8.1.2" data-path="ann.html"><a href="ann.html#assembling-units-into-layers"><i class="fa fa-check"></i><b>8.1.2</b> Assembling Units into Layers</a></li>
+<li class="chapter" data-level="8.1.3" data-path="ann.html"><a href="ann.html#deep-neural-networks"><i class="fa fa-check"></i><b>8.1.3</b> Deep Neural Networks</a></li>
+<li class="chapter" data-level="8.1.4" data-path="ann.html"><a href="ann.html#learning-the-parameters"><i class="fa fa-check"></i><b>8.1.4</b> Learning the Parameters</a></li>
+<li class="chapter" data-level="8.1.5" data-path="ann.html"><a href="ann.html#parameter-learning-example-in-r"><i class="fa fa-check"></i><b>8.1.5</b> Parameter Learning Example in R</a></li>
+<li class="chapter" data-level="8.1.6" data-path="ann.html"><a href="ann.html#stochastic-gradient-descent"><i class="fa fa-check"></i><b>8.1.6</b> Stochastic Gradient Descent</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="keras-and-tensorflow-with-r.html"><a href="keras-and-tensorflow-with-r.html"><i class="fa fa-check"></i><b>8.2</b> Keras and TensorFlow with R</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="keras-and-tensorflow-with-r.html"><a href="keras-and-tensorflow-with-r.html#keras-example"><i class="fa fa-check"></i><b>8.2.1</b> Keras Example</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="classification-with-neural-networks.html"><a href="classification-with-neural-networks.html"><i class="fa fa-check"></i><b>8.3</b> Classification with Neural Networks</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="classification-with-neural-networks.html"><a href="classification-with-neural-networks.html#classification-of-electromyography-signals"><i class="fa fa-check"></i><b>8.3.1</b> Classification of Electromyography Signals</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="overfitting.html"><a href="overfitting.html"><i class="fa fa-check"></i><b>8.4</b> Overfitting</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="overfitting.html"><a href="overfitting.html#early-stopping"><i class="fa fa-check"></i><b>8.4.1</b> Early Stopping</a></li>
+<li class="chapter" data-level="8.4.2" data-path="overfitting.html"><a href="overfitting.html#dropout"><i class="fa fa-check"></i><b>8.4.2</b> Dropout</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="fine-tuning-a-neural-network.html"><a href="fine-tuning-a-neural-network.html"><i class="fa fa-check"></i><b>8.5</b> Fine-Tuning a Neural Network</a></li>
+<li class="chapter" data-level="8.6" data-path="cnns.html"><a href="cnns.html"><i class="fa fa-check"></i><b>8.6</b> Convolutional Neural Networks</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="cnns.html"><a href="cnns.html#convolutions"><i class="fa fa-check"></i><b>8.6.1</b> Convolutions</a></li>
+<li class="chapter" data-level="8.6.2" data-path="cnns.html"><a href="cnns.html#pooling-operations"><i class="fa fa-check"></i><b>8.6.2</b> Pooling Operations</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="cnns-with-keras.html"><a href="cnns-with-keras.html"><i class="fa fa-check"></i><b>8.7</b> CNNs with Keras</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="cnns-with-keras.html"><a href="cnns-with-keras.html#example-1"><i class="fa fa-check"></i><b>8.7.1</b> Example 1</a></li>
+<li class="chapter" data-level="8.7.2" data-path="cnns-with-keras.html"><a href="cnns-with-keras.html#example-2"><i class="fa fa-check"></i><b>8.7.2</b> Example 2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="cnnSmile.html"><a href="cnnSmile.html"><i class="fa fa-check"></i><b>8.8</b> Smiles Detection with a CNN</a></li>
+<li class="chapter" data-level="8.9" data-path="SummaryDeepLearning.html"><a href="SummaryDeepLearning.html"><i class="fa fa-check"></i><b>8.9</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="multiuser.html"><a href="multiuser.html"><i class="fa fa-check"></i><b>9</b> Multi-User Validation</a><ul>
+<li class="chapter" data-level="9.1" data-path="mixed-models.html"><a href="mixed-models.html"><i class="fa fa-check"></i><b>9.1</b> Mixed Models</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="mixed-models.html"><a href="mixed-models.html#skeleton-action-recognition-with-mixed-models"><i class="fa fa-check"></i><b>9.1.1</b> Skeleton Action Recognition with Mixed Models</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="user-independent-models.html"><a href="user-independent-models.html"><i class="fa fa-check"></i><b>9.2</b> User-Independent Models</a></li>
+<li class="chapter" data-level="9.3" data-path="user-dependent-models.html"><a href="user-dependent-models.html"><i class="fa fa-check"></i><b>9.3</b> User-Dependent Models</a></li>
+<li class="chapter" data-level="9.4" data-path="user-adaptive-models.html"><a href="user-adaptive-models.html"><i class="fa fa-check"></i><b>9.4</b> User-Adaptive Models</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="user-adaptive-models.html"><a href="user-adaptive-models.html#transfer-learning"><i class="fa fa-check"></i><b>9.4.1</b> Transfer Learning</a></li>
+<li class="chapter" data-level="9.4.2" data-path="user-adaptive-models.html"><a href="user-adaptive-models.html#a-user-adaptive-model-for-activity-recognition"><i class="fa fa-check"></i><b>9.4.2</b> A User-Adaptive Model for Activity Recognition</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="SummaryMultiUser.html"><a href="SummaryMultiUser.html"><i class="fa fa-check"></i><b>9.5</b> Summary</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendixInstall.html"><a href="appendixInstall.html"><i class="fa fa-check"></i><b>A</b> Setup Your Environment</a><ul>
+<li class="chapter" data-level="A.1" data-path="installing-the-datasets.html"><a href="installing-the-datasets.html"><i class="fa fa-check"></i><b>A.1</b> Installing the Datasets</a></li>
+<li class="chapter" data-level="A.2" data-path="installing-the-examples-source-code.html"><a href="installing-the-examples-source-code.html"><i class="fa fa-check"></i><b>A.2</b> Installing the Examples Source Code</a></li>
+<li class="chapter" data-level="A.3" data-path="installing-keras-and-tensorflow-.html"><a href="installing-keras-and-tensorflow-.html"><i class="fa fa-check"></i><b>A.3</b> Installing Keras and TensorFlow.</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="appendixDatasets.html"><a href="appendixDatasets.html"><i class="fa fa-check"></i><b>B</b> Datasets</a><ul>
+<li class="chapter" data-level="B.1" data-path="complex-activities.html"><a href="complex-activities.html"><i class="fa fa-check"></i><b>B.1</b> COMPLEX ACTIVITIES</a></li>
+<li class="chapter" data-level="B.2" data-path="depresjon.html"><a href="depresjon.html"><i class="fa fa-check"></i><b>B.2</b> DEPRESJON</a></li>
+<li class="chapter" data-level="B.3" data-path="electromyography.html"><a href="electromyography.html"><i class="fa fa-check"></i><b>B.3</b> ELECTROMYOGRAPHY</a></li>
+<li class="chapter" data-level="B.4" data-path="hand-gestures.html"><a href="hand-gestures.html"><i class="fa fa-check"></i><b>B.4</b> HAND GESTURES</a></li>
+<li class="chapter" data-level="B.5" data-path="home-tasks.html"><a href="home-tasks.html"><i class="fa fa-check"></i><b>B.5</b> HOME TASKS</a></li>
+<li class="chapter" data-level="B.6" data-path="homicide-reports.html"><a href="homicide-reports.html"><i class="fa fa-check"></i><b>B.6</b> HOMICIDE REPORTS</a></li>
+<li class="chapter" data-level="B.7" data-path="indoor-location.html"><a href="indoor-location.html"><i class="fa fa-check"></i><b>B.7</b> INDOOR LOCATION</a></li>
+<li class="chapter" data-level="B.8" data-path="sheep-goats.html"><a href="sheep-goats.html"><i class="fa fa-check"></i><b>B.8</b> SHEEP GOATS</a></li>
+<li class="chapter" data-level="B.9" data-path="skeleton-actions.html"><a href="skeleton-actions.html"><i class="fa fa-check"></i><b>B.9</b> SKELETON ACTIONS</a></li>
+<li class="chapter" data-level="B.10" data-path="smartphone-activities.html"><a href="smartphone-activities.html"><i class="fa fa-check"></i><b>B.10</b> SMARTPHONE ACTIVITIES</a></li>
+<li class="chapter" data-level="B.11" data-path="smiles.html"><a href="smiles.html"><i class="fa fa-check"></i><b>B.11</b> SMILES</a></li>
+<li class="chapter" data-level="B.12" data-path="students-mental-health.html"><a href="students-mental-health.html"><i class="fa fa-check"></i><b>B.12</b> STUDENTS’ MENTAL HEALTH</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="citing-this-book.html"><a href="citing-this-book.html"><i class="fa fa-check"></i>Citing this Book</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Behavior Analysis with Machine Learning and R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="overfitting" class="section level2">
+<h2><span class="header-section-number">8.4</span> Overfitting</h2>
+<p>One important thing to look at when training a network is <strong>overfitting</strong>. That is, when the model memorizes instead of learning (see chapter <a href="intro.html#intro">1</a>). Overfitting means that the model becomes very specialized at mapping inputs to outputs from the <em>train set</em> but fails to do so with new <em>test samples</em>. One of the reasons is that a model can become too complex and with so many parameters that it will perfectly adapt to its training data but will miss more general patterns that allow it to perform well on unseen instances. To control for this, one can plot loss/accuracy curves during training epochs.</p>
+<div class="figure" style="text-align: center"><span id="fig:lossAccuracy"></span>
+<img src="images/nn_loss_accuracy_curves.png" alt="Loss and accuracy curves." width="100%" />
+<p class="caption">
+Figure 8.21: Loss and accuracy curves.
+</p>
+</div>
+<p>In Figure <a href="overfitting.html#fig:lossAccuracy">8.21</a> we can see that after some epochs the <em>validation loss</em> starts to increase even though the <em>train loss</em> is still decreasing. This is because the model is getting better on reducing the error on the train set but its performance starts to decrease when presented with new instances. Conversely, one can observe a similar effect with the accuracy. The model keeps improving its performance on the train set but at some point, the accuracy on the validation set starts to decrease. Usually, one stops the training before overfitting starts to occur. In the following, I will introduce you to two common techniques to combat overfitting in neural networks.</p>
+<div id="early-stopping" class="section level3">
+<h3><span class="header-section-number">8.4.1</span> Early Stopping</h3>
+
+<div class="rmdfolder">
+<code>keras_electromyography_earlystopping.R</code>
+</div>
+
+<p>Neural networks are trained for several epochs using gradient descent. But the question is: <em>For how many epochs?</em>. As can be seen in Figure <a href="overfitting.html#fig:lossAccuracy">8.21</a>, too many epochs can lead to overfitting and too few can cause underfitting. <em>Early stopping</em> is a simple but effective method to reduce the risk of overfitting. The method consists of setting a large number of epochs and stop updating the network’s parameters when a condition is met. For example, one condition can be to stop when there is no performance improvement on the validation set after <span class="math inline">\(n\)</span> epochs or when there is a decrease of some percent in accuracy.</p>
+<p>Keras provides some mechanisms to implement early stopping and this is accomplished via <strong>callbacks</strong>. A callback is a function that is run at different stages during training such as at the beginning or end of an epoch or at the beginning or end of a batch, etc. Callbacks are passed as a list to the <code>fit()</code> function. You can define custom callbacks or use some of the built-in ones including <code>callback_early_stopping()</code>. This callback will cause the training to stop when a metric stops improving. The metric can be <em>accuracy</em>, <em>loss</em>, etc. The following callback will stop the training if after <span class="math inline">\(10\)</span> epochs (<code>patience</code>) there is no improvement of at least <span class="math inline">\(1\%\)</span> (<code>min_delta</code>) in accuracy on the validation set.</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="overfitting.html#cb150-1"></a><span class="kw">callback_early_stopping</span>(<span class="dt">monitor =</span> <span class="st">&quot;val_acc&quot;</span>,</span>
+<span id="cb150-2"><a href="overfitting.html#cb150-2"></a>                        <span class="dt">min_delta =</span> <span class="fl">0.01</span>,</span>
+<span id="cb150-3"><a href="overfitting.html#cb150-3"></a>                        <span class="dt">patience =</span> <span class="dv">10</span>,</span>
+<span id="cb150-4"><a href="overfitting.html#cb150-4"></a>                        <span class="dt">verbose =</span> <span class="dv">1</span>,</span>
+<span id="cb150-5"><a href="overfitting.html#cb150-5"></a>                        <span class="dt">mode =</span> <span class="st">&quot;max&quot;</span>)</span></code></pre></div>
+<p>The <code>min_delta</code> parameter specifies the minimum change in the monitored metric to qualify as an improvement. The <code>mode</code> specifies if training should be stopped when the metric has stopped decreasing if it is set to <code>"min"</code>. If it is set to <code>"max"</code>, training will stop when the monitored metric has stopped increasing.</p>
+<p>It may be the case that the best validation performance was achieved not by the model in the last epoch but at some previous point. By setting the <code>restore_best_weights</code> parameter to <code>TRUE</code> the model weights from the epoch with the best value of the monitored metric will be restored.</p>
+<p>The script <code>keras_electromyography_earlystopping.R</code> shows how to use the early stopping callback in Keras with the electromyography dataset. The following code is an extract that shows how to define the callback and pass it to the <code>fit()</code> function.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="overfitting.html#cb151-1"></a><span class="co"># Define early stopping callback.</span></span>
+<span id="cb151-2"><a href="overfitting.html#cb151-2"></a>my_callback &lt;-<span class="st"> </span><span class="kw">callback_early_stopping</span>(<span class="dt">monitor =</span> <span class="st">&quot;val_acc&quot;</span>,</span>
+<span id="cb151-3"><a href="overfitting.html#cb151-3"></a>                                            <span class="dt">min_delta =</span> <span class="fl">0.01</span>,</span>
+<span id="cb151-4"><a href="overfitting.html#cb151-4"></a>                                            <span class="dt">patience =</span> <span class="dv">50</span>,</span>
+<span id="cb151-5"><a href="overfitting.html#cb151-5"></a>                                            <span class="dt">verbose =</span> <span class="dv">1</span>,</span>
+<span id="cb151-6"><a href="overfitting.html#cb151-6"></a>                                            <span class="dt">mode =</span> <span class="st">&quot;max&quot;</span>,</span>
+<span id="cb151-7"><a href="overfitting.html#cb151-7"></a>                                            <span class="dt">restore_best_weights =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb151-8"><a href="overfitting.html#cb151-8"></a></span>
+<span id="cb151-9"><a href="overfitting.html#cb151-9"></a>history &lt;-<span class="st"> </span>model <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">fit</span>(</span>
+<span id="cb151-10"><a href="overfitting.html#cb151-10"></a>  trainset<span class="op">$</span>x, trainset<span class="op">$</span>y,</span>
+<span id="cb151-11"><a href="overfitting.html#cb151-11"></a>  <span class="dt">epochs =</span> <span class="dv">500</span>,</span>
+<span id="cb151-12"><a href="overfitting.html#cb151-12"></a>  <span class="dt">batch_size =</span> <span class="dv">8</span>,</span>
+<span id="cb151-13"><a href="overfitting.html#cb151-13"></a>  <span class="dt">validation_data =</span> <span class="kw">list</span>(valset<span class="op">$</span>x, valset<span class="op">$</span>y),</span>
+<span id="cb151-14"><a href="overfitting.html#cb151-14"></a>  <span class="dt">verbose =</span> <span class="dv">1</span>,</span>
+<span id="cb151-15"><a href="overfitting.html#cb151-15"></a>  <span class="dt">view_metrics =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb151-16"><a href="overfitting.html#cb151-16"></a>  <span class="dt">callbacks =</span> <span class="kw">list</span>(my_callback)</span>
+<span id="cb151-17"><a href="overfitting.html#cb151-17"></a>)</span></code></pre></div>
+<p>This code will cause the training to stop if after <span class="math inline">\(50\)</span> epochs there is no improvement in accuracy of at least <span class="math inline">\(1\%\)</span> and will restore the model’s weights to the ones during the epoch with the highest accuracy. The following Figure shows how the training stopped at epoch <span class="math inline">\(237\)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:earlyStopping"></span>
+<img src="images/nn_earlystopping.png" alt="Early stopping example." width="90%" />
+<p class="caption">
+Figure 8.22: Early stopping example.
+</p>
+</div>
+<p>If we evaluate the final model on the test set we see that the accuracy is <span class="math inline">\(85.2\%\)</span> a small increase compared to the <span class="math inline">\(84\%\)</span> that we got when training for <span class="math inline">\(300\)</span> epochs without early stopping.</p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="overfitting.html#cb152-1"></a><span class="co"># Evaluate model.</span></span>
+<span id="cb152-2"><a href="overfitting.html#cb152-2"></a>model <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">evaluate</span>(testset<span class="op">$</span>x, testset<span class="op">$</span>y)</span>
+<span id="cb152-3"><a href="overfitting.html#cb152-3"></a></span>
+<span id="cb152-4"><a href="overfitting.html#cb152-4"></a><span class="co">#&gt; $loss</span></span>
+<span id="cb152-5"><a href="overfitting.html#cb152-5"></a><span class="co">#&gt; [1] 0.4202231</span></span>
+<span id="cb152-6"><a href="overfitting.html#cb152-6"></a></span>
+<span id="cb152-7"><a href="overfitting.html#cb152-7"></a><span class="co">#&gt; $acc</span></span>
+<span id="cb152-8"><a href="overfitting.html#cb152-8"></a><span class="co">#&gt; [1] 0.8525424</span></span></code></pre></div>
+</div>
+<div id="dropout" class="section level3">
+<h3><span class="header-section-number">8.4.2</span> Dropout</h3>
+<p>Dropout is another technique used to reduce overfitting proposed by <span class="citation">Srivastava et al. (<a href="#ref-srivastava14" role="doc-biblioref">2014</a>)</span>. It consists of ‘dropping’ some of the units from a hidden layer for each sample during training. In theory, it can also be applied to input and output layers but that is not very common. The incoming and outgoing connections of a dropped unit are discarded. Figure <a href="overfitting.html#fig:imgDropout">8.23</a> shows an example of applying dropout to a network. In b), the middle unit was removed from the network whereas in c), the top and bottom units were removed.</p>
+<div class="figure" style="text-align: center"><span id="fig:imgDropout"></span>
+<img src="images/nn_dropout.png" alt="Dropout example." width="100%" />
+<p class="caption">
+Figure 8.23: Dropout example.
+</p>
+</div>
+<p>Each unit has an associated probability <span class="math inline">\(p\)</span> (independent of other units) of being dropped. This probability is another hyperparameter but typically it is set to <span class="math inline">\(0.5\)</span>. Thus, during each iteration and for each sample, half of the units are discarded. The effect of this, is having more simple networks (see Figure <a href="overfitting.html#fig:imgDropout">8.23</a>) and thus, less prone to overfitting. Intuitively, you can also think of dropout as training an <strong>ensemble of neural networks</strong>, each having a slightly different structure.</p>
+<p>From the perspective of one unit that receives inputs from the previous hidden layer with dropout, approximately half of its incoming connections will be gone (if <span class="math inline">\(p=0.5\)</span>). See Figure <a href="overfitting.html#fig:dropoutUnit">8.24</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:dropoutUnit"></span>
+<img src="images/nn_dropout_unit.png" alt="Incoming connections to one unit when the previous layer has dropout." width="20%" />
+<p class="caption">
+Figure 8.24: Incoming connections to one unit when the previous layer has dropout.
+</p>
+</div>
+<p>Dropout has the effect of making units not to rely on any single incoming connection, thus, this makes the whole network able to compensate for the lack of connections by learning alternative paths. In practice and for many applications, this can result in a more robust model. A side effect of applying dropout is that the expected value of the activation function of a unit will be diminished because half of the previous activations will be <span class="math inline">\(0\)</span>. Recall that the output of a neuron is computed as:</p>
+<p><span class="math display">\[\begin{equation}
+  f(\boldsymbol{x}) = g(\boldsymbol{w} \cdot \boldsymbol{x} + b)
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\boldsymbol{x}\)</span> contains the input values from the previous layer, <span class="math inline">\(\boldsymbol{w}\)</span> the corresponding weights and <span class="math inline">\(g()\)</span> is the activation function. With dropout, approximately half of the values of <span class="math inline">\(\boldsymbol{x}\)</span> will be <span class="math inline">\(0\)</span>. To compensate for that, the input values need to be scaled, in this case, by a factor of <span class="math inline">\(2\)</span>.</p>
+<p><span class="math display">\[\begin{equation}
+  f(\boldsymbol{x}) = g(\boldsymbol{w} \cdot 2 \boldsymbol{x} + b)
+\end{equation}\]</span></p>
+<p>In modern implementations, this scaling is done during training so at inference time
+there is no need to apply dropout. The predictions are done as usual. In Keras, the <code>layer_dropout()</code> can be used to add dropout to any layer. Its parameter <code>rate</code> is a float between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> that specifies the fraction of units to drop. The following code snippet builds a neural network with <span class="math inline">\(2\)</span> hidden layers. Then, dropout with a rate of <span class="math inline">\(0.5\)</span> is applied to both of them.</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="overfitting.html#cb153-1"></a>model &lt;-<span class="st"> </span><span class="kw">keras_model_sequential</span>()</span>
+<span id="cb153-2"><a href="overfitting.html#cb153-2"></a>  </span>
+<span id="cb153-3"><a href="overfitting.html#cb153-3"></a>  model <span class="op">%&gt;%</span></span>
+<span id="cb153-4"><a href="overfitting.html#cb153-4"></a><span class="st">    </span><span class="kw">layer_dense</span>(<span class="dt">units =</span> <span class="dv">256</span>, <span class="dt">activation =</span> <span class="st">&#39;relu&#39;</span>, <span class="dt">input_shape =</span> <span class="dv">1000</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb153-5"><a href="overfitting.html#cb153-5"></a><span class="st">    </span><span class="kw">layer_dropout</span>(<span class="fl">0.5</span>) <span class="op">%&gt;%</span></span>
+<span id="cb153-6"><a href="overfitting.html#cb153-6"></a><span class="st">    </span><span class="kw">layer_dense</span>(<span class="dt">units =</span> <span class="dv">128</span>, <span class="dt">activation =</span> <span class="st">&#39;relu&#39;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb153-7"><a href="overfitting.html#cb153-7"></a><span class="st">    </span><span class="kw">layer_dropout</span>(<span class="fl">0.5</span>) <span class="op">%&gt;%</span></span>
+<span id="cb153-8"><a href="overfitting.html#cb153-8"></a><span class="st">    </span><span class="kw">layer_dense</span>(<span class="dt">units =</span> <span class="dv">2</span>, <span class="dt">activation =</span> <span class="st">&#39;softmax&#39;</span>)</span></code></pre></div>
+<p>It is very common to apply dropout to networks in computer vision because the inputs are images or videos containing a lot of input values (pixels) but the number of samples is often very limited causing overfitting. In section <a href="cnns.html#cnns">8.6</a> convolutional neural networks (CNNs) will be introduced which are suitable for computer vision problems. In the corresponding smile detection example (section <a href="cnnSmile.html#cnnSmile">8.8</a>), we will use dropout. When building CNNs, dropout is almost always added to the different layers.</p>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-srivastava14">
+<p>Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. 2014. “Dropout: A Simple Way to Prevent Neural Networks from Overfitting.” <em>Journal of Machine Learning Research</em> 15 (56): 1929–58. <a href="http://jmlr.org/papers/v15/srivastava14a.html">http://jmlr.org/papers/v15/srivastava14a.html</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="classification-with-neural-networks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="fine-tuning-a-neural-network.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
