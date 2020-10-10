@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2020-09-30" />
+<meta name="date" content="2020-10-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -190,10 +190,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="classification.html"><a href="classification.html#decision-trees"><i class="fa fa-check"></i><b>2.3</b> Decision Trees</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="classification.html"><a href="classification.html#activityRecognition"><i class="fa fa-check"></i><b>2.3.1</b> Activity Recognition with Smartphones</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="classification.html"><a href="classification.html#dynamic-time-warping"><i class="fa fa-check"></i><b>2.4</b> Dynamic Time Warping</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="classification.html"><a href="classification.html#sechandgestures"><i class="fa fa-check"></i><b>2.4.1</b> Hand Gesture Recognition</a></li>
+<li class="chapter" data-level="2.4" data-path="classification.html"><a href="classification.html#naive-bayes"><i class="fa fa-check"></i><b>2.4</b> Naive Bayes</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="classification.html"><a href="classification.html#activity-recognition-with-naive-bayes"><i class="fa fa-check"></i><b>2.4.1</b> Activity Recognition with Naive Bayes</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="classification.html"><a href="classification.html#summaryClassification"><i class="fa fa-check"></i><b>2.5</b> Summary</a></li>
+<li class="chapter" data-level="2.5" data-path="classification.html"><a href="classification.html#dynamic-time-warping"><i class="fa fa-check"></i><b>2.5</b> Dynamic Time Warping</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="classification.html"><a href="classification.html#sechandgestures"><i class="fa fa-check"></i><b>2.5.1</b> Hand Gesture Recognition</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="classification.html"><a href="classification.html#summaryClassification"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="ensemble.html"><a href="ensemble.html"><i class="fa fa-check"></i><b>3</b> Predicting Behavior with Ensemble Learning</a><ul>
 <li class="chapter" data-level="3.1" data-path="ensemble.html"><a href="ensemble.html#bagging"><i class="fa fa-check"></i><b>3.1</b> Bagging</a><ul>
@@ -346,7 +349,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="classification" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Predicting Behavior with Classification Models</h1>
-<p>In the previous chapter, the concept of <strong>classification</strong> was introduced along with a simple example (feline type classification). This chapter will cover more in depth concepts on classification methods and their application to behavior analysis tasks. Moreover, additional performance metrics will be introduced. This chapter begins with an introduction to <strong><span class="math inline">\(k\)</span>-nearest neighbors (<span class="math inline">\(k\)</span>-NN)</strong> which is one of the simplest classification algorithms. Then, an example of <span class="math inline">\(k\)</span>-NN applied to indoor location using Wi-Fi signals is presented. This chapter also provides an overview of <strong>decision trees</strong> and how they can be used for activity recognition based on smartphone accelerometer data. Later, I show you an example of how <strong>Dynamic Time Warping (DTW)</strong> (a method for aligning time series) is used for hand gesture recognition.</p>
+<p>In the previous chapter, the concept of <strong>classification</strong> was introduced along with a simple example (feline type classification). This chapter will cover more in depth concepts on classification methods and their application to behavior analysis tasks. Moreover, additional performance metrics will be introduced. This chapter begins with an introduction to <strong><span class="math inline">\(k\)</span>-nearest neighbors (<span class="math inline">\(k\)</span>-NN)</strong> which is one of the simplest classification algorithms. Then, an example of <span class="math inline">\(k\)</span>-NN applied to indoor location using Wi-Fi signals is presented. This chapter also covers <strong>Decision Trees</strong> and <strong>Naive Bayes</strong> classifiers and how they can be used for activity recognition based on smartphone accelerometer data. After that, <strong>Dynamic Time Warping (DTW)</strong> (a method for aligning time series) is introduced, and an example of how it can be used for hand gesture recognition is presented.</p>
 <div id="k-nearest-neighbors" class="section level2">
 <h2><span class="header-section-number">2.1</span> <em>k</em>-nearest Neighbors</h2>
 <p><span class="math inline">\(k\)</span>-nearest neighbors (<span class="math inline">\(k\)</span>-NN) is one of the simplest classification algorithms. The predicted class for a given <em>query instance</em> is the most common class of its <em>k</em> nearest neighbors. A <em>query instance</em> is just the instance we want to make predictions on. In its most basic form, the algorithm consists of two steps:</p>
@@ -631,7 +634,7 @@ Figure 2.3: Confusion matrix for location predictions.
 </div>
 <div id="decision-trees" class="section level2">
 <h2><span class="header-section-number">2.3</span> Decision Trees</h2>
-<p>Decision trees are powerful predictive models (especially when combining several, see chapter <a href="ensemble.html#ensemble">3</a>) used for classification and regression tasks. Here, the focus will be on classification. Each node in a tree represents partial or final decisions based on a single feature. If a node is a leaf, then it leads to a final decision. A leaf is simply a terminal node, i.e, it has no children nodes. Given a feature vector representing an instance, the predicted class is obtained by testing the feature values and following the tree path until a leaf is reached. Figure <a href="classification.html#fig:treeExample">2.4</a> shows an example decision tree and a query instance with an unknown class. To get the final class, features are evaluated starting at the root. In this case <em>number_wheels</em> is <span class="math inline">\(4\)</span> in the query instance so we take the left path from the root. Now, we need to evaluate <em>weight</em>. This time the test is false since the weight is <span class="math inline">\(2300\)</span> and we take the right path. Since this is a leaf node the final predicted class is <em>‘truck’</em>. Usually, small trees are preferred (small depth) because they are easier to visualize and interpret and are less prone to overfitting. The example tree has a depth of 2. Should the number of wheels had been <span class="math inline">\(2\)</span> instead of <span class="math inline">\(4\)</span>, then testing the <em>weight</em> feature would not have been necessary.</p>
+<p>Decision trees are powerful predictive models (especially when combining several of them, see chapter <a href="ensemble.html#ensemble">3</a>) used for classification and regression tasks. Here, the focus will be on classification. Each node in a tree represents partial or final decisions based on a single feature. If a node is a leaf, then it leads to a final decision. A leaf is simply a terminal node, i.e, it has no children nodes. Given a feature vector representing an instance, the predicted class is obtained by testing the feature values and following the tree path until a leaf is reached. Figure <a href="classification.html#fig:treeExample">2.4</a> shows an example decision tree and a query instance with an unknown class. To get the final class, features are evaluated starting at the root. In this case <em>number_wheels</em> is <span class="math inline">\(4\)</span> in the query instance so we take the left path from the root. Now, we need to evaluate <em>weight</em>. This time the test is false since the weight is <span class="math inline">\(2300\)</span> and we take the right path. Since this is a leaf node the final predicted class is <em>‘truck’</em>. Usually, small trees are preferred (small depth) because they are easier to visualize and interpret and are less prone to overfitting. The example tree has a depth of 2. Should the number of wheels had been <span class="math inline">\(2\)</span> instead of <span class="math inline">\(4\)</span>, then testing the <em>weight</em> feature would not have been necessary.</p>
 <div class="figure" style="text-align: center"><span id="fig:treeExample"></span>
 <img src="images/treeExample.png" alt="Example decision tree. The query instance is classified as truck by this tree." width="90%" />
 <p class="caption">
@@ -930,25 +933,305 @@ Figure 2.11: Resulting decision tree.
 <p>These results look promising, but they can still be improved. In the next chapter, I will show you how to improve these results with <em>Ensemble Learning</em> which is a method that is used to aggregate many models.</p>
 </div>
 </div>
+<div id="naive-bayes" class="section level2">
+<h2><span class="header-section-number">2.4</span> Naive Bayes</h2>
+<p>Naive Bayes is yet another type of classifier. This one is based on Bayes’ rule. The name <em>Naive</em> is because this method assumes that the features are independent. In the previous section we learned that decision trees are built recursively. Trees are built by first selecting a feature to be at the root and then, the root is split into subnodes and so on. How those subnodes are chosen depends on their parent node. With Naive Bayes, features don’t need information about other features, thus, the parameters for each feature can be learned in parallel.</p>
+<p>To demonstrate how Naive Bayes works I will use the <em>SMARTPHONE ACTIVITIES</em> dataset as in the previous section. For any given <em>query instance</em>, the aim is to <strong>predict its most likely class</strong> based on the accelerometer features. For a new <em>query instance</em>, we want to estimate its class based on the features that we have observed. Let’s say we want to know what is the probability that the query instance belongs to the class <em>‘Walking’</em>. This can be formulated as follows:</p>
+<p><span class="math display">\[\begin{equation*}
+  P(C=\textit{Walking} | f_1,\dots ,f_n).
+\end{equation*}\]</span></p>
+<p>This reads as the conditional probability that the class is <em>‘Walking’</em> <strong>given</strong> the observed evidence. For each instance, the evidence that we can observe are its features <span class="math inline">\(f_1, \dots ,f_n\)</span>. In this dataset, each instance has <span class="math inline">\(39\)</span> features. If we want to estimate what is the most likely class all we need to do is to compute the conditional probability for each class and return the highest one:</p>
+<p><span class="math display" id="eq:bayesclassifier">\[\begin{equation}
+  y = \operatorname*{arg max}_{k \in \{1, \dots ,K\}} P(C_k | f_1,\dots ,f_n)
+  \tag{2.10}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(K\)</span> is the total number of possible classes. The <span class="math inline">\(\text{arg max}\)</span> notation means: Evaluate the right hand expression for every class <span class="math inline">\(k\)</span> and return the <span class="math inline">\(k\)</span> that resulted with the maximum probability. If instead of <span class="math inline">\(\text{arg max}\)</span> we had <span class="math inline">\(\text{max}\)</span> (without the <span class="math inline">\(\text{arg}\)</span>) that would mean to return the actual maximum probability instead of the class <span class="math inline">\(k\)</span>.</p>
+<p>Now let’s see how we can compute <span class="math inline">\(P(C_k | f_1,\dots ,f_n)\)</span>. To compute a conditional probability we can use Bayes’ rule:</p>
+<p><span class="math display" id="eq:bayesrule">\[\begin{equation}
+  P(H|E) = \frac{P(H)P(E|H)}{P(E)}
+  \tag{2.11}
+\end{equation}\]</span></p>
+<p>Let’s dissect that formula:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(P(H|E)\)</span> is called the <strong>posterior</strong> and it is the probability of the hypothesis <span class="math inline">\(H\)</span> given the observed evidence <span class="math inline">\(E\)</span>. In our example, the hypothesis can be that <span class="math inline">\(C=Walking\)</span> and the evidence consists of the measured features. This is the probability that ultimately we want to estimate for each class and pick the class with the highest probability.</p></li>
+<li><p><span class="math inline">\(P(H)\)</span> is called the <strong>prior</strong>. This is the probability of a hypothesis happening without having any evidence. In our example, this translates into the probability that an instance belongs to a particular class without looking at its features. In practice, this is estimated from the class counts in the training set. Suppose the training set consists of <span class="math inline">\(100\)</span> instances and from those, <span class="math inline">\(80\)</span> are of type <em>‘Walking’</em> and <span class="math inline">\(20\)</span> are of type <em>‘Jogging’</em>. Then, the prior probability for <em>‘Walking’</em> is <span class="math inline">\(P(C=Walking)=80/100=0.8\)</span> and the prior for <em>‘Jogging’</em> is <span class="math inline">\(P(C=Jogging)=20/100=0.2\)</span>.</p></li>
+<li><p><span class="math inline">\(P(E)\)</span> is the probability of the evidence. Since this one doesn’t depend on the class we don’t need to compute it. This can be thought of as a normalization factor. When choosing the final class we only need to select the one with the highest score, so there is no need to normalize them into proper probabilities between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>.</p></li>
+<li><p><span class="math inline">\(P(E|H)\)</span> is called the <strong>likelihood</strong>. For numerical variables we can estimate this using a <em>Gaussian probability density function</em>. This sounds intimidating! but all we need to do is to compute the <em>mean</em> and <em>standard deviation</em> for each feature-class pair and plug them in the probability density function (pdf). The formula for a Gaussian (also called normal) pdf is:</p></li>
+</ol>
+<p><span class="math display" id="eq:gaussianpdf">\[\begin{equation}
+  f(x) = \frac{1}{{\sigma \sqrt {2\pi } }}e^{ - \left( {x - \mu } \right)^2 / 2 \sigma ^2 }
+  \tag{2.12}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\mu\)</span> is the mean and <span class="math inline">\(\sigma\)</span> is the standard deviation.</p>
+<p>Suppose that for some feature <span class="math inline">\(f1\)</span> and when the class is <em>‘Walking’</em>, its mean is <span class="math inline">\(5\)</span> and its standard deviation is <span class="math inline">\(3\)</span>. That is, we filter the train set and only select those instances with class <em>‘Walking’</em> and compute the mean and standard deviation for feature <span class="math inline">\(f1\)</span>. Figure <a href="classification.html#fig:pdf1">2.12</a> shows how its pdf looks like.</p>
+<div class="figure" style="text-align: center"><span id="fig:pdf1"></span>
+<img src="images/pdf1.png" alt="Gaussian probability density function with mean 5 and standard deviation 3." width="90%" />
+<p class="caption">
+Figure 2.12: Gaussian probability density function with mean 5 and standard deviation 3.
+</p>
+</div>
+<p>If we have a query instance with a feature <span class="math inline">\(f_1 = 1.7\)</span> we can compute its likelihood given the <em>‘Walking’</em> class <span class="math inline">\(P(f_1=1.7|C=Walking)\)</span> with equation <a href="classification.html#eq:gaussianpdf">(2.12)</a> by plugging <span class="math inline">\(x=1.7\)</span>, <span class="math inline">\(\mu=5\)</span> and <span class="math inline">\(\sigma=3\)</span>. In R, the function <code>dnorm()</code> implements the normal pdf.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="classification.html#cb36-1"></a><span class="kw">dnorm</span>(<span class="dt">x=</span><span class="fl">1.7</span>, <span class="dt">mean =</span> <span class="dv">5</span>, <span class="dt">sd =</span> <span class="dv">3</span>)</span>
+<span id="cb36-2"><a href="classification.html#cb36-2"></a><span class="co">#&gt; [1] 0.07261739</span></span></code></pre></div>
+<p>Figure <a href="classification.html#fig:pdf2">2.13</a> shows the likelihood with a solid circle when <span class="math inline">\(x=1.7\)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:pdf2"></span>
+<img src="images/pdf2.png" alt="Likelihood (0.072) when x=1.7." width="90%" />
+<p class="caption">
+Figure 2.13: Likelihood (0.072) when x=1.7.
+</p>
+</div>
+<p>If we have more than one feature we need to compute the likelihood for each and take their <strong>product</strong>: <span class="math inline">\(P(f_1|C=Walking)*P(f_2|C=Walking)*\dots*P(f_n|C=Walking)\)</span>. Each feature and class pair has its own <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> parameters. Thus, Naive Bayes requires to learn <span class="math inline">\(K*F*2\)</span> parameters for the <span class="math inline">\(P(E|H)\)</span> part plus <span class="math inline">\(K\)</span> parameters for the priors <span class="math inline">\(P(H)\)</span>. <span class="math inline">\(K\)</span> is the number of classes, <span class="math inline">\(F\)</span> is the number of features and the <span class="math inline">\(2\)</span> stands for the mean and standard deviation.</p>
+<p>We have seen how we can compute <span class="math inline">\(P(C_k|f_1, \dots ,f_n)\)</span> using Baye’s rule by calculating the prior <span class="math inline">\(P(H)\)</span> and <span class="math inline">\(P(E|H)\)</span> which is the product of the likelihoods for each feature. If we substitute Bayes’s rule (omitting the denominator) in equation <a href="classification.html#eq:bayesclassifier">(2.10)</a> we get our Naive Bayes classifier:</p>
+<p><span class="math display" id="eq:bayesclassifier2">\[\begin{equation}
+  y = \operatorname*{arg max}_{k \in \{1, \dots ,K\}} P(C_k) \prod_{i=1}^{F} P(f_i | C_k)
+  \tag{2.13}
+\end{equation}\]</span></p>
+<p>In the following section we will implement our own Naive Bayes algorithm in R and test it on the <em>SMARTPHONE ACTIVITIES</em> dataset. Then, we will compare our implementation with that of the well known <code>e1071</code> package <span class="citation">(Meyer et al. <a href="#ref-e1071" role="doc-biblioref">2019</a>)</span>.</p>
+
+<div class="rmdgoodpractice">
+Naive Bayes works well with missing values since the features are independent. At prediction time, if an instance has one or more missing values then, those features are just ignored and the posterior probability is computed based only on the available variabels. Another advantage of the feature independence assumption is that feature selection algorithms run very fast with Naive Bayes. When building a predictive model, not all features may provide useful information and some features may even degrade the performance. Feature selection algorithms aim to find the best set of features and some of them need to try a huge number of feature combinations. With Naive Bayes, the parameters only need to be learned once and then different combinations of features can be evaluated by ommiting the ones that are not used. With decision trees, for example, we would need to build entire new trees every time we want to try different input features.
+</div>
+
+
+<div class="rmdinfo">
+Here, we have shown how we can use a Gaussian pdf to compute the likelihood <span class="math inline">\(P(E|H)\)</span> when the features are numeric. This assumes that the features have a normal distribution however, this is not always the case. In practice, Naive Bayes can work really well even if that assumption is not met. Furthermore, nothing prevents us from using another distribution to estimate the likelihood or even defining a specific distribution for each feature. For categorical variables, <span class="math inline">\(P(E|H)\)</span> is estimated using the feature values frequencies.
+</div>
+
+<div id="activity-recognition-with-naive-bayes" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Activity Recognition with Naive Bayes</h3>
+
+<div class="rmdfolder">
+<code>naive_bayes.R</code>
+</div>
+
+<p>It’s time to implement Naive Bayes. To keep it simple, first we will go through a step by step example using a single feature. Then, we will implement a function to train a Naive Bayes classifier for the case of multiple features.</p>
+<p>Let’s assume we have already split the data into train and test sets. The complete code is in the script <code>naive_bayes.R</code>. We will only use the feature <em>RESULTANT</em> which corresponds to the acceleration magnitude of the three axes of the accelerometer sensor. The following code snippet prints the first rows of the train set. The <em>RESULTANT</em> feature is in column <span class="math inline">\(39\)</span> and the class is the last column (<span class="math inline">\(40\)</span>).</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="classification.html#cb37-1"></a><span class="kw">head</span>(trainset[,<span class="kw">c</span>(<span class="dv">39</span><span class="op">:</span><span class="dv">40</span>)])</span>
+<span id="cb37-2"><a href="classification.html#cb37-2"></a><span class="co">#&gt;      RESULTANT    class</span></span>
+<span id="cb37-3"><a href="classification.html#cb37-3"></a><span class="co">#&gt; 1004     11.14  Walking</span></span>
+<span id="cb37-4"><a href="classification.html#cb37-4"></a><span class="co">#&gt; 623       1.24 Upstairs</span></span>
+<span id="cb37-5"><a href="classification.html#cb37-5"></a><span class="co">#&gt; 2693      9.90 Standing</span></span>
+<span id="cb37-6"><a href="classification.html#cb37-6"></a><span class="co">#&gt; 934      10.44 Upstairs</span></span>
+<span id="cb37-7"><a href="classification.html#cb37-7"></a><span class="co">#&gt; 4496     10.43  Walking</span></span>
+<span id="cb37-8"><a href="classification.html#cb37-8"></a><span class="co">#&gt; 2948     15.28  Jogging</span></span></code></pre></div>
+<p>First, we compute the prior probabilities for each class in the train set and store them in the variable <code>priors</code>. This corresponds to the <span class="math inline">\(P(C_k)\)</span> part in equation <a href="classification.html#eq:bayesclassifier2">(2.13)</a>.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="classification.html#cb38-1"></a><span class="co"># Compute prior probabilities.</span></span>
+<span id="cb38-2"><a href="classification.html#cb38-2"></a>priors &lt;-<span class="st"> </span><span class="kw">table</span>(trainset<span class="op">$</span>class) <span class="op">/</span><span class="st"> </span><span class="kw">nrow</span>(trainset)</span>
+<span id="cb38-3"><a href="classification.html#cb38-3"></a></span>
+<span id="cb38-4"><a href="classification.html#cb38-4"></a><span class="co"># Print the table of priors.</span></span>
+<span id="cb38-5"><a href="classification.html#cb38-5"></a>priors</span>
+<span id="cb38-6"><a href="classification.html#cb38-6"></a></span>
+<span id="cb38-7"><a href="classification.html#cb38-7"></a><span class="co">#&gt; Downstairs    Jogging    Sitting   Standing   Upstairs </span></span>
+<span id="cb38-8"><a href="classification.html#cb38-8"></a><span class="co">#&gt; 0.09622990 0.30266280 0.05721065 0.04640127 0.11521223 </span></span>
+<span id="cb38-9"><a href="classification.html#cb38-9"></a><span class="co">#&gt;    Walking </span></span>
+<span id="cb38-10"><a href="classification.html#cb38-10"></a><span class="co">#&gt; 0.38228315 </span></span></code></pre></div>
+<p>We can access each prior by name like this:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="classification.html#cb39-1"></a><span class="co"># Get the prior for &quot;Jogging&quot;.</span></span>
+<span id="cb39-2"><a href="classification.html#cb39-2"></a>priors[<span class="st">&quot;Jogging&quot;</span>]</span>
+<span id="cb39-3"><a href="classification.html#cb39-3"></a><span class="co">#&gt;   Jogging </span></span>
+<span id="cb39-4"><a href="classification.html#cb39-4"></a><span class="co">#&gt; 0.3026628 </span></span></code></pre></div>
+<p>This means that <span class="math inline">\(30\%\)</span> of the instances in the train set are of type <em>‘Jogging’</em>. Now we need to compute the <span class="math inline">\(P(f_i|C_k)\)</span> part from equation <a href="classification.html#eq:bayesclassifier2">(2.13)</a>. We can define a method to compute the probability density function in equation <a href="classification.html#eq:gaussianpdf">(2.12)</a>:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="classification.html#cb40-1"></a><span class="co"># Probability density function of normal distribution.</span></span>
+<span id="cb40-2"><a href="classification.html#cb40-2"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>(x, m, s){</span>
+<span id="cb40-3"><a href="classification.html#cb40-3"></a>  (<span class="dv">1</span> <span class="op">/</span><span class="st"> </span>(<span class="kw">sqrt</span>(<span class="dv">2</span><span class="op">*</span>pi)<span class="op">*</span>s)) <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>((x<span class="op">-</span>m)<span class="op">^</span><span class="dv">2</span>) <span class="op">/</span><span class="st"> </span>(<span class="dv">2</span> <span class="op">*</span><span class="st"> </span>s<span class="op">^</span><span class="dv">2</span>))</span>
+<span id="cb40-4"><a href="classification.html#cb40-4"></a>}</span></code></pre></div>
+<p>It’s first argument <code>x</code> is the input value. The second argument <code>m</code> is the mean and the last argument <code>s</code> is the standard deviation. For illustration purposes we are defining this function manually but remember that this pdf is already implemented with the base <code>dnorm()</code> function.</p>
+<p>According to equation <a href="classification.html#eq:bayesclassifier2">(2.13)</a> we need to compute <span class="math inline">\(P(f_i|C_k)\)</span> for each feature <span class="math inline">\(i\)</span> and class <span class="math inline">\(k\)</span>. Let’s assume there are only two classes, <em>‘Walking’</em> and <em>‘Jogging’</em> thus, we need the mean and standard deviation for each and for the feature <em>RESULTANT</em> (column <span class="math inline">\(39\)</span>).</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="classification.html#cb41-1"></a><span class="co"># Compute the mean and sd of</span></span>
+<span id="cb41-2"><a href="classification.html#cb41-2"></a><span class="co"># the feature RESULTANT (column 39)</span></span>
+<span id="cb41-3"><a href="classification.html#cb41-3"></a><span class="co"># when the class = &quot;Standing&quot;.</span></span>
+<span id="cb41-4"><a href="classification.html#cb41-4"></a>mean.standing &lt;-<span class="st"> </span><span class="kw">mean</span>(trainset[<span class="kw">which</span>(trainset<span class="op">$</span>class <span class="op">==</span><span class="st"> &quot;Standing&quot;</span>), <span class="dv">39</span>])</span>
+<span id="cb41-5"><a href="classification.html#cb41-5"></a>sd.standing &lt;-<span class="st"> </span><span class="kw">sd</span>(trainset[<span class="kw">which</span>(trainset<span class="op">$</span>class <span class="op">==</span><span class="st"> &quot;Standing&quot;</span>), <span class="dv">39</span>])</span>
+<span id="cb41-6"><a href="classification.html#cb41-6"></a></span>
+<span id="cb41-7"><a href="classification.html#cb41-7"></a><span class="co"># Compute mean and sd when</span></span>
+<span id="cb41-8"><a href="classification.html#cb41-8"></a><span class="co"># the class = &quot;Jogging&quot;.</span></span>
+<span id="cb41-9"><a href="classification.html#cb41-9"></a>mean.jogging &lt;-<span class="st"> </span><span class="kw">mean</span>(trainset[<span class="kw">which</span>(trainset<span class="op">$</span>class <span class="op">==</span><span class="st"> &quot;Jogging&quot;</span>), <span class="dv">39</span>])</span>
+<span id="cb41-10"><a href="classification.html#cb41-10"></a>sd.jogging &lt;-<span class="st"> </span><span class="kw">sd</span>(trainset[<span class="kw">which</span>(trainset<span class="op">$</span>class <span class="op">==</span><span class="st"> &quot;Jogging&quot;</span>), <span class="dv">39</span>])</span></code></pre></div>
+<p>We can print the means:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="classification.html#cb42-1"></a>mean.standing</span>
+<span id="cb42-2"><a href="classification.html#cb42-2"></a><span class="co">#&gt; [1] 9.405795</span></span>
+<span id="cb42-3"><a href="classification.html#cb42-3"></a>mean.jogging</span>
+<span id="cb42-4"><a href="classification.html#cb42-4"></a><span class="co">#&gt; [1] 13.70145</span></span></code></pre></div>
+<p>We can see that the mean value for <em>‘Jogging’</em> is higher for this feature. This was expected since this feature captures the overall movement across all axes. Now we have everything we need to start making predictions on new instances. We have the priors and we have the means and standard deviations for each feature-class pair.</p>
+<p>Let’s select the first instance from the test set and try to predict its class.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="classification.html#cb43-1"></a><span class="co"># Select a query instance from the test set.</span></span>
+<span id="cb43-2"><a href="classification.html#cb43-2"></a>query &lt;-<span class="st"> </span>testset[<span class="dv">1</span>,] <span class="co"># Select the first one.</span></span></code></pre></div>
+<p>Now we compute the posterior probability for each class using the learned means and standard deviations:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="classification.html#cb44-1"></a><span class="co"># Compute P(Standing)P(RESULTANT|Standing)</span></span>
+<span id="cb44-2"><a href="classification.html#cb44-2"></a>priors[<span class="st">&quot;Standing&quot;</span>] <span class="op">*</span><span class="st"> </span><span class="kw">f</span>(query<span class="op">$</span>RESULTANT, mean.standing, sd.standing)</span>
+<span id="cb44-3"><a href="classification.html#cb44-3"></a><span class="co">#&gt; 0.003169748</span></span>
+<span id="cb44-4"><a href="classification.html#cb44-4"></a></span>
+<span id="cb44-5"><a href="classification.html#cb44-5"></a><span class="co"># Compute P(Jogging)P(RESULTANT|Jogging)</span></span>
+<span id="cb44-6"><a href="classification.html#cb44-6"></a>priors[<span class="st">&quot;Jogging&quot;</span>] <span class="op">*</span><span class="st"> </span><span class="kw">f</span>(query<span class="op">$</span>RESULTANT, mean.jogging, sd.jogging)</span>
+<span id="cb44-7"><a href="classification.html#cb44-7"></a><span class="co">#&gt; 0.03884481</span></span></code></pre></div>
+<p>The posterior for <em>‘Jogging’</em> was higher (<span class="math inline">\(0.038\)</span>) so we classify the query instance as <em>‘Jogging’</em>. If we check the true class we see that it was correctly classified!</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="classification.html#cb45-1"></a><span class="co"># Inspect the true class of the query instance.</span></span>
+<span id="cb45-2"><a href="classification.html#cb45-2"></a>query<span class="op">$</span>class</span>
+<span id="cb45-3"><a href="classification.html#cb45-3"></a><span class="co">#&gt; [1] &quot;Jogging&quot;</span></span></code></pre></div>
+<p>In this example we assumed that there was only one feature and we computed each step manually. However, this can easily be extended to deal with more features. So let’s just do that. We can write two functions, one for training the classifier and the other one for making predictions.</p>
+<p>The following function will be used to train the classifier. It takes as input a data frame with <span class="math inline">\(n\)</span> features. This function assumes that the class is the last column. The function returns a list with the learned priors, means, and standard deviations.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="classification.html#cb46-1"></a><span class="co"># Function to learn the parameters of </span></span>
+<span id="cb46-2"><a href="classification.html#cb46-2"></a><span class="co"># a Naive Bayes classifier.</span></span>
+<span id="cb46-3"><a href="classification.html#cb46-3"></a><span class="co"># Assumes that the last column of data is the class.</span></span>
+<span id="cb46-4"><a href="classification.html#cb46-4"></a>naive.bayes.train &lt;-<span class="st"> </span><span class="cf">function</span>(data){</span>
+<span id="cb46-5"><a href="classification.html#cb46-5"></a></span>
+<span id="cb46-6"><a href="classification.html#cb46-6"></a>  <span class="co"># Unique classes.</span></span>
+<span id="cb46-7"><a href="classification.html#cb46-7"></a>  classes &lt;-<span class="st"> </span><span class="kw">unique</span>(data<span class="op">$</span>class)</span>
+<span id="cb46-8"><a href="classification.html#cb46-8"></a></span>
+<span id="cb46-9"><a href="classification.html#cb46-9"></a>  <span class="co"># Number of features.</span></span>
+<span id="cb46-10"><a href="classification.html#cb46-10"></a>  nfeatures &lt;-<span class="st"> </span><span class="kw">ncol</span>(data) <span class="op">-</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb46-11"><a href="classification.html#cb46-11"></a>  </span>
+<span id="cb46-12"><a href="classification.html#cb46-12"></a>  <span class="co"># List to store the learned means and sds.</span></span>
+<span id="cb46-13"><a href="classification.html#cb46-13"></a>  list.means.sds &lt;-<span class="st"> </span><span class="kw">list</span>()</span>
+<span id="cb46-14"><a href="classification.html#cb46-14"></a>  </span>
+<span id="cb46-15"><a href="classification.html#cb46-15"></a>  <span class="cf">for</span>(c <span class="cf">in</span> classes){</span>
+<span id="cb46-16"><a href="classification.html#cb46-16"></a>    </span>
+<span id="cb46-17"><a href="classification.html#cb46-17"></a>    <span class="co"># Matrix to store the mean and sd for each feature.</span></span>
+<span id="cb46-18"><a href="classification.html#cb46-18"></a>    <span class="co"># First column stores the mean and second column</span></span>
+<span id="cb46-19"><a href="classification.html#cb46-19"></a>    <span class="co"># stores the sd.</span></span>
+<span id="cb46-20"><a href="classification.html#cb46-20"></a>    M &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow =</span> nfeatures, <span class="dt">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb46-21"><a href="classification.html#cb46-21"></a>    </span>
+<span id="cb46-22"><a href="classification.html#cb46-22"></a>    <span class="co"># Populate matrix.</span></span>
+<span id="cb46-23"><a href="classification.html#cb46-23"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>nfeatures){</span>
+<span id="cb46-24"><a href="classification.html#cb46-24"></a>      feature.values &lt;-<span class="st"> </span>data[<span class="kw">which</span>(data<span class="op">$</span>class <span class="op">==</span><span class="st"> </span>c),i]</span>
+<span id="cb46-25"><a href="classification.html#cb46-25"></a>      M[i,<span class="dv">1</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(feature.values)</span>
+<span id="cb46-26"><a href="classification.html#cb46-26"></a>      M[i,<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="kw">sd</span>(feature.values)</span>
+<span id="cb46-27"><a href="classification.html#cb46-27"></a>    }</span>
+<span id="cb46-28"><a href="classification.html#cb46-28"></a>    </span>
+<span id="cb46-29"><a href="classification.html#cb46-29"></a>    list.means.sds[c] &lt;-<span class="st"> </span><span class="kw">list</span>(M)</span>
+<span id="cb46-30"><a href="classification.html#cb46-30"></a>  }</span>
+<span id="cb46-31"><a href="classification.html#cb46-31"></a></span>
+<span id="cb46-32"><a href="classification.html#cb46-32"></a>  <span class="co"># Compute prior probabilities.</span></span>
+<span id="cb46-33"><a href="classification.html#cb46-33"></a>  priors &lt;-<span class="st"> </span><span class="kw">table</span>(data<span class="op">$</span>class) <span class="op">/</span><span class="st"> </span><span class="kw">nrow</span>(data)</span>
+<span id="cb46-34"><a href="classification.html#cb46-34"></a>  </span>
+<span id="cb46-35"><a href="classification.html#cb46-35"></a>  <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">list.means.sds=</span>list.means.sds,</span>
+<span id="cb46-36"><a href="classification.html#cb46-36"></a>              <span class="dt">priors=</span>priors))</span>
+<span id="cb46-37"><a href="classification.html#cb46-37"></a>}</span></code></pre></div>
+<p>The function iterates through each class and for each, it creates a matrix <code>M</code> with <span class="math inline">\(F\)</span> rows and <span class="math inline">\(2\)</span> columns where <span class="math inline">\(F\)</span> is the number of features. The first column stores the means and the second the standard deviations. Those matrices are saved in a list indexed by the class name so at prediction time we can retrieve each matrix individually. At the end, the prior probabilities are computed. Finally, a list is returned. The first element of the list is the list of matrices and the second element are the priors.</p>
+<p>The next function will make predictions based on the learned parameters. Its first argument is the learned parameters and the second parameter is a data frame with the instances we want to make predictions for.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="classification.html#cb47-1"></a><span class="co"># Function to make predictions using</span></span>
+<span id="cb47-2"><a href="classification.html#cb47-2"></a><span class="co"># the learned parameters.</span></span>
+<span id="cb47-3"><a href="classification.html#cb47-3"></a>naive.bayes.predict &lt;-<span class="st"> </span><span class="cf">function</span>(params, data){</span>
+<span id="cb47-4"><a href="classification.html#cb47-4"></a>  </span>
+<span id="cb47-5"><a href="classification.html#cb47-5"></a>  <span class="co"># Variable to store the prediction for each instance.</span></span>
+<span id="cb47-6"><a href="classification.html#cb47-6"></a>  predictions &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb47-7"><a href="classification.html#cb47-7"></a>  </span>
+<span id="cb47-8"><a href="classification.html#cb47-8"></a>  n &lt;-<span class="st"> </span><span class="kw">nrow</span>(data)</span>
+<span id="cb47-9"><a href="classification.html#cb47-9"></a>  </span>
+<span id="cb47-10"><a href="classification.html#cb47-10"></a>  <span class="co"># Get class names.</span></span>
+<span id="cb47-11"><a href="classification.html#cb47-11"></a>  classes &lt;-<span class="st"> </span><span class="kw">names</span>(params<span class="op">$</span>priors)</span>
+<span id="cb47-12"><a href="classification.html#cb47-12"></a>  </span>
+<span id="cb47-13"><a href="classification.html#cb47-13"></a>  <span class="co"># Get number of features.</span></span>
+<span id="cb47-14"><a href="classification.html#cb47-14"></a>  nfeatures &lt;-<span class="st"> </span><span class="kw">nrow</span>(params<span class="op">$</span>list.means.sds[[<span class="dv">1</span>]])</span>
+<span id="cb47-15"><a href="classification.html#cb47-15"></a>  </span>
+<span id="cb47-16"><a href="classification.html#cb47-16"></a>  <span class="co"># Iterate instances.</span></span>
+<span id="cb47-17"><a href="classification.html#cb47-17"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n){</span>
+<span id="cb47-18"><a href="classification.html#cb47-18"></a>    </span>
+<span id="cb47-19"><a href="classification.html#cb47-19"></a>    query &lt;-<span class="st"> </span>data[i,]</span>
+<span id="cb47-20"><a href="classification.html#cb47-20"></a>    </span>
+<span id="cb47-21"><a href="classification.html#cb47-21"></a>    max.probability &lt;-<span class="st"> </span><span class="op">-</span><span class="ot">Inf</span></span>
+<span id="cb47-22"><a href="classification.html#cb47-22"></a>    </span>
+<span id="cb47-23"><a href="classification.html#cb47-23"></a>    predicted.class &lt;-<span class="st"> &quot;&quot;</span></span>
+<span id="cb47-24"><a href="classification.html#cb47-24"></a>    </span>
+<span id="cb47-25"><a href="classification.html#cb47-25"></a>    <span class="co"># Find the class with highest probability.</span></span>
+<span id="cb47-26"><a href="classification.html#cb47-26"></a>    <span class="cf">for</span>(c <span class="cf">in</span> classes){</span>
+<span id="cb47-27"><a href="classification.html#cb47-27"></a></span>
+<span id="cb47-28"><a href="classification.html#cb47-28"></a>      <span class="co"># Get the prior probability for class c.</span></span>
+<span id="cb47-29"><a href="classification.html#cb47-29"></a>      acum.prob &lt;-<span class="st"> </span>params<span class="op">$</span>priors[c]</span>
+<span id="cb47-30"><a href="classification.html#cb47-30"></a>      </span>
+<span id="cb47-31"><a href="classification.html#cb47-31"></a>      <span class="co"># Iterate features.</span></span>
+<span id="cb47-32"><a href="classification.html#cb47-32"></a>      <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>nfeatures){</span>
+<span id="cb47-33"><a href="classification.html#cb47-33"></a>        </span>
+<span id="cb47-34"><a href="classification.html#cb47-34"></a>        <span class="co"># Compute P(feature|class)</span></span>
+<span id="cb47-35"><a href="classification.html#cb47-35"></a>        tmp &lt;-<span class="st"> </span><span class="kw">f</span>(query[,j],</span>
+<span id="cb47-36"><a href="classification.html#cb47-36"></a>          params<span class="op">$</span>list.means.sds[[c]][j,<span class="dv">1</span>],</span>
+<span id="cb47-37"><a href="classification.html#cb47-37"></a>          params<span class="op">$</span>list.means.sds[[c]][j,<span class="dv">2</span>])</span>
+<span id="cb47-38"><a href="classification.html#cb47-38"></a>        </span>
+<span id="cb47-39"><a href="classification.html#cb47-39"></a>        <span class="co"># Accumulate result.</span></span>
+<span id="cb47-40"><a href="classification.html#cb47-40"></a>        acum.prob &lt;-<span class="st"> </span>acum.prob <span class="op">*</span><span class="st"> </span>tmp</span>
+<span id="cb47-41"><a href="classification.html#cb47-41"></a>      }</span>
+<span id="cb47-42"><a href="classification.html#cb47-42"></a>      </span>
+<span id="cb47-43"><a href="classification.html#cb47-43"></a>      <span class="cf">if</span>(acum.prob <span class="op">&gt;</span><span class="st"> </span>max.probability){</span>
+<span id="cb47-44"><a href="classification.html#cb47-44"></a>        max.probability &lt;-<span class="st"> </span>acum.prob</span>
+<span id="cb47-45"><a href="classification.html#cb47-45"></a>        predicted.class &lt;-<span class="st"> </span>c</span>
+<span id="cb47-46"><a href="classification.html#cb47-46"></a>      }</span>
+<span id="cb47-47"><a href="classification.html#cb47-47"></a>    }</span>
+<span id="cb47-48"><a href="classification.html#cb47-48"></a>    </span>
+<span id="cb47-49"><a href="classification.html#cb47-49"></a>    predictions &lt;-<span class="st"> </span><span class="kw">c</span>(predictions, predicted.class)</span>
+<span id="cb47-50"><a href="classification.html#cb47-50"></a>  }</span>
+<span id="cb47-51"><a href="classification.html#cb47-51"></a>  </span>
+<span id="cb47-52"><a href="classification.html#cb47-52"></a>  <span class="kw">return</span>(predictions)</span>
+<span id="cb47-53"><a href="classification.html#cb47-53"></a>}</span></code></pre></div>
+<p>This function iterates through each instance and computes the posterior for each class and stores the one that achieved the highest value as the prediction. Finally, it returns the list with all predictions.</p>
+<p>We are ready to train our Naive Bayes classifier. All we need to do is call the function <code>naive.bayes.train()</code> and pass the train set.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="classification.html#cb48-1"></a><span class="co"># Learn Naive Bayes parameters.</span></span>
+<span id="cb48-2"><a href="classification.html#cb48-2"></a>nb.model &lt;-<span class="st"> </span><span class="kw">naive.bayes.train</span>(trainset)</span></code></pre></div>
+<p>The learned parameters are stored in <code>nb.model</code> and we can make predictions with the <code>naive.bayes.predict()</code> function by passing the <code>nb.model</code> and a test set.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="classification.html#cb49-1"></a><span class="co"># Make predictions.</span></span>
+<span id="cb49-2"><a href="classification.html#cb49-2"></a>predictions &lt;-<span class="st"> </span><span class="kw">naive.bayes.predict</span>(nb.model, testset)</span></code></pre></div>
+<p>Then, we assess the performance of the model by computing the confusion matrix.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="classification.html#cb50-1"></a><span class="co"># Compute confusion matrix and other performance metrics.</span></span>
+<span id="cb50-2"><a href="classification.html#cb50-2"></a>groundTruth &lt;-<span class="st"> </span>testset<span class="op">$</span>class</span>
+<span id="cb50-3"><a href="classification.html#cb50-3"></a></span>
+<span id="cb50-4"><a href="classification.html#cb50-4"></a>cm &lt;-<span class="st"> </span><span class="kw">confusionMatrix</span>(<span class="kw">as.factor</span>(predictions),</span>
+<span id="cb50-5"><a href="classification.html#cb50-5"></a>                      <span class="kw">as.factor</span>(groundTruth))</span>
+<span id="cb50-6"><a href="classification.html#cb50-6"></a></span>
+<span id="cb50-7"><a href="classification.html#cb50-7"></a><span class="co"># Print accuracy</span></span>
+<span id="cb50-8"><a href="classification.html#cb50-8"></a>cm<span class="op">$</span>overall[<span class="st">&quot;Accuracy&quot;</span>]</span>
+<span id="cb50-9"><a href="classification.html#cb50-9"></a><span class="co">#&gt;  Accuracy </span></span>
+<span id="cb50-10"><a href="classification.html#cb50-10"></a><span class="co">#&gt; 0.7501538</span></span>
+<span id="cb50-11"><a href="classification.html#cb50-11"></a></span>
+<span id="cb50-12"><a href="classification.html#cb50-12"></a><span class="co"># Print overall metrics across classes.</span></span>
+<span id="cb50-13"><a href="classification.html#cb50-13"></a><span class="kw">colMeans</span>(cm<span class="op">$</span>byClass[,<span class="kw">c</span>(<span class="st">&quot;Recall&quot;</span>, <span class="st">&quot;Specificity&quot;</span>,</span>
+<span id="cb50-14"><a href="classification.html#cb50-14"></a>                       <span class="st">&quot;Precision&quot;</span>, <span class="st">&quot;F1&quot;</span>)])</span>
+<span id="cb50-15"><a href="classification.html#cb50-15"></a><span class="co">#&gt;      Recall Specificity   Precision          F1 </span></span>
+<span id="cb50-16"><a href="classification.html#cb50-16"></a><span class="co">#&gt;   0.6621381   0.9423729   0.6468372   0.6433231</span></span></code></pre></div>
+<p>The accuracy was <span class="math inline">\(75\%\)</span>. In the previous section we obtained an accuracy of <span class="math inline">\(78\%\)</span> with decision trees. However, this does not necessarily mean that decision trees are better. Moreover, in the previous section we used cross-validation and here we used hold-out validation.</p>
+
+<div class="rmdcaution">
+One important thing to note is that computing the posterior may cause a loss of numeric precision specially, when there are many features. This is because we are multiplying the likelihoods for each feature (see equation <a href="classification.html#eq:bayesclassifier2">(2.13)</a> and those likelihoods are small numbers. One way to fix that is to use logarithms. In <code>navie.bayes.predict()</code> we can change <code>acum.prob &lt;- params$priors[c]</code> with <code>acum.prob &lt;- log(params$priors[c])</code> and <code>acum.prob &lt;- acum.prob * tmp</code> with <code>acum.prob &lt;- acum.prob + log(tmp)</code>. If you try those changes you should get the same result as before.
+</div>
+
+<p>There is already a popular R package (<code>e1071</code>) for training Naive Bayes classifiers. The following code trains a classifier using this package.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="classification.html#cb51-1"></a><span class="co">#### Use Naive Bayes implementation from package e1071 ####</span></span>
+<span id="cb51-2"><a href="classification.html#cb51-2"></a><span class="kw">library</span>(e1071)</span>
+<span id="cb51-3"><a href="classification.html#cb51-3"></a></span>
+<span id="cb51-4"><a href="classification.html#cb51-4"></a><span class="co"># We need to convert the class into a factor.</span></span>
+<span id="cb51-5"><a href="classification.html#cb51-5"></a>trainset<span class="op">$</span>class &lt;-<span class="st"> </span><span class="kw">as.factor</span>(trainset<span class="op">$</span>class)</span>
+<span id="cb51-6"><a href="classification.html#cb51-6"></a></span>
+<span id="cb51-7"><a href="classification.html#cb51-7"></a>nb.model2 &lt;-<span class="st"> </span><span class="kw">naiveBayes</span>(class <span class="op">~</span>., trainset)</span>
+<span id="cb51-8"><a href="classification.html#cb51-8"></a></span>
+<span id="cb51-9"><a href="classification.html#cb51-9"></a>predictions2 &lt;-<span class="st"> </span><span class="kw">predict</span>(nb.model2, testset)</span>
+<span id="cb51-10"><a href="classification.html#cb51-10"></a></span>
+<span id="cb51-11"><a href="classification.html#cb51-11"></a>cm2 &lt;-<span class="st"> </span><span class="kw">confusionMatrix</span>(<span class="kw">as.factor</span>(predictions2),</span>
+<span id="cb51-12"><a href="classification.html#cb51-12"></a>                      <span class="kw">as.factor</span>(groundTruth))</span>
+<span id="cb51-13"><a href="classification.html#cb51-13"></a></span>
+<span id="cb51-14"><a href="classification.html#cb51-14"></a><span class="co"># Print accuracy</span></span>
+<span id="cb51-15"><a href="classification.html#cb51-15"></a>cm2<span class="op">$</span>overall[<span class="st">&quot;Accuracy&quot;</span>]</span>
+<span id="cb51-16"><a href="classification.html#cb51-16"></a><span class="co">#&gt;  Accuracy </span></span>
+<span id="cb51-17"><a href="classification.html#cb51-17"></a><span class="co">#&gt; 0.7501538</span></span></code></pre></div>
+<p>As you can see, the result was the same as the one obtained with our implementation! We implemented our own for illustrative purposes but it is advisable to use already tested and proven packages. Furthermore, this one also supports categorical variables.</p>
+</div>
+</div>
 <div id="dynamic-time-warping" class="section level2">
-<h2><span class="header-section-number">2.4</span> Dynamic Time Warping</h2>
+<h2><span class="header-section-number">2.5</span> Dynamic Time Warping</h2>
 
 <div class="rmdfolder">
 <code>dtw_example.R</code>
 </div>
 
-<p>In the previous activity recognition example, we used the extracted features represented as feature vectors to train the classifiers instead of using the raw data. This can lead to temporal information loss. In the previous example, we could classify the activities with reasonable accuracy since the extracted features were able to retain enough information from the raw data. However, in some cases, the need to retain temporal information is crucial. For example, in hand signature recognition, one needs to check if a query signature matches one of the signatures from a database. The signatures need to have an almost exact match to authenticate a user, i.e, they need to look very similar. If we represent each signature as a feature vector, it can turn out that two signatures have very similar feature vectors even though they look completely different. For example, Figure <a href="classification.html#fig:correlations">2.12</a> shows four datasets. They look very different but they all have the same correlation of <span class="math inline">\(0.816\)</span><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
+<p>In the previous activity recognition example, we used the extracted features represented as feature vectors to train the classifiers instead of using the raw data. This can lead to temporal information loss. In the previous example, we could classify the activities with reasonable accuracy since the extracted features were able to retain enough information from the raw data. However, in some cases, the need to retain temporal information is crucial. For example, in hand signature recognition, one needs to check if a query signature matches one of the signatures from a database. The signatures need to have an almost exact match to authenticate a user, i.e, they need to look very similar. If we represent each signature as a feature vector, it can turn out that two signatures have very similar feature vectors even though they look completely different. For example, Figure <a href="classification.html#fig:correlations">2.14</a> shows four datasets. They look very different but they all have the same correlation of <span class="math inline">\(0.816\)</span><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:correlations"></span>
 <img src="images/correlations.png" alt="Four datasets with the same correlation of 0.816." width="90%" />
 <p class="caption">
-Figure 2.12: Four datasets with the same correlation of 0.816.
+Figure 2.14: Four datasets with the same correlation of 0.816.
 </p>
 </div>
-<p>To avoid this potential issue, we can also include time-dependent information into our models by keeping the order of the data points. Another issue is that two time series that belong to the same class will still have some differences. Every time the same person signs a document the signature will vary a bit. In the same way, when we pronounce a word, sometimes we emphasize some letters or speak at different speeds. Figure <a href="classification.html#fig:verygood">2.13</a> shows two versions of the sentence “very good”. In the second one (bottom) the speaker emphasizes the “e” and as a result, the two sentences are not aligned in time anymore but they have the same meaning.</p>
+<p>To avoid this potential issue, we can also include time-dependent information into our models by keeping the order of the data points. Another issue is that two time series that belong to the same class will still have some differences. Every time the same person signs a document the signature will vary a bit. In the same way, when we pronounce a word, sometimes we emphasize some letters or speak at different speeds. Figure <a href="classification.html#fig:verygood">2.15</a> shows two versions of the sentence “very good”. In the second one (bottom) the speaker emphasizes the “e” and as a result, the two sentences are not aligned in time anymore but they have the same meaning.</p>
 <div class="figure" style="text-align: center"><span id="fig:verygood"></span>
 <img src="images/verygood.png" alt="Time shift example between two sentences." width="30%" />
 <p class="caption">
-Figure 2.13: Time shift example between two sentences.
+Figure 2.15: Time shift example between two sentences.
 </p>
 </div>
 <p>If we wanted to compare two sequences we could use the well known Euclidean distance. However since the two sequences may not be aligned in time, the result could be misleading. To account for this “time-shift” effect in time series data we can use <em>Dynamic Time Warping</em> (DTW) <span class="citation">(Sakoe et al. <a href="#ref-sakoe1990dynamic" role="doc-biblioref">1990</a>)</span> when comparing two time series. DTW is a method that:</p>
@@ -962,11 +1245,11 @@ Figure 2.13: Time shift example between two sentences.
 query&amp;=(2,2,2,4,4,3)\\
 ref&amp;=(2,2,3,3,2)
 \end{align*}\]</span></p>
-<p>The first thing to note is that both sequences differ in length. Figure <a href="classification.html#fig:queryref">2.14</a> shows a plot with the two sequences. The <em>query</em> is the solid line. It can be seen that the <em>query</em> seems to be shifted to the right one position with respect to the <em>reference</em>. The plot also shows the resulting alignment after applying the DTW algorithm (dashed lines between the sequences). The resulting distance between the sequences is <span class="math inline">\(3\)</span>. In the following, we will see how the problem can be formalized and the steps to compute that final distance of <span class="math inline">\(3\)</span>. Don’t worry if you find the math notation a bit difficult to grasp at this pint. A step by step example will follow which should help to explain how the method works.</p>
+<p>The first thing to note is that both sequences differ in length. Figure <a href="classification.html#fig:queryref">2.16</a> shows a plot with the two sequences. The <em>query</em> is the solid line. It can be seen that the <em>query</em> seems to be shifted to the right one position with respect to the <em>reference</em>. The plot also shows the resulting alignment after applying the DTW algorithm (dashed lines between the sequences). The resulting distance between the sequences is <span class="math inline">\(3\)</span>. In the following, we will see how the problem can be formalized and the steps to compute that final distance of <span class="math inline">\(3\)</span>. Don’t worry if you find the math notation a bit difficult to grasp at this pint. A step by step example will follow which should help to explain how the method works.</p>
 <div class="figure" style="text-align: center"><span id="fig:queryref"></span>
 <img src="images/query_ref.png" alt="DTW alignment between the query and reference sequences (Solid line is the query)." width="100%" />
 <p class="caption">
-Figure 2.14: DTW alignment between the query and reference sequences (Solid line is the query).
+Figure 2.16: DTW alignment between the query and reference sequences (Solid line is the query).
 </p>
 </div>
 <p>The problem of aligning two sequences can be formalized as follows <span class="citation">(Rabiner and Juang <a href="#ref-Rabiner1993" role="doc-biblioref">1993</a>)</span>. Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two sequences:</p>
@@ -986,12 +1269,12 @@ i_y&amp;=\phi_y (k), k=1,2,\dots,T.
 <p>The total dissimilarity between the two sequences is:</p>
 <p><span class="math display" id="eq:dtwDissimilarity">\[\begin{equation}
   d_\phi (X,Y) = \sum_{k=1}^T{d\left(\phi_x (k), \phi_y (k)\right)}
-  \tag{2.10}
+  \tag{2.14}
 \end{equation}\]</span></p>
 <p>The aim is to find the warping function <span class="math inline">\(\phi\)</span> that minimizes the total dissimilarity:</p>
 <p><span class="math display" id="eq:dtwmin">\[\begin{equation}
   \operatorname*{min}_{\phi} d_\phi (X,Y)
-  \tag{2.11}
+  \tag{2.15}
 \end{equation}\]</span></p>
 <p>The solution can be efficiently computed using dynamic programming. Usually, when solving this minimization problem, some constraints are applied:</p>
 <ul>
@@ -1020,76 +1303,76 @@ i_y&amp;=\phi_y (k), k=1,2,\dots,T.
 Q&amp;=(2,2,2,4,4,3) \\
 R&amp;=(2,2,3,3,2)
 \end{align*}\]</span></p>
-<p>The first step is to compute a <em>local cost matrix</em>. This is just a matrix that contains the distance between every pair of points between the two sequences. For this example, we will use the <em>Manhattan distance</em>. Since our sequences are <span class="math inline">\(1\)</span>-dimensional this distance can be computed as the absolute difference <span class="math inline">\(|x_i - y_i|\)</span>. Figure <a href="classification.html#fig:localCost">2.15</a> shows the resulting local cost matrix.</p>
+<p>The first step is to compute a <em>local cost matrix</em>. This is just a matrix that contains the distance between every pair of points between the two sequences. For this example, we will use the <em>Manhattan distance</em>. Since our sequences are <span class="math inline">\(1\)</span>-dimensional this distance can be computed as the absolute difference <span class="math inline">\(|x_i - y_i|\)</span>. Figure <a href="classification.html#fig:localCost">2.17</a> shows the resulting local cost matrix.</p>
 <div class="figure" style="text-align: center"><span id="fig:localCost"></span>
 <img src="images/localCostMatrix.png" alt="Local cost matrix between Q and R." width="50%" />
 <p class="caption">
-Figure 2.15: Local cost matrix between Q and R.
+Figure 2.17: Local cost matrix between Q and R.
 </p>
 </div>
-<p>For example, position <span class="math inline">\((1,1)=0\)</span> (<em>row</em>,<em>column</em>) because the first element of <span class="math inline">\(Q\)</span> is <span class="math inline">\(2\)</span> and the first element of <span class="math inline">\(R\)</span> is also <span class="math inline">\(2\)</span>, thus, <span class="math inline">\(|2-2|=0\)</span>. The rest of the matrix is filled in the same way. In dynamic programming, partial results are computed and stored in a table. Figure <a href="classification.html#fig:dynamicTable">2.16</a> shows the final dynamic programming table computed from the local cost matrix. Initially, this table is empty. We start to fill it from bottom left at position <span class="math inline">\((1,1)\)</span>. From the local cost matrix, the cost at position <span class="math inline">\((1,1)\)</span> is <span class="math inline">\(0\)</span> so the cost at that position in the dynamic programming table is <span class="math inline">\(0\)</span>. Then we can start filling in the contiguous cells. The only direction from which we can arrive at position <span class="math inline">\((1,2)\)</span> is from the west. The cost at position <span class="math inline">\((1,2)\)</span> from the local cost matrix is <span class="math inline">\(0\)</span> and the cost of the <em>minimum</em> of the cell from the west <span class="math inline">\((1,1)\)</span> is also <span class="math inline">\(0\)</span>. So <span class="math inline">\(W:0+0=0\)</span>. For each cell we add the current cost plus the minimum cost when coming from the contiguous cell. The minimum costs are marked with red. For some cells it is possible to arrive from three different directions: S, W, and SW, thus we need to compute the cost when coming from each of those. The final minimum cost at position <span class="math inline">\((5,6)\)</span> is <span class="math inline">\(3\)</span>. Thus, that is the global DTW distance. In the example, it is possible to get the minimum at <span class="math inline">\((5,6)\)</span> when arriving from the south or southwest.</p>
+<p>For example, position <span class="math inline">\((1,1)=0\)</span> (<em>row</em>,<em>column</em>) because the first element of <span class="math inline">\(Q\)</span> is <span class="math inline">\(2\)</span> and the first element of <span class="math inline">\(R\)</span> is also <span class="math inline">\(2\)</span>, thus, <span class="math inline">\(|2-2|=0\)</span>. The rest of the matrix is filled in the same way. In dynamic programming, partial results are computed and stored in a table. Figure <a href="classification.html#fig:dynamicTable">2.18</a> shows the final dynamic programming table computed from the local cost matrix. Initially, this table is empty. We start to fill it from bottom left at position <span class="math inline">\((1,1)\)</span>. From the local cost matrix, the cost at position <span class="math inline">\((1,1)\)</span> is <span class="math inline">\(0\)</span> so the cost at that position in the dynamic programming table is <span class="math inline">\(0\)</span>. Then we can start filling in the contiguous cells. The only direction from which we can arrive at position <span class="math inline">\((1,2)\)</span> is from the west. The cost at position <span class="math inline">\((1,2)\)</span> from the local cost matrix is <span class="math inline">\(0\)</span> and the cost of the <em>minimum</em> of the cell from the west <span class="math inline">\((1,1)\)</span> is also <span class="math inline">\(0\)</span>. So <span class="math inline">\(W:0+0=0\)</span>. For each cell we add the current cost plus the minimum cost when coming from the contiguous cell. The minimum costs are marked with red. For some cells it is possible to arrive from three different directions: S, W, and SW, thus we need to compute the cost when coming from each of those. The final minimum cost at position <span class="math inline">\((5,6)\)</span> is <span class="math inline">\(3\)</span>. Thus, that is the global DTW distance. In the example, it is possible to get the minimum at <span class="math inline">\((5,6)\)</span> when arriving from the south or southwest.</p>
 <div class="figure" style="text-align: center"><span id="fig:dynamicTable"></span>
 <img src="images/dynamicprogramming.png" alt="Dynamic programming table." width="90%" />
 <p class="caption">
-Figure 2.16: Dynamic programming table.
+Figure 2.18: Dynamic programming table.
 </p>
 </div>
-<p>Once the table is filled in, we can backtrack starting at <span class="math inline">\((5,6)\)</span> to find the warping functions. Figure <a href="classification.html#fig:warpingResult">2.17</a> shows the final warping functions. Because of the endpoint constraints we know that <span class="math inline">\(\phi_Q(1)=1, \phi_R(1)=1\)</span> and <span class="math inline">\(\phi_Q(6)=6, \phi_R(6)=5\)</span>. Then, from <span class="math inline">\((5,6)\)</span> the minimum contiguous value is <span class="math inline">\(2\)</span> coming from SW, thus <span class="math inline">\(\phi_Q(5)=5, \phi_R(5)=4\)</span> and so on. Note that we could also had chosen to arrive from the south with the same minimum value of <span class="math inline">\(2\)</span> but still this would have resulted in the same overall distance. The dashed line in figure <a href="classification.html#fig:dynamicTable">2.16</a> shows the full backtracking.</p>
+<p>Once the table is filled in, we can backtrack starting at <span class="math inline">\((5,6)\)</span> to find the warping functions. Figure <a href="classification.html#fig:warpingResult">2.19</a> shows the final warping functions. Because of the endpoint constraints we know that <span class="math inline">\(\phi_Q(1)=1, \phi_R(1)=1\)</span> and <span class="math inline">\(\phi_Q(6)=6, \phi_R(6)=5\)</span>. Then, from <span class="math inline">\((5,6)\)</span> the minimum contiguous value is <span class="math inline">\(2\)</span> coming from SW, thus <span class="math inline">\(\phi_Q(5)=5, \phi_R(5)=4\)</span> and so on. Note that we could also had chosen to arrive from the south with the same minimum value of <span class="math inline">\(2\)</span> but still this would have resulted in the same overall distance. The dashed line in figure <a href="classification.html#fig:dynamicTable">2.18</a> shows the full backtracking.</p>
 <div class="figure" style="text-align: center"><span id="fig:warpingResult"></span>
 <img src="images/warpingResult.png" alt="Resulting warping functions." width="70%" />
 <p class="caption">
-Figure 2.17: Resulting warping functions.
+Figure 2.19: Resulting warping functions.
 </p>
 </div>
 <p>The runtime complexity of DTW is <span class="math inline">\(O(T_x T_y)\)</span> which is the required time to compute the local cost matrix and the dynamic programming table.</p>
 <p>In R, the <code>dtw</code> package <span class="citation">(Giorgino <a href="#ref-giorgino2009" role="doc-biblioref">2009</a>)</span> has the function <code>dtw()</code> to compute the DTW distance between two sequences. Let’s use this package to solve the previous example.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="classification.html#cb36-1"></a><span class="kw">library</span>(<span class="st">&quot;dtw&quot;</span>)</span>
-<span id="cb36-2"><a href="classification.html#cb36-2"></a></span>
-<span id="cb36-3"><a href="classification.html#cb36-3"></a><span class="co"># Sequences from the example</span></span>
-<span id="cb36-4"><a href="classification.html#cb36-4"></a>query &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">3</span>)</span>
-<span id="cb36-5"><a href="classification.html#cb36-5"></a>ref &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>)</span>
-<span id="cb36-6"><a href="classification.html#cb36-6"></a></span>
-<span id="cb36-7"><a href="classification.html#cb36-7"></a><span class="co"># Find dtw distance.</span></span>
-<span id="cb36-8"><a href="classification.html#cb36-8"></a>alignment &lt;-<span class="st"> </span><span class="kw">dtw</span>(query, ref,</span>
-<span id="cb36-9"><a href="classification.html#cb36-9"></a>                 <span class="dt">step =</span> symmetric1, <span class="dt">keep.internals =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="classification.html#cb52-1"></a><span class="kw">library</span>(<span class="st">&quot;dtw&quot;</span>)</span>
+<span id="cb52-2"><a href="classification.html#cb52-2"></a></span>
+<span id="cb52-3"><a href="classification.html#cb52-3"></a><span class="co"># Sequences from the example</span></span>
+<span id="cb52-4"><a href="classification.html#cb52-4"></a>query &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">3</span>)</span>
+<span id="cb52-5"><a href="classification.html#cb52-5"></a>ref &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>)</span>
+<span id="cb52-6"><a href="classification.html#cb52-6"></a></span>
+<span id="cb52-7"><a href="classification.html#cb52-7"></a><span class="co"># Find dtw distance.</span></span>
+<span id="cb52-8"><a href="classification.html#cb52-8"></a>alignment &lt;-<span class="st"> </span><span class="kw">dtw</span>(query, ref,</span>
+<span id="cb52-9"><a href="classification.html#cb52-9"></a>                 <span class="dt">step =</span> symmetric1, <span class="dt">keep.internals =</span> T)</span></code></pre></div>
 <p>The <code>keep.internals = T</code> keeps the input data so it can be accessed later, e.g., for plotting. The cost matrix and final distance can be accessed from the resulting object. The <code>step</code> argument specifies a step pattern. A step pattern describes some of the algorithm constraints such as endpoint and local constraints. In this case, we use <code>symmetric1</code> which applies the constraints explained before. We can access the cost matrix and the final distance <span class="math inline">\(\phi_x\)</span> and <span class="math inline">\(\phi_y\)</span> as follows:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="classification.html#cb37-1"></a>alignment<span class="op">$</span>localCostMatrix</span>
-<span id="cb37-2"><a href="classification.html#cb37-2"></a><span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5]</span></span>
-<span id="cb37-3"><a href="classification.html#cb37-3"></a><span class="co">#&gt; [1,]    0    0    1    1    0</span></span>
-<span id="cb37-4"><a href="classification.html#cb37-4"></a><span class="co">#&gt; [2,]    0    0    1    1    0</span></span>
-<span id="cb37-5"><a href="classification.html#cb37-5"></a><span class="co">#&gt; [3,]    0    0    1    1    0</span></span>
-<span id="cb37-6"><a href="classification.html#cb37-6"></a><span class="co">#&gt; [4,]    2    2    1    1    2</span></span>
-<span id="cb37-7"><a href="classification.html#cb37-7"></a><span class="co">#&gt; [5,]    2    2    1    1    2</span></span>
-<span id="cb37-8"><a href="classification.html#cb37-8"></a><span class="co">#&gt; [6,]    1    1    0    0    1</span></span>
-<span id="cb37-9"><a href="classification.html#cb37-9"></a></span>
-<span id="cb37-10"><a href="classification.html#cb37-10"></a>alignment<span class="op">$</span>distance</span>
-<span id="cb37-11"><a href="classification.html#cb37-11"></a><span class="co">#&gt; [1] 3</span></span>
-<span id="cb37-12"><a href="classification.html#cb37-12"></a></span>
-<span id="cb37-13"><a href="classification.html#cb37-13"></a>alignment<span class="op">$</span>index1</span>
-<span id="cb37-14"><a href="classification.html#cb37-14"></a><span class="co">#&gt; [1] 1 2 3 4 5 6</span></span>
-<span id="cb37-15"><a href="classification.html#cb37-15"></a></span>
-<span id="cb37-16"><a href="classification.html#cb37-16"></a>alignment<span class="op">$</span>index2</span>
-<span id="cb37-17"><a href="classification.html#cb37-17"></a><span class="co">#&gt; [1] 1 1 2 3 4 5</span></span></code></pre></div>
-<p>The local cost matrix is the same one as in Figure <a href="classification.html#fig:localCost">2.15</a> but in rotated form. The resulting object also has the dynamic programming table which can be plotted along with the resulting backtracking.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="classification.html#cb38-1"></a>ccm &lt;-<span class="st"> </span>alignment<span class="op">$</span>costMatrix</span>
-<span id="cb38-2"><a href="classification.html#cb38-2"></a><span class="kw">image</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(ccm), <span class="dt">y =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">ncol</span>(ccm),</span>
-<span id="cb38-3"><a href="classification.html#cb38-3"></a>      ccm, <span class="dt">xlab =</span> <span class="st">&quot;Q&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;R&quot;</span>)</span>
-<span id="cb38-4"><a href="classification.html#cb38-4"></a><span class="kw">text</span>(<span class="kw">row</span>(ccm), <span class="kw">col</span>(ccm), <span class="dt">label =</span> ccm)</span>
-<span id="cb38-5"><a href="classification.html#cb38-5"></a><span class="kw">lines</span>(alignment<span class="op">$</span>index1, alignment<span class="op">$</span>index2)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="classification.html#cb53-1"></a>alignment<span class="op">$</span>localCostMatrix</span>
+<span id="cb53-2"><a href="classification.html#cb53-2"></a><span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5]</span></span>
+<span id="cb53-3"><a href="classification.html#cb53-3"></a><span class="co">#&gt; [1,]    0    0    1    1    0</span></span>
+<span id="cb53-4"><a href="classification.html#cb53-4"></a><span class="co">#&gt; [2,]    0    0    1    1    0</span></span>
+<span id="cb53-5"><a href="classification.html#cb53-5"></a><span class="co">#&gt; [3,]    0    0    1    1    0</span></span>
+<span id="cb53-6"><a href="classification.html#cb53-6"></a><span class="co">#&gt; [4,]    2    2    1    1    2</span></span>
+<span id="cb53-7"><a href="classification.html#cb53-7"></a><span class="co">#&gt; [5,]    2    2    1    1    2</span></span>
+<span id="cb53-8"><a href="classification.html#cb53-8"></a><span class="co">#&gt; [6,]    1    1    0    0    1</span></span>
+<span id="cb53-9"><a href="classification.html#cb53-9"></a></span>
+<span id="cb53-10"><a href="classification.html#cb53-10"></a>alignment<span class="op">$</span>distance</span>
+<span id="cb53-11"><a href="classification.html#cb53-11"></a><span class="co">#&gt; [1] 3</span></span>
+<span id="cb53-12"><a href="classification.html#cb53-12"></a></span>
+<span id="cb53-13"><a href="classification.html#cb53-13"></a>alignment<span class="op">$</span>index1</span>
+<span id="cb53-14"><a href="classification.html#cb53-14"></a><span class="co">#&gt; [1] 1 2 3 4 5 6</span></span>
+<span id="cb53-15"><a href="classification.html#cb53-15"></a></span>
+<span id="cb53-16"><a href="classification.html#cb53-16"></a>alignment<span class="op">$</span>index2</span>
+<span id="cb53-17"><a href="classification.html#cb53-17"></a><span class="co">#&gt; [1] 1 1 2 3 4 5</span></span></code></pre></div>
+<p>The local cost matrix is the same one as in Figure <a href="classification.html#fig:localCost">2.17</a> but in rotated form. The resulting object also has the dynamic programming table which can be plotted along with the resulting backtracking.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="classification.html#cb54-1"></a>ccm &lt;-<span class="st"> </span>alignment<span class="op">$</span>costMatrix</span>
+<span id="cb54-2"><a href="classification.html#cb54-2"></a><span class="kw">image</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(ccm), <span class="dt">y =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">ncol</span>(ccm),</span>
+<span id="cb54-3"><a href="classification.html#cb54-3"></a>      ccm, <span class="dt">xlab =</span> <span class="st">&quot;Q&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;R&quot;</span>)</span>
+<span id="cb54-4"><a href="classification.html#cb54-4"></a><span class="kw">text</span>(<span class="kw">row</span>(ccm), <span class="kw">col</span>(ccm), <span class="dt">label =</span> ccm)</span>
+<span id="cb54-5"><a href="classification.html#cb54-5"></a><span class="kw">lines</span>(alignment<span class="op">$</span>index1, alignment<span class="op">$</span>index2)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:backtracking"></span>
 <img src="images/backtracking.png" alt="Dynamic programming table and backtracking." width="90%" />
 <p class="caption">
-Figure 2.18: Dynamic programming table and backtracking.
+Figure 2.20: Dynamic programming table and backtracking.
 </p>
 </div>
-<p>And finally, the aligned sequences can be plotted. The previous Figure <a href="classification.html#fig:queryref">2.14</a> shows the result of the following command.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="classification.html#cb39-1"></a><span class="kw">plot</span>(alignment, <span class="dt">type=</span><span class="st">&quot;two&quot;</span>, <span class="dt">off=</span><span class="fl">1.5</span>,</span>
-<span id="cb39-2"><a href="classification.html#cb39-2"></a>     <span class="dt">match.lty=</span><span class="dv">2</span>,</span>
-<span id="cb39-3"><a href="classification.html#cb39-3"></a>     <span class="dt">match.indices=</span><span class="dv">10</span>,</span>
-<span id="cb39-4"><a href="classification.html#cb39-4"></a>     <span class="dt">main=</span><span class="st">&quot;DTW resulting alignment&quot;</span>,</span>
-<span id="cb39-5"><a href="classification.html#cb39-5"></a>     <span class="dt">xlab=</span><span class="st">&quot;time&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;magnitude&quot;</span>)</span></code></pre></div>
+<p>And finally, the aligned sequences can be plotted. The previous Figure <a href="classification.html#fig:queryref">2.16</a> shows the result of the following command.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="classification.html#cb55-1"></a><span class="kw">plot</span>(alignment, <span class="dt">type=</span><span class="st">&quot;two&quot;</span>, <span class="dt">off=</span><span class="fl">1.5</span>,</span>
+<span id="cb55-2"><a href="classification.html#cb55-2"></a>     <span class="dt">match.lty=</span><span class="dv">2</span>,</span>
+<span id="cb55-3"><a href="classification.html#cb55-3"></a>     <span class="dt">match.indices=</span><span class="dv">10</span>,</span>
+<span id="cb55-4"><a href="classification.html#cb55-4"></a>     <span class="dt">main=</span><span class="st">&quot;DTW resulting alignment&quot;</span>,</span>
+<span id="cb55-5"><a href="classification.html#cb55-5"></a>     <span class="dt">xlab=</span><span class="st">&quot;time&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;magnitude&quot;</span>)</span></code></pre></div>
 <div id="sechandgestures" class="section level3">
-<h3><span class="header-section-number">2.4.1</span> Hand Gesture Recognition</h3>
+<h3><span class="header-section-number">2.5.1</span> Hand Gesture Recognition</h3>
 
 <div class="rmdfolder">
 <code>hand_gestures.R</code>, <code>hand_gestures_auxiliary.R</code>
@@ -1099,144 +1382,144 @@ Figure 2.18: Dynamic programming table and backtracking.
 <p>Gestures can also be used to develop user-computer interaction applications. The following video shows an example application of gesture recognition for domotics. The application determines the indoor location using <span class="math inline">\(k\)</span>-nn as it was shown in this chapter. The gestures are classified using DTW (I’ll show how to do it in a moment). Based on the location and type of gesture, an specific home appliance is activated. I programmed that app some time ago using the same algorithms presented here.</p>
 <iframe src="https://www.youtube.com/embed/47-35YmimN4" width="672" height="400px">
 </iframe>
-<p>To demonstrate how DTW can be used for hand gesture recognition, we will examine the <em>HAND GESTURES</em> dataset that was collected with a Smartphone using its accelerometer sensor. The data was collected by <span class="math inline">\(10\)</span> individuals who performed <span class="math inline">\(5\)</span> repetitions of <span class="math inline">\(10\)</span> different gestures (<em>‘triangle’</em>, <em>‘square’</em>, <em>‘circle’</em>, <em>‘a’</em>, <em>‘b’</em>, <em>‘c’</em>, <em>‘1’</em>, <em>‘2’</em>, <em>‘3’</em>, <em>‘4’</em>). The sensor is a tri-axial accelerometer that returns values for the <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span> axes. The participants were not instructed to hold the smartphone in any particular way. The sampling rate was set at <span class="math inline">\(50\)</span> Hz. To record a gesture, the user presses the phone’s screen with her/his thumb, performs the gesture in the air, and stops pressing the screen after the gesture is complete. Figure <a href="classification.html#fig:gesturesFigure">2.19</a> shows the start and end positions of the <span class="math inline">\(10\)</span> gestures.</p>
+<p>To demonstrate how DTW can be used for hand gesture recognition, we will examine the <em>HAND GESTURES</em> dataset that was collected with a Smartphone using its accelerometer sensor. The data was collected by <span class="math inline">\(10\)</span> individuals who performed <span class="math inline">\(5\)</span> repetitions of <span class="math inline">\(10\)</span> different gestures (<em>‘triangle’</em>, <em>‘square’</em>, <em>‘circle’</em>, <em>‘a’</em>, <em>‘b’</em>, <em>‘c’</em>, <em>‘1’</em>, <em>‘2’</em>, <em>‘3’</em>, <em>‘4’</em>). The sensor is a tri-axial accelerometer that returns values for the <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span> axes. The participants were not instructed to hold the smartphone in any particular way. The sampling rate was set at <span class="math inline">\(50\)</span> Hz. To record a gesture, the user presses the phone’s screen with her/his thumb, performs the gesture in the air, and stops pressing the screen after the gesture is complete. Figure <a href="classification.html#fig:gesturesFigure">2.21</a> shows the start and end positions of the <span class="math inline">\(10\)</span> gestures.</p>
 <div class="figure" style="text-align: center"><span id="fig:gesturesFigure"></span>
 <img src="images/gestures.png" alt="Paths for the 10 considered gestures." width="40%" />
 <p class="caption">
-Figure 2.19: Paths for the 10 considered gestures.
+Figure 2.21: Paths for the 10 considered gestures.
 </p>
 </div>
 <p>In order to make the recognition orientation-independent, we can compute the <em>magnitude</em> of the <span class="math inline">\(3\)</span> accelerometer axes. This will provide us with the overall movement patterns regardless of orientation.</p>
 <p><span class="math display" id="eq:magnitude">\[\begin{equation}
 Magnitude(t) = \sqrt {{a_x}{{(t)}^2} + {a_y}{{(t)}^2} + {a_z}{{(t)}^2}}
-\tag{2.12}
+\tag{2.16}
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\({a_x}{{(t)}}\)</span>, <span class="math inline">\({a_y}{{(t)}}\)</span> and <span class="math inline">\({a_z}{{(t)}}\)</span> are the accelerations at time <span class="math inline">\(t\)</span>.</p>
-<p>Figure <a href="classification.html#fig:handGestureMagnitude">2.20</a> shows the raw accelerometer values (dashed lines) for a <em>triangle</em> gesture. The solid line shows the resulting magnitude. This will also simplify things since we will now work with <span class="math inline">\(1\)</span>-dimensional sequences by just using the magnitude instead of the other <span class="math inline">\(3\)</span> axes.</p>
+<p>Figure <a href="classification.html#fig:handGestureMagnitude">2.22</a> shows the raw accelerometer values (dashed lines) for a <em>triangle</em> gesture. The solid line shows the resulting magnitude. This will also simplify things since we will now work with <span class="math inline">\(1\)</span>-dimensional sequences by just using the magnitude instead of the other <span class="math inline">\(3\)</span> axes.</p>
 <div class="figure" style="text-align: center"><span id="fig:handGestureMagnitude"></span>
 <img src="images/triangle_xyzmagnitude.png" alt="Triangle gesture." width="90%" />
 <p class="caption">
-Figure 2.20: Triangle gesture.
+Figure 2.22: Triangle gesture.
 </p>
 </div>
-<p>The gestures are stored in text files that contain the <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span> recordings. The script <code>hand_gestures_auxiliary.R</code> has some auxiliary functions to preprocess the data. Since the sequences of each gesture are of varying length, storing them as a data frame could be problematic since data frames have fixed sizes. Instead, the <code>gen.instances()</code> function processes the files and returns all hand gestures as a list. This function also computes the magnitude (equation <a href="classification.html#eq:magnitude">(2.12)</a>). The following code (from <code>hand_gestures.R</code>) calls the <code>gen.instances()</code> function and stores the results in the <code>instances</code> variable which is a list. Then, we select the first and second instances to be the query and the reference.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="classification.html#cb40-1"></a><span class="co"># Format instances from files.</span></span>
-<span id="cb40-2"><a href="classification.html#cb40-2"></a>instances &lt;-<span class="st"> </span><span class="kw">gen.instances</span>(<span class="st">&quot;../data/hand_gestures/&quot;</span>)</span>
-<span id="cb40-3"><a href="classification.html#cb40-3"></a></span>
-<span id="cb40-4"><a href="classification.html#cb40-4"></a><span class="co"># Use first instance as the query.</span></span>
-<span id="cb40-5"><a href="classification.html#cb40-5"></a>query &lt;-<span class="st"> </span>instances[[<span class="dv">1</span>]]</span>
-<span id="cb40-6"><a href="classification.html#cb40-6"></a></span>
-<span id="cb40-7"><a href="classification.html#cb40-7"></a><span class="co"># Use second instance as the reference.</span></span>
-<span id="cb40-8"><a href="classification.html#cb40-8"></a>ref &lt;-<span class="st"> </span>instances[[<span class="dv">2</span>]]</span></code></pre></div>
+<p>The gestures are stored in text files that contain the <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span> recordings. The script <code>hand_gestures_auxiliary.R</code> has some auxiliary functions to preprocess the data. Since the sequences of each gesture are of varying length, storing them as a data frame could be problematic since data frames have fixed sizes. Instead, the <code>gen.instances()</code> function processes the files and returns all hand gestures as a list. This function also computes the magnitude (equation <a href="classification.html#eq:magnitude">(2.16)</a>). The following code (from <code>hand_gestures.R</code>) calls the <code>gen.instances()</code> function and stores the results in the <code>instances</code> variable which is a list. Then, we select the first and second instances to be the query and the reference.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="classification.html#cb56-1"></a><span class="co"># Format instances from files.</span></span>
+<span id="cb56-2"><a href="classification.html#cb56-2"></a>instances &lt;-<span class="st"> </span><span class="kw">gen.instances</span>(<span class="st">&quot;../data/hand_gestures/&quot;</span>)</span>
+<span id="cb56-3"><a href="classification.html#cb56-3"></a></span>
+<span id="cb56-4"><a href="classification.html#cb56-4"></a><span class="co"># Use first instance as the query.</span></span>
+<span id="cb56-5"><a href="classification.html#cb56-5"></a>query &lt;-<span class="st"> </span>instances[[<span class="dv">1</span>]]</span>
+<span id="cb56-6"><a href="classification.html#cb56-6"></a></span>
+<span id="cb56-7"><a href="classification.html#cb56-7"></a><span class="co"># Use second instance as the reference.</span></span>
+<span id="cb56-8"><a href="classification.html#cb56-8"></a>ref &lt;-<span class="st"> </span>instances[[<span class="dv">2</span>]]</span></code></pre></div>
 <p>Each element in <code>instances</code> is also a list that stores the <em>type</em> and <em>values</em> (magnitude) of each gesture.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="classification.html#cb41-1"></a><span class="co"># Print their respective classes</span></span>
-<span id="cb41-2"><a href="classification.html#cb41-2"></a><span class="kw">print</span>(query<span class="op">$</span>type)</span>
-<span id="cb41-3"><a href="classification.html#cb41-3"></a><span class="co">#&gt; [1] &quot;1&quot;</span></span>
-<span id="cb41-4"><a href="classification.html#cb41-4"></a></span>
-<span id="cb41-5"><a href="classification.html#cb41-5"></a><span class="kw">print</span>(ref<span class="op">$</span>type)</span>
-<span id="cb41-6"><a href="classification.html#cb41-6"></a><span class="co">#&gt; [1] &quot;1&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="classification.html#cb57-1"></a><span class="co"># Print their respective classes</span></span>
+<span id="cb57-2"><a href="classification.html#cb57-2"></a><span class="kw">print</span>(query<span class="op">$</span>type)</span>
+<span id="cb57-3"><a href="classification.html#cb57-3"></a><span class="co">#&gt; [1] &quot;1&quot;</span></span>
+<span id="cb57-4"><a href="classification.html#cb57-4"></a></span>
+<span id="cb57-5"><a href="classification.html#cb57-5"></a><span class="kw">print</span>(ref<span class="op">$</span>type)</span>
+<span id="cb57-6"><a href="classification.html#cb57-6"></a><span class="co">#&gt; [1] &quot;1&quot;</span></span></code></pre></div>
 <p>Here, the first two instances are of type <em>‘1’</em>. We can also print the magnitude values.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="classification.html#cb42-1"></a><span class="co"># Print values.</span></span>
-<span id="cb42-2"><a href="classification.html#cb42-2"></a><span class="kw">print</span>(query<span class="op">$</span>values)</span>
-<span id="cb42-3"><a href="classification.html#cb42-3"></a><span class="co">#&gt; [1]  9.167477  9.291464  9.729926  9.901090  ....</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="classification.html#cb58-1"></a><span class="co"># Print values.</span></span>
+<span id="cb58-2"><a href="classification.html#cb58-2"></a><span class="kw">print</span>(query<span class="op">$</span>values)</span>
+<span id="cb58-3"><a href="classification.html#cb58-3"></a><span class="co">#&gt; [1]  9.167477  9.291464  9.729926  9.901090  ....</span></span></code></pre></div>
 <p>In this case, both classes are “1”. We can use the <code>dtw()</code> function to compute the similarity between the <em>query</em> and the <em>reference</em> instance and plot the resulting alignment.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="classification.html#cb43-1"></a>alignment &lt;-<span class="st"> </span><span class="kw">dtw</span>(query<span class="op">$</span>values, ref<span class="op">$</span>values, <span class="dt">keep =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb43-2"><a href="classification.html#cb43-2"></a></span>
-<span id="cb43-3"><a href="classification.html#cb43-3"></a><span class="co"># Print similarity (distance)</span></span>
-<span id="cb43-4"><a href="classification.html#cb43-4"></a>alignment<span class="op">$</span>distance</span>
-<span id="cb43-5"><a href="classification.html#cb43-5"></a><span class="co">#&gt; [1] 68.56493</span></span>
-<span id="cb43-6"><a href="classification.html#cb43-6"></a></span>
-<span id="cb43-7"><a href="classification.html#cb43-7"></a><span class="co"># Plot result.</span></span>
-<span id="cb43-8"><a href="classification.html#cb43-8"></a><span class="kw">plot</span>(alignment, <span class="dt">type=</span><span class="st">&quot;two&quot;</span>, <span class="dt">off=</span><span class="dv">1</span>, <span class="dt">match.lty=</span><span class="dv">2</span>, <span class="dt">match.indices=</span><span class="dv">40</span>,</span>
-<span id="cb43-9"><a href="classification.html#cb43-9"></a>     <span class="dt">main=</span><span class="st">&quot;DTW resulting alignment&quot;</span>,</span>
-<span id="cb43-10"><a href="classification.html#cb43-10"></a>     <span class="dt">xlab=</span><span class="st">&quot;time&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;magnitude&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="classification.html#cb59-1"></a>alignment &lt;-<span class="st"> </span><span class="kw">dtw</span>(query<span class="op">$</span>values, ref<span class="op">$</span>values, <span class="dt">keep =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb59-2"><a href="classification.html#cb59-2"></a></span>
+<span id="cb59-3"><a href="classification.html#cb59-3"></a><span class="co"># Print similarity (distance)</span></span>
+<span id="cb59-4"><a href="classification.html#cb59-4"></a>alignment<span class="op">$</span>distance</span>
+<span id="cb59-5"><a href="classification.html#cb59-5"></a><span class="co">#&gt; [1] 68.56493</span></span>
+<span id="cb59-6"><a href="classification.html#cb59-6"></a></span>
+<span id="cb59-7"><a href="classification.html#cb59-7"></a><span class="co"># Plot result.</span></span>
+<span id="cb59-8"><a href="classification.html#cb59-8"></a><span class="kw">plot</span>(alignment, <span class="dt">type=</span><span class="st">&quot;two&quot;</span>, <span class="dt">off=</span><span class="dv">1</span>, <span class="dt">match.lty=</span><span class="dv">2</span>, <span class="dt">match.indices=</span><span class="dv">40</span>,</span>
+<span id="cb59-9"><a href="classification.html#cb59-9"></a>     <span class="dt">main=</span><span class="st">&quot;DTW resulting alignment&quot;</span>,</span>
+<span id="cb59-10"><a href="classification.html#cb59-10"></a>     <span class="dt">xlab=</span><span class="st">&quot;time&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;magnitude&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:alignmentExample"></span>
 <img src="images/alignmentExample.png" alt="Resulting alignment." width="90%" />
 <p class="caption">
-Figure 2.21: Resulting alignment.
+Figure 2.23: Resulting alignment.
 </p>
 </div>
 <p>To perform the actual classification, we will use our well-known <span class="math inline">\(k\)</span>-nn classifier with <span class="math inline">\(k=1\)</span>. To classify a <em>query instance</em>, we need to compute the DTW distance from it to every other instance in the training set and predict the label from the closest one. We will test the performance using <span class="math inline">\(10\)</span>-fold cross-validation. Since computing all DTW distances takes some time, we can precompute all pairs of distances and store them in a matrix. The auxiliary function does just that <code>matrix.distances()</code>. Since this can take some minutes, the results are saved so we don’t need to wait again.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="classification.html#cb44-1"></a>D &lt;-<span class="st"> </span><span class="kw">matrix.distances</span>(instances)</span>
-<span id="cb44-2"><a href="classification.html#cb44-2"></a></span>
-<span id="cb44-3"><a href="classification.html#cb44-3"></a><span class="co"># Save results.</span></span>
-<span id="cb44-4"><a href="classification.html#cb44-4"></a><span class="kw">save</span>(D, <span class="dt">file=</span><span class="st">&quot;D.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="classification.html#cb60-1"></a>D &lt;-<span class="st"> </span><span class="kw">matrix.distances</span>(instances)</span>
+<span id="cb60-2"><a href="classification.html#cb60-2"></a></span>
+<span id="cb60-3"><a href="classification.html#cb60-3"></a><span class="co"># Save results.</span></span>
+<span id="cb60-4"><a href="classification.html#cb60-4"></a><span class="kw">save</span>(D, <span class="dt">file=</span><span class="st">&quot;D.RData&quot;</span>)</span></code></pre></div>
 <p>The <code>matrix.distances()</code> returns a list. The first element is an array with the gestures’ classes and the second element is the actual distance matrix. The elements in the diagonal are set to <code>Inf</code> to signal that we don’t want to take into account the dissimilarity between a gesture with itself.</p>
 <p>For convenience, this matrix is already stored in the file <code>D.RData</code> located this chapter’s code directory. The following code performs the <span class="math inline">\(10\)</span>-fold cross-validation and computes the performance results.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="classification.html#cb45-1"></a><span class="co"># Load the DTW distances matrix.</span></span>
-<span id="cb45-2"><a href="classification.html#cb45-2"></a><span class="kw">load</span>(<span class="st">&quot;D.RData&quot;</span>)</span>
-<span id="cb45-3"><a href="classification.html#cb45-3"></a><span class="kw">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb45-4"><a href="classification.html#cb45-4"></a>k &lt;-<span class="st"> </span><span class="dv">10</span> <span class="co"># Number of folds.</span></span>
-<span id="cb45-5"><a href="classification.html#cb45-5"></a>folds &lt;-<span class="st"> </span><span class="kw">sample</span>(k, <span class="dt">size =</span> <span class="kw">length</span>(D[[<span class="dv">1</span>]]), <span class="dt">replace =</span> T)</span>
-<span id="cb45-6"><a href="classification.html#cb45-6"></a>predictions &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb45-7"><a href="classification.html#cb45-7"></a>groundTruth &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb45-8"><a href="classification.html#cb45-8"></a></span>
-<span id="cb45-9"><a href="classification.html#cb45-9"></a><span class="co"># Implement k-nn with k=1.</span></span>
-<span id="cb45-10"><a href="classification.html#cb45-10"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>k){</span>
-<span id="cb45-11"><a href="classification.html#cb45-11"></a>  </span>
-<span id="cb45-12"><a href="classification.html#cb45-12"></a>  trainSet &lt;-<span class="st"> </span><span class="kw">which</span>(folds <span class="op">!=</span><span class="st"> </span>i)</span>
-<span id="cb45-13"><a href="classification.html#cb45-13"></a>  testSet &lt;-<span class="st"> </span><span class="kw">which</span>(folds <span class="op">==</span><span class="st"> </span>i)</span>
-<span id="cb45-14"><a href="classification.html#cb45-14"></a>  train.labels &lt;-<span class="st"> </span>D[[<span class="dv">1</span>]][trainSet]</span>
-<span id="cb45-15"><a href="classification.html#cb45-15"></a>  </span>
-<span id="cb45-16"><a href="classification.html#cb45-16"></a>  <span class="cf">for</span>(query <span class="cf">in</span> testSet){</span>
-<span id="cb45-17"><a href="classification.html#cb45-17"></a>    </span>
-<span id="cb45-18"><a href="classification.html#cb45-18"></a>    type &lt;-<span class="st"> </span>D[[<span class="dv">1</span>]][query]</span>
-<span id="cb45-19"><a href="classification.html#cb45-19"></a>    distances &lt;-<span class="st"> </span>D[[<span class="dv">2</span>]][query, ][trainSet]</span>
-<span id="cb45-20"><a href="classification.html#cb45-20"></a>    </span>
-<span id="cb45-21"><a href="classification.html#cb45-21"></a>    <span class="co"># Return the closest one.</span></span>
-<span id="cb45-22"><a href="classification.html#cb45-22"></a>    nn &lt;-<span class="st"> </span><span class="kw">sort</span>(distances, <span class="dt">index.return =</span> T)<span class="op">$</span>ix[<span class="dv">1</span>]</span>
-<span id="cb45-23"><a href="classification.html#cb45-23"></a>    pred &lt;-<span class="st"> </span>train.labels[nn]</span>
-<span id="cb45-24"><a href="classification.html#cb45-24"></a>    predictions &lt;-<span class="st"> </span><span class="kw">c</span>(predictions, pred)</span>
-<span id="cb45-25"><a href="classification.html#cb45-25"></a>    groundTruth &lt;-<span class="st"> </span><span class="kw">c</span>(groundTruth, type)</span>
-<span id="cb45-26"><a href="classification.html#cb45-26"></a>    </span>
-<span id="cb45-27"><a href="classification.html#cb45-27"></a>  }</span>
-<span id="cb45-28"><a href="classification.html#cb45-28"></a>} <span class="co"># end of for</span></span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="classification.html#cb61-1"></a><span class="co"># Load the DTW distances matrix.</span></span>
+<span id="cb61-2"><a href="classification.html#cb61-2"></a><span class="kw">load</span>(<span class="st">&quot;D.RData&quot;</span>)</span>
+<span id="cb61-3"><a href="classification.html#cb61-3"></a><span class="kw">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb61-4"><a href="classification.html#cb61-4"></a>k &lt;-<span class="st"> </span><span class="dv">10</span> <span class="co"># Number of folds.</span></span>
+<span id="cb61-5"><a href="classification.html#cb61-5"></a>folds &lt;-<span class="st"> </span><span class="kw">sample</span>(k, <span class="dt">size =</span> <span class="kw">length</span>(D[[<span class="dv">1</span>]]), <span class="dt">replace =</span> T)</span>
+<span id="cb61-6"><a href="classification.html#cb61-6"></a>predictions &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb61-7"><a href="classification.html#cb61-7"></a>groundTruth &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb61-8"><a href="classification.html#cb61-8"></a></span>
+<span id="cb61-9"><a href="classification.html#cb61-9"></a><span class="co"># Implement k-nn with k=1.</span></span>
+<span id="cb61-10"><a href="classification.html#cb61-10"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>k){</span>
+<span id="cb61-11"><a href="classification.html#cb61-11"></a>  </span>
+<span id="cb61-12"><a href="classification.html#cb61-12"></a>  trainSet &lt;-<span class="st"> </span><span class="kw">which</span>(folds <span class="op">!=</span><span class="st"> </span>i)</span>
+<span id="cb61-13"><a href="classification.html#cb61-13"></a>  testSet &lt;-<span class="st"> </span><span class="kw">which</span>(folds <span class="op">==</span><span class="st"> </span>i)</span>
+<span id="cb61-14"><a href="classification.html#cb61-14"></a>  train.labels &lt;-<span class="st"> </span>D[[<span class="dv">1</span>]][trainSet]</span>
+<span id="cb61-15"><a href="classification.html#cb61-15"></a>  </span>
+<span id="cb61-16"><a href="classification.html#cb61-16"></a>  <span class="cf">for</span>(query <span class="cf">in</span> testSet){</span>
+<span id="cb61-17"><a href="classification.html#cb61-17"></a>    </span>
+<span id="cb61-18"><a href="classification.html#cb61-18"></a>    type &lt;-<span class="st"> </span>D[[<span class="dv">1</span>]][query]</span>
+<span id="cb61-19"><a href="classification.html#cb61-19"></a>    distances &lt;-<span class="st"> </span>D[[<span class="dv">2</span>]][query, ][trainSet]</span>
+<span id="cb61-20"><a href="classification.html#cb61-20"></a>    </span>
+<span id="cb61-21"><a href="classification.html#cb61-21"></a>    <span class="co"># Return the closest one.</span></span>
+<span id="cb61-22"><a href="classification.html#cb61-22"></a>    nn &lt;-<span class="st"> </span><span class="kw">sort</span>(distances, <span class="dt">index.return =</span> T)<span class="op">$</span>ix[<span class="dv">1</span>]</span>
+<span id="cb61-23"><a href="classification.html#cb61-23"></a>    pred &lt;-<span class="st"> </span>train.labels[nn]</span>
+<span id="cb61-24"><a href="classification.html#cb61-24"></a>    predictions &lt;-<span class="st"> </span><span class="kw">c</span>(predictions, pred)</span>
+<span id="cb61-25"><a href="classification.html#cb61-25"></a>    groundTruth &lt;-<span class="st"> </span><span class="kw">c</span>(groundTruth, type)</span>
+<span id="cb61-26"><a href="classification.html#cb61-26"></a>    </span>
+<span id="cb61-27"><a href="classification.html#cb61-27"></a>  }</span>
+<span id="cb61-28"><a href="classification.html#cb61-28"></a>} <span class="co"># end of for</span></span></code></pre></div>
 <p>The line <code>distances &lt;- D[[2]][query, ][trainSet]</code> retrieves the pre-computed distances between the test <em>query</em> and all gestures in the train set. Then, those distances are sorted in ascending order and the class from the closest one is used as the prediction. Finally, we can compute the performance.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="classification.html#cb46-1"></a>cm &lt;-<span class="st"> </span><span class="kw">confusionMatrix</span>(<span class="kw">factor</span>(predictions),</span>
-<span id="cb46-2"><a href="classification.html#cb46-2"></a>                      <span class="kw">factor</span>(groundTruth))</span>
-<span id="cb46-3"><a href="classification.html#cb46-3"></a></span>
-<span id="cb46-4"><a href="classification.html#cb46-4"></a><span class="co"># Compute performance metrics per class.</span></span>
-<span id="cb46-5"><a href="classification.html#cb46-5"></a>cm<span class="op">$</span>byClass[,<span class="kw">c</span>(<span class="st">&quot;Recall&quot;</span>, <span class="st">&quot;Specificity&quot;</span>, <span class="st">&quot;Precision&quot;</span>, <span class="st">&quot;F1&quot;</span>)]</span>
-<span id="cb46-6"><a href="classification.html#cb46-6"></a><span class="co">#&gt;                   Recall Specificity Precision        F1</span></span>
-<span id="cb46-7"><a href="classification.html#cb46-7"></a><span class="co">#&gt; Class: 1            0.84   0.9911111 0.9130435 0.8750000</span></span>
-<span id="cb46-8"><a href="classification.html#cb46-8"></a><span class="co">#&gt; Class: 2            0.84   0.9866667 0.8750000 0.8571429</span></span>
-<span id="cb46-9"><a href="classification.html#cb46-9"></a><span class="co">#&gt; Class: 3            0.96   0.9911111 0.9230769 0.9411765</span></span>
-<span id="cb46-10"><a href="classification.html#cb46-10"></a><span class="co">#&gt; Class: 4            0.98   0.9933333 0.9423077 0.9607843</span></span>
-<span id="cb46-11"><a href="classification.html#cb46-11"></a><span class="co">#&gt; Class: a            0.78   0.9733333 0.7647059 0.7722772</span></span>
-<span id="cb46-12"><a href="classification.html#cb46-12"></a><span class="co">#&gt; Class: b            0.76   0.9955556 0.9500000 0.8444444</span></span>
-<span id="cb46-13"><a href="classification.html#cb46-13"></a><span class="co">#&gt; Class: c            0.90   1.0000000 1.0000000 0.9473684</span></span>
-<span id="cb46-14"><a href="classification.html#cb46-14"></a><span class="co">#&gt; Class: circleLeft   0.78   0.9622222 0.6964286 0.7358491</span></span>
-<span id="cb46-15"><a href="classification.html#cb46-15"></a><span class="co">#&gt; Class: square       1.00   0.9977778 0.9803922 0.9900990</span></span>
-<span id="cb46-16"><a href="classification.html#cb46-16"></a><span class="co">#&gt; Class: triangle     0.92   0.9711111 0.7796610 0.8440367</span></span>
-<span id="cb46-17"><a href="classification.html#cb46-17"></a></span>
-<span id="cb46-18"><a href="classification.html#cb46-18"></a><span class="co"># Overall performance metrics</span></span>
-<span id="cb46-19"><a href="classification.html#cb46-19"></a><span class="kw">colMeans</span>(cm<span class="op">$</span>byClass[,<span class="kw">c</span>(<span class="st">&quot;Recall&quot;</span>, <span class="st">&quot;Specificity&quot;</span>,</span>
-<span id="cb46-20"><a href="classification.html#cb46-20"></a>                       <span class="st">&quot;Precision&quot;</span>, <span class="st">&quot;F1&quot;</span>)])</span>
-<span id="cb46-21"><a href="classification.html#cb46-21"></a><span class="co">#&gt;     Recall Specificity   Precision          F1 </span></span>
-<span id="cb46-22"><a href="classification.html#cb46-22"></a><span class="co">#&gt;  0.8760000   0.9862222   0.8824616   0.8768178 </span></span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="classification.html#cb62-1"></a>cm &lt;-<span class="st"> </span><span class="kw">confusionMatrix</span>(<span class="kw">factor</span>(predictions),</span>
+<span id="cb62-2"><a href="classification.html#cb62-2"></a>                      <span class="kw">factor</span>(groundTruth))</span>
+<span id="cb62-3"><a href="classification.html#cb62-3"></a></span>
+<span id="cb62-4"><a href="classification.html#cb62-4"></a><span class="co"># Compute performance metrics per class.</span></span>
+<span id="cb62-5"><a href="classification.html#cb62-5"></a>cm<span class="op">$</span>byClass[,<span class="kw">c</span>(<span class="st">&quot;Recall&quot;</span>, <span class="st">&quot;Specificity&quot;</span>, <span class="st">&quot;Precision&quot;</span>, <span class="st">&quot;F1&quot;</span>)]</span>
+<span id="cb62-6"><a href="classification.html#cb62-6"></a><span class="co">#&gt;                   Recall Specificity Precision        F1</span></span>
+<span id="cb62-7"><a href="classification.html#cb62-7"></a><span class="co">#&gt; Class: 1            0.84   0.9911111 0.9130435 0.8750000</span></span>
+<span id="cb62-8"><a href="classification.html#cb62-8"></a><span class="co">#&gt; Class: 2            0.84   0.9866667 0.8750000 0.8571429</span></span>
+<span id="cb62-9"><a href="classification.html#cb62-9"></a><span class="co">#&gt; Class: 3            0.96   0.9911111 0.9230769 0.9411765</span></span>
+<span id="cb62-10"><a href="classification.html#cb62-10"></a><span class="co">#&gt; Class: 4            0.98   0.9933333 0.9423077 0.9607843</span></span>
+<span id="cb62-11"><a href="classification.html#cb62-11"></a><span class="co">#&gt; Class: a            0.78   0.9733333 0.7647059 0.7722772</span></span>
+<span id="cb62-12"><a href="classification.html#cb62-12"></a><span class="co">#&gt; Class: b            0.76   0.9955556 0.9500000 0.8444444</span></span>
+<span id="cb62-13"><a href="classification.html#cb62-13"></a><span class="co">#&gt; Class: c            0.90   1.0000000 1.0000000 0.9473684</span></span>
+<span id="cb62-14"><a href="classification.html#cb62-14"></a><span class="co">#&gt; Class: circleLeft   0.78   0.9622222 0.6964286 0.7358491</span></span>
+<span id="cb62-15"><a href="classification.html#cb62-15"></a><span class="co">#&gt; Class: square       1.00   0.9977778 0.9803922 0.9900990</span></span>
+<span id="cb62-16"><a href="classification.html#cb62-16"></a><span class="co">#&gt; Class: triangle     0.92   0.9711111 0.7796610 0.8440367</span></span>
+<span id="cb62-17"><a href="classification.html#cb62-17"></a></span>
+<span id="cb62-18"><a href="classification.html#cb62-18"></a><span class="co"># Overall performance metrics</span></span>
+<span id="cb62-19"><a href="classification.html#cb62-19"></a><span class="kw">colMeans</span>(cm<span class="op">$</span>byClass[,<span class="kw">c</span>(<span class="st">&quot;Recall&quot;</span>, <span class="st">&quot;Specificity&quot;</span>,</span>
+<span id="cb62-20"><a href="classification.html#cb62-20"></a>                       <span class="st">&quot;Precision&quot;</span>, <span class="st">&quot;F1&quot;</span>)])</span>
+<span id="cb62-21"><a href="classification.html#cb62-21"></a><span class="co">#&gt;     Recall Specificity   Precision          F1 </span></span>
+<span id="cb62-22"><a href="classification.html#cb62-22"></a><span class="co">#&gt;  0.8760000   0.9862222   0.8824616   0.8768178 </span></span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:gesturesCM"></span>
 <img src="images/gesturesCM.png" alt="Confusion matrix for hand gestures' predictions." width="90%" />
 <p class="caption">
-Figure 2.22: Confusion matrix for hand gestures’ predictions.
+Figure 2.24: Confusion matrix for hand gestures’ predictions.
 </p>
 </div>
-<p>The overall recall was <span class="math inline">\(0.87\)</span> which is not bad. From the confusion matrix, we can see that the class <em>‘a’</em> was often confused with <em>‘circleLeft’</em> and vice versa. This makes sense since both have similar motions (see Figure <a href="classification.html#fig:gesturesFigure">2.19</a>). Also, <em>‘b’</em> was often confused with <em>‘circleLeft’</em>. The <em>‘square’</em> class was always correctly classified. This example demonstrated how DTW can be used with <span class="math inline">\(k\)</span>-nn to recognize hand gestures.</p>
+<p>The overall recall was <span class="math inline">\(0.87\)</span> which is not bad. From the confusion matrix, we can see that the class <em>‘a’</em> was often confused with <em>‘circleLeft’</em> and vice versa. This makes sense since both have similar motions (see Figure <a href="classification.html#fig:gesturesFigure">2.21</a>). Also, <em>‘b’</em> was often confused with <em>‘circleLeft’</em>. The <em>‘square’</em> class was always correctly classified. This example demonstrated how DTW can be used with <span class="math inline">\(k\)</span>-nn to recognize hand gestures.</p>
 <!-- ## Baseline Classifiers -->
 <!-- ## Other Classification Models -->
 <!-- ### Nearest Centroid -->
-<!-- ### Naive Bayes -->
 <!-- ### Neural Networks -->
 
 </div>
 </div>
 <div id="summaryClassification" class="section level2">
-<h2><span class="header-section-number">2.5</span> Summary</h2>
+<h2><span class="header-section-number">2.6</span> Summary</h2>
 <p>This chapter focused on <strong>classification</strong> models. Classifiers predict a category based on the input features. Here, we showed how classifiers can be used to detect indoor locations, classify activities and had gestures.</p>
 <ul>
 <li><strong><span class="math inline">\(k\)</span>-nearest neighbors (<span class="math inline">\(k\)</span>-nn)</strong> predicts the class of a test point as the majority class of the <span class="math inline">\(k\)</span> nearest neighbors.</li>
 <li>Some classification performance metrics are <strong>recall</strong>, <strong>specificity</strong>, <strong>precision</strong>, <strong>accuracy</strong>, <strong>F1-score</strong>, etc.</li>
 <li><strong>Decision trees</strong> are easy-to-interpret classifiers trained recursively based on feature importance (for example, purity).</li>
-<li><strong>Dynamic Time Warping (DTW)</strong> computes the similarity between two timeseries after ‘aligning’ them in time. This can be used for classification.</li>
+<li><strong>Naive Bayes</strong> is a type of classifier where features are assumed to be independent.</li>
+<li><strong>Dynamic Time Warping (DTW)</strong> computes the similarity between two timeseries after ‘aligning’ them in time. This can be used for classification for example, in combination with <span class="math inline">\(k\)</span>-nn.</li>
 </ul>
 <p><img src="images/comic_dtw.png" width="100%" style="display: block; margin: auto;" />
 </p>
@@ -1256,6 +1539,9 @@ Figure 2.22: Confusion matrix for hand gestures’ predictions.
 </div>
 <div id="ref-kwapisz2010">
 <p>Kwapisz, Jennifer R., Gary M. Weiss, and Samuel A. Moore. 2010. “Activity Recognition Using Cell Phone Accelerometers.” In <em>Proceedings of the Fourth International Workshop on Knowledge Discovery from Sensor Data (at KDD-10), Washington DC.</em></p>
+</div>
+<div id="ref-e1071">
+<p>Meyer, David, Evgenia Dimitriadou, Kurt Hornik, Andreas Weingessel, and Friedrich Leisch. 2019. <em>E1071: Misc Functions of the Department of Statistics, Probability Theory Group (Formerly: E1071), Tu Wien</em>. <a href="https://CRAN.R-project.org/package=e1071">https://CRAN.R-project.org/package=e1071</a>.</p>
 </div>
 <div id="ref-rpartplot">
 <p>Milborrow, Stephen. 2019. <em>Rpart.plot: Plot ’Rpart’ Models: An Enhanced Version of ’plot.rpart’</em>. <a href="https://CRAN.R-project.org/package=rpart.plot">https://CRAN.R-project.org/package=rpart.plot</a>.</p>

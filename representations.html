@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2020-09-30" />
+<meta name="date" content="2020-10-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -190,10 +190,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="classification.html"><a href="classification.html#decision-trees"><i class="fa fa-check"></i><b>2.3</b> Decision Trees</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="classification.html"><a href="classification.html#activityRecognition"><i class="fa fa-check"></i><b>2.3.1</b> Activity Recognition with Smartphones</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="classification.html"><a href="classification.html#dynamic-time-warping"><i class="fa fa-check"></i><b>2.4</b> Dynamic Time Warping</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="classification.html"><a href="classification.html#sechandgestures"><i class="fa fa-check"></i><b>2.4.1</b> Hand Gesture Recognition</a></li>
+<li class="chapter" data-level="2.4" data-path="classification.html"><a href="classification.html#naive-bayes"><i class="fa fa-check"></i><b>2.4</b> Naive Bayes</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="classification.html"><a href="classification.html#activity-recognition-with-naive-bayes"><i class="fa fa-check"></i><b>2.4.1</b> Activity Recognition with Naive Bayes</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="classification.html"><a href="classification.html#summaryClassification"><i class="fa fa-check"></i><b>2.5</b> Summary</a></li>
+<li class="chapter" data-level="2.5" data-path="classification.html"><a href="classification.html#dynamic-time-warping"><i class="fa fa-check"></i><b>2.5</b> Dynamic Time Warping</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="classification.html"><a href="classification.html#sechandgestures"><i class="fa fa-check"></i><b>2.5.1</b> Hand Gesture Recognition</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="classification.html"><a href="classification.html#summaryClassification"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="ensemble.html"><a href="ensemble.html"><i class="fa fa-check"></i><b>3</b> Predicting Behavior with Ensemble Learning</a><ul>
 <li class="chapter" data-level="3.1" data-path="ensemble.html"><a href="ensemble.html#bagging"><i class="fa fa-check"></i><b>3.1</b> Bagging</a><ul>
@@ -407,7 +410,7 @@ Figure 7.3: Two different feature vectors for classifying tired and not tired.
 <div id="sectimeseries" class="section level2">
 <h2><span class="header-section-number">7.2</span> Timeseries</h2>
 <p>A timeseries is a sequence of data points ordered in time. We have already worked with timeseries data in previous chapters (<a href="classification.html#classification">2</a>) when classifying physical activities and hand gestures. Timeseries can be multi-dimensional. For example, typical inertial sensors capture motion forces in three axes. Timeseries analysis methods can be used to find underlying time-dependent patterns while timeseries forecasting methods aim to predict future data points based on historical data. Timeseries analysis is a very extensive topic and there are already several books that specialize on it. For example, the book “Forecasting: Principles and Practice” by <span class="citation">Hyndman and Athanasopoulos (<a href="#ref-Hyndman2018" role="doc-biblioref">2018</a>)</span> focuses on timeseries forecasting with R.</p>
-<p>In this book we mainly use timeseries data collected from sensors in the context of behavior predictions using machine learning. We have already seen how classification models (like decision trees) can be trained with timeseries converted into feature vectors (section <a href="classification.html#activityRecognition">2.3.1</a>) or by using the raw timeseries data with Dynamic Time Warping (section <a href="classification.html#sechandgestures">2.4.1</a>).</p>
+<p>In this book we mainly use timeseries data collected from sensors in the context of behavior predictions using machine learning. We have already seen how classification models (like decision trees) can be trained with timeseries converted into feature vectors (section <a href="classification.html#activityRecognition">2.3.1</a>) or by using the raw timeseries data with Dynamic Time Warping (section <a href="classification.html#sechandgestures">2.5.1</a>).</p>
 <p><strong>Advantages:</strong></p>
 <ul>
 <li>Many problems have this form and can be naturally modeled as timeseries.</li>
@@ -545,51 +548,51 @@ There exists an objective way to analyze RPs and is called <strong>recurrence qu
 </div>
 
 <p>In this section, I am going to show you how to compute recurrence plots in R using as an example the <em>HAND GESTURES</em> dataset. The code can be found in the script <code>recurrence_plots.R</code>. First, we need a norm (distance function) for example the Euclidean distance:</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="representations.html#cb114-1"></a><span class="co"># Computes Euclidean distance between x and y.</span></span>
-<span id="cb114-2"><a href="representations.html#cb114-2"></a>norm2 &lt;-<span class="st"> </span><span class="cf">function</span>(x, y){</span>
-<span id="cb114-3"><a href="representations.html#cb114-3"></a>  <span class="kw">return</span>(<span class="kw">sqrt</span>((x <span class="op">-</span><span class="st"> </span>y)<span class="op">^</span><span class="dv">2</span>))</span>
-<span id="cb114-4"><a href="representations.html#cb114-4"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="representations.html#cb130-1"></a><span class="co"># Computes Euclidean distance between x and y.</span></span>
+<span id="cb130-2"><a href="representations.html#cb130-2"></a>norm2 &lt;-<span class="st"> </span><span class="cf">function</span>(x, y){</span>
+<span id="cb130-3"><a href="representations.html#cb130-3"></a>  <span class="kw">return</span>(<span class="kw">sqrt</span>((x <span class="op">-</span><span class="st"> </span>y)<span class="op">^</span><span class="dv">2</span>))</span>
+<span id="cb130-4"><a href="representations.html#cb130-4"></a>}</span></code></pre></div>
 <p>The following function computes a distance matrix and a recurrence plot and returns both of them. The first argument <code>x</code> is a vector representing a timeseries, <code>e</code> is the threshold and <code>f</code> is a distance function.</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="representations.html#cb115-1"></a>rp &lt;-<span class="st"> </span><span class="cf">function</span>(x, e, <span class="dt">f=</span>norm2){</span>
-<span id="cb115-2"><a href="representations.html#cb115-2"></a>  <span class="co">#x: vector</span></span>
-<span id="cb115-3"><a href="representations.html#cb115-3"></a>  <span class="co">#e: threshold</span></span>
-<span id="cb115-4"><a href="representations.html#cb115-4"></a>  <span class="co">#f: norm (distance function)</span></span>
-<span id="cb115-5"><a href="representations.html#cb115-5"></a>  N &lt;-<span class="st"> </span><span class="kw">length</span>(x)</span>
-<span id="cb115-6"><a href="representations.html#cb115-6"></a>  </span>
-<span id="cb115-7"><a href="representations.html#cb115-7"></a>  <span class="co"># This will store the recurrence plot.</span></span>
-<span id="cb115-8"><a href="representations.html#cb115-8"></a>  M &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">nrow=</span>N, <span class="dt">ncol=</span>N)</span>
-<span id="cb115-9"><a href="representations.html#cb115-9"></a>  </span>
-<span id="cb115-10"><a href="representations.html#cb115-10"></a>  <span class="co"># This will store the distance matrix.</span></span>
-<span id="cb115-11"><a href="representations.html#cb115-11"></a>  D &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">nrow=</span>N, <span class="dt">ncol=</span>N)</span>
-<span id="cb115-12"><a href="representations.html#cb115-12"></a>  </span>
-<span id="cb115-13"><a href="representations.html#cb115-13"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){</span>
-<span id="cb115-14"><a href="representations.html#cb115-14"></a>    <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){</span>
-<span id="cb115-15"><a href="representations.html#cb115-15"></a>      </span>
-<span id="cb115-16"><a href="representations.html#cb115-16"></a>      <span class="co"># Compute the distance between a pair of points.</span></span>
-<span id="cb115-17"><a href="representations.html#cb115-17"></a>      d &lt;-<span class="st"> </span><span class="kw">f</span>(x[i], x[j])</span>
-<span id="cb115-18"><a href="representations.html#cb115-18"></a>      </span>
-<span id="cb115-19"><a href="representations.html#cb115-19"></a>      <span class="co"># Store result in D.</span></span>
-<span id="cb115-20"><a href="representations.html#cb115-20"></a>      <span class="co"># Start filling values from bottom left.</span></span>
-<span id="cb115-21"><a href="representations.html#cb115-21"></a>      D[N <span class="op">-</span><span class="st"> </span>(i<span class="dv">-1</span>), j] &lt;-<span class="st"> </span>d </span>
-<span id="cb115-22"><a href="representations.html#cb115-22"></a>      </span>
-<span id="cb115-23"><a href="representations.html#cb115-23"></a>      <span class="cf">if</span>(d <span class="op">&lt;=</span><span class="st"> </span>e){</span>
-<span id="cb115-24"><a href="representations.html#cb115-24"></a>        M[N <span class="op">-</span><span class="st"> </span>(i<span class="dv">-1</span>), j] &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb115-25"><a href="representations.html#cb115-25"></a>      }</span>
-<span id="cb115-26"><a href="representations.html#cb115-26"></a>      <span class="cf">else</span>{</span>
-<span id="cb115-27"><a href="representations.html#cb115-27"></a>        M[N <span class="op">-</span><span class="st"> </span>(i<span class="dv">-1</span>), j] &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb115-28"><a href="representations.html#cb115-28"></a>      }</span>
-<span id="cb115-29"><a href="representations.html#cb115-29"></a>    }</span>
-<span id="cb115-30"><a href="representations.html#cb115-30"></a>  }</span>
-<span id="cb115-31"><a href="representations.html#cb115-31"></a>  <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">D=</span>D, <span class="dt">RP=</span>M))</span>
-<span id="cb115-32"><a href="representations.html#cb115-32"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="representations.html#cb131-1"></a>rp &lt;-<span class="st"> </span><span class="cf">function</span>(x, e, <span class="dt">f=</span>norm2){</span>
+<span id="cb131-2"><a href="representations.html#cb131-2"></a>  <span class="co">#x: vector</span></span>
+<span id="cb131-3"><a href="representations.html#cb131-3"></a>  <span class="co">#e: threshold</span></span>
+<span id="cb131-4"><a href="representations.html#cb131-4"></a>  <span class="co">#f: norm (distance function)</span></span>
+<span id="cb131-5"><a href="representations.html#cb131-5"></a>  N &lt;-<span class="st"> </span><span class="kw">length</span>(x)</span>
+<span id="cb131-6"><a href="representations.html#cb131-6"></a>  </span>
+<span id="cb131-7"><a href="representations.html#cb131-7"></a>  <span class="co"># This will store the recurrence plot.</span></span>
+<span id="cb131-8"><a href="representations.html#cb131-8"></a>  M &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">nrow=</span>N, <span class="dt">ncol=</span>N)</span>
+<span id="cb131-9"><a href="representations.html#cb131-9"></a>  </span>
+<span id="cb131-10"><a href="representations.html#cb131-10"></a>  <span class="co"># This will store the distance matrix.</span></span>
+<span id="cb131-11"><a href="representations.html#cb131-11"></a>  D &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">nrow=</span>N, <span class="dt">ncol=</span>N)</span>
+<span id="cb131-12"><a href="representations.html#cb131-12"></a>  </span>
+<span id="cb131-13"><a href="representations.html#cb131-13"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){</span>
+<span id="cb131-14"><a href="representations.html#cb131-14"></a>    <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){</span>
+<span id="cb131-15"><a href="representations.html#cb131-15"></a>      </span>
+<span id="cb131-16"><a href="representations.html#cb131-16"></a>      <span class="co"># Compute the distance between a pair of points.</span></span>
+<span id="cb131-17"><a href="representations.html#cb131-17"></a>      d &lt;-<span class="st"> </span><span class="kw">f</span>(x[i], x[j])</span>
+<span id="cb131-18"><a href="representations.html#cb131-18"></a>      </span>
+<span id="cb131-19"><a href="representations.html#cb131-19"></a>      <span class="co"># Store result in D.</span></span>
+<span id="cb131-20"><a href="representations.html#cb131-20"></a>      <span class="co"># Start filling values from bottom left.</span></span>
+<span id="cb131-21"><a href="representations.html#cb131-21"></a>      D[N <span class="op">-</span><span class="st"> </span>(i<span class="dv">-1</span>), j] &lt;-<span class="st"> </span>d </span>
+<span id="cb131-22"><a href="representations.html#cb131-22"></a>      </span>
+<span id="cb131-23"><a href="representations.html#cb131-23"></a>      <span class="cf">if</span>(d <span class="op">&lt;=</span><span class="st"> </span>e){</span>
+<span id="cb131-24"><a href="representations.html#cb131-24"></a>        M[N <span class="op">-</span><span class="st"> </span>(i<span class="dv">-1</span>), j] &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb131-25"><a href="representations.html#cb131-25"></a>      }</span>
+<span id="cb131-26"><a href="representations.html#cb131-26"></a>      <span class="cf">else</span>{</span>
+<span id="cb131-27"><a href="representations.html#cb131-27"></a>        M[N <span class="op">-</span><span class="st"> </span>(i<span class="dv">-1</span>), j] &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb131-28"><a href="representations.html#cb131-28"></a>      }</span>
+<span id="cb131-29"><a href="representations.html#cb131-29"></a>    }</span>
+<span id="cb131-30"><a href="representations.html#cb131-30"></a>  }</span>
+<span id="cb131-31"><a href="representations.html#cb131-31"></a>  <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">D=</span>D, <span class="dt">RP=</span>M))</span>
+<span id="cb131-32"><a href="representations.html#cb131-32"></a>}</span></code></pre></div>
 <p>This function first defines two square matrices <code>M</code> and <code>D</code> to store the recurrence plot and the distance matrix, respectively. Then, it iterates the matrices from bottom left to top right and fills the corresponding values for <code>M</code> and <code>D</code>. The distance between elements <code>i</code> and <code>j</code> from the vector is computed. That distance is directly stored in <code>D</code>. To generate the RP we check if the distance is less or equal to the threshold. If that is the case the corresponding entry in <code>M</code> is set to <span class="math inline">\(1\)</span>. Finally, both matrices are returned by the function.</p>
 <p>Now, we can try our <code>rp()</code> function on the <em>HAND GESTURES</em> dataset to convert one of the timeseries into a RP. First, we read one of the gesture files. For example, the first gesture <em>‘1’</em> from user <span class="math inline">\(1\)</span>. We only extract the acceleration from the <span class="math inline">\(x\)</span> axis and store it in variable <code>x</code>.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="representations.html#cb116-1"></a>df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;../../data/hand_gestures/1/1_20130703-120056.txt&quot;</span>,</span>
-<span id="cb116-2"><a href="representations.html#cb116-2"></a>               <span class="dt">header =</span> F)</span>
-<span id="cb116-3"><a href="representations.html#cb116-3"></a>x &lt;-<span class="st"> </span>df<span class="op">$</span>V1</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="representations.html#cb132-1"></a>df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;../../data/hand_gestures/1/1_20130703-120056.txt&quot;</span>,</span>
+<span id="cb132-2"><a href="representations.html#cb132-2"></a>               <span class="dt">header =</span> F)</span>
+<span id="cb132-3"><a href="representations.html#cb132-3"></a>x &lt;-<span class="st"> </span>df<span class="op">$</span>V1</span></code></pre></div>
 <p>If we plot vector <code>x</code> we get something like in Figure <a href="representations.html#fig:gesture1X">7.9</a>.</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="representations.html#cb117-1"></a><span class="co"># Plot vector x.</span></span>
-<span id="cb117-2"><a href="representations.html#cb117-2"></a><span class="kw">plot</span>(x, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Hand gesture 1&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;time&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="representations.html#cb133-1"></a><span class="co"># Plot vector x.</span></span>
+<span id="cb133-2"><a href="representations.html#cb133-2"></a><span class="kw">plot</span>(x, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Hand gesture 1&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;time&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:gesture1X"></span>
 <img src="images/rp_series.png" alt="Acceleration of x of gesture 1." width="90%" />
 <p class="caption">
@@ -597,14 +600,14 @@ Figure 7.9: Acceleration of x of gesture 1.
 </p>
 </div>
 <p>Now the <code>rp()</code> function that we just defined is used to calculate the RP and distance matrix of vector <code>x</code>. We set a threshold of <span class="math inline">\(0.5\)</span> and store the result in <code>res</code>.</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="representations.html#cb118-1"></a><span class="co"># Compute RP and distance matrix.</span></span>
-<span id="cb118-2"><a href="representations.html#cb118-2"></a>res &lt;-<span class="st"> </span><span class="kw">rp</span>(x, <span class="fl">0.5</span>, norm2)</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="representations.html#cb134-1"></a><span class="co"># Compute RP and distance matrix.</span></span>
+<span id="cb134-2"><a href="representations.html#cb134-2"></a>res &lt;-<span class="st"> </span><span class="kw">rp</span>(x, <span class="fl">0.5</span>, norm2)</span></code></pre></div>
 <p>Let’s first plot the distance matrix stored in <code>res$D</code>. The <code>pheatmap()</code> function can be used to generate the plot.</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="representations.html#cb119-1"></a><span class="kw">library</span>(pheatmap)</span>
-<span id="cb119-2"><a href="representations.html#cb119-2"></a><span class="kw">pheatmap</span>(res<span class="op">$</span>D, <span class="dt">main=</span><span class="st">&quot;Distance matrix of gesture 1&quot;</span>, <span class="dt">cluster_row =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb119-3"><a href="representations.html#cb119-3"></a>         <span class="dt">cluster_col =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb119-4"><a href="representations.html#cb119-4"></a>         <span class="dt">legend =</span> F,</span>
-<span id="cb119-5"><a href="representations.html#cb119-5"></a>         <span class="dt">color =</span> <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;black&quot;</span>))(<span class="dv">50</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="representations.html#cb135-1"></a><span class="kw">library</span>(pheatmap)</span>
+<span id="cb135-2"><a href="representations.html#cb135-2"></a><span class="kw">pheatmap</span>(res<span class="op">$</span>D, <span class="dt">main=</span><span class="st">&quot;Distance matrix of gesture 1&quot;</span>, <span class="dt">cluster_row =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb135-3"><a href="representations.html#cb135-3"></a>         <span class="dt">cluster_col =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb135-4"><a href="representations.html#cb135-4"></a>         <span class="dt">legend =</span> F,</span>
+<span id="cb135-5"><a href="representations.html#cb135-5"></a>         <span class="dt">color =</span> <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;black&quot;</span>))(<span class="dv">50</span>))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:gesture1D"></span>
 <img src="images/rp_d.png" alt="Distance matrix of gesture 1." width="90%" />
 <p class="caption">
@@ -612,10 +615,10 @@ Figure 7.10: Distance matrix of gesture 1.
 </p>
 </div>
 <p>From figure <a href="representations.html#fig:gesture1D">7.10</a> we can see that the diagonal cells are all white. Those represent values of <span class="math inline">\(0\)</span>, the distance between a point and itself. Apart from that, there are no other human intuitive patterns to look for. Now, let’s plot the recurrence plot stored in <code>res$RP</code>.</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="representations.html#cb120-1"></a><span class="kw">pheatmap</span>(res<span class="op">$</span>RP, <span class="dt">main=</span><span class="st">&quot;RP with threshold = 0.5&quot;</span>, <span class="dt">cluster_row =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb120-2"><a href="representations.html#cb120-2"></a>         <span class="dt">cluster_col =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb120-3"><a href="representations.html#cb120-3"></a>         <span class="dt">legend =</span> F,</span>
-<span id="cb120-4"><a href="representations.html#cb120-4"></a>         <span class="dt">color =</span> <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;black&quot;</span>))(<span class="dv">50</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="representations.html#cb136-1"></a><span class="kw">pheatmap</span>(res<span class="op">$</span>RP, <span class="dt">main=</span><span class="st">&quot;RP with threshold = 0.5&quot;</span>, <span class="dt">cluster_row =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb136-2"><a href="representations.html#cb136-2"></a>         <span class="dt">cluster_col =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb136-3"><a href="representations.html#cb136-3"></a>         <span class="dt">legend =</span> F,</span>
+<span id="cb136-4"><a href="representations.html#cb136-4"></a>         <span class="dt">color =</span> <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;black&quot;</span>))(<span class="dv">50</span>))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:gesture1rp5"></span>
 <img src="images/rp_rp_5.png" alt="RP of gesture 1 with a threshold of 0.5." width="90%" />
 <p class="caption">
@@ -699,10 +702,10 @@ Figure 7.15: BoW steps. From raw signal to BoW table.
 <p>Figure <a href="representations.html#fig:bowProcess">7.15</a> shows the overall steps graphically. All the functions to perform the above steps are implemented in <code>bow_functions.R</code>. The functions are called in the appropriate order in <code>bow_run.R</code>.</p>
 <p>First of all, and to avoid overfitting, we need to hold out an independent set of instances. These instances will be used to generate the clusters and their respective centroids. The dataset is already divided into a train and test set. The train set contains <span class="math inline">\(13\)</span> instances out of the <span class="math inline">\(80\)</span>. The remaining <span class="math inline">\(67\)</span> are assigned to the test set.</p>
 <p>In the first step, we need to extract the feature vectors from the raw data. This is implemented in the function <code>extractSimpleActivities()</code>. This function divides the raw data of each file into fixed-length windows of size <span class="math inline">\(150\)</span> which corresponds to <span class="math inline">\(3\)</span> seconds. Each window can be thought of as a simple activity. For each window, it extracts <span class="math inline">\(14\)</span> features like mean, standard deviation, correlation between axes, etc. The output is stored in the folder <code>simple_activities/</code>. Each file corresponds to one of the complex activities and each row in a file is a feature vector (simple activity). <strong>At this time the feature vectors (simple activities) are unlabeled.</strong> Notice that in the script <code>bow_run.R</code> the function is called twice:</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="representations.html#cb121-1"></a><span class="co"># Extract simple activities for train set.</span></span>
-<span id="cb121-2"><a href="representations.html#cb121-2"></a><span class="kw">extractSimpleActivities</span>(<span class="dt">train =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb121-3"><a href="representations.html#cb121-3"></a><span class="co"># Extract simple activities for test set (may take some minutes).</span></span>
-<span id="cb121-4"><a href="representations.html#cb121-4"></a><span class="kw">extractSimpleActivities</span>(<span class="dt">train =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="representations.html#cb137-1"></a><span class="co"># Extract simple activities for train set.</span></span>
+<span id="cb137-2"><a href="representations.html#cb137-2"></a><span class="kw">extractSimpleActivities</span>(<span class="dt">train =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb137-3"><a href="representations.html#cb137-3"></a><span class="co"># Extract simple activities for test set (may take some minutes).</span></span>
+<span id="cb137-4"><a href="representations.html#cb137-4"></a><span class="kw">extractSimpleActivities</span>(<span class="dt">train =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <p>This is because we divided the data into a train and test sets. So we need to extract the features from both sets by setting the <code>train</code> parameter accordingly.</p>
 <p>The second step consists of clustering the extracted feature vectors. To avoid overfitting, this step is only performed on the train set. The function <code>clusterSimpleActivities()</code> implements this step. The feature vectors are grouped into <span class="math inline">\(15\)</span> groups. This can be changed by setting <code>constants$wordsize &lt;- 15</code> to some other value. The function stores all feature vectors from all files in a single data frame and runs k-means. Finally, the resulting centroids are saved in the text file <code>clustering/centroids.txt</code> inside the train set directory.</p>
 <p>The next step is to label each feature vector (simple activity) by assigning it to its closest centroid. The function <code>assignSimpleActivitiesToCluster()</code> reads the centroids from the text file and for each simple activity in the test set it finds the closest centroid using the Euclidean distance. The label (an integer from <span class="math inline">\(1\)</span> to <span class="math inline">\(15\)</span>) of the closest centroid is assigned and the resulting files are saved in the <code>labeled_activities/</code> directory. Each file contains the assigned labels (integers) for the corresponding feature vectors file in the <code>simple_activities/</code> directory. Thus, if a file inside <code>simple_activities/</code> has <span class="math inline">\(100\)</span> feature vectors then, its corresponding file in <code>labeled_activities/</code> should have <span class="math inline">\(100\)</span> labels.</p>
@@ -770,30 +773,30 @@ Figure 7.19: Different ways to store a graph.
 <p>One thing we can do is build a graph where vertices represent simple activities and edges represent the interactions between them. For instance, if we have a sequence of activities ids like: <span class="math inline">\(3,2,2,4\)</span> we can represent this as a graph with <span class="math inline">\(3\)</span> vertices and <span class="math inline">\(3\)</span> edges. One vertex per activity. The first edge would go from vertex <span class="math inline">\(3\)</span> to vertex <span class="math inline">\(2\)</span>, the next one from vertex <span class="math inline">\(2\)</span> to vertex <span class="math inline">\(2\)</span>, and so on. In this way we can use a graph to capture the interactions between simple activities.</p>
 <p>The script <code>plot_graphs.R</code> implements a function named <code>ids.to.graph()</code> that reads the sequence files from <code>labeled_activities/</code> and converts them into weighted directed graphs. The weight of the edge <span class="math inline">\((a,b)\)</span> is equal to the total number of transitions from vertex <span class="math inline">\(a\)</span> to vertex <span class="math inline">\(b\)</span>. The script uses the <code>igraph</code> package <span class="citation">(Csardi and Nepusz <a href="#ref-igraph" role="doc-biblioref">2006</a>)</span> to store and plot the resulting graphs. The <code>ids.to.graph()</code> function receives as its first argument the sequence of ids. Its second argument indicates whether the edge weights should be normalized or not. If normalized, the sum of all weights will be <span class="math inline">\(1\)</span>.</p>
 <p>The following code snippet reads one of the sequence files, converts it into a graph, and plots the graph.</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="representations.html#cb122-1"></a>datapath &lt;-<span class="st"> &quot;../labeled_activitires/&quot;</span></span>
-<span id="cb122-2"><a href="representations.html#cb122-2"></a></span>
-<span id="cb122-3"><a href="representations.html#cb122-3"></a><span class="co"># Select one of the &#39;work&#39; complex activities.</span></span>
-<span id="cb122-4"><a href="representations.html#cb122-4"></a>filename &lt;-<span class="st"> &quot;2_20120606-111732.txt&quot;</span></span>
-<span id="cb122-5"><a href="representations.html#cb122-5"></a></span>
-<span id="cb122-6"><a href="representations.html#cb122-6"></a><span class="co"># Read it as a data frame.</span></span>
-<span id="cb122-7"><a href="representations.html#cb122-7"></a>df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">paste0</span>(datapath, filename), <span class="dt">header =</span> F)</span>
-<span id="cb122-8"><a href="representations.html#cb122-8"></a></span>
-<span id="cb122-9"><a href="representations.html#cb122-9"></a><span class="co"># Convert the sequence of ids into an igraph graph.</span></span>
-<span id="cb122-10"><a href="representations.html#cb122-10"></a>g &lt;-<span class="st"> </span><span class="kw">ids.to.graph</span>(df<span class="op">$</span>V1, <span class="dt">relative.weights =</span> T)</span>
-<span id="cb122-11"><a href="representations.html#cb122-11"></a></span>
-<span id="cb122-12"><a href="representations.html#cb122-12"></a><span class="co"># Plot the result.</span></span>
-<span id="cb122-13"><a href="representations.html#cb122-13"></a><span class="kw">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb122-14"><a href="representations.html#cb122-14"></a><span class="kw">plot</span>(g, <span class="dt">vertex.label.cex =</span> <span class="fl">0.7</span>,</span>
-<span id="cb122-15"><a href="representations.html#cb122-15"></a>     <span class="dt">edge.arrow.size =</span> <span class="fl">0.2</span>,</span>
-<span id="cb122-16"><a href="representations.html#cb122-16"></a>     <span class="dt">edge.arrow.width =</span> <span class="dv">1</span>,</span>
-<span id="cb122-17"><a href="representations.html#cb122-17"></a>     <span class="dt">edge.curved =</span> <span class="fl">0.1</span>,</span>
-<span id="cb122-18"><a href="representations.html#cb122-18"></a>     <span class="dt">edge.width =</span> <span class="kw">E</span>(g)<span class="op">$</span>weight <span class="op">*</span><span class="st"> </span><span class="dv">8</span>,</span>
-<span id="cb122-19"><a href="representations.html#cb122-19"></a>     <span class="dt">edge.label =</span> <span class="kw">round</span>(<span class="kw">E</span>(g)<span class="op">$</span>weight, <span class="dt">digits =</span> <span class="dv">3</span>),</span>
-<span id="cb122-20"><a href="representations.html#cb122-20"></a>     <span class="dt">edge.label.cex =</span> <span class="fl">0.4</span>,</span>
-<span id="cb122-21"><a href="representations.html#cb122-21"></a>     <span class="dt">edge.color =</span> <span class="st">&quot;orange&quot;</span>,</span>
-<span id="cb122-22"><a href="representations.html#cb122-22"></a>     <span class="dt">edge.label.color =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb122-23"><a href="representations.html#cb122-23"></a>     <span class="dt">vertex.color =</span> <span class="st">&quot;skyblue&quot;</span></span>
-<span id="cb122-24"><a href="representations.html#cb122-24"></a>     )</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="representations.html#cb138-1"></a>datapath &lt;-<span class="st"> &quot;../labeled_activitires/&quot;</span></span>
+<span id="cb138-2"><a href="representations.html#cb138-2"></a></span>
+<span id="cb138-3"><a href="representations.html#cb138-3"></a><span class="co"># Select one of the &#39;work&#39; complex activities.</span></span>
+<span id="cb138-4"><a href="representations.html#cb138-4"></a>filename &lt;-<span class="st"> &quot;2_20120606-111732.txt&quot;</span></span>
+<span id="cb138-5"><a href="representations.html#cb138-5"></a></span>
+<span id="cb138-6"><a href="representations.html#cb138-6"></a><span class="co"># Read it as a data frame.</span></span>
+<span id="cb138-7"><a href="representations.html#cb138-7"></a>df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">paste0</span>(datapath, filename), <span class="dt">header =</span> F)</span>
+<span id="cb138-8"><a href="representations.html#cb138-8"></a></span>
+<span id="cb138-9"><a href="representations.html#cb138-9"></a><span class="co"># Convert the sequence of ids into an igraph graph.</span></span>
+<span id="cb138-10"><a href="representations.html#cb138-10"></a>g &lt;-<span class="st"> </span><span class="kw">ids.to.graph</span>(df<span class="op">$</span>V1, <span class="dt">relative.weights =</span> T)</span>
+<span id="cb138-11"><a href="representations.html#cb138-11"></a></span>
+<span id="cb138-12"><a href="representations.html#cb138-12"></a><span class="co"># Plot the result.</span></span>
+<span id="cb138-13"><a href="representations.html#cb138-13"></a><span class="kw">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb138-14"><a href="representations.html#cb138-14"></a><span class="kw">plot</span>(g, <span class="dt">vertex.label.cex =</span> <span class="fl">0.7</span>,</span>
+<span id="cb138-15"><a href="representations.html#cb138-15"></a>     <span class="dt">edge.arrow.size =</span> <span class="fl">0.2</span>,</span>
+<span id="cb138-16"><a href="representations.html#cb138-16"></a>     <span class="dt">edge.arrow.width =</span> <span class="dv">1</span>,</span>
+<span id="cb138-17"><a href="representations.html#cb138-17"></a>     <span class="dt">edge.curved =</span> <span class="fl">0.1</span>,</span>
+<span id="cb138-18"><a href="representations.html#cb138-18"></a>     <span class="dt">edge.width =</span> <span class="kw">E</span>(g)<span class="op">$</span>weight <span class="op">*</span><span class="st"> </span><span class="dv">8</span>,</span>
+<span id="cb138-19"><a href="representations.html#cb138-19"></a>     <span class="dt">edge.label =</span> <span class="kw">round</span>(<span class="kw">E</span>(g)<span class="op">$</span>weight, <span class="dt">digits =</span> <span class="dv">3</span>),</span>
+<span id="cb138-20"><a href="representations.html#cb138-20"></a>     <span class="dt">edge.label.cex =</span> <span class="fl">0.4</span>,</span>
+<span id="cb138-21"><a href="representations.html#cb138-21"></a>     <span class="dt">edge.color =</span> <span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb138-22"><a href="representations.html#cb138-22"></a>     <span class="dt">edge.label.color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb138-23"><a href="representations.html#cb138-23"></a>     <span class="dt">vertex.color =</span> <span class="st">&quot;skyblue&quot;</span></span>
+<span id="cb138-24"><a href="representations.html#cb138-24"></a>     )</span></code></pre></div>
 <p>Figure <a href="representations.html#fig:graphActivity">7.20</a> shows the resulting plot. The plot can be customized to change the vertex and edge color, size, curvature, etc. For more details please read the <code>igraph</code> package documentation.</p>
 <div class="figure" style="text-align: center"><span id="fig:graphActivity"></span>
 <img src="images/graph_activity.png" alt="Complex activity 'working' plotted as a graph. Nodes are simple activities and edges transitions between them." width="60%" />
@@ -803,27 +806,27 @@ Figure 7.20: Complex activity ‘working’ plotted as a graph. Nodes are simple
 </div>
 <p>The width of the edges is proportional to its weight. For instance, transitions from simple activity <span class="math inline">\(3\)</span> to itself are very frequent (<span class="math inline">\(53.2\%\)</span> of the time) for the <em>‘work’</em> complex activity but transitions from <span class="math inline">\(8\)</span> to <span class="math inline">\(4\)</span> are very infrequent. Note that with this graph representation, some temporal dependencies are preserved but the complete sequence order is lost, still this captures more information compared to BoW. The relationships between consecutive simple activities are preserved.</p>
 <p>It is also possible to get the adjacency matrix with the method <code>as_adjacency_matrix()</code>.</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="representations.html#cb123-1"></a><span class="kw">as_adjacency_matrix</span>(g)</span>
-<span id="cb123-2"><a href="representations.html#cb123-2"></a></span>
-<span id="cb123-3"><a href="representations.html#cb123-3"></a><span class="co">#&gt; 6 x 6 sparse Matrix of class &quot;dgCMatrix&quot;</span></span>
-<span id="cb123-4"><a href="representations.html#cb123-4"></a><span class="co">#&gt;    1 11 12 3 4 8</span></span>
-<span id="cb123-5"><a href="representations.html#cb123-5"></a><span class="co">#&gt; 1  1  1  . 1 . .</span></span>
-<span id="cb123-6"><a href="representations.html#cb123-6"></a><span class="co">#&gt; 11 .  1  1 1 1 .</span></span>
-<span id="cb123-7"><a href="representations.html#cb123-7"></a><span class="co">#&gt; 12 .  1  . . . .</span></span>
-<span id="cb123-8"><a href="representations.html#cb123-8"></a><span class="co">#&gt; 3  1  1  . 1 . 1</span></span>
-<span id="cb123-9"><a href="representations.html#cb123-9"></a><span class="co">#&gt; 4  .  .  . 1 1 .</span></span>
-<span id="cb123-10"><a href="representations.html#cb123-10"></a><span class="co">#&gt; 8  .  .  . 1 1 .</span></span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="representations.html#cb139-1"></a><span class="kw">as_adjacency_matrix</span>(g)</span>
+<span id="cb139-2"><a href="representations.html#cb139-2"></a></span>
+<span id="cb139-3"><a href="representations.html#cb139-3"></a><span class="co">#&gt; 6 x 6 sparse Matrix of class &quot;dgCMatrix&quot;</span></span>
+<span id="cb139-4"><a href="representations.html#cb139-4"></a><span class="co">#&gt;    1 11 12 3 4 8</span></span>
+<span id="cb139-5"><a href="representations.html#cb139-5"></a><span class="co">#&gt; 1  1  1  . 1 . .</span></span>
+<span id="cb139-6"><a href="representations.html#cb139-6"></a><span class="co">#&gt; 11 .  1  1 1 1 .</span></span>
+<span id="cb139-7"><a href="representations.html#cb139-7"></a><span class="co">#&gt; 12 .  1  . . . .</span></span>
+<span id="cb139-8"><a href="representations.html#cb139-8"></a><span class="co">#&gt; 3  1  1  . 1 . 1</span></span>
+<span id="cb139-9"><a href="representations.html#cb139-9"></a><span class="co">#&gt; 4  .  .  . 1 1 .</span></span>
+<span id="cb139-10"><a href="representations.html#cb139-10"></a><span class="co">#&gt; 8  .  .  . 1 1 .</span></span></code></pre></div>
 <p>In this matrix, there is a <span class="math inline">\(1\)</span> if the edge is present and a ‘.’ if there is no edge. However, this adjacency matrix does not contain information about the weights. We can print the adjacency matrix with weights by specifying <code>attr = "weight"</code>.</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="representations.html#cb124-1"></a><span class="kw">as_adjacency_matrix</span>(g, <span class="dt">attr =</span> <span class="st">&quot;weight&quot;</span>)</span>
-<span id="cb124-2"><a href="representations.html#cb124-2"></a></span>
-<span id="cb124-3"><a href="representations.html#cb124-3"></a><span class="co">#&gt; 6 x 6 sparse Matrix of class &quot;dgCMatrix&quot;</span></span>
-<span id="cb124-4"><a href="representations.html#cb124-4"></a><span class="co">#&gt;             1          11         12           3           4          8</span></span>
-<span id="cb124-5"><a href="representations.html#cb124-5"></a><span class="co">#&gt; 1  0.06066946 0.001046025 .          0.023012552 .           .         </span></span>
-<span id="cb124-6"><a href="representations.html#cb124-6"></a><span class="co">#&gt; 11 .          0.309623431 0.00209205 0.017782427 0.001046025 .         </span></span>
-<span id="cb124-7"><a href="representations.html#cb124-7"></a><span class="co">#&gt; 12 .          0.002092050 .          .           .           .         </span></span>
-<span id="cb124-8"><a href="representations.html#cb124-8"></a><span class="co">#&gt; 3  0.02405858 0.017782427 .          0.532426778 .           0.00209205</span></span>
-<span id="cb124-9"><a href="representations.html#cb124-9"></a><span class="co">#&gt; 4  .          .           .          0.002092050 0.002092050 .         </span></span>
-<span id="cb124-10"><a href="representations.html#cb124-10"></a><span class="co">#&gt; 8  .          .           .          0.001046025 0.001046025 .    </span></span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="representations.html#cb140-1"></a><span class="kw">as_adjacency_matrix</span>(g, <span class="dt">attr =</span> <span class="st">&quot;weight&quot;</span>)</span>
+<span id="cb140-2"><a href="representations.html#cb140-2"></a></span>
+<span id="cb140-3"><a href="representations.html#cb140-3"></a><span class="co">#&gt; 6 x 6 sparse Matrix of class &quot;dgCMatrix&quot;</span></span>
+<span id="cb140-4"><a href="representations.html#cb140-4"></a><span class="co">#&gt;             1          11         12           3           4          8</span></span>
+<span id="cb140-5"><a href="representations.html#cb140-5"></a><span class="co">#&gt; 1  0.06066946 0.001046025 .          0.023012552 .           .         </span></span>
+<span id="cb140-6"><a href="representations.html#cb140-6"></a><span class="co">#&gt; 11 .          0.309623431 0.00209205 0.017782427 0.001046025 .         </span></span>
+<span id="cb140-7"><a href="representations.html#cb140-7"></a><span class="co">#&gt; 12 .          0.002092050 .          .           .           .         </span></span>
+<span id="cb140-8"><a href="representations.html#cb140-8"></a><span class="co">#&gt; 3  0.02405858 0.017782427 .          0.532426778 .           0.00209205</span></span>
+<span id="cb140-9"><a href="representations.html#cb140-9"></a><span class="co">#&gt; 4  .          .           .          0.002092050 0.002092050 .         </span></span>
+<span id="cb140-10"><a href="representations.html#cb140-10"></a><span class="co">#&gt; 8  .          .           .          0.001046025 0.001046025 .    </span></span></code></pre></div>
 <p>The adjacency matrices can then be used to train a classifier. Since many classifiers expect one-dimensional vectors and not matrices, one can flatten the matrix. This is left as an exercise for the reader to try. Which representation produces better classification results (adjacency matrix or BoW)?</p>
 
 <div class="rmdinfo">
