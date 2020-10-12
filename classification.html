@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2020-10-10" />
+<meta name="date" content="2020-10-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1189,7 +1189,7 @@ Here, we have shown how we can use a Gaussian pdf to compute the likelihood <spa
 <p>The accuracy was <span class="math inline">\(75\%\)</span>. In the previous section we obtained an accuracy of <span class="math inline">\(78\%\)</span> with decision trees. However, this does not necessarily mean that decision trees are better. Moreover, in the previous section we used cross-validation and here we used hold-out validation.</p>
 
 <div class="rmdcaution">
-One important thing to note is that computing the posterior may cause a loss of numeric precision specially, when there are many features. This is because we are multiplying the likelihoods for each feature (see equation <a href="classification.html#eq:bayesclassifier2">(2.13)</a> and those likelihoods are small numbers. One way to fix that is to use logarithms. In <code>navie.bayes.predict()</code> we can change <code>acum.prob &lt;- params$priors[c]</code> with <code>acum.prob &lt;- log(params$priors[c])</code> and <code>acum.prob &lt;- acum.prob * tmp</code> with <code>acum.prob &lt;- acum.prob + log(tmp)</code>. If you try those changes you should get the same result as before.
+One important thing to note is that computing the posterior may cause a loss of numeric precision specially, when there are many features. This is because we are multiplying the likelihoods for each feature (see equation <a href="classification.html#eq:bayesclassifier2">(2.13)</a>) and those likelihoods are small numbers. One way to fix that is to use logarithms. In <code>navie.bayes.predict()</code> we can change <code>acum.prob &lt;- params$priors[c]</code> with <code>acum.prob &lt;- log(params$priors[c])</code> and <code>acum.prob &lt;- acum.prob * tmp</code> with <code>acum.prob &lt;- acum.prob + log(tmp)</code>. If you try those changes you should get the same result as before.
 </div>
 
 <p>There is already a popular R package (<code>e1071</code>) for training Naive Bayes classifiers. The following code trains a classifier using this package.</p>
