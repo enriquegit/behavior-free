@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2020-10-22" />
+<meta name="date" content="2020-10-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -196,7 +196,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="classification.html"><a href="classification.html#dynamic-time-warping"><i class="fa fa-check"></i><b>2.5</b> Dynamic Time Warping</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="classification.html"><a href="classification.html#sechandgestures"><i class="fa fa-check"></i><b>2.5.1</b> Hand Gesture Recognition</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="classification.html"><a href="classification.html#summaryClassification"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
+<li class="chapter" data-level="2.6" data-path="classification.html"><a href="classification.html#dummy-models"><i class="fa fa-check"></i><b>2.6</b> Dummy Models</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="classification.html"><a href="classification.html#most-frequent-class-classifier"><i class="fa fa-check"></i><b>2.6.1</b> Most-frequent-class Classifier</a></li>
+<li class="chapter" data-level="2.6.2" data-path="classification.html"><a href="classification.html#uniform-classifier"><i class="fa fa-check"></i><b>2.6.2</b> Uniform Classifier</a></li>
+<li class="chapter" data-level="2.6.3" data-path="classification.html"><a href="classification.html#frequency-based-classifier"><i class="fa fa-check"></i><b>2.6.3</b> Frequency-based Classifier</a></li>
+<li class="chapter" data-level="2.6.4" data-path="classification.html"><a href="classification.html#other-dummy-classifiers"><i class="fa fa-check"></i><b>2.6.4</b> Other Dummy Classifiers</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="classification.html"><a href="classification.html#summaryClassification"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="ensemble.html"><a href="ensemble.html"><i class="fa fa-check"></i><b>3</b> Predicting Behavior with Ensemble Learning</a><ul>
 <li class="chapter" data-level="3.1" data-path="ensemble.html"><a href="ensemble.html#bagging"><i class="fa fa-check"></i><b>3.1</b> Bagging</a><ul>
@@ -1504,15 +1510,150 @@ Figure 2.24: Confusion matrix for hand gestures’ predictions.
 </p>
 </div>
 <p>The overall recall was <span class="math inline">\(0.87\)</span> which is not bad. From the confusion matrix, we can see that the class <em>‘a’</em> was often confused with <em>‘circleLeft’</em> and vice versa. This makes sense since both have similar motions (see Figure <a href="classification.html#fig:gesturesFigure">2.21</a>). Also, <em>‘b’</em> was often confused with <em>‘circleLeft’</em>. The <em>‘square’</em> class was always correctly classified. This example demonstrated how DTW can be used with <span class="math inline">\(k\)</span>-nn to recognize hand gestures.</p>
-<!-- ## Baseline Classifiers -->
-<!-- ## Other Classification Models -->
-<!-- ### Nearest Centroid -->
-<!-- ### Neural Networks -->
+</div>
+</div>
+<div id="dummy-models" class="section level2">
+<h2><span class="header-section-number">2.6</span> Dummy Models</h2>
+
+<div class="rmdfolder">
+<code>dummy_classifiers.R</code>
+</div>
+
+<p>When faced with a new problem, you may be tempted to start trying to solve it by using a complex model. Then, you proceed to train your complex model and evaluate it. The results look reasonably good so you think you are done. However, this good performance could only be an <em>illusion</em>. Sometimes there are underlying problems with the data that can give the false impression that a model is performing well. Examples of such problems are imbalanced datasets, no correlation between the features and the classes, features not containing enough information, etc. <strong>Dummy models</strong> can be used to spot some of those problems. Dummy models use little or no information at all when making predictions (we’ll see how in a moment).</p>
+<p>Furthermore, for some problems (specially in regression) it is not clear what is considered to be a good performance. There are problems in which doing slightly better than random is considered a great achievement (e.g., in forecasting) but for other problems that would be unacceptable. Thus, we need some type of baseline to assess whether or not a particular model is bringing some benefit. Dummy models are not only used to spot problems but can be used as baselines as well.</p>
+
+<div class="rmdinfo">
+Dummy models are also called <em>baseline models</em> or <em>dumb models</em>. One student I was supervising used to call them <em>stupid models</em>. When I am angry I also call them like that but today I’m in a good mood so I’ll refer to them as <em>dymmy</em>.
+</div>
+
+<p>Now, I will present three types of dummy classifiers and we will implement them.</p>
+<div id="most-frequent-class-classifier" class="section level3">
+<h3><span class="header-section-number">2.6.1</span> Most-frequent-class Classifier</h3>
+<p>As the name implies, the most-frequent-class classifier always predicts the most frequent label found in the train set. This means that the model does not even need to look at the features! Once it is presented with a new instance, it just outputs the most common class as the prediction.</p>
+<p>To show how it can be implemented I will use the <em>SMARTPHONES ACTIVITIES</em> dataset. For demonstration purposes, I will only keep two classes: <em>‘Walking’</em> and <em>‘Upstairs’</em>. Furthermore, I will only pick a small percent of the instances with class <em>‘Upstairs’</em> to simulate an imbalanced dataset. Imbalanced means that there are classes for which only a few instances exist. More about imbalanced data and how to handle it will be covered in chapter <a href="preprocessing.html#preprocessing">5</a>. After those modifications, we can check the class counts:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="classification.html#cb63-1"></a><span class="co"># Print class counts.</span></span>
+<span id="cb63-2"><a href="classification.html#cb63-2"></a><span class="kw">table</span>(dataset<span class="op">$</span>class)</span>
+<span id="cb63-3"><a href="classification.html#cb63-3"></a><span class="co">#&gt; Upstairs  Walking </span></span>
+<span id="cb63-4"><a href="classification.html#cb63-4"></a><span class="co">#&gt;      200     2081</span></span>
+<span id="cb63-5"><a href="classification.html#cb63-5"></a></span>
+<span id="cb63-6"><a href="classification.html#cb63-6"></a><span class="co"># In percentages.</span></span>
+<span id="cb63-7"><a href="classification.html#cb63-7"></a><span class="kw">table</span>(dataset<span class="op">$</span>class) <span class="op">/</span><span class="st"> </span><span class="kw">nrow</span>(dataset)</span>
+<span id="cb63-8"><a href="classification.html#cb63-8"></a><span class="co">#&gt;   Upstairs    Walking </span></span>
+<span id="cb63-9"><a href="classification.html#cb63-9"></a><span class="co">#&gt; 0.08768084 0.91231916</span></span></code></pre></div>
+<p>We can see that more than <span class="math inline">\(90\%\)</span> of the instances belong to class <em>‘Walking’</em>. It’s time to define the dummy classifier!</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="classification.html#cb64-1"></a><span class="co"># Define the dummy classifier&#39;s train function.</span></span>
+<span id="cb64-2"><a href="classification.html#cb64-2"></a>most.frequent.class.train &lt;-<span class="st"> </span><span class="cf">function</span>(data){</span>
+<span id="cb64-3"><a href="classification.html#cb64-3"></a>  </span>
+<span id="cb64-4"><a href="classification.html#cb64-4"></a>  <span class="co"># Get a table with the class counts.</span></span>
+<span id="cb64-5"><a href="classification.html#cb64-5"></a>  counts &lt;-<span class="st"> </span><span class="kw">table</span>(data<span class="op">$</span>class)</span>
+<span id="cb64-6"><a href="classification.html#cb64-6"></a>  </span>
+<span id="cb64-7"><a href="classification.html#cb64-7"></a>  <span class="co"># Select the label with the most counts.</span></span>
+<span id="cb64-8"><a href="classification.html#cb64-8"></a>  most.frequent &lt;-<span class="st"> </span><span class="kw">names</span>(<span class="kw">which.max</span>(counts))</span>
+<span id="cb64-9"><a href="classification.html#cb64-9"></a>  </span>
+<span id="cb64-10"><a href="classification.html#cb64-10"></a>  <span class="kw">return</span>(most.frequent)</span>
+<span id="cb64-11"><a href="classification.html#cb64-11"></a>}</span></code></pre></div>
+<p>The <code>most.frequent.class.train()</code> function will learn the parameters from a train set. The only thing this model needs to learn is what is the most frequent class. First, the <code>table()</code> function is used to get the class counts and then the name of the class with the max counts is returned. Now we define the predict function which takes as its first argument the learned parameters and as second argument the test set on which we want to make predictions. The parameter only consists of the name of a class.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="classification.html#cb65-1"></a><span class="co"># Define the dummy classifier&#39;s predict function.</span></span>
+<span id="cb65-2"><a href="classification.html#cb65-2"></a>most.frequent.class.predict &lt;-<span class="st"> </span><span class="cf">function</span>(params, data){</span>
+<span id="cb65-3"><a href="classification.html#cb65-3"></a></span>
+<span id="cb65-4"><a href="classification.html#cb65-4"></a>  <span class="co"># Return the same label for as many rows as there are in data.</span></span>
+<span id="cb65-5"><a href="classification.html#cb65-5"></a>  <span class="kw">return</span>(<span class="kw">rep</span>(params, <span class="kw">nrow</span>(data)))</span>
+<span id="cb65-6"><a href="classification.html#cb65-6"></a>  </span>
+<span id="cb65-7"><a href="classification.html#cb65-7"></a>}</span></code></pre></div>
+<p>The only thing the predict function does is to return the <code>params</code> argument that contains the class name repeated <span class="math inline">\(n\)</span> times. Where <span class="math inline">\(n\)</span> is the number of rows in the test data frame.</p>
+<p>Let’s try our functions. The dataset has already been split into <span class="math inline">\(50\%\)</span> for training and <span class="math inline">\(50\%\)</span> for testing. First we train the dummy model using the train set. Then, the learned parameter is printed.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="classification.html#cb66-1"></a><span class="co"># Learn the parameters.</span></span>
+<span id="cb66-2"><a href="classification.html#cb66-2"></a>dummy.model1 &lt;-<span class="st"> </span><span class="kw">most.frequent.class.train</span>(trainset)</span>
+<span id="cb66-3"><a href="classification.html#cb66-3"></a></span>
+<span id="cb66-4"><a href="classification.html#cb66-4"></a><span class="co"># Print the learned parameter.</span></span>
+<span id="cb66-5"><a href="classification.html#cb66-5"></a>dummy.model1</span>
+<span id="cb66-6"><a href="classification.html#cb66-6"></a><span class="co">#&gt; [1] &quot;Walking&quot;</span></span></code></pre></div>
+<p>Now we can make predictions on the test set and compute the accuracy.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="classification.html#cb67-1"></a><span class="co"># Make predictions.</span></span>
+<span id="cb67-2"><a href="classification.html#cb67-2"></a>predictions &lt;-<span class="st"> </span><span class="kw">most.frequent.class.predict</span>(dummy.model1, testset)</span>
+<span id="cb67-3"><a href="classification.html#cb67-3"></a></span>
+<span id="cb67-4"><a href="classification.html#cb67-4"></a><span class="co"># Compute confusion matrix and other performance metrics.</span></span>
+<span id="cb67-5"><a href="classification.html#cb67-5"></a>cm &lt;-<span class="st"> </span><span class="kw">confusionMatrix</span>(<span class="kw">factor</span>(predictions, levels),</span>
+<span id="cb67-6"><a href="classification.html#cb67-6"></a>                       <span class="kw">factor</span>(testset<span class="op">$</span>class, levels))</span>
+<span id="cb67-7"><a href="classification.html#cb67-7"></a></span>
+<span id="cb67-8"><a href="classification.html#cb67-8"></a><span class="co"># Print accuracy</span></span>
+<span id="cb67-9"><a href="classification.html#cb67-9"></a>cm<span class="op">$</span>overall[<span class="st">&quot;Accuracy&quot;</span>]</span>
+<span id="cb67-10"><a href="classification.html#cb67-10"></a><span class="co">#&gt;  Accuracy </span></span>
+<span id="cb67-11"><a href="classification.html#cb67-11"></a><span class="co">#&gt; 0.9140351 </span></span></code></pre></div>
+<p>The accuracy was <span class="math inline">\(91.4\%\)</span>. It seems that the dummy classifier was not that dummy after all! Let’s print the confusion matrix to inspect the predictions.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="classification.html#cb68-1"></a><span class="co"># Print confusion matrix.</span></span>
+<span id="cb68-2"><a href="classification.html#cb68-2"></a>cm<span class="op">$</span>table</span>
+<span id="cb68-3"><a href="classification.html#cb68-3"></a></span>
+<span id="cb68-4"><a href="classification.html#cb68-4"></a><span class="co">#&gt;           Reference</span></span>
+<span id="cb68-5"><a href="classification.html#cb68-5"></a><span class="co">#&gt; Prediction Walking Upstairs</span></span>
+<span id="cb68-6"><a href="classification.html#cb68-6"></a><span class="co">#&gt;   Walking     1042       98</span></span>
+<span id="cb68-7"><a href="classification.html#cb68-7"></a><span class="co">#&gt;   Upstairs       0        0</span></span></code></pre></div>
+<p>From the confusion matrix we can see that all <em>‘Walking’</em> activities were correctly classified but none of the <em>‘Upstairs’</em> classes were identified. This is because the dummy model only predicts <em>‘Walking’</em>. Here we can see that even though it seemed like the dummy model was doing pretty good, it was not that good after all.</p>
+<p>We can now try with a decision tree from the <code>rpart</code> package.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="classification.html#cb69-1"></a><span class="co">### Let&#39;s try with a decision tree</span></span>
+<span id="cb69-2"><a href="classification.html#cb69-2"></a>treeClassifier &lt;-<span class="st"> </span><span class="kw">rpart</span>(class <span class="op">~</span><span class="st"> </span>., trainset)</span>
+<span id="cb69-3"><a href="classification.html#cb69-3"></a></span>
+<span id="cb69-4"><a href="classification.html#cb69-4"></a>tree.predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(treeClassifier, testset, <span class="dt">type =</span> <span class="st">&quot;class&quot;</span>)</span>
+<span id="cb69-5"><a href="classification.html#cb69-5"></a></span>
+<span id="cb69-6"><a href="classification.html#cb69-6"></a>cm.tree &lt;-<span class="st"> </span><span class="kw">confusionMatrix</span>(<span class="kw">factor</span>(tree.predictions, levels),</span>
+<span id="cb69-7"><a href="classification.html#cb69-7"></a>                      <span class="kw">factor</span>(testset<span class="op">$</span>class, levels))</span>
+<span id="cb69-8"><a href="classification.html#cb69-8"></a></span>
+<span id="cb69-9"><a href="classification.html#cb69-9"></a><span class="co"># Print accuracy</span></span>
+<span id="cb69-10"><a href="classification.html#cb69-10"></a>cm.tree<span class="op">$</span>overall[<span class="st">&quot;Accuracy&quot;</span>]</span>
+<span id="cb69-11"><a href="classification.html#cb69-11"></a><span class="co">#&gt;  Accuracy </span></span>
+<span id="cb69-12"><a href="classification.html#cb69-12"></a><span class="co">#&gt; 0.9236842</span></span></code></pre></div>
+<p>Decision trees are more powerful than dummy classifiers but the accuracy was very similar!</p>
+
+<div class="rmdgoodpractice">
+It is a good practice to compare powerful models against dummy models. If their performances are similar this may be a sign that there is something that needs to be checked. In this example the reason was that the dataset was imbalanced. It is also adivisable to report not only the accuracy but other metrics. We would also have noted the imbalance problem by looking at the recall of the individual classes, for example.
+</div>
+
+</div>
+<div id="uniform-classifier" class="section level3">
+<h3><span class="header-section-number">2.6.2</span> Uniform Classifier</h3>
+<p>This is another type of dummy classifier. This one predicts classes at random with equal probability and can be implemented as follows.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="classification.html#cb70-1"></a><span class="co"># Define the dummy classifier&#39;s train function.</span></span>
+<span id="cb70-2"><a href="classification.html#cb70-2"></a>uniform.train &lt;-<span class="st"> </span><span class="cf">function</span>(data){</span>
+<span id="cb70-3"><a href="classification.html#cb70-3"></a>  </span>
+<span id="cb70-4"><a href="classification.html#cb70-4"></a>  <span class="co"># Get the unique classes.</span></span>
+<span id="cb70-5"><a href="classification.html#cb70-5"></a>  unique.classes &lt;-<span class="st"> </span><span class="kw">unique</span>(data<span class="op">$</span>class)</span>
+<span id="cb70-6"><a href="classification.html#cb70-6"></a>  </span>
+<span id="cb70-7"><a href="classification.html#cb70-7"></a>  <span class="kw">return</span>(unique.classes)</span>
+<span id="cb70-8"><a href="classification.html#cb70-8"></a>}</span>
+<span id="cb70-9"><a href="classification.html#cb70-9"></a></span>
+<span id="cb70-10"><a href="classification.html#cb70-10"></a><span class="co"># Define the dummy classifier&#39;s predict function.</span></span>
+<span id="cb70-11"><a href="classification.html#cb70-11"></a>uniform.predict &lt;-<span class="st"> </span><span class="cf">function</span>(params, data){</span>
+<span id="cb70-12"><a href="classification.html#cb70-12"></a>  </span>
+<span id="cb70-13"><a href="classification.html#cb70-13"></a>  <span class="co"># Sample classes uniformly.</span></span>
+<span id="cb70-14"><a href="classification.html#cb70-14"></a>  <span class="kw">return</span>(<span class="kw">sample</span>(unique.classes, <span class="dt">size =</span> <span class="kw">nrow</span>(data), <span class="dt">replace =</span> T))</span>
+<span id="cb70-15"><a href="classification.html#cb70-15"></a>  </span>
+<span id="cb70-16"><a href="classification.html#cb70-16"></a>}</span></code></pre></div>
+<p>At prediction time, it just picks a random label for each instance in the test set. This model achieved an accuracy of only <span class="math inline">\(49\%\)</span> using the same dataset, but it was able to identify more of the <em>‘Upstairs’</em> classes.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="classification.html#cb71-1"></a><span class="co">#&gt;           Reference</span></span>
+<span id="cb71-2"><a href="classification.html#cb71-2"></a><span class="co">#&gt; Prediction Walking Upstairs</span></span>
+<span id="cb71-3"><a href="classification.html#cb71-3"></a><span class="co">#&gt;   Walking      519       52</span></span>
+<span id="cb71-4"><a href="classification.html#cb71-4"></a><span class="co">#&gt;   Upstairs     523       46</span></span></code></pre></div>
+<p>If a dataset is balanced and the accuracy of the uniform classifier is similar to the more complex model, the problem may be that the features are not providing enough information. That is, the complex classifier was not able to extract any useful patterns from the features.</p>
+</div>
+<div id="frequency-based-classifier" class="section level3">
+<h3><span class="header-section-number">2.6.3</span> Frequency-based Classifier</h3>
+<p>This one is similar to the uniform classifier but the probability of choosing a class is proportional to its frequency in the train set. Its implementation is similar to the uniform classifier but we can make use of the <code>prob</code> parameter in the <code>sample()</code> function to specify weights for each class. The higher the weight for a class, the more probable it will be chosen at prediction time. The implementation of this one is in the script <code>dummy_classifiers.R</code>.</p>
+<p>The frequency-based classifier achieved an accuracy of <span class="math inline">\(84\%\)</span>. Much lower than the most-frequent-class model (<span class="math inline">\(91.4\%\)</span>) but this one was able to detect some of the <em>‘Upstairs’</em> classes.</p>
+</div>
+<div id="other-dummy-classifiers" class="section level3">
+<h3><span class="header-section-number">2.6.4</span> Other Dummy Classifiers</h3>
+<p>Another dummy model that can be used for classification is to apply simple thresholds.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="classification.html#cb72-1"></a><span class="cf">if</span>(feature1 <span class="op">&lt;</span><span class="st"> </span>threshold)</span>
+<span id="cb72-2"><a href="classification.html#cb72-2"></a>  <span class="kw">return</span>(<span class="st">&quot;A&quot;</span>)</span>
+<span id="cb72-3"><a href="classification.html#cb72-3"></a><span class="cf">else</span></span>
+<span id="cb72-4"><a href="classification.html#cb72-4"></a>  <span class="kw">return</span>(<span class="st">&quot;B&quot;</span>)</span></code></pre></div>
+<p>In fact, the previous rule can be thought of as a very simple decision tree with only one root node. Surprisingly, sometimes simple rules can be difficult to beat by more complex models. In this section I’ve been focusing on classification problems but dummy models can also be constructed for <strong>regression</strong>. The simplest one would be to predict the mean value of <span class="math inline">\(y\)</span> regardless of the feature values. Another dummy model could predict a random value between the min and max values of <span class="math inline">\(y\)</span>. If there is a categorical feature, one could predict the mean value based on the category. In fact, that is what we did in chapter <a href="intro.html#intro">1</a> in the simple regression example.</p>
+<p>In summary, one can construct any type of dummy model depending on the application. The takeaway is that dummy models allow us to assess how more complex models perform with respect to some baselines and can help us to detect possible problems in the data and features. What I typically do when solving a problem is to start with simple models and/or rules and then, try more complex models. Of course, manual thresholds and simple rules can work remarkably well in some situations but they are not scalable. Depending on the use case, one can just implement the simple solution or go with something more complex if the system is expected to grow or be used in more general ways.</p>
 
 </div>
 </div>
 <div id="summaryClassification" class="section level2">
-<h2><span class="header-section-number">2.6</span> Summary</h2>
+<h2><span class="header-section-number">2.7</span> Summary</h2>
 <p>This chapter focused on <strong>classification</strong> models. Classifiers predict a category based on the input features. Here, we showed how classifiers can be used to detect indoor locations, classify activities and had gestures.</p>
 <ul>
 <li><strong><span class="math inline">\(k\)</span>-nearest neighbors (<span class="math inline">\(k\)</span>-nn)</strong> predicts the class of a test point as the majority class of the <span class="math inline">\(k\)</span> nearest neighbors.</li>
@@ -1520,6 +1661,7 @@ Figure 2.24: Confusion matrix for hand gestures’ predictions.
 <li><strong>Decision trees</strong> are easy-to-interpret classifiers trained recursively based on feature importance (for example, purity).</li>
 <li><strong>Naive Bayes</strong> is a type of classifier where features are assumed to be independent.</li>
 <li><strong>Dynamic Time Warping (DTW)</strong> computes the similarity between two timeseries after ‘aligning’ them in time. This can be used for classification for example, in combination with <span class="math inline">\(k\)</span>-nn.</li>
+<li><strong>Dummy models</strong> can help to spot possible errors in the data and can also be used as baselines.</li>
 </ul>
 <p><img src="images/comic_dtw.png" width="100%" style="display: block; margin: auto;" />
 </p>

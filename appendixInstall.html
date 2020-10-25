@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2020-10-22" />
+<meta name="date" content="2020-10-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -196,7 +196,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="classification.html"><a href="classification.html#dynamic-time-warping"><i class="fa fa-check"></i><b>2.5</b> Dynamic Time Warping</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="classification.html"><a href="classification.html#sechandgestures"><i class="fa fa-check"></i><b>2.5.1</b> Hand Gesture Recognition</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="classification.html"><a href="classification.html#summaryClassification"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
+<li class="chapter" data-level="2.6" data-path="classification.html"><a href="classification.html#dummy-models"><i class="fa fa-check"></i><b>2.6</b> Dummy Models</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="classification.html"><a href="classification.html#most-frequent-class-classifier"><i class="fa fa-check"></i><b>2.6.1</b> Most-frequent-class Classifier</a></li>
+<li class="chapter" data-level="2.6.2" data-path="classification.html"><a href="classification.html#uniform-classifier"><i class="fa fa-check"></i><b>2.6.2</b> Uniform Classifier</a></li>
+<li class="chapter" data-level="2.6.3" data-path="classification.html"><a href="classification.html#frequency-based-classifier"><i class="fa fa-check"></i><b>2.6.3</b> Frequency-based Classifier</a></li>
+<li class="chapter" data-level="2.6.4" data-path="classification.html"><a href="classification.html#other-dummy-classifiers"><i class="fa fa-check"></i><b>2.6.4</b> Other Dummy Classifiers</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="classification.html"><a href="classification.html#summaryClassification"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="ensemble.html"><a href="ensemble.html"><i class="fa fa-check"></i><b>3</b> Predicting Behavior with Ensemble Learning</a><ul>
 <li class="chapter" data-level="3.1" data-path="ensemble.html"><a href="ensemble.html#bagging"><i class="fa fa-check"></i><b>3.1</b> Bagging</a><ul>
@@ -364,7 +370,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You can get the code using git or if you are not familiar with it, click on the ‘Code’ button and then ‘Download zip’. Then, extract the file into a local directory of your choice.</p>
 <p>There is a directory for each chapter and two additional directories: <code>auxiliary_functions/</code> and <code>install_functions/</code>.</p>
 <p>The <code>auxiliary_functions/</code> folder has generic functions that are imported by some other R scripts. In this directory, there is a file called <code>globals.R</code>. Open that file and set the variable <code>datasets_path</code> to your local path where you downloaded the datasets. For example, I set it to:</p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="appendixInstall.html#cb209-1"></a>datasets_path &lt;-<span class="st"> &quot;C:/datasets&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="appendixInstall.html#cb219-1"></a>datasets_path &lt;-<span class="st"> &quot;C:/datasets&quot;</span></span></code></pre></div>
 <p>The <code>install_functions/</code> directory has a single script: <code>install_packages.R</code>. This script can be used to install all the packages used in the examples (except Keras and TensorFlow which is covered in the next section). The script reads the packages listed in listpackages.txt and tries to install them if they are not present. This is just a convenient way to install everything at once but you can always install each package individually with the usual <code>install.packages()</code> method.</p>
 <p>When running the examples, it is assumed that the working directory is the same as the actual script. For example, if you want to try <code>indoor_classification.R</code>, and that script is located in <code>C:/code/Predicting Behavior with Classification Models/</code> then, your working directory should be <code>C:/code/Predicting Behavior with Classification Models/</code>. In Windows, and if RStudio is not already opened, when you double-click an R script, RStudio will be launched (if it is set as the default program) and the working directory will be set.</p>
 <p>You can check your current working directory by typing <code>getwd()</code> and you can set your working directory with <code>setwd()</code>. Alternatively, in RStudio, you can set your working directory in the menu bar ‘Session’ -&gt; ‘Set Working Directory’ -&gt; ‘To Source File Location’.</p>
@@ -386,13 +392,13 @@ Keras and TensorFlow are used until Chapter <a href="deeplearning.html#deeplearn
 <li><p>Run <code>install_keras()</code>. This function will install TensorFlow as the backend. If you don’t have Anaconda installed, you will be asked if you want to install Miniconda.</p></li>
 </ol>
 <p>You can test your installation with:</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="appendixInstall.html#cb210-1"></a><span class="kw">library</span>(tensorflow)</span>
-<span id="cb210-2"><a href="appendixInstall.html#cb210-2"></a>tf<span class="op">$</span><span class="kw">constant</span>(<span class="st">&quot;Hello World&quot;</span>)</span>
-<span id="cb210-3"><a href="appendixInstall.html#cb210-3"></a><span class="co">#&gt; tf.Tensor(b&#39;Hello World&#39;, shape=(), dtype=string)</span></span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="appendixInstall.html#cb220-1"></a><span class="kw">library</span>(tensorflow)</span>
+<span id="cb220-2"><a href="appendixInstall.html#cb220-2"></a>tf<span class="op">$</span><span class="kw">constant</span>(<span class="st">&quot;Hello World&quot;</span>)</span>
+<span id="cb220-3"><a href="appendixInstall.html#cb220-3"></a><span class="co">#&gt; tf.Tensor(b&#39;Hello World&#39;, shape=(), dtype=string)</span></span></code></pre></div>
 <p>The first time in a session that you run TensorFlow related code with the CPU version, you may get warning messages like the following, which you can safely ignore.</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="appendixInstall.html#cb211-1"></a><span class="co">#&gt; tensorflow/stream_executor/platform/default/dso_loader.cc:55]</span></span>
-<span id="cb211-2"><a href="appendixInstall.html#cb211-2"></a><span class="co">#&gt; Could not load dynamic library &#39;cudart64_101.dll&#39;;</span></span>
-<span id="cb211-3"><a href="appendixInstall.html#cb211-3"></a><span class="co">#&gt; dlerror: cudart64_101.dll not found</span></span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="appendixInstall.html#cb221-1"></a><span class="co">#&gt; tensorflow/stream_executor/platform/default/dso_loader.cc:55]</span></span>
+<span id="cb221-2"><a href="appendixInstall.html#cb221-2"></a><span class="co">#&gt; Could not load dynamic library &#39;cudart64_101.dll&#39;;</span></span>
+<span id="cb221-3"><a href="appendixInstall.html#cb221-3"></a><span class="co">#&gt; dlerror: cudart64_101.dll not found</span></span></code></pre></div>
 
 <div class="rmdinfo">
 If you want to install the GPU version, first, you need to make sure you have a compatible video card. More information on how to install the GPU version is available here <a href="https://keras.rstudio.com/reference/install_keras.html" class="uri">https://keras.rstudio.com/reference/install_keras.html</a> and here <a href="https://tensorflow.rstudio.com/installation/gpu/local_gpu/" class="uri">https://tensorflow.rstudio.com/installation/gpu/local_gpu/</a>
