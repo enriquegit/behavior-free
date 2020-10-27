@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2020-10-25" />
+<meta name="date" content="2020-10-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -318,7 +318,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A" data-path="appendixInstall.html"><a href="appendixInstall.html"><i class="fa fa-check"></i><b>A</b> Setup Your Environment</a><ul>
 <li class="chapter" data-level="A.1" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-datasets"><i class="fa fa-check"></i><b>A.1</b> Installing the Datasets</a></li>
 <li class="chapter" data-level="A.2" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-examples-source-code"><i class="fa fa-check"></i><b>A.2</b> Installing the Examples Source Code</a></li>
-<li class="chapter" data-level="A.3" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-keras-and-tensorflow."><i class="fa fa-check"></i><b>A.3</b> Installing Keras and TensorFlow.</a></li>
+<li class="chapter" data-level="A.3" data-path="appendixInstall.html"><a href="appendixInstall.html#running-shiny-apps"><i class="fa fa-check"></i><b>A.3</b> Running Shiny Apps</a></li>
+<li class="chapter" data-level="A.4" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-keras-and-tensorflow"><i class="fa fa-check"></i><b>A.4</b> Installing Keras and TensorFlow</a></li>
 </ul></li>
 <li class="chapter" data-level="B" data-path="appendixDatasets.html"><a href="appendixDatasets.html"><i class="fa fa-check"></i><b>B</b> Datasets</a><ul>
 <li class="chapter" data-level="B.1" data-path="appendixDatasets.html"><a href="appendixDatasets.html#complex-activities"><i class="fa fa-check"></i><b>B.1</b> COMPLEX ACTIVITIES</a></li>
@@ -637,8 +638,8 @@ Figure 5.8: Original time series and smoothed version using a moving average win
 <div id="random-oversampling" class="section level3">
 <h3><span class="header-section-number">5.4.1</span> Random Oversampling</h3>
 
-<div class="rmdfolder">
-<code>random-oversampling.Rmd</code>
+<div class="rmdshiny">
+<code>shiny_random-oversampling.Rmd</code>
 </div>
 
 <p>This method consists of duplicating data points from the minority class. The following code will create an imbalanced dataset with <span class="math inline">\(200\)</span> instances of class <em>‘class1’</em> and only <span class="math inline">\(15\)</span> instances of class <em>‘class2’</em>.</p>
@@ -679,7 +680,7 @@ Figure 5.8: Original time series and smoothed version using a moving average win
 <span id="cb113-9"><a href="preprocessing.html#cb113-9"></a><span class="kw">summary</span>(balancedDf<span class="op">$</span>label)</span>
 <span id="cb113-10"><a href="preprocessing.html#cb113-10"></a><span class="co">#&gt; class1 class2 </span></span>
 <span id="cb113-11"><a href="preprocessing.html#cb113-11"></a><span class="co">#&gt;   200    200 </span></span></code></pre></div>
-<p>The code associated with this chapter includes a shiny app<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> <code>random-oversampling.Rmd</code>. Shiny apps are interactive web applications. This shiny app graphically demonstrates how random oversampling works. Figure <a href="preprocessing.html#fig:shinyOversampling">5.9</a> shows the shiny app. The user can move the slider to generate new data points. Please note that the boundaries do not change as the number of instances increases (or decreases). This is because the new points are just duplicates so they overlap with existing ones.</p>
+<p>The code associated with this chapter includes a shiny app<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> <code>shiny_random-oversampling.Rmd</code>. Shiny apps are interactive web applications. This shiny app graphically demonstrates how random oversampling works. Figure <a href="preprocessing.html#fig:shinyOversampling">5.9</a> shows the shiny app. The user can move the slider to generate new data points. Please note that the boundaries do not change as the number of instances increases (or decreases). This is because the new points are just duplicates so they overlap with existing ones.</p>
 <div class="figure" style="text-align: center"><span id="fig:shinyOversampling"></span>
 <img src="images/shiny_oversampling.png" alt="Shiny app with random oversampling example." width="100%" />
 <p class="caption">
@@ -696,8 +697,8 @@ It is a common mistake to generate synthetic data on the entire dataset before s
 <div id="smote" class="section level3">
 <h3><span class="header-section-number">5.4.2</span> SMOTE</h3>
 
-<div class="rmdfolder">
-<code>auxiliary_functions/functions.R</code>, <code>smote-oversampling.Rmd</code>
+<div class="rmdshiny">
+<code>shiny_smote-oversampling.Rmd</code>
 </div>
 
 <p>The Synthetic Minority Oversampling Technique (SMOTE) <span class="citation">(Chawla et al. <a href="#ref-chawla2002smote" role="doc-biblioref">2002</a>)</span> can also be used to generate more data points from the minority class. One of the limitations of random oversampling is that it creates duplicates. This has the effect of having fixed boundaries and the classifiers can overspecialize. To avoid this, SMOTE creates entirely new data points.</p>
@@ -709,7 +710,7 @@ Figure 5.10: Synthetic point generation.
 </p>
 </div>
 <p>The number of nearest neighbors <span class="math inline">\(k\)</span> is a parameter defined by the user. In their original work <span class="citation">(Chawla et al. <a href="#ref-chawla2002smote" role="doc-biblioref">2002</a>)</span>, the authors set <span class="math inline">\(k=5\)</span>. Depending on how many new samples need to be generated, <span class="math inline">\(k&#39;\)</span> neighbors are randomly selected from the original <span class="math inline">\(k\)</span> nearest neighbors. For example, if <span class="math inline">\(200\%\)</span> oversampling is needed, <span class="math inline">\(k&#39;=2\)</span> neighbors are selected at random out of the <span class="math inline">\(k=5\)</span> and one data point is generated with each of them. This is performed for each data point in the minority class.</p>
-<p>An implementation of SMOTE is provided in <code>auxiliary_functions/functions.R</code>. An example of how to apply it can be found in <code>preprocessing.R</code> in the corresponding directory of this chapter’s code. The <code>smote.class(completeDf, targetClass, N, k)</code> function has several arguments. The first one is the data frame that contains the minority and majority class, that is, the complete dataset. The second argument is the minority class label. The third argument <code>N</code> is the percent of smote and the last one (<code>k</code>) is the number of nearest neighbors to consider.</p>
+<p>An implementation of SMOTE is also provided in <code>auxiliary_functions/functions.R</code>. An example of how to apply it can be found in <code>preprocessing.R</code> in the corresponding directory of this chapter’s code. The <code>smote.class(completeDf, targetClass, N, k)</code> function has several arguments. The first one is the data frame that contains the minority and majority class, that is, the complete dataset. The second argument is the minority class label. The third argument <code>N</code> is the percent of smote and the last one (<code>k</code>) is the number of nearest neighbors to consider.</p>
 <p>The following code shows how the function <code>smote.class()</code> can be used to generate new points from the imbalanced dataset that was introduced in the previous section ‘Random Oversampling’. Recall that it has <span class="math inline">\(200\)</span> points of class <em>‘class1’</em> and <span class="math inline">\(15\)</span> points of class <em>‘class2’</em>.</p>
 <div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="preprocessing.html#cb114-1"></a><span class="co"># To balance the dataset, we need to oversample 1200%.</span></span>
 <span id="cb114-2"><a href="preprocessing.html#cb114-2"></a><span class="co"># This means that the method will create 12 * 15 new points.</span></span>
