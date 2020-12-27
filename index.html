@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Behavior Analysis with Machine Learning and R</title>
   <meta name="description" content="Behavior Analysis with Machine Learning and R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Behavior Analysis with Machine Learning and R" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2020-11-06" />
+<meta name="date" content="2020-12-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,23 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/d3-4.9.0/d3.min.js"></script>
+<script src="libs/d3-tip-0.7.1/index-min.js"></script>
+<link href="libs/d3panels-1.4.9/d3panels.min.css" rel="stylesheet" />
+<script src="libs/d3panels-1.4.9/d3panels.min.js"></script>
+<script src="libs/qtlcharts_iplotCorr-0.11.6/iplotCorr.js"></script>
+<script src="libs/qtlcharts_iplotCorr-0.11.6/iplotCorr_noscat.js"></script>
+<script src="libs/iplotCorr-binding-0.11.6/iplotCorr.js"></script>
+<link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script>
+<script src="libs/dygraphs-1.1.1/shapes.js"></script>
+<script src="libs/moment-2.8.4/moment.js"></script>
+<script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+<script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
+<script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178679335-1"></script>
 <script>
@@ -62,6 +79,70 @@
 </script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -213,9 +294,7 @@
 <li class="chapter" data-level="8.4.1" data-path="deeplearning.html"><a href="deeplearning.html#early-stopping"><i class="fa fa-check"></i><b>8.4.1</b> Early Stopping</a></li>
 <li class="chapter" data-level="8.4.2" data-path="deeplearning.html"><a href="deeplearning.html#dropout"><i class="fa fa-check"></i><b>8.4.2</b> Dropout</a></li>
 </ul></li>
-<li class="chapter" data-level="8.5" data-path="deeplearning.html"><a href="deeplearning.html#fine-tuning-a-neural-network"><i class="fa fa-check"></i><b>8.5</b> Fine-Tuning a Neural Network</a><ul>
-<li class="chapter" data-level="8.5.1" data-path="deeplearning.html"><a href="deeplearning.html#other-considerations"><i class="fa fa-check"></i><b>8.5.1</b> Other Considerations</a></li>
-</ul></li>
+<li class="chapter" data-level="8.5" data-path="deeplearning.html"><a href="deeplearning.html#fine-tuning-a-neural-network"><i class="fa fa-check"></i><b>8.5</b> Fine-Tuning a Neural Network</a></li>
 <li class="chapter" data-level="8.6" data-path="deeplearning.html"><a href="deeplearning.html#cnns"><i class="fa fa-check"></i><b>8.6</b> Convolutional Neural Networks</a><ul>
 <li class="chapter" data-level="8.6.1" data-path="deeplearning.html"><a href="deeplearning.html#convolutions"><i class="fa fa-check"></i><b>8.6.1</b> Convolutions</a></li>
 <li class="chapter" data-level="8.6.2" data-path="deeplearning.html"><a href="deeplearning.html#pooling-operations"><i class="fa fa-check"></i><b>8.6.2</b> Pooling Operations</a></li>
@@ -239,25 +318,40 @@
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="multiuser.html"><a href="multiuser.html#SummaryMultiUser"><i class="fa fa-check"></i><b>9.5</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="appendixInstall.html"><a href="appendixInstall.html"><i class="fa fa-check"></i><b>10</b> Setup Your Environment</a><ul>
-<li class="chapter" data-level="10.1" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-datasets"><i class="fa fa-check"></i><b>10.1</b> Installing the Datasets</a></li>
-<li class="chapter" data-level="10.2" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-examples-source-code"><i class="fa fa-check"></i><b>10.2</b> Installing the Examples Source Code</a></li>
-<li class="chapter" data-level="10.3" data-path="appendixInstall.html"><a href="appendixInstall.html#running-shiny-apps"><i class="fa fa-check"></i><b>10.3</b> Running Shiny Apps</a></li>
-<li class="chapter" data-level="10.4" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-keras-and-tensorflow"><i class="fa fa-check"></i><b>10.4</b> Installing Keras and TensorFlow</a></li>
+<li class="chapter" data-level="10" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html"><i class="fa fa-check"></i><b>10</b> Detecting Abnormal Behaviors</a><ul>
+<li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
+<li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#explore-and-visualize-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Explore and Visualize Trajectories</a></li>
+<li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
+<li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
+<li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC curve and AUC</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="appendixDatasets.html"><a href="appendixDatasets.html"><i class="fa fa-check"></i><b>11</b> Datasets</a><ul>
-<li class="chapter" data-level="11.1" data-path="appendixDatasets.html"><a href="appendixDatasets.html#complex-activities"><i class="fa fa-check"></i><b>11.1</b> COMPLEX ACTIVITIES</a></li>
-<li class="chapter" data-level="11.2" data-path="appendixDatasets.html"><a href="appendixDatasets.html#depresjon"><i class="fa fa-check"></i><b>11.2</b> DEPRESJON</a></li>
-<li class="chapter" data-level="11.3" data-path="appendixDatasets.html"><a href="appendixDatasets.html#electromyography"><i class="fa fa-check"></i><b>11.3</b> ELECTROMYOGRAPHY</a></li>
-<li class="chapter" data-level="11.4" data-path="appendixDatasets.html"><a href="appendixDatasets.html#hand-gestures"><i class="fa fa-check"></i><b>11.4</b> HAND GESTURES</a></li>
-<li class="chapter" data-level="11.5" data-path="appendixDatasets.html"><a href="appendixDatasets.html#home-tasks"><i class="fa fa-check"></i><b>11.5</b> HOME TASKS</a></li>
-<li class="chapter" data-level="11.6" data-path="appendixDatasets.html"><a href="appendixDatasets.html#homicide-reports"><i class="fa fa-check"></i><b>11.6</b> HOMICIDE REPORTS</a></li>
-<li class="chapter" data-level="11.7" data-path="appendixDatasets.html"><a href="appendixDatasets.html#indoor-location"><i class="fa fa-check"></i><b>11.7</b> INDOOR LOCATION</a></li>
-<li class="chapter" data-level="11.8" data-path="appendixDatasets.html"><a href="appendixDatasets.html#sheep-goats"><i class="fa fa-check"></i><b>11.8</b> SHEEP GOATS</a></li>
-<li class="chapter" data-level="11.9" data-path="appendixDatasets.html"><a href="appendixDatasets.html#skeleton-actions"><i class="fa fa-check"></i><b>11.9</b> SKELETON ACTIONS</a></li>
-<li class="chapter" data-level="11.10" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smartphone-activities"><i class="fa fa-check"></i><b>11.10</b> SMARTPHONE ACTIVITIES</a></li>
-<li class="chapter" data-level="11.11" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smiles"><i class="fa fa-check"></i><b>11.11</b> SMILES</a></li>
-<li class="chapter" data-level="11.12" data-path="appendixDatasets.html"><a href="appendixDatasets.html#students-mental-health"><i class="fa fa-check"></i><b>11.12</b> STUDENTS’ MENTAL HEALTH</a></li>
+<li class="chapter" data-level="10.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders"><i class="fa fa-check"></i><b>10.3</b> Autoencoders</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders-for-anomaly-detection"><i class="fa fa-check"></i><b>10.3.1</b> Autoencoders for Anomaly Detection</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#SummaryAnomalyDetection"><i class="fa fa-check"></i><b>10.4</b> Summary</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendixInstall.html"><a href="appendixInstall.html"><i class="fa fa-check"></i><b>A</b> Setup Your Environment</a><ul>
+<li class="chapter" data-level="A.1" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-datasets"><i class="fa fa-check"></i><b>A.1</b> Installing the Datasets</a></li>
+<li class="chapter" data-level="A.2" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-examples-source-code"><i class="fa fa-check"></i><b>A.2</b> Installing the Examples Source Code</a></li>
+<li class="chapter" data-level="A.3" data-path="appendixInstall.html"><a href="appendixInstall.html#running-shiny-apps"><i class="fa fa-check"></i><b>A.3</b> Running Shiny Apps</a></li>
+<li class="chapter" data-level="A.4" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-keras-and-tensorflow"><i class="fa fa-check"></i><b>A.4</b> Installing Keras and TensorFlow</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="appendixDatasets.html"><a href="appendixDatasets.html"><i class="fa fa-check"></i><b>B</b> Datasets</a><ul>
+<li class="chapter" data-level="B.1" data-path="appendixDatasets.html"><a href="appendixDatasets.html#complex-activities"><i class="fa fa-check"></i><b>B.1</b> COMPLEX ACTIVITIES</a></li>
+<li class="chapter" data-level="B.2" data-path="appendixDatasets.html"><a href="appendixDatasets.html#depresjon"><i class="fa fa-check"></i><b>B.2</b> DEPRESJON</a></li>
+<li class="chapter" data-level="B.3" data-path="appendixDatasets.html"><a href="appendixDatasets.html#electromyography"><i class="fa fa-check"></i><b>B.3</b> ELECTROMYOGRAPHY</a></li>
+<li class="chapter" data-level="B.4" data-path="appendixDatasets.html"><a href="appendixDatasets.html#fish-trajectories"><i class="fa fa-check"></i><b>B.4</b> FISH TRAJECTORIES</a></li>
+<li class="chapter" data-level="B.5" data-path="appendixDatasets.html"><a href="appendixDatasets.html#hand-gestures"><i class="fa fa-check"></i><b>B.5</b> HAND GESTURES</a></li>
+<li class="chapter" data-level="B.6" data-path="appendixDatasets.html"><a href="appendixDatasets.html#home-tasks"><i class="fa fa-check"></i><b>B.6</b> HOME TASKS</a></li>
+<li class="chapter" data-level="B.7" data-path="appendixDatasets.html"><a href="appendixDatasets.html#homicide-reports"><i class="fa fa-check"></i><b>B.7</b> HOMICIDE REPORTS</a></li>
+<li class="chapter" data-level="B.8" data-path="appendixDatasets.html"><a href="appendixDatasets.html#indoor-location"><i class="fa fa-check"></i><b>B.8</b> INDOOR LOCATION</a></li>
+<li class="chapter" data-level="B.9" data-path="appendixDatasets.html"><a href="appendixDatasets.html#sheep-goats"><i class="fa fa-check"></i><b>B.9</b> SHEEP GOATS</a></li>
+<li class="chapter" data-level="B.10" data-path="appendixDatasets.html"><a href="appendixDatasets.html#skeleton-actions"><i class="fa fa-check"></i><b>B.10</b> SKELETON ACTIONS</a></li>
+<li class="chapter" data-level="B.11" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smartphone-activities"><i class="fa fa-check"></i><b>B.11</b> SMARTPHONE ACTIVITIES</a></li>
+<li class="chapter" data-level="B.12" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smiles"><i class="fa fa-check"></i><b>B.12</b> SMILES</a></li>
+<li class="chapter" data-level="B.13" data-path="appendixDatasets.html"><a href="appendixDatasets.html#students-mental-health"><i class="fa fa-check"></i><b>B.13</b> STUDENTS’ MENTAL HEALTH</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="citing-this-book.html"><a href="citing-this-book.html"><i class="fa fa-check"></i>Citing this Book</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -282,11 +376,12 @@
 <h1 class="title">Behavior Analysis with Machine Learning and R</h1>
 <h2 class="subtitle"><em>A Sensors and Data Driven Approach</em></h2>
 <p class="author"><em>Enrique Garcia Ceja</em></p>
-<p class="date"><em>2020-11-06</em></p>
+<p class="date"><em>2020-12-27</em></p>
 </div>
 <div id="welcome" class="section level1 unnumbered">
 <h1>Welcome</h1>
-<p><strong>Thanks for your support!!</strong> The book is now in the list of <strong><font style='color:red'>Top Most Shared Last Week</font></strong> in <a href="https://www.kdnuggets.com/2020/10/top-news-week-1019-1025.html">KDnuggets</a>.</p>
+<p><em>UPDATE 2020-12-27:</em> Chapter 10 about anomaly detection has been added!</p>
+<p><strong>Thanks for your support!!</strong> The book is now in the list of <strong><font style='color:red'>Most Shared Last Week</font></strong> in <a href="https://www.kdnuggets.com/2020/10/top-news-week-1019-1025.html">KDnuggets</a>.</p>
 <p><img src="images/cover_animated.gif" width="500" style="display: block; margin: auto;" /></p>
 <p></br>
 This is the free html version of the book. The <strong>pdf e-book</strong> version can be purchased at <a href="https://leanpub.com/behavior-analysis-ml-r"><img src="images/leanpub.png" /></a></p>
@@ -296,14 +391,16 @@ This is the free html version of the book. The <strong>pdf e-book</strong> versi
 <li>Build <strong>supervised machine learning</strong> models to predict indoor locations based on WiFi signals, recognize physical activities from smartphone sensors and 3D skeleton data, detect hand gestures from accelerometer signals, and so on.</li>
 <li>Use <strong>unsupervised learning</strong> algorithms to discover criminal behavioral patterns.</li>
 <li>Program your own <strong>ensemble learning</strong> methods and use multi-view stacking to fuse signals from heterogeneous data sources.</li>
-<li>Train <strong>deep learning</strong> models such as neural networks to classify muscle activity from electromyography signals and CNNs to detect smiles in images.</li>
-<li>Evaluate the performance of your models in traditional and multi-user settings.</li>
+<li>Train <strong>deep learning</strong> models such as <em>neural networks</em> to classify muscle activity from electromyography signals and <em>CNNs</em> to detect smiles in images.</li>
+<li><strong>Evaluate the performance</strong> of your models in <em>traditional</em> and <em>multi-user</em> settings.</li>
+<li>Train <strong>anomaly detection</strong> models such as <em>Isolation Forests</em> and <em>autoencoders</em> to detect abnormal fish trajectories.</li>
+<li>And much more!</li>
 </ul>
 <p>The accompanying source code for all examples is available at <a href="https://github.com/enriquegit/behavior-code" class="uri">https://github.com/enriquegit/behavior-code</a>. The book itself was written in R with the <code>bookdown</code> package<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> developed by <a href="https://twitter.com/xieyihui">Yihui Xie</a>. The front cover and summary-comics were illustrated by <a href="http://www.vancecapleyart.com/">Vance Capley</a>.</p>
 <p><strong><span style="color: #0a8a0c;">The front cover</span></strong> depicts two brothers (Biås and Biranz) in what seems to be a typical weekend. They are exploring and enjoying nature as usual. What they don’t know is that their lives are about to change and there is no turning back. Suddenly, Biranz spots a strange object approaching them. As it makes its way out of the rocks, its entire figure is revealed. The brothers have never seen anything like that before. The closest similar image they have in their brains is a hand-sized carnivorous plant they saw at the botanical garden during a school visit several years ago. Without any warning, the creature releases a load of spores into the air. Today, the breeze is not on the brothers’ side and the spores quickly enclose them. After seconds of being exposed, their bodies start to paralyze. Moments later, they can barely move their pupils. The creature’s multiple stems begin to inflate and all of a sudden, multiple thorns are shot. Horrified and incapable, the brothers can only witness how the thorns approach their bodies and they can even hear how the air is being cut by the sharp thorns. At this point, they are only waiting for the worst. …they haven’t felt any impact. Has time just stopped? No—the thorns were repelled by what appears to be a bionic dolphin emitting some type of ultrasonic waves. One of the projectiles managed to dodge the sound defense and is heading directly to Biås. While flying almost one mile above sea level, an eagle aims for the elusive thorn and destroys it with surgical precision. However, the creature is being persistent with its attacks. Will the brothers escape from this crossfire battle?</p>
 <p><strong><span style="color: #0000ff;">About me.</span></strong> My name is Enrique and I am a researcher at <a href="https://www.sintef.no/en/">SINTEF</a>. Please feel free to e-mail me with any questions/comments/feedback, etc.</p>
 <p><strong>e-mail:</strong>
-<img src="images/randimg.png" /><!-- --></p>
+<img src="images/randimg.png" width="15%" /></p>
 <p><img src='images/icons/twitter.png' width='25' height='25'/> <a href='https://twitter.com/e_g_mx'>e_g_mx</a></p>
 <p><strong>website:</strong> <a href="http://www.enriquegc.com" class="uri">http://www.enriquegc.com</a></p>
 <p></br>
@@ -375,6 +472,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

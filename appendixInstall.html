@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>A Setup Your Environment | Behavior Analysis with Machine Learning and R</title>
   <meta name="description" content="A Setup Your Environment | Behavior Analysis with Machine Learning and R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="A Setup Your Environment | Behavior Analysis with Machine Learning and R" />
   <meta property="og:type" content="book" />
@@ -24,14 +24,14 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2020-11-06" />
+<meta name="date" content="2020-12-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="multiuser.html"/>
+<link rel="prev" href="abnormalbehaviors.html"/>
 <link rel="next" href="appendixDatasets.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <script src="libs/d3-4.9.0/d3.min.js"></script>
 <script src="libs/d3-tip-0.7.1/index-min.js"></script>
@@ -316,6 +318,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="multiuser.html"><a href="multiuser.html#SummaryMultiUser"><i class="fa fa-check"></i><b>9.5</b> Summary</a></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html"><i class="fa fa-check"></i><b>10</b> Detecting Abnormal Behaviors</a><ul>
+<li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
+<li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#explore-and-visualize-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Explore and Visualize Trajectories</a></li>
+<li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
+<li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
+<li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC curve and AUC</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders"><i class="fa fa-check"></i><b>10.3</b> Autoencoders</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders-for-anomaly-detection"><i class="fa fa-check"></i><b>10.3.1</b> Autoencoders for Anomaly Detection</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#SummaryAnomalyDetection"><i class="fa fa-check"></i><b>10.4</b> Summary</a></li>
+</ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="appendixInstall.html"><a href="appendixInstall.html"><i class="fa fa-check"></i><b>A</b> Setup Your Environment</a><ul>
 <li class="chapter" data-level="A.1" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-datasets"><i class="fa fa-check"></i><b>A.1</b> Installing the Datasets</a></li>
@@ -327,15 +342,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="B.1" data-path="appendixDatasets.html"><a href="appendixDatasets.html#complex-activities"><i class="fa fa-check"></i><b>B.1</b> COMPLEX ACTIVITIES</a></li>
 <li class="chapter" data-level="B.2" data-path="appendixDatasets.html"><a href="appendixDatasets.html#depresjon"><i class="fa fa-check"></i><b>B.2</b> DEPRESJON</a></li>
 <li class="chapter" data-level="B.3" data-path="appendixDatasets.html"><a href="appendixDatasets.html#electromyography"><i class="fa fa-check"></i><b>B.3</b> ELECTROMYOGRAPHY</a></li>
-<li class="chapter" data-level="B.4" data-path="appendixDatasets.html"><a href="appendixDatasets.html#hand-gestures"><i class="fa fa-check"></i><b>B.4</b> HAND GESTURES</a></li>
-<li class="chapter" data-level="B.5" data-path="appendixDatasets.html"><a href="appendixDatasets.html#home-tasks"><i class="fa fa-check"></i><b>B.5</b> HOME TASKS</a></li>
-<li class="chapter" data-level="B.6" data-path="appendixDatasets.html"><a href="appendixDatasets.html#homicide-reports"><i class="fa fa-check"></i><b>B.6</b> HOMICIDE REPORTS</a></li>
-<li class="chapter" data-level="B.7" data-path="appendixDatasets.html"><a href="appendixDatasets.html#indoor-location"><i class="fa fa-check"></i><b>B.7</b> INDOOR LOCATION</a></li>
-<li class="chapter" data-level="B.8" data-path="appendixDatasets.html"><a href="appendixDatasets.html#sheep-goats"><i class="fa fa-check"></i><b>B.8</b> SHEEP GOATS</a></li>
-<li class="chapter" data-level="B.9" data-path="appendixDatasets.html"><a href="appendixDatasets.html#skeleton-actions"><i class="fa fa-check"></i><b>B.9</b> SKELETON ACTIONS</a></li>
-<li class="chapter" data-level="B.10" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smartphone-activities"><i class="fa fa-check"></i><b>B.10</b> SMARTPHONE ACTIVITIES</a></li>
-<li class="chapter" data-level="B.11" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smiles"><i class="fa fa-check"></i><b>B.11</b> SMILES</a></li>
-<li class="chapter" data-level="B.12" data-path="appendixDatasets.html"><a href="appendixDatasets.html#students-mental-health"><i class="fa fa-check"></i><b>B.12</b> STUDENTS’ MENTAL HEALTH</a></li>
+<li class="chapter" data-level="B.4" data-path="appendixDatasets.html"><a href="appendixDatasets.html#fish-trajectories"><i class="fa fa-check"></i><b>B.4</b> FISH TRAJECTORIES</a></li>
+<li class="chapter" data-level="B.5" data-path="appendixDatasets.html"><a href="appendixDatasets.html#hand-gestures"><i class="fa fa-check"></i><b>B.5</b> HAND GESTURES</a></li>
+<li class="chapter" data-level="B.6" data-path="appendixDatasets.html"><a href="appendixDatasets.html#home-tasks"><i class="fa fa-check"></i><b>B.6</b> HOME TASKS</a></li>
+<li class="chapter" data-level="B.7" data-path="appendixDatasets.html"><a href="appendixDatasets.html#homicide-reports"><i class="fa fa-check"></i><b>B.7</b> HOMICIDE REPORTS</a></li>
+<li class="chapter" data-level="B.8" data-path="appendixDatasets.html"><a href="appendixDatasets.html#indoor-location"><i class="fa fa-check"></i><b>B.8</b> INDOOR LOCATION</a></li>
+<li class="chapter" data-level="B.9" data-path="appendixDatasets.html"><a href="appendixDatasets.html#sheep-goats"><i class="fa fa-check"></i><b>B.9</b> SHEEP GOATS</a></li>
+<li class="chapter" data-level="B.10" data-path="appendixDatasets.html"><a href="appendixDatasets.html#skeleton-actions"><i class="fa fa-check"></i><b>B.10</b> SKELETON ACTIONS</a></li>
+<li class="chapter" data-level="B.11" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smartphone-activities"><i class="fa fa-check"></i><b>B.11</b> SMARTPHONE ACTIVITIES</a></li>
+<li class="chapter" data-level="B.12" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smiles"><i class="fa fa-check"></i><b>B.12</b> SMILES</a></li>
+<li class="chapter" data-level="B.13" data-path="appendixDatasets.html"><a href="appendixDatasets.html#students-mental-health"><i class="fa fa-check"></i><b>B.13</b> STUDENTS’ MENTAL HEALTH</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="citing-this-book.html"><a href="citing-this-book.html"><i class="fa fa-check"></i>Citing this Book</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -373,7 +389,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You can get the code using git or if you are not familiar with it, click on the ‘Code’ button and then ‘Download zip’. Then, extract the file into a local directory of your choice.</p>
 <p>There is a directory for each chapter and two additional directories: <code>auxiliary_functions/</code> and <code>install_functions/</code>.</p>
 <p>The <code>auxiliary_functions/</code> folder has generic functions that are imported by some other R scripts. In this directory, there is a file called <code>globals.R</code>. Open that file and set the variable <code>datasets_path</code> to your local path where you downloaded the datasets. For example, I set it to:</p>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="appendixInstall.html#cb219-1"></a>datasets_path &lt;-<span class="st"> &quot;C:/datasets&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="appendixInstall.html#cb249-1"></a>datasets_path &lt;-<span class="st"> &quot;C:/datasets&quot;</span></span></code></pre></div>
 <p>The <code>install_functions/</code> directory has a single script: <code>install_packages.R</code>. This script can be used to install all the packages used in the examples (except Keras and TensorFlow which is covered in the next section). The script reads the packages listed in listpackages.txt and tries to install them if they are not present. This is just a convenient way to install everything at once but you can always install each package individually with the usual <code>install.packages()</code> method.</p>
 <p>When running the examples, it is assumed that the working directory is the same as the actual script. For example, if you want to try <code>indoor_classification.R</code>, and that script is located in <code>C:/code/Predicting Behavior with Classification Models/</code> then, your working directory should be <code>C:/code/Predicting Behavior with Classification Models/</code>. In Windows, and if RStudio is not already opened, when you double-click an R script, RStudio will be launched (if it is set as the default program) and the working directory will be set.</p>
 <p>You can check your current working directory by typing <code>getwd()</code> and you can set your working directory with <code>setwd()</code>. Alternatively, in RStudio, you can set your working directory in the menu bar ‘Session’ -&gt; ‘Set Working Directory’ -&gt; ‘To Source File Location’.</p>
@@ -381,9 +397,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="running-shiny-apps" class="section level2">
 <h2><span class="header-section-number">A.3</span> Running Shiny Apps</h2>
-<p>Shiny apps<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a> are interactive applications written in R. This book includes some shiny apps that demonstrate some of the concepts. Shiny apps file names will start with the prefix <code>shiny_</code> followed by the specific file name. Some have an ‘.Rmd’ extension while others will have an ‘.R’ extension. Regardless of the extension, they are run in the same way. Before running shiny apps, make sure you have installed the packages <code>shiny</code> and <code>shinydashboard</code>.</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="appendixInstall.html#cb220-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;shiny&quot;</span>)</span>
-<span id="cb220-2"><a href="appendixInstall.html#cb220-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;shinydashboard&quot;</span>)</span></code></pre></div>
+<p>Shiny apps<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a> are interactive applications written in R. This book includes some shiny apps that demonstrate some of the concepts. Shiny apps file names will start with the prefix <code>shiny_</code> followed by the specific file name. Some have an ‘.Rmd’ extension while others will have an ‘.R’ extension. Regardless of the extension, they are run in the same way. Before running shiny apps, make sure you have installed the packages <code>shiny</code> and <code>shinydashboard</code>.</p>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="appendixInstall.html#cb250-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;shiny&quot;</span>)</span>
+<span id="cb250-2"><a href="appendixInstall.html#cb250-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;shinydashboard&quot;</span>)</span></code></pre></div>
 <p>To run an app, just open the corresponding file in RStudio. RStudio will detect that this is a shiny app and a ‘Run Document’ or ‘Run App’ button will be shown. Click the button to start the app.</p>
 <p><img src="images/runDocumnet.png" width="50%" style="display: block; margin: auto;" /></p>
 </div>
@@ -397,19 +413,19 @@ Keras and TensorFlow are used until Chapter <a href="deeplearning.html#deeplearn
 <p>TensorFlow has two main versions. a CPU and a GPU version. The GPU version takes advantage of the capabilities of some video cards to perform faster operations. The examples in this book can be run on the CPU version. The following instructions apply to the CPU version. Installing the GPU version requires some platform-specific details. I recommend you to first install the CPU version and if you want/need to perform faster computations, then, go with the GPU version.</p>
 <p>Installing Keras with TensorFlow (CPU version) as backend takes four simple steps:</p>
 <ol style="list-style-type: decimal">
-<li><p>If you are on Windows, first you should install Anaconda<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.</p></li>
+<li><p>If you are on Windows, first you should install Anaconda<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.</p></li>
 <li><p>Install the <code>keras</code> R package with <code>install.packages("keras")</code></p></li>
 <li><p>Load <code>keras</code> with <code>library(keras)</code></p></li>
 <li><p>Run <code>install_keras()</code>. This function will install TensorFlow as the backend. If you don’t have Anaconda installed, you will be asked if you want to install Miniconda.</p></li>
 </ol>
 <p>You can test your installation with:</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="appendixInstall.html#cb221-1"></a><span class="kw">library</span>(tensorflow)</span>
-<span id="cb221-2"><a href="appendixInstall.html#cb221-2"></a>tf<span class="op">$</span><span class="kw">constant</span>(<span class="st">&quot;Hello World&quot;</span>)</span>
-<span id="cb221-3"><a href="appendixInstall.html#cb221-3"></a><span class="co">#&gt; tf.Tensor(b&#39;Hello World&#39;, shape=(), dtype=string)</span></span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="appendixInstall.html#cb251-1"></a><span class="kw">library</span>(tensorflow)</span>
+<span id="cb251-2"><a href="appendixInstall.html#cb251-2"></a>tf<span class="op">$</span><span class="kw">constant</span>(<span class="st">&quot;Hello World&quot;</span>)</span>
+<span id="cb251-3"><a href="appendixInstall.html#cb251-3"></a><span class="co">#&gt; tf.Tensor(b&#39;Hello World&#39;, shape=(), dtype=string)</span></span></code></pre></div>
 <p>The first time in a session that you run TensorFlow related code with the CPU version, you may get warning messages like the following, which you can safely ignore.</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="appendixInstall.html#cb222-1"></a><span class="co">#&gt; tensorflow/stream_executor/platform/default/dso_loader.cc:55]</span></span>
-<span id="cb222-2"><a href="appendixInstall.html#cb222-2"></a><span class="co">#&gt; Could not load dynamic library &#39;cudart64_101.dll&#39;;</span></span>
-<span id="cb222-3"><a href="appendixInstall.html#cb222-3"></a><span class="co">#&gt; dlerror: cudart64_101.dll not found</span></span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="appendixInstall.html#cb252-1"></a><span class="co">#&gt; tensorflow/stream_executor/platform/default/dso_loader.cc:55]</span></span>
+<span id="cb252-2"><a href="appendixInstall.html#cb252-2"></a><span class="co">#&gt; Could not load dynamic library &#39;cudart64_101.dll&#39;;</span></span>
+<span id="cb252-3"><a href="appendixInstall.html#cb252-3"></a><span class="co">#&gt; dlerror: cudart64_101.dll not found</span></span></code></pre></div>
 
 <div class="rmdinfo">
 If you want to install the GPU version, first, you need to make sure you have a compatible video card. More information on how to install the GPU version is available here <a href="https://keras.rstudio.com/reference/install_keras.html" class="uri">https://keras.rstudio.com/reference/install_keras.html</a> and here <a href="https://tensorflow.rstudio.com/installation/gpu/local_gpu/" class="uri">https://tensorflow.rstudio.com/installation/gpu/local_gpu/</a>
@@ -420,9 +436,9 @@ If you want to install the GPU version, first, you need to make sure you have a 
 </div>
 <div class="footnotes">
 <hr />
-<ol start="27">
-<li id="fn27"><p><a href="https://shiny.rstudio.com/" class="uri">https://shiny.rstudio.com/</a><a href="appendixInstall.html#fnref27" class="footnote-back">↩︎</a></p></li>
-<li id="fn28"><p><a href="https://www.anaconda.com" class="uri">https://www.anaconda.com</a><a href="appendixInstall.html#fnref28" class="footnote-back">↩︎</a></p></li>
+<ol start="29">
+<li id="fn29"><p><a href="https://shiny.rstudio.com/" class="uri">https://shiny.rstudio.com/</a><a href="appendixInstall.html#fnref29" class="footnote-back">↩︎</a></p></li>
+<li id="fn30"><p><a href="https://www.anaconda.com" class="uri">https://www.anaconda.com</a><a href="appendixInstall.html#fnref30" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -430,7 +446,7 @@ If you want to install the GPU version, first, you need to make sure you have a 
           </div>
         </div>
       </div>
-<a href="multiuser.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="abnormalbehaviors.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="appendixDatasets.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
