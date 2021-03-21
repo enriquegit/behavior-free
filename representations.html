@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning and R</title>
-  <meta name="description" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning and R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
+  <title>Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning Using R</title>
+  <meta name="description" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning and R" />
+  <meta property="og:title" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning Using R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="images/cover.png" />
-  <meta property="og:description" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning and R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
+  <meta property="og:description" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning and R" />
+  <meta name="twitter:title" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning Using R" />
   
-  <meta name="twitter:description" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning and R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
+  <meta name="twitter:description" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   <meta name="twitter:image" content="images/cover.png" />
 
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2020-12-27" />
+<meta name="date" content="2021-03-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,14 +33,15 @@
   
 <link rel="prev" href="unsupervised.html"/>
 <link rel="next" href="deeplearning.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/header-attrs/header-attrs.js"></script>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -50,24 +51,20 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/d3-4.9.0/d3.min.js"></script>
-<script src="libs/d3-tip-0.7.1/index-min.js"></script>
-<link href="libs/d3panels-1.4.9/d3panels.min.css" rel="stylesheet" />
-<script src="libs/d3panels-1.4.9/d3panels.min.js"></script>
-<script src="libs/qtlcharts_iplotCorr-0.11.6/iplotCorr.js"></script>
-<script src="libs/qtlcharts_iplotCorr-0.11.6/iplotCorr_noscat.js"></script>
-<script src="libs/iplotCorr-binding-0.11.6/iplotCorr.js"></script>
-<link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
-<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script>
-<script src="libs/dygraphs-1.1.1/shapes.js"></script>
-<script src="libs/moment-2.8.4/moment.js"></script>
-<script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
-<script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
-<script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="libs/d3/d3.min.js"></script>
+<link href="libs/d3panels/d3panels.min.css" rel="stylesheet" />
+<script src="libs/d3panels/d3panels.min.js"></script>
+<script src="libs/qtlcharts_iplotCorr/iplotCorr.js"></script>
+<script src="libs/qtlcharts_iplotCorr/iplotCorr_noscat.js"></script>
+<script src="libs/iplotCorr-binding/iplotCorr.js"></script>
+<link href="libs/dygraphs/dygraph.css" rel="stylesheet" />
+<script src="libs/dygraphs/dygraph-combined.js"></script>
+<script src="libs/dygraphs/shapes.js"></script>
+<script src="libs/moment/moment.js"></script>
+<script src="libs/moment-timezone/moment-timezone-with-data.js"></script>
+<script src="libs/moment-fquarter/moment-fquarter.min.js"></script>
+<script src="libs/dygraphs-binding/dygraphs.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178679335-1"></script>
 <script>
@@ -80,18 +77,17 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -111,7 +107,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -144,7 +140,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
@@ -157,50 +153,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="#">Behavior Analysis with Machine Learning and R</a></li>
+<li><a href="#">Behavior Analysis with Machine Learning Using R</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
-<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#supplemental-material"><i class="fa fa-check"></i>Supplemental Material</a></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#conventions"><i class="fa fa-check"></i>Conventions</a></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-machine-learning"><i class="fa fa-check"></i><b>1.1</b> What is Machine Learning?</a></li>
-<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#taxonomy"><i class="fa fa-check"></i><b>1.2</b> Types of Machine Learning</a></li>
-<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#terminology"><i class="fa fa-check"></i><b>1.3</b> Terminology</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#tables"><i class="fa fa-check"></i><b>1.3.1</b> Tables</a></li>
-<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#variable-types"><i class="fa fa-check"></i><b>1.3.2</b> Variable Types</a></li>
-<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#predictive-models"><i class="fa fa-check"></i><b>1.3.3</b> Predictive Models</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Behavior and Machine Learning</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-behavior"><i class="fa fa-check"></i><b>1.1</b> What is Behavior?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#what-is-machine-learning"><i class="fa fa-check"></i><b>1.2</b> What is Machine Learning?</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#taxonomy"><i class="fa fa-check"></i><b>1.3</b> Types of Machine Learning</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#terminology"><i class="fa fa-check"></i><b>1.4</b> Terminology</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="intro.html"><a href="intro.html#tables"><i class="fa fa-check"></i><b>1.4.1</b> Tables</a></li>
+<li class="chapter" data-level="1.4.2" data-path="intro.html"><a href="intro.html#variable-types"><i class="fa fa-check"></i><b>1.4.2</b> Variable Types</a></li>
+<li class="chapter" data-level="1.4.3" data-path="intro.html"><a href="intro.html#predictive-models"><i class="fa fa-check"></i><b>1.4.3</b> Predictive Models</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#pipeline"><i class="fa fa-check"></i><b>1.4</b> Data Analysis Pipeline</a></li>
-<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#trainingeval"><i class="fa fa-check"></i><b>1.5</b> Evaluating Predictive Models</a></li>
-<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#simple-classification-example"><i class="fa fa-check"></i><b>1.6</b> Simple Classification Example</a><ul>
-<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#k-fold-cross-validation-example"><i class="fa fa-check"></i><b>1.6.1</b> K-fold Cross-Validation Example</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#pipeline"><i class="fa fa-check"></i><b>1.5</b> Data Analysis Pipeline</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#trainingeval"><i class="fa fa-check"></i><b>1.6</b> Evaluating Predictive Models</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#simple-classification-example"><i class="fa fa-check"></i><b>1.7</b> Simple Classification Example</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#k-fold-cross-validation-example"><i class="fa fa-check"></i><b>1.7.1</b> K-fold Cross-Validation Example</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#simple-regression-example"><i class="fa fa-check"></i><b>1.7</b> Simple Regression Example</a></li>
-<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#underfitting-and-overfitting"><i class="fa fa-check"></i><b>1.8</b> Underfitting and Overfitting</a></li>
-<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#bias-and-variance"><i class="fa fa-check"></i><b>1.9</b> Bias and Variance</a></li>
-<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#SummaryIntro"><i class="fa fa-check"></i><b>1.10</b> Summary</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#simple-regression-example"><i class="fa fa-check"></i><b>1.8</b> Simple Regression Example</a></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#underfitting-and-overfitting"><i class="fa fa-check"></i><b>1.9</b> Underfitting and Overfitting</a></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#bias-and-variance"><i class="fa fa-check"></i><b>1.10</b> Bias and Variance</a></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#SummaryIntro"><i class="fa fa-check"></i><b>1.11</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a><ul>
-<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-nearest Neighbors</a><ul>
+<li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-nearest Neighbors</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="classification.html"><a href="classification.html#indoor-location-with-wi-fi-signals"><i class="fa fa-check"></i><b>2.1.1</b> Indoor Location with Wi-Fi Signals</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="classification.html"><a href="classification.html#performance-metrics"><i class="fa fa-check"></i><b>2.2</b> Performance Metrics</a><ul>
+<li class="chapter" data-level="2.2" data-path="classification.html"><a href="classification.html#performance-metrics"><i class="fa fa-check"></i><b>2.2</b> Performance Metrics</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="classification.html"><a href="classification.html#confusion-matrix"><i class="fa fa-check"></i><b>2.2.1</b> Confusion Matrix</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="classification.html"><a href="classification.html#decision-trees"><i class="fa fa-check"></i><b>2.3</b> Decision Trees</a><ul>
+<li class="chapter" data-level="2.3" data-path="classification.html"><a href="classification.html#decision-trees"><i class="fa fa-check"></i><b>2.3</b> Decision Trees</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="classification.html"><a href="classification.html#activityRecognition"><i class="fa fa-check"></i><b>2.3.1</b> Activity Recognition with Smartphones</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="classification.html"><a href="classification.html#naive-bayes"><i class="fa fa-check"></i><b>2.4</b> Naive Bayes</a><ul>
+<li class="chapter" data-level="2.4" data-path="classification.html"><a href="classification.html#naive-bayes"><i class="fa fa-check"></i><b>2.4</b> Naive Bayes</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="classification.html"><a href="classification.html#activity-recognition-with-naive-bayes"><i class="fa fa-check"></i><b>2.4.1</b> Activity Recognition with Naive Bayes</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="classification.html"><a href="classification.html#dynamic-time-warping"><i class="fa fa-check"></i><b>2.5</b> Dynamic Time Warping</a><ul>
+<li class="chapter" data-level="2.5" data-path="classification.html"><a href="classification.html#dynamic-time-warping"><i class="fa fa-check"></i><b>2.5</b> Dynamic Time Warping</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="classification.html"><a href="classification.html#sechandgestures"><i class="fa fa-check"></i><b>2.5.1</b> Hand Gesture Recognition</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="classification.html"><a href="classification.html#dummy-models"><i class="fa fa-check"></i><b>2.6</b> Dummy Models</a><ul>
+<li class="chapter" data-level="2.6" data-path="classification.html"><a href="classification.html#dummy-models"><i class="fa fa-check"></i><b>2.6</b> Dummy Models</a>
+<ul>
 <li class="chapter" data-level="2.6.1" data-path="classification.html"><a href="classification.html#most-frequent-class-classifier"><i class="fa fa-check"></i><b>2.6.1</b> Most-frequent-class Classifier</a></li>
 <li class="chapter" data-level="2.6.2" data-path="classification.html"><a href="classification.html#uniform-classifier"><i class="fa fa-check"></i><b>2.6.2</b> Uniform Classifier</a></li>
 <li class="chapter" data-level="2.6.3" data-path="classification.html"><a href="classification.html#frequency-based-classifier"><i class="fa fa-check"></i><b>2.6.3</b> Frequency-based Classifier</a></li>
@@ -208,8 +216,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="classification.html"><a href="classification.html#summaryClassification"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="ensemble.html"><a href="ensemble.html"><i class="fa fa-check"></i><b>3</b> Predicting Behavior with Ensemble Learning</a><ul>
-<li class="chapter" data-level="3.1" data-path="ensemble.html"><a href="ensemble.html#bagging"><i class="fa fa-check"></i><b>3.1</b> Bagging</a><ul>
+<li class="chapter" data-level="3" data-path="ensemble.html"><a href="ensemble.html"><i class="fa fa-check"></i><b>3</b> Predicting Behavior with Ensemble Learning</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ensemble.html"><a href="ensemble.html#bagging"><i class="fa fa-check"></i><b>3.1</b> Bagging</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="ensemble.html"><a href="ensemble.html#activity-recognition-with-bagging"><i class="fa fa-check"></i><b>3.1.1</b> Activity recognition with Bagging</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="ensemble.html"><a href="ensemble.html#random-forest"><i class="fa fa-check"></i><b>3.2</b> Random Forest</a></li>
@@ -217,16 +227,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="ensemble.html"><a href="ensemble.html#multiviewhometasks"><i class="fa fa-check"></i><b>3.4</b> Multi-view Stacking for Home Tasks Recognition</a></li>
 <li class="chapter" data-level="3.5" data-path="ensemble.html"><a href="ensemble.html#SummaryEnsemble"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="edavis.html"><a href="edavis.html"><i class="fa fa-check"></i><b>4</b> Exploring and Visualizing Behavioral Data</a><ul>
+<li class="chapter" data-level="4" data-path="edavis.html"><a href="edavis.html"><i class="fa fa-check"></i><b>4</b> Exploring and Visualizing Behavioral Data</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="edavis.html"><a href="edavis.html#talking-with-field-experts"><i class="fa fa-check"></i><b>4.1</b> Talking with Field Experts</a></li>
 <li class="chapter" data-level="4.2" data-path="edavis.html"><a href="edavis.html#summary-statistics"><i class="fa fa-check"></i><b>4.2</b> Summary Statistics</a></li>
 <li class="chapter" data-level="4.3" data-path="edavis.html"><a href="edavis.html#class-distributions"><i class="fa fa-check"></i><b>4.3</b> Class Distributions</a></li>
 <li class="chapter" data-level="4.4" data-path="edavis.html"><a href="edavis.html#user-class-sparsity-matrix"><i class="fa fa-check"></i><b>4.4</b> User-Class Sparsity Matrix</a></li>
 <li class="chapter" data-level="4.5" data-path="edavis.html"><a href="edavis.html#boxplots"><i class="fa fa-check"></i><b>4.5</b> Boxplots</a></li>
-<li class="chapter" data-level="4.6" data-path="edavis.html"><a href="edavis.html#correlation-plots"><i class="fa fa-check"></i><b>4.6</b> Correlation Plots</a><ul>
+<li class="chapter" data-level="4.6" data-path="edavis.html"><a href="edavis.html#correlation-plots"><i class="fa fa-check"></i><b>4.6</b> Correlation Plots</a>
+<ul>
 <li class="chapter" data-level="4.6.1" data-path="edavis.html"><a href="edavis.html#interactive-correlation-plots"><i class="fa fa-check"></i><b>4.6.1</b> Interactive Correlation Plots</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="edavis.html"><a href="edavis.html#timeseries"><i class="fa fa-check"></i><b>4.7</b> Timeseries</a><ul>
+<li class="chapter" data-level="4.7" data-path="edavis.html"><a href="edavis.html#timeseries"><i class="fa fa-check"></i><b>4.7</b> Timeseries</a>
+<ul>
 <li class="chapter" data-level="4.7.1" data-path="edavis.html"><a href="edavis.html#interactive-timeseries"><i class="fa fa-check"></i><b>4.7.1</b> Interactive Timeseries</a></li>
 </ul></li>
 <li class="chapter" data-level="4.8" data-path="edavis.html"><a href="edavis.html#multidimensional-scaling-mds"><i class="fa fa-check"></i><b>4.8</b> Multidimensional Scaling (MDS)</a></li>
@@ -234,13 +247,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.10" data-path="edavis.html"><a href="edavis.html#automated-eda"><i class="fa fa-check"></i><b>4.10</b> Automated EDA</a></li>
 <li class="chapter" data-level="4.11" data-path="edavis.html"><a href="edavis.html#SummaryExploratory"><i class="fa fa-check"></i><b>4.11</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="preprocessing.html"><a href="preprocessing.html"><i class="fa fa-check"></i><b>5</b> Preprocessing Behavioral Data</a><ul>
-<li class="chapter" data-level="5.1" data-path="preprocessing.html"><a href="preprocessing.html#missing-values"><i class="fa fa-check"></i><b>5.1</b> Missing Values</a><ul>
+<li class="chapter" data-level="5" data-path="preprocessing.html"><a href="preprocessing.html"><i class="fa fa-check"></i><b>5</b> Preprocessing Behavioral Data</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="preprocessing.html"><a href="preprocessing.html#missing-values"><i class="fa fa-check"></i><b>5.1</b> Missing Values</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="preprocessing.html"><a href="preprocessing.html#imputation"><i class="fa fa-check"></i><b>5.1.1</b> Imputation</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="preprocessing.html"><a href="preprocessing.html#smoothing"><i class="fa fa-check"></i><b>5.2</b> Smoothing</a></li>
 <li class="chapter" data-level="5.3" data-path="preprocessing.html"><a href="preprocessing.html#normalization"><i class="fa fa-check"></i><b>5.3</b> Normalization</a></li>
-<li class="chapter" data-level="5.4" data-path="preprocessing.html"><a href="preprocessing.html#imbalanced-classes"><i class="fa fa-check"></i><b>5.4</b> Imbalanced Classes</a><ul>
+<li class="chapter" data-level="5.4" data-path="preprocessing.html"><a href="preprocessing.html#imbalanced-classes"><i class="fa fa-check"></i><b>5.4</b> Imbalanced Classes</a>
+<ul>
 <li class="chapter" data-level="5.4.1" data-path="preprocessing.html"><a href="preprocessing.html#random-oversampling"><i class="fa fa-check"></i><b>5.4.1</b> Random Oversampling</a></li>
 <li class="chapter" data-level="5.4.2" data-path="preprocessing.html"><a href="preprocessing.html#smote"><i class="fa fa-check"></i><b>5.4.2</b> SMOTE</a></li>
 </ul></li>
@@ -248,35 +264,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6" data-path="preprocessing.html"><a href="preprocessing.html#one-hot-encoding"><i class="fa fa-check"></i><b>5.6</b> One-hot Encoding</a></li>
 <li class="chapter" data-level="5.7" data-path="preprocessing.html"><a href="preprocessing.html#SummaryPreprocessing"><i class="fa fa-check"></i><b>5.7</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="unsupervised.html"><a href="unsupervised.html"><i class="fa fa-check"></i><b>6</b> Discovering Behaviors with Unsupervised Learning</a><ul>
-<li class="chapter" data-level="6.1" data-path="unsupervised.html"><a href="unsupervised.html#k-means-clustering"><i class="fa fa-check"></i><b>6.1</b> K-means clustering</a><ul>
+<li class="chapter" data-level="6" data-path="unsupervised.html"><a href="unsupervised.html"><i class="fa fa-check"></i><b>6</b> Discovering Behaviors with Unsupervised Learning</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="unsupervised.html"><a href="unsupervised.html#k-means-clustering"><i class="fa fa-check"></i><b>6.1</b> K-means clustering</a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="unsupervised.html"><a href="unsupervised.html#studentresponses"><i class="fa fa-check"></i><b>6.1.1</b> Grouping Student Responses</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="unsupervised.html"><a href="unsupervised.html#the-silhouette-index"><i class="fa fa-check"></i><b>6.2</b> The Silhouette Index</a></li>
-<li class="chapter" data-level="6.3" data-path="unsupervised.html"><a href="unsupervised.html#associationrules"><i class="fa fa-check"></i><b>6.3</b> Mining Association Rules</a><ul>
+<li class="chapter" data-level="6.3" data-path="unsupervised.html"><a href="unsupervised.html#associationrules"><i class="fa fa-check"></i><b>6.3</b> Mining Association Rules</a>
+<ul>
 <li class="chapter" data-level="6.3.1" data-path="unsupervised.html"><a href="unsupervised.html#finding-rules-for-criminal-behavior"><i class="fa fa-check"></i><b>6.3.1</b> Finding Rules for Criminal Behavior</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="unsupervised.html"><a href="unsupervised.html#SummaryUnsupervised"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="representations.html"><a href="representations.html"><i class="fa fa-check"></i><b>7</b> Encoding Behavioral Data</a><ul>
+<li class="chapter" data-level="7" data-path="representations.html"><a href="representations.html"><i class="fa fa-check"></i><b>7</b> Encoding Behavioral Data</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="representations.html"><a href="representations.html#feature-vectors"><i class="fa fa-check"></i><b>7.1</b> Feature Vectors</a></li>
 <li class="chapter" data-level="7.2" data-path="representations.html"><a href="representations.html#sectimeseries"><i class="fa fa-check"></i><b>7.2</b> Timeseries</a></li>
 <li class="chapter" data-level="7.3" data-path="representations.html"><a href="representations.html#transactions"><i class="fa fa-check"></i><b>7.3</b> Transactions</a></li>
 <li class="chapter" data-level="7.4" data-path="representations.html"><a href="representations.html#images"><i class="fa fa-check"></i><b>7.4</b> Images</a></li>
-<li class="chapter" data-level="7.5" data-path="representations.html"><a href="representations.html#recurrence-plots"><i class="fa fa-check"></i><b>7.5</b> Recurrence Plots</a><ul>
+<li class="chapter" data-level="7.5" data-path="representations.html"><a href="representations.html#recurrence-plots"><i class="fa fa-check"></i><b>7.5</b> Recurrence Plots</a>
+<ul>
 <li class="chapter" data-level="7.5.1" data-path="representations.html"><a href="representations.html#computing-recurence-plots"><i class="fa fa-check"></i><b>7.5.1</b> Computing Recurence Plots</a></li>
 <li class="chapter" data-level="7.5.2" data-path="representations.html"><a href="representations.html#recurrence-plots-of-hand-gestures"><i class="fa fa-check"></i><b>7.5.2</b> Recurrence Plots of Hand Gestures</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="representations.html"><a href="representations.html#bag-of-words"><i class="fa fa-check"></i><b>7.6</b> Bag-of-Words</a><ul>
+<li class="chapter" data-level="7.6" data-path="representations.html"><a href="representations.html#bag-of-words"><i class="fa fa-check"></i><b>7.6</b> Bag-of-Words</a>
+<ul>
 <li class="chapter" data-level="7.6.1" data-path="representations.html"><a href="representations.html#bow-for-complex-activities."><i class="fa fa-check"></i><b>7.6.1</b> BoW for Complex Activities.</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="representations.html"><a href="representations.html#graphs"><i class="fa fa-check"></i><b>7.7</b> Graphs</a><ul>
+<li class="chapter" data-level="7.7" data-path="representations.html"><a href="representations.html#graphs"><i class="fa fa-check"></i><b>7.7</b> Graphs</a>
+<ul>
 <li class="chapter" data-level="7.7.1" data-path="representations.html"><a href="representations.html#complex-activities-as-graphs"><i class="fa fa-check"></i><b>7.7.1</b> Complex Activities as Graphs</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="representations.html"><a href="representations.html#SummaryRepresentations"><i class="fa fa-check"></i><b>7.8</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="deeplearning.html"><a href="deeplearning.html"><i class="fa fa-check"></i><b>8</b> Predicting Behavior with Deep Learning</a><ul>
-<li class="chapter" data-level="8.1" data-path="deeplearning.html"><a href="deeplearning.html#ann"><i class="fa fa-check"></i><b>8.1</b> Introduction to Artificial Neural Networks</a><ul>
+<li class="chapter" data-level="8" data-path="deeplearning.html"><a href="deeplearning.html"><i class="fa fa-check"></i><b>8</b> Predicting Behavior with Deep Learning</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="deeplearning.html"><a href="deeplearning.html#ann"><i class="fa fa-check"></i><b>8.1</b> Introduction to Artificial Neural Networks</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="deeplearning.html"><a href="deeplearning.html#sigmoid-and-relu-units"><i class="fa fa-check"></i><b>8.1.1</b> Sigmoid and ReLU Units</a></li>
 <li class="chapter" data-level="8.1.2" data-path="deeplearning.html"><a href="deeplearning.html#assembling-units-into-layers"><i class="fa fa-check"></i><b>8.1.2</b> Assembling Units into Layers</a></li>
 <li class="chapter" data-level="8.1.3" data-path="deeplearning.html"><a href="deeplearning.html#deep-neural-networks"><i class="fa fa-check"></i><b>8.1.3</b> Deep Neural Networks</a></li>
@@ -284,61 +309,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.5" data-path="deeplearning.html"><a href="deeplearning.html#parameter-learning-example-in-r"><i class="fa fa-check"></i><b>8.1.5</b> Parameter Learning Example in R</a></li>
 <li class="chapter" data-level="8.1.6" data-path="deeplearning.html"><a href="deeplearning.html#stochastic-gradient-descent"><i class="fa fa-check"></i><b>8.1.6</b> Stochastic Gradient Descent</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="deeplearning.html"><a href="deeplearning.html#keras-and-tensorflow-with-r"><i class="fa fa-check"></i><b>8.2</b> Keras and TensorFlow with R</a><ul>
+<li class="chapter" data-level="8.2" data-path="deeplearning.html"><a href="deeplearning.html#keras-and-tensorflow-with-r"><i class="fa fa-check"></i><b>8.2</b> Keras and TensorFlow with R</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="deeplearning.html"><a href="deeplearning.html#keras-example"><i class="fa fa-check"></i><b>8.2.1</b> Keras Example</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="deeplearning.html"><a href="deeplearning.html#classification-with-neural-networks"><i class="fa fa-check"></i><b>8.3</b> Classification with Neural Networks</a><ul>
+<li class="chapter" data-level="8.3" data-path="deeplearning.html"><a href="deeplearning.html#classification-with-neural-networks"><i class="fa fa-check"></i><b>8.3</b> Classification with Neural Networks</a>
+<ul>
 <li class="chapter" data-level="8.3.1" data-path="deeplearning.html"><a href="deeplearning.html#classification-of-electromyography-signals"><i class="fa fa-check"></i><b>8.3.1</b> Classification of Electromyography Signals</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="deeplearning.html"><a href="deeplearning.html#overfitting"><i class="fa fa-check"></i><b>8.4</b> Overfitting</a><ul>
+<li class="chapter" data-level="8.4" data-path="deeplearning.html"><a href="deeplearning.html#overfitting"><i class="fa fa-check"></i><b>8.4</b> Overfitting</a>
+<ul>
 <li class="chapter" data-level="8.4.1" data-path="deeplearning.html"><a href="deeplearning.html#early-stopping"><i class="fa fa-check"></i><b>8.4.1</b> Early Stopping</a></li>
 <li class="chapter" data-level="8.4.2" data-path="deeplearning.html"><a href="deeplearning.html#dropout"><i class="fa fa-check"></i><b>8.4.2</b> Dropout</a></li>
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="deeplearning.html"><a href="deeplearning.html#fine-tuning-a-neural-network"><i class="fa fa-check"></i><b>8.5</b> Fine-Tuning a Neural Network</a></li>
-<li class="chapter" data-level="8.6" data-path="deeplearning.html"><a href="deeplearning.html#cnns"><i class="fa fa-check"></i><b>8.6</b> Convolutional Neural Networks</a><ul>
+<li class="chapter" data-level="8.6" data-path="deeplearning.html"><a href="deeplearning.html#cnns"><i class="fa fa-check"></i><b>8.6</b> Convolutional Neural Networks</a>
+<ul>
 <li class="chapter" data-level="8.6.1" data-path="deeplearning.html"><a href="deeplearning.html#convolutions"><i class="fa fa-check"></i><b>8.6.1</b> Convolutions</a></li>
 <li class="chapter" data-level="8.6.2" data-path="deeplearning.html"><a href="deeplearning.html#pooling-operations"><i class="fa fa-check"></i><b>8.6.2</b> Pooling Operations</a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="deeplearning.html"><a href="deeplearning.html#cnns-with-keras"><i class="fa fa-check"></i><b>8.7</b> CNNs with Keras</a><ul>
+<li class="chapter" data-level="8.7" data-path="deeplearning.html"><a href="deeplearning.html#cnns-with-keras"><i class="fa fa-check"></i><b>8.7</b> CNNs with Keras</a>
+<ul>
 <li class="chapter" data-level="8.7.1" data-path="deeplearning.html"><a href="deeplearning.html#example-1"><i class="fa fa-check"></i><b>8.7.1</b> Example 1</a></li>
 <li class="chapter" data-level="8.7.2" data-path="deeplearning.html"><a href="deeplearning.html#example-2"><i class="fa fa-check"></i><b>8.7.2</b> Example 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8.8" data-path="deeplearning.html"><a href="deeplearning.html#cnnSmile"><i class="fa fa-check"></i><b>8.8</b> Smiles Detection with a CNN</a></li>
 <li class="chapter" data-level="8.9" data-path="deeplearning.html"><a href="deeplearning.html#SummaryDeepLearning"><i class="fa fa-check"></i><b>8.9</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="multiuser.html"><a href="multiuser.html"><i class="fa fa-check"></i><b>9</b> Multi-User Validation</a><ul>
-<li class="chapter" data-level="9.1" data-path="multiuser.html"><a href="multiuser.html#mixed-models"><i class="fa fa-check"></i><b>9.1</b> Mixed Models</a><ul>
+<li class="chapter" data-level="9" data-path="multiuser.html"><a href="multiuser.html"><i class="fa fa-check"></i><b>9</b> Multi-User Validation</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="multiuser.html"><a href="multiuser.html#mixed-models"><i class="fa fa-check"></i><b>9.1</b> Mixed Models</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="multiuser.html"><a href="multiuser.html#skeleton-action-recognition-with-mixed-models"><i class="fa fa-check"></i><b>9.1.1</b> Skeleton Action Recognition with Mixed Models</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="multiuser.html"><a href="multiuser.html#user-independent-models"><i class="fa fa-check"></i><b>9.2</b> User-Independent Models</a></li>
 <li class="chapter" data-level="9.3" data-path="multiuser.html"><a href="multiuser.html#user-dependent-models"><i class="fa fa-check"></i><b>9.3</b> User-Dependent Models</a></li>
-<li class="chapter" data-level="9.4" data-path="multiuser.html"><a href="multiuser.html#user-adaptive-models"><i class="fa fa-check"></i><b>9.4</b> User-Adaptive Models</a><ul>
+<li class="chapter" data-level="9.4" data-path="multiuser.html"><a href="multiuser.html#user-adaptive-models"><i class="fa fa-check"></i><b>9.4</b> User-Adaptive Models</a>
+<ul>
 <li class="chapter" data-level="9.4.1" data-path="multiuser.html"><a href="multiuser.html#transfer-learning"><i class="fa fa-check"></i><b>9.4.1</b> Transfer Learning</a></li>
 <li class="chapter" data-level="9.4.2" data-path="multiuser.html"><a href="multiuser.html#a-user-adaptive-model-for-activity-recognition"><i class="fa fa-check"></i><b>9.4.2</b> A User-Adaptive Model for Activity Recognition</a></li>
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="multiuser.html"><a href="multiuser.html#SummaryMultiUser"><i class="fa fa-check"></i><b>9.5</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html"><i class="fa fa-check"></i><b>10</b> Detecting Abnormal Behaviors</a><ul>
+<li class="chapter" data-level="10" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html"><i class="fa fa-check"></i><b>10</b> Detecting Abnormal Behaviors</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
-<li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a><ul>
+<li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a>
+<ul>
 <li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#explore-and-visualize-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Explore and Visualize Trajectories</a></li>
 <li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
 <li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
 <li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC curve and AUC</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders"><i class="fa fa-check"></i><b>10.3</b> Autoencoders</a><ul>
+<li class="chapter" data-level="10.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders"><i class="fa fa-check"></i><b>10.3</b> Autoencoders</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders-for-anomaly-detection"><i class="fa fa-check"></i><b>10.3.1</b> Autoencoders for Anomaly Detection</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#SummaryAnomalyDetection"><i class="fa fa-check"></i><b>10.4</b> Summary</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="appendixInstall.html"><a href="appendixInstall.html"><i class="fa fa-check"></i><b>A</b> Setup Your Environment</a><ul>
+<li class="chapter" data-level="A" data-path="appendixInstall.html"><a href="appendixInstall.html"><i class="fa fa-check"></i><b>A</b> Setup Your Environment</a>
+<ul>
 <li class="chapter" data-level="A.1" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-datasets"><i class="fa fa-check"></i><b>A.1</b> Installing the Datasets</a></li>
 <li class="chapter" data-level="A.2" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-examples-source-code"><i class="fa fa-check"></i><b>A.2</b> Installing the Examples Source Code</a></li>
 <li class="chapter" data-level="A.3" data-path="appendixInstall.html"><a href="appendixInstall.html#running-shiny-apps"><i class="fa fa-check"></i><b>A.3</b> Running Shiny Apps</a></li>
 <li class="chapter" data-level="A.4" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-keras-and-tensorflow"><i class="fa fa-check"></i><b>A.4</b> Installing Keras and TensorFlow</a></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="appendixDatasets.html"><a href="appendixDatasets.html"><i class="fa fa-check"></i><b>B</b> Datasets</a><ul>
+<li class="chapter" data-level="B" data-path="appendixDatasets.html"><a href="appendixDatasets.html"><i class="fa fa-check"></i><b>B</b> Datasets</a>
+<ul>
 <li class="chapter" data-level="B.1" data-path="appendixDatasets.html"><a href="appendixDatasets.html#complex-activities"><i class="fa fa-check"></i><b>B.1</b> COMPLEX ACTIVITIES</a></li>
 <li class="chapter" data-level="B.2" data-path="appendixDatasets.html"><a href="appendixDatasets.html#depresjon"><i class="fa fa-check"></i><b>B.2</b> DEPRESJON</a></li>
 <li class="chapter" data-level="B.3" data-path="appendixDatasets.html"><a href="appendixDatasets.html#electromyography"><i class="fa fa-check"></i><b>B.3</b> ELECTROMYOGRAPHY</a></li>
@@ -364,7 +402,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Behavior Analysis with Machine Learning and R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Behavior Analysis with Machine Learning Using R</a>
           </h1>
         </div>
 
@@ -372,7 +410,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="representations" class="section level1">
+<div id="representations" class="section level1" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Encoding Behavioral Data</h1>
 <p>Sensor data comes in many different flavors and shapes. Data stored in databases also have different structures (relational, graph, plain text, etc.). As mentioned in chapter <a href="intro.html#intro">1</a>, before training a predictive model, data goes through a series of steps, from data collection to preprocessing (Figure <a href="intro.html#fig:pipeline">1.6</a>). During those steps, data is transformed and shaped with the aim of easing the operations in the subsequent tasks. Finally, the data needs to be encoded in a very specific format as expected by the predictive model. For example, decision trees and many other classifier methods expect their input data to be formatted as <strong>feature vectors</strong> while Dynamic Time Warping expects the data to be represented as <strong>timeseries</strong>. When working with images, one usually encodes them as <span class="math inline">\(n\)</span>-dimensional matrices and when it comes to social network analysis, a <strong>graph</strong> is the preferred representation.</p>
 <p>So far, I have been mentioning two key terms: <strong>encode</strong> and <strong>representation</strong>. The Cambridge Dictionary<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> defines the verb <em>encode</em> as:</p>
@@ -391,17 +429,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="figure" style="text-align: center"><span id="fig:conceptualRep"></span>
 <img src="images/conceptual_representation.png" alt="The real world walking activity as a) human conceptual representation and b) computer format." width="90%" />
 <p class="caption">
-Figure 7.1: The real world walking activity as a) human conceptual representation and b) computer format.
+FIGURE 7.1: The real world walking activity as a) human conceptual representation and b) computer format.
 </p>
 </div>
 <p>It is also possible to encode the same data into different representations depending on the application or the predictive model to be used. Each representation has its own advantages and limitations (discussed in the following subsections) and they capture different aspects of the real-world phenomenon. Sometimes it is useful to encode the same data into different representations so more information can be extracted and complemented as discussed in the ‘Multi-view learning’ section <a href="ensemble.html#multiviewhometasks">3.4</a>. In the next sections, several types of representations will be presented along with some ideas of how the same raw data can be encoded into different ones.</p>
 <div class="figure" style="text-align: center"><span id="fig:imgRepepresentations"></span>
 <img src="images/representations.png" alt="Example of some raw data encoded into different representations." width="90%" />
 <p class="caption">
-Figure 7.2: Example of some raw data encoded into different representations.
+FIGURE 7.2: Example of some raw data encoded into different representations.
 </p>
 </div>
-<div id="feature-vectors" class="section level2">
+<div id="feature-vectors" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Feature Vectors</h2>
 <p>From previous chapters, we have already seen how the data can be represented as feature vectors. For example when classifying physical activities (section <a href="classification.html#activityRecognition">2.3.1</a>) or clustering questionnaire answers (section <a href="unsupervised.html#studentresponses">6.1.1</a>). Feature vectors are compact representations of some real-world phenomenon or object and usually, they are modeled in a computer as numeric arrays. Most machine learning algorithms work with feature vectors. Generating feature vectors requires knowledge of the application domain. Ideally, one wants to have feature vectors that represent the real-world situation as accurately as possible. We could achieve a good mapping by having feature vectors of infinite size, unfortunately, that is infeasible. In practice, small feature vectors are desired because that reduces storage requirements and computational time.</p>
 <p>The process of generating feature vectors from raw data is known as <strong>feature engineering</strong> which also involves the process of deciding which features to extract. This requires domain knowledge as the features should capture the information needed to solve the problem. Suppose we want to classify if a person is <em>‘tired’</em> or <em>‘not tired’</em>. We have access to some details about the person like age, height, the activities performed during the last <span class="math inline">\(30\)</span> minutes, and so on. For simplicity, let’s assume we can generate feature vectors of size <span class="math inline">\(2\)</span> and we have two options:</p>
@@ -413,7 +451,7 @@ Figure 7.2: Example of some raw data encoded into different representations.
 <div class="figure" style="text-align: center"><span id="fig:tired"></span>
 <img src="images/tired.png" alt="Two different feature vectors for classifying tired and not tired." width="90%" />
 <p class="caption">
-Figure 7.3: Two different feature vectors for classifying tired and not tired.
+FIGURE 7.3: Two different feature vectors for classifying tired and not tired.
 </p>
 </div>
 <p>In R, feature vectors are stored as data frames where rows are individual instances and columns are features. Some of the advantages and limitations of feature vectors are:</p>
@@ -432,9 +470,9 @@ Figure 7.3: Two different feature vectors for classifying tired and not tired.
 <li>Difficult to plot if the dimension is <span class="math inline">\(&gt; 2\)</span> unless some dimensionality reduction method is applied such as Multidimensional Scaling (chapter <a href="edavis.html#edavis">4</a>).</li>
 </ul>
 </div>
-<div id="sectimeseries" class="section level2">
+<div id="sectimeseries" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Timeseries</h2>
-<p>A timeseries is a sequence of data points ordered in time. We have already worked with timeseries data in previous chapters (<a href="classification.html#classification">2</a>) when classifying physical activities and hand gestures. Timeseries can be multi-dimensional. For example, typical inertial sensors capture motion forces in three axes. Timeseries analysis methods can be used to find underlying time-dependent patterns while timeseries forecasting methods aim to predict future data points based on historical data. Timeseries analysis is a very extensive topic and there are already several books that specialize on it. For example, the book “Forecasting: Principles and Practice” by <span class="citation">Hyndman and Athanasopoulos (<a href="#ref-Hyndman2018" role="doc-biblioref">2018</a>)</span> focuses on timeseries forecasting with R.</p>
+<p>A timeseries is a sequence of data points ordered in time. We have already worked with timeseries data in previous chapters (<a href="classification.html#classification">2</a>) when classifying physical activities and hand gestures. Timeseries can be multi-dimensional. For example, typical inertial sensors capture motion forces in three axes. Timeseries analysis methods can be used to find underlying time-dependent patterns while timeseries forecasting methods aim to predict future data points based on historical data. Timeseries analysis is a very extensive topic and there are already several books that specialize on it. For example, the book “Forecasting: Principles and Practice” by <span class="citation"><a href="references.html#ref-Hyndman2018" role="doc-biblioref">Hyndman and Athanasopoulos</a> (<a href="references.html#ref-Hyndman2018" role="doc-biblioref">2018</a>)</span> focuses on timeseries forecasting with R.</p>
 <p>In this book we mainly use timeseries data collected from sensors in the context of behavior predictions using machine learning. We have already seen how classification models (like decision trees) can be trained with timeseries converted into feature vectors (section <a href="classification.html#activityRecognition">2.3.1</a>) or by using the raw timeseries data with Dynamic Time Warping (section <a href="classification.html#sechandgestures">2.5.1</a>).</p>
 <p><strong>Advantages:</strong></p>
 <ul>
@@ -449,13 +487,13 @@ Figure 7.3: Two different feature vectors for classifying tired and not tired.
 <li>Timeseries can be very long, thus, making computations very slow.</li>
 </ul>
 </div>
-<div id="transactions" class="section level2">
+<div id="transactions" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Transactions</h2>
 <p>Sometimes we may want to represent our data as transactions, as we did in section <a href="unsupervised.html#associationrules">6.3</a>. Data represented as transactions are usually intended to be used by association rule mining algorithms (see section <a href="unsupervised.html#associationrules">6.3</a>). As a minimum, a transaction has a unique identifier and a set of items. Items can be types of products, symptoms, ingredients, etc. A set of transactions is called a database. Figure <a href="representations.html#fig:transactionsTab2">7.4</a> taken from chapter <a href="unsupervised.html#unsupervised">6</a> shows an example database with <span class="math inline">\(10\)</span> transactions. In this example, items are sets of products from a supermarket.</p>
 <div class="figure" style="text-align: center"><span id="fig:transactionsTab2"></span>
 <img src="images/transactions_tab.png" alt="Example database with 10 transactions." width="50%" />
 <p class="caption">
-Figure 7.4: Example database with 10 transactions.
+FIGURE 7.4: Example database with 10 transactions.
 </p>
 </div>
 <p>Transactions can include additional information like customer id, date, total cost, etc. Transactions can be coded as logical matrices where rows represent transactions and columns represent items. A <code>TRUE</code> value indicates that the particular item is present and <code>FALSE</code> indicates that the particular item is not part of that set. When the number of possible items is huge and item sets contain a small number of items this type of matrix can be inefficient because there are going to be many entries with a value of <code>FALSE</code>, that is, a sparse matrix. Transactions can also be stored as lists or in a relational database such as MySQL. Below are some advantages of representing data as transactions.</p>
@@ -469,19 +507,18 @@ Figure 7.4: Example database with 10 transactions.
 <li>Can be inefficient to store them as a logical matrix.</li>
 </ul>
 </div>
-<div id="images" class="section level2">
+<div id="images" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> Images</h2>
 
 <div class="rmdfolder">
 <code>timeseries_to_images.R</code> <code>plot_activity_images.R</code>
 </div>
-
 <p>Images are rich visual representations that capture a lot of information –including spatial relationships. Pictures taken from a camera, drawings, scanned documents, etc. already are represented as images. However, other types of non-image data can be converted into images. One of the main advantages of analyzing images is that they retain spatial information (distance between pixels). This information can be useful when using predictive models that can take advantage of those properties such as Convolutional Neural Networks (CNNs) which will be presented in chapter <a href="deeplearning.html#deeplearning">8</a>. CNNs have proven to produce state of the art results in many vision-based tasks and are very flexible models in the sense that they can be adapted for a variety of applications with little effort.</p>
-<p>Before CNNs were introduced by Lecun <span class="citation">(LeCun et al. <a href="#ref-lecun1998gradient" role="doc-biblioref">1998</a>)</span>, image classification used to be feature-based. One first needed to extract hand-crafted features from images and then use a classifier such as decision trees, <span class="math inline">\(k\)</span>-nn, etc. Also, images can be <em>flattened</em> into one-dimensional arrays where each element represents a pixel (Figure <a href="representations.html#fig:flattening">7.5</a>). Then, those <span class="math inline">\(1\)</span>D arrays can be used as feature vectors to perform training and inference.</p>
+<p>Before CNNs were introduced by Lecun <span class="citation">(<a href="references.html#ref-lecun1998gradient" role="doc-biblioref">LeCun et al. 1998</a>)</span>, image classification used to be feature-based. One first needed to extract hand-crafted features from images and then use a classifier such as decision trees, <span class="math inline">\(k\)</span>-nn, etc. Also, images can be <em>flattened</em> into one-dimensional arrays where each element represents a pixel (Figure <a href="representations.html#fig:flattening">7.5</a>). Then, those <span class="math inline">\(1\)</span>D arrays can be used as feature vectors to perform training and inference.</p>
 <div class="figure" style="text-align: center"><span id="fig:flattening"></span>
 <img src="images/flattening.png" alt="Flattening a matrix into a 1D array." width="80%" />
 <p class="caption">
-Figure 7.5: Flattening a matrix into a 1D array.
+FIGURE 7.5: Flattening a matrix into a 1D array.
 </p>
 </div>
 <p>Flattening an image can lead to information loss and the dimension of the resulting vector can be very high, sometimes limiting its applicability and/or performance. Feature extraction from images can also be a complicated task and very application dependent. CNNs have changed that. They take as input raw images, that is, matrices and automatically extract features and perform classification or regression.</p>
@@ -490,7 +527,7 @@ Figure 7.5: Flattening a matrix into a 1D array.
 <div class="figure" style="text-align: center"><span id="fig:seriesToImage"></span>
 <img src="images/series_to_image.png" alt="Encoding 3 accelerometer timeseries as an image." width="90%" />
 <p class="caption">
-Figure 7.6: Encoding 3 accelerometer timeseries as an image.
+FIGURE 7.6: Encoding 3 accelerometer timeseries as an image.
 </p>
 </div>
 <p>The script then moves to the next window with no overlap and repeats the process. Actually, the script saves each image as one line of text. The first <span class="math inline">\(100\)</span> elements correspond to the <span class="math inline">\(x\)</span> axis, the next <span class="math inline">\(100\)</span> to <span class="math inline">\(y\)</span>, and the remaining to <span class="math inline">\(z\)</span>. Thus each line has <span class="math inline">\(300\)</span> values. Finally, the user id and the corresponding activity label are added at the end. This format will make it easy to read the file and reconstruct the images later on. The resulting file is called <code>images.txt</code> and is already included in the <code>smartphone_activities</code> dataset folder.</p>
@@ -498,7 +535,7 @@ Figure 7.6: Encoding 3 accelerometer timeseries as an image.
 <div class="figure" style="text-align: center"><span id="fig:activitiesImages"></span>
 <img src="images/activities_images.png" alt="Three activities captured with an accelerometer represented as images." width="90%" />
 <p class="caption">
-Figure 7.7: Three activities captured with an accelerometer represented as images.
+FIGURE 7.7: Three activities captured with an accelerometer represented as images.
 </p>
 </div>
 <p>We can see that the patterns for <em>‘jogging’</em> look more “chaotic” compared to the others while the <em>‘sitting’</em> activity looks like a plain solid square. Then, we can use those images to train a CNN and perform inference. CNNs will be covered in chapter <a href="deeplearning.html#deeplearning">8</a> and we’ll also see how to build adaptive models using these activity images.</p>
@@ -514,26 +551,25 @@ Figure 7.7: Three activities captured with an accelerometer represented as image
 <li>It can take some extra processing to convert non-image data into images.</li>
 </ul>
 </div>
-<div id="recurrence-plots" class="section level2">
+<div id="recurrence-plots" class="section level2" number="7.5">
 <h2><span class="header-section-number">7.5</span> Recurrence Plots</h2>
 <p>Recurrence plots (RPs) are visual representations similar to images but typically they are one-dimensional. They are encoded as <span class="math inline">\(n \times n\)</span> matrices, that is, the same number of rows and columns (a square matrix). Even though these are like a special case of images, I thought it would be worth having them in their own subsection! Just as with images, timeseries can be converted into RPs and then used to train a CNN.</p>
-<p>A recurrence plot (RP) is a visual representation of time patterns of dynamical systems (for example, timeseries). RPs were introduced by <span class="citation">Eckmann, Kamphorst, and Ruelle (<a href="#ref-eckmann1987recurrence" role="doc-biblioref">1987</a>)</span> and they depict all the times when a trajectory is roughly in the same state. They are visual representations of the dynamics of a system. Biological systems possess behavioral patterns and activity dynamics that can be captured with RPs, for example, the dynamics of ant colonies <span class="citation">(Neves <a href="#ref-Neves2017" role="doc-biblioref">2017</a>)</span>.</p>
+<p>A recurrence plot (RP) is a visual representation of time patterns of dynamical systems (for example, timeseries). RPs were introduced by <span class="citation"><a href="references.html#ref-eckmann1987recurrence" role="doc-biblioref">Eckmann, Kamphorst, and Ruelle</a> (<a href="references.html#ref-eckmann1987recurrence" role="doc-biblioref">1987</a>)</span> and they depict all the times when a trajectory is roughly in the same state. They are visual representations of the dynamics of a system. Biological systems possess behavioral patterns and activity dynamics that can be captured with RPs, for example, the dynamics of ant colonies <span class="citation">(<a href="references.html#ref-Neves2017" role="doc-biblioref">Neves 2017</a>)</span>.</p>
 <p>At this point, you may be curious about how a RP looks like. So let me begin by showing a picture<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a> of <span class="math inline">\(4\)</span> time series with their respective RP (Figure <a href="representations.html#fig:rpExamples">7.8</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:rpExamples"></span>
 <img src="images/RP_examples.png" alt="Four timeseries (top) with their respective RPs (bottom). Source: wikipedia." width="80%" />
 <p class="caption">
-Figure 7.8: Four timeseries (top) with their respective RPs (bottom). Source: wikipedia.
+FIGURE 7.8: Four timeseries (top) with their respective RPs (bottom). Source: wikipedia.
 </p>
 </div>
 <p>The first RP (leftmost) does not seem to have a clear pattern (white noise) whereas the other three show some patterns like diagonals of different sizes, some square and circular shapes, and so on. RPs can be characterized by small-scale and large-scale patterns. Examples of small-scale patterns are diagonals, horizontal/vertical lines, dots, etc. Large-scale patterns are called <em>typology</em> and they depict the global characteristics of the dynamic system.<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a></p>
 <p>The visual interpretation of RPs requires some experience and is out of the scope of this book. However, they can be used as a visual pattern extraction tool to represent the data and then, in conjunction with machine learning methods like CNNs, used to solve classification problems.</p>
 
 <div class="rmdinfo">
-There exists an objective way to analyze RPs and is called <strong>recurrence quantification analysis (RQA)</strong> <span class="citation">(Zbilut and Webber <a href="#ref-ZBILUT1992" role="doc-biblioref">1992</a>)</span>. It introduces several measures<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> like percentage of recurrence points (recurrence rate), percentage of points that form vertical lines (laminarity), average length of diagonal lines, length of the longest diagonal line, etc. Those measures can then be used as features to train classifiers such as decision trees, <span class="math inline">\(k\)</span>-nn, etc.
+There exists an objective way to analyze RPs and is called <strong>recurrence quantification analysis (RQA)</strong> <span class="citation">(<a href="references.html#ref-ZBILUT1992" role="doc-biblioref">Zbilut and Webber 1992</a>)</span>. It introduces several measures<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> like percentage of recurrence points (recurrence rate), percentage of points that form vertical lines (laminarity), average length of diagonal lines, length of the longest diagonal line, etc. Those measures can then be used as features to train classifiers such as decision trees, <span class="math inline">\(k\)</span>-nn, etc.
 </div>
-
 <p>But how are RPs computed? Well, that is the topic of the next section.</p>
-<div id="computing-recurence-plots" class="section level3">
+<div id="computing-recurence-plots" class="section level3" number="7.5.1">
 <h3><span class="header-section-number">7.5.1</span> Computing Recurence Plots</h3>
 <p>It’s time to delve into the details about how these mysterious plots are computed. Suppose there is a timeseries with <span class="math inline">\(n\)</span> elements (points). To compute its RP we need to compute the distance between each pair of points. We can store this information in a <span class="math inline">\(n \times n\)</span> matrix. Let’s call this a <em>distance matrix</em> <span class="math inline">\(D\)</span>. Then, we need to define a threshold <span class="math inline">\(\epsilon\)</span>. For each entry in <span class="math inline">\(D\)</span> if the distance is less or equal than the threshold <span class="math inline">\(\epsilon\)</span> then it is set to <span class="math inline">\(1\)</span> and <span class="math inline">\(0\)</span> otherwise.</p>
 <p>Formally, a recurrence of a state at time <span class="math inline">\(i\)</span> at a different time <span class="math inline">\(j\)</span> is marked within a two-dimensional squared matrix with ones and zeros where both axes represent time:</p>
@@ -565,89 +601,88 @@ There exists an objective way to analyze RPs and is called <strong>recurrence qu
 <li>A threshold needs to be defined and it is not always easy to find the correct value. However, the distance matrix can be used instead.</li>
 </ul>
 </div>
-<div id="recurrence-plots-of-hand-gestures" class="section level3">
+<div id="recurrence-plots-of-hand-gestures" class="section level3" number="7.5.2">
 <h3><span class="header-section-number">7.5.2</span> Recurrence Plots of Hand Gestures</h3>
 
 <div class="rmdfolder">
 <code>recurrence_plots.R</code>
 </div>
-
 <p>In this section, I am going to show you how to compute recurrence plots in R using as an example the <em>HAND GESTURES</em> dataset. The code can be found in the script <code>recurrence_plots.R</code>. First, we need a norm (distance function) for example the Euclidean distance:</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="representations.html#cb140-1"></a><span class="co"># Computes Euclidean distance between x and y.</span></span>
-<span id="cb140-2"><a href="representations.html#cb140-2"></a>norm2 &lt;-<span class="st"> </span><span class="cf">function</span>(x, y){</span>
-<span id="cb140-3"><a href="representations.html#cb140-3"></a>  <span class="kw">return</span>(<span class="kw">sqrt</span>((x <span class="op">-</span><span class="st"> </span>y)<span class="op">^</span><span class="dv">2</span>))</span>
-<span id="cb140-4"><a href="representations.html#cb140-4"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="representations.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Computes Euclidean distance between x and y.</span></span>
+<span id="cb140-2"><a href="representations.html#cb140-2" aria-hidden="true" tabindex="-1"></a>norm2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y){</span>
+<span id="cb140-3"><a href="representations.html#cb140-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">sqrt</span>((x <span class="sc">-</span> y)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb140-4"><a href="representations.html#cb140-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>The following function computes a distance matrix and a recurrence plot and returns both of them. The first argument <code>x</code> is a vector representing a timeseries, <code>e</code> is the threshold and <code>f</code> is a distance function.</p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="representations.html#cb141-1"></a>rp &lt;-<span class="st"> </span><span class="cf">function</span>(x, e, <span class="dt">f=</span>norm2){</span>
-<span id="cb141-2"><a href="representations.html#cb141-2"></a>  <span class="co">#x: vector</span></span>
-<span id="cb141-3"><a href="representations.html#cb141-3"></a>  <span class="co">#e: threshold</span></span>
-<span id="cb141-4"><a href="representations.html#cb141-4"></a>  <span class="co">#f: norm (distance function)</span></span>
-<span id="cb141-5"><a href="representations.html#cb141-5"></a>  N &lt;-<span class="st"> </span><span class="kw">length</span>(x)</span>
-<span id="cb141-6"><a href="representations.html#cb141-6"></a>  </span>
-<span id="cb141-7"><a href="representations.html#cb141-7"></a>  <span class="co"># This will store the recurrence plot.</span></span>
-<span id="cb141-8"><a href="representations.html#cb141-8"></a>  M &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">nrow=</span>N, <span class="dt">ncol=</span>N)</span>
-<span id="cb141-9"><a href="representations.html#cb141-9"></a>  </span>
-<span id="cb141-10"><a href="representations.html#cb141-10"></a>  <span class="co"># This will store the distance matrix.</span></span>
-<span id="cb141-11"><a href="representations.html#cb141-11"></a>  D &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">nrow=</span>N, <span class="dt">ncol=</span>N)</span>
-<span id="cb141-12"><a href="representations.html#cb141-12"></a>  </span>
-<span id="cb141-13"><a href="representations.html#cb141-13"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){</span>
-<span id="cb141-14"><a href="representations.html#cb141-14"></a>    <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){</span>
-<span id="cb141-15"><a href="representations.html#cb141-15"></a>      </span>
-<span id="cb141-16"><a href="representations.html#cb141-16"></a>      <span class="co"># Compute the distance between a pair of points.</span></span>
-<span id="cb141-17"><a href="representations.html#cb141-17"></a>      d &lt;-<span class="st"> </span><span class="kw">f</span>(x[i], x[j])</span>
-<span id="cb141-18"><a href="representations.html#cb141-18"></a>      </span>
-<span id="cb141-19"><a href="representations.html#cb141-19"></a>      <span class="co"># Store result in D.</span></span>
-<span id="cb141-20"><a href="representations.html#cb141-20"></a>      <span class="co"># Start filling values from bottom left.</span></span>
-<span id="cb141-21"><a href="representations.html#cb141-21"></a>      D[N <span class="op">-</span><span class="st"> </span>(i<span class="dv">-1</span>), j] &lt;-<span class="st"> </span>d </span>
-<span id="cb141-22"><a href="representations.html#cb141-22"></a>      </span>
-<span id="cb141-23"><a href="representations.html#cb141-23"></a>      <span class="cf">if</span>(d <span class="op">&lt;=</span><span class="st"> </span>e){</span>
-<span id="cb141-24"><a href="representations.html#cb141-24"></a>        M[N <span class="op">-</span><span class="st"> </span>(i<span class="dv">-1</span>), j] &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb141-25"><a href="representations.html#cb141-25"></a>      }</span>
-<span id="cb141-26"><a href="representations.html#cb141-26"></a>      <span class="cf">else</span>{</span>
-<span id="cb141-27"><a href="representations.html#cb141-27"></a>        M[N <span class="op">-</span><span class="st"> </span>(i<span class="dv">-1</span>), j] &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb141-28"><a href="representations.html#cb141-28"></a>      }</span>
-<span id="cb141-29"><a href="representations.html#cb141-29"></a>    }</span>
-<span id="cb141-30"><a href="representations.html#cb141-30"></a>  }</span>
-<span id="cb141-31"><a href="representations.html#cb141-31"></a>  <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">D=</span>D, <span class="dt">RP=</span>M))</span>
-<span id="cb141-32"><a href="representations.html#cb141-32"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="representations.html#cb141-1" aria-hidden="true" tabindex="-1"></a>rp <span class="ot">&lt;-</span> <span class="cf">function</span>(x, e, <span class="at">f=</span>norm2){</span>
+<span id="cb141-2"><a href="representations.html#cb141-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#x: vector</span></span>
+<span id="cb141-3"><a href="representations.html#cb141-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#e: threshold</span></span>
+<span id="cb141-4"><a href="representations.html#cb141-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#f: norm (distance function)</span></span>
+<span id="cb141-5"><a href="representations.html#cb141-5" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb141-6"><a href="representations.html#cb141-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb141-7"><a href="representations.html#cb141-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This will store the recurrence plot.</span></span>
+<span id="cb141-8"><a href="representations.html#cb141-8" aria-hidden="true" tabindex="-1"></a>  M <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">nrow=</span>N, <span class="at">ncol=</span>N)</span>
+<span id="cb141-9"><a href="representations.html#cb141-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb141-10"><a href="representations.html#cb141-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This will store the distance matrix.</span></span>
+<span id="cb141-11"><a href="representations.html#cb141-11" aria-hidden="true" tabindex="-1"></a>  D <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">nrow=</span>N, <span class="at">ncol=</span>N)</span>
+<span id="cb141-12"><a href="representations.html#cb141-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb141-13"><a href="representations.html#cb141-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
+<span id="cb141-14"><a href="representations.html#cb141-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
+<span id="cb141-15"><a href="representations.html#cb141-15" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb141-16"><a href="representations.html#cb141-16" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Compute the distance between a pair of points.</span></span>
+<span id="cb141-17"><a href="representations.html#cb141-17" aria-hidden="true" tabindex="-1"></a>      d <span class="ot">&lt;-</span> <span class="fu">f</span>(x[i], x[j])</span>
+<span id="cb141-18"><a href="representations.html#cb141-18" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb141-19"><a href="representations.html#cb141-19" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Store result in D.</span></span>
+<span id="cb141-20"><a href="representations.html#cb141-20" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Start filling values from bottom left.</span></span>
+<span id="cb141-21"><a href="representations.html#cb141-21" aria-hidden="true" tabindex="-1"></a>      D[N <span class="sc">-</span> (i<span class="dv">-1</span>), j] <span class="ot">&lt;-</span> d </span>
+<span id="cb141-22"><a href="representations.html#cb141-22" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb141-23"><a href="representations.html#cb141-23" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(d <span class="sc">&lt;=</span> e){</span>
+<span id="cb141-24"><a href="representations.html#cb141-24" aria-hidden="true" tabindex="-1"></a>        M[N <span class="sc">-</span> (i<span class="dv">-1</span>), j] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb141-25"><a href="representations.html#cb141-25" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb141-26"><a href="representations.html#cb141-26" aria-hidden="true" tabindex="-1"></a>      <span class="cf">else</span>{</span>
+<span id="cb141-27"><a href="representations.html#cb141-27" aria-hidden="true" tabindex="-1"></a>        M[N <span class="sc">-</span> (i<span class="dv">-1</span>), j] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb141-28"><a href="representations.html#cb141-28" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb141-29"><a href="representations.html#cb141-29" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb141-30"><a href="representations.html#cb141-30" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb141-31"><a href="representations.html#cb141-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">D=</span>D, <span class="at">RP=</span>M))</span>
+<span id="cb141-32"><a href="representations.html#cb141-32" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>This function first defines two square matrices <code>M</code> and <code>D</code> to store the recurrence plot and the distance matrix, respectively. Then, it iterates the matrices from bottom left to top right and fills the corresponding values for <code>M</code> and <code>D</code>. The distance between elements <code>i</code> and <code>j</code> from the vector is computed. That distance is directly stored in <code>D</code>. To generate the RP we check if the distance is less or equal to the threshold. If that is the case the corresponding entry in <code>M</code> is set to <span class="math inline">\(1\)</span>. Finally, both matrices are returned by the function.</p>
 <p>Now, we can try our <code>rp()</code> function on the <em>HAND GESTURES</em> dataset to convert one of the timeseries into a RP. First, we read one of the gesture files. For example, the first gesture <em>‘1’</em> from user <span class="math inline">\(1\)</span>. We only extract the acceleration from the <span class="math inline">\(x\)</span> axis and store it in variable <code>x</code>.</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="representations.html#cb142-1"></a>df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;../../data/hand_gestures/1/1_20130703-120056.txt&quot;</span>,</span>
-<span id="cb142-2"><a href="representations.html#cb142-2"></a>               <span class="dt">header =</span> F)</span>
-<span id="cb142-3"><a href="representations.html#cb142-3"></a>x &lt;-<span class="st"> </span>df<span class="op">$</span>V1</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="representations.html#cb142-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;../../data/hand_gestures/1/1_20130703-120056.txt&quot;</span>,</span>
+<span id="cb142-2"><a href="representations.html#cb142-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">header =</span> F)</span>
+<span id="cb142-3"><a href="representations.html#cb142-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> df<span class="sc">$</span>V1</span></code></pre></div>
 <p>If we plot vector <code>x</code> we get something like in Figure <a href="representations.html#fig:gesture1X">7.9</a>.</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="representations.html#cb143-1"></a><span class="co"># Plot vector x.</span></span>
-<span id="cb143-2"><a href="representations.html#cb143-2"></a><span class="kw">plot</span>(x, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Hand gesture 1&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;time&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="representations.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot vector x.</span></span>
+<span id="cb143-2"><a href="representations.html#cb143-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">main=</span><span class="st">&quot;Hand gesture 1&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;time&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:gesture1X"></span>
 <img src="images/rp_series.png" alt="Acceleration of x of gesture 1." width="90%" />
 <p class="caption">
-Figure 7.9: Acceleration of x of gesture 1.
+FIGURE 7.9: Acceleration of x of gesture 1.
 </p>
 </div>
 <p>Now the <code>rp()</code> function that we just defined is used to calculate the RP and distance matrix of vector <code>x</code>. We set a threshold of <span class="math inline">\(0.5\)</span> and store the result in <code>res</code>.</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="representations.html#cb144-1"></a><span class="co"># Compute RP and distance matrix.</span></span>
-<span id="cb144-2"><a href="representations.html#cb144-2"></a>res &lt;-<span class="st"> </span><span class="kw">rp</span>(x, <span class="fl">0.5</span>, norm2)</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="representations.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute RP and distance matrix.</span></span>
+<span id="cb144-2"><a href="representations.html#cb144-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">rp</span>(x, <span class="fl">0.5</span>, norm2)</span></code></pre></div>
 <p>Let’s first plot the distance matrix stored in <code>res$D</code>. The <code>pheatmap()</code> function can be used to generate the plot.</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="representations.html#cb145-1"></a><span class="kw">library</span>(pheatmap)</span>
-<span id="cb145-2"><a href="representations.html#cb145-2"></a><span class="kw">pheatmap</span>(res<span class="op">$</span>D, <span class="dt">main=</span><span class="st">&quot;Distance matrix of gesture 1&quot;</span>, <span class="dt">cluster_row =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb145-3"><a href="representations.html#cb145-3"></a>         <span class="dt">cluster_col =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb145-4"><a href="representations.html#cb145-4"></a>         <span class="dt">legend =</span> F,</span>
-<span id="cb145-5"><a href="representations.html#cb145-5"></a>         <span class="dt">color =</span> <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;black&quot;</span>))(<span class="dv">50</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="representations.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pheatmap)</span>
+<span id="cb145-2"><a href="representations.html#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pheatmap</span>(res<span class="sc">$</span>D, <span class="at">main=</span><span class="st">&quot;Distance matrix of gesture 1&quot;</span>, <span class="at">cluster_row =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb145-3"><a href="representations.html#cb145-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">cluster_col =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb145-4"><a href="representations.html#cb145-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend =</span> F,</span>
+<span id="cb145-5"><a href="representations.html#cb145-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">color =</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;black&quot;</span>))(<span class="dv">50</span>))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:gesture1D"></span>
 <img src="images/rp_d.png" alt="Distance matrix of gesture 1." width="90%" />
 <p class="caption">
-Figure 7.10: Distance matrix of gesture 1.
+FIGURE 7.10: Distance matrix of gesture 1.
 </p>
 </div>
 <p>From figure <a href="representations.html#fig:gesture1D">7.10</a> we can see that the diagonal cells are all white. Those represent values of <span class="math inline">\(0\)</span>, the distance between a point and itself. Apart from that, there are no other human intuitive patterns to look for. Now, let’s plot the recurrence plot stored in <code>res$RP</code>.</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="representations.html#cb146-1"></a><span class="kw">pheatmap</span>(res<span class="op">$</span>RP, <span class="dt">main=</span><span class="st">&quot;RP with threshold = 0.5&quot;</span>, <span class="dt">cluster_row =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb146-2"><a href="representations.html#cb146-2"></a>         <span class="dt">cluster_col =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb146-3"><a href="representations.html#cb146-3"></a>         <span class="dt">legend =</span> F,</span>
-<span id="cb146-4"><a href="representations.html#cb146-4"></a>         <span class="dt">color =</span> <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;black&quot;</span>))(<span class="dv">50</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="representations.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pheatmap</span>(res<span class="sc">$</span>RP, <span class="at">main=</span><span class="st">&quot;RP with threshold = 0.5&quot;</span>, <span class="at">cluster_row =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb146-2"><a href="representations.html#cb146-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">cluster_col =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb146-3"><a href="representations.html#cb146-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend =</span> F,</span>
+<span id="cb146-4"><a href="representations.html#cb146-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">color =</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;black&quot;</span>))(<span class="dv">50</span>))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:gesture1rp5"></span>
 <img src="images/rp_rp_5.png" alt="RP of gesture 1 with a threshold of 0.5." width="90%" />
 <p class="caption">
-Figure 7.11: RP of gesture 1 with a threshold of 0.5.
+FIGURE 7.11: RP of gesture 1 with a threshold of 0.5.
 </p>
 </div>
 <p>Here, we can see that this is kind of an inverted version of the distance matrix. Now, the diagonal is black because small distances are encoded as ones. There are also some clusters of points and vertical and horizontal line patterns. If we wanted to build a classifier, we would not need to interpret those extraterrestrial images. We could just treat each distance matrix or RP as an image and feed them directly to a CNN (CNNs will be covered in chapter <a href="deeplearning.html#deeplearning">8</a>).</p>
@@ -655,37 +690,35 @@ Figure 7.11: RP of gesture 1 with a threshold of 0.5.
 <div class="figure" style="text-align: center"><span id="fig:rpComp"></span>
 <img src="images/rp_comp.png" alt="RP of gesture 1 with two different thresholds." width="90%" />
 <p class="caption">
-Figure 7.12: RP of gesture 1 with two different thresholds.
+FIGURE 7.12: RP of gesture 1 with two different thresholds.
 </p>
 </div>
 
 <div class="rmdshiny">
 <code>shiny_rp.R</code> This shiny app allows you to select hand gestures, plot their corresponding distance matrix and recurrence plot, and see how the threshold affects the final result.
 </div>
-
 </div>
 </div>
-<div id="bag-of-words" class="section level2">
+<div id="bag-of-words" class="section level2" number="7.6">
 <h2><span class="header-section-number">7.6</span> Bag-of-Words</h2>
 <p>The main idea of the Bag-of-Words (BoW) encoding is to represent a complex entity as a set of its constituent parts. It is called Bag-of-Words because one of the first applications was in natural language processing. Say there is a set of documents about different topics such as medicine, arts, engineering, etc. and you would like to classify them automatically based on their words. In BoW, each document is represented as a table that contains the unique words across all documents and their respective counts for each document. With this representation, one may see that documents about medicine will contain higher counts of words like <em>treatment</em>, <em>diagnosis</em>, <em>health</em>, etc. compared to documents about art or engineering. Figures <a href="representations.html#fig:bowExample">7.13</a> and <a href="representations.html#fig:bowTab">7.14</a> show the conceptual view and the table view, respectively.</p>
 <div class="figure" style="text-align: center"><span id="fig:bowExample"></span>
 <img src="images/bow.png" alt="Conceptual view of two documents as BoW." width="70%" />
 <p class="caption">
-Figure 7.13: Conceptual view of two documents as BoW.
+FIGURE 7.13: Conceptual view of two documents as BoW.
 </p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:bowTab"></span>
 <img src="images/bowTable.png" alt="Table view of two documents as BoW." width="50%" />
 <p class="caption">
-Figure 7.14: Table view of two documents as BoW.
+FIGURE 7.14: Table view of two documents as BoW.
 </p>
 </div>
 <p>From these representations, it is now easy to build a document classifier. The word-counts table can be used as an input feature vector. That is, each position in the feature vector represents a word and its value is an integer representing the total count for that word.</p>
 
 <div class="rmdgoodpractice">
-Note that in practice documents will differ in length, thus, it is a good idea to use percentages instead of total counts. This can be achieved by dividing each word count by the total number of counts. Also note that some frequent words like ‘the’, ‘is’, ‘it’ can cause problems, so some extra preprocessing is needed. This was a simple example but if you are interested in more advanced text processing techniques I refer you to the book “Text Mining with R: A Tidy Approach” by <span class="citation">Silge and Robinson (<a href="#ref-silge2017" role="doc-biblioref">2017</a>)</span>.
+Note that in practice documents will differ in length, thus, it is a good idea to use percentages instead of total counts. This can be achieved by dividing each word count by the total number of counts. Also note that some frequent words like ‘the,’ ‘is,’ ‘it’ can cause problems, so some extra preprocessing is needed. This was a simple example but if you are interested in more advanced text processing techniques I refer you to the book “Text Mining with R: A Tidy Approach” by <span class="citation"><a href="references.html#ref-silge2017" role="doc-biblioref">Silge and Robinson</a> (<a href="references.html#ref-silge2017" role="doc-biblioref">2017</a>)</span>.
 </div>
-
 <p>BoW can also be used for image classification in complex scenarios. For example when dealing with composed scenes like classrooms, parks, shops, streets, etc. First, the scene (document) can be decomposed into smaller elements (words) by identifying objects like trees, chairs, cars, cashiers, etc. In this case, instead of bags of words we have bags of objects but the idea is the same. The object identification part can be done in a <em>supervised</em> manner where there is already a classifier that assigns labels to objects.</p>
 <p>Using a supervised approach can work in some simple cases but is not scalable for more complex ones. <em>Why?</em>. Because the classifier would need to be trained for each type of object. Furthermore, those types of objects need to be manually defined beforehand. If we want to apply this method on scenes where most of their elements do not have a corresponding label in the object classifier we will be missing a lot of information and will end up having incomplete word count tables.</p>
 <p>A possible solution is to instead, use an <em>unsupervised</em> approach. The image scene can be divided into squared (but not necessarily) patches. Conceptually, each patch may represent an independent object (a tree, a chair, etc.). Then, feature extraction can be performed on each patch so ultimately patches are encoded as feature vectors. Again, each feature vector represents an individual possible object inside the complex scene. At this point, those feature vectors do not have a label so we can’t build the BoW (table counts) for the whole scene. Then, how are those <em>unlabeled</em> feature vectors useful? We could use a pre-trained classifier to assign them labels –but we would be relying into the supervised approach along with its aforementioned limitations. Instead, we can use an <em>unsupervised</em> method, for example, <em>K-means</em>! which was presented in chapter <a href="unsupervised.html#unsupervised">6</a>.</p>
@@ -705,13 +738,12 @@ Note that in practice documents will differ in length, thus, it is a good idea t
 <li><p>It may require some effort to define how to generate the words.</p></li>
 <li><p>There are cases where one needs to find the optimal number of words.</p></li>
 </ul>
-<div id="bow-for-complex-activities." class="section level3">
+<div id="bow-for-complex-activities." class="section level3" number="7.6.1">
 <h3><span class="header-section-number">7.6.1</span> BoW for Complex Activities.</h3>
 
 <div class="rmdfolder">
 <code>bagwords/bow_functions.R</code> <code>bagwords/bow_run.R</code>
 </div>
-
 <p>So far, I have been talking about BoW applications for text and images. In this section, I will show you how to decompose <strong>complex activities</strong> from accelerometer data into simpler activities and encode them as BoW. In chapters <a href="classification.html#classification">2</a> and <a href="ensemble.html#ensemble">3</a> we trained supervised models for <em>simple</em> activity recognition. Those activities were some like: <em>walking</em>, <em>jogging</em>, <em>standing</em>, etc. For those, it is sufficient to divide them into windows of size equivalent to a couple of seconds in order to infer their labels. On the other hand, <em>complex</em> activities happen in longer periods of time and they are composed of many simple activities. One example is the activity <strong>shopping</strong>. When we are shopping we perform many different activities including <em>walking</em>, <em>taking groceries</em>, <em>paying</em>, <em>standing while looking at the stands</em>, and so on. Another example is <strong>commuting</strong>. When we commute, we need to walk but also take the train, or drive, or cycle, etc.</p>
 <p>Using the same approach for simple activity classification on complex ones may not work. Representing a complex activity using fixed-size windows, could cause some conflicts. For example, a window may be covering the time span when the user was <em>walking</em>, but <em>walking</em> can be present in different types of complex activities. If a window happens to be part of a segment when the person was walking, there is not enough information to know which was the complex activity at that time. This is where BoW comes into play. If we represent a complex activity as a bag of <em>simple activities</em> then, a classifier will have an easier time differentiating between classes. For instance, when <strong>exercising</strong>, the frequencies (counts) of high-intensity activities (like running or jogging) will be higher compared to when someone is shopping.</p>
 <p>In practice, it would be very tedious to label all the possible simple activities to form the BoW. We will use the unsupervised approach discussed in the previous section to automatically find labels for the simple activities so we only need labels for the complex ones.</p>
@@ -726,16 +758,16 @@ Note that in practice documents will differ in length, thus, it is a good idea t
 <div class="figure" style="text-align: center"><span id="fig:bowProcess"></span>
 <img src="images/bow_process.png" alt="BoW steps. From raw signal to BoW table." width="100%" />
 <p class="caption">
-Figure 7.15: BoW steps. From raw signal to BoW table.
+FIGURE 7.15: BoW steps. From raw signal to BoW table.
 </p>
 </div>
 <p>Figure <a href="representations.html#fig:bowProcess">7.15</a> shows the overall steps graphically. All the functions to perform the above steps are implemented in <code>bow_functions.R</code>. The functions are called in the appropriate order in <code>bow_run.R</code>.</p>
 <p>First of all, and to avoid overfitting, we need to hold out an independent set of instances. These instances will be used to generate the clusters and their respective centroids. The dataset is already divided into a train and test set. The train set contains <span class="math inline">\(13\)</span> instances out of the <span class="math inline">\(80\)</span>. The remaining <span class="math inline">\(67\)</span> are assigned to the test set.</p>
 <p>In the first step, we need to extract the feature vectors from the raw data. This is implemented in the function <code>extractSimpleActivities()</code>. This function divides the raw data of each file into fixed-length windows of size <span class="math inline">\(150\)</span> which corresponds to <span class="math inline">\(3\)</span> seconds. Each window can be thought of as a simple activity. For each window, it extracts <span class="math inline">\(14\)</span> features like mean, standard deviation, correlation between axes, etc. The output is stored in the folder <code>simple_activities/</code>. Each file corresponds to one of the complex activities and each row in a file is a feature vector (simple activity). <strong>At this time the feature vectors (simple activities) are unlabeled.</strong> Notice that in the script <code>bow_run.R</code> the function is called twice:</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="representations.html#cb147-1"></a><span class="co"># Extract simple activities for train set.</span></span>
-<span id="cb147-2"><a href="representations.html#cb147-2"></a><span class="kw">extractSimpleActivities</span>(<span class="dt">train =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb147-3"><a href="representations.html#cb147-3"></a><span class="co"># Extract simple activities for test set (may take some minutes).</span></span>
-<span id="cb147-4"><a href="representations.html#cb147-4"></a><span class="kw">extractSimpleActivities</span>(<span class="dt">train =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="representations.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract simple activities for train set.</span></span>
+<span id="cb147-2"><a href="representations.html#cb147-2" aria-hidden="true" tabindex="-1"></a><span class="fu">extractSimpleActivities</span>(<span class="at">train =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb147-3"><a href="representations.html#cb147-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract simple activities for test set (may take some minutes).</span></span>
+<span id="cb147-4"><a href="representations.html#cb147-4" aria-hidden="true" tabindex="-1"></a><span class="fu">extractSimpleActivities</span>(<span class="at">train =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>This is because we divided the data into a train and test sets. So we need to extract the features from both sets by setting the <code>train</code> parameter accordingly.</p>
 <p>The second step consists of clustering the extracted feature vectors. To avoid overfitting, this step is only performed on the train set. The function <code>clusterSimpleActivities()</code> implements this step. The feature vectors are grouped into <span class="math inline">\(15\)</span> groups. This can be changed by setting <code>constants$wordsize &lt;- 15</code> to some other value. The function stores all feature vectors from all files in a single data frame and runs k-means. Finally, the resulting centroids are saved in the text file <code>clustering/centroids.txt</code> inside the train set directory.</p>
 <p>The next step is to label each feature vector (simple activity) by assigning it to its closest centroid. The function <code>assignSimpleActivitiesToCluster()</code> reads the centroids from the text file and for each simple activity in the test set it finds the closest centroid using the Euclidean distance. The label (an integer from <span class="math inline">\(1\)</span> to <span class="math inline">\(15\)</span>) of the closest centroid is assigned and the resulting files are saved in the <code>labeled_activities/</code> directory. Each file contains the assigned labels (integers) for the corresponding feature vectors file in the <code>simple_activities/</code> directory. Thus, if a file inside <code>simple_activities/</code> has <span class="math inline">\(100\)</span> feature vectors then, its corresponding file in <code>labeled_activities/</code> should have <span class="math inline">\(100\)</span> labels.</p>
@@ -744,13 +776,13 @@ Figure 7.15: BoW steps. From raw signal to BoW table.
 <div class="figure" style="text-align: center"><span id="fig:complexWorking"></span>
 <img src="images/complex_working.png" alt="Histogram of working activity." width="90%" />
 <p class="caption">
-Figure 7.16: Histogram of working activity.
+FIGURE 7.16: Histogram of working activity.
 </p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:complexExercising"></span>
 <img src="images/complex_exercising.png" alt="Histogram of exercising activity." width="90%" />
 <p class="caption">
-Figure 7.17: Histogram of exercising activity.
+FIGURE 7.17: Histogram of exercising activity.
 </p>
 </div>
 <p>Here, we can see that the <em>‘working’</em> activity is composed mainly by the simple activities <em>w1</em>, <em>w3</em>, and <em>w12</em>. The <em>exercising</em> activity is mainly composed of <em>w15</em> and <em>w14</em> which perhaps are high-intensity movements like jogging or running.</p>
@@ -758,16 +790,15 @@ Figure 7.17: Histogram of exercising activity.
 <div class="rmdinfo">
 Once the complex activities are encoded as BoW (histograms), one could train a classifier using the histogram frequencies as features.
 </div>
-
 </div>
 </div>
-<div id="graphs" class="section level2">
+<div id="graphs" class="section level2" number="7.7">
 <h2><span class="header-section-number">7.7</span> Graphs</h2>
 <p>Graphs are one of the most general data structures (and my favorite one). The two basic components of a graph are its <strong>vertices</strong> and <strong>edges</strong>. Vertices are also called <strong>nodes</strong> and edges are also called <strong>arcs</strong>. Vertices are connected by edges. Figure <a href="representations.html#fig:graphTypes">7.18</a> shows three different types of graphs. Graph (a) is an undirected graph that consists of <span class="math inline">\(3\)</span> vertices and <span class="math inline">\(3\)</span> edges. Graph (b) is a directed graph, that is, its edges have a direction. Graph (c) is a weighted directed graph because its edges have a direction and they also have an associated weight.</p>
 <div class="figure" style="text-align: center"><span id="fig:graphTypes"></span>
 <img src="images/graphs_types.png" alt="Three different types of graphs." width="60%" />
 <p class="caption">
-Figure 7.18: Three different types of graphs.
+FIGURE 7.18: Three different types of graphs.
 </p>
 </div>
 <p>Weights can represent anything, for example, distances between cities or number of messages sent between devices. In the previous graph, the vertices also have a label (integer numbers but could be strings). In general, vertices and edges can have any number of attributes, not just weight and/or labels. Many data structures like binary trees and lists are graphs <em>with constraints</em>. For example, a list is also a graph in which all vertices are connected as a sequence: a-&gt;b-&gt;c. Trees are also graphs with the constraint that there is only one root node and nodes can only have edges to their children. Graphs are very useful to represent many types of real-world things like interactions, social relationships, geographical locations, the world wide web, and so on.</p>
@@ -776,14 +807,14 @@ Figure 7.18: Three different types of graphs.
 <div class="figure" style="text-align: center"><span id="fig:graphOptions"></span>
 <img src="images/graph_options.png" alt="Different ways to store a graph." width="90%" />
 <p class="caption">
-Figure 7.19: Different ways to store a graph.
+FIGURE 7.19: Different ways to store a graph.
 </p>
 </div>
 <p><strong>Advantages:</strong></p>
 <ul>
 <li>Many real-world situations can be naturally represented as graphs.</li>
 <li>Some partial order is preserved.</li>
-<li>Specialized graph analytics can be performed to gain insights and understand the data. See for example the book by <span class="citation">Samatova et al. (<a href="#ref-samatova2013" role="doc-biblioref">2013</a>)</span>.</li>
+<li>Specialized graph analytics can be performed to gain insights and understand the data. See for example the book by <span class="citation"><a href="references.html#ref-samatova2013" role="doc-biblioref">Samatova et al.</a> (<a href="references.html#ref-samatova2013" role="doc-biblioref">2013</a>)</span>.</li>
 <li>Can be plotted and different visual properties can be tuned to convey information such as edge width and colors, vertex size and color, distance between nodes, etc.</li>
 </ul>
 <p><strong>Limitations:</strong></p>
@@ -792,80 +823,78 @@ Figure 7.19: Different ways to store a graph.
 <li>It can be difficult to use graphs to solve classification problems.</li>
 <li>It is not always clear if the data can be represented as a graph.</li>
 </ul>
-<div id="complex-activities-as-graphs" class="section level3">
+<div id="complex-activities-as-graphs" class="section level3" number="7.7.1">
 <h3><span class="header-section-number">7.7.1</span> Complex Activities as Graphs</h3>
 
 <div class="rmdfolder">
 <code>plot_graphs.R</code>
 </div>
-
 <p>In the previous section, it was shown how complex activities can be represented as Bag-of-Words. This was done by decomposing the complex activities into simpler ones. The BoW is composed of the simple activities counts (frequencies). In the process of building the BoW in the previous section, some intermediate text files stored in <code>labeled_activities/</code> were generated. These files contain the sequence of simple activities (their ids as integers) that constitute the complex activity. From these sequences, histograms were generated and in doing so, the order was lost.</p>
 <p>One thing we can do is build a graph where vertices represent simple activities and edges represent the interactions between them. For instance, if we have a sequence of activities ids like: <span class="math inline">\(3,2,2,4\)</span> we can represent this as a graph with <span class="math inline">\(3\)</span> vertices and <span class="math inline">\(3\)</span> edges. One vertex per activity. The first edge would go from vertex <span class="math inline">\(3\)</span> to vertex <span class="math inline">\(2\)</span>, the next one from vertex <span class="math inline">\(2\)</span> to vertex <span class="math inline">\(2\)</span>, and so on. In this way we can use a graph to capture the interactions between simple activities.</p>
-<p>The script <code>plot_graphs.R</code> implements a function named <code>ids.to.graph()</code> that reads the sequence files from <code>labeled_activities/</code> and converts them into weighted directed graphs. The weight of the edge <span class="math inline">\((a,b)\)</span> is equal to the total number of transitions from vertex <span class="math inline">\(a\)</span> to vertex <span class="math inline">\(b\)</span>. The script uses the <code>igraph</code> package <span class="citation">(Csardi and Nepusz <a href="#ref-igraph" role="doc-biblioref">2006</a>)</span> to store and plot the resulting graphs. The <code>ids.to.graph()</code> function receives as its first argument the sequence of ids. Its second argument indicates whether the edge weights should be normalized or not. If normalized, the sum of all weights will be <span class="math inline">\(1\)</span>.</p>
+<p>The script <code>plot_graphs.R</code> implements a function named <code>ids.to.graph()</code> that reads the sequence files from <code>labeled_activities/</code> and converts them into weighted directed graphs. The weight of the edge <span class="math inline">\((a,b)\)</span> is equal to the total number of transitions from vertex <span class="math inline">\(a\)</span> to vertex <span class="math inline">\(b\)</span>. The script uses the <code>igraph</code> package <span class="citation">(<a href="references.html#ref-igraph" role="doc-biblioref">Csardi and Nepusz 2006</a>)</span> to store and plot the resulting graphs. The <code>ids.to.graph()</code> function receives as its first argument the sequence of ids. Its second argument indicates whether the edge weights should be normalized or not. If normalized, the sum of all weights will be <span class="math inline">\(1\)</span>.</p>
 <p>The following code snippet reads one of the sequence files, converts it into a graph, and plots the graph.</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="representations.html#cb148-1"></a>datapath &lt;-<span class="st"> &quot;../labeled_activitires/&quot;</span></span>
-<span id="cb148-2"><a href="representations.html#cb148-2"></a></span>
-<span id="cb148-3"><a href="representations.html#cb148-3"></a><span class="co"># Select one of the &#39;work&#39; complex activities.</span></span>
-<span id="cb148-4"><a href="representations.html#cb148-4"></a>filename &lt;-<span class="st"> &quot;2_20120606-111732.txt&quot;</span></span>
-<span id="cb148-5"><a href="representations.html#cb148-5"></a></span>
-<span id="cb148-6"><a href="representations.html#cb148-6"></a><span class="co"># Read it as a data frame.</span></span>
-<span id="cb148-7"><a href="representations.html#cb148-7"></a>df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">paste0</span>(datapath, filename), <span class="dt">header =</span> F)</span>
-<span id="cb148-8"><a href="representations.html#cb148-8"></a></span>
-<span id="cb148-9"><a href="representations.html#cb148-9"></a><span class="co"># Convert the sequence of ids into an igraph graph.</span></span>
-<span id="cb148-10"><a href="representations.html#cb148-10"></a>g &lt;-<span class="st"> </span><span class="kw">ids.to.graph</span>(df<span class="op">$</span>V1, <span class="dt">relative.weights =</span> T)</span>
-<span id="cb148-11"><a href="representations.html#cb148-11"></a></span>
-<span id="cb148-12"><a href="representations.html#cb148-12"></a><span class="co"># Plot the result.</span></span>
-<span id="cb148-13"><a href="representations.html#cb148-13"></a><span class="kw">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb148-14"><a href="representations.html#cb148-14"></a><span class="kw">plot</span>(g, <span class="dt">vertex.label.cex =</span> <span class="fl">0.7</span>,</span>
-<span id="cb148-15"><a href="representations.html#cb148-15"></a>     <span class="dt">edge.arrow.size =</span> <span class="fl">0.2</span>,</span>
-<span id="cb148-16"><a href="representations.html#cb148-16"></a>     <span class="dt">edge.arrow.width =</span> <span class="dv">1</span>,</span>
-<span id="cb148-17"><a href="representations.html#cb148-17"></a>     <span class="dt">edge.curved =</span> <span class="fl">0.1</span>,</span>
-<span id="cb148-18"><a href="representations.html#cb148-18"></a>     <span class="dt">edge.width =</span> <span class="kw">E</span>(g)<span class="op">$</span>weight <span class="op">*</span><span class="st"> </span><span class="dv">8</span>,</span>
-<span id="cb148-19"><a href="representations.html#cb148-19"></a>     <span class="dt">edge.label =</span> <span class="kw">round</span>(<span class="kw">E</span>(g)<span class="op">$</span>weight, <span class="dt">digits =</span> <span class="dv">3</span>),</span>
-<span id="cb148-20"><a href="representations.html#cb148-20"></a>     <span class="dt">edge.label.cex =</span> <span class="fl">0.4</span>,</span>
-<span id="cb148-21"><a href="representations.html#cb148-21"></a>     <span class="dt">edge.color =</span> <span class="st">&quot;orange&quot;</span>,</span>
-<span id="cb148-22"><a href="representations.html#cb148-22"></a>     <span class="dt">edge.label.color =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb148-23"><a href="representations.html#cb148-23"></a>     <span class="dt">vertex.color =</span> <span class="st">&quot;skyblue&quot;</span></span>
-<span id="cb148-24"><a href="representations.html#cb148-24"></a>     )</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="representations.html#cb148-1" aria-hidden="true" tabindex="-1"></a>datapath <span class="ot">&lt;-</span> <span class="st">&quot;../labeled_activitires/&quot;</span></span>
+<span id="cb148-2"><a href="representations.html#cb148-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb148-3"><a href="representations.html#cb148-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Select one of the &#39;work&#39; complex activities.</span></span>
+<span id="cb148-4"><a href="representations.html#cb148-4" aria-hidden="true" tabindex="-1"></a>filename <span class="ot">&lt;-</span> <span class="st">&quot;2_20120606-111732.txt&quot;</span></span>
+<span id="cb148-5"><a href="representations.html#cb148-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb148-6"><a href="representations.html#cb148-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Read it as a data frame.</span></span>
+<span id="cb148-7"><a href="representations.html#cb148-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste0</span>(datapath, filename), <span class="at">header =</span> F)</span>
+<span id="cb148-8"><a href="representations.html#cb148-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb148-9"><a href="representations.html#cb148-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the sequence of ids into an igraph graph.</span></span>
+<span id="cb148-10"><a href="representations.html#cb148-10" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ids.to.graph</span>(df<span class="sc">$</span>V1, <span class="at">relative.weights =</span> T)</span>
+<span id="cb148-11"><a href="representations.html#cb148-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb148-12"><a href="representations.html#cb148-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the result.</span></span>
+<span id="cb148-13"><a href="representations.html#cb148-13" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb148-14"><a href="representations.html#cb148-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">vertex.label.cex =</span> <span class="fl">0.7</span>,</span>
+<span id="cb148-15"><a href="representations.html#cb148-15" aria-hidden="true" tabindex="-1"></a>     <span class="at">edge.arrow.size =</span> <span class="fl">0.2</span>,</span>
+<span id="cb148-16"><a href="representations.html#cb148-16" aria-hidden="true" tabindex="-1"></a>     <span class="at">edge.arrow.width =</span> <span class="dv">1</span>,</span>
+<span id="cb148-17"><a href="representations.html#cb148-17" aria-hidden="true" tabindex="-1"></a>     <span class="at">edge.curved =</span> <span class="fl">0.1</span>,</span>
+<span id="cb148-18"><a href="representations.html#cb148-18" aria-hidden="true" tabindex="-1"></a>     <span class="at">edge.width =</span> <span class="fu">E</span>(g)<span class="sc">$</span>weight <span class="sc">*</span> <span class="dv">8</span>,</span>
+<span id="cb148-19"><a href="representations.html#cb148-19" aria-hidden="true" tabindex="-1"></a>     <span class="at">edge.label =</span> <span class="fu">round</span>(<span class="fu">E</span>(g)<span class="sc">$</span>weight, <span class="at">digits =</span> <span class="dv">3</span>),</span>
+<span id="cb148-20"><a href="representations.html#cb148-20" aria-hidden="true" tabindex="-1"></a>     <span class="at">edge.label.cex =</span> <span class="fl">0.4</span>,</span>
+<span id="cb148-21"><a href="representations.html#cb148-21" aria-hidden="true" tabindex="-1"></a>     <span class="at">edge.color =</span> <span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb148-22"><a href="representations.html#cb148-22" aria-hidden="true" tabindex="-1"></a>     <span class="at">edge.label.color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb148-23"><a href="representations.html#cb148-23" aria-hidden="true" tabindex="-1"></a>     <span class="at">vertex.color =</span> <span class="st">&quot;skyblue&quot;</span></span>
+<span id="cb148-24"><a href="representations.html#cb148-24" aria-hidden="true" tabindex="-1"></a>     )</span></code></pre></div>
 <p>Figure <a href="representations.html#fig:graphActivity">7.20</a> shows the resulting plot. The plot can be customized to change the vertex and edge color, size, curvature, etc. For more details please read the <code>igraph</code> package documentation.</p>
 <div class="figure" style="text-align: center"><span id="fig:graphActivity"></span>
 <img src="images/graph_activity.png" alt="Complex activity 'working' plotted as a graph. Nodes are simple activities and edges transitions between them." width="60%" />
 <p class="caption">
-Figure 7.20: Complex activity ‘working’ plotted as a graph. Nodes are simple activities and edges transitions between them.
+FIGURE 7.20: Complex activity ‘working’ plotted as a graph. Nodes are simple activities and edges transitions between them.
 </p>
 </div>
 <p>The width of the edges is proportional to its weight. For instance, transitions from simple activity <span class="math inline">\(3\)</span> to itself are very frequent (<span class="math inline">\(53.2\%\)</span> of the time) for the <em>‘work’</em> complex activity but transitions from <span class="math inline">\(8\)</span> to <span class="math inline">\(4\)</span> are very infrequent. Note that with this graph representation, some temporal dependencies are preserved but the complete sequence order is lost, still this captures more information compared to BoW. The relationships between consecutive simple activities are preserved.</p>
 <p>It is also possible to get the adjacency matrix with the method <code>as_adjacency_matrix()</code>.</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="representations.html#cb149-1"></a><span class="kw">as_adjacency_matrix</span>(g)</span>
-<span id="cb149-2"><a href="representations.html#cb149-2"></a></span>
-<span id="cb149-3"><a href="representations.html#cb149-3"></a><span class="co">#&gt; 6 x 6 sparse Matrix of class &quot;dgCMatrix&quot;</span></span>
-<span id="cb149-4"><a href="representations.html#cb149-4"></a><span class="co">#&gt;    1 11 12 3 4 8</span></span>
-<span id="cb149-5"><a href="representations.html#cb149-5"></a><span class="co">#&gt; 1  1  1  . 1 . .</span></span>
-<span id="cb149-6"><a href="representations.html#cb149-6"></a><span class="co">#&gt; 11 .  1  1 1 1 .</span></span>
-<span id="cb149-7"><a href="representations.html#cb149-7"></a><span class="co">#&gt; 12 .  1  . . . .</span></span>
-<span id="cb149-8"><a href="representations.html#cb149-8"></a><span class="co">#&gt; 3  1  1  . 1 . 1</span></span>
-<span id="cb149-9"><a href="representations.html#cb149-9"></a><span class="co">#&gt; 4  .  .  . 1 1 .</span></span>
-<span id="cb149-10"><a href="representations.html#cb149-10"></a><span class="co">#&gt; 8  .  .  . 1 1 .</span></span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="representations.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_adjacency_matrix</span>(g)</span>
+<span id="cb149-2"><a href="representations.html#cb149-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb149-3"><a href="representations.html#cb149-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 x 6 sparse Matrix of class &quot;dgCMatrix&quot;</span></span>
+<span id="cb149-4"><a href="representations.html#cb149-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    1 11 12 3 4 8</span></span>
+<span id="cb149-5"><a href="representations.html#cb149-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  1  1  . 1 . .</span></span>
+<span id="cb149-6"><a href="representations.html#cb149-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11 .  1  1 1 1 .</span></span>
+<span id="cb149-7"><a href="representations.html#cb149-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12 .  1  . . . .</span></span>
+<span id="cb149-8"><a href="representations.html#cb149-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  1  1  . 1 . 1</span></span>
+<span id="cb149-9"><a href="representations.html#cb149-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  .  .  . 1 1 .</span></span>
+<span id="cb149-10"><a href="representations.html#cb149-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  .  .  . 1 1 .</span></span></code></pre></div>
 <p>In this matrix, there is a <span class="math inline">\(1\)</span> if the edge is present and a ‘.’ if there is no edge. However, this adjacency matrix does not contain information about the weights. We can print the adjacency matrix with weights by specifying <code>attr = "weight"</code>.</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="representations.html#cb150-1"></a><span class="kw">as_adjacency_matrix</span>(g, <span class="dt">attr =</span> <span class="st">&quot;weight&quot;</span>)</span>
-<span id="cb150-2"><a href="representations.html#cb150-2"></a></span>
-<span id="cb150-3"><a href="representations.html#cb150-3"></a><span class="co">#&gt; 6 x 6 sparse Matrix of class &quot;dgCMatrix&quot;</span></span>
-<span id="cb150-4"><a href="representations.html#cb150-4"></a><span class="co">#&gt;             1          11         12           3           4          8</span></span>
-<span id="cb150-5"><a href="representations.html#cb150-5"></a><span class="co">#&gt; 1  0.06066946 0.001046025 .          0.023012552 .           .         </span></span>
-<span id="cb150-6"><a href="representations.html#cb150-6"></a><span class="co">#&gt; 11 .          0.309623431 0.00209205 0.017782427 0.001046025 .         </span></span>
-<span id="cb150-7"><a href="representations.html#cb150-7"></a><span class="co">#&gt; 12 .          0.002092050 .          .           .           .         </span></span>
-<span id="cb150-8"><a href="representations.html#cb150-8"></a><span class="co">#&gt; 3  0.02405858 0.017782427 .          0.532426778 .           0.00209205</span></span>
-<span id="cb150-9"><a href="representations.html#cb150-9"></a><span class="co">#&gt; 4  .          .           .          0.002092050 0.002092050 .         </span></span>
-<span id="cb150-10"><a href="representations.html#cb150-10"></a><span class="co">#&gt; 8  .          .           .          0.001046025 0.001046025 .    </span></span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="representations.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_adjacency_matrix</span>(g, <span class="at">attr =</span> <span class="st">&quot;weight&quot;</span>)</span>
+<span id="cb150-2"><a href="representations.html#cb150-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb150-3"><a href="representations.html#cb150-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 x 6 sparse Matrix of class &quot;dgCMatrix&quot;</span></span>
+<span id="cb150-4"><a href="representations.html#cb150-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;             1          11         12           3           4          8</span></span>
+<span id="cb150-5"><a href="representations.html#cb150-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  0.06066946 0.001046025 .          0.023012552 .           .         </span></span>
+<span id="cb150-6"><a href="representations.html#cb150-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11 .          0.309623431 0.00209205 0.017782427 0.001046025 .         </span></span>
+<span id="cb150-7"><a href="representations.html#cb150-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12 .          0.002092050 .          .           .           .         </span></span>
+<span id="cb150-8"><a href="representations.html#cb150-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  0.02405858 0.017782427 .          0.532426778 .           0.00209205</span></span>
+<span id="cb150-9"><a href="representations.html#cb150-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  .          .           .          0.002092050 0.002092050 .         </span></span>
+<span id="cb150-10"><a href="representations.html#cb150-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  .          .           .          0.001046025 0.001046025 .    </span></span></code></pre></div>
 <p>The adjacency matrices can then be used to train a classifier. Since many classifiers expect one-dimensional vectors and not matrices, one can flatten the matrix. This is left as an exercise for the reader to try. Which representation produces better classification results (adjacency matrix or BoW)?</p>
 
 <div class="rmdinfo">
-The book “Practical graph mining with R” <span class="citation">(Samatova et al. <a href="#ref-samatova2013" role="doc-biblioref">2013</a>)</span> is a good source to learn more about graph analytics with R.
-</div>
-
+The book “Practical graph mining with R” <span class="citation">(<a href="references.html#ref-samatova2013" role="doc-biblioref">Samatova et al. 2013</a>)</span> is a good source to learn more about graph analytics with R.
 </div>
 </div>
-<div id="SummaryRepresentations" class="section level2">
+</div>
+<div id="SummaryRepresentations" class="section level2" number="7.8">
 <h2><span class="header-section-number">7.8</span> Summary</h2>
 <p>Depending on the problem at hand, the data can be encoded in different forms. Representing data in a particular way, can simplify the problem solving process and the application of specialized algorithms. This chapter presented different ways in which data can be encoded along with some of their advantages/disadvantages.</p>
 <ul>
@@ -878,33 +907,6 @@ The book “Practical graph mining with R” <span class="citation">(Samatova et
 <li>It is possible to convert data into multiple representations. For example, timeseries can be converted into images, recurrence plots, etc.</li>
 </ul>
 
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-igraph">
-<p>Csardi, Gabor, and Tamas Nepusz. 2006. “The Igraph Software Package for Complex Network Research.” <em>InterJournal</em> Complex Systems: 1695. <a href="http://igraph.org">http://igraph.org</a>.</p>
-</div>
-<div id="ref-eckmann1987recurrence">
-<p>Eckmann, J-P, S Oliffson Kamphorst, and David Ruelle. 1987. “Recurrence Plots of Dynamical Systems.” <em>EPL (Europhysics Letters)</em> 4 (9): 973.</p>
-</div>
-<div id="ref-Hyndman2018">
-<p>Hyndman, Rob J, and George Athanasopoulos. 2018. <em>Forecasting: Principles and Practice</em>. 2nd ed. Melbourne, Australia: OTexts. <a href="https://otexts.com/fpp2/">https://otexts.com/fpp2/</a>.</p>
-</div>
-<div id="ref-lecun1998gradient">
-<p>LeCun, Yann, Léon Bottou, Yoshua Bengio, and Patrick Haffner. 1998. “Gradient-Based Learning Applied to Document Recognition.” <em>Proceedings of the IEEE</em> 86 (11): 2278–2324.</p>
-</div>
-<div id="ref-Neves2017">
-<p>Neves, Ricardo Luiz AND Pie, Felipe Marcel AND Viana. 2017. “Recurrence Analysis of Ant Activity Patterns.” <em>PLOS ONE</em> 12 (10): 1–15. <a href="https://doi.org/10.1371/journal.pone.0185968">https://doi.org/10.1371/journal.pone.0185968</a>.</p>
-</div>
-<div id="ref-samatova2013">
-<p>Samatova, Nagiza F, William Hendrix, John Jenkins, Kanchana Padmanabhan, and Arpan Chakraborty. 2013. <em>Practical Graph Mining with R</em>. CRC Press.</p>
-</div>
-<div id="ref-silge2017">
-<p>Silge, Julia, and David Robinson. 2017. <em>Text Mining with R: A Tidy Approach</em>. " O’Reilly Media, Inc.".</p>
-</div>
-<div id="ref-ZBILUT1992">
-<p>Zbilut, Joseph P., and Charles L. Webber. 1992. “Embeddings and Delays as Derived from Quantification of Recurrence Plots.” <em>Physics Letters A</em> 171 (3): 199–203. <a href="https://doi.org/https://doi.org/10.1016/0375-9601(92)90426-M">https://doi.org/https://doi.org/10.1016/0375-9601(92)90426-M</a>.</p>
 </div>
 </div>
 <div class="footnotes">
@@ -927,15 +929,15 @@ The book “Practical graph mining with R” <span class="citation">(Samatova et
 <a href="deeplearning.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -968,7 +970,7 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "none"
 }
 });
 });

@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning and R</title>
-  <meta name="description" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning and R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
+  <title>Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning Using R</title>
+  <meta name="description" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning and R" />
+  <meta property="og:title" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning Using R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="images/cover.png" />
-  <meta property="og:description" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning and R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
+  <meta property="og:description" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning and R" />
+  <meta name="twitter:title" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning Using R" />
   
-  <meta name="twitter:description" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning and R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
+  <meta name="twitter:description" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   <meta name="twitter:image" content="images/cover.png" />
 
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2020-12-27" />
+<meta name="date" content="2021-03-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,14 +33,15 @@
   
 <link rel="prev" href="classification.html"/>
 <link rel="next" href="edavis.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/header-attrs/header-attrs.js"></script>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -50,24 +51,20 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/d3-4.9.0/d3.min.js"></script>
-<script src="libs/d3-tip-0.7.1/index-min.js"></script>
-<link href="libs/d3panels-1.4.9/d3panels.min.css" rel="stylesheet" />
-<script src="libs/d3panels-1.4.9/d3panels.min.js"></script>
-<script src="libs/qtlcharts_iplotCorr-0.11.6/iplotCorr.js"></script>
-<script src="libs/qtlcharts_iplotCorr-0.11.6/iplotCorr_noscat.js"></script>
-<script src="libs/iplotCorr-binding-0.11.6/iplotCorr.js"></script>
-<link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
-<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script>
-<script src="libs/dygraphs-1.1.1/shapes.js"></script>
-<script src="libs/moment-2.8.4/moment.js"></script>
-<script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
-<script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
-<script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="libs/d3/d3.min.js"></script>
+<link href="libs/d3panels/d3panels.min.css" rel="stylesheet" />
+<script src="libs/d3panels/d3panels.min.js"></script>
+<script src="libs/qtlcharts_iplotCorr/iplotCorr.js"></script>
+<script src="libs/qtlcharts_iplotCorr/iplotCorr_noscat.js"></script>
+<script src="libs/iplotCorr-binding/iplotCorr.js"></script>
+<link href="libs/dygraphs/dygraph.css" rel="stylesheet" />
+<script src="libs/dygraphs/dygraph-combined.js"></script>
+<script src="libs/dygraphs/shapes.js"></script>
+<script src="libs/moment/moment.js"></script>
+<script src="libs/moment-timezone/moment-timezone-with-data.js"></script>
+<script src="libs/moment-fquarter/moment-fquarter.min.js"></script>
+<script src="libs/dygraphs-binding/dygraphs.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178679335-1"></script>
 <script>
@@ -80,18 +77,17 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -111,7 +107,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -144,7 +140,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
@@ -157,50 +153,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="#">Behavior Analysis with Machine Learning and R</a></li>
+<li><a href="#">Behavior Analysis with Machine Learning Using R</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
-<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#supplemental-material"><i class="fa fa-check"></i>Supplemental Material</a></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#conventions"><i class="fa fa-check"></i>Conventions</a></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-machine-learning"><i class="fa fa-check"></i><b>1.1</b> What is Machine Learning?</a></li>
-<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#taxonomy"><i class="fa fa-check"></i><b>1.2</b> Types of Machine Learning</a></li>
-<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#terminology"><i class="fa fa-check"></i><b>1.3</b> Terminology</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#tables"><i class="fa fa-check"></i><b>1.3.1</b> Tables</a></li>
-<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#variable-types"><i class="fa fa-check"></i><b>1.3.2</b> Variable Types</a></li>
-<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#predictive-models"><i class="fa fa-check"></i><b>1.3.3</b> Predictive Models</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Behavior and Machine Learning</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-behavior"><i class="fa fa-check"></i><b>1.1</b> What is Behavior?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#what-is-machine-learning"><i class="fa fa-check"></i><b>1.2</b> What is Machine Learning?</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#taxonomy"><i class="fa fa-check"></i><b>1.3</b> Types of Machine Learning</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#terminology"><i class="fa fa-check"></i><b>1.4</b> Terminology</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="intro.html"><a href="intro.html#tables"><i class="fa fa-check"></i><b>1.4.1</b> Tables</a></li>
+<li class="chapter" data-level="1.4.2" data-path="intro.html"><a href="intro.html#variable-types"><i class="fa fa-check"></i><b>1.4.2</b> Variable Types</a></li>
+<li class="chapter" data-level="1.4.3" data-path="intro.html"><a href="intro.html#predictive-models"><i class="fa fa-check"></i><b>1.4.3</b> Predictive Models</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#pipeline"><i class="fa fa-check"></i><b>1.4</b> Data Analysis Pipeline</a></li>
-<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#trainingeval"><i class="fa fa-check"></i><b>1.5</b> Evaluating Predictive Models</a></li>
-<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#simple-classification-example"><i class="fa fa-check"></i><b>1.6</b> Simple Classification Example</a><ul>
-<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#k-fold-cross-validation-example"><i class="fa fa-check"></i><b>1.6.1</b> K-fold Cross-Validation Example</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#pipeline"><i class="fa fa-check"></i><b>1.5</b> Data Analysis Pipeline</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#trainingeval"><i class="fa fa-check"></i><b>1.6</b> Evaluating Predictive Models</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#simple-classification-example"><i class="fa fa-check"></i><b>1.7</b> Simple Classification Example</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#k-fold-cross-validation-example"><i class="fa fa-check"></i><b>1.7.1</b> K-fold Cross-Validation Example</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#simple-regression-example"><i class="fa fa-check"></i><b>1.7</b> Simple Regression Example</a></li>
-<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#underfitting-and-overfitting"><i class="fa fa-check"></i><b>1.8</b> Underfitting and Overfitting</a></li>
-<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#bias-and-variance"><i class="fa fa-check"></i><b>1.9</b> Bias and Variance</a></li>
-<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#SummaryIntro"><i class="fa fa-check"></i><b>1.10</b> Summary</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#simple-regression-example"><i class="fa fa-check"></i><b>1.8</b> Simple Regression Example</a></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#underfitting-and-overfitting"><i class="fa fa-check"></i><b>1.9</b> Underfitting and Overfitting</a></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#bias-and-variance"><i class="fa fa-check"></i><b>1.10</b> Bias and Variance</a></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#SummaryIntro"><i class="fa fa-check"></i><b>1.11</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a><ul>
-<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-nearest Neighbors</a><ul>
+<li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-nearest Neighbors</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="classification.html"><a href="classification.html#indoor-location-with-wi-fi-signals"><i class="fa fa-check"></i><b>2.1.1</b> Indoor Location with Wi-Fi Signals</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="classification.html"><a href="classification.html#performance-metrics"><i class="fa fa-check"></i><b>2.2</b> Performance Metrics</a><ul>
+<li class="chapter" data-level="2.2" data-path="classification.html"><a href="classification.html#performance-metrics"><i class="fa fa-check"></i><b>2.2</b> Performance Metrics</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="classification.html"><a href="classification.html#confusion-matrix"><i class="fa fa-check"></i><b>2.2.1</b> Confusion Matrix</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="classification.html"><a href="classification.html#decision-trees"><i class="fa fa-check"></i><b>2.3</b> Decision Trees</a><ul>
+<li class="chapter" data-level="2.3" data-path="classification.html"><a href="classification.html#decision-trees"><i class="fa fa-check"></i><b>2.3</b> Decision Trees</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="classification.html"><a href="classification.html#activityRecognition"><i class="fa fa-check"></i><b>2.3.1</b> Activity Recognition with Smartphones</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="classification.html"><a href="classification.html#naive-bayes"><i class="fa fa-check"></i><b>2.4</b> Naive Bayes</a><ul>
+<li class="chapter" data-level="2.4" data-path="classification.html"><a href="classification.html#naive-bayes"><i class="fa fa-check"></i><b>2.4</b> Naive Bayes</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="classification.html"><a href="classification.html#activity-recognition-with-naive-bayes"><i class="fa fa-check"></i><b>2.4.1</b> Activity Recognition with Naive Bayes</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="classification.html"><a href="classification.html#dynamic-time-warping"><i class="fa fa-check"></i><b>2.5</b> Dynamic Time Warping</a><ul>
+<li class="chapter" data-level="2.5" data-path="classification.html"><a href="classification.html#dynamic-time-warping"><i class="fa fa-check"></i><b>2.5</b> Dynamic Time Warping</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="classification.html"><a href="classification.html#sechandgestures"><i class="fa fa-check"></i><b>2.5.1</b> Hand Gesture Recognition</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="classification.html"><a href="classification.html#dummy-models"><i class="fa fa-check"></i><b>2.6</b> Dummy Models</a><ul>
+<li class="chapter" data-level="2.6" data-path="classification.html"><a href="classification.html#dummy-models"><i class="fa fa-check"></i><b>2.6</b> Dummy Models</a>
+<ul>
 <li class="chapter" data-level="2.6.1" data-path="classification.html"><a href="classification.html#most-frequent-class-classifier"><i class="fa fa-check"></i><b>2.6.1</b> Most-frequent-class Classifier</a></li>
 <li class="chapter" data-level="2.6.2" data-path="classification.html"><a href="classification.html#uniform-classifier"><i class="fa fa-check"></i><b>2.6.2</b> Uniform Classifier</a></li>
 <li class="chapter" data-level="2.6.3" data-path="classification.html"><a href="classification.html#frequency-based-classifier"><i class="fa fa-check"></i><b>2.6.3</b> Frequency-based Classifier</a></li>
@@ -208,8 +216,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="classification.html"><a href="classification.html#summaryClassification"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="ensemble.html"><a href="ensemble.html"><i class="fa fa-check"></i><b>3</b> Predicting Behavior with Ensemble Learning</a><ul>
-<li class="chapter" data-level="3.1" data-path="ensemble.html"><a href="ensemble.html#bagging"><i class="fa fa-check"></i><b>3.1</b> Bagging</a><ul>
+<li class="chapter" data-level="3" data-path="ensemble.html"><a href="ensemble.html"><i class="fa fa-check"></i><b>3</b> Predicting Behavior with Ensemble Learning</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ensemble.html"><a href="ensemble.html#bagging"><i class="fa fa-check"></i><b>3.1</b> Bagging</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="ensemble.html"><a href="ensemble.html#activity-recognition-with-bagging"><i class="fa fa-check"></i><b>3.1.1</b> Activity recognition with Bagging</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="ensemble.html"><a href="ensemble.html#random-forest"><i class="fa fa-check"></i><b>3.2</b> Random Forest</a></li>
@@ -217,16 +227,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="ensemble.html"><a href="ensemble.html#multiviewhometasks"><i class="fa fa-check"></i><b>3.4</b> Multi-view Stacking for Home Tasks Recognition</a></li>
 <li class="chapter" data-level="3.5" data-path="ensemble.html"><a href="ensemble.html#SummaryEnsemble"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="edavis.html"><a href="edavis.html"><i class="fa fa-check"></i><b>4</b> Exploring and Visualizing Behavioral Data</a><ul>
+<li class="chapter" data-level="4" data-path="edavis.html"><a href="edavis.html"><i class="fa fa-check"></i><b>4</b> Exploring and Visualizing Behavioral Data</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="edavis.html"><a href="edavis.html#talking-with-field-experts"><i class="fa fa-check"></i><b>4.1</b> Talking with Field Experts</a></li>
 <li class="chapter" data-level="4.2" data-path="edavis.html"><a href="edavis.html#summary-statistics"><i class="fa fa-check"></i><b>4.2</b> Summary Statistics</a></li>
 <li class="chapter" data-level="4.3" data-path="edavis.html"><a href="edavis.html#class-distributions"><i class="fa fa-check"></i><b>4.3</b> Class Distributions</a></li>
 <li class="chapter" data-level="4.4" data-path="edavis.html"><a href="edavis.html#user-class-sparsity-matrix"><i class="fa fa-check"></i><b>4.4</b> User-Class Sparsity Matrix</a></li>
 <li class="chapter" data-level="4.5" data-path="edavis.html"><a href="edavis.html#boxplots"><i class="fa fa-check"></i><b>4.5</b> Boxplots</a></li>
-<li class="chapter" data-level="4.6" data-path="edavis.html"><a href="edavis.html#correlation-plots"><i class="fa fa-check"></i><b>4.6</b> Correlation Plots</a><ul>
+<li class="chapter" data-level="4.6" data-path="edavis.html"><a href="edavis.html#correlation-plots"><i class="fa fa-check"></i><b>4.6</b> Correlation Plots</a>
+<ul>
 <li class="chapter" data-level="4.6.1" data-path="edavis.html"><a href="edavis.html#interactive-correlation-plots"><i class="fa fa-check"></i><b>4.6.1</b> Interactive Correlation Plots</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="edavis.html"><a href="edavis.html#timeseries"><i class="fa fa-check"></i><b>4.7</b> Timeseries</a><ul>
+<li class="chapter" data-level="4.7" data-path="edavis.html"><a href="edavis.html#timeseries"><i class="fa fa-check"></i><b>4.7</b> Timeseries</a>
+<ul>
 <li class="chapter" data-level="4.7.1" data-path="edavis.html"><a href="edavis.html#interactive-timeseries"><i class="fa fa-check"></i><b>4.7.1</b> Interactive Timeseries</a></li>
 </ul></li>
 <li class="chapter" data-level="4.8" data-path="edavis.html"><a href="edavis.html#multidimensional-scaling-mds"><i class="fa fa-check"></i><b>4.8</b> Multidimensional Scaling (MDS)</a></li>
@@ -234,13 +247,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.10" data-path="edavis.html"><a href="edavis.html#automated-eda"><i class="fa fa-check"></i><b>4.10</b> Automated EDA</a></li>
 <li class="chapter" data-level="4.11" data-path="edavis.html"><a href="edavis.html#SummaryExploratory"><i class="fa fa-check"></i><b>4.11</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="preprocessing.html"><a href="preprocessing.html"><i class="fa fa-check"></i><b>5</b> Preprocessing Behavioral Data</a><ul>
-<li class="chapter" data-level="5.1" data-path="preprocessing.html"><a href="preprocessing.html#missing-values"><i class="fa fa-check"></i><b>5.1</b> Missing Values</a><ul>
+<li class="chapter" data-level="5" data-path="preprocessing.html"><a href="preprocessing.html"><i class="fa fa-check"></i><b>5</b> Preprocessing Behavioral Data</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="preprocessing.html"><a href="preprocessing.html#missing-values"><i class="fa fa-check"></i><b>5.1</b> Missing Values</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="preprocessing.html"><a href="preprocessing.html#imputation"><i class="fa fa-check"></i><b>5.1.1</b> Imputation</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="preprocessing.html"><a href="preprocessing.html#smoothing"><i class="fa fa-check"></i><b>5.2</b> Smoothing</a></li>
 <li class="chapter" data-level="5.3" data-path="preprocessing.html"><a href="preprocessing.html#normalization"><i class="fa fa-check"></i><b>5.3</b> Normalization</a></li>
-<li class="chapter" data-level="5.4" data-path="preprocessing.html"><a href="preprocessing.html#imbalanced-classes"><i class="fa fa-check"></i><b>5.4</b> Imbalanced Classes</a><ul>
+<li class="chapter" data-level="5.4" data-path="preprocessing.html"><a href="preprocessing.html#imbalanced-classes"><i class="fa fa-check"></i><b>5.4</b> Imbalanced Classes</a>
+<ul>
 <li class="chapter" data-level="5.4.1" data-path="preprocessing.html"><a href="preprocessing.html#random-oversampling"><i class="fa fa-check"></i><b>5.4.1</b> Random Oversampling</a></li>
 <li class="chapter" data-level="5.4.2" data-path="preprocessing.html"><a href="preprocessing.html#smote"><i class="fa fa-check"></i><b>5.4.2</b> SMOTE</a></li>
 </ul></li>
@@ -248,35 +264,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6" data-path="preprocessing.html"><a href="preprocessing.html#one-hot-encoding"><i class="fa fa-check"></i><b>5.6</b> One-hot Encoding</a></li>
 <li class="chapter" data-level="5.7" data-path="preprocessing.html"><a href="preprocessing.html#SummaryPreprocessing"><i class="fa fa-check"></i><b>5.7</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="unsupervised.html"><a href="unsupervised.html"><i class="fa fa-check"></i><b>6</b> Discovering Behaviors with Unsupervised Learning</a><ul>
-<li class="chapter" data-level="6.1" data-path="unsupervised.html"><a href="unsupervised.html#k-means-clustering"><i class="fa fa-check"></i><b>6.1</b> K-means clustering</a><ul>
+<li class="chapter" data-level="6" data-path="unsupervised.html"><a href="unsupervised.html"><i class="fa fa-check"></i><b>6</b> Discovering Behaviors with Unsupervised Learning</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="unsupervised.html"><a href="unsupervised.html#k-means-clustering"><i class="fa fa-check"></i><b>6.1</b> K-means clustering</a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="unsupervised.html"><a href="unsupervised.html#studentresponses"><i class="fa fa-check"></i><b>6.1.1</b> Grouping Student Responses</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="unsupervised.html"><a href="unsupervised.html#the-silhouette-index"><i class="fa fa-check"></i><b>6.2</b> The Silhouette Index</a></li>
-<li class="chapter" data-level="6.3" data-path="unsupervised.html"><a href="unsupervised.html#associationrules"><i class="fa fa-check"></i><b>6.3</b> Mining Association Rules</a><ul>
+<li class="chapter" data-level="6.3" data-path="unsupervised.html"><a href="unsupervised.html#associationrules"><i class="fa fa-check"></i><b>6.3</b> Mining Association Rules</a>
+<ul>
 <li class="chapter" data-level="6.3.1" data-path="unsupervised.html"><a href="unsupervised.html#finding-rules-for-criminal-behavior"><i class="fa fa-check"></i><b>6.3.1</b> Finding Rules for Criminal Behavior</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="unsupervised.html"><a href="unsupervised.html#SummaryUnsupervised"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="representations.html"><a href="representations.html"><i class="fa fa-check"></i><b>7</b> Encoding Behavioral Data</a><ul>
+<li class="chapter" data-level="7" data-path="representations.html"><a href="representations.html"><i class="fa fa-check"></i><b>7</b> Encoding Behavioral Data</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="representations.html"><a href="representations.html#feature-vectors"><i class="fa fa-check"></i><b>7.1</b> Feature Vectors</a></li>
 <li class="chapter" data-level="7.2" data-path="representations.html"><a href="representations.html#sectimeseries"><i class="fa fa-check"></i><b>7.2</b> Timeseries</a></li>
 <li class="chapter" data-level="7.3" data-path="representations.html"><a href="representations.html#transactions"><i class="fa fa-check"></i><b>7.3</b> Transactions</a></li>
 <li class="chapter" data-level="7.4" data-path="representations.html"><a href="representations.html#images"><i class="fa fa-check"></i><b>7.4</b> Images</a></li>
-<li class="chapter" data-level="7.5" data-path="representations.html"><a href="representations.html#recurrence-plots"><i class="fa fa-check"></i><b>7.5</b> Recurrence Plots</a><ul>
+<li class="chapter" data-level="7.5" data-path="representations.html"><a href="representations.html#recurrence-plots"><i class="fa fa-check"></i><b>7.5</b> Recurrence Plots</a>
+<ul>
 <li class="chapter" data-level="7.5.1" data-path="representations.html"><a href="representations.html#computing-recurence-plots"><i class="fa fa-check"></i><b>7.5.1</b> Computing Recurence Plots</a></li>
 <li class="chapter" data-level="7.5.2" data-path="representations.html"><a href="representations.html#recurrence-plots-of-hand-gestures"><i class="fa fa-check"></i><b>7.5.2</b> Recurrence Plots of Hand Gestures</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="representations.html"><a href="representations.html#bag-of-words"><i class="fa fa-check"></i><b>7.6</b> Bag-of-Words</a><ul>
+<li class="chapter" data-level="7.6" data-path="representations.html"><a href="representations.html#bag-of-words"><i class="fa fa-check"></i><b>7.6</b> Bag-of-Words</a>
+<ul>
 <li class="chapter" data-level="7.6.1" data-path="representations.html"><a href="representations.html#bow-for-complex-activities."><i class="fa fa-check"></i><b>7.6.1</b> BoW for Complex Activities.</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="representations.html"><a href="representations.html#graphs"><i class="fa fa-check"></i><b>7.7</b> Graphs</a><ul>
+<li class="chapter" data-level="7.7" data-path="representations.html"><a href="representations.html#graphs"><i class="fa fa-check"></i><b>7.7</b> Graphs</a>
+<ul>
 <li class="chapter" data-level="7.7.1" data-path="representations.html"><a href="representations.html#complex-activities-as-graphs"><i class="fa fa-check"></i><b>7.7.1</b> Complex Activities as Graphs</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="representations.html"><a href="representations.html#SummaryRepresentations"><i class="fa fa-check"></i><b>7.8</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="deeplearning.html"><a href="deeplearning.html"><i class="fa fa-check"></i><b>8</b> Predicting Behavior with Deep Learning</a><ul>
-<li class="chapter" data-level="8.1" data-path="deeplearning.html"><a href="deeplearning.html#ann"><i class="fa fa-check"></i><b>8.1</b> Introduction to Artificial Neural Networks</a><ul>
+<li class="chapter" data-level="8" data-path="deeplearning.html"><a href="deeplearning.html"><i class="fa fa-check"></i><b>8</b> Predicting Behavior with Deep Learning</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="deeplearning.html"><a href="deeplearning.html#ann"><i class="fa fa-check"></i><b>8.1</b> Introduction to Artificial Neural Networks</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="deeplearning.html"><a href="deeplearning.html#sigmoid-and-relu-units"><i class="fa fa-check"></i><b>8.1.1</b> Sigmoid and ReLU Units</a></li>
 <li class="chapter" data-level="8.1.2" data-path="deeplearning.html"><a href="deeplearning.html#assembling-units-into-layers"><i class="fa fa-check"></i><b>8.1.2</b> Assembling Units into Layers</a></li>
 <li class="chapter" data-level="8.1.3" data-path="deeplearning.html"><a href="deeplearning.html#deep-neural-networks"><i class="fa fa-check"></i><b>8.1.3</b> Deep Neural Networks</a></li>
@@ -284,61 +309,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.5" data-path="deeplearning.html"><a href="deeplearning.html#parameter-learning-example-in-r"><i class="fa fa-check"></i><b>8.1.5</b> Parameter Learning Example in R</a></li>
 <li class="chapter" data-level="8.1.6" data-path="deeplearning.html"><a href="deeplearning.html#stochastic-gradient-descent"><i class="fa fa-check"></i><b>8.1.6</b> Stochastic Gradient Descent</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="deeplearning.html"><a href="deeplearning.html#keras-and-tensorflow-with-r"><i class="fa fa-check"></i><b>8.2</b> Keras and TensorFlow with R</a><ul>
+<li class="chapter" data-level="8.2" data-path="deeplearning.html"><a href="deeplearning.html#keras-and-tensorflow-with-r"><i class="fa fa-check"></i><b>8.2</b> Keras and TensorFlow with R</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="deeplearning.html"><a href="deeplearning.html#keras-example"><i class="fa fa-check"></i><b>8.2.1</b> Keras Example</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="deeplearning.html"><a href="deeplearning.html#classification-with-neural-networks"><i class="fa fa-check"></i><b>8.3</b> Classification with Neural Networks</a><ul>
+<li class="chapter" data-level="8.3" data-path="deeplearning.html"><a href="deeplearning.html#classification-with-neural-networks"><i class="fa fa-check"></i><b>8.3</b> Classification with Neural Networks</a>
+<ul>
 <li class="chapter" data-level="8.3.1" data-path="deeplearning.html"><a href="deeplearning.html#classification-of-electromyography-signals"><i class="fa fa-check"></i><b>8.3.1</b> Classification of Electromyography Signals</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="deeplearning.html"><a href="deeplearning.html#overfitting"><i class="fa fa-check"></i><b>8.4</b> Overfitting</a><ul>
+<li class="chapter" data-level="8.4" data-path="deeplearning.html"><a href="deeplearning.html#overfitting"><i class="fa fa-check"></i><b>8.4</b> Overfitting</a>
+<ul>
 <li class="chapter" data-level="8.4.1" data-path="deeplearning.html"><a href="deeplearning.html#early-stopping"><i class="fa fa-check"></i><b>8.4.1</b> Early Stopping</a></li>
 <li class="chapter" data-level="8.4.2" data-path="deeplearning.html"><a href="deeplearning.html#dropout"><i class="fa fa-check"></i><b>8.4.2</b> Dropout</a></li>
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="deeplearning.html"><a href="deeplearning.html#fine-tuning-a-neural-network"><i class="fa fa-check"></i><b>8.5</b> Fine-Tuning a Neural Network</a></li>
-<li class="chapter" data-level="8.6" data-path="deeplearning.html"><a href="deeplearning.html#cnns"><i class="fa fa-check"></i><b>8.6</b> Convolutional Neural Networks</a><ul>
+<li class="chapter" data-level="8.6" data-path="deeplearning.html"><a href="deeplearning.html#cnns"><i class="fa fa-check"></i><b>8.6</b> Convolutional Neural Networks</a>
+<ul>
 <li class="chapter" data-level="8.6.1" data-path="deeplearning.html"><a href="deeplearning.html#convolutions"><i class="fa fa-check"></i><b>8.6.1</b> Convolutions</a></li>
 <li class="chapter" data-level="8.6.2" data-path="deeplearning.html"><a href="deeplearning.html#pooling-operations"><i class="fa fa-check"></i><b>8.6.2</b> Pooling Operations</a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="deeplearning.html"><a href="deeplearning.html#cnns-with-keras"><i class="fa fa-check"></i><b>8.7</b> CNNs with Keras</a><ul>
+<li class="chapter" data-level="8.7" data-path="deeplearning.html"><a href="deeplearning.html#cnns-with-keras"><i class="fa fa-check"></i><b>8.7</b> CNNs with Keras</a>
+<ul>
 <li class="chapter" data-level="8.7.1" data-path="deeplearning.html"><a href="deeplearning.html#example-1"><i class="fa fa-check"></i><b>8.7.1</b> Example 1</a></li>
 <li class="chapter" data-level="8.7.2" data-path="deeplearning.html"><a href="deeplearning.html#example-2"><i class="fa fa-check"></i><b>8.7.2</b> Example 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8.8" data-path="deeplearning.html"><a href="deeplearning.html#cnnSmile"><i class="fa fa-check"></i><b>8.8</b> Smiles Detection with a CNN</a></li>
 <li class="chapter" data-level="8.9" data-path="deeplearning.html"><a href="deeplearning.html#SummaryDeepLearning"><i class="fa fa-check"></i><b>8.9</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="multiuser.html"><a href="multiuser.html"><i class="fa fa-check"></i><b>9</b> Multi-User Validation</a><ul>
-<li class="chapter" data-level="9.1" data-path="multiuser.html"><a href="multiuser.html#mixed-models"><i class="fa fa-check"></i><b>9.1</b> Mixed Models</a><ul>
+<li class="chapter" data-level="9" data-path="multiuser.html"><a href="multiuser.html"><i class="fa fa-check"></i><b>9</b> Multi-User Validation</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="multiuser.html"><a href="multiuser.html#mixed-models"><i class="fa fa-check"></i><b>9.1</b> Mixed Models</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="multiuser.html"><a href="multiuser.html#skeleton-action-recognition-with-mixed-models"><i class="fa fa-check"></i><b>9.1.1</b> Skeleton Action Recognition with Mixed Models</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="multiuser.html"><a href="multiuser.html#user-independent-models"><i class="fa fa-check"></i><b>9.2</b> User-Independent Models</a></li>
 <li class="chapter" data-level="9.3" data-path="multiuser.html"><a href="multiuser.html#user-dependent-models"><i class="fa fa-check"></i><b>9.3</b> User-Dependent Models</a></li>
-<li class="chapter" data-level="9.4" data-path="multiuser.html"><a href="multiuser.html#user-adaptive-models"><i class="fa fa-check"></i><b>9.4</b> User-Adaptive Models</a><ul>
+<li class="chapter" data-level="9.4" data-path="multiuser.html"><a href="multiuser.html#user-adaptive-models"><i class="fa fa-check"></i><b>9.4</b> User-Adaptive Models</a>
+<ul>
 <li class="chapter" data-level="9.4.1" data-path="multiuser.html"><a href="multiuser.html#transfer-learning"><i class="fa fa-check"></i><b>9.4.1</b> Transfer Learning</a></li>
 <li class="chapter" data-level="9.4.2" data-path="multiuser.html"><a href="multiuser.html#a-user-adaptive-model-for-activity-recognition"><i class="fa fa-check"></i><b>9.4.2</b> A User-Adaptive Model for Activity Recognition</a></li>
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="multiuser.html"><a href="multiuser.html#SummaryMultiUser"><i class="fa fa-check"></i><b>9.5</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html"><i class="fa fa-check"></i><b>10</b> Detecting Abnormal Behaviors</a><ul>
+<li class="chapter" data-level="10" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html"><i class="fa fa-check"></i><b>10</b> Detecting Abnormal Behaviors</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
-<li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a><ul>
+<li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a>
+<ul>
 <li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#explore-and-visualize-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Explore and Visualize Trajectories</a></li>
 <li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
 <li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
 <li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC curve and AUC</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders"><i class="fa fa-check"></i><b>10.3</b> Autoencoders</a><ul>
+<li class="chapter" data-level="10.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders"><i class="fa fa-check"></i><b>10.3</b> Autoencoders</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders-for-anomaly-detection"><i class="fa fa-check"></i><b>10.3.1</b> Autoencoders for Anomaly Detection</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#SummaryAnomalyDetection"><i class="fa fa-check"></i><b>10.4</b> Summary</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="appendixInstall.html"><a href="appendixInstall.html"><i class="fa fa-check"></i><b>A</b> Setup Your Environment</a><ul>
+<li class="chapter" data-level="A" data-path="appendixInstall.html"><a href="appendixInstall.html"><i class="fa fa-check"></i><b>A</b> Setup Your Environment</a>
+<ul>
 <li class="chapter" data-level="A.1" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-datasets"><i class="fa fa-check"></i><b>A.1</b> Installing the Datasets</a></li>
 <li class="chapter" data-level="A.2" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-examples-source-code"><i class="fa fa-check"></i><b>A.2</b> Installing the Examples Source Code</a></li>
 <li class="chapter" data-level="A.3" data-path="appendixInstall.html"><a href="appendixInstall.html#running-shiny-apps"><i class="fa fa-check"></i><b>A.3</b> Running Shiny Apps</a></li>
 <li class="chapter" data-level="A.4" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-keras-and-tensorflow"><i class="fa fa-check"></i><b>A.4</b> Installing Keras and TensorFlow</a></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="appendixDatasets.html"><a href="appendixDatasets.html"><i class="fa fa-check"></i><b>B</b> Datasets</a><ul>
+<li class="chapter" data-level="B" data-path="appendixDatasets.html"><a href="appendixDatasets.html"><i class="fa fa-check"></i><b>B</b> Datasets</a>
+<ul>
 <li class="chapter" data-level="B.1" data-path="appendixDatasets.html"><a href="appendixDatasets.html#complex-activities"><i class="fa fa-check"></i><b>B.1</b> COMPLEX ACTIVITIES</a></li>
 <li class="chapter" data-level="B.2" data-path="appendixDatasets.html"><a href="appendixDatasets.html#depresjon"><i class="fa fa-check"></i><b>B.2</b> DEPRESJON</a></li>
 <li class="chapter" data-level="B.3" data-path="appendixDatasets.html"><a href="appendixDatasets.html#electromyography"><i class="fa fa-check"></i><b>B.3</b> ELECTROMYOGRAPHY</a></li>
@@ -364,7 +402,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Behavior Analysis with Machine Learning and R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Behavior Analysis with Machine Learning Using R</a>
           </h1>
         </div>
 
@@ -372,227 +410,225 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ensemble" class="section level1">
+<div id="ensemble" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Predicting Behavior with Ensemble Learning</h1>
 <p>In the previous chapters, we have been building single models, either for classification or regression. With <strong>ensemble learning</strong>, the idea is to train several models and combine their results to increase the performance. Usually, ensemble methods outperform single models. In the context of <em>ensemble learning</em>, the individual models whose results are to be combined are known as <strong>base learners</strong>. Base learners can be of the same type (homogeneous) or of different types (heterogeneous). Examples of ensemble methods are <strong>Bagging</strong>, <strong>Random Forest</strong>, and <strong>Stacked Generalization</strong>. In the following sections, the three of them will be described and example applications in behavior analysis will be presented as well.</p>
-<div id="bagging" class="section level2">
+<div id="bagging" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Bagging</h2>
-<p>Bagging stands for “bootstrap aggregating” and is an ensemble learning method proposed by <span class="citation">Breiman (<a href="#ref-breimanBagging1996" role="doc-biblioref">1996</a>)</span>. Ummm…, <em>Bootstrap</em>, <em>aggregating</em>? Let’s start with the <em>aggregating</em> part. As the name implies, this method is based on training several <em>base learners</em> (e.g., decision trees) and combining their outputs to produce a single final prediction. One way to combine the results is by taking the majority vote for classification tasks or the average for regression. In an ideal case, we would have enough data to train each <em>base learner</em> with an independent train set. However, in practice we may only have a single train set of limited size. Training several <em>base learners</em> with the same train set is equivalent to having a single learner, provided that the training procedure of the base learners is deterministic. Even if the training procedure is not deterministic, the resulting models could be very similar. What we would like to have is accurate base learners but at the same time they should be different. Then, how can we train those base learners? Well, this is where the <em>bootstrap</em> part comes into play.</p>
+<p>Bagging stands for “bootstrap aggregating” and is an ensemble learning method proposed by <span class="citation"><a href="references.html#ref-breimanBagging1996" role="doc-biblioref">Breiman</a> (<a href="references.html#ref-breimanBagging1996" role="doc-biblioref">1996</a>)</span>. Ummm…, <em>Bootstrap</em>, <em>aggregating</em>? Let’s start with the <em>aggregating</em> part. As the name implies, this method is based on training several <em>base learners</em> (e.g., decision trees) and combining their outputs to produce a single final prediction. One way to combine the results is by taking the majority vote for classification tasks or the average for regression. In an ideal case, we would have enough data to train each <em>base learner</em> with an independent train set. However, in practice we may only have a single train set of limited size. Training several <em>base learners</em> with the same train set is equivalent to having a single learner, provided that the training procedure of the base learners is deterministic. Even if the training procedure is not deterministic, the resulting models could be very similar. What we would like to have is accurate base learners but at the same time they should be different. Then, how can we train those base learners? Well, this is where the <em>bootstrap</em> part comes into play.</p>
 <p>Bootstrapping means generating new train sets by sampling instances with replacement from the original train set. If the original train set has <span class="math inline">\(N\)</span> instances, the method selects <span class="math inline">\(N\)</span> instances at random to produce a new train set. <em>With replacement</em> means that repeated instances are allowed. This has the effect of generating a new train set of size <span class="math inline">\(N\)</span> by removing some instances and duplicating other instances. By using this method, <span class="math inline">\(n\)</span> different train sets can be generated and used to train <span class="math inline">\(n\)</span> different learners.</p>
-<p>It has been shown that having more diverse base learners increases performance. One way of generating diverse learners is by using different train sets as just described. In his original work, <span class="citation">Breiman (<a href="#ref-breimanBagging1996" role="doc-biblioref">1996</a>)</span> used decision trees as base learners. Decision trees are considered to be very unstable. This means that small changes in the train set produce very different trees–but this is a good thing for bagging! Most of the time, the aggregated predictions will produce better results than the best individual learner from the ensemble.</p>
+<p>It has been shown that having more diverse base learners increases performance. One way of generating diverse learners is by using different train sets as just described. In his original work, <span class="citation"><a href="references.html#ref-breimanBagging1996" role="doc-biblioref">Breiman</a> (<a href="references.html#ref-breimanBagging1996" role="doc-biblioref">1996</a>)</span> used decision trees as base learners. Decision trees are considered to be very unstable. This means that small changes in the train set produce very different trees–but this is a good thing for bagging! Most of the time, the aggregated predictions will produce better results than the best individual learner from the ensemble.</p>
 <p>Figure <a href="ensemble.html#fig:baggingexample">3.1</a> shows bootstrapping in action. The train set is sampled with replacement <span class="math inline">\(3\)</span> times. The numbers represent indices to arbitrary train instances. Here, we can see that in the first sample, the instance number <span class="math inline">\(5\)</span> is missing but instead, instance <span class="math inline">\(2\)</span> is duplicated. All samples have five elements. Then, each sample is used to train individual decision trees.</p>
 <div class="figure" style="text-align: center"><span id="fig:baggingexample"></span>
 <img src="images/bagging.png" alt="Bagging example." width="70%" />
 <p class="caption">
-Figure 3.1: Bagging example.
+FIGURE 3.1: Bagging example.
 </p>
 </div>
-<p>One of the disadvantages of ensemble methods is their higher computational time both during training and inference. Another disadvantage of ensemble methods is that they are more difficult to interpret. Still, there exist model agnostic interpretability methods <span class="citation">(Molnar <a href="#ref-molnarInterpretable" role="doc-biblioref">2019</a>)</span> that can help to analyze the results. In the next section, I will show you how to implement your own Bagging model with decision trees in R.</p>
-<div id="activity-recognition-with-bagging" class="section level3">
+<p>One of the disadvantages of ensemble methods is their higher computational time both during training and inference. Another disadvantage of ensemble methods is that they are more difficult to interpret. Still, there exist model agnostic interpretability methods <span class="citation">(<a href="references.html#ref-molnarInterpretable" role="doc-biblioref">Molnar 2019</a>)</span> that can help to analyze the results. In the next section, I will show you how to implement your own Bagging model with decision trees in R.</p>
+<div id="activity-recognition-with-bagging" class="section level3" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Activity recognition with Bagging</h3>
 
 <div class="rmdfolder">
 <code>bagging_activities.R</code> <code>iterated_bagging_activities.R</code>
 </div>
-
 <p>In this section, we will implement Bagging with decision trees. Then, we will test our implementation on the <em>SMARTPHONE ACTIVITIES</em> dataset. The following code snippet shows the implementation of <code>my_bagging()</code> function. The complete code is in the script <code>bagging_activities.R</code>. The function accepts three arguments. The first one is the formula, the second one is the train set, and the third argument is the number of base learners (<span class="math inline">\(10\)</span> by default). Here, we will use the <code>rpart</code> package to train the decision trees.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="ensemble.html#cb73-1"></a><span class="co"># Define our bagging classifier.</span></span>
-<span id="cb73-2"><a href="ensemble.html#cb73-2"></a>my_bagging &lt;-<span class="st"> </span><span class="cf">function</span>(theFormula, data, <span class="dt">ntrees =</span> <span class="dv">10</span>){</span>
-<span id="cb73-3"><a href="ensemble.html#cb73-3"></a>  </span>
-<span id="cb73-4"><a href="ensemble.html#cb73-4"></a>  N &lt;-<span class="st"> </span><span class="kw">nrow</span>(data)</span>
-<span id="cb73-5"><a href="ensemble.html#cb73-5"></a>  </span>
-<span id="cb73-6"><a href="ensemble.html#cb73-6"></a>  <span class="co"># A list to store the individual trees</span></span>
-<span id="cb73-7"><a href="ensemble.html#cb73-7"></a>  models &lt;-<span class="st"> </span><span class="kw">list</span>()</span>
-<span id="cb73-8"><a href="ensemble.html#cb73-8"></a>  </span>
-<span id="cb73-9"><a href="ensemble.html#cb73-9"></a>  <span class="co"># Train individual trees and add each to &#39;models&#39; list.</span></span>
-<span id="cb73-10"><a href="ensemble.html#cb73-10"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>ntrees){</span>
-<span id="cb73-11"><a href="ensemble.html#cb73-11"></a>    </span>
-<span id="cb73-12"><a href="ensemble.html#cb73-12"></a>    <span class="co"># Bootstrap instances from data.</span></span>
-<span id="cb73-13"><a href="ensemble.html#cb73-13"></a>    idxs &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span>N, <span class="dt">size =</span> N, <span class="dt">replace =</span> T)</span>
-<span id="cb73-14"><a href="ensemble.html#cb73-14"></a>    </span>
-<span id="cb73-15"><a href="ensemble.html#cb73-15"></a>    bootstrappedInstances &lt;-<span class="st"> </span>data[idxs,]</span>
-<span id="cb73-16"><a href="ensemble.html#cb73-16"></a>    </span>
-<span id="cb73-17"><a href="ensemble.html#cb73-17"></a>    treeModel &lt;-<span class="st"> </span><span class="kw">rpart</span>(<span class="kw">as.formula</span>(theFormula),</span>
-<span id="cb73-18"><a href="ensemble.html#cb73-18"></a>                       bootstrappedInstances,</span>
-<span id="cb73-19"><a href="ensemble.html#cb73-19"></a>                       <span class="dt">xval =</span> <span class="dv">0</span>,</span>
-<span id="cb73-20"><a href="ensemble.html#cb73-20"></a>                       <span class="dt">cp =</span> <span class="dv">0</span>)</span>
-<span id="cb73-21"><a href="ensemble.html#cb73-21"></a>    </span>
-<span id="cb73-22"><a href="ensemble.html#cb73-22"></a>    models &lt;-<span class="st"> </span><span class="kw">c</span>(models, <span class="kw">list</span>(treeModel))</span>
-<span id="cb73-23"><a href="ensemble.html#cb73-23"></a>  }</span>
-<span id="cb73-24"><a href="ensemble.html#cb73-24"></a>  </span>
-<span id="cb73-25"><a href="ensemble.html#cb73-25"></a>  res &lt;-<span class="st"> </span><span class="kw">structure</span>(<span class="kw">list</span>(<span class="dt">models =</span> models),</span>
-<span id="cb73-26"><a href="ensemble.html#cb73-26"></a>                   <span class="dt">class =</span> <span class="st">&quot;my_bagging&quot;</span>)</span>
-<span id="cb73-27"><a href="ensemble.html#cb73-27"></a>  </span>
-<span id="cb73-28"><a href="ensemble.html#cb73-28"></a>  <span class="kw">return</span>(res)</span>
-<span id="cb73-29"><a href="ensemble.html#cb73-29"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="ensemble.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define our bagging classifier.</span></span>
+<span id="cb73-2"><a href="ensemble.html#cb73-2" aria-hidden="true" tabindex="-1"></a>my_bagging <span class="ot">&lt;-</span> <span class="cf">function</span>(theFormula, data, <span class="at">ntrees =</span> <span class="dv">10</span>){</span>
+<span id="cb73-3"><a href="ensemble.html#cb73-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb73-4"><a href="ensemble.html#cb73-4" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data)</span>
+<span id="cb73-5"><a href="ensemble.html#cb73-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb73-6"><a href="ensemble.html#cb73-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># A list to store the individual trees</span></span>
+<span id="cb73-7"><a href="ensemble.html#cb73-7" aria-hidden="true" tabindex="-1"></a>  models <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb73-8"><a href="ensemble.html#cb73-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb73-9"><a href="ensemble.html#cb73-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Train individual trees and add each to &#39;models&#39; list.</span></span>
+<span id="cb73-10"><a href="ensemble.html#cb73-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>ntrees){</span>
+<span id="cb73-11"><a href="ensemble.html#cb73-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb73-12"><a href="ensemble.html#cb73-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bootstrap instances from data.</span></span>
+<span id="cb73-13"><a href="ensemble.html#cb73-13" aria-hidden="true" tabindex="-1"></a>    idxs <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="at">size =</span> N, <span class="at">replace =</span> T)</span>
+<span id="cb73-14"><a href="ensemble.html#cb73-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb73-15"><a href="ensemble.html#cb73-15" aria-hidden="true" tabindex="-1"></a>    bootstrappedInstances <span class="ot">&lt;-</span> data[idxs,]</span>
+<span id="cb73-16"><a href="ensemble.html#cb73-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb73-17"><a href="ensemble.html#cb73-17" aria-hidden="true" tabindex="-1"></a>    treeModel <span class="ot">&lt;-</span> <span class="fu">rpart</span>(<span class="fu">as.formula</span>(theFormula),</span>
+<span id="cb73-18"><a href="ensemble.html#cb73-18" aria-hidden="true" tabindex="-1"></a>                       bootstrappedInstances,</span>
+<span id="cb73-19"><a href="ensemble.html#cb73-19" aria-hidden="true" tabindex="-1"></a>                       <span class="at">xval =</span> <span class="dv">0</span>,</span>
+<span id="cb73-20"><a href="ensemble.html#cb73-20" aria-hidden="true" tabindex="-1"></a>                       <span class="at">cp =</span> <span class="dv">0</span>)</span>
+<span id="cb73-21"><a href="ensemble.html#cb73-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb73-22"><a href="ensemble.html#cb73-22" aria-hidden="true" tabindex="-1"></a>    models <span class="ot">&lt;-</span> <span class="fu">c</span>(models, <span class="fu">list</span>(treeModel))</span>
+<span id="cb73-23"><a href="ensemble.html#cb73-23" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb73-24"><a href="ensemble.html#cb73-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb73-25"><a href="ensemble.html#cb73-25" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">structure</span>(<span class="fu">list</span>(<span class="at">models =</span> models),</span>
+<span id="cb73-26"><a href="ensemble.html#cb73-26" aria-hidden="true" tabindex="-1"></a>                   <span class="at">class =</span> <span class="st">&quot;my_bagging&quot;</span>)</span>
+<span id="cb73-27"><a href="ensemble.html#cb73-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb73-28"><a href="ensemble.html#cb73-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(res)</span>
+<span id="cb73-29"><a href="ensemble.html#cb73-29" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>First, a list that will store each individual learner is defined <code>models &lt;- list()</code>. Then, the function iterates <code>ntrees</code> times. In each iteration, a bootstrapped train set is generated and used to train a <code>rpart</code> model. The <code>xval = 0</code> parameter tells rpart not to perform cross-validation internally. The <code>cp</code> parameter is also set to <span class="math inline">\(0\)</span>. This value controls the amount of pruning. The default is <span class="math inline">\(0.01\)</span> leading to smaller trees. This makes the trees to be more similar but since we want diversity we are setting this to <span class="math inline">\(0\)</span> so bigger trees are generated and as a consequence, more diverse.</p>
 <p>Finally, an object of class <code>"my_bagging"</code> is returned. This is just a list containing the trained base learners. The <code>class = "my_bagging"</code> argument is important. This tells R that this object is of type <code>my_bagging</code>. Setting the class will allow us to use the generic <code>predict()</code> function and R will automatically call the corresponding <code>predict.my_bagging()</code> function which we will shortly define. The class name and the function name after <code>predict.</code> need to be the same.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="ensemble.html#cb74-1"></a><span class="co"># Define the predict function for my_bagging.</span></span>
-<span id="cb74-2"><a href="ensemble.html#cb74-2"></a>predict.my_bagging &lt;-<span class="st"> </span><span class="cf">function</span>(object, newdata){</span>
-<span id="cb74-3"><a href="ensemble.html#cb74-3"></a>  </span>
-<span id="cb74-4"><a href="ensemble.html#cb74-4"></a>  ntrees &lt;-<span class="st"> </span><span class="kw">length</span>(object<span class="op">$</span>models)</span>
-<span id="cb74-5"><a href="ensemble.html#cb74-5"></a>  N &lt;-<span class="st"> </span><span class="kw">nrow</span>(newdata)</span>
-<span id="cb74-6"><a href="ensemble.html#cb74-6"></a>  </span>
-<span id="cb74-7"><a href="ensemble.html#cb74-7"></a>  <span class="co"># Matrix to store predictions for each instance</span></span>
-<span id="cb74-8"><a href="ensemble.html#cb74-8"></a>  <span class="co"># in newdata and for each tree.</span></span>
-<span id="cb74-9"><a href="ensemble.html#cb74-9"></a>  M &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">rep</span>(<span class="st">&quot;&quot;</span>,N <span class="op">*</span><span class="st"> </span>ntrees), <span class="dt">nrow =</span> N)</span>
-<span id="cb74-10"><a href="ensemble.html#cb74-10"></a>  </span>
-<span id="cb74-11"><a href="ensemble.html#cb74-11"></a>  <span class="co"># Populate matrix.</span></span>
-<span id="cb74-12"><a href="ensemble.html#cb74-12"></a>  <span class="co"># Each column of M contains all predictions for a given tree.</span></span>
-<span id="cb74-13"><a href="ensemble.html#cb74-13"></a>  <span class="co"># Each row contains the predictions for a given instance.</span></span>
-<span id="cb74-14"><a href="ensemble.html#cb74-14"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>ntrees){</span>
-<span id="cb74-15"><a href="ensemble.html#cb74-15"></a>    m &lt;-<span class="st"> </span>object<span class="op">$</span>models[[i]]</span>
-<span id="cb74-16"><a href="ensemble.html#cb74-16"></a>    tmp &lt;-<span class="st"> </span><span class="kw">as.character</span>(<span class="kw">predict</span>(m, newdata, <span class="dt">type =</span> <span class="st">&quot;class&quot;</span>))</span>
-<span id="cb74-17"><a href="ensemble.html#cb74-17"></a>    M[,i] &lt;-<span class="st"> </span>tmp</span>
-<span id="cb74-18"><a href="ensemble.html#cb74-18"></a>  }</span>
-<span id="cb74-19"><a href="ensemble.html#cb74-19"></a>  </span>
-<span id="cb74-20"><a href="ensemble.html#cb74-20"></a>  <span class="co"># Final predictions</span></span>
-<span id="cb74-21"><a href="ensemble.html#cb74-21"></a>  predictions &lt;-<span class="st"> </span><span class="kw">character</span>()</span>
-<span id="cb74-22"><a href="ensemble.html#cb74-22"></a>  </span>
-<span id="cb74-23"><a href="ensemble.html#cb74-23"></a>  <span class="co"># Iterate through each row of M.</span></span>
-<span id="cb74-24"><a href="ensemble.html#cb74-24"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){</span>
-<span id="cb74-25"><a href="ensemble.html#cb74-25"></a>    <span class="co"># Compute class counts</span></span>
-<span id="cb74-26"><a href="ensemble.html#cb74-26"></a>    classCounts &lt;-<span class="st"> </span><span class="kw">table</span>(M[i,])</span>
-<span id="cb74-27"><a href="ensemble.html#cb74-27"></a>    </span>
-<span id="cb74-28"><a href="ensemble.html#cb74-28"></a>    <span class="co"># Get the class with the most counts.</span></span>
-<span id="cb74-29"><a href="ensemble.html#cb74-29"></a>    predictions &lt;-<span class="st"> </span><span class="kw">c</span>(predictions,</span>
-<span id="cb74-30"><a href="ensemble.html#cb74-30"></a>                     <span class="kw">names</span>(classCounts)[<span class="kw">which.max</span>(classCounts)])</span>
-<span id="cb74-31"><a href="ensemble.html#cb74-31"></a>  }</span>
-<span id="cb74-32"><a href="ensemble.html#cb74-32"></a>  <span class="kw">return</span>(predictions)</span>
-<span id="cb74-33"><a href="ensemble.html#cb74-33"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="ensemble.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the predict function for my_bagging.</span></span>
+<span id="cb74-2"><a href="ensemble.html#cb74-2" aria-hidden="true" tabindex="-1"></a>predict.my_bagging <span class="ot">&lt;-</span> <span class="cf">function</span>(object, newdata){</span>
+<span id="cb74-3"><a href="ensemble.html#cb74-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb74-4"><a href="ensemble.html#cb74-4" aria-hidden="true" tabindex="-1"></a>  ntrees <span class="ot">&lt;-</span> <span class="fu">length</span>(object<span class="sc">$</span>models)</span>
+<span id="cb74-5"><a href="ensemble.html#cb74-5" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(newdata)</span>
+<span id="cb74-6"><a href="ensemble.html#cb74-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb74-7"><a href="ensemble.html#cb74-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Matrix to store predictions for each instance</span></span>
+<span id="cb74-8"><a href="ensemble.html#cb74-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># in newdata and for each tree.</span></span>
+<span id="cb74-9"><a href="ensemble.html#cb74-9" aria-hidden="true" tabindex="-1"></a>  M <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">rep</span>(<span class="st">&quot;&quot;</span>,N <span class="sc">*</span> ntrees), <span class="at">nrow =</span> N)</span>
+<span id="cb74-10"><a href="ensemble.html#cb74-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb74-11"><a href="ensemble.html#cb74-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Populate matrix.</span></span>
+<span id="cb74-12"><a href="ensemble.html#cb74-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Each column of M contains all predictions for a given tree.</span></span>
+<span id="cb74-13"><a href="ensemble.html#cb74-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Each row contains the predictions for a given instance.</span></span>
+<span id="cb74-14"><a href="ensemble.html#cb74-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>ntrees){</span>
+<span id="cb74-15"><a href="ensemble.html#cb74-15" aria-hidden="true" tabindex="-1"></a>    m <span class="ot">&lt;-</span> object<span class="sc">$</span>models[[i]]</span>
+<span id="cb74-16"><a href="ensemble.html#cb74-16" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">predict</span>(m, newdata, <span class="at">type =</span> <span class="st">&quot;class&quot;</span>))</span>
+<span id="cb74-17"><a href="ensemble.html#cb74-17" aria-hidden="true" tabindex="-1"></a>    M[,i] <span class="ot">&lt;-</span> tmp</span>
+<span id="cb74-18"><a href="ensemble.html#cb74-18" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb74-19"><a href="ensemble.html#cb74-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb74-20"><a href="ensemble.html#cb74-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Final predictions</span></span>
+<span id="cb74-21"><a href="ensemble.html#cb74-21" aria-hidden="true" tabindex="-1"></a>  predictions <span class="ot">&lt;-</span> <span class="fu">character</span>()</span>
+<span id="cb74-22"><a href="ensemble.html#cb74-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb74-23"><a href="ensemble.html#cb74-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Iterate through each row of M.</span></span>
+<span id="cb74-24"><a href="ensemble.html#cb74-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
+<span id="cb74-25"><a href="ensemble.html#cb74-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute class counts</span></span>
+<span id="cb74-26"><a href="ensemble.html#cb74-26" aria-hidden="true" tabindex="-1"></a>    classCounts <span class="ot">&lt;-</span> <span class="fu">table</span>(M[i,])</span>
+<span id="cb74-27"><a href="ensemble.html#cb74-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb74-28"><a href="ensemble.html#cb74-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get the class with the most counts.</span></span>
+<span id="cb74-29"><a href="ensemble.html#cb74-29" aria-hidden="true" tabindex="-1"></a>    predictions <span class="ot">&lt;-</span> <span class="fu">c</span>(predictions,</span>
+<span id="cb74-30"><a href="ensemble.html#cb74-30" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">names</span>(classCounts)[<span class="fu">which.max</span>(classCounts)])</span>
+<span id="cb74-31"><a href="ensemble.html#cb74-31" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb74-32"><a href="ensemble.html#cb74-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(predictions)</span>
+<span id="cb74-33"><a href="ensemble.html#cb74-33" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Now let’s dissect the <code>predict.my_bagging()</code> function. First, note that the function name starts with <code>predict.</code> followed by the type of object. Following this convention will allow us to call <code>predict()</code> and R will call the corresponding method based on the class of the object. The first argument <code>object</code> is an object of type “my_bagging” as returned by <code>my_bagging()</code>. The second argument <code>newdata</code> is the test set we want to generate predictions for. A matrix <code>M</code> that will store the predictions for each tree is defined. This matrix has <span class="math inline">\(N\)</span> rows and <span class="math inline">\(ntrees\)</span> columns where <span class="math inline">\(N\)</span> is the number of instances in <code>newdata</code> and <span class="math inline">\(ntrees\)</span> is the number of trees. Thus, each column stores the predictions for each of the base learners. This function iterates through each base learner (rpart in this case), and makes a prediction for each instance in <code>newdata</code>. Then, the results are stored in matrix <code>M</code>. Finally, it iterates through each instance and computes the most common predicted class from the base learners.</p>
 <p>Let’s test our Bagging function! We will test it with the activity recognition dataset introduced in section <a href="classification.html#activityRecognition">2.3.1</a> and set the number of trees to <span class="math inline">\(10\)</span>. The following code shows how we would use our bagging functions to train the model and make predictions on a test set.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="ensemble.html#cb75-1"></a>baggingClassifier &lt;-<span class="st"> </span><span class="kw">my_bagging</span>(class <span class="op">~</span><span class="st"> </span>., trainSet, <span class="dt">ntree =</span> <span class="dv">10</span>)</span>
-<span id="cb75-2"><a href="ensemble.html#cb75-2"></a>predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(baggingClassifier, testSet)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="ensemble.html#cb75-1" aria-hidden="true" tabindex="-1"></a>baggingClassifier <span class="ot">&lt;-</span> <span class="fu">my_bagging</span>(class <span class="sc">~</span> ., trainSet, <span class="at">ntree =</span> <span class="dv">10</span>)</span>
+<span id="cb75-2"><a href="ensemble.html#cb75-2" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(baggingClassifier, testSet)</span></code></pre></div>
 <p>The following will perform <span class="math inline">\(5\)</span>-fold cross-validation and print the results.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="ensemble.html#cb76-1"></a><span class="kw">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb76-2"><a href="ensemble.html#cb76-2"></a>k &lt;-<span class="st"> </span><span class="dv">5</span></span>
-<span id="cb76-3"><a href="ensemble.html#cb76-3"></a>folds &lt;-<span class="st"> </span><span class="kw">sample</span>(k, <span class="dt">size =</span> <span class="kw">nrow</span>(df), <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb76-4"><a href="ensemble.html#cb76-4"></a></span>
-<span id="cb76-5"><a href="ensemble.html#cb76-5"></a><span class="co"># Variable to store ground truth classes.</span></span>
-<span id="cb76-6"><a href="ensemble.html#cb76-6"></a>groundTruth &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb76-7"><a href="ensemble.html#cb76-7"></a></span>
-<span id="cb76-8"><a href="ensemble.html#cb76-8"></a><span class="co"># Variable to store the classifier&#39;s predictions.</span></span>
-<span id="cb76-9"><a href="ensemble.html#cb76-9"></a>predictions &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb76-10"><a href="ensemble.html#cb76-10"></a></span>
-<span id="cb76-11"><a href="ensemble.html#cb76-11"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>k){</span>
-<span id="cb76-12"><a href="ensemble.html#cb76-12"></a>  trainSet &lt;-<span class="st"> </span>df[<span class="kw">which</span>(folds <span class="op">!=</span><span class="st"> </span>i), ]</span>
-<span id="cb76-13"><a href="ensemble.html#cb76-13"></a>  testSet &lt;-<span class="st"> </span>df[<span class="kw">which</span>(folds <span class="op">==</span><span class="st"> </span>i), ]</span>
-<span id="cb76-14"><a href="ensemble.html#cb76-14"></a>  treeClassifier &lt;-<span class="st"> </span><span class="kw">my_bagging</span>(class <span class="op">~</span><span class="st"> </span>., trainSet, <span class="dt">ntree =</span> <span class="dv">10</span>)</span>
-<span id="cb76-15"><a href="ensemble.html#cb76-15"></a>  foldPredictions &lt;-<span class="st"> </span><span class="kw">predict</span>(treeClassifier, testSet)</span>
-<span id="cb76-16"><a href="ensemble.html#cb76-16"></a>  predictions &lt;-<span class="st"> </span><span class="kw">c</span>(predictions, <span class="kw">as.character</span>(foldPredictions))</span>
-<span id="cb76-17"><a href="ensemble.html#cb76-17"></a>  groundTruth &lt;-<span class="st"> </span><span class="kw">c</span>(groundTruth, <span class="kw">as.character</span>(testSet<span class="op">$</span>class))</span>
-<span id="cb76-18"><a href="ensemble.html#cb76-18"></a>}</span>
-<span id="cb76-19"><a href="ensemble.html#cb76-19"></a>cm &lt;-<span class="st"> </span><span class="kw">confusionMatrix</span>(<span class="kw">as.factor</span>(predictions), <span class="kw">as.factor</span>(groundTruth))</span>
-<span id="cb76-20"><a href="ensemble.html#cb76-20"></a></span>
-<span id="cb76-21"><a href="ensemble.html#cb76-21"></a><span class="co"># Print accuracy</span></span>
-<span id="cb76-22"><a href="ensemble.html#cb76-22"></a>cm<span class="op">$</span>overall[<span class="st">&quot;Accuracy&quot;</span>]</span>
-<span id="cb76-23"><a href="ensemble.html#cb76-23"></a><span class="co">#&gt; Accuracy </span></span>
-<span id="cb76-24"><a href="ensemble.html#cb76-24"></a><span class="co">#&gt; 0.861388</span></span>
-<span id="cb76-25"><a href="ensemble.html#cb76-25"></a></span>
-<span id="cb76-26"><a href="ensemble.html#cb76-26"></a><span class="co"># Print other metrics per class.</span></span>
-<span id="cb76-27"><a href="ensemble.html#cb76-27"></a>cm<span class="op">$</span>byClass[,<span class="kw">c</span>(<span class="st">&quot;Recall&quot;</span>, <span class="st">&quot;Specificity&quot;</span>, <span class="st">&quot;Precision&quot;</span>, <span class="st">&quot;F1&quot;</span>)]</span>
-<span id="cb76-28"><a href="ensemble.html#cb76-28"></a><span class="co">#&gt;                      Recall Specificity Precision        F1</span></span>
-<span id="cb76-29"><a href="ensemble.html#cb76-29"></a><span class="co">#&gt; Class: Downstairs 0.5378788   0.9588957 0.5855670 0.5607108</span></span>
-<span id="cb76-30"><a href="ensemble.html#cb76-30"></a><span class="co">#&gt; Class: Jogging    0.9618462   0.9820722 0.9583078 0.9600737</span></span>
-<span id="cb76-31"><a href="ensemble.html#cb76-31"></a><span class="co">#&gt; Class: Sitting    0.9607843   0.9982394 0.9702970 0.9655172</span></span>
-<span id="cb76-32"><a href="ensemble.html#cb76-32"></a><span class="co">#&gt; Class: Standing   0.9146341   0.9988399 0.9740260 0.9433962</span></span>
-<span id="cb76-33"><a href="ensemble.html#cb76-33"></a><span class="co">#&gt; Class: Upstairs   0.5664557   0.9563310 0.6313933 0.5971643</span></span>
-<span id="cb76-34"><a href="ensemble.html#cb76-34"></a><span class="co">#&gt; Class: Walking    0.9336857   0.9226850 0.8827806 0.9075199</span></span>
-<span id="cb76-35"><a href="ensemble.html#cb76-35"></a></span>
-<span id="cb76-36"><a href="ensemble.html#cb76-36"></a><span class="co"># Print average performance metrics across classes.</span></span>
-<span id="cb76-37"><a href="ensemble.html#cb76-37"></a><span class="kw">colMeans</span>(cm<span class="op">$</span>byClass[,<span class="kw">c</span>(<span class="st">&quot;Recall&quot;</span>, <span class="st">&quot;Specificity&quot;</span>, <span class="st">&quot;Precision&quot;</span>, <span class="st">&quot;F1&quot;</span>)])</span>
-<span id="cb76-38"><a href="ensemble.html#cb76-38"></a><span class="co">#&gt;     Recall Specificity   Precision          F1 </span></span>
-<span id="cb76-39"><a href="ensemble.html#cb76-39"></a><span class="co">#&gt;  0.8125475   0.9695105   0.8337286   0.8223970</span></span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="ensemble.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb76-2"><a href="ensemble.html#cb76-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb76-3"><a href="ensemble.html#cb76-3" aria-hidden="true" tabindex="-1"></a>folds <span class="ot">&lt;-</span> <span class="fu">sample</span>(k, <span class="at">size =</span> <span class="fu">nrow</span>(df), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb76-4"><a href="ensemble.html#cb76-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-5"><a href="ensemble.html#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable to store ground truth classes.</span></span>
+<span id="cb76-6"><a href="ensemble.html#cb76-6" aria-hidden="true" tabindex="-1"></a>groundTruth <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb76-7"><a href="ensemble.html#cb76-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-8"><a href="ensemble.html#cb76-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable to store the classifier&#39;s predictions.</span></span>
+<span id="cb76-9"><a href="ensemble.html#cb76-9" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb76-10"><a href="ensemble.html#cb76-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-11"><a href="ensemble.html#cb76-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k){</span>
+<span id="cb76-12"><a href="ensemble.html#cb76-12" aria-hidden="true" tabindex="-1"></a>  trainSet <span class="ot">&lt;-</span> df[<span class="fu">which</span>(folds <span class="sc">!=</span> i), ]</span>
+<span id="cb76-13"><a href="ensemble.html#cb76-13" aria-hidden="true" tabindex="-1"></a>  testSet <span class="ot">&lt;-</span> df[<span class="fu">which</span>(folds <span class="sc">==</span> i), ]</span>
+<span id="cb76-14"><a href="ensemble.html#cb76-14" aria-hidden="true" tabindex="-1"></a>  treeClassifier <span class="ot">&lt;-</span> <span class="fu">my_bagging</span>(class <span class="sc">~</span> ., trainSet, <span class="at">ntree =</span> <span class="dv">10</span>)</span>
+<span id="cb76-15"><a href="ensemble.html#cb76-15" aria-hidden="true" tabindex="-1"></a>  foldPredictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(treeClassifier, testSet)</span>
+<span id="cb76-16"><a href="ensemble.html#cb76-16" aria-hidden="true" tabindex="-1"></a>  predictions <span class="ot">&lt;-</span> <span class="fu">c</span>(predictions, <span class="fu">as.character</span>(foldPredictions))</span>
+<span id="cb76-17"><a href="ensemble.html#cb76-17" aria-hidden="true" tabindex="-1"></a>  groundTruth <span class="ot">&lt;-</span> <span class="fu">c</span>(groundTruth, <span class="fu">as.character</span>(testSet<span class="sc">$</span>class))</span>
+<span id="cb76-18"><a href="ensemble.html#cb76-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb76-19"><a href="ensemble.html#cb76-19" aria-hidden="true" tabindex="-1"></a>cm <span class="ot">&lt;-</span> <span class="fu">confusionMatrix</span>(<span class="fu">as.factor</span>(predictions), <span class="fu">as.factor</span>(groundTruth))</span>
+<span id="cb76-20"><a href="ensemble.html#cb76-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-21"><a href="ensemble.html#cb76-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Print accuracy</span></span>
+<span id="cb76-22"><a href="ensemble.html#cb76-22" aria-hidden="true" tabindex="-1"></a>cm<span class="sc">$</span>overall[<span class="st">&quot;Accuracy&quot;</span>]</span>
+<span id="cb76-23"><a href="ensemble.html#cb76-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Accuracy </span></span>
+<span id="cb76-24"><a href="ensemble.html#cb76-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.861388</span></span>
+<span id="cb76-25"><a href="ensemble.html#cb76-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-26"><a href="ensemble.html#cb76-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Print other metrics per class.</span></span>
+<span id="cb76-27"><a href="ensemble.html#cb76-27" aria-hidden="true" tabindex="-1"></a>cm<span class="sc">$</span>byClass[,<span class="fu">c</span>(<span class="st">&quot;Recall&quot;</span>, <span class="st">&quot;Specificity&quot;</span>, <span class="st">&quot;Precision&quot;</span>, <span class="st">&quot;F1&quot;</span>)]</span>
+<span id="cb76-28"><a href="ensemble.html#cb76-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                      Recall Specificity Precision        F1</span></span>
+<span id="cb76-29"><a href="ensemble.html#cb76-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Class: Downstairs 0.5378788   0.9588957 0.5855670 0.5607108</span></span>
+<span id="cb76-30"><a href="ensemble.html#cb76-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Class: Jogging    0.9618462   0.9820722 0.9583078 0.9600737</span></span>
+<span id="cb76-31"><a href="ensemble.html#cb76-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Class: Sitting    0.9607843   0.9982394 0.9702970 0.9655172</span></span>
+<span id="cb76-32"><a href="ensemble.html#cb76-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Class: Standing   0.9146341   0.9988399 0.9740260 0.9433962</span></span>
+<span id="cb76-33"><a href="ensemble.html#cb76-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Class: Upstairs   0.5664557   0.9563310 0.6313933 0.5971643</span></span>
+<span id="cb76-34"><a href="ensemble.html#cb76-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Class: Walking    0.9336857   0.9226850 0.8827806 0.9075199</span></span>
+<span id="cb76-35"><a href="ensemble.html#cb76-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-36"><a href="ensemble.html#cb76-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Print average performance metrics across classes.</span></span>
+<span id="cb76-37"><a href="ensemble.html#cb76-37" aria-hidden="true" tabindex="-1"></a><span class="fu">colMeans</span>(cm<span class="sc">$</span>byClass[,<span class="fu">c</span>(<span class="st">&quot;Recall&quot;</span>, <span class="st">&quot;Specificity&quot;</span>, <span class="st">&quot;Precision&quot;</span>, <span class="st">&quot;F1&quot;</span>)])</span>
+<span id="cb76-38"><a href="ensemble.html#cb76-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     Recall Specificity   Precision          F1 </span></span>
+<span id="cb76-39"><a href="ensemble.html#cb76-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  0.8125475   0.9695105   0.8337286   0.8223970</span></span></code></pre></div>
 <p>The accuracy was much better now compared to <span class="math inline">\(0.789\)</span> from the previous chapter without using Bagging!.</p>
 <p>We can also check what is the effect of adding more trees to the ensemble. The script <code>iterated_bagging_activities.R</code> does <span class="math inline">\(5\)</span>-fold cross-validation as we just did but starting with <span class="math inline">\(1\)</span> tree in the ensemble and repeating the process by adding more trees until <span class="math inline">\(50\)</span>.</p>
 <p>Figure <a href="ensemble.html#fig:iteratedBagging">3.2</a> shows the effect on the train and test accuracy with different number of trees. Here, we can see that <span class="math inline">\(3\)</span> trees already produce a significant performance increase compared to <span class="math inline">\(1\)</span> or <span class="math inline">\(2\)</span> trees. This makes sense since having only <span class="math inline">\(2\)</span> trees does not add additional information. If the two trees produce different predictions then, it becomes a random choice between the two labels. In fact, <span class="math inline">\(2\)</span> trees produced worse results than <span class="math inline">\(1\)</span> tree. But we cannot make strong conclusions since the experiment was run only once. One possibility to break ties when there are only two trees is to use the averaged probabilities of each label. rpart can return those probabilities by setting <code>type = "prob"</code> in the <code>predict()</code> function which is the default behavior. This is left as an exercise for the reader. In the following section, Random Forest will be described which is a way of introducing more diversity to the base learners.</p>
 <div class="figure" style="text-align: center"><span id="fig:iteratedBagging"></span>
 <img src="images/iterated_bagging.png" alt="Bagging results for different number of trees." width="100%" />
 <p class="caption">
-Figure 3.2: Bagging results for different number of trees.
+FIGURE 3.2: Bagging results for different number of trees.
 </p>
 </div>
 </div>
 </div>
-<div id="random-forest" class="section level2">
+<div id="random-forest" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Random Forest</h2>
 
 <div class="rmdfolder">
 <code>rf_activities.R</code> <code>iterated_rf_activities.R</code> <code>iterated_bagging_rf.R</code>
 </div>
-
-<p>Random Forest can be thought of as an extension of Bagging. Random Forests were proposed also by <span class="citation">Breiman (<a href="#ref-breimanRF" role="doc-biblioref">2001</a>)</span> and as the name implies, they introduce more randomness to the individual trees since one of the aims is to have decorrelated trees. With Bagging, most of the trees are very similar at the root because the most important variables are selected first (see chapter <a href="classification.html#classification">2</a>). To avoid this happening, a simple modification can be introduced. When building a tree, instead of evaluating all features at each split to find the most important one (based on some purity measure like <em>information gain</em>), a random subset of the features (usually <span class="math inline">\(\sqrt{|features|}\)</span>) is sampled. This simple modification produces more decorrelated trees and in general, it results in better performance compared to Bagging.</p>
-<p>In R, the most famous library that implements Random Forest is…, yes you guessed it: <code>randomForest</code> <span class="citation">(Liaw and Wiener <a href="#ref-randomForest" role="doc-biblioref">2002</a>)</span>. The following code snippet shows how to fit a Random Forest with <span class="math inline">\(10\)</span> trees.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="ensemble.html#cb77-1"></a><span class="kw">library</span>(randomForest)</span>
-<span id="cb77-2"><a href="ensemble.html#cb77-2"></a>rf &lt;-<span class="st"> </span><span class="kw">randomForest</span>(class <span class="op">~</span><span class="st"> </span>., trainSet, <span class="dt">ntree =</span> <span class="dv">10</span>)</span></code></pre></div>
+<p>A Random Forest can be thought of as an extension of Bagging. Random Forests were proposed also by <span class="citation"><a href="references.html#ref-breimanRF" role="doc-biblioref">Breiman</a> (<a href="references.html#ref-breimanRF" role="doc-biblioref">2001</a>)</span> and as the name implies, they introduce more randomness to the individual trees since one of the aims is to have decorrelated trees. With Bagging, most of the trees are very similar at the root because the most important variables are selected first (see chapter <a href="classification.html#classification">2</a>). To avoid this happening, a simple modification can be introduced. When building a tree, instead of evaluating all features at each split to find the most important one (based on some purity measure like <em>information gain</em>), a random subset of the features (usually <span class="math inline">\(\sqrt{|features|}\)</span>) is sampled. This simple modification produces more decorrelated trees and in general, it results in better performance compared to Bagging.</p>
+<p>In R, the most famous library that implements Random Forest is…, yes you guessed it: <code>randomForest</code> <span class="citation">(<a href="references.html#ref-randomForest" role="doc-biblioref">Liaw and Wiener 2002</a>)</span>. The following code snippet shows how to fit a Random Forest with <span class="math inline">\(10\)</span> trees.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="ensemble.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randomForest)</span>
+<span id="cb77-2"><a href="ensemble.html#cb77-2" aria-hidden="true" tabindex="-1"></a>rf <span class="ot">&lt;-</span> <span class="fu">randomForest</span>(class <span class="sc">~</span> ., trainSet, <span class="at">ntree =</span> <span class="dv">10</span>)</span></code></pre></div>
 <p>By default, <code>ntree = 500</code>. Among other things, you can control how many random features are sampled at each split with the <code>mtry</code> argument. By default, for classification <code>mtry = floor(sqrt(ncol(x)))</code> and for regression <code>mtry = max(floor(ncol(x)/3), 1)</code>.</p>
 <p>The following code will perform <span class="math inline">\(5\)</span>-fold cross-validation with the activities dataset already stored in <code>df</code> and print the results. The complete code can be found in the script <code>randomForest_activities.R</code>.</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="ensemble.html#cb78-1"></a><span class="kw">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb78-2"><a href="ensemble.html#cb78-2"></a></span>
-<span id="cb78-3"><a href="ensemble.html#cb78-3"></a>k &lt;-<span class="st"> </span><span class="dv">5</span></span>
-<span id="cb78-4"><a href="ensemble.html#cb78-4"></a></span>
-<span id="cb78-5"><a href="ensemble.html#cb78-5"></a>folds &lt;-<span class="st"> </span><span class="kw">sample</span>(k, <span class="dt">size =</span> <span class="kw">nrow</span>(df), <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb78-6"><a href="ensemble.html#cb78-6"></a></span>
-<span id="cb78-7"><a href="ensemble.html#cb78-7"></a><span class="co"># Variable to store ground truth classes.</span></span>
-<span id="cb78-8"><a href="ensemble.html#cb78-8"></a>groundTruth &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb78-9"><a href="ensemble.html#cb78-9"></a></span>
-<span id="cb78-10"><a href="ensemble.html#cb78-10"></a><span class="co"># Variable to store the classifier&#39;s predictions.</span></span>
-<span id="cb78-11"><a href="ensemble.html#cb78-11"></a>predictions &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb78-12"><a href="ensemble.html#cb78-12"></a></span>
-<span id="cb78-13"><a href="ensemble.html#cb78-13"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>k){</span>
-<span id="cb78-14"><a href="ensemble.html#cb78-14"></a>  </span>
-<span id="cb78-15"><a href="ensemble.html#cb78-15"></a>  trainSet &lt;-<span class="st"> </span>df[<span class="kw">which</span>(folds <span class="op">!=</span><span class="st"> </span>i), ]</span>
-<span id="cb78-16"><a href="ensemble.html#cb78-16"></a>  testSet &lt;-<span class="st"> </span>df[<span class="kw">which</span>(folds <span class="op">==</span><span class="st"> </span>i), ]</span>
-<span id="cb78-17"><a href="ensemble.html#cb78-17"></a>  </span>
-<span id="cb78-18"><a href="ensemble.html#cb78-18"></a>  rf &lt;-<span class="st"> </span><span class="kw">randomForest</span>(class <span class="op">~</span><span class="st"> </span>., trainSet, <span class="dt">ntree =</span> <span class="dv">10</span>)</span>
-<span id="cb78-19"><a href="ensemble.html#cb78-19"></a>  </span>
-<span id="cb78-20"><a href="ensemble.html#cb78-20"></a>  foldPredictions &lt;-<span class="st"> </span><span class="kw">predict</span>(rf, testSet)</span>
-<span id="cb78-21"><a href="ensemble.html#cb78-21"></a>  </span>
-<span id="cb78-22"><a href="ensemble.html#cb78-22"></a>  predictions &lt;-<span class="st"> </span><span class="kw">c</span>(predictions, <span class="kw">as.character</span>(foldPredictions))</span>
-<span id="cb78-23"><a href="ensemble.html#cb78-23"></a>  </span>
-<span id="cb78-24"><a href="ensemble.html#cb78-24"></a>  groundTruth &lt;-<span class="st"> </span><span class="kw">c</span>(groundTruth, <span class="kw">as.character</span>(testSet<span class="op">$</span>class))</span>
-<span id="cb78-25"><a href="ensemble.html#cb78-25"></a>}</span>
-<span id="cb78-26"><a href="ensemble.html#cb78-26"></a></span>
-<span id="cb78-27"><a href="ensemble.html#cb78-27"></a>cm &lt;-<span class="st"> </span><span class="kw">confusionMatrix</span>(<span class="kw">as.factor</span>(predictions), <span class="kw">as.factor</span>(groundTruth))</span>
-<span id="cb78-28"><a href="ensemble.html#cb78-28"></a></span>
-<span id="cb78-29"><a href="ensemble.html#cb78-29"></a><span class="co"># Print accuracy</span></span>
-<span id="cb78-30"><a href="ensemble.html#cb78-30"></a>cm<span class="op">$</span>overall[<span class="st">&quot;Accuracy&quot;</span>]</span>
-<span id="cb78-31"><a href="ensemble.html#cb78-31"></a><span class="co">#&gt;Accuracy </span></span>
-<span id="cb78-32"><a href="ensemble.html#cb78-32"></a><span class="co">#&gt; 0.870801 </span></span>
-<span id="cb78-33"><a href="ensemble.html#cb78-33"></a></span>
-<span id="cb78-34"><a href="ensemble.html#cb78-34"></a><span class="co"># Print other metrics per class.</span></span>
-<span id="cb78-35"><a href="ensemble.html#cb78-35"></a>cm<span class="op">$</span>byClass[,<span class="kw">c</span>(<span class="st">&quot;Recall&quot;</span>, <span class="st">&quot;Specificity&quot;</span>, <span class="st">&quot;Precision&quot;</span>, <span class="st">&quot;F1&quot;</span>)]</span>
-<span id="cb78-36"><a href="ensemble.html#cb78-36"></a><span class="co">#&gt;                      Recall Specificity Precision        F1</span></span>
-<span id="cb78-37"><a href="ensemble.html#cb78-37"></a><span class="co">#&gt; Class: Downstairs 0.5094697   0.9652352 0.6127563 0.5563599</span></span>
-<span id="cb78-38"><a href="ensemble.html#cb78-38"></a><span class="co">#&gt; Class: Jogging    0.9784615   0.9831268 0.9613059 0.9698079</span></span>
-<span id="cb78-39"><a href="ensemble.html#cb78-39"></a><span class="co">#&gt; Class: Sitting    0.9803922   0.9992175 0.9868421 0.9836066</span></span>
-<span id="cb78-40"><a href="ensemble.html#cb78-40"></a><span class="co">#&gt; Class: Standing   0.9512195   0.9990333 0.9790795 0.9649485</span></span>
-<span id="cb78-41"><a href="ensemble.html#cb78-41"></a><span class="co">#&gt; Class: Upstairs   0.5363924   0.9636440 0.6608187 0.5921397</span></span>
-<span id="cb78-42"><a href="ensemble.html#cb78-42"></a><span class="co">#&gt; Class: Walking    0.9543489   0.9151933 0.8752755 0.9131034</span></span>
-<span id="cb78-43"><a href="ensemble.html#cb78-43"></a></span>
-<span id="cb78-44"><a href="ensemble.html#cb78-44"></a><span class="co"># Print other metrics overall.</span></span>
-<span id="cb78-45"><a href="ensemble.html#cb78-45"></a><span class="kw">colMeans</span>(cm<span class="op">$</span>byClass[,<span class="kw">c</span>(<span class="st">&quot;Recall&quot;</span>, <span class="st">&quot;Specificity&quot;</span>, <span class="st">&quot;Precision&quot;</span>, <span class="st">&quot;F1&quot;</span>)])</span>
-<span id="cb78-46"><a href="ensemble.html#cb78-46"></a><span class="co">#&gt;     Recall Specificity   Precision          F1 </span></span>
-<span id="cb78-47"><a href="ensemble.html#cb78-47"></a><span class="co">#&gt;  0.8183807   0.9709083   0.8460130   0.8299943 </span></span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="ensemble.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb78-2"><a href="ensemble.html#cb78-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-3"><a href="ensemble.html#cb78-3" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb78-4"><a href="ensemble.html#cb78-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-5"><a href="ensemble.html#cb78-5" aria-hidden="true" tabindex="-1"></a>folds <span class="ot">&lt;-</span> <span class="fu">sample</span>(k, <span class="at">size =</span> <span class="fu">nrow</span>(df), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb78-6"><a href="ensemble.html#cb78-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-7"><a href="ensemble.html#cb78-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable to store ground truth classes.</span></span>
+<span id="cb78-8"><a href="ensemble.html#cb78-8" aria-hidden="true" tabindex="-1"></a>groundTruth <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb78-9"><a href="ensemble.html#cb78-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-10"><a href="ensemble.html#cb78-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable to store the classifier&#39;s predictions.</span></span>
+<span id="cb78-11"><a href="ensemble.html#cb78-11" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb78-12"><a href="ensemble.html#cb78-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-13"><a href="ensemble.html#cb78-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k){</span>
+<span id="cb78-14"><a href="ensemble.html#cb78-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb78-15"><a href="ensemble.html#cb78-15" aria-hidden="true" tabindex="-1"></a>  trainSet <span class="ot">&lt;-</span> df[<span class="fu">which</span>(folds <span class="sc">!=</span> i), ]</span>
+<span id="cb78-16"><a href="ensemble.html#cb78-16" aria-hidden="true" tabindex="-1"></a>  testSet <span class="ot">&lt;-</span> df[<span class="fu">which</span>(folds <span class="sc">==</span> i), ]</span>
+<span id="cb78-17"><a href="ensemble.html#cb78-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb78-18"><a href="ensemble.html#cb78-18" aria-hidden="true" tabindex="-1"></a>  rf <span class="ot">&lt;-</span> <span class="fu">randomForest</span>(class <span class="sc">~</span> ., trainSet, <span class="at">ntree =</span> <span class="dv">10</span>)</span>
+<span id="cb78-19"><a href="ensemble.html#cb78-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb78-20"><a href="ensemble.html#cb78-20" aria-hidden="true" tabindex="-1"></a>  foldPredictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(rf, testSet)</span>
+<span id="cb78-21"><a href="ensemble.html#cb78-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb78-22"><a href="ensemble.html#cb78-22" aria-hidden="true" tabindex="-1"></a>  predictions <span class="ot">&lt;-</span> <span class="fu">c</span>(predictions, <span class="fu">as.character</span>(foldPredictions))</span>
+<span id="cb78-23"><a href="ensemble.html#cb78-23" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb78-24"><a href="ensemble.html#cb78-24" aria-hidden="true" tabindex="-1"></a>  groundTruth <span class="ot">&lt;-</span> <span class="fu">c</span>(groundTruth, <span class="fu">as.character</span>(testSet<span class="sc">$</span>class))</span>
+<span id="cb78-25"><a href="ensemble.html#cb78-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb78-26"><a href="ensemble.html#cb78-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-27"><a href="ensemble.html#cb78-27" aria-hidden="true" tabindex="-1"></a>cm <span class="ot">&lt;-</span> <span class="fu">confusionMatrix</span>(<span class="fu">as.factor</span>(predictions), <span class="fu">as.factor</span>(groundTruth))</span>
+<span id="cb78-28"><a href="ensemble.html#cb78-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-29"><a href="ensemble.html#cb78-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Print accuracy</span></span>
+<span id="cb78-30"><a href="ensemble.html#cb78-30" aria-hidden="true" tabindex="-1"></a>cm<span class="sc">$</span>overall[<span class="st">&quot;Accuracy&quot;</span>]</span>
+<span id="cb78-31"><a href="ensemble.html#cb78-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;Accuracy </span></span>
+<span id="cb78-32"><a href="ensemble.html#cb78-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.870801 </span></span>
+<span id="cb78-33"><a href="ensemble.html#cb78-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-34"><a href="ensemble.html#cb78-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Print other metrics per class.</span></span>
+<span id="cb78-35"><a href="ensemble.html#cb78-35" aria-hidden="true" tabindex="-1"></a>cm<span class="sc">$</span>byClass[,<span class="fu">c</span>(<span class="st">&quot;Recall&quot;</span>, <span class="st">&quot;Specificity&quot;</span>, <span class="st">&quot;Precision&quot;</span>, <span class="st">&quot;F1&quot;</span>)]</span>
+<span id="cb78-36"><a href="ensemble.html#cb78-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                      Recall Specificity Precision        F1</span></span>
+<span id="cb78-37"><a href="ensemble.html#cb78-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Class: Downstairs 0.5094697   0.9652352 0.6127563 0.5563599</span></span>
+<span id="cb78-38"><a href="ensemble.html#cb78-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Class: Jogging    0.9784615   0.9831268 0.9613059 0.9698079</span></span>
+<span id="cb78-39"><a href="ensemble.html#cb78-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Class: Sitting    0.9803922   0.9992175 0.9868421 0.9836066</span></span>
+<span id="cb78-40"><a href="ensemble.html#cb78-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Class: Standing   0.9512195   0.9990333 0.9790795 0.9649485</span></span>
+<span id="cb78-41"><a href="ensemble.html#cb78-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Class: Upstairs   0.5363924   0.9636440 0.6608187 0.5921397</span></span>
+<span id="cb78-42"><a href="ensemble.html#cb78-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Class: Walking    0.9543489   0.9151933 0.8752755 0.9131034</span></span>
+<span id="cb78-43"><a href="ensemble.html#cb78-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-44"><a href="ensemble.html#cb78-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Print other metrics overall.</span></span>
+<span id="cb78-45"><a href="ensemble.html#cb78-45" aria-hidden="true" tabindex="-1"></a><span class="fu">colMeans</span>(cm<span class="sc">$</span>byClass[,<span class="fu">c</span>(<span class="st">&quot;Recall&quot;</span>, <span class="st">&quot;Specificity&quot;</span>, <span class="st">&quot;Precision&quot;</span>, <span class="st">&quot;F1&quot;</span>)])</span>
+<span id="cb78-46"><a href="ensemble.html#cb78-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     Recall Specificity   Precision          F1 </span></span>
+<span id="cb78-47"><a href="ensemble.html#cb78-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  0.8183807   0.9709083   0.8460130   0.8299943 </span></span></code></pre></div>
 <p>Those results are better than the previous ones with Bagging. Figure <a href="ensemble.html#fig:iteratedRF">3.3</a> shows the results when doing <span class="math inline">\(5\)</span>-fold cross-validation and increasing the number of trees (the complete script is in <code>iterated_randomForest_activities.R</code>). From these results, we can see a similar behavior than with Bagging. That is, the accuracy increases very quickly and then it stabilizes.</p>
 <div class="figure" style="text-align: center"><span id="fig:iteratedRF"></span>
 <img src="images/iterated_rf.png" alt="Random Forest results for different number of trees." width="100%" />
 <p class="caption">
-Figure 3.3: Random Forest results for different number of trees.
+FIGURE 3.3: Random Forest results for different number of trees.
 </p>
 </div>
 <p>If we directly compare Bagging v.s. Random Forest, we can see than Random Forest outperforms Bagging (Figure <a href="ensemble.html#fig:iteratedBaggingRF">3.4</a>). The complete code to generate the plot is in the script <code>iterated_bagging_rf.R</code>.</p>
 <div class="figure" style="text-align: center"><span id="fig:iteratedBaggingRF"></span>
 <img src="images/iterated_bagging_rf.png" alt="Bagging v.s. Random Forest." width="100%" />
 <p class="caption">
-Figure 3.4: Bagging v.s. Random Forest.
+FIGURE 3.4: Bagging v.s. Random Forest.
 </p>
 </div>
 </div>
-<div id="stacked-generalization" class="section level2">
+<div id="stacked-generalization" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Stacked Generalization</h2>
-<p>Stacked Generalization (a.k.a <em>Stacking</em>) is a powerful ensemble learning method proposed by <span class="citation">Wolpert (<a href="#ref-wolpertStacked" role="doc-biblioref">1992</a>)</span>. The method consists of training a set of <strong>powerful</strong> base learners (<em>first-level learners</em>) and then combining their outputs by <em>stacking</em> them to form a new train set. The base learners’ outputs correspond to their predictions and optionally, the class probabilities of those predictions. The predictions of the base learners are known as the <strong>meta-features</strong>. Then, those meta-features along with their true labels <span class="math inline">\(y\)</span> are used to build a new train set that is used to train a <strong>meta-learner</strong>. The rationale behind this is that the predictions themselves contain information that can be used by the <em>meta-learner</em>.</p>
+<p>Stacked Generalization (a.k.a <em>Stacking</em>) is a powerful ensemble learning method proposed by <span class="citation"><a href="references.html#ref-wolpertStacked" role="doc-biblioref">Wolpert</a> (<a href="references.html#ref-wolpertStacked" role="doc-biblioref">1992</a>)</span>. The method consists of training a set of <strong>powerful</strong> base learners (<em>first-level learners</em>) and then combining their outputs by <em>stacking</em> them to form a new train set. The base learners’ outputs correspond to their predictions and optionally, the class probabilities of those predictions. The predictions of the base learners are known as the <strong>meta-features</strong>. Then, those meta-features along with their true labels <span class="math inline">\(y\)</span> are used to build a new train set that is used to train a <strong>meta-learner</strong>. The rationale behind this is that the predictions themselves contain information that can be used by the <em>meta-learner</em>.</p>
 <p>The procedure to train a Stacking model is as follows:</p>
 <ol style="list-style-type: decimal">
 <li><p>Define a set of first level-learners <span class="math inline">\(\mathscr{L}\)</span> and a <em>meta-learner</em>.</p></li>
@@ -606,142 +642,141 @@ Figure 3.4: Bagging v.s. Random Forest.
 <div class="figure" style="text-align: center"><span id="fig:stackingProcess"></span>
 <img src="images/stacking.png" alt="Process to generate the new train set D' for the meta-learner by column-binding the predictions of the first-level learners and adding the true labels." width="80%" />
 <p class="caption">
-Figure 3.5: Process to generate the new train set D’ for the meta-learner by column-binding the predictions of the first-level learners and adding the true labels.
+FIGURE 3.5: Process to generate the new train set D’ for the meta-learner by column-binding the predictions of the first-level learners and adding the true labels.
 </p>
 </div>
 <p>Note that steps <span class="math inline">\(2\)</span> and <span class="math inline">\(3\)</span> can lead to overfitting because the predictions are made with the same data used to train the models. To avoid this, steps <span class="math inline">\(2\)</span> and <span class="math inline">\(3\)</span> are usually performed using <span class="math inline">\(k\)</span>-fold cross-validation. After <span class="math inline">\(\textbf{D}&#39;\)</span> has been generated, the learners in <span class="math inline">\(\mathscr{L}\)</span> can be retrained using all data in <span class="math inline">\(\textbf{D}\)</span>.</p>
-<p><span class="citation">Ting and Witten (<a href="#ref-ting1999" role="doc-biblioref">1999</a>)</span> showed that the performance can increase by adding confidence information about the predictions. For example, the probabilities produced by the first-level learners. Most classifiers can output probabilities.</p>
+<p><span class="citation"><a href="references.html#ref-ting1999" role="doc-biblioref">Ting and Witten</a> (<a href="references.html#ref-ting1999" role="doc-biblioref">1999</a>)</span> showed that the performance can increase by adding confidence information about the predictions. For example, the probabilities produced by the first-level learners. Most classifiers can output probabilities.</p>
 <p>At prediction time, each first-level learner predicts the class, and optionally, the class probabilities of a given instance. These predictions are used to form a feature vector (<em>meta-features</em>) that is fed to the <em>meta-learner</em> to obtain the final prediction. Usually, first-level learners are high performing classifiers such as Random Forests, Support Vector Machines, Neural Networks, etc. The <em>meta-learner</em> should also be a powerful classifier.</p>
 <p>In the next section, I will introduce <em>Multi-view Stacking</em> which basically is the same as Generalized Stacking but each first-level learner is trained with features from a different <em>view</em>.</p>
 </div>
-<div id="multiviewhometasks" class="section level2">
+<div id="multiviewhometasks" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Multi-view Stacking for Home Tasks Recognition</h2>
 
 <div class="rmdfolder">
 <code>stacking_algorithms.R</code> <code>stacking_activities.R</code>
 </div>
-
-<p><strong>Multi-view learning</strong> refers to the case when an instance can be characterized by two or more independent ‘views’. For example, one can extract features for webpage classification from a webpage’s text but also from the links pointing to it. Usually, there is the assumption that the views are independent and each is sufficient to solve the problem. Then, why combine them? In many cases, each different view provides additional and complementary information, thus, allowing to train better models.</p>
+<p><strong>Multi-view learning</strong> refers to the case when an instance can be characterized by two or more independent ‘views.’ For example, one can extract features for webpage classification from a webpage’s text but also from the links pointing to it. Usually, there is the assumption that the views are independent and each is sufficient to solve the problem. Then, why combine them? In many cases, each different view provides additional and complementary information, thus, allowing to train better models.</p>
 <p>The simplest thing one can do is to extract features from each view, aggregate them, and train a single model. This approach usually works well but it has some limitations. Each view may have different statistical properties, thus, different types of models may be needed for each view. When aggregating features from all views, new variable correlations may be introduced which could impact the performance. Another limitation is that features need to be in the same format (feature vectors, images, etc.), so they can be aggregated.</p>
-<p>For video classification, we could have two views. One represented by sequences of images, and the other one by the corresponding audio. For the video part, we could encode the features as the images themselves, i.e., matrices. Then, a Convolutional Neural Network (covered in chapter <a href="deeplearning.html#deeplearning">8</a>) could be trained directly from those images. For the audio part, statistical features can be extracted and stored into normal feature vectors. In this case, the two representations (views) are different. One is a matrix and the other one a one-dimensional feature vector. Combining them to train a single classifier could be problematic given the nature of the views and their different encoding formats. Instead, we can train two models, one for each view and then combine the results. This is precisely the idea of <em>Multi-view Stacking</em> <span class="citation">(Garcia-Ceja, Galván-Tejada, and Brena <a href="#ref-garcia2018multiview" role="doc-biblioref">2018</a>)</span>. Train a different model for each view and combine the outputs like in <em>Stacking</em>.</p>
+<p>For video classification, we could have two views. One represented by sequences of images, and the other one by the corresponding audio. For the video part, we could encode the features as the images themselves, i.e., matrices. Then, a Convolutional Neural Network (covered in chapter <a href="deeplearning.html#deeplearning">8</a>) could be trained directly from those images. For the audio part, statistical features can be extracted and stored into normal feature vectors. In this case, the two representations (views) are different. One is a matrix and the other one a one-dimensional feature vector. Combining them to train a single classifier could be problematic given the nature of the views and their different encoding formats. Instead, we can train two models, one for each view and then combine the results. This is precisely the idea of <em>Multi-view Stacking</em> <span class="citation">(<a href="references.html#ref-garcia2018multiview" role="doc-biblioref">Garcia-Ceja, Galván-Tejada, and Brena 2018</a>)</span>. Train a different model for each view and combine the outputs like in <em>Stacking</em>.</p>
 <p>Here, <em>Multi-view Stacking</em> will be demonstrated using the <em>HOME TASKS</em> dataset. This dataset was collected from two sources. Acceleration and audio. The acceleration was recorded with a wrist-band watch and the audio using a cellphone. This dataset consists of <span class="math inline">\(7\)</span> common home tasks: <em>‘mop floor’</em>, <em>‘sweep floor’</em>, <em>‘type on computer keyboard’</em>, <em>‘brush teeth’</em>, <em>‘wash hands’</em>, <em>‘eat chips’</em>, and <em>‘watch t.v.’</em>. Three volunteers performed each activity for approximately <span class="math inline">\(3\)</span> minutes.</p>
 <p>The acceleration and audio signals were segmented into <span class="math inline">\(3\)</span> sec. windows. From each window, different features were extracted. From the acceleration, <span class="math inline">\(16\)</span> features were extracted from the <span class="math inline">\(3\)</span> axes (<span class="math inline">\(x\)</span>,<span class="math inline">\(y\)</span>,<span class="math inline">\(z\)</span>) such as mean, standard deviation, maximum values, mean magnitude, area under the curve, etc. From the audio signals, <span class="math inline">\(12\)</span> features were extracted, namely, Mel Frequency Cepstral Coefficients (MFCCs). To preserve volunteers’ privacy, the original audio was not released. The dataset already contains the extracted features from acceleration and audio. The first column is the label.</p>
 <p>In order to implement <em>Multi-view Stacking</em>, two Random Forests will be trained, one for each view (acceleration and audio). The predicted outputs will be stacked to form the new training set <span class="math inline">\(D&#39;\)</span> and a Random Forest trained with <span class="math inline">\(D&#39;\)</span> will act as the <em>meta-learner</em>.</p>
 <p>The next code snippet taken from <code>stacking_algorithms.R</code> shows the multi-view stacking function implemented in R.</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="ensemble.html#cb79-1"></a>mvstacking &lt;-<span class="st"> </span><span class="cf">function</span>(D, v1cols, v2cols, <span class="dt">k =</span> <span class="dv">10</span>){</span>
-<span id="cb79-2"><a href="ensemble.html#cb79-2"></a>  </span>
-<span id="cb79-3"><a href="ensemble.html#cb79-3"></a>  <span class="co"># Generate folds for internal cross-validation.</span></span>
-<span id="cb79-4"><a href="ensemble.html#cb79-4"></a>  folds &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span>k, <span class="dt">size =</span> <span class="kw">nrow</span>(D), <span class="dt">replace =</span> T)</span>
-<span id="cb79-5"><a href="ensemble.html#cb79-5"></a>  </span>
-<span id="cb79-6"><a href="ensemble.html#cb79-6"></a>  trueLabels &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb79-7"><a href="ensemble.html#cb79-7"></a>  predicted.v1 &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co"># predicted labels with view 1</span></span>
-<span id="cb79-8"><a href="ensemble.html#cb79-8"></a>  predicted.v2 &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co"># predicted labels with view 2</span></span>
-<span id="cb79-9"><a href="ensemble.html#cb79-9"></a>  probs.v1 &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co"># predicted probabilities with view 1</span></span>
-<span id="cb79-10"><a href="ensemble.html#cb79-10"></a>  probs.v2 &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co"># predicted probabilities with view 2</span></span>
-<span id="cb79-11"><a href="ensemble.html#cb79-11"></a></span>
-<span id="cb79-12"><a href="ensemble.html#cb79-12"></a>  <span class="co"># Perform internal cross-validation.</span></span>
-<span id="cb79-13"><a href="ensemble.html#cb79-13"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>k){</span>
-<span id="cb79-14"><a href="ensemble.html#cb79-14"></a>    </span>
-<span id="cb79-15"><a href="ensemble.html#cb79-15"></a>    train &lt;-<span class="st"> </span>D[folds <span class="op">!=</span><span class="st"> </span>i, ]</span>
-<span id="cb79-16"><a href="ensemble.html#cb79-16"></a>    test &lt;-<span class="st"> </span>D[folds <span class="op">==</span><span class="st"> </span>i, ]</span>
-<span id="cb79-17"><a href="ensemble.html#cb79-17"></a>    trueLabels &lt;-<span class="st"> </span><span class="kw">c</span>(trueLabels, <span class="kw">as.character</span>(test<span class="op">$</span>label))</span>
-<span id="cb79-18"><a href="ensemble.html#cb79-18"></a>    </span>
-<span id="cb79-19"><a href="ensemble.html#cb79-19"></a>    <span class="co"># Train learner with view 1 and make predictions.</span></span>
-<span id="cb79-20"><a href="ensemble.html#cb79-20"></a>    m.v1 &lt;-<span class="st"> </span><span class="kw">randomForest</span>(label <span class="op">~</span>.,</span>
-<span id="cb79-21"><a href="ensemble.html#cb79-21"></a>                         train[,<span class="kw">c</span>(<span class="st">&quot;label&quot;</span>,v1cols)], <span class="dt">nt =</span> <span class="dv">100</span>)</span>
-<span id="cb79-22"><a href="ensemble.html#cb79-22"></a>    raw.v1 &lt;-<span class="st"> </span><span class="kw">predict</span>(m.v1, <span class="dt">newdata =</span> test[,v1cols], <span class="dt">type =</span> <span class="st">&quot;prob&quot;</span>)</span>
-<span id="cb79-23"><a href="ensemble.html#cb79-23"></a>    probs.v1 &lt;-<span class="st"> </span><span class="kw">rbind</span>(probs.v1, raw.v1)</span>
-<span id="cb79-24"><a href="ensemble.html#cb79-24"></a>    pred.v1 &lt;-<span class="st"> </span><span class="kw">as.character</span>(<span class="kw">predict</span>(m.v1,</span>
-<span id="cb79-25"><a href="ensemble.html#cb79-25"></a>                                    <span class="dt">newdata =</span> test[,v1cols],</span>
-<span id="cb79-26"><a href="ensemble.html#cb79-26"></a>                                    <span class="dt">type =</span> <span class="st">&quot;class&quot;</span>))</span>
-<span id="cb79-27"><a href="ensemble.html#cb79-27"></a>    predicted.v1 &lt;-<span class="st"> </span><span class="kw">c</span>(predicted.v1, pred.v1)</span>
-<span id="cb79-28"><a href="ensemble.html#cb79-28"></a>    </span>
-<span id="cb79-29"><a href="ensemble.html#cb79-29"></a>    <span class="co"># Train learner with view 2 and make predictions.</span></span>
-<span id="cb79-30"><a href="ensemble.html#cb79-30"></a>    m.v2 &lt;-<span class="st"> </span><span class="kw">randomForest</span>(label <span class="op">~</span>.,</span>
-<span id="cb79-31"><a href="ensemble.html#cb79-31"></a>                         train[,<span class="kw">c</span>(<span class="st">&quot;label&quot;</span>,v2cols)], <span class="dt">nt =</span> <span class="dv">100</span>)</span>
-<span id="cb79-32"><a href="ensemble.html#cb79-32"></a>    raw.v2 &lt;-<span class="st"> </span><span class="kw">predict</span>(m.v2, <span class="dt">newdata =</span> test[,v2cols], <span class="dt">type =</span> <span class="st">&quot;prob&quot;</span>)</span>
-<span id="cb79-33"><a href="ensemble.html#cb79-33"></a>    probs.v2 &lt;-<span class="st"> </span><span class="kw">rbind</span>(probs.v2, raw.v2)</span>
-<span id="cb79-34"><a href="ensemble.html#cb79-34"></a>    pred.v2 &lt;-<span class="st"> </span><span class="kw">as.character</span>(<span class="kw">predict</span>(m.v2,</span>
-<span id="cb79-35"><a href="ensemble.html#cb79-35"></a>                                    <span class="dt">newdata =</span> test[,v2cols],</span>
-<span id="cb79-36"><a href="ensemble.html#cb79-36"></a>                                    <span class="dt">type =</span> <span class="st">&quot;class&quot;</span>))</span>
-<span id="cb79-37"><a href="ensemble.html#cb79-37"></a>    predicted.v2 &lt;-<span class="st"> </span><span class="kw">c</span>(predicted.v2, pred.v2)</span>
-<span id="cb79-38"><a href="ensemble.html#cb79-38"></a>  }</span>
-<span id="cb79-39"><a href="ensemble.html#cb79-39"></a>  </span>
-<span id="cb79-40"><a href="ensemble.html#cb79-40"></a>  <span class="co"># Build first-order learners with all data.</span></span>
-<span id="cb79-41"><a href="ensemble.html#cb79-41"></a>  learnerV1 &lt;-<span class="st"> </span><span class="kw">randomForest</span>(label <span class="op">~</span>.,</span>
-<span id="cb79-42"><a href="ensemble.html#cb79-42"></a>                            D[,<span class="kw">c</span>(<span class="st">&quot;label&quot;</span>,v1cols)], <span class="dt">nt =</span> <span class="dv">100</span>)</span>
-<span id="cb79-43"><a href="ensemble.html#cb79-43"></a>  learnerV2 &lt;-<span class="st"> </span><span class="kw">randomForest</span>(label <span class="op">~</span>.,</span>
-<span id="cb79-44"><a href="ensemble.html#cb79-44"></a>                            D[,<span class="kw">c</span>(<span class="st">&quot;label&quot;</span>,v2cols)], <span class="dt">nt =</span> <span class="dv">100</span>)</span>
-<span id="cb79-45"><a href="ensemble.html#cb79-45"></a>    </span>
-<span id="cb79-46"><a href="ensemble.html#cb79-46"></a>  <span class="co"># Construct meta-features.</span></span>
-<span id="cb79-47"><a href="ensemble.html#cb79-47"></a>  metaFeatures &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">label =</span> trueLabels,</span>
-<span id="cb79-48"><a href="ensemble.html#cb79-48"></a>                             ((probs.v1 <span class="op">+</span><span class="st"> </span>probs.v2) <span class="op">/</span><span class="st"> </span><span class="dv">2</span>),</span>
-<span id="cb79-49"><a href="ensemble.html#cb79-49"></a>                             <span class="dt">pred1 =</span> predicted.v1,</span>
-<span id="cb79-50"><a href="ensemble.html#cb79-50"></a>                             <span class="dt">pred2 =</span> predicted.v2)</span>
-<span id="cb79-51"><a href="ensemble.html#cb79-51"></a></span>
-<span id="cb79-52"><a href="ensemble.html#cb79-52"></a>  <span class="co">#train meta-learner</span></span>
-<span id="cb79-53"><a href="ensemble.html#cb79-53"></a>  metalearner &lt;-<span class="st"> </span><span class="kw">randomForest</span>(label <span class="op">~</span>.,</span>
-<span id="cb79-54"><a href="ensemble.html#cb79-54"></a>                              metaFeatures, <span class="dt">nt =</span> <span class="dv">100</span>)</span>
-<span id="cb79-55"><a href="ensemble.html#cb79-55"></a>  </span>
-<span id="cb79-56"><a href="ensemble.html#cb79-56"></a>  res &lt;-<span class="st"> </span><span class="kw">structure</span>(<span class="kw">list</span>(<span class="dt">metalearner=</span>metalearner,</span>
-<span id="cb79-57"><a href="ensemble.html#cb79-57"></a>                        <span class="dt">learnerV1=</span>learnerV1,</span>
-<span id="cb79-58"><a href="ensemble.html#cb79-58"></a>                        <span class="dt">learnerV2=</span>learnerV2,</span>
-<span id="cb79-59"><a href="ensemble.html#cb79-59"></a>                        <span class="dt">v1cols =</span> v1cols,</span>
-<span id="cb79-60"><a href="ensemble.html#cb79-60"></a>                        <span class="dt">v2cols =</span> v2cols),</span>
-<span id="cb79-61"><a href="ensemble.html#cb79-61"></a>                   <span class="dt">class =</span> <span class="st">&quot;mvstacking&quot;</span>)</span>
-<span id="cb79-62"><a href="ensemble.html#cb79-62"></a>  </span>
-<span id="cb79-63"><a href="ensemble.html#cb79-63"></a>  <span class="kw">return</span>(res)</span>
-<span id="cb79-64"><a href="ensemble.html#cb79-64"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="ensemble.html#cb79-1" aria-hidden="true" tabindex="-1"></a>mvstacking <span class="ot">&lt;-</span> <span class="cf">function</span>(D, v1cols, v2cols, <span class="at">k =</span> <span class="dv">10</span>){</span>
+<span id="cb79-2"><a href="ensemble.html#cb79-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb79-3"><a href="ensemble.html#cb79-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Generate folds for internal cross-validation.</span></span>
+<span id="cb79-4"><a href="ensemble.html#cb79-4" aria-hidden="true" tabindex="-1"></a>  folds <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>k, <span class="at">size =</span> <span class="fu">nrow</span>(D), <span class="at">replace =</span> T)</span>
+<span id="cb79-5"><a href="ensemble.html#cb79-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb79-6"><a href="ensemble.html#cb79-6" aria-hidden="true" tabindex="-1"></a>  trueLabels <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb79-7"><a href="ensemble.html#cb79-7" aria-hidden="true" tabindex="-1"></a>  predicted.v1 <span class="ot">&lt;-</span> <span class="cn">NULL</span> <span class="co"># predicted labels with view 1</span></span>
+<span id="cb79-8"><a href="ensemble.html#cb79-8" aria-hidden="true" tabindex="-1"></a>  predicted.v2 <span class="ot">&lt;-</span> <span class="cn">NULL</span> <span class="co"># predicted labels with view 2</span></span>
+<span id="cb79-9"><a href="ensemble.html#cb79-9" aria-hidden="true" tabindex="-1"></a>  probs.v1 <span class="ot">&lt;-</span> <span class="cn">NULL</span> <span class="co"># predicted probabilities with view 1</span></span>
+<span id="cb79-10"><a href="ensemble.html#cb79-10" aria-hidden="true" tabindex="-1"></a>  probs.v2 <span class="ot">&lt;-</span> <span class="cn">NULL</span> <span class="co"># predicted probabilities with view 2</span></span>
+<span id="cb79-11"><a href="ensemble.html#cb79-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-12"><a href="ensemble.html#cb79-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Perform internal cross-validation.</span></span>
+<span id="cb79-13"><a href="ensemble.html#cb79-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k){</span>
+<span id="cb79-14"><a href="ensemble.html#cb79-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb79-15"><a href="ensemble.html#cb79-15" aria-hidden="true" tabindex="-1"></a>    train <span class="ot">&lt;-</span> D[folds <span class="sc">!=</span> i, ]</span>
+<span id="cb79-16"><a href="ensemble.html#cb79-16" aria-hidden="true" tabindex="-1"></a>    test <span class="ot">&lt;-</span> D[folds <span class="sc">==</span> i, ]</span>
+<span id="cb79-17"><a href="ensemble.html#cb79-17" aria-hidden="true" tabindex="-1"></a>    trueLabels <span class="ot">&lt;-</span> <span class="fu">c</span>(trueLabels, <span class="fu">as.character</span>(test<span class="sc">$</span>label))</span>
+<span id="cb79-18"><a href="ensemble.html#cb79-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb79-19"><a href="ensemble.html#cb79-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Train learner with view 1 and make predictions.</span></span>
+<span id="cb79-20"><a href="ensemble.html#cb79-20" aria-hidden="true" tabindex="-1"></a>    m.v1 <span class="ot">&lt;-</span> <span class="fu">randomForest</span>(label <span class="sc">~</span>.,</span>
+<span id="cb79-21"><a href="ensemble.html#cb79-21" aria-hidden="true" tabindex="-1"></a>                         train[,<span class="fu">c</span>(<span class="st">&quot;label&quot;</span>,v1cols)], <span class="at">nt =</span> <span class="dv">100</span>)</span>
+<span id="cb79-22"><a href="ensemble.html#cb79-22" aria-hidden="true" tabindex="-1"></a>    raw.v1 <span class="ot">&lt;-</span> <span class="fu">predict</span>(m.v1, <span class="at">newdata =</span> test[,v1cols], <span class="at">type =</span> <span class="st">&quot;prob&quot;</span>)</span>
+<span id="cb79-23"><a href="ensemble.html#cb79-23" aria-hidden="true" tabindex="-1"></a>    probs.v1 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(probs.v1, raw.v1)</span>
+<span id="cb79-24"><a href="ensemble.html#cb79-24" aria-hidden="true" tabindex="-1"></a>    pred.v1 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">predict</span>(m.v1,</span>
+<span id="cb79-25"><a href="ensemble.html#cb79-25" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">newdata =</span> test[,v1cols],</span>
+<span id="cb79-26"><a href="ensemble.html#cb79-26" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">type =</span> <span class="st">&quot;class&quot;</span>))</span>
+<span id="cb79-27"><a href="ensemble.html#cb79-27" aria-hidden="true" tabindex="-1"></a>    predicted.v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(predicted.v1, pred.v1)</span>
+<span id="cb79-28"><a href="ensemble.html#cb79-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb79-29"><a href="ensemble.html#cb79-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Train learner with view 2 and make predictions.</span></span>
+<span id="cb79-30"><a href="ensemble.html#cb79-30" aria-hidden="true" tabindex="-1"></a>    m.v2 <span class="ot">&lt;-</span> <span class="fu">randomForest</span>(label <span class="sc">~</span>.,</span>
+<span id="cb79-31"><a href="ensemble.html#cb79-31" aria-hidden="true" tabindex="-1"></a>                         train[,<span class="fu">c</span>(<span class="st">&quot;label&quot;</span>,v2cols)], <span class="at">nt =</span> <span class="dv">100</span>)</span>
+<span id="cb79-32"><a href="ensemble.html#cb79-32" aria-hidden="true" tabindex="-1"></a>    raw.v2 <span class="ot">&lt;-</span> <span class="fu">predict</span>(m.v2, <span class="at">newdata =</span> test[,v2cols], <span class="at">type =</span> <span class="st">&quot;prob&quot;</span>)</span>
+<span id="cb79-33"><a href="ensemble.html#cb79-33" aria-hidden="true" tabindex="-1"></a>    probs.v2 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(probs.v2, raw.v2)</span>
+<span id="cb79-34"><a href="ensemble.html#cb79-34" aria-hidden="true" tabindex="-1"></a>    pred.v2 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">predict</span>(m.v2,</span>
+<span id="cb79-35"><a href="ensemble.html#cb79-35" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">newdata =</span> test[,v2cols],</span>
+<span id="cb79-36"><a href="ensemble.html#cb79-36" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">type =</span> <span class="st">&quot;class&quot;</span>))</span>
+<span id="cb79-37"><a href="ensemble.html#cb79-37" aria-hidden="true" tabindex="-1"></a>    predicted.v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(predicted.v2, pred.v2)</span>
+<span id="cb79-38"><a href="ensemble.html#cb79-38" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb79-39"><a href="ensemble.html#cb79-39" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb79-40"><a href="ensemble.html#cb79-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Build first-order learners with all data.</span></span>
+<span id="cb79-41"><a href="ensemble.html#cb79-41" aria-hidden="true" tabindex="-1"></a>  learnerV1 <span class="ot">&lt;-</span> <span class="fu">randomForest</span>(label <span class="sc">~</span>.,</span>
+<span id="cb79-42"><a href="ensemble.html#cb79-42" aria-hidden="true" tabindex="-1"></a>                            D[,<span class="fu">c</span>(<span class="st">&quot;label&quot;</span>,v1cols)], <span class="at">nt =</span> <span class="dv">100</span>)</span>
+<span id="cb79-43"><a href="ensemble.html#cb79-43" aria-hidden="true" tabindex="-1"></a>  learnerV2 <span class="ot">&lt;-</span> <span class="fu">randomForest</span>(label <span class="sc">~</span>.,</span>
+<span id="cb79-44"><a href="ensemble.html#cb79-44" aria-hidden="true" tabindex="-1"></a>                            D[,<span class="fu">c</span>(<span class="st">&quot;label&quot;</span>,v2cols)], <span class="at">nt =</span> <span class="dv">100</span>)</span>
+<span id="cb79-45"><a href="ensemble.html#cb79-45" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb79-46"><a href="ensemble.html#cb79-46" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Construct meta-features.</span></span>
+<span id="cb79-47"><a href="ensemble.html#cb79-47" aria-hidden="true" tabindex="-1"></a>  metaFeatures <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">label =</span> trueLabels,</span>
+<span id="cb79-48"><a href="ensemble.html#cb79-48" aria-hidden="true" tabindex="-1"></a>                             ((probs.v1 <span class="sc">+</span> probs.v2) <span class="sc">/</span> <span class="dv">2</span>),</span>
+<span id="cb79-49"><a href="ensemble.html#cb79-49" aria-hidden="true" tabindex="-1"></a>                             <span class="at">pred1 =</span> predicted.v1,</span>
+<span id="cb79-50"><a href="ensemble.html#cb79-50" aria-hidden="true" tabindex="-1"></a>                             <span class="at">pred2 =</span> predicted.v2)</span>
+<span id="cb79-51"><a href="ensemble.html#cb79-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-52"><a href="ensemble.html#cb79-52" aria-hidden="true" tabindex="-1"></a>  <span class="co">#train meta-learner</span></span>
+<span id="cb79-53"><a href="ensemble.html#cb79-53" aria-hidden="true" tabindex="-1"></a>  metalearner <span class="ot">&lt;-</span> <span class="fu">randomForest</span>(label <span class="sc">~</span>.,</span>
+<span id="cb79-54"><a href="ensemble.html#cb79-54" aria-hidden="true" tabindex="-1"></a>                              metaFeatures, <span class="at">nt =</span> <span class="dv">100</span>)</span>
+<span id="cb79-55"><a href="ensemble.html#cb79-55" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb79-56"><a href="ensemble.html#cb79-56" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">structure</span>(<span class="fu">list</span>(<span class="at">metalearner=</span>metalearner,</span>
+<span id="cb79-57"><a href="ensemble.html#cb79-57" aria-hidden="true" tabindex="-1"></a>                        <span class="at">learnerV1=</span>learnerV1,</span>
+<span id="cb79-58"><a href="ensemble.html#cb79-58" aria-hidden="true" tabindex="-1"></a>                        <span class="at">learnerV2=</span>learnerV2,</span>
+<span id="cb79-59"><a href="ensemble.html#cb79-59" aria-hidden="true" tabindex="-1"></a>                        <span class="at">v1cols =</span> v1cols,</span>
+<span id="cb79-60"><a href="ensemble.html#cb79-60" aria-hidden="true" tabindex="-1"></a>                        <span class="at">v2cols =</span> v2cols),</span>
+<span id="cb79-61"><a href="ensemble.html#cb79-61" aria-hidden="true" tabindex="-1"></a>                   <span class="at">class =</span> <span class="st">&quot;mvstacking&quot;</span>)</span>
+<span id="cb79-62"><a href="ensemble.html#cb79-62" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb79-63"><a href="ensemble.html#cb79-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(res)</span>
+<span id="cb79-64"><a href="ensemble.html#cb79-64" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>The first argument <code>D</code> is a data frame containing the training data. <code>v1cols</code> and <code>v2cols</code> are the column names of the two views. Finally, argument <code>k</code> specifies the number of folds for the internal cross-validation to avoid overfitting (Steps <span class="math inline">\(2\)</span> and <span class="math inline">\(3\)</span> as described in the generalized stacking procedure).</p>
 <p>The function iterates through each fold and trains a Random Forest with the train data for each of the two views. Within each iteration, the trained models are used to predict the labels and probabilities on the internal test set. Predicted labels and probabilities on the internal test sets are concatenated across all folds (<code>predicted.v1</code>, <code>predicted.v2</code>).</p>
 <p>After cross-validation, the meta-features are generated by creating a data frame with the predictions of each view. Additionally, the average of class probabilities is added as a meta-feature. The true labels are also added. The purpose of cross-validation was to avoid overfitting but at the end, we do not want to waste data so both learners are re-trained with all data <code>D</code>.</p>
 <p>Finally, the <em>meta-learner</em> which is also a Random Forest is trained with the <em>meta-features</em> data frame. A list with all the required information to make predictions is created. This includes first-level learners, the meta-learner, and the column names for each view so we know how to divide the data frame into two views at prediction time.</p>
 <p>The following code snippet shows the implementation for making predictions using a trained stacking model.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="ensemble.html#cb80-1"></a>predict.mvstacking &lt;-<span class="st"> </span><span class="cf">function</span>(object, newdata){</span>
-<span id="cb80-2"><a href="ensemble.html#cb80-2"></a>  </span>
-<span id="cb80-3"><a href="ensemble.html#cb80-3"></a>  <span class="co"># Predict probabilities with view 1.</span></span>
-<span id="cb80-4"><a href="ensemble.html#cb80-4"></a>  raw.v1 &lt;-<span class="st"> </span><span class="kw">predict</span>(object<span class="op">$</span>learnerV1,</span>
-<span id="cb80-5"><a href="ensemble.html#cb80-5"></a>                    <span class="dt">newdata =</span> newdata[,object<span class="op">$</span>v1cols],</span>
-<span id="cb80-6"><a href="ensemble.html#cb80-6"></a>                    <span class="dt">type =</span> <span class="st">&quot;prob&quot;</span>)</span>
-<span id="cb80-7"><a href="ensemble.html#cb80-7"></a>  </span>
-<span id="cb80-8"><a href="ensemble.html#cb80-8"></a>  <span class="co"># Predict classes with view 1.</span></span>
-<span id="cb80-9"><a href="ensemble.html#cb80-9"></a>  pred.v1 &lt;-<span class="st"> </span><span class="kw">as.character</span>(<span class="kw">predict</span>(object<span class="op">$</span>learnerV1,</span>
-<span id="cb80-10"><a href="ensemble.html#cb80-10"></a>                                  <span class="dt">newdata =</span> newdata[,object<span class="op">$</span>v1cols],</span>
-<span id="cb80-11"><a href="ensemble.html#cb80-11"></a>                                  <span class="dt">type =</span> <span class="st">&quot;class&quot;</span>))</span>
-<span id="cb80-12"><a href="ensemble.html#cb80-12"></a>  </span>
-<span id="cb80-13"><a href="ensemble.html#cb80-13"></a>  <span class="co"># Predict probabilities with view 2.</span></span>
-<span id="cb80-14"><a href="ensemble.html#cb80-14"></a>  raw.v2 &lt;-<span class="st"> </span><span class="kw">predict</span>(object<span class="op">$</span>learnerV2,</span>
-<span id="cb80-15"><a href="ensemble.html#cb80-15"></a>                    <span class="dt">newdata =</span> newdata[,object<span class="op">$</span>v2cols],</span>
-<span id="cb80-16"><a href="ensemble.html#cb80-16"></a>                    <span class="dt">type =</span> <span class="st">&quot;prob&quot;</span>)</span>
-<span id="cb80-17"><a href="ensemble.html#cb80-17"></a>  </span>
-<span id="cb80-18"><a href="ensemble.html#cb80-18"></a>  <span class="co"># Predict classes with view 2.</span></span>
-<span id="cb80-19"><a href="ensemble.html#cb80-19"></a>  pred.v2 &lt;-<span class="st"> </span><span class="kw">as.character</span>(<span class="kw">predict</span>(object<span class="op">$</span>learnerV2,</span>
-<span id="cb80-20"><a href="ensemble.html#cb80-20"></a>                                  <span class="dt">newdata =</span> newdata[,object<span class="op">$</span>v2cols],</span>
-<span id="cb80-21"><a href="ensemble.html#cb80-21"></a>                                  <span class="dt">type =</span> <span class="st">&quot;class&quot;</span>))</span>
-<span id="cb80-22"><a href="ensemble.html#cb80-22"></a></span>
-<span id="cb80-23"><a href="ensemble.html#cb80-23"></a>  <span class="co"># Build meta-features</span></span>
-<span id="cb80-24"><a href="ensemble.html#cb80-24"></a>  metaFeatures &lt;-<span class="st"> </span><span class="kw">data.frame</span>(((raw.v1 <span class="op">+</span><span class="st"> </span>raw.v2) <span class="op">/</span><span class="st"> </span><span class="dv">2</span>),</span>
-<span id="cb80-25"><a href="ensemble.html#cb80-25"></a>                             <span class="dt">pred1 =</span> pred.v1,</span>
-<span id="cb80-26"><a href="ensemble.html#cb80-26"></a>                             <span class="dt">pred2 =</span> pred.v2)</span>
-<span id="cb80-27"><a href="ensemble.html#cb80-27"></a></span>
-<span id="cb80-28"><a href="ensemble.html#cb80-28"></a>  <span class="co"># Set levels on factors to avoid errors in randomForest predict.</span></span>
-<span id="cb80-29"><a href="ensemble.html#cb80-29"></a>  <span class="kw">levels</span>(metaFeatures<span class="op">$</span>pred1) &lt;-<span class="st"> </span>object<span class="op">$</span>metalearner<span class="op">$</span>classes</span>
-<span id="cb80-30"><a href="ensemble.html#cb80-30"></a>  <span class="kw">levels</span>(metaFeatures<span class="op">$</span>pred2) &lt;-<span class="st"> </span>object<span class="op">$</span>metalearner<span class="op">$</span>classes</span>
-<span id="cb80-31"><a href="ensemble.html#cb80-31"></a>  </span>
-<span id="cb80-32"><a href="ensemble.html#cb80-32"></a>  predictions &lt;-<span class="st"> </span><span class="kw">as.character</span>(<span class="kw">predict</span>(object<span class="op">$</span>metalearner,</span>
-<span id="cb80-33"><a href="ensemble.html#cb80-33"></a>                                      <span class="dt">newdata =</span> metaFeatures),</span>
-<span id="cb80-34"><a href="ensemble.html#cb80-34"></a>                              <span class="dt">type=</span><span class="st">&quot;class&quot;</span>)</span>
-<span id="cb80-35"><a href="ensemble.html#cb80-35"></a>  </span>
-<span id="cb80-36"><a href="ensemble.html#cb80-36"></a>  <span class="kw">return</span>(predictions)</span>
-<span id="cb80-37"><a href="ensemble.html#cb80-37"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="ensemble.html#cb80-1" aria-hidden="true" tabindex="-1"></a>predict.mvstacking <span class="ot">&lt;-</span> <span class="cf">function</span>(object, newdata){</span>
+<span id="cb80-2"><a href="ensemble.html#cb80-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb80-3"><a href="ensemble.html#cb80-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Predict probabilities with view 1.</span></span>
+<span id="cb80-4"><a href="ensemble.html#cb80-4" aria-hidden="true" tabindex="-1"></a>  raw.v1 <span class="ot">&lt;-</span> <span class="fu">predict</span>(object<span class="sc">$</span>learnerV1,</span>
+<span id="cb80-5"><a href="ensemble.html#cb80-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">newdata =</span> newdata[,object<span class="sc">$</span>v1cols],</span>
+<span id="cb80-6"><a href="ensemble.html#cb80-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">type =</span> <span class="st">&quot;prob&quot;</span>)</span>
+<span id="cb80-7"><a href="ensemble.html#cb80-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb80-8"><a href="ensemble.html#cb80-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Predict classes with view 1.</span></span>
+<span id="cb80-9"><a href="ensemble.html#cb80-9" aria-hidden="true" tabindex="-1"></a>  pred.v1 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">predict</span>(object<span class="sc">$</span>learnerV1,</span>
+<span id="cb80-10"><a href="ensemble.html#cb80-10" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">newdata =</span> newdata[,object<span class="sc">$</span>v1cols],</span>
+<span id="cb80-11"><a href="ensemble.html#cb80-11" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">type =</span> <span class="st">&quot;class&quot;</span>))</span>
+<span id="cb80-12"><a href="ensemble.html#cb80-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb80-13"><a href="ensemble.html#cb80-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Predict probabilities with view 2.</span></span>
+<span id="cb80-14"><a href="ensemble.html#cb80-14" aria-hidden="true" tabindex="-1"></a>  raw.v2 <span class="ot">&lt;-</span> <span class="fu">predict</span>(object<span class="sc">$</span>learnerV2,</span>
+<span id="cb80-15"><a href="ensemble.html#cb80-15" aria-hidden="true" tabindex="-1"></a>                    <span class="at">newdata =</span> newdata[,object<span class="sc">$</span>v2cols],</span>
+<span id="cb80-16"><a href="ensemble.html#cb80-16" aria-hidden="true" tabindex="-1"></a>                    <span class="at">type =</span> <span class="st">&quot;prob&quot;</span>)</span>
+<span id="cb80-17"><a href="ensemble.html#cb80-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb80-18"><a href="ensemble.html#cb80-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Predict classes with view 2.</span></span>
+<span id="cb80-19"><a href="ensemble.html#cb80-19" aria-hidden="true" tabindex="-1"></a>  pred.v2 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">predict</span>(object<span class="sc">$</span>learnerV2,</span>
+<span id="cb80-20"><a href="ensemble.html#cb80-20" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">newdata =</span> newdata[,object<span class="sc">$</span>v2cols],</span>
+<span id="cb80-21"><a href="ensemble.html#cb80-21" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">type =</span> <span class="st">&quot;class&quot;</span>))</span>
+<span id="cb80-22"><a href="ensemble.html#cb80-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-23"><a href="ensemble.html#cb80-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Build meta-features</span></span>
+<span id="cb80-24"><a href="ensemble.html#cb80-24" aria-hidden="true" tabindex="-1"></a>  metaFeatures <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(((raw.v1 <span class="sc">+</span> raw.v2) <span class="sc">/</span> <span class="dv">2</span>),</span>
+<span id="cb80-25"><a href="ensemble.html#cb80-25" aria-hidden="true" tabindex="-1"></a>                             <span class="at">pred1 =</span> pred.v1,</span>
+<span id="cb80-26"><a href="ensemble.html#cb80-26" aria-hidden="true" tabindex="-1"></a>                             <span class="at">pred2 =</span> pred.v2)</span>
+<span id="cb80-27"><a href="ensemble.html#cb80-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-28"><a href="ensemble.html#cb80-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Set levels on factors to avoid errors in randomForest predict.</span></span>
+<span id="cb80-29"><a href="ensemble.html#cb80-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">levels</span>(metaFeatures<span class="sc">$</span>pred1) <span class="ot">&lt;-</span> object<span class="sc">$</span>metalearner<span class="sc">$</span>classes</span>
+<span id="cb80-30"><a href="ensemble.html#cb80-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">levels</span>(metaFeatures<span class="sc">$</span>pred2) <span class="ot">&lt;-</span> object<span class="sc">$</span>metalearner<span class="sc">$</span>classes</span>
+<span id="cb80-31"><a href="ensemble.html#cb80-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb80-32"><a href="ensemble.html#cb80-32" aria-hidden="true" tabindex="-1"></a>  predictions <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">predict</span>(object<span class="sc">$</span>metalearner,</span>
+<span id="cb80-33"><a href="ensemble.html#cb80-33" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">newdata =</span> metaFeatures),</span>
+<span id="cb80-34"><a href="ensemble.html#cb80-34" aria-hidden="true" tabindex="-1"></a>                              <span class="at">type=</span><span class="st">&quot;class&quot;</span>)</span>
+<span id="cb80-35"><a href="ensemble.html#cb80-35" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb80-36"><a href="ensemble.html#cb80-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(predictions)</span>
+<span id="cb80-37"><a href="ensemble.html#cb80-37" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>The <code>object</code> parameter is the trained model and <code>newdata</code> is a data frame from which we want to make the predictions. First, labels and probabilities are predicted using the two views. Then, a data frame with the <em>meta-features</em> is assembled with the predicted label and the averaged probabilities. Finally, the <em>meta-learner</em> is used to predict the final classes using the <em>meta-features</em>.</p>
 <p>The script <code>stacking_activities.R</code> shows how to use our <code>mvstacking()</code> function. With the following two lines we can train and make predictions.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="ensemble.html#cb81-1"></a>m.stacking &lt;-<span class="st"> </span><span class="kw">mvstacking</span>(trainset, v1cols, v2cols, <span class="dt">k =</span> <span class="dv">10</span>)</span>
-<span id="cb81-2"><a href="ensemble.html#cb81-2"></a>pred.stacking &lt;-<span class="st"> </span><span class="kw">predict</span>(m.stacking, <span class="dt">newdata =</span> testset[,<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="ensemble.html#cb81-1" aria-hidden="true" tabindex="-1"></a>m.stacking <span class="ot">&lt;-</span> <span class="fu">mvstacking</span>(trainset, v1cols, v2cols, <span class="at">k =</span> <span class="dv">10</span>)</span>
+<span id="cb81-2"><a href="ensemble.html#cb81-2" aria-hidden="true" tabindex="-1"></a>pred.stacking <span class="ot">&lt;-</span> <span class="fu">predict</span>(m.stacking, <span class="at">newdata =</span> testset[,<span class="sc">-</span><span class="dv">1</span>])</span></code></pre></div>
 <p>The script performs <span class="math inline">\(10\)</span>-fold cross-validation and for the sake of comparison, it builds three models. One with only audio features, one with only acceleration features, and the Multi-view Stacking one combining both types of features.</p>
 <p>Table <a href="ensemble.html#tab:stackingResults">3.1</a> shows the results for each view and with Multi-view Stacking. Clearly, combining both views with Multi-view Stacking achieved the best results compared to using a single view.</p>
 <table>
-<caption><span id="tab:stackingResults">Table 3.1: </span>Stacking results.</caption>
+<caption><span id="tab:stackingResults">TABLE 3.1: </span>Stacking results.</caption>
 <thead>
 <tr class="header">
 <th align="left"></th>
@@ -755,40 +790,39 @@ Figure 3.5: Process to generate the new train set D’ for the meta-learner by c
 <tbody>
 <tr class="odd">
 <td align="left">Audio</td>
-<td align="right">0.8463203</td>
-<td align="right">0.8413690</td>
-<td align="right">0.9741266</td>
-<td align="right">0.8487849</td>
-<td align="right">0.8438718</td>
+<td align="right">0.8463</td>
+<td align="right">0.8414</td>
+<td align="right">0.9741</td>
+<td align="right">0.8488</td>
+<td align="right">0.8439</td>
 </tr>
 <tr class="even">
 <td align="left">Accelerometer</td>
-<td align="right">0.8585859</td>
-<td align="right">0.8493635</td>
-<td align="right">0.9764988</td>
-<td align="right">0.8548481</td>
-<td align="right">0.8511572</td>
+<td align="right">0.8586</td>
+<td align="right">0.8494</td>
+<td align="right">0.9765</td>
+<td align="right">0.8548</td>
+<td align="right">0.8512</td>
 </tr>
 <tr class="odd">
 <td align="left">Multi-view Stacking</td>
-<td align="right">0.9393939</td>
-<td align="right">0.9349011</td>
-<td align="right">0.9899275</td>
-<td align="right">0.9371645</td>
-<td align="right">0.9358082</td>
+<td align="right">0.9394</td>
+<td align="right">0.9349</td>
+<td align="right">0.9899</td>
+<td align="right">0.9372</td>
+<td align="right">0.9358</td>
 </tr>
 </tbody>
 </table>
 <div class="figure" style="text-align: center"><span id="fig:stackingCMs"></span>
 <img src="images/stacking_cm.png" alt="Confusion matrices." width="100%" />
 <p class="caption">
-Figure 3.6: Confusion matrices.
+FIGURE 3.6: Confusion matrices.
 </p>
 </div>
 <p>Figure <a href="ensemble.html#fig:stackingCMs">3.6</a> shows the resulting confusion matrices for the three cases. By looking at the recall (anti-diagonal) of the individual classes, it seems that audio features are better at recognizing some activities like <em>‘sweep’</em> and <em>‘mop floor’</em> whereas the accelerometer features are better for classifying <em>‘eat chips’</em>, <em>‘wash hands’</em>, <em>‘type on keyboard’</em>, etc. thus, those two views are somehow complementary. All recall values when using Multi-view Stacking are higher than any of the other views.</p>
-
 </div>
-<div id="SummaryEnsemble" class="section level2">
+<div id="SummaryEnsemble" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> Summary</h2>
 <p>In this chapter, several ensemble learning methods were introduced. In general, ensemble models perform better than single models.</p>
 <ul>
@@ -803,30 +837,6 @@ Figure 3.6: Confusion matrices.
 
 </div>
 </div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-breimanBagging1996">
-<p>Breiman, Leo. 1996. “Bagging Predictors.” <em>Machine Learning</em> 24 (2): 123–40. <a href="https://doi.org/10.1023/A:1018054314350">https://doi.org/10.1023/A:1018054314350</a>.</p>
-</div>
-<div id="ref-breimanRF">
-<p>Breiman, Leo. 2001. “Random Forests.” <em>Machine Learning</em> 45 (1): 5–32.</p>
-</div>
-<div id="ref-garcia2018multiview">
-<p>Garcia-Ceja, Enrique, Carlos E Galván-Tejada, and Ramon Brena. 2018. “Multi-View Stacking for Activity Recognition with Sound and Accelerometer Data.” <em>Information Fusion</em> 40: 45–56.</p>
-</div>
-<div id="ref-randomForest">
-<p>Liaw, Andy, and Matthew Wiener. 2002. “Classification and Regression by randomForest.” <em>R News</em> 2 (3): 18–22. <a href="https://CRAN.R-project.org/doc/Rnews/">https://CRAN.R-project.org/doc/Rnews/</a>.</p>
-</div>
-<div id="ref-molnarInterpretable">
-<p>Molnar, Christoph. 2019. <em>Interpretable Machine Learning. A Guide for Making Black Box Models Explainable</em>. Leanpub.</p>
-</div>
-<div id="ref-ting1999">
-<p>Ting, Kai Ming, and Ian H Witten. 1999. “Issues in Stacked Generalization.” <em>Journal of Artificial Intelligence Research</em> 10: 271–89.</p>
-</div>
-<div id="ref-wolpertStacked">
-<p>Wolpert, David H. 1992. “Stacked Generalization.” <em>Neural Networks</em> 5 (2): 241–59.</p>
-</div>
-</div>
             </section>
 
           </div>
@@ -836,15 +846,15 @@ Figure 3.6: Confusion matrices.
 <a href="edavis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -877,7 +887,7 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "none"
 }
 });
 });

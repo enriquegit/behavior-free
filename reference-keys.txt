@@ -207,6 +207,7 @@ eq:standardize
 fig:lossAutoencoder
 fig:rocAutoencoder
 intro
+what-is-behavior
 what-is-machine-learning
 taxonomy
 terminology
