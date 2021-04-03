@@ -37,7 +37,7 @@ eq:entropy
 eq:binaryentropy
 fig:wisdmFirstLines
 fig:featureExtraction
-tab:activitiesTable
+fig:extractedFeatureVectors
 fig:activitiesTreeCM
 fig:activitiesTree
 eq:bayesclassifier
