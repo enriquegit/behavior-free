@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Introduction to Behavior and Machine Learning | Behavior Analysis with Machine Learning Using R</title>
   <meta name="description" content="Chapter 1 Introduction to Behavior and Machine Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Introduction to Behavior and Machine Learning | Behavior Analysis with Machine Learning Using R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:image" content="/images/cover.png" />
   <meta property="og:description" content="Chapter 1 Introduction to Behavior and Machine Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content="Chapter 1 Introduction to Behavior and Machine Learning | Behavior Analysis with Machine Learning Using R" />
   
   <meta name="twitter:description" content="Chapter 1 Introduction to Behavior and Machine Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="twitter:image" content="images/cover.png" />
+  <meta name="twitter:image" content="/images/cover.png" />
 
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-04-03" />
+<meta name="date" content="2021-04-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
 <script src="libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="libs/d3/d3.min.js"></script>
 <link href="libs/d3panels/d3panels.min.css" rel="stylesheet" />
@@ -80,6 +82,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -138,6 +141,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -356,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
 <li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#explore-and-visualize-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Explore and Visualize Trajectories</a></li>
+<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Exploring and Visualizing Trajectories</a></li>
 <li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
 <li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
 <li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC curve and AUC</a></li>
@@ -427,7 +453,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Both definitions are very similar and include humans and animals. Following those definitions, this book will focus on the automatic analysis of human and animal behaviors. There are three main reasons why one may want to analyze behaviors in an automatic manner:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>React.</strong> A biological or an artificial agent (or a combination of both) can take actions based on what is happening in the surrounding environment. For example, if suspicious behavior is detected in an airport, preventive actions can be triggered by security systems and the corresponding authorities. Without the possibility to automate such a detection system, it would be infeasible to implement it in practice. Just imagine trying to analyze airport traffic by hand.</p></li>
-<li><p><strong>Understand.</strong> Analyzing the behavior of an organism can help us to understand other associated behaviors and processes and to answer research questions. For example, <span class="citation"><a href="references.html#ref-williams2020" role="doc-biblioref">Williams et al.</a> (<a href="references.html#ref-williams2020" role="doc-biblioref">2020</a>)</span> found that <em>Andean condors</em> (the heaviest soaring bird) only flap their wings for about <span class="math inline">\(1\%\)</span> of their total flight time. In one of the cases, a condor flew <span class="math inline">\(\approx 172\)</span> km without flapping. Those findings were the result of analyzing the birds’ behavior from data recorded by bio-logging devices. In this book, several examples that make use of inertial devices will be studied.</p></li>
+<li><p><strong>Understand.</strong> Analyzing the behavior of an organism can help us to understand other associated behaviors and processes and to answer research questions. For example, <span class="citation"><a href="#ref-williams2020" role="doc-biblioref">Williams et al.</a> (<a href="#ref-williams2020" role="doc-biblioref">2020</a>)</span> found that <em>Andean condors</em> (the heaviest soaring bird) only flap their wings for about <span class="math inline">\(1\%\)</span> of their total flight time. In one of the cases, a condor flew <span class="math inline">\(\approx 172\)</span> km without flapping. Those findings were the result of analyzing the birds’ behavior from data recorded by bio-logging devices. In this book, several examples that make use of inertial devices will be studied.</p></li>
 </ol>
 <div class="figure" style="text-align: center"><span id="fig:condor"></span>
 <img src="images/condor.jpg" alt="Andean condor. source: wikipedia (CC BY-SA 3.0)." width="50%" />
@@ -442,8 +468,8 @@ FIGURE 1.1: Andean condor. source: wikipedia (CC BY-SA 3.0).
 <p>Some behaviors can be used as a proxy to understand other behaviors, states, and/or processes. For example, detecting body movement behaviors during a job interview could serve as the basis to understand stress levels. Behaviors can also be modeled as a composition of lower-level behaviors. In chapter <a href="representations.html#representations">7</a>, a method called <em>Bag of Words</em> that can be used to decompose complex behaviors into a set of simpler ones will be presented.</p>
 <p>In order to analyze and monitor behaviors, we need a way to observe them. Living organisms use their available senses such as eyesight, hearing, smell, echolocation (bats, dolphins), thermal senses (snakes, mosquitoes), etc. In the case of machines, they need <em>sensors</em> to accomplish or approximate those tasks. For example, RGB and thermal cameras, microphones, temperature sensors, and so on.</p>
 <p>The reduction in the size of sensors has allowed the development of more powerful wearable devices. <em>Wearable devices</em> are electronic devices that are worn by a user, usually as accessories or embedded in clothes. Examples of wearable devices are smartphones, smartwatches, fitness bracelets, actigraphy watches, etc. These devices have embedded sensors that allow them to monitor different aspects of a user such as activity levels, blood pressure, temperature, and location, to name a few. Examples of sensors that can be found in those devices are accelerometers, magnetometers, gyroscopes, heart rate, microphones, Wi-Fi, Bluetooth, Galvanic Skin Response (GSR), etc.</p>
-<p>Several of those sensors were initially used for some specific purposes. For example, accelerometers in smartphones were intended to be used for gaming or detecting the device’s orientation. Later, some people started to propose and implement new use cases such as activity recognition <span class="citation">(<a href="references.html#ref-shoaib2015" role="doc-biblioref">Shoaib et al. 2015</a>)</span> and fall detection. The magnetometer, which measures the earth’s magnetic field, was mainly used with map applications to determine the orientation of the device, but later, it was found that it can also be used for indoor location purposes <span class="citation">(<a href="references.html#ref-brena2017" role="doc-biblioref">Brena et al. 2017</a>)</span>.</p>
-<p>In general, wearable devices have proven success in tracking different types of behaviors such as physical activity, sports activities, location, and even mental health states <span class="citation">(<a href="references.html#ref-garciaSurvey2018" role="doc-biblioref">Garcia-Ceja, Riegler, Nordgreen, et al. 2018</a>)</span>. These sensors generate a lot of raw data, but it will be our task to process and analyze it. Doing it by hand becomes impossible given the large amounts and available formats in which data is available. Thus, in this book, several <em>machine learning</em> methods will be introduced to extract and analyze different types of behaviors from data.
+<p>Several of those sensors were initially used for some specific purposes. For example, accelerometers in smartphones were intended to be used for gaming or detecting the device’s orientation. Later, some people started to propose and implement new use cases such as activity recognition <span class="citation">(<a href="#ref-shoaib2015" role="doc-biblioref">Shoaib et al. 2015</a>)</span> and fall detection. The magnetometer, which measures the earth’s magnetic field, was mainly used with map applications to determine the orientation of the device, but later, it was found that it can also be used for indoor location purposes <span class="citation">(<a href="#ref-brena2017" role="doc-biblioref">Brena et al. 2017</a>)</span>.</p>
+<p>In general, wearable devices have proven success in tracking different types of behaviors such as physical activity, sports activities, location, and even mental health states <span class="citation">(<a href="#ref-garciaSurvey2018" role="doc-biblioref">Garcia-Ceja, Riegler, Nordgreen, et al. 2018</a>)</span>. These sensors generate a lot of raw data, but it will be our task to process and analyze it. Doing it by hand becomes impossible given the large amounts and available formats in which data is available. Thus, in this book, several <em>machine learning</em> methods will be introduced to extract and analyze different types of behaviors from data.
 The next section begins with an introduction to machine learning. The rest of this chapter will introduce the required machine learning concepts before we start analyzing behaviors in chapter <a href="classification.html#classification">2</a>.</p>
 </div>
 <div id="what-is-machine-learning" class="section level2" number="1.2">
@@ -463,7 +489,7 @@ FIGURE 1.2: Overall Machine Learning phases.
 </div>
 
 <div class="rmdinfo">
-For more formal definitions of machine learning, I recommend you check <span class="citation">(<a href="references.html#ref-kononenko2007" role="doc-biblioref">Kononenko and Kukar 2007</a>)</span>.
+For more formal definitions of machine learning, I recommend you check <span class="citation">(<a href="#ref-kononenko2007" role="doc-biblioref">Kononenko and Kukar 2007</a>)</span>.
 </div>
 <p>Machine learning methods rely on three main building blocks:</p>
 <ul>
@@ -480,7 +506,7 @@ Not every machine learning method needs the expected output or labels (more on t
 </div>
 <div id="taxonomy" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Types of Machine Learning</h2>
-<p>Machine learning methods can be grouped into different types. Figure <a href="intro.html#fig:mlTaxonomy">1.3</a> depicts a categorization of machine learning ‘types.’ This figure is based on <span class="citation">(<a href="references.html#ref-biecek2012" role="doc-biblioref">Biecek et al. 2012</a>)</span>. The <span class="math inline">\(x\)</span> axis represents the certainty of the labels and the <span class="math inline">\(y\)</span> axis the percent of training data that is labeled. In our previous example, the labels are the fruits’ names associated with each image.</p>
+<p>Machine learning methods can be grouped into different types. Figure <a href="intro.html#fig:mlTaxonomy">1.3</a> depicts a categorization of machine learning ‘types.’ This figure is based on <span class="citation">(<a href="#ref-biecek2012" role="doc-biblioref">Biecek et al. 2012</a>)</span>. The <span class="math inline">\(x\)</span> axis represents the certainty of the labels and the <span class="math inline">\(y\)</span> axis the percent of training data that is labeled. In our previous example, the labels are the fruits’ names associated with each image.</p>
 <div class="figure" style="text-align: center"><span id="fig:mlTaxonomy"></span>
 <img src="images/taxonomy.png" alt="Machine learning taxonomy." width="70%" />
 <p class="caption">
@@ -497,8 +523,8 @@ FIGURE 1.3: Machine learning taxonomy.
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(f\)</span> is a function that maps some input data <span class="math inline">\(x\)</span> (for example images) to an output <span class="math inline">\(y\)</span> (types of fruits). Usually, an <strong>algorithm</strong> will try to <em>learn</em> the best <strong>model</strong> <span class="math inline">\(f\)</span> given some <strong>data</strong> consisting of <span class="math inline">\(n\)</span> pairs <span class="math inline">\((x,y)\)</span> of examples. During learning, the algorithm has access to the expected output/label <span class="math inline">\(y\)</span> for each input <span class="math inline">\(x\)</span>. At <em>inference time</em>, that is, when we want to make predictions for new examples, we can use the learned model <span class="math inline">\(f\)</span> and feed it with a new input <span class="math inline">\(x\)</span> to obtain the corresponding predicted value <span class="math inline">\(y\)</span>.</p>
 <ul>
-<li><p><strong>Semi-supervised learning.</strong> This is the case when the certainty of the labels is <span class="math inline">\(100\%\)</span> but not all training data are labeled. Usually, this scenario considers the case when only a very small proportion of the data is labeled. That is, the dataset contains pairs of examples of the form <span class="math inline">\((x,y)\)</span> but also examples where <span class="math inline">\(y\)</span> is missing <span class="math inline">\((x,?)\)</span>. In supervised learning, both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> must be present. On the other hand, semi-supervised algorithms can learn even if some examples are missing the expected output <span class="math inline">\(y\)</span>. This is a common situation in real life since labeling data can be expensive and time-consuming. In the fruits example, someone needs to tag every training image manually before training a model. Semi-supervised learning methods try to extract information also from the unlabeled data to improve the models. Examples of semi-supervised learning methods are self-learning, co-training, tri-training, etc. <span class="citation">(<a href="references.html#ref-trigueroselflabeled" role="doc-biblioref">Triguero, García, and Herrera 2013</a>)</span>.</p></li>
-<li><p><strong>Partially-supervised learning.</strong> This is a generalization that encompasses supervised and semi-supervised learning. Here, the examples have uncertain (<em>soft</em>) labels. For example, the label of a fruit image instead of being an “orange” or “pear” could be a vector <span class="math inline">\([0.7, 0.3]\)</span> where the first element is the probability that the image corresponds to an orange and the second element is the probability that it’s a pear. Maybe the image was not very clear, and these are the beliefs of the person tagging the images encoded as probabilities. Examples of models that can be used for partially-supervised learning are mixture models with belief functions <span class="citation">(<a href="references.html#ref-comelearning" role="doc-biblioref">Côme et al. 2009</a>)</span> and neural networks.</p></li>
+<li><p><strong>Semi-supervised learning.</strong> This is the case when the certainty of the labels is <span class="math inline">\(100\%\)</span> but not all training data are labeled. Usually, this scenario considers the case when only a very small proportion of the data is labeled. That is, the dataset contains pairs of examples of the form <span class="math inline">\((x,y)\)</span> but also examples where <span class="math inline">\(y\)</span> is missing <span class="math inline">\((x,?)\)</span>. In supervised learning, both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> must be present. On the other hand, semi-supervised algorithms can learn even if some examples are missing the expected output <span class="math inline">\(y\)</span>. This is a common situation in real life since labeling data can be expensive and time-consuming. In the fruits example, someone needs to tag every training image manually before training a model. Semi-supervised learning methods try to extract information also from the unlabeled data to improve the models. Examples of semi-supervised learning methods are self-learning, co-training, tri-training, etc. <span class="citation">(<a href="#ref-trigueroselflabeled" role="doc-biblioref">Triguero, García, and Herrera 2013</a>)</span>.</p></li>
+<li><p><strong>Partially-supervised learning.</strong> This is a generalization that encompasses supervised and semi-supervised learning. Here, the examples have uncertain (<em>soft</em>) labels. For example, the label of a fruit image instead of being an “orange” or “pear” could be a vector <span class="math inline">\([0.7, 0.3]\)</span> where the first element is the probability that the image corresponds to an orange and the second element is the probability that it’s a pear. Maybe the image was not very clear, and these are the beliefs of the person tagging the images encoded as probabilities. Examples of models that can be used for partially-supervised learning are mixture models with belief functions <span class="citation">(<a href="#ref-comelearning" role="doc-biblioref">Côme et al. 2009</a>)</span> and neural networks.</p></li>
 <li><p><strong>Unsupervised learning.</strong> This is the extreme case when none of the training examples have a label. That is, the dataset only has pairs <span class="math inline">\((x,?)\)</span>. Now, you may be wondering: If there are no labels, is it possible to extract information from these data? The answer is <em>yes</em>. Imagine you have fruit images with no labels. What you could try to do is to automatically group them into meaningful categories/groups. The categories could be the types of fruits themselves, i.e., trying to form groups in which images within the same category belong to the same type. In the fruits example, we could infer the true types by visually inspecting the images, but in many cases, visual inspection is difficult and the formed groups may not have an easy interpretation, but still, they can be very useful and can be used as a preprocessing step (like in vector quantization). These types of algorithms that find groups (hierarchical groups in some cases) are called <strong>clustering methods</strong>. Examples of clustering methods are k-means, k-medoids, and hierarchical clustering. Clustering algorithms are not the only unsupervised learning methods. Association rules, word embeddings, and autoencoders are examples of other unsupervised learning methods. Some people may disagree that word embeddings and autoencoders are not fully unsupervised methods but for practical purposes, this categorization is not relevant.</p></li>
 </ul>
 <p>Additionally, there is another type of machine learning called <strong>Reinforcement Learning (RL)</strong> which has substantial differences from the previous ones. This type of learning does not rely on example data as the previous ones but on stimuli from the agent’s environment. At any given point in time, an agent can perform an action which will lead it to a new state where a <em>reward</em> is collected. The aim is to learn the sequence of actions that maximize the reward. This type of learning is not covered in this book. A good introduction to the topic can be consulted here<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
@@ -552,7 +578,7 @@ FIGURE 1.6: Data analysis pipeline.
 </div>
 <p>The big gray box at the bottom means that machine learning methods can be used in all those steps and not just during training or evaluation. For example, one may use dimensionality reduction methods in the <em>data exploration</em> phase to plot the data or classification or regression methods in the <em>cleaning</em> phase to impute missing values. Now, let’s give a brief description of each of those phases:</p>
 <ul>
-<li><p><strong>Data exploration.</strong> This step aims to familiarize yourself and understand the data so you can make informed decisions during the following steps. Some of the tasks involved in this phase include summarizing your data, generating plots, validating assumptions, and so on. During this phase you can, for example, identify outliers, missing values, or noisy data points that can be cleaned in the next phase. Chapter <a href="edavis.html#edavis">4</a> will introduce some data exploration techniques. Throughout the book, we will also use some other data exploratory methods but if you are interested in diving deeper into this topic, I recommend you check out the “Exploratory Data Analysis with R” book by <span class="citation"><a href="references.html#ref-peng2016" role="doc-biblioref">Peng</a> (<a href="references.html#ref-peng2016" role="doc-biblioref">2016</a>)</span>.</p></li>
+<li><p><strong>Data exploration.</strong> This step aims to familiarize yourself and understand the data so you can make informed decisions during the following steps. Some of the tasks involved in this phase include summarizing your data, generating plots, validating assumptions, and so on. During this phase you can, for example, identify outliers, missing values, or noisy data points that can be cleaned in the next phase. Chapter <a href="edavis.html#edavis">4</a> will introduce some data exploration techniques. Throughout the book, we will also use some other data exploratory methods but if you are interested in diving deeper into this topic, I recommend you check out the “Exploratory Data Analysis with R” book by <span class="citation"><a href="#ref-peng2016" role="doc-biblioref">Peng</a> (<a href="#ref-peng2016" role="doc-biblioref">2016</a>)</span>.</p></li>
 <li><p><strong>Data cleaning.</strong> After the data exploration phase here, we can remove the identified outliers, remove noisy data points, remove variables that are not needed for further computation, and so on.</p></li>
 <li><p><strong>Preprocessing.</strong> Predictive models expect the data to be in some structured format and satisfying some constraints. For example, several models are sensitive to class imbalances, i.e., the presence of many instances with a given class but a small number of instances with other classes. In fraud detection scenarios, most of the instances will belong to the normal class but just a small proportion will be of type ‘illegal transaction.’ In this case, we may want to do some preprocessing to try to balance the dataset. Some models are also sensitive to feature scale differences. For example, a variable <em>weight</em> could be in kilograms but another variable <em>height</em> in centimeters. Before training a predictive model, the data needs to be prepared in such a way that the models can get the most out of it. Chapter <a href="preprocessing.html#preprocessing">5</a> will present some common preprocessing steps.</p></li>
 <li><p><strong>Training and evaluation.</strong> Once the data is preprocessed, we can then proceed to train the models. Furthermore, we also need ways to evaluate their generalization performance on new unseen instances. The purpose of this phase is to try, and fine-tune different models to find the one that performs the best. Later in this chapter, some model evaluation techniques will be introduced.</p></li>
@@ -953,7 +979,7 @@ FIGURE 1.16: High variance and overfitting.
 <p>On the other hand, if a model is too simple, it will underfit causing <em>highly biased</em> results and not being able to capture the input-output relationships. This results in a high <em>train error</em> and in consequence a high <em>test error</em> as well.</p>
 
 <div class="rmdinfo">
-A formal formulation of the error decomposition can be consulted in the book “The elements of statistical learning: data mining, inference, and prediction” <span class="citation">(<a href="references.html#ref-hastie2009elements" role="doc-biblioref">Hastie, Tibshirani, and Friedman 2009</a>)</span>.
+A formal formulation of the error decomposition can be consulted in the book “The elements of statistical learning: data mining, inference, and prediction” <span class="citation">(<a href="#ref-hastie2009elements" role="doc-biblioref">Hastie, Tibshirani, and Friedman 2009</a>)</span>.
 </div>
 </div>
 <div id="SummaryIntro" class="section level2" number="1.11">
@@ -976,6 +1002,39 @@ A formal formulation of the error decomposition can be consulted in the book “
 <p><img src="images/comic_intro.png" width="100%" style="display: block; margin: auto;" />
 </p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-biecek2012" class="csl-entry">
+Biecek, Przemyslaw, Ewa Szczurek, Martin Vingron, Jerzy Tiuryn, and others. 2012. <span>“The r Package Bgmm: Mixture Modeling with Uncertain Knowledge.”</span> <em>Journal of Statistical Software</em> 47 (i03).
+</div>
+<div id="ref-brena2017" class="csl-entry">
+Brena, Ramon F, Juan Pablo Garcı́a-Vázquez, Carlos E Galván-Tejada, David Muñoz-Rodriguez, Cesar Vargas-Rosales, and James Fangmeyer. 2017. <span>“Evolution of Indoor Positioning Technologies: A Survey.”</span> <em>Journal of Sensors</em> 2017.
+</div>
+<div id="ref-comelearning" class="csl-entry">
+Côme, Etienne, Latifa Oukhellou, Thierry Denoeux, and Patrice Aknin. 2009. <span>“Learning from Partially Supervised Data Using Mixture Models and Belief Functions.”</span> <em>Pattern Recognition</em> 42 (3): 334–48.
+</div>
+<div id="ref-garciaSurvey2018" class="csl-entry">
+Garcia-Ceja, Enrique, Michael Riegler, Tine Nordgreen, Petter Jakobsen, Ketil J Oedegaard, and Jim Tørresen. 2018. <span>“Mental Health Monitoring with Multimodal Sensing and Machine Learning: A Survey.”</span> <em>Pervasive and Mobile Computing</em>.
+</div>
+<div id="ref-hastie2009elements" class="csl-entry">
+Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. <em>The Elements of Statistical Learning: Data Mining, Inference, and Prediction</em>. Springer Science &amp; Business Media.
+</div>
+<div id="ref-kononenko2007" class="csl-entry">
+Kononenko, Igor, and Matjaz Kukar. 2007. <em>Machine Learning and Data Mining</em>. Horwood Publishing.
+</div>
+<div id="ref-peng2016" class="csl-entry">
+Peng, Roger. 2016. <em>Exploratory Data Analysis with r</em>. Leanpub.com.
+</div>
+<div id="ref-shoaib2015" class="csl-entry">
+Shoaib, Muhammad, Stephan Bosch, Ozlem Durmaz Incel, Hans Scholten, and Paul J. M. Havinga. 2015. <span>“A <span>Survey</span> of <span>Online</span> <span>Activity</span> <span>Recognition</span> <span>Using</span> <span>Mobile</span> <span>Phones</span>.”</span> <em>Sensors</em> 15 (1): 2059–85. <a href="https://doi.org/10.3390/s150102059">https://doi.org/10.3390/s150102059</a>.
+</div>
+<div id="ref-trigueroselflabeled" class="csl-entry">
+Triguero, Isaac, Salvador García, and Francisco Herrera. 2013. <span>“Self-Labeled Techniques for Semi-Supervised Learning: Taxonomy, Software and Empirical Study.”</span> <em>Knowledge and Information Systems</em> 42 (2): 245–84. <a href="https://doi.org/10.1007/s10115-013-0706-y">https://doi.org/10.1007/s10115-013-0706-y</a>.
+</div>
+<div id="ref-williams2020" class="csl-entry">
+Williams, HJ, ELC Shepard, Mark D Holton, PAE Alarcón, RP Wilson, and SA Lambertucci. 2020. <span>“Physical Limits of Flight Performance in the Heaviest Soaring Bird.”</span> <em>Proceedings of the National Academy of Sciences</em>.
 </div>
 </div>
 <div class="footnotes">
@@ -1013,6 +1072,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

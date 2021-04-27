@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Preprocessing Behavioral Data | Behavior Analysis with Machine Learning Using R</title>
   <meta name="description" content="Chapter 5 Preprocessing Behavioral Data | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Preprocessing Behavioral Data | Behavior Analysis with Machine Learning Using R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:image" content="/images/cover.png" />
   <meta property="og:description" content="Chapter 5 Preprocessing Behavioral Data | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content="Chapter 5 Preprocessing Behavioral Data | Behavior Analysis with Machine Learning Using R" />
   
   <meta name="twitter:description" content="Chapter 5 Preprocessing Behavioral Data | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="twitter:image" content="images/cover.png" />
+  <meta name="twitter:image" content="/images/cover.png" />
 
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-04-03" />
+<meta name="date" content="2021-04-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
 <script src="libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="libs/d3/d3.min.js"></script>
 <link href="libs/d3panels/d3panels.min.css" rel="stylesheet" />
@@ -80,6 +82,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -138,6 +141,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -356,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
 <li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#explore-and-visualize-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Explore and Visualize Trajectories</a></li>
+<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Exploring and Visualizing Trajectories</a></li>
 <li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
 <li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
 <li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC curve and AUC</a></li>
@@ -431,14 +457,14 @@ Several of the methods presented here can lead to <em>information injection</em>
 <div id="missing-values" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Missing Values</h2>
 <p>Many datasets will have missing values and we need ways to identify and deal with them. The reasons for having missing data could be due to faulty sensors, processing errors, unavailable information, and so on. In this section, I present some tools that ease the process of missing values identification. Later, some imputation methods that can be used to fill the missing values are listed.</p>
-<p>To demonstrate some of these concepts, the <em>SHEEP GOATS</em> dataset <span class="citation">(<a href="references.html#ref-kamminga2017" role="doc-biblioref">Kamminga et al. 2017</a>)</span> will be used. Due to its big size, the files of this dataset are not included with the accompanying book files but they can be downloaded from <a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:76131" class="uri">https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:76131</a>. The data were released as part of a study about animal behaviors. The researchers placed inertial sensors on sheep and goats and tracked their behavior during one day. They also video-recorded the session and annotated the data with different types of behaviors such as <em>grazing</em>, <em>fighting</em>, <em>scratch-biting</em>, etc. The device was placed on the neck with random orientation and it collects acceleration, orientation, magnetic field, temperature, and barometric pressure. Figure <a href="preprocessing.html#fig:sheepsensor">5.1</a> shows a schematic view of the setting.</p>
+<p>To demonstrate some of these concepts, the <em>SHEEP GOATS</em> dataset <span class="citation">(<a href="#ref-kamminga2017" role="doc-biblioref">Kamminga et al. 2017</a>)</span> will be used. Due to its big size, the files of this dataset are not included with the accompanying book files but they can be downloaded from <a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:76131" class="uri">https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:76131</a>. The data were released as part of a study about animal behaviors. The researchers placed inertial sensors on sheep and goats and tracked their behavior during one day. They also video-recorded the session and annotated the data with different types of behaviors such as <em>grazing</em>, <em>fighting</em>, <em>scratch-biting</em>, etc. The device was placed on the neck with random orientation and it collects acceleration, orientation, magnetic field, temperature, and barometric pressure. Figure <a href="preprocessing.html#fig:sheepsensor">5.1</a> shows a schematic view of the setting.</p>
 <div class="figure" style="text-align: center"><span id="fig:sheepsensor"></span>
 <img src="images/sheep.png" alt="The device was placed on the neck at a random position." width="50%" />
 <p class="caption">
 FIGURE 5.1: The device was placed on the neck at a random position.
 </p>
 </div>
-<p>We will start by loading a .csv file that corresponds to one of the sheep and check if there are missing values. The <code>naniar</code> package <span class="citation">(<a href="references.html#ref-naniar" role="doc-biblioref">Tierney et al. 2019</a>)</span> offers a set of different functions to explore and deal with missing values. The <code>gg_miss_var()</code> function allows you to quickly check which variables have missing values and how many. The following code loads the data and then plots the number of missing values in each variable.</p>
+<p>We will start by loading a .csv file that corresponds to one of the sheep and check if there are missing values. The <code>naniar</code> package <span class="citation">(<a href="#ref-naniar" role="doc-biblioref">Tierney et al. 2019</a>)</span> offers a set of different functions to explore and deal with missing values. The <code>gg_miss_var()</code> function allows you to quickly check which variables have missing values and how many. The following code loads the data and then plots the number of missing values in each variable.</p>
 <div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="preprocessing.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
 <span id="cb103-2"><a href="preprocessing.html#cb103-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb103-3"><a href="preprocessing.html#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Path to S1.csv file.</span></span>
@@ -488,7 +514,7 @@ FIGURE 5.4: Displaying the data frame in RStudio.
 <li><p><strong>Predict the missing values.</strong> Use the other variables to predict the missing one. This can be done by training a predictive model. A regressor if the variable is numeric or a classifier if the variable is categorical.</p></li>
 </ul>
 <p>Another problem with the mean and median values is that they can be correlated with other variables, for example, with the class that we want to predict. One way to avoid this, is to compute the mean (or median) for each class but still, some hidden correlations may bias the estimates.</p>
-<p>In R, the <code>simputation</code> package <span class="citation">(<a href="references.html#ref-simputation" role="doc-biblioref">van der Loo 2019</a>)</span> has implemented various imputation techniques including: group-wise median imputation, model-based with linear regression, random forests, etc. The following code snippet (complete code is in <code>preprocessing.R</code>) uses the <code>impute_lm()</code> method to impute the missing values in the sheep data using linear regression.</p>
+<p>In R, the <code>simputation</code> package <span class="citation">(<a href="#ref-simputation" role="doc-biblioref">van der Loo 2019</a>)</span> has implemented various imputation techniques including: group-wise median imputation, model-based with linear regression, random forests, etc. The following code snippet (complete code is in <code>preprocessing.R</code>) uses the <code>impute_lm()</code> method to impute the missing values in the sheep data using linear regression.</p>
 <div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="preprocessing.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(simputation)</span>
 <span id="cb105-2"><a href="preprocessing.html#cb105-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb105-3"><a href="preprocessing.html#cb105-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace NaN with NAs.</span></span>
@@ -751,7 +777,7 @@ It is a common mistake to generate synthetic data on the entire dataset before s
 <div class="rmdshiny">
 <code>shiny_smote-oversampling.Rmd</code>
 </div>
-<p>The Synthetic Minority Oversampling Technique (SMOTE) <span class="citation">(<a href="references.html#ref-chawla2002smote" role="doc-biblioref">Chawla et al. 2002</a>)</span> can also be used to generate more data points from the minority class. One of the limitations of random oversampling is that it creates duplicates. This has the effect of having fixed boundaries and the classifiers can overspecialize. To avoid this, SMOTE creates entirely new data points.</p>
+<p>The Synthetic Minority Oversampling Technique (SMOTE) <span class="citation">(<a href="#ref-chawla2002smote" role="doc-biblioref">Chawla et al. 2002</a>)</span> can also be used to generate more data points from the minority class. One of the limitations of random oversampling is that it creates duplicates. This has the effect of having fixed boundaries and the classifiers can overspecialize. To avoid this, SMOTE creates entirely new data points.</p>
 <p>SMOTE operates on the feature space (on the predictor variables). To generate a new point, take the difference between a given point <span class="math inline">\(a\)</span> (taken from the minority class) and one of its randomly selected nearest neighbors <span class="math inline">\(b\)</span>. The difference is multiplied by a random number between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> and added to <span class="math inline">\(a\)</span>. This has the effect of selecting a point along the line between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. Figure <a href="preprocessing.html#fig:newpoint">5.10</a> illustrates the procedure of generating a new point in two dimensions.</p>
 <div class="figure" style="text-align: center"><span id="fig:newpoint"></span>
 <img src="images/smote_newpoint.png" alt="Synthetic point generation." width="50%" />
@@ -759,7 +785,7 @@ It is a common mistake to generate synthetic data on the entire dataset before s
 FIGURE 5.10: Synthetic point generation.
 </p>
 </div>
-<p>The number of nearest neighbors <span class="math inline">\(k\)</span> is a parameter defined by the user. In their original work <span class="citation">(<a href="references.html#ref-chawla2002smote" role="doc-biblioref">Chawla et al. 2002</a>)</span>, the authors set <span class="math inline">\(k=5\)</span>. Depending on how many new samples need to be generated, <span class="math inline">\(k&#39;\)</span> neighbors are randomly selected from the original <span class="math inline">\(k\)</span> nearest neighbors. For example, if <span class="math inline">\(200\%\)</span> oversampling is needed, <span class="math inline">\(k&#39;=2\)</span> neighbors are selected at random out of the <span class="math inline">\(k=5\)</span> and one data point is generated with each of them. This is performed for each data point in the minority class.</p>
+<p>The number of nearest neighbors <span class="math inline">\(k\)</span> is a parameter defined by the user. In their original work <span class="citation">(<a href="#ref-chawla2002smote" role="doc-biblioref">Chawla et al. 2002</a>)</span>, the authors set <span class="math inline">\(k=5\)</span>. Depending on how many new samples need to be generated, <span class="math inline">\(k&#39;\)</span> neighbors are randomly selected from the original <span class="math inline">\(k\)</span> nearest neighbors. For example, if <span class="math inline">\(200\%\)</span> oversampling is needed, <span class="math inline">\(k&#39;=2\)</span> neighbors are selected at random out of the <span class="math inline">\(k=5\)</span> and one data point is generated with each of them. This is performed for each data point in the minority class.</p>
 <p>An implementation of SMOTE is also provided in <code>auxiliary_functions/functions.R</code>. An example of how to apply it can be found in <code>preprocessing.R</code> in the corresponding directory of this chapter’s code. The <code>smote.class(completeDf, targetClass, N, k)</code> function has several arguments. The first one is the data frame that contains the minority and majority class, that is, the complete dataset. The second argument is the minority class label. The third argument <code>N</code> is the percent of smote and the last one (<code>k</code>) is the number of nearest neighbors to consider.</p>
 <p>The following code shows how the function <code>smote.class()</code> can be used to generate new points from the imbalanced dataset that was introduced in the previous section ‘Random Oversampling.’ Recall that it has <span class="math inline">\(200\)</span> points of class <em>‘class1’</em> and <span class="math inline">\(15\)</span> points of class <em>‘class2’</em>.</p>
 <div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="preprocessing.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To balance the dataset, we need to oversample 1200%.</span></span>
@@ -839,7 +865,7 @@ You should be aware of the dummy variable trap which means that one variable can
 FIGURE 5.15: Variable conversion guidelines.
 </p>
 </div>
-<p>The <code>caret</code> package has a function <code>dummyVars()</code> that can be used to one-hot encode the categorical variables of a data frame. Since the <em>STUDENTS’ MENTAL HEALTH</em> dataset <span class="citation">(<a href="references.html#ref-Minh2019" role="doc-biblioref">Nguyen et al. 2019</a>)</span> has several categorical variables, it can be used to demonstrate how to apply <code>dummyVars()</code>. This dataset collected at a University in Japan contains survey responses from students about their mental health and help-seeking behaviors. We begin by loading the data.</p>
+<p>The <code>caret</code> package has a function <code>dummyVars()</code> that can be used to one-hot encode the categorical variables of a data frame. Since the <em>STUDENTS’ MENTAL HEALTH</em> dataset <span class="citation">(<a href="#ref-Minh2019" role="doc-biblioref">Nguyen et al. 2019</a>)</span> has several categorical variables, it can be used to demonstrate how to apply <code>dummyVars()</code>. This dataset collected at a University in Japan contains survey responses from students about their mental health and help-seeking behaviors. We begin by loading the data.</p>
 <div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="preprocessing.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load students mental health behavior dataset.</span></span>
 <span id="cb115-2"><a href="preprocessing.html#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="co"># stringsAsFactors is set to F since the function</span></span>
 <span id="cb115-3"><a href="preprocessing.html#cb115-3" aria-hidden="true" tabindex="-1"></a><span class="co"># that we will use to one-hot encode expects characters.</span></span>
@@ -918,6 +944,24 @@ Actually, in some very rare situations, it would make sense to leave color categ
 
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-chawla2002smote" class="csl-entry">
+Chawla, Nitesh V, Kevin W Bowyer, Lawrence O Hall, and W Philip Kegelmeyer. 2002. <span>“SMOTE: Synthetic Minority over-Sampling Technique.”</span> <em>Journal of Artificial Intelligence Research</em> 16: 321–57.
+</div>
+<div id="ref-kamminga2017" class="csl-entry">
+Kamminga, Jacob W, Helena C Bisby, Duc V Le, Nirvana Meratnia, and Paul JM Havinga. 2017. <span>“Generic Online Animal Activity Recognition on Collar Tags.”</span> In <em>Proceedings of the 2017 ACM International Joint Conference on Pervasive and Ubiquitous Computing and Proceedings of the 2017 ACM International Symposium on Wearable Computers</em>, 597–606.
+</div>
+<div id="ref-Minh2019" class="csl-entry">
+Nguyen, Minh-Hoang, Manh-Toan Ho, Quynh-Yen T. Nguyen, and Quan-Hoang Vuong. 2019. <span>“A Dataset of Students’ Mental Health and Help-Seeking Behaviors in a Multicultural Environment.”</span> <em>Data</em> 4 (3). <a href="https://doi.org/10.3390/data4030124">https://doi.org/10.3390/data4030124</a>.
+</div>
+<div id="ref-naniar" class="csl-entry">
+Tierney, Nicholas, Di Cook, Miles McBain, and Colin Fay. 2019. <em>Naniar: Data Structures, Summaries, and Visualisations for Missing Data</em>. <a href="https://CRAN.R-project.org/package=naniar">https://CRAN.R-project.org/package=naniar</a>.
+</div>
+<div id="ref-simputation" class="csl-entry">
+van der Loo, Mark. 2019. <em>Simputation: Simple Imputation</em>. <a href="https://CRAN.R-project.org/package=simputation">https://CRAN.R-project.org/package=simputation</a>.
+</div>
+</div>
 <div class="footnotes">
 <hr />
 <ol start="8">
@@ -956,6 +1000,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

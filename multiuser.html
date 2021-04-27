@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 9 Multi-User Validation | Behavior Analysis with Machine Learning Using R</title>
   <meta name="description" content="Chapter 9 Multi-User Validation | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 9 Multi-User Validation | Behavior Analysis with Machine Learning Using R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:image" content="/images/cover.png" />
   <meta property="og:description" content="Chapter 9 Multi-User Validation | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content="Chapter 9 Multi-User Validation | Behavior Analysis with Machine Learning Using R" />
   
   <meta name="twitter:description" content="Chapter 9 Multi-User Validation | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="twitter:image" content="images/cover.png" />
+  <meta name="twitter:image" content="/images/cover.png" />
 
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-04-03" />
+<meta name="date" content="2021-04-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
 <script src="libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="libs/d3/d3.min.js"></script>
 <link href="libs/d3panels/d3panels.min.css" rel="stylesheet" />
@@ -80,6 +82,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -138,6 +141,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -356,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
 <li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#explore-and-visualize-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Explore and Visualize Trajectories</a></li>
+<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Exploring and Visualizing Trajectories</a></li>
 <li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
 <li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
 <li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC curve and AUC</a></li>
@@ -414,7 +440,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 9</span> Multi-User Validation</h1>
 <p>Every person is different. We all have different physical and mental characteristics. Every person reacts in different ways to the same stimulus and conducts physical and motor activities in particular ways. As we have seen, predictive models rely on the training data; and for user-oriented applications, this data encodes their behaviors. When building predictive models, we want them to be general and to perform accurately on new unseen instances. Sometimes this generalization capability comes at a price, especially in <strong>multi-user settings</strong>. A multi-user setting is one in which the results depend heavily on the <strong>target user</strong>, that is, the user on which the predictions are made. Take, for example, a hand gesture recognition system. At inference time, a specific person (the target user) performs a gesture and the system should recognize it. The input data comes directly from the user. On the other hand, a <strong>non-multi-user</strong> system does not depend on a particular person. A classifier that labels fruits on images or a regression model that predicts house prices does not depend directly on a particular person.</p>
 <p>Some time ago I had to build an activity recognition system based on inertial data from a wrist band. So I collected the data, trained the models, and evaluated them. The performance results were good. However, it turned out that when the system was tested on a new sample group it failed. The reason? The training data was collected from people within a particular age group (young) but the target market of the product was for much older people. Older people tend to walk more slowly, thus, the system was predicting <em>‘no movement’</em> when in fact, the person was walking at a very slow pace. This is an extreme example but even within the same age groups, there are going to be differences between users (<em>inter-user variance</em>). Or even the same user will evolve over time and will change her/his behaviors (<em>intra-user variance</em>).</p>
-<p>So, how can we evaluate multi-user systems to reduce the unexpected effects once the system is deployed? Most of the time there’s going to be surprises when testing a system on new users so we need to be aware of that. But in this chapter, I will present <span class="math inline">\(3\)</span> types of models that will help you to reduce that uncertainty to some extent so you will have a better idea of how the system will behave when tested on more realistic conditions. The models are: <strong>mixed models</strong>, <strong>user-independent models</strong>, and <strong>user-dependent models</strong>. We will see how to train each type of model using a database with actions recorded with a motion capture system. After that, I will also show you how to build <strong>adaptive models</strong> that are tuned with the objective of increasing their performance for a particular user.</p>
+<p>So, how can we evaluate multi-user systems to reduce the unexpected effects once the system is deployed? Most of the time there’s going to be surprises when testing a system on new users so we need to be aware of that. But in this chapter, I will present three types of models that will help you to reduce that uncertainty to some extent so you will have a better idea of how the system will behave when tested on more realistic conditions. The models are: <strong>mixed models</strong>, <strong>user-independent models</strong>, and <strong>user-dependent models</strong>. We will see how to train each type of model using a database with actions recorded with a motion capture system. After that, I will also show you how to build <strong>adaptive models</strong> that are tuned with the objective of increasing their performance for a particular user.</p>
 <div id="mixed-models" class="section level2" number="9.1">
 <h2><span class="header-section-number">9.1</span> Mixed Models</h2>
 <p>Mixed models are trained and validated as usual without considering information about mappings between data points and users. Suppose we have a dataset as shown in Figure <a href="multiuser.html#fig:tblMixModel">9.1</a>. The first column is the user id, the second column the label we want to predict and the last two columns are two arbitrary features.</p>
@@ -424,23 +450,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 FIGURE 9.1: Example dataset with a binary label and 2 features.
 </p>
 </div>
-<p>With a mixed model we would just remove the <em>userid</em> column and perform <span class="math inline">\(k\)</span>-fold cross-validation or hold-out validation as usual. In fact, this is what we have been doing so far. By doing so, some random data points will end up in the train set and others in the test set regardless of which data point was generated by which user. The user rows are just <em>mixed</em>, thus the <em>mixed model</em> name. This model assumes that the data was generated by a single user. One of the disadvantages of validating a system using a mixed model is that the performance results could be overestimated. When randomly splitting into train and test sets, some data points for a given user will end up in each of the splits. At inference time, when showing a test sample belonging to a particular user to the model, it is likely that the training set of that model included some data from that particular user. Thus, the model already knows a little bit about that user so we can expect an accurate prediction. However, this assumption not always holds true. If the model is to be used on a <strong>new user</strong> that the model has never seen before, then, it may not produce very accurate predictions.</p>
+<p>With a mixed model we would just remove the <em>userid</em> column and perform <span class="math inline">\(k\)</span>-fold cross-validation or hold-out validation as usual. In fact, this is what we have been doing so far. By doing so, some random data points will end up in the train set and others in the test set regardless of which data point was generated by which user. The user rows are just <em>mixed</em>, thus the <em>mixed model</em> name. This model assumes that the data was generated by a single user. One of the disadvantages of validating a system using a mixed model is that the performance results could be overestimated. When randomly splitting into train and test sets, some data points for a given user could end up in each of the splits. At inference time, when presenting a test sample belonging to a particular user, it is likely that the training set of the model already included some data from that particular user. Thus, the model already knows a little bit about that user so we can expect an accurate prediction. However, this assumption not always holds true. If the model is to be used on a <strong>new user</strong> that the model has never seen before, then, it may not produce very accurate predictions.</p>
 <p><strong>When should a mixed model be used to validate a system?</strong></p>
 <ol style="list-style-type: decimal">
 <li>When you know that you will have some available data to train the model for all the users that are intended to use the system.</li>
 <li>In many cases, a dataset has already missing information about the mapping between rows and users. That is, a <em>userid</em> column is not present. In those cases, the best performance estimation would be through the use of a mixed model.</li>
 </ol>
-<p>To demonstrate the differences between the different types of models (mixed, user-independent, and user-dependent) I will use the <em>SKELETON ACTIONS</em> dataset. First, a brief description of the dataset is presented including details about how the features were extracted. Then, the dataset is used to train a mixed model and in the following subsections, it is used to train user-independent and user-dependent models.</p>
+<p>To demonstrate the differences between the three types of models (mixed, user-independent, and user-dependent) I will use the <em>SKELETON ACTIONS</em> dataset. First, a brief description of the dataset is presented including details about how the features were extracted. Then, the dataset is used to train a mixed model and in the following subsections, it is used to train user-independent and user-dependent models.</p>
 <div id="skeleton-action-recognition-with-mixed-models" class="section level3" number="9.1.1">
 <h3><span class="header-section-number">9.1.1</span> Skeleton Action Recognition with Mixed Models</h3>
 
 <div class="rmdfolder">
 <code>preprocess_skeleton_actions.R</code> <code>classify_skeleton_actions.R</code>
 </div>
-<p>To demonstrate the <span class="math inline">\(3\)</span> different types of models I chose the <strong>UTD-MHAD dataset</strong> <span class="citation">(<a href="references.html#ref-chen2015utd" role="doc-biblioref">Chen, Jafari, and Kehtarnavaz 2015</a>)</span> and from now on, I will refer to it as the <em>SKELETON ACTIONS</em> dataset. This database is suitable because it was collected by <span class="math inline">\(8\)</span> persons (<span class="math inline">\(4\)</span> females/<span class="math inline">\(4\)</span> males) and each file has a subject id, thus, we know which actions were collected by which users. The number of actions is <span class="math inline">\(27\)</span> and some of the actions are: <em>‘right-hand wave’</em>, <em>‘two hand front clap’</em>, <em>‘basketball shoot’</em>, <em>‘front boxing’</em>, etc.</p>
+<p>To demonstrate the three different types of models I chose the <strong>UTD-MHAD dataset</strong> <span class="citation">(<a href="#ref-chen2015utd" role="doc-biblioref">Chen, Jafari, and Kehtarnavaz 2015</a>)</span> and from now on, I will refer to it as the <em>SKELETON ACTIONS</em> dataset. This database is suitable because it was collected by <span class="math inline">\(8\)</span> persons (<span class="math inline">\(4\)</span> females/<span class="math inline">\(4\)</span> males) and each file has a subject id, thus, we know which actions were collected by which users. The number of actions is <span class="math inline">\(27\)</span> and some of the actions are: <em>‘right-hand wave’</em>, <em>‘two hand front clap’</em>, <em>‘basketball shoot’</em>, <em>‘front boxing’</em>, etc.</p>
 <p>The data was recorded using a Kinect camera and an inertial sensor unit and each subject repeated each of the <span class="math inline">\(27\)</span> actions <span class="math inline">\(4\)</span> times. More information about the collection process and pictures can be consulted on the original dataset website <a href="https://personal.utdallas.edu/~kehtar/UTD-MHAD.html" class="uri">https://personal.utdallas.edu/~kehtar/UTD-MHAD.html</a>.</p>
 <p>For our examples, I will only focus on the <em>skeleton data</em> generated by the Kinect camera. These data consists of human body joints (<span class="math inline">\(20\)</span> joints). Each file contains one action for one user and one repetition. The file names have the structure <code>aA_sS_tT_skeleton.mat</code>. The <code>A</code> is the action id, the <code>S</code> is the subject id and the <code>T</code> is the trial (repetition) number. For each time frame, the <span class="math inline">\(3\)</span>D positions of the <span class="math inline">\(20\)</span> joints are recorded.</p>
-<p>The script <code>preprocess_skeleton_actions.R</code> shows how to read the files and plot the actions. The files are stored in Matlab format. The library <code>R.matlab</code> <span class="citation">(<a href="references.html#ref-rmatlab" role="doc-biblioref">Bengtsson 2018</a>)</span> can be used to read the files.</p>
+<p>The script <code>preprocess_skeleton_actions.R</code> shows how to read the files and plot the actions. The files are stored in Matlab format. The library <code>R.matlab</code> <span class="citation">(<a href="#ref-rmatlab" role="doc-biblioref">Bengtsson 2018</a>)</span> can be used to read the files.</p>
 <div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="multiuser.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Path to one of the files.</span></span>
 <span id="cb192-2"><a href="multiuser.html#cb192-2" aria-hidden="true" tabindex="-1"></a>filepath <span class="ot">&lt;-</span> <span class="st">&quot;/skeleton_actions/a7_s1_t1_skeleton.mat&quot;</span></span>
 <span id="cb192-3"><a href="multiuser.html#cb192-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -458,16 +484,16 @@ FIGURE 9.1: Example dataset with a binary label and 2 features.
 <span id="cb193-4"><a href="multiuser.html#cb193-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print dimensions.</span></span>
 <span id="cb193-5"><a href="multiuser.html#cb193-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(frame)</span>
 <span id="cb193-6"><a href="multiuser.html#cb193-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 20  3</span></span></code></pre></div>
-<p>Each frame can then be plotted. The plotting code is included in the script. The Figure below shows how the skeleton looks like for <span class="math inline">\(6\)</span> of the time frames. The script also has code to play the action as an animation.</p>
+<p>Each frame can then be plotted. The plotting code is included in the script. The Figure below shows how the skeleton looks like for <span class="math inline">\(6\)</span> of the time frames. The script also has code to animate the actions.</p>
 <div class="figure" style="text-align: center"><span id="fig:sklBasket"></span>
 <img src="images/skl_basket.png" alt="Skeleton of basketball shoot action. 6 frames sampled from the entire sequence." width="100%" />
 <p class="caption">
 FIGURE 9.2: Skeleton of basketball shoot action. 6 frames sampled from the entire sequence.
 </p>
 </div>
-<p>We will represent each action (file) as a feature vector. The same script also shows the code to extract the feature vectors from each action. To extract the features, a reference point in the skeleton is selected, in this case the spine (joint <span class="math inline">\(3\)</span>). Then, for each time frame, the distance between all joints (excluding the reference point) and the reference point is calculated. Finally, for each distance, the <em>mean</em>, <em>min</em>, and <em>max</em> are computed across all time frames. Since there are <span class="math inline">\(19\)</span> joints (excluding the spine), we end up with <span class="math inline">\(19*3=57\)</span> features. Figure <a href="multiuser.html#fig:sklFeatures">9.3</a> shows how the final dataset looks like. Only showing the first <span class="math inline">\(4\)</span> features out of the <span class="math inline">\(57\)</span> and user id and labels.</p>
+<p>We will represent each action (file) as a feature vector. The same script also shows the code to extract the feature vectors from each action. To extract the features, a reference point in the skeleton is selected, in this case the spine (joint <span class="math inline">\(3\)</span>). Then, for each time frame, the distance between all joints (excluding the reference point) and the reference point is calculated. Finally, for each distance, the <em>mean</em>, <em>min</em>, and <em>max</em> are computed across all time frames. Since there are <span class="math inline">\(19\)</span> joints (excluding the spine), we end up with <span class="math inline">\(19*3=57\)</span> features. Figure <a href="multiuser.html#fig:sklFeatures">9.3</a> shows how the final dataset looks like. It only shows the first <span class="math inline">\(4\)</span> features out of the <span class="math inline">\(57\)</span>, the user id and the labels.</p>
 <div class="figure" style="text-align: center"><span id="fig:sklFeatures"></span>
-<img src="images/skl_features.png" alt="First rows of the skeleton dataset after feature extraction showing the first 4 features." width="60%" />
+<img src="images/skl_features.png" alt="First rows of the skeleton dataset after feature extraction showing the first 4 features." width="70%" />
 <p class="caption">
 FIGURE 9.3: First rows of the skeleton dataset after feature extraction showing the first 4 features.
 </p>
@@ -476,7 +502,7 @@ FIGURE 9.3: First rows of the skeleton dataset after feature extraction showing 
 <div class="rmdgoodpractice">
 The following examples assume that the file <em>dataset.csv</em> with the extracted features already exsits in the <code>skeleton_actions/</code> directory. To generate this file, run the feature extraction code in the script <code>preprocess_skeleton_actions.R</code>.
 </div>
-<p>Once the dataset in a suitable format, we can proceed to <strong>train our mixed model</strong>. The script containing the full code for training the different types of models is <code>classify_skeleton_actions.R</code>. This script makes use of the <em>dataset.csv</em> file.</p>
+<p>Once the dataset is in a suitable format, we can proceed to <strong>train our mixed model</strong>. The script containing the full code for training the different types of models is <code>classify_skeleton_actions.R</code>. This script makes use of the <em>dataset.csv</em> file.</p>
 <p>First, the auxiliary functions are loaded because we will use the <code>normalize()</code> function to normalize the data. We will use a Random Forest for the classification and the <code>caret</code> package to compute the performance metrics.</p>
 <div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="multiuser.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(<span class="st">&quot;..&quot;</span>,<span class="st">&quot;auxiliary_functions&quot;</span>,<span class="st">&quot;globals.R&quot;</span>))</span>
 <span id="cb194-2"><a href="multiuser.html#cb194-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(<span class="st">&quot;..&quot;</span>,<span class="st">&quot;auxiliary_functions&quot;</span>,<span class="st">&quot;functions.R&quot;</span>))</span>
@@ -505,7 +531,7 @@ The following examples assume that the file <em>dataset.csv</em> with the extrac
 <span id="cb195-2"><a href="multiuser.html#cb195-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
 <span id="cb195-3"><a href="multiuser.html#cb195-3" aria-hidden="true" tabindex="-1"></a>folds <span class="ot">&lt;-</span> <span class="fu">sample</span>(k, <span class="fu">nrow</span>(dataset), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb195-4"><a href="multiuser.html#cb195-4" aria-hidden="true" tabindex="-1"></a>accuracies <span class="ot">&lt;-</span> <span class="cn">NULL</span>; recalls <span class="ot">&lt;-</span> <span class="cn">NULL</span>; precisions <span class="ot">&lt;-</span> <span class="cn">NULL</span></span></code></pre></div>
-<p>In the next code snippet, the actual cross-validation is performed. This is just the usual cross-validation procedure. The <code>normalize()</code> function defined in the auxiliary functions is used to normalize the data by only learning the parameters from the train set and applying them to the test set. Then, the actual Random Forest is fitted with the train set. One thing to note here is that the <code>userid</code> field is removed: <code>trainset[,-1]</code> since we are not using users’ information in the mixed model. Then, predictions on the test set are obtained and the accuracy, recall, and precision are computed during each iteration.</p>
+<p>In the next code snippet, the actual cross-validation is performed. This is just the usual cross-validation procedure. The <code>normalize()</code> function defined in the auxiliary functions is used to normalize the data by only learning the parameters from the train set and applying them to the test set. Then, the Random Forest is fitted with the train set. One thing to note here is that the <code>userid</code> field is removed: <code>trainset[,-1]</code> since we are not using users’ information in the mixed model. Then, predictions on the test set are obtained and the accuracy, recall, and precision are computed during each iteration.</p>
 <div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="multiuser.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform k-fold cross-validation.</span></span>
 <span id="cb196-2"><a href="multiuser.html#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k){</span>
 <span id="cb196-3"><a href="multiuser.html#cb196-3" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -535,7 +561,7 @@ The following examples assume that the file <em>dataset.csv</em> with the extrac
 <span id="cb196-27"><a href="multiuser.html#cb196-27" aria-hidden="true" tabindex="-1"></a>  recalls <span class="ot">&lt;-</span> <span class="fu">c</span>(recalls, metrics[<span class="st">&quot;Recall&quot;</span>])</span>
 <span id="cb196-28"><a href="multiuser.html#cb196-28" aria-hidden="true" tabindex="-1"></a>  precisions <span class="ot">&lt;-</span> <span class="fu">c</span>(precisions, metrics[<span class="st">&quot;Precision&quot;</span>])</span>
 <span id="cb196-29"><a href="multiuser.html#cb196-29" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>Finally, the average performance across folds of each of the metrics is printed.</p>
+<p>Finally, the average performance across folds for each of the metrics is printed.</p>
 <div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="multiuser.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print performance metrics.</span></span>
 <span id="cb197-2"><a href="multiuser.html#cb197-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(accuracies)</span>
 <span id="cb197-3"><a href="multiuser.html#cb197-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.9277258</span></span>
@@ -543,13 +569,14 @@ The following examples assume that the file <em>dataset.csv</em> with the extrac
 <span id="cb197-5"><a href="multiuser.html#cb197-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.9372515</span></span>
 <span id="cb197-6"><a href="multiuser.html#cb197-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(precisions)</span>
 <span id="cb197-7"><a href="multiuser.html#cb197-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.9208455</span></span></code></pre></div>
-<p>The results look promising with an average <em>accuracy</em> of <span class="math inline">\(92.7\%\)</span>, a <em>recall</em> of <span class="math inline">\(93.7\%\)</span>, and a <em>precision</em> of <span class="math inline">\(92\%\)</span>. One important thing to remember is that the mixed model assumes that the training data contains instances belonging to users in the test set. Thus, the model already knows a little bit about the users in the test set.</p>
-<p>Imagine that now you want to estimate what would be the performance of the model in a situation where a completely new user is shown to the model, that is, the model does not know anything about this user. We can model these situations using a <strong>user-independent model</strong> which is the topic of the next section.</p>
+<p>The results look promising with an average <em>accuracy</em> of <span class="math inline">\(92.7\%\)</span>, a <em>recall</em> of <span class="math inline">\(93.7\%\)</span>, and a <em>precision</em> of <span class="math inline">\(92.0\%\)</span>. One important thing to remember is that the mixed model assumes that the training data contains instances belonging to users in the test set. Thus, the model already knows a little bit about the users in the test set.</p>
+<p>Now, imagine that you want to estimate what would be the performance of the model in a situation where a completely new user is shown to the model, that is, the model does not know anything about this user. We can model those situations using a <strong>user-independent model</strong> which is the topic of the next section.</p>
 </div>
 </div>
 <div id="user-independent-models" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> User-Independent Models</h2>
-<p>The <strong>user-independent</strong> model allows us to estimate the performance of a system on new users. That is, the model does not contain any information about the target user. This resembles a scenario when the user wants to use a service out-of-the-box without having to go through a calibration process or having to collect training data. To build a user-independent model we just need to make sure that the training data does not contain any information about the users on the test set. We can achieve this by splitting the dataset into two disjoint groups of users based on their ids. For example, assign <span class="math inline">\(70\%\)</span> of the users to the train set and the remaining to the test set. If the dataset is small, one way to optimize it is by performing <strong>leave-one-user-out validation</strong>: If the dataset has <span class="math inline">\(n\)</span> users, then, <span class="math inline">\(n\)</span> iterations are performed. In each iteration, one user is selected as the test set and the remaining ones are used as the train set. Figure <a href="multiuser.html#fig:loov">9.4</a> illustrates <em>leave-one-user-out validation</em> for the first <span class="math inline">\(2\)</span> iterations of the procedure.</p>
+<p>The <strong>user-independent</strong> model allows us to estimate the performance of a system on new users. That is, the model does not contain any information about the target user. This resembles a scenario when the user wants to use a service out-of-the-box without having to go through a calibration process or having to collect training data. To build a user-independent model we just need to make sure that the training data does not contain any information about the users on the test set. We can achieve this by splitting the dataset into two disjoint groups of users based on their ids. For example, assign <span class="math inline">\(70\%\)</span> of the users to the train set and the remaining to the test set.</p>
+<p>If the dataset is small, one way to optimize the usage of the data is to perform <strong>leave-one-user-out validation</strong>: If the dataset has <span class="math inline">\(n\)</span> users, then, <span class="math inline">\(n\)</span> iterations are performed. In each iteration, one user is selected as the test set and the remaining ones are used as the train set. Figure <a href="multiuser.html#fig:loov">9.4</a> illustrates an example of <em>leave-one-user-out validation</em> for the first <span class="math inline">\(2\)</span> iterations.</p>
 <div class="figure" style="text-align: center"><span id="fig:loov"></span>
 <img src="images/loov.png" alt="First 2 iterations of leave-one-user-out validation." width="70%" />
 <p class="caption">
@@ -573,8 +600,8 @@ FIGURE 9.4: First 2 iterations of leave-one-user-out validation.
 <span id="cb199-5"><a href="multiuser.html#cb199-5" aria-hidden="true" tabindex="-1"></a>  testset <span class="ot">&lt;-</span> dataset[<span class="fu">which</span>(dataset<span class="sc">$</span>userid <span class="sc">==</span> user),]</span>
 <span id="cb199-6"><a href="multiuser.html#cb199-6" aria-hidden="true" tabindex="-1"></a>  trainset <span class="ot">&lt;-</span> dataset[<span class="fu">which</span>(dataset<span class="sc">$</span>userid <span class="sc">!=</span> user),]</span>
 <span id="cb199-7"><a href="multiuser.html#cb199-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb199-8"><a href="multiuser.html#cb199-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Normalize. Not really needed since RF</span></span>
-<span id="cb199-9"><a href="multiuser.html#cb199-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># is not affected by different features scale.</span></span>
+<span id="cb199-8"><a href="multiuser.html#cb199-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Normalize. Not really needed here since Random Forest</span></span>
+<span id="cb199-9"><a href="multiuser.html#cb199-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># is not affected by different scales.</span></span>
 <span id="cb199-10"><a href="multiuser.html#cb199-10" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">normalize</span>(trainset, testset)</span>
 <span id="cb199-11"><a href="multiuser.html#cb199-11" aria-hidden="true" tabindex="-1"></a>  trainset <span class="ot">&lt;-</span> res<span class="sc">$</span>train</span>
 <span id="cb199-12"><a href="multiuser.html#cb199-12" aria-hidden="true" tabindex="-1"></a>  testset <span class="ot">&lt;-</span> res<span class="sc">$</span>test</span>
@@ -609,7 +636,7 @@ FIGURE 9.4: First 2 iterations of leave-one-user-out validation.
 <span id="cb200-4"><a href="multiuser.html#cb200-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.5798611</span></span>
 <span id="cb200-5"><a href="multiuser.html#cb200-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(precisions)</span>
 <span id="cb200-6"><a href="multiuser.html#cb200-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.6539715</span></span></code></pre></div>
-<p>Those numbers are surprising! In the previous section, our <strong>mixed model</strong> had an accuracy of <span class="math inline">\(92.7\%\)</span> and now the <strong>user-independent model</strong> has an accuracy of only <span class="math inline">\(58\%\)</span>! This is because the latter didn’t know anything about the target user. Since each person different, the <strong>user-independent model</strong> was not able to capture the patterns of new users and this had a big impact on the performance.</p>
+<p>Those numbers are surprising! In the previous section, our <strong>mixed model</strong> had an accuracy of <span class="math inline">\(92.7\%\)</span> and now the <strong>user-independent model</strong> has an accuracy of only <span class="math inline">\(58.0\%\)</span>! This is because the latter didn’t know anything about the target user. Since each person is different, the <strong>user-independent model</strong> was not able to capture the patterns of new users and this had a big impact on the performance.</p>
 <p><strong>When should a user-independent model be used to validate a system?</strong></p>
 <ol style="list-style-type: decimal">
 <li>When you expect the system to be used out-of-the-box by new users and the system does not have any data from those new users.</li>
@@ -619,62 +646,51 @@ FIGURE 9.4: First 2 iterations of leave-one-user-out validation.
 </div>
 <div id="user-dependent-models" class="section level2" number="9.3">
 <h2><span class="header-section-number">9.3</span> User-Dependent Models</h2>
-<p>A <strong>user-dependent model</strong> is trained with data belonging only to the <em>target user</em>. In general, this type of model performs better compared to the <em>mixed model</em> and <em>user-independent model</em>. This is because the model captures the particularities of a specific user. The way to evaluate user-dependent models is to iterate through each user, and for each user, build and test a model only with her/his data. The per-user evaluation can be done using <span class="math inline">\(k\)</span>-fold cross-validation, for example. For the skeleton database, we only have <span class="math inline">\(4\)</span> instances per type of action. The number of unique classes (<span class="math inline">\(27\)</span>) is also high compared to the number of instances per action. If we do, for example, <span class="math inline">\(10\)</span>-fold cross-validation, it is very likely that the train sets will not contain examples for several of the possible actions. To avoid this, we will do <em>leave-one-out validation</em> within each user. This means that we iterate through each instance. In each iteration, the instance is used as the test set and the remaining ones are used for the train set.</p>
+<p>A <strong>user-dependent model</strong> is trained with data belonging only to the <em>target user</em>. In general, this type of model performs better compared to the <em>mixed model</em> and <em>user-independent model</em>. This is because the model captures the particularities of a specific user. The way to evaluate user-dependent models is to iterate through each user, and for each user, build and test a model only with her/his data. The per-user evaluation can be done using <span class="math inline">\(k\)</span>-fold cross-validation, for example. For the skeleton database, we only have <span class="math inline">\(4\)</span> instances per type of action. The number of unique classes (<span class="math inline">\(27\)</span>) is high compared to the number of instances per action. If we do, for example, <span class="math inline">\(10\)</span>-fold cross-validation, it is very likely that the train sets will not contain examples for several of the possible actions. To avoid this, we will do <em>leave-one-out validation</em> within each user. This means that we need to iterate through each instance. In each iteration, the selected instance is used as the test set and the remaining ones are used for the train set.</p>
 <div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="multiuser.html#cb201-1" aria-hidden="true" tabindex="-1"></a>unique.users <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">unique</span>(dataset<span class="sc">$</span>userid))</span>
-<span id="cb201-2"><a href="multiuser.html#cb201-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb201-3"><a href="multiuser.html#cb201-3" aria-hidden="true" tabindex="-1"></a>accuracies <span class="ot">&lt;-</span> <span class="cn">NULL</span>; recalls <span class="ot">&lt;-</span> <span class="cn">NULL</span>; precisions <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb201-2"><a href="multiuser.html#cb201-2" aria-hidden="true" tabindex="-1"></a>accuracies <span class="ot">&lt;-</span> <span class="cn">NULL</span>; recalls <span class="ot">&lt;-</span> <span class="cn">NULL</span>; precisions <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb201-3"><a href="multiuser.html#cb201-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
 <span id="cb201-4"><a href="multiuser.html#cb201-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb201-5"><a href="multiuser.html#cb201-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb201-6"><a href="multiuser.html#cb201-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb201-7"><a href="multiuser.html#cb201-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate through each user.</span></span>
-<span id="cb201-8"><a href="multiuser.html#cb201-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(user <span class="cf">in</span> unique.users){</span>
+<span id="cb201-5"><a href="multiuser.html#cb201-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate through each user.</span></span>
+<span id="cb201-6"><a href="multiuser.html#cb201-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(user <span class="cf">in</span> unique.users){</span>
+<span id="cb201-7"><a href="multiuser.html#cb201-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Evaluating user &quot;</span>, user))</span>
+<span id="cb201-8"><a href="multiuser.html#cb201-8" aria-hidden="true" tabindex="-1"></a>  user.data <span class="ot">&lt;-</span> dataset[<span class="fu">which</span>(dataset<span class="sc">$</span>userid <span class="sc">==</span> user), <span class="sc">-</span><span class="dv">1</span>]</span>
 <span id="cb201-9"><a href="multiuser.html#cb201-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb201-10"><a href="multiuser.html#cb201-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Evaluating user &quot;</span>, user))</span>
-<span id="cb201-11"><a href="multiuser.html#cb201-11" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb201-12"><a href="multiuser.html#cb201-12" aria-hidden="true" tabindex="-1"></a>  user.data <span class="ot">&lt;-</span> dataset[<span class="fu">which</span>(dataset<span class="sc">$</span>userid <span class="sc">==</span> user), <span class="sc">-</span><span class="dv">1</span>]</span>
-<span id="cb201-13"><a href="multiuser.html#cb201-13" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb201-14"><a href="multiuser.html#cb201-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Leave-one-out cross validation within each user.</span></span>
-<span id="cb201-15"><a href="multiuser.html#cb201-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb201-16"><a href="multiuser.html#cb201-16" aria-hidden="true" tabindex="-1"></a>  predictions.rf <span class="ot">&lt;-</span> <span class="cn">NULL</span>; groundTruth <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb201-17"><a href="multiuser.html#cb201-17" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb201-18"><a href="multiuser.html#cb201-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(user.data)){</span>
-<span id="cb201-19"><a href="multiuser.html#cb201-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb201-20"><a href="multiuser.html#cb201-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Normalize. Not really needed since RF</span></span>
-<span id="cb201-21"><a href="multiuser.html#cb201-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># is not affected by different features scale.</span></span>
-<span id="cb201-22"><a href="multiuser.html#cb201-22" aria-hidden="true" tabindex="-1"></a>    testset <span class="ot">&lt;-</span> user.data[i,]</span>
-<span id="cb201-23"><a href="multiuser.html#cb201-23" aria-hidden="true" tabindex="-1"></a>    trainset <span class="ot">&lt;-</span> user.data[<span class="sc">-</span>i,]</span>
-<span id="cb201-24"><a href="multiuser.html#cb201-24" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="fu">normalize</span>(trainset, testset)</span>
-<span id="cb201-25"><a href="multiuser.html#cb201-25" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb201-26"><a href="multiuser.html#cb201-26" aria-hidden="true" tabindex="-1"></a>    testset <span class="ot">&lt;-</span> res<span class="sc">$</span>test</span>
-<span id="cb201-27"><a href="multiuser.html#cb201-27" aria-hidden="true" tabindex="-1"></a>    trainset <span class="ot">&lt;-</span> res<span class="sc">$</span>train</span>
-<span id="cb201-28"><a href="multiuser.html#cb201-28" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb201-29"><a href="multiuser.html#cb201-29" aria-hidden="true" tabindex="-1"></a>    rf <span class="ot">&lt;-</span> <span class="fu">randomForest</span>(label <span class="sc">~</span>., trainset)</span>
-<span id="cb201-30"><a href="multiuser.html#cb201-30" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb201-31"><a href="multiuser.html#cb201-31" aria-hidden="true" tabindex="-1"></a>    preds.rf <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">predict</span>(rf, <span class="at">newdata =</span> testset))</span>
-<span id="cb201-32"><a href="multiuser.html#cb201-32" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb201-33"><a href="multiuser.html#cb201-33" aria-hidden="true" tabindex="-1"></a>    predictions.rf <span class="ot">&lt;-</span> <span class="fu">c</span>(predictions.rf, preds.rf)</span>
-<span id="cb201-34"><a href="multiuser.html#cb201-34" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb201-35"><a href="multiuser.html#cb201-35" aria-hidden="true" tabindex="-1"></a>    groundTruth <span class="ot">&lt;-</span> <span class="fu">c</span>(groundTruth, <span class="fu">as.character</span>(testset<span class="sc">$</span>label))</span>
-<span id="cb201-36"><a href="multiuser.html#cb201-36" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb201-37"><a href="multiuser.html#cb201-37" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb201-38"><a href="multiuser.html#cb201-38" aria-hidden="true" tabindex="-1"></a>  cm.rf <span class="ot">&lt;-</span> <span class="fu">confusionMatrix</span>(<span class="fu">factor</span>(predictions.rf,</span>
-<span id="cb201-39"><a href="multiuser.html#cb201-39" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">levels =</span> unique.actions),</span>
-<span id="cb201-40"><a href="multiuser.html#cb201-40" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">factor</span>(groundTruth,</span>
-<span id="cb201-41"><a href="multiuser.html#cb201-41" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">levels =</span> unique.actions))</span>
-<span id="cb201-42"><a href="multiuser.html#cb201-42" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb201-43"><a href="multiuser.html#cb201-43" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb201-44"><a href="multiuser.html#cb201-44" aria-hidden="true" tabindex="-1"></a>  accuracies <span class="ot">&lt;-</span> <span class="fu">c</span>(accuracies, cm.rf<span class="sc">$</span>overall[<span class="st">&quot;Accuracy&quot;</span>])</span>
-<span id="cb201-45"><a href="multiuser.html#cb201-45" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb201-46"><a href="multiuser.html#cb201-46" aria-hidden="true" tabindex="-1"></a>  metrics <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(cm.rf<span class="sc">$</span>byClass[,<span class="fu">c</span>(<span class="st">&quot;Recall&quot;</span>,</span>
-<span id="cb201-47"><a href="multiuser.html#cb201-47" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;Specificity&quot;</span>,</span>
-<span id="cb201-48"><a href="multiuser.html#cb201-48" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;Precision&quot;</span>,</span>
-<span id="cb201-49"><a href="multiuser.html#cb201-49" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;F1&quot;</span>)],</span>
-<span id="cb201-50"><a href="multiuser.html#cb201-50" aria-hidden="true" tabindex="-1"></a>                      <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb201-51"><a href="multiuser.html#cb201-51" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb201-52"><a href="multiuser.html#cb201-52" aria-hidden="true" tabindex="-1"></a>  recalls <span class="ot">&lt;-</span> <span class="fu">c</span>(recalls, metrics[<span class="st">&quot;Recall&quot;</span>])</span>
-<span id="cb201-53"><a href="multiuser.html#cb201-53" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb201-54"><a href="multiuser.html#cb201-54" aria-hidden="true" tabindex="-1"></a>  precisions <span class="ot">&lt;-</span> <span class="fu">c</span>(precisions, metrics[<span class="st">&quot;Precision&quot;</span>])</span>
-<span id="cb201-55"><a href="multiuser.html#cb201-55" aria-hidden="true" tabindex="-1"></a>} <span class="co"># end of users iteration.</span></span></code></pre></div>
+<span id="cb201-10"><a href="multiuser.html#cb201-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Leave-one-out cross validation within each user.</span></span>
+<span id="cb201-11"><a href="multiuser.html#cb201-11" aria-hidden="true" tabindex="-1"></a>  predictions.rf <span class="ot">&lt;-</span> <span class="cn">NULL</span>; groundTruth <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb201-12"><a href="multiuser.html#cb201-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb201-13"><a href="multiuser.html#cb201-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(user.data)){</span>
+<span id="cb201-14"><a href="multiuser.html#cb201-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb201-15"><a href="multiuser.html#cb201-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Normalize. Not really needed here since Random Forest</span></span>
+<span id="cb201-16"><a href="multiuser.html#cb201-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># is not affected by different scales.</span></span>
+<span id="cb201-17"><a href="multiuser.html#cb201-17" aria-hidden="true" tabindex="-1"></a>    testset <span class="ot">&lt;-</span> user.data[i,]</span>
+<span id="cb201-18"><a href="multiuser.html#cb201-18" aria-hidden="true" tabindex="-1"></a>    trainset <span class="ot">&lt;-</span> user.data[<span class="sc">-</span>i,]</span>
+<span id="cb201-19"><a href="multiuser.html#cb201-19" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="fu">normalize</span>(trainset, testset)</span>
+<span id="cb201-20"><a href="multiuser.html#cb201-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb201-21"><a href="multiuser.html#cb201-21" aria-hidden="true" tabindex="-1"></a>    testset <span class="ot">&lt;-</span> res<span class="sc">$</span>test</span>
+<span id="cb201-22"><a href="multiuser.html#cb201-22" aria-hidden="true" tabindex="-1"></a>    trainset <span class="ot">&lt;-</span> res<span class="sc">$</span>train</span>
+<span id="cb201-23"><a href="multiuser.html#cb201-23" aria-hidden="true" tabindex="-1"></a>    rf <span class="ot">&lt;-</span> <span class="fu">randomForest</span>(label <span class="sc">~</span>., trainset)</span>
+<span id="cb201-24"><a href="multiuser.html#cb201-24" aria-hidden="true" tabindex="-1"></a>    preds.rf <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">predict</span>(rf, <span class="at">newdata =</span> testset))</span>
+<span id="cb201-25"><a href="multiuser.html#cb201-25" aria-hidden="true" tabindex="-1"></a>    predictions.rf <span class="ot">&lt;-</span> <span class="fu">c</span>(predictions.rf, preds.rf)</span>
+<span id="cb201-26"><a href="multiuser.html#cb201-26" aria-hidden="true" tabindex="-1"></a>    groundTruth <span class="ot">&lt;-</span> <span class="fu">c</span>(groundTruth, <span class="fu">as.character</span>(testset<span class="sc">$</span>label))</span>
+<span id="cb201-27"><a href="multiuser.html#cb201-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb201-28"><a href="multiuser.html#cb201-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb201-29"><a href="multiuser.html#cb201-29" aria-hidden="true" tabindex="-1"></a>  cm.rf <span class="ot">&lt;-</span> <span class="fu">confusionMatrix</span>(<span class="fu">factor</span>(predictions.rf,</span>
+<span id="cb201-30"><a href="multiuser.html#cb201-30" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">levels =</span> unique.actions),</span>
+<span id="cb201-31"><a href="multiuser.html#cb201-31" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">factor</span>(groundTruth,</span>
+<span id="cb201-32"><a href="multiuser.html#cb201-32" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">levels =</span> unique.actions))</span>
+<span id="cb201-33"><a href="multiuser.html#cb201-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb201-34"><a href="multiuser.html#cb201-34" aria-hidden="true" tabindex="-1"></a>  accuracies <span class="ot">&lt;-</span> <span class="fu">c</span>(accuracies, cm.rf<span class="sc">$</span>overall[<span class="st">&quot;Accuracy&quot;</span>])</span>
+<span id="cb201-35"><a href="multiuser.html#cb201-35" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb201-36"><a href="multiuser.html#cb201-36" aria-hidden="true" tabindex="-1"></a>  metrics <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(cm.rf<span class="sc">$</span>byClass[,<span class="fu">c</span>(<span class="st">&quot;Recall&quot;</span>,</span>
+<span id="cb201-37"><a href="multiuser.html#cb201-37" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;Specificity&quot;</span>,</span>
+<span id="cb201-38"><a href="multiuser.html#cb201-38" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;Precision&quot;</span>,</span>
+<span id="cb201-39"><a href="multiuser.html#cb201-39" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;F1&quot;</span>)],</span>
+<span id="cb201-40"><a href="multiuser.html#cb201-40" aria-hidden="true" tabindex="-1"></a>                      <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb201-41"><a href="multiuser.html#cb201-41" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb201-42"><a href="multiuser.html#cb201-42" aria-hidden="true" tabindex="-1"></a>  recalls <span class="ot">&lt;-</span> <span class="fu">c</span>(recalls, metrics[<span class="st">&quot;Recall&quot;</span>])</span>
+<span id="cb201-43"><a href="multiuser.html#cb201-43" aria-hidden="true" tabindex="-1"></a>  precisions <span class="ot">&lt;-</span> <span class="fu">c</span>(precisions, metrics[<span class="st">&quot;Precision&quot;</span>])</span>
+<span id="cb201-44"><a href="multiuser.html#cb201-44" aria-hidden="true" tabindex="-1"></a>} <span class="co"># end of users iteration.</span></span></code></pre></div>
 <p>We iterated through each user and performed the leave-one-out-validation for each, independently of the others and stored their results. We can now compute the average performance across all users.</p>
 <div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="multiuser.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print average performance across users.</span></span>
 <span id="cb202-2"><a href="multiuser.html#cb202-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -687,7 +703,7 @@ FIGURE 9.4: First 2 iterations of leave-one-user-out validation.
 <p>This time, the average accuracy was <span class="math inline">\(94.3\%\)</span> which is higher than the accuracy achieved with the mixed model and the user-independent model. The average recall and precision were also higher compared to the other types of models. The high performance is because each model was targeted to a particular user.</p>
 <p><strong>When should a user-dependent model be used to validate a system?</strong></p>
 <ol style="list-style-type: decimal">
-<li>When the model will be trained only using data from the target user that will use the system.</li>
+<li>When the model will be trained only using data from the target user.</li>
 </ol>
 <p>In general, user-dependent models have the best accuracy. The disadvantage is that they require training data from the target user and for some applications, collecting training data can be very difficult and expensive.</p>
 <p>Can we have a system that has the best of both worlds from user dependent/independent models? That is, a model that is as accurate as a user-dependent model but requires small quantities of training data from the target user. The answer is <em>yes</em>, and how we can do that is covered in the next section <strong>User-Adaptive Models</strong>.</p>
@@ -699,8 +715,8 @@ FIGURE 9.4: First 2 iterations of leave-one-user-out validation.
 <div id="transfer-learning" class="section level3" number="9.4.1">
 <h3><span class="header-section-number">9.4.1</span> Transfer Learning</h3>
 <p>In machine learning, <strong>transfer learning</strong> refers to the idea of using the knowledge gained when solving a problem to solve another different problem. The new problem can be a similar one but also could be very unrelated. For example, a model trained to detect smiles from images could also be used to predict gender (of course with some fine-tuning). In humans, learning is a lifelong process in which many tasks are interrelated. When we are faced with a new problem, we tend to find solutions that have worked in the past for similar problems. However, in machine learning most of the time the models are trained from scratch for every new problem. For many tasks, training a model from scratch is very time consuming and requires a lot of effort, especially during the data collection and labeling phase.</p>
-<p>The idea of transfer learning dates back to 1991 <span class="citation">(<a href="references.html#ref-pratt1991" role="doc-biblioref">Pratt et al. 1991</a>)</span> but with the advent of <em>deep learning</em> and in particular, with convolutional neural networks (see chapter <a href="deeplearning.html#deeplearning">8</a>), it has gained popularity because it has proven to be a valuable tool when solving challenging problems. In 2014 a CNN architecture called VGG16 was proposed by <span class="citation"><a href="references.html#ref-simonyan2014" role="doc-biblioref">Simonyan and Zisserman</a> (<a href="references.html#ref-simonyan2014" role="doc-biblioref">2014</a>)</span> and won the ILSVR image recognition competition. This CNN was trained with more than <span class="math inline">\(1\)</span> million images to recognize <span class="math inline">\(1000\)</span> categories and it consists of several convolution layers, max pooling operations, and fully connected layers. In total, the network has <span class="math inline">\(\approx 138\)</span> million parameters and it took some weeks to train.</p>
-<p>What if you wanted to add a new category to the <span class="math inline">\(1000\)</span> labels? Or maybe, you only want to focus on a subset of the categories? With transfer learning you can take advantage of a network that has already been trained and adapt it to your particular problem. In the case of <em>deep learning</em>, the approach consists of ‘freezing’ the first layers of a network and only retrain and/or modify the last layers to adapt them for the particular problem. During training, the frozen layers’ parameters will not change and the unfrozen ones are updated as usual during the gradient descent procedure. As discussed in chapter <a href="deeplearning.html#deeplearning">8</a>, the first layers can act as feature extractors and can be reused. With this approach, you can easily retrain a VGG16 network in an average computer and within a reasonable time. In fact, Keras already provides interfaces to common pre-trained architectures that you can reuse.</p>
+<p>The idea of transfer learning dates back to 1991 <span class="citation">(<a href="#ref-pratt1991" role="doc-biblioref">Pratt et al. 1991</a>)</span> but with the advent of <em>deep learning</em> and in particular, with convolutional neural networks (see chapter <a href="deeplearning.html#deeplearning">8</a>), it has gained popularity because it has proven to be a valuable tool when solving challenging problems. In 2014 a CNN architecture called VGG16 was proposed by <span class="citation"><a href="#ref-simonyan2014" role="doc-biblioref">Simonyan and Zisserman</a> (<a href="#ref-simonyan2014" role="doc-biblioref">2014</a>)</span> and won the ILSVR image recognition competition. This CNN was trained with more than <span class="math inline">\(1\)</span> million images to recognize <span class="math inline">\(1000\)</span> categories and it consists of several convolution layers, max pooling operations, and fully connected layers. In total, the network has <span class="math inline">\(\approx 138\)</span> million parameters and it took some weeks to train.</p>
+<p>What if you wanted to add a new category to the <span class="math inline">\(1000\)</span> labels? Or maybe, you only want to focus on a subset of the categories? With transfer learning you can take advantage of a network that has already been trained and adapt it to your particular problem. In the case of <em>deep learning</em>, the approach consists of ‘freezing’ the first layers of a network and only retrain and/or modify the last layers to adapt them for the particular problem. During training, the frozen layers’ parameters will not change and the unfrozen ones are updated as usual during the gradient descent procedure. As discussed in chapter <a href="deeplearning.html#deeplearning">8</a>, the first layers can act as feature extractors and can be reused. With this approach, you can easily retrain a VGG16 network in an average computer and within a reasonable time. In fact, Keras already provides interfaces to common pre-trained models that you can reuse.</p>
 <p>In the following section we will use this idea to build a <strong>user-adaptive model</strong> for activity recognition using transfer learning.</p>
 </div>
 <div id="a-user-adaptive-model-for-activity-recognition" class="section level3" number="9.4.2">
@@ -709,10 +725,10 @@ FIGURE 9.4: First 2 iterations of leave-one-user-out validation.
 <div class="rmdfolder">
 <code>keras/adaptive_cnn.R</code>
 </div>
-<p>For this example, we will use the <em>SMARTPHONE ACTIVITIES</em> dataset <strong>encoded as images </strong>. In chapter <a href="representations.html#representations">7</a> (section: Images) I showed you how timeseries data can be represented as an image with an example of how an activity can be represented as an RBG color image where each channel corresponds to one of the acceleration axes (<em>x</em>, <em>y</em>, <em>z</em>). We will use the file <code>images.txt</code> that already contains the activities in image format. The procedure of converting the raw data into this format was explained in chapter <a href="representations.html#representations">7</a> and the corresponding code is in script <code>timeseries_to_images.R</code>. Since the input data are images, we will use a convolutional neural network (see chapter <a href="deeplearning.html#deeplearning">8</a>).</p>
+<p>For this example, we will use the <em>SMARTPHONE ACTIVITIES</em> dataset <strong>encoded as images </strong>. In chapter <a href="representations.html#representations">7</a> (section: Images) I showed you how timeseries data can be represented as an image. That section presented an example of how accelerometer data can be represented as an RBG color image where each channel corresponds to one of the acceleration axes (<em>x</em>, <em>y</em>, <em>z</em>). We will use the file <code>images.txt</code> that already contains the activities in image format. The procedure of converting the raw data into this format was explained in chapter <a href="representations.html#representations">7</a> and the corresponding code is in the script <code>timeseries_to_images.R</code>. Since the input data are images, we will use a convolutional neural network (see chapter <a href="deeplearning.html#deeplearning">8</a>).</p>
 <p>The main objective will be to build an adaptive model with a small amount of training data from the target user. What we will do first is build a <strong>user-independent model</strong>. That is, we will select one of the users as the <em>target user</em>. We will train a user-independent model with data from the remaining users (excluding the target user). Then, we will apply transfer learning on this model to adapt it to the target user.</p>
 <p>The target user’s data will be split into a test set and an <strong>adaptive set</strong>. The test set will be used to evaluate the performance of the model and the adaptive set will be used to fine-tune the model. The adaptive set is used to simulate that we have obtained new data from the target user.</p>
-<p>The complete code is in script <code>keras/adaptive_cnn.R</code>. First, we start by reading the images file. Each row corresponds to one activity. The last two columns are the <code>userid</code> and the <code>class</code>. The first <span class="math inline">\(300\)</span> columns correspond to the image pixels. Each image has a size of <span class="math inline">\(10 \times 10 \times 3\)</span> (height, width, depth).</p>
+<p>The complete code is in the script <code>keras/adaptive_cnn.R</code>. First, we start by reading the images file. Each row corresponds to one activity. The last two columns are the <code>userid</code> and the <code>class</code>. The first <span class="math inline">\(300\)</span> columns correspond to the image pixels. Each image has a size of <span class="math inline">\(10 \times 10 \times 3\)</span> (height, width, depth).</p>
 <div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="multiuser.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Path to smartphone activities in image format.</span></span>
 <span id="cb203-2"><a href="multiuser.html#cb203-2" aria-hidden="true" tabindex="-1"></a>filepath <span class="ot">&lt;-</span> <span class="fu">file.path</span>(datasets_path,</span>
 <span id="cb203-3"><a href="multiuser.html#cb203-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;smartphone_activities&quot;</span>,</span>
@@ -741,7 +757,7 @@ FIGURE 9.4: First 2 iterations of leave-one-user-out validation.
 <span id="cb204-13"><a href="multiuser.html#cb204-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb204-14"><a href="multiuser.html#cb204-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Append labels as integers at the end of data frame.</span></span>
 <span id="cb204-15"><a href="multiuser.html#cb204-15" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>intlabel <span class="ot">&lt;-</span> mapping[df<span class="sc">$</span>label]</span></code></pre></div>
-<p>Now we store the unique users’ ids in the <code>users</code> variable. After printing it, you can notice that there are <span class="math inline">\(19\)</span> distinct users in this database. The original database has more users but we only kept those that performed all the activities. Then, we can select one of the users to act as the <em>target user</em>. I will just select one of them at random (turned out to be user <span class="math inline">\(24\)</span>). Feel free to select another user if you want.</p>
+<p>Now we store the unique users’ ids in the <code>users</code> variable. After printing the variable’s values, you can notice that there are <span class="math inline">\(19\)</span> distinct users in this database. The original database has more users but we only kept those that performed all the activities. Then, we can select one of the users to act as the <em>target user</em>. I will just select one of them at random (turned out to be user <span class="math inline">\(24\)</span>). Feel free to select another user if you want.</p>
 <div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="multiuser.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the unique user ids.</span></span>
 <span id="cb205-2"><a href="multiuser.html#cb205-2" aria-hidden="true" tabindex="-1"></a>users <span class="ot">&lt;-</span> <span class="fu">unique</span>(df<span class="sc">$</span>userid)</span>
 <span id="cb205-3"><a href="multiuser.html#cb205-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -751,7 +767,7 @@ FIGURE 9.4: First 2 iterations of leave-one-user-out validation.
 <span id="cb205-7"><a href="multiuser.html#cb205-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb205-8"><a href="multiuser.html#cb205-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Choose one user at random to be the target user.</span></span>
 <span id="cb205-9"><a href="multiuser.html#cb205-9" aria-hidden="true" tabindex="-1"></a>targetUser <span class="ot">&lt;-</span> <span class="fu">sample</span>(users, <span class="dv">1</span>)</span></code></pre></div>
-<p>Next, we split the data into two sets. The first set <code>trainset</code> contains the data from all users but <strong>excluding the target user</strong>. Then we create two variables: <code>train.y</code> and <code>train.x</code>. The first one has the labels as integers and the second one has the actual image pixels (features).</p>
+<p>Next, we split the data into two sets. The first set <code>trainset</code> contains the data from all users but <strong>excluding the target user</strong>. We create two variables: <code>train.y</code> and <code>train.x</code>. The first one has the labels as integers and the second one has the actual image pixels (features). The second set <code>target.data</code> contains data only from the target user.</p>
 <div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="multiuser.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split into train and target user sets.</span></span>
 <span id="cb206-2"><a href="multiuser.html#cb206-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The train set includes data from all users excluding targetUser.</span></span>
 <span id="cb206-3"><a href="multiuser.html#cb206-3" aria-hidden="true" tabindex="-1"></a>trainset <span class="ot">&lt;-</span> df[df<span class="sc">$</span>userid <span class="sc">!=</span> targetUser,]</span>
@@ -760,82 +776,57 @@ FIGURE 9.4: First 2 iterations of leave-one-user-out validation.
 <span id="cb206-6"><a href="multiuser.html#cb206-6" aria-hidden="true" tabindex="-1"></a>train.y <span class="ot">&lt;-</span> trainset<span class="sc">$</span>intlabel</span>
 <span id="cb206-7"><a href="multiuser.html#cb206-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb206-8"><a href="multiuser.html#cb206-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Save train pixels in a separate variable.</span></span>
-<span id="cb206-9"><a href="multiuser.html#cb206-9" aria-hidden="true" tabindex="-1"></a>train.x <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(trainset[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">301</span>,<span class="dv">302</span>,<span class="dv">303</span>)])</span></code></pre></div>
-<p>Now we split the target’s user data into <span class="math inline">\(50\%\)</span> test data and <span class="math inline">\(50\%\)</span> adaptive data such that we end up with <span class="math inline">\(4\)</span> variables:</p>
+<span id="cb206-9"><a href="multiuser.html#cb206-9" aria-hidden="true" tabindex="-1"></a>train.x <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(trainset[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">301</span>,<span class="dv">302</span>,<span class="dv">303</span>)])</span>
+<span id="cb206-10"><a href="multiuser.html#cb206-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb206-11"><a href="multiuser.html#cb206-11" aria-hidden="true" tabindex="-1"></a><span class="co"># This contains all data from the target user.</span></span>
+<span id="cb206-12"><a href="multiuser.html#cb206-12" aria-hidden="true" tabindex="-1"></a>target.data <span class="ot">&lt;-</span> df[df<span class="sc">$</span>userid <span class="sc">==</span> targetUser,]</span></code></pre></div>
+<p>Then, we split the target’s user data into <span class="math inline">\(50\%\)</span> test data and <span class="math inline">\(50\%\)</span> adaptive data (code omitted here) such that we end up with the following <span class="math inline">\(4\)</span> variables:</p>
 <ol style="list-style-type: decimal">
 <li><code>target.adaptive.y</code> Integer labels for the adaptive data of the target user.</li>
 <li><code>target.adaptive.x</code> Pixels of the adaptive data of the target user.</li>
 <li><code>target.test.y</code> Integer labels for the test data of the target user.</li>
 <li><code>target.test.x</code> Pixels of the test data of the target user.</li>
 </ol>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="multiuser.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This contains all data from the target user.</span></span>
-<span id="cb207-2"><a href="multiuser.html#cb207-2" aria-hidden="true" tabindex="-1"></a>target.data <span class="ot">&lt;-</span> df[df<span class="sc">$</span>userid <span class="sc">==</span> targetUser,]</span>
-<span id="cb207-3"><a href="multiuser.html#cb207-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb207-4"><a href="multiuser.html#cb207-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the target user&#39;s data into 50% adaptive</span></span>
-<span id="cb207-5"><a href="multiuser.html#cb207-5" aria-hidden="true" tabindex="-1"></a><span class="co"># and 50% test data.</span></span>
-<span id="cb207-6"><a href="multiuser.html#cb207-6" aria-hidden="true" tabindex="-1"></a>idxs <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">nrow</span>(target.data),</span>
-<span id="cb207-7"><a href="multiuser.html#cb207-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="fu">nrow</span>(target.data) <span class="sc">*</span> <span class="fl">0.5</span>,</span>
-<span id="cb207-8"><a href="multiuser.html#cb207-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb207-9"><a href="multiuser.html#cb207-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb207-10"><a href="multiuser.html#cb207-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Target user adaptive set.</span></span>
-<span id="cb207-11"><a href="multiuser.html#cb207-11" aria-hidden="true" tabindex="-1"></a><span class="co"># This data is used to adapt the model to the target user.</span></span>
-<span id="cb207-12"><a href="multiuser.html#cb207-12" aria-hidden="true" tabindex="-1"></a>target.adaptive <span class="ot">&lt;-</span> target.data[idxs,]</span>
-<span id="cb207-13"><a href="multiuser.html#cb207-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb207-14"><a href="multiuser.html#cb207-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Save target.adaptive labels in a separate variable.</span></span>
-<span id="cb207-15"><a href="multiuser.html#cb207-15" aria-hidden="true" tabindex="-1"></a>target.adaptive.y <span class="ot">&lt;-</span> target.adaptive<span class="sc">$</span>intlabel</span>
-<span id="cb207-16"><a href="multiuser.html#cb207-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb207-17"><a href="multiuser.html#cb207-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Save target.adaptive pixels in a separate variable.</span></span>
-<span id="cb207-18"><a href="multiuser.html#cb207-18" aria-hidden="true" tabindex="-1"></a>target.adaptive.x <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(target.adaptive[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">301</span>,<span class="dv">302</span>,<span class="dv">303</span>)])</span>
-<span id="cb207-19"><a href="multiuser.html#cb207-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb207-20"><a href="multiuser.html#cb207-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Target user test set.</span></span>
-<span id="cb207-21"><a href="multiuser.html#cb207-21" aria-hidden="true" tabindex="-1"></a><span class="co"># This data is used to test the performance.</span></span>
-<span id="cb207-22"><a href="multiuser.html#cb207-22" aria-hidden="true" tabindex="-1"></a>target.test <span class="ot">&lt;-</span> target.data[<span class="sc">-</span>idxs,]</span>
-<span id="cb207-23"><a href="multiuser.html#cb207-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb207-24"><a href="multiuser.html#cb207-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Save target.test labels in a separate variable.</span></span>
-<span id="cb207-25"><a href="multiuser.html#cb207-25" aria-hidden="true" tabindex="-1"></a>target.test.y <span class="ot">&lt;-</span> target.test<span class="sc">$</span>intlabel</span>
-<span id="cb207-26"><a href="multiuser.html#cb207-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb207-27"><a href="multiuser.html#cb207-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Save target.test pixels in a separate variable.</span></span>
-<span id="cb207-28"><a href="multiuser.html#cb207-28" aria-hidden="true" tabindex="-1"></a>target.test.x <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(target.test[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">301</span>,<span class="dv">302</span>,<span class="dv">303</span>)])</span></code></pre></div>
-<p>We also need to normalize the data and reshape it into the actual image format since in their current form, the pixels are stored into <span class="math inline">\(1\)</span>-dimensional arrays. We learn the normalization parameters only from the train set and then we used the <code>normalize.reshape()</code> function (defined in the same script file) to perform the actual normalization and formatting.</p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="multiuser.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Learn min and max values from train set for normalization.</span></span>
-<span id="cb208-2"><a href="multiuser.html#cb208-2" aria-hidden="true" tabindex="-1"></a>maxv <span class="ot">&lt;-</span> <span class="fu">max</span>(train.x)</span>
-<span id="cb208-3"><a href="multiuser.html#cb208-3" aria-hidden="true" tabindex="-1"></a>minv <span class="ot">&lt;-</span> <span class="fu">min</span>(train.x)</span>
-<span id="cb208-4"><a href="multiuser.html#cb208-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb208-5"><a href="multiuser.html#cb208-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize and reshape. May take some minutes.</span></span>
-<span id="cb208-6"><a href="multiuser.html#cb208-6" aria-hidden="true" tabindex="-1"></a>train.x <span class="ot">&lt;-</span> <span class="fu">normalize.reshape</span>(train.x, minv, maxv)</span>
-<span id="cb208-7"><a href="multiuser.html#cb208-7" aria-hidden="true" tabindex="-1"></a>target.adaptive.x <span class="ot">&lt;-</span> <span class="fu">normalize.reshape</span>(target.adaptive.x, minv, maxv)</span>
-<span id="cb208-8"><a href="multiuser.html#cb208-8" aria-hidden="true" tabindex="-1"></a>target.test.x <span class="ot">&lt;-</span> <span class="fu">normalize.reshape</span>(target.test.x, minv, maxv)</span></code></pre></div>
+<p>We also need to normalize the data and reshape it into the actual image format since in their current form, the pixels are stored into <span class="math inline">\(1\)</span>-dimensional arrays. We learn the normalization parameters only from the train set and then we use the <code>normalize.reshape()</code> function (defined in the same script file) to perform the actual normalization and formatting.</p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="multiuser.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Learn min and max values from train set for normalization.</span></span>
+<span id="cb207-2"><a href="multiuser.html#cb207-2" aria-hidden="true" tabindex="-1"></a>maxv <span class="ot">&lt;-</span> <span class="fu">max</span>(train.x)</span>
+<span id="cb207-3"><a href="multiuser.html#cb207-3" aria-hidden="true" tabindex="-1"></a>minv <span class="ot">&lt;-</span> <span class="fu">min</span>(train.x)</span>
+<span id="cb207-4"><a href="multiuser.html#cb207-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb207-5"><a href="multiuser.html#cb207-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize and reshape. May take some minutes.</span></span>
+<span id="cb207-6"><a href="multiuser.html#cb207-6" aria-hidden="true" tabindex="-1"></a>train.x <span class="ot">&lt;-</span> <span class="fu">normalize.reshape</span>(train.x, minv, maxv)</span>
+<span id="cb207-7"><a href="multiuser.html#cb207-7" aria-hidden="true" tabindex="-1"></a>target.adaptive.x <span class="ot">&lt;-</span> <span class="fu">normalize.reshape</span>(target.adaptive.x, minv, maxv)</span>
+<span id="cb207-8"><a href="multiuser.html#cb207-8" aria-hidden="true" tabindex="-1"></a>target.test.x <span class="ot">&lt;-</span> <span class="fu">normalize.reshape</span>(target.test.x, minv, maxv)</span></code></pre></div>
 <p>Let’s inspect how the structure of the final datasets looks like.</p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="multiuser.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(train.x)</span>
-<span id="cb209-2"><a href="multiuser.html#cb209-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 6399   10   10    3</span></span>
-<span id="cb209-3"><a href="multiuser.html#cb209-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(target.adaptive.x)</span>
-<span id="cb209-4"><a href="multiuser.html#cb209-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 124  10  10   3</span></span>
-<span id="cb209-5"><a href="multiuser.html#cb209-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(target.test.x)</span>
-<span id="cb209-6"><a href="multiuser.html#cb209-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 124  10  10   3</span></span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="multiuser.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(train.x)</span>
+<span id="cb208-2"><a href="multiuser.html#cb208-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 6399   10   10    3</span></span>
+<span id="cb208-3"><a href="multiuser.html#cb208-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(target.adaptive.x)</span>
+<span id="cb208-4"><a href="multiuser.html#cb208-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 124  10  10   3</span></span>
+<span id="cb208-5"><a href="multiuser.html#cb208-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(target.test.x)</span>
+<span id="cb208-6"><a href="multiuser.html#cb208-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 124  10  10   3</span></span></code></pre></div>
 <p>Here, we see that the train set has <span class="math inline">\(6399\)</span> instances (images). The adaptive and test sets both have <span class="math inline">\(124\)</span> instances.</p>
-<p>Now that we are finally done with all the preprocessing, it is time to build the CNN model! This one will be the initial user-independent model and is trained with all the training data <code>train.x</code>, <code>train.y</code>.</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="multiuser.html#cb210-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">keras_model_sequential</span>()</span>
-<span id="cb210-2"><a href="multiuser.html#cb210-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb210-3"><a href="multiuser.html#cb210-3" aria-hidden="true" tabindex="-1"></a>model <span class="sc">%&gt;%</span></span>
-<span id="cb210-4"><a href="multiuser.html#cb210-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_conv_2d</span>(<span class="at">name =</span> <span class="st">&quot;conv1&quot;</span>,</span>
-<span id="cb210-5"><a href="multiuser.html#cb210-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">filters =</span> <span class="dv">8</span>,</span>
-<span id="cb210-6"><a href="multiuser.html#cb210-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">kernel_size =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>),</span>
-<span id="cb210-7"><a href="multiuser.html#cb210-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">activation =</span> <span class="st">&#39;relu&#39;</span>,</span>
-<span id="cb210-8"><a href="multiuser.html#cb210-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">input_shape =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">3</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb210-9"><a href="multiuser.html#cb210-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_conv_2d</span>(<span class="at">name =</span> <span class="st">&quot;conv2&quot;</span>,</span>
-<span id="cb210-10"><a href="multiuser.html#cb210-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">filters =</span> <span class="dv">16</span>,</span>
-<span id="cb210-11"><a href="multiuser.html#cb210-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">kernel_size =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>),</span>
-<span id="cb210-12"><a href="multiuser.html#cb210-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">activation =</span> <span class="st">&#39;relu&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb210-13"><a href="multiuser.html#cb210-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_max_pooling_2d</span>(<span class="at">pool_size =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb210-14"><a href="multiuser.html#cb210-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_flatten</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb210-15"><a href="multiuser.html#cb210-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dense</span>(<span class="at">name =</span> <span class="st">&quot;hidden1&quot;</span>, <span class="at">units =</span> <span class="dv">32</span>,</span>
-<span id="cb210-16"><a href="multiuser.html#cb210-16" aria-hidden="true" tabindex="-1"></a>              <span class="at">activation =</span> <span class="st">&#39;relu&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb210-17"><a href="multiuser.html#cb210-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dropout</span>(<span class="fl">0.25</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb210-18"><a href="multiuser.html#cb210-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dense</span>(<span class="at">units =</span> <span class="dv">6</span>, <span class="at">activation =</span> <span class="st">&#39;softmax&#39;</span>)</span></code></pre></div>
-<p>This CNN has two convolutional layers followed by a max pooling operation, a fully connected layer, and an output layer. One important thing to note is that <strong>we have specified a name for each layer</strong> with the <code>name</code> parameter. For example, the first convolution’s name is <code>conv1</code>, the second one is <code>conv2</code>, and the fully connected layer was named <code>hidden1</code>. These names must be unique because they will allow us to later select specific layers fo freeze and unfreeze.</p>
+<p>Now that we are finally done with all the preprocessing, it is time to build the CNN model! This one will be the initial user-independent model and is trained with all the train data <code>train.x</code>, <code>train.y</code>.</p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="multiuser.html#cb209-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">keras_model_sequential</span>()</span>
+<span id="cb209-2"><a href="multiuser.html#cb209-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-3"><a href="multiuser.html#cb209-3" aria-hidden="true" tabindex="-1"></a>model <span class="sc">%&gt;%</span></span>
+<span id="cb209-4"><a href="multiuser.html#cb209-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_conv_2d</span>(<span class="at">name =</span> <span class="st">&quot;conv1&quot;</span>,</span>
+<span id="cb209-5"><a href="multiuser.html#cb209-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">filters =</span> <span class="dv">8</span>,</span>
+<span id="cb209-6"><a href="multiuser.html#cb209-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">kernel_size =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>),</span>
+<span id="cb209-7"><a href="multiuser.html#cb209-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">activation =</span> <span class="st">&#39;relu&#39;</span>,</span>
+<span id="cb209-8"><a href="multiuser.html#cb209-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">input_shape =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">3</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb209-9"><a href="multiuser.html#cb209-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_conv_2d</span>(<span class="at">name =</span> <span class="st">&quot;conv2&quot;</span>,</span>
+<span id="cb209-10"><a href="multiuser.html#cb209-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">filters =</span> <span class="dv">16</span>,</span>
+<span id="cb209-11"><a href="multiuser.html#cb209-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">kernel_size =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>),</span>
+<span id="cb209-12"><a href="multiuser.html#cb209-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">activation =</span> <span class="st">&#39;relu&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb209-13"><a href="multiuser.html#cb209-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_max_pooling_2d</span>(<span class="at">pool_size =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb209-14"><a href="multiuser.html#cb209-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_flatten</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb209-15"><a href="multiuser.html#cb209-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dense</span>(<span class="at">name =</span> <span class="st">&quot;hidden1&quot;</span>, <span class="at">units =</span> <span class="dv">32</span>,</span>
+<span id="cb209-16"><a href="multiuser.html#cb209-16" aria-hidden="true" tabindex="-1"></a>              <span class="at">activation =</span> <span class="st">&#39;relu&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb209-17"><a href="multiuser.html#cb209-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dropout</span>(<span class="fl">0.25</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb209-18"><a href="multiuser.html#cb209-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dense</span>(<span class="at">units =</span> <span class="dv">6</span>, <span class="at">activation =</span> <span class="st">&#39;softmax&#39;</span>)</span></code></pre></div>
+<p>This CNN has two convolutional layers followed by a max pooling operation, a fully connected layer, and an output layer. One important thing to note is that <strong>we have specified a name for each layer</strong> with the <code>name</code> parameter. For example, the first convolution’s name is <code>conv1</code>, the second one is <code>conv2</code>, and the fully connected layer was named <code>hidden1</code>. Those names must be unique because later, they will allow us to select specific layers to freeze and unfreeze.</p>
 <p>If we print the model’s summary we can see that in total it has <span class="math inline">\(9,054\)</span> <strong>trainable parameters</strong> and <span class="math inline">\(0\)</span> <strong>non-trainable parameters</strong>. This means that all the parameters of the network will be updated during the gradient descent procedure, as usual.</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="multiuser.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary.</span></span>
-<span id="cb211-2"><a href="multiuser.html#cb211-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="multiuser.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary.</span></span>
+<span id="cb210-2"><a href="multiuser.html#cb210-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:adaptSummary1"></span>
 <img src="images/adaptive_summary.png" alt="Summary of initial user-independent model." width="90%" />
 <p class="caption">
@@ -843,103 +834,108 @@ FIGURE 9.5: Summary of initial user-independent model.
 </p>
 </div>
 <p>The next code will compile the model and initiate the training phase.</p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="multiuser.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compile model.</span></span>
-<span id="cb212-2"><a href="multiuser.html#cb212-2" aria-hidden="true" tabindex="-1"></a>model <span class="sc">%&gt;%</span> <span class="fu">compile</span>(</span>
-<span id="cb212-3"><a href="multiuser.html#cb212-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">loss =</span> <span class="st">&#39;sparse_categorical_crossentropy&#39;</span>,</span>
-<span id="cb212-4"><a href="multiuser.html#cb212-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">optimizer =</span> <span class="fu">optimizer_sgd</span>(<span class="at">lr =</span> <span class="fl">0.01</span>),</span>
-<span id="cb212-5"><a href="multiuser.html#cb212-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">metrics =</span> <span class="fu">c</span>(<span class="st">&quot;accuracy&quot;</span>)</span>
-<span id="cb212-6"><a href="multiuser.html#cb212-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb212-7"><a href="multiuser.html#cb212-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb212-8"><a href="multiuser.html#cb212-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the user-independent model.</span></span>
-<span id="cb212-9"><a href="multiuser.html#cb212-9" aria-hidden="true" tabindex="-1"></a>history <span class="ot">&lt;-</span> model <span class="sc">%&gt;%</span> <span class="fu">fit</span>(</span>
-<span id="cb212-10"><a href="multiuser.html#cb212-10" aria-hidden="true" tabindex="-1"></a>  train.x, train.y,</span>
-<span id="cb212-11"><a href="multiuser.html#cb212-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">epochs =</span> <span class="dv">50</span>,</span>
-<span id="cb212-12"><a href="multiuser.html#cb212-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">batch_size =</span> <span class="dv">8</span>,</span>
-<span id="cb212-13"><a href="multiuser.html#cb212-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">validation_split =</span> <span class="fl">0.15</span>,</span>
-<span id="cb212-14"><a href="multiuser.html#cb212-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">verbose =</span> <span class="dv">1</span>,</span>
-<span id="cb212-15"><a href="multiuser.html#cb212-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">view_metrics =</span> <span class="cn">TRUE</span></span>
-<span id="cb212-16"><a href="multiuser.html#cb212-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb212-17"><a href="multiuser.html#cb212-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb212-18"><a href="multiuser.html#cb212-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(history)</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="multiuser.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compile model.</span></span>
+<span id="cb211-2"><a href="multiuser.html#cb211-2" aria-hidden="true" tabindex="-1"></a>model <span class="sc">%&gt;%</span> <span class="fu">compile</span>(</span>
+<span id="cb211-3"><a href="multiuser.html#cb211-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">loss =</span> <span class="st">&#39;sparse_categorical_crossentropy&#39;</span>,</span>
+<span id="cb211-4"><a href="multiuser.html#cb211-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">optimizer =</span> <span class="fu">optimizer_sgd</span>(<span class="at">lr =</span> <span class="fl">0.01</span>),</span>
+<span id="cb211-5"><a href="multiuser.html#cb211-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">metrics =</span> <span class="fu">c</span>(<span class="st">&quot;accuracy&quot;</span>)</span>
+<span id="cb211-6"><a href="multiuser.html#cb211-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb211-7"><a href="multiuser.html#cb211-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb211-8"><a href="multiuser.html#cb211-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the user-independent model.</span></span>
+<span id="cb211-9"><a href="multiuser.html#cb211-9" aria-hidden="true" tabindex="-1"></a>history <span class="ot">&lt;-</span> model <span class="sc">%&gt;%</span> <span class="fu">fit</span>(</span>
+<span id="cb211-10"><a href="multiuser.html#cb211-10" aria-hidden="true" tabindex="-1"></a>  train.x, train.y,</span>
+<span id="cb211-11"><a href="multiuser.html#cb211-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">epochs =</span> <span class="dv">50</span>,</span>
+<span id="cb211-12"><a href="multiuser.html#cb211-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">batch_size =</span> <span class="dv">8</span>,</span>
+<span id="cb211-13"><a href="multiuser.html#cb211-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">validation_split =</span> <span class="fl">0.15</span>,</span>
+<span id="cb211-14"><a href="multiuser.html#cb211-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">verbose =</span> <span class="dv">1</span>,</span>
+<span id="cb211-15"><a href="multiuser.html#cb211-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">view_metrics =</span> <span class="cn">TRUE</span></span>
+<span id="cb211-16"><a href="multiuser.html#cb211-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb211-17"><a href="multiuser.html#cb211-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb211-18"><a href="multiuser.html#cb211-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(history)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:adaptLoss1"></span>
+<img src="images/adapt_loss1.png" alt="Loss and accuracy plot of the initial user-independent model." width="90%" />
+<p class="caption">
+FIGURE 9.6: Loss and accuracy plot of the initial user-independent model.
+</p>
+</div>
 
 <div class="rmdinfo">
 Note that this time the loss was defined as <code>loss = 'sparse_categorical_crossentropy'</code> instead of the usual <code>loss = 'categorical_crossentropy'</code>. Here, the <code>sparse_</code> suffix was added. You may have noted that in this example we did not one-hot encode the labels but they were only transformed into integers. By adding the <code>sparse_</code> suffix we are telling Keras that our labels are not one-hot-encoded but encoded as integers starting at <span class="math inline">\(0\)</span> so it will perform the one-hot encoding for us. This is a little trick that saved us some time.
 </div>
-<p><img src="images/adapt_loss1.png" width="90%" style="display: block; margin: auto;" /></p>
-<p>We save the model so we can load it later. Let’s also estimate the model’s performance on the target user test set.</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="multiuser.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save model.</span></span>
-<span id="cb213-2"><a href="multiuser.html#cb213-2" aria-hidden="true" tabindex="-1"></a><span class="fu">save_model_hdf5</span>(model, <span class="st">&quot;user-independent.hdf5&quot;</span>)</span>
-<span id="cb213-3"><a href="multiuser.html#cb213-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb213-4"><a href="multiuser.html#cb213-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute performance (accuracy) on the target user test set.</span></span>
-<span id="cb213-5"><a href="multiuser.html#cb213-5" aria-hidden="true" tabindex="-1"></a>model <span class="sc">%&gt;%</span> <span class="fu">evaluate</span>(target.test.x, target.test.y)</span>
-<span id="cb213-6"><a href="multiuser.html#cb213-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      loss  accuracy </span></span>
-<span id="cb213-7"><a href="multiuser.html#cb213-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2.1888916 0.6129032</span></span></code></pre></div>
+<p>Figure <a href="multiuser.html#fig:adaptLoss1">9.6</a> shows a plot of the loss and accuracy during training. Then, we save the model so we can load it later. Let’s also estimate the model’s performance on the target user test set.</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="multiuser.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save model.</span></span>
+<span id="cb212-2"><a href="multiuser.html#cb212-2" aria-hidden="true" tabindex="-1"></a><span class="fu">save_model_hdf5</span>(model, <span class="st">&quot;user-independent.hdf5&quot;</span>)</span>
+<span id="cb212-3"><a href="multiuser.html#cb212-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb212-4"><a href="multiuser.html#cb212-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute performance (accuracy) on the target user test set.</span></span>
+<span id="cb212-5"><a href="multiuser.html#cb212-5" aria-hidden="true" tabindex="-1"></a>model <span class="sc">%&gt;%</span> <span class="fu">evaluate</span>(target.test.x, target.test.y)</span>
+<span id="cb212-6"><a href="multiuser.html#cb212-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      loss  accuracy </span></span>
+<span id="cb212-7"><a href="multiuser.html#cb212-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2.1888916 0.6129032</span></span></code></pre></div>
 <p>The overall <em>accuracy</em> of this user-independent model when tested on the target user was <span class="math inline">\(61.2\%\)</span> (quite low). Now, we can apply transfer learning and see if we can do better. We will ‘freeze’ the first convolution layer and only update the second convolution layer and the remaining fully connected layers using the target user-adaptive data. The following code loads the previously trained user-independent model. Then all the CNN’s weights are frozen using the <code>freeze_weights()</code> function. The <code>from</code> parameter specifies the first layer (inclusive) from which the parameters are to be frozen. Here, we set it to <span class="math inline">\(1\)</span> so all parameters in the network are ‘frozen.’ Then, we can use the <code>unfreeze_weights()</code> function to specify from which layer (inclusive) the parameters should be unfrozen. In this case, we want to retrain from the second convolutional layer so we set it to <code>conv2</code> which is how we named this layer earlier.</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="multiuser.html#cb214-1" aria-hidden="true" tabindex="-1"></a>adaptive.model <span class="ot">&lt;-</span> <span class="fu">load_model_hdf5</span>(<span class="st">&quot;user-independent.hdf5&quot;</span>)</span>
-<span id="cb214-2"><a href="multiuser.html#cb214-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb214-3"><a href="multiuser.html#cb214-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Freeze all layers.</span></span>
-<span id="cb214-4"><a href="multiuser.html#cb214-4" aria-hidden="true" tabindex="-1"></a><span class="fu">freeze_weights</span>(adaptive.model, <span class="at">from =</span> <span class="dv">1</span>)</span>
-<span id="cb214-5"><a href="multiuser.html#cb214-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb214-6"><a href="multiuser.html#cb214-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Unfreeze layers from conv2.</span></span>
-<span id="cb214-7"><a href="multiuser.html#cb214-7" aria-hidden="true" tabindex="-1"></a><span class="fu">unfreeze_weights</span>(adaptive.model, <span class="at">from =</span> <span class="st">&quot;conv2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="multiuser.html#cb213-1" aria-hidden="true" tabindex="-1"></a>adaptive.model <span class="ot">&lt;-</span> <span class="fu">load_model_hdf5</span>(<span class="st">&quot;user-independent.hdf5&quot;</span>)</span>
+<span id="cb213-2"><a href="multiuser.html#cb213-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb213-3"><a href="multiuser.html#cb213-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Freeze all layers.</span></span>
+<span id="cb213-4"><a href="multiuser.html#cb213-4" aria-hidden="true" tabindex="-1"></a><span class="fu">freeze_weights</span>(adaptive.model, <span class="at">from =</span> <span class="dv">1</span>)</span>
+<span id="cb213-5"><a href="multiuser.html#cb213-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb213-6"><a href="multiuser.html#cb213-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Unfreeze layers from conv2.</span></span>
+<span id="cb213-7"><a href="multiuser.html#cb213-7" aria-hidden="true" tabindex="-1"></a><span class="fu">unfreeze_weights</span>(adaptive.model, <span class="at">from =</span> <span class="st">&quot;conv2&quot;</span>)</span></code></pre></div>
 <p>After defining those changes we need to compile the model so the modifications take effect.</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="multiuser.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compile model. We need to compile after freezing/unfreezing weights.</span></span>
-<span id="cb215-2"><a href="multiuser.html#cb215-2" aria-hidden="true" tabindex="-1"></a>adaptive.model <span class="sc">%&gt;%</span> <span class="fu">compile</span>(</span>
-<span id="cb215-3"><a href="multiuser.html#cb215-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">loss =</span> <span class="st">&#39;sparse_categorical_crossentropy&#39;</span>,</span>
-<span id="cb215-4"><a href="multiuser.html#cb215-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">optimizer =</span> <span class="fu">optimizer_sgd</span>(<span class="at">lr =</span> <span class="fl">0.01</span>),</span>
-<span id="cb215-5"><a href="multiuser.html#cb215-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">metrics =</span> <span class="fu">c</span>(<span class="st">&quot;accuracy&quot;</span>)</span>
-<span id="cb215-6"><a href="multiuser.html#cb215-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb215-7"><a href="multiuser.html#cb215-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb215-8"><a href="multiuser.html#cb215-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(adaptive.model)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="multiuser.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compile model. We need to compile after freezing/unfreezing weights.</span></span>
+<span id="cb214-2"><a href="multiuser.html#cb214-2" aria-hidden="true" tabindex="-1"></a>adaptive.model <span class="sc">%&gt;%</span> <span class="fu">compile</span>(</span>
+<span id="cb214-3"><a href="multiuser.html#cb214-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">loss =</span> <span class="st">&#39;sparse_categorical_crossentropy&#39;</span>,</span>
+<span id="cb214-4"><a href="multiuser.html#cb214-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">optimizer =</span> <span class="fu">optimizer_sgd</span>(<span class="at">lr =</span> <span class="fl">0.01</span>),</span>
+<span id="cb214-5"><a href="multiuser.html#cb214-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">metrics =</span> <span class="fu">c</span>(<span class="st">&quot;accuracy&quot;</span>)</span>
+<span id="cb214-6"><a href="multiuser.html#cb214-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb214-7"><a href="multiuser.html#cb214-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb214-8"><a href="multiuser.html#cb214-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(adaptive.model)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:adaptSummary2"></span>
 <img src="images/adaptive_summary2.png" alt="Summary of user-independent model after freezing first convolutional layer." width="90%" />
 <p class="caption">
-FIGURE 9.6: Summary of user-independent model after freezing first convolutional layer.
+FIGURE 9.7: Summary of user-independent model after freezing first convolutional layer.
 </p>
 </div>
 <p>After printing the summary, now you can note that the number of <strong>trainable and non-trainable parameters</strong> has changed. Now, the non-trainable parameters are <span class="math inline">\(104\)</span> but before they were <span class="math inline">\(0\)</span>. These <span class="math inline">\(104\)</span> parameters correspond to the first convolutional layer but this time they will not be updated during the gradient descent training phase.</p>
 <p>The following code will retrain the model using the adaptive data but keeping the first convolutional layer fixed.</p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="multiuser.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update model with adaptive data.</span></span>
-<span id="cb216-2"><a href="multiuser.html#cb216-2" aria-hidden="true" tabindex="-1"></a>history <span class="ot">&lt;-</span> adaptive.model <span class="sc">%&gt;%</span> <span class="fu">fit</span>(</span>
-<span id="cb216-3"><a href="multiuser.html#cb216-3" aria-hidden="true" tabindex="-1"></a>  target.adaptive.x, target.adaptive.y,</span>
-<span id="cb216-4"><a href="multiuser.html#cb216-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">epochs =</span> <span class="dv">50</span>,</span>
-<span id="cb216-5"><a href="multiuser.html#cb216-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">batch_size =</span> <span class="dv">8</span>,</span>
-<span id="cb216-6"><a href="multiuser.html#cb216-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">validation_split =</span> <span class="dv">0</span>,</span>
-<span id="cb216-7"><a href="multiuser.html#cb216-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">verbose =</span> <span class="dv">1</span>,</span>
-<span id="cb216-8"><a href="multiuser.html#cb216-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">view_metrics =</span> <span class="cn">TRUE</span></span>
-<span id="cb216-9"><a href="multiuser.html#cb216-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="multiuser.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update model with adaptive data.</span></span>
+<span id="cb215-2"><a href="multiuser.html#cb215-2" aria-hidden="true" tabindex="-1"></a>history <span class="ot">&lt;-</span> adaptive.model <span class="sc">%&gt;%</span> <span class="fu">fit</span>(</span>
+<span id="cb215-3"><a href="multiuser.html#cb215-3" aria-hidden="true" tabindex="-1"></a>  target.adaptive.x, target.adaptive.y,</span>
+<span id="cb215-4"><a href="multiuser.html#cb215-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">epochs =</span> <span class="dv">50</span>,</span>
+<span id="cb215-5"><a href="multiuser.html#cb215-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">batch_size =</span> <span class="dv">8</span>,</span>
+<span id="cb215-6"><a href="multiuser.html#cb215-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">validation_split =</span> <span class="dv">0</span>,</span>
+<span id="cb215-7"><a href="multiuser.html#cb215-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">verbose =</span> <span class="dv">1</span>,</span>
+<span id="cb215-8"><a href="multiuser.html#cb215-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">view_metrics =</span> <span class="cn">TRUE</span></span>
+<span id="cb215-9"><a href="multiuser.html#cb215-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 
 <div class="rmdcaution">
-Note that this time the <code>validation_split</code> was set to <span class="math inline">\(0\)</span>. This is because the target user data set is very small so there is not enough data to use as validation set. One possible approach to overcome this is to leave a percentage of users out when building the train set for the user-independent model. Then, use those left-out users to find which are the most appropriate layers to keep frozen. Once you are happy with the results, evaluate the model with the target user.
+Note that this time the <code>validation_split</code> was set to <span class="math inline">\(0\)</span>. This is because the target user data set is very small so there is not enough data to use as validation set. One possible approach to overcome this is to leave a percentage of users out when building the train set for the user-independent model. Then, use those left-out users to find which are the most appropriate layers to keep frozen. Once you are happy with the results, evaluate the model on the target user.
 </div>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="multiuser.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute performance (accuracy) on the target user test set.</span></span>
-<span id="cb217-2"><a href="multiuser.html#cb217-2" aria-hidden="true" tabindex="-1"></a>adaptive.model <span class="sc">%&gt;%</span> <span class="fu">evaluate</span>(target.test.x, target.test.y)</span>
-<span id="cb217-3"><a href="multiuser.html#cb217-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      loss  accuracy </span></span>
-<span id="cb217-4"><a href="multiuser.html#cb217-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.4652017 0.8548387</span></span></code></pre></div>
-<p>If we evaluate the adaptive model performance on the target’s user test set, now we see that the accuracy is <span class="math inline">\(85.4\%\)</span> which is a considerable increase! (<span class="math inline">\(\approx 24\%\)</span> increase).</p>
-<p>At this point, you may be wondering that this accuracy increase was due to the fact that the model was trained for an additional <span class="math inline">\(50\)</span> epochs. To check this, we can re-train the initial user-independent model for <span class="math inline">\(50\)</span> more epochs.</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="multiuser.html#cb218-1" aria-hidden="true" tabindex="-1"></a>retrained_model <span class="ot">&lt;-</span> <span class="fu">load_model_hdf5</span>(<span class="st">&quot;user-independent.hdf5&quot;</span>)</span>
-<span id="cb218-2"><a href="multiuser.html#cb218-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb218-3"><a href="multiuser.html#cb218-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the user-independent model for 50 more epochs.</span></span>
-<span id="cb218-4"><a href="multiuser.html#cb218-4" aria-hidden="true" tabindex="-1"></a>history <span class="ot">&lt;-</span> retrained_model <span class="sc">%&gt;%</span> <span class="fu">fit</span>(</span>
-<span id="cb218-5"><a href="multiuser.html#cb218-5" aria-hidden="true" tabindex="-1"></a>  train.x, train.y,</span>
-<span id="cb218-6"><a href="multiuser.html#cb218-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">epochs =</span> <span class="dv">50</span>,</span>
-<span id="cb218-7"><a href="multiuser.html#cb218-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">batch_size =</span> <span class="dv">8</span>,</span>
-<span id="cb218-8"><a href="multiuser.html#cb218-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">validation_split =</span> <span class="fl">0.15</span>,</span>
-<span id="cb218-9"><a href="multiuser.html#cb218-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">verbose =</span> <span class="dv">1</span>,</span>
-<span id="cb218-10"><a href="multiuser.html#cb218-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">view_metrics =</span> <span class="cn">TRUE</span></span>
-<span id="cb218-11"><a href="multiuser.html#cb218-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb218-12"><a href="multiuser.html#cb218-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb218-13"><a href="multiuser.html#cb218-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute performance (accuracy) on the target user test set.</span></span>
-<span id="cb218-14"><a href="multiuser.html#cb218-14" aria-hidden="true" tabindex="-1"></a>retrained_model <span class="sc">%&gt;%</span> <span class="fu">evaluate</span>(target.test.x, target.test.y)</span>
-<span id="cb218-15"><a href="multiuser.html#cb218-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      loss  accuracy </span></span>
-<span id="cb218-16"><a href="multiuser.html#cb218-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2.7197671 0.6612903 </span></span></code></pre></div>
-<p>After re-training the user-independent model for <span class="math inline">\(50\)</span> more epochs, its <em>accuracy</em> increased to <span class="math inline">\(66.1\%\)</span>. On the other hand, the adaptive model was trained with much less data and produced a much better result (<span class="math inline">\(85.4%\)</span>) with only <span class="math inline">\(124\)</span> instances as compared to the user-independent model <span class="math inline">\(\approx 5440\)</span> instances. That is, the <span class="math inline">\(6399\)</span> instances minus <span class="math inline">\(15\%\)</span> used as the validation set. This also highlights one of the advantages of transfer learning which is a reduction in the needed amount of training data.</p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="multiuser.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute performance (accuracy) on the target user test set.</span></span>
+<span id="cb216-2"><a href="multiuser.html#cb216-2" aria-hidden="true" tabindex="-1"></a>adaptive.model <span class="sc">%&gt;%</span> <span class="fu">evaluate</span>(target.test.x, target.test.y)</span>
+<span id="cb216-3"><a href="multiuser.html#cb216-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      loss  accuracy </span></span>
+<span id="cb216-4"><a href="multiuser.html#cb216-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.4652017 0.8548387</span></span></code></pre></div>
+<p>If we evaluate the adaptive model’s performance on the target’s user test set, now we see that the accuracy is <span class="math inline">\(85.4\%\)</span> which is a considerable increase! (<span class="math inline">\(\approx 24\%\)</span> increase).</p>
+<p>At this point, you may be wondering whether this accuracy increase was due to the fact that the model was trained for an additional <span class="math inline">\(50\)</span> epochs. To validate this, we can re-train the initial user-independent model for <span class="math inline">\(50\)</span> more epochs.</p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="multiuser.html#cb217-1" aria-hidden="true" tabindex="-1"></a>retrained_model <span class="ot">&lt;-</span> <span class="fu">load_model_hdf5</span>(<span class="st">&quot;user-independent.hdf5&quot;</span>)</span>
+<span id="cb217-2"><a href="multiuser.html#cb217-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb217-3"><a href="multiuser.html#cb217-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the user-independent model for 50 more epochs.</span></span>
+<span id="cb217-4"><a href="multiuser.html#cb217-4" aria-hidden="true" tabindex="-1"></a>history <span class="ot">&lt;-</span> retrained_model <span class="sc">%&gt;%</span> <span class="fu">fit</span>(</span>
+<span id="cb217-5"><a href="multiuser.html#cb217-5" aria-hidden="true" tabindex="-1"></a>  train.x, train.y,</span>
+<span id="cb217-6"><a href="multiuser.html#cb217-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">epochs =</span> <span class="dv">50</span>,</span>
+<span id="cb217-7"><a href="multiuser.html#cb217-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">batch_size =</span> <span class="dv">8</span>,</span>
+<span id="cb217-8"><a href="multiuser.html#cb217-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">validation_split =</span> <span class="fl">0.15</span>,</span>
+<span id="cb217-9"><a href="multiuser.html#cb217-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">verbose =</span> <span class="dv">1</span>,</span>
+<span id="cb217-10"><a href="multiuser.html#cb217-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">view_metrics =</span> <span class="cn">TRUE</span></span>
+<span id="cb217-11"><a href="multiuser.html#cb217-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb217-12"><a href="multiuser.html#cb217-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb217-13"><a href="multiuser.html#cb217-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute performance (accuracy) on the target user test set.</span></span>
+<span id="cb217-14"><a href="multiuser.html#cb217-14" aria-hidden="true" tabindex="-1"></a>retrained_model <span class="sc">%&gt;%</span> <span class="fu">evaluate</span>(target.test.x, target.test.y)</span>
+<span id="cb217-15"><a href="multiuser.html#cb217-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      loss  accuracy </span></span>
+<span id="cb217-16"><a href="multiuser.html#cb217-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2.7197671 0.6612903 </span></span></code></pre></div>
+<p>After re-training the user-independent model for <span class="math inline">\(50\)</span> more epochs, its <em>accuracy</em> increased to <span class="math inline">\(66.1\%\)</span>. On the other hand, the adaptive model was trained with much less data and produced a much better result (<span class="math inline">\(85.4%\)</span>) with only <span class="math inline">\(124\)</span> instances as compared to the user-independent model (<span class="math inline">\(\approx 5440\)</span> instances). That is, the <span class="math inline">\(6399\)</span> instances minus <span class="math inline">\(15\%\)</span> used as the validation set. These results highlight one of the main advantages of transfer learning which is a reduction in the needed amount of train data.</p>
 </div>
 </div>
 <div id="SummaryMultiUser" class="section level2" number="9.5">
 <h2><span class="header-section-number">9.5</span> Summary</h2>
-<p>Many real-life scenarios involve multi-user settings. That is, the system heavily depends on the specific behavior of a given final user. This chapter covered different types of models that can be used to evaluate the performance of a system in such a scenario.</p>
+<p>Many real-life scenarios involve multi-user settings. That is, the system heavily depends on the specific behavior of a given target user. This chapter covered different types of models that can be used to evaluate the performance of a system in such a scenario.</p>
 <ul>
 <li>A <strong>multi-user setting</strong> is one in which its results depend heavily on the target user.</li>
 <li>Inter/Intra -user variance are the differences between users and within the same users, respectively.</li>
@@ -952,6 +948,21 @@ Note that this time the <code>validation_split</code> was set to <span class="ma
 <p><img src="images/comic_opera.png" width="100%" style="display: block; margin: auto;" />
 </p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-rmatlab" class="csl-entry">
+Bengtsson, Henrik. 2018. <em>R.matlab: Read and Write MAT Files and Call MATLAB from Within r</em>. <a href="https://CRAN.R-project.org/package=R.matlab">https://CRAN.R-project.org/package=R.matlab</a>.
+</div>
+<div id="ref-chen2015utd" class="csl-entry">
+Chen, Chen, Roozbeh Jafari, and Nasser Kehtarnavaz. 2015. <span>“UTD-MHAD: A Multimodal Dataset for Human Action Recognition Utilizing a Depth Camera and a Wearable Inertial Sensor.”</span> In <em>2015 IEEE International Conference on Image Processing (ICIP)</em>, 168–72. IEEE.
+</div>
+<div id="ref-pratt1991" class="csl-entry">
+Pratt, Lorien Y, Jack Mostow, Candace A Kamm, and Ace A Kamm. 1991. <span>“Direct Transfer of Learned Information Among Neural Networks.”</span> In <em>Aaai</em>, 91:584–89.
+</div>
+<div id="ref-simonyan2014" class="csl-entry">
+Simonyan, Karen, and Andrew Zisserman. 2014. <span>“Very Deep Convolutional Networks for Large-Scale Image Recognition.”</span> <em>arXiv Preprint arXiv:1409.1556</em>.
 </div>
 </div>
             </section>
@@ -983,6 +994,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

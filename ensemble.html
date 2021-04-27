@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning Using R</title>
   <meta name="description" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning Using R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:image" content="/images/cover.png" />
   <meta property="og:description" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning Using R" />
   
   <meta name="twitter:description" content="Chapter 3 Predicting Behavior with Ensemble Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="twitter:image" content="images/cover.png" />
+  <meta name="twitter:image" content="/images/cover.png" />
 
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-04-03" />
+<meta name="date" content="2021-04-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
 <script src="libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="libs/d3/d3.min.js"></script>
 <link href="libs/d3panels/d3panels.min.css" rel="stylesheet" />
@@ -80,6 +82,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -138,6 +141,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -356,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
 <li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#explore-and-visualize-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Explore and Visualize Trajectories</a></li>
+<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Exploring and Visualizing Trajectories</a></li>
 <li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
 <li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
 <li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC curve and AUC</a></li>
@@ -415,9 +441,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In the previous chapters, we have been building single models, either for classification or regression. With <strong>ensemble learning</strong>, the idea is to train several models and combine their results to increase the performance. Usually, ensemble methods outperform single models. In the context of <em>ensemble learning</em>, the individual models whose results are to be combined are known as <strong>base learners</strong>. Base learners can be of the same type (homogeneous) or of different types (heterogeneous). Examples of ensemble methods are <strong>Bagging</strong>, <strong>Random Forest</strong>, and <strong>Stacked Generalization</strong>. In the following sections, the three of them will be described and example applications in behavior analysis will be presented as well.</p>
 <div id="bagging" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Bagging</h2>
-<p>Bagging stands for “bootstrap aggregating” and is an ensemble learning method proposed by <span class="citation"><a href="references.html#ref-breimanBagging1996" role="doc-biblioref">Breiman</a> (<a href="references.html#ref-breimanBagging1996" role="doc-biblioref">1996</a>)</span>. Ummm…, <em>Bootstrap</em>, <em>aggregating</em>? Let’s start with the <em>aggregating</em> part. As the name implies, this method is based on training several <em>base learners</em> (e.g., decision trees) and combining their outputs to produce a single final prediction. One way to combine the results is by taking the majority vote for classification tasks or the average for regression. In an ideal case, we would have enough data to train each <em>base learner</em> with an independent train set. However, in practice we may only have a single train set of limited size. Training several <em>base learners</em> with the same train set is equivalent to having a single learner, provided that the training procedure of the base learners is deterministic. Even if the training procedure is not deterministic, the resulting models could be very similar. What we would like to have is accurate base learners but at the same time they should be different. Then, how can we train those base learners? Well, this is where the <em>bootstrap</em> part comes into play.</p>
+<p>Bagging stands for “bootstrap aggregating” and is an ensemble learning method proposed by <span class="citation"><a href="#ref-breimanBagging1996" role="doc-biblioref">Breiman</a> (<a href="#ref-breimanBagging1996" role="doc-biblioref">1996</a>)</span>. Ummm…, <em>Bootstrap</em>, <em>aggregating</em>? Let’s start with the <em>aggregating</em> part. As the name implies, this method is based on training several <em>base learners</em> (e.g., decision trees) and combining their outputs to produce a single final prediction. One way to combine the results is by taking the majority vote for classification tasks or the average for regression. In an ideal case, we would have enough data to train each <em>base learner</em> with an independent train set. However, in practice we may only have a single train set of limited size. Training several <em>base learners</em> with the same train set is equivalent to having a single learner, provided that the training procedure of the base learners is deterministic. Even if the training procedure is not deterministic, the resulting models could be very similar. What we would like to have is accurate base learners but at the same time they should be different. Then, how can we train those base learners? Well, this is where the <em>bootstrap</em> part comes into play.</p>
 <p>Bootstrapping means generating new train sets by sampling instances with replacement from the original train set. If the original train set has <span class="math inline">\(N\)</span> instances, the method selects <span class="math inline">\(N\)</span> instances at random to produce a new train set. <em>With replacement</em> means that repeated instances are allowed. This has the effect of generating a new train set of size <span class="math inline">\(N\)</span> by removing some instances and duplicating other instances. By using this method, <span class="math inline">\(n\)</span> different train sets can be generated and used to train <span class="math inline">\(n\)</span> different learners.</p>
-<p>It has been shown that having more diverse base learners increases performance. One way of generating diverse learners is by using different train sets as just described. In his original work, <span class="citation"><a href="references.html#ref-breimanBagging1996" role="doc-biblioref">Breiman</a> (<a href="references.html#ref-breimanBagging1996" role="doc-biblioref">1996</a>)</span> used decision trees as base learners. Decision trees are considered to be very unstable. This means that small changes in the train set produce very different trees - but this is a good thing for bagging! Most of the time, the aggregated predictions will produce better results than the best individual learner from the ensemble.</p>
+<p>It has been shown that having more diverse base learners increases performance. One way of generating diverse learners is by using different train sets as just described. In his original work, <span class="citation"><a href="#ref-breimanBagging1996" role="doc-biblioref">Breiman</a> (<a href="#ref-breimanBagging1996" role="doc-biblioref">1996</a>)</span> used decision trees as base learners. Decision trees are considered to be very unstable. This means that small changes in the train set produce very different trees - but this is a good thing for bagging! Most of the time, the aggregated predictions will produce better results than the best individual learner from the ensemble.</p>
 <p>Figure <a href="ensemble.html#fig:baggingexample">3.1</a> shows bootstrapping in action. The train set is sampled with replacement <span class="math inline">\(3\)</span> times. The numbers represent indices to arbitrary train instances. Here, we can see that in the first sample, the instance number <span class="math inline">\(5\)</span> is missing but instead, instance <span class="math inline">\(2\)</span> is duplicated. All samples have five elements. Then, each sample is used to train individual decision trees.</p>
 <div class="figure" style="text-align: center"><span id="fig:baggingexample"></span>
 <img src="images/bagging.png" alt="Bagging example." width="70%" />
@@ -425,7 +451,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 FIGURE 3.1: Bagging example.
 </p>
 </div>
-<p>One of the disadvantages of ensemble methods is their higher computational cost both during training and inference. Another disadvantage of ensemble methods is that they are more difficult to interpret. Still, there exist model agnostic interpretability methods <span class="citation">(<a href="references.html#ref-molnarInterpretable" role="doc-biblioref">Molnar 2019</a>)</span> that can help to analyze the results. In the next section, I will show you how to implement your own Bagging model with decision trees in R.</p>
+<p>One of the disadvantages of ensemble methods is their higher computational cost both during training and inference. Another disadvantage of ensemble methods is that they are more difficult to interpret. Still, there exist model agnostic interpretability methods <span class="citation">(<a href="#ref-molnarInterpretable" role="doc-biblioref">Molnar 2019</a>)</span> that can help to analyze the results. In the next section, I will show you how to implement your own Bagging model with decision trees in R.</p>
 <div id="activity-recognition-with-bagging" class="section level3" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Activity recognition with Bagging</h3>
 
@@ -558,8 +584,8 @@ FIGURE 3.2: Bagging results for different number of trees.
 <div class="rmdfolder">
 <code>rf_activities.R</code> <code>iterated_rf_activities.R</code> <code>iterated_bagging_rf.R</code>
 </div>
-<p>A Random Forest can be thought of as an extension of Bagging. Random Forests were proposed also by <span class="citation"><a href="references.html#ref-breimanRF" role="doc-biblioref">Breiman</a> (<a href="references.html#ref-breimanRF" role="doc-biblioref">2001</a>)</span> and as the name implies, they introduce more randomness to the individual trees since one of the aims is to have decorrelated trees. With Bagging, most of the trees are very similar at the root because the most important variables are selected first (see chapter <a href="classification.html#classification">2</a>). To avoid this happening, a simple modification can be introduced. When building a tree, instead of evaluating all features at each split to find the most important one (based on some purity measure like <em>information gain</em>), a random subset of the features (usually <span class="math inline">\(\sqrt{|features|}\)</span>) is sampled. This simple modification produces more decorrelated trees and in general, it results in better performance compared to Bagging.</p>
-<p>In R, the most famous library that implements Random Forest is…, yes you guessed it: <code>randomForest</code> <span class="citation">(<a href="references.html#ref-randomForest" role="doc-biblioref">Liaw and Wiener 2002</a>)</span>. The following code snippet shows how to fit a Random Forest with <span class="math inline">\(10\)</span> trees.</p>
+<p>A Random Forest can be thought of as an extension of Bagging. Random Forests were proposed also by <span class="citation"><a href="#ref-breimanRF" role="doc-biblioref">Breiman</a> (<a href="#ref-breimanRF" role="doc-biblioref">2001</a>)</span> and as the name implies, they introduce more randomness to the individual trees since one of the aims is to have decorrelated trees. With Bagging, most of the trees are very similar at the root because the most important variables are selected first (see chapter <a href="classification.html#classification">2</a>). To avoid this happening, a simple modification can be introduced. When building a tree, instead of evaluating all features at each split to find the most important one (based on some purity measure like <em>information gain</em>), a random subset of the features (usually <span class="math inline">\(\sqrt{|features|}\)</span>) is sampled. This simple modification produces more decorrelated trees and in general, it results in better performance compared to Bagging.</p>
+<p>In R, the most famous library that implements Random Forest is…, yes you guessed it: <code>randomForest</code> <span class="citation">(<a href="#ref-randomForest" role="doc-biblioref">Liaw and Wiener 2002</a>)</span>. The following code snippet shows how to fit a Random Forest with <span class="math inline">\(10\)</span> trees.</p>
 <div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="ensemble.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randomForest)</span>
 <span id="cb77-2"><a href="ensemble.html#cb77-2" aria-hidden="true" tabindex="-1"></a>rf <span class="ot">&lt;-</span> <span class="fu">randomForest</span>(class <span class="sc">~</span> ., trainSet, <span class="at">ntree =</span> <span class="dv">10</span>)</span></code></pre></div>
 <p>By default, <code>ntree = 500</code>. Among other things, you can control how many random features are sampled at each split with the <code>mtry</code> argument. By default, for classification <code>mtry = floor(sqrt(ncol(x)))</code> and for regression <code>mtry = max(floor(ncol(x)/3), 1)</code>.</p>
@@ -628,7 +654,7 @@ FIGURE 3.4: Bagging v.s. Random Forest.
 </div>
 <div id="stacked-generalization" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Stacked Generalization</h2>
-<p>Stacked Generalization (a.k.a <em>Stacking</em>) is a powerful ensemble learning method proposed by <span class="citation"><a href="references.html#ref-wolpertStacked" role="doc-biblioref">Wolpert</a> (<a href="references.html#ref-wolpertStacked" role="doc-biblioref">1992</a>)</span>. The method consists of training a set of <strong>powerful</strong> base learners (<em>first-level learners</em>) and then combining their outputs by <em>stacking</em> them to form a new train set. The base learners’ outputs correspond to their predictions and optionally, the class probabilities of those predictions. The predictions of the base learners are known as the <strong>meta-features</strong>. Then, those meta-features along with their true labels <span class="math inline">\(y\)</span> are used to build a new train set that is used to train a <strong>meta-learner</strong>. The rationale behind this is that the predictions themselves contain information that can be used by the <em>meta-learner</em>.</p>
+<p>Stacked Generalization (a.k.a <em>Stacking</em>) is a powerful ensemble learning method proposed by <span class="citation"><a href="#ref-wolpertStacked" role="doc-biblioref">Wolpert</a> (<a href="#ref-wolpertStacked" role="doc-biblioref">1992</a>)</span>. The method consists of training a set of <strong>powerful</strong> base learners (<em>first-level learners</em>) and then combining their outputs by <em>stacking</em> them to form a new train set. The base learners’ outputs correspond to their predictions and optionally, the class probabilities of those predictions. The predictions of the base learners are known as the <strong>meta-features</strong>. Then, those meta-features along with their true labels <span class="math inline">\(y\)</span> are used to build a new train set that is used to train a <strong>meta-learner</strong>. The rationale behind this is that the predictions themselves contain information that can be used by the <em>meta-learner</em>.</p>
 <p>The procedure to train a Stacking model is as follows:</p>
 <ol style="list-style-type: decimal">
 <li><p>Define a set of first level-learners <span class="math inline">\(\mathscr{L}\)</span> and a <em>meta-learner</em>.</p></li>
@@ -646,7 +672,7 @@ FIGURE 3.5: Process to generate the new train set D’ by column-binding the pre
 </p>
 </div>
 <p>Note that steps <span class="math inline">\(2\)</span> and <span class="math inline">\(3\)</span> can lead to overfitting because the predictions are made with the same data used to train the models. To avoid this, steps <span class="math inline">\(2\)</span> and <span class="math inline">\(3\)</span> are usually performed using <span class="math inline">\(k\)</span>-fold cross-validation. After <span class="math inline">\(\textbf{D}&#39;\)</span> has been generated, the learners in <span class="math inline">\(\mathscr{L}\)</span> can be retrained using all data in <span class="math inline">\(\textbf{D}\)</span>.</p>
-<p><span class="citation"><a href="references.html#ref-ting1999" role="doc-biblioref">Ting and Witten</a> (<a href="references.html#ref-ting1999" role="doc-biblioref">1999</a>)</span> showed that the performance can increase by adding confidence information about the predictions. For example, the probabilities produced by the first-level learners. Most classifiers can output probabilities.</p>
+<p><span class="citation"><a href="#ref-ting1999" role="doc-biblioref">Ting and Witten</a> (<a href="#ref-ting1999" role="doc-biblioref">1999</a>)</span> showed that the performance can increase by adding confidence information about the predictions. For example, the probabilities produced by the first-level learners. Most classifiers can output probabilities.</p>
 <p>At prediction time, each first-level learner predicts the class, and optionally, the class probabilities of a given instance. These predictions are used to form a feature vector (<em>meta-features</em>) that is fed to the <em>meta-learner</em> to obtain the final prediction. Usually, first-level learners are high performing classifiers such as Random Forests, Support Vector Machines, Neural Networks, etc. The <em>meta-learner</em> should also be a powerful classifier.</p>
 <p>In the next section, I will introduce <em>Multi-view Stacking</em> which is similar to Generalized Stacking but each first-level learner is trained with features from a different <em>view</em>.</p>
 </div>
@@ -658,7 +684,7 @@ FIGURE 3.5: Process to generate the new train set D’ by column-binding the pre
 </div>
 <p><strong>Multi-view learning</strong> refers to the case when an instance can be characterized by two or more independent ‘views.’ For example, one can extract features for webpage classification from a webpage’s text but also from the links pointing to it. Usually, there is the assumption that the views are independent and each is sufficient to solve the problem. Then, why combine them? In many cases, each different view provides additional and complementary information, thus, allowing to train better models.</p>
 <p>The simplest thing one can do is to extract features from each view, aggregate them, and train a single model. This approach usually works well but it has some limitations. Each view may have different statistical properties, thus, different types of models may be needed for each view. When aggregating features from all views, new variable correlations may be introduced which could impact the performance. Another limitation is that features need to be in the same format (feature vectors, images, etc.), so they can be aggregated.</p>
-<p>For video classification, we could have two views. One represented by sequences of images, and the other one by the corresponding audio. For the video part, we could encode the features as the images themselves, i.e., matrices. Then, a Convolutional Neural Network (covered in chapter <a href="deeplearning.html#deeplearning">8</a>) could be trained directly from those images. For the audio part, statistical features can be extracted and stored into normal feature vectors. In this case, the two representations (views) are different. One is a matrix and the other one a one-dimensional feature vector. Combining them to train a single classifier could be problematic given the nature of the views and their different encoding formats. Instead, we can train two models, one for each view and then combine the results. This is precisely the idea of <em>Multi-view Stacking</em> <span class="citation">(<a href="references.html#ref-garcia2018multiview" role="doc-biblioref">Garcia-Ceja, Galván-Tejada, and Brena 2018</a>)</span>. Train a different model for each view and combine the outputs like in <em>Stacking</em>.</p>
+<p>For video classification, we could have two views. One represented by sequences of images, and the other one by the corresponding audio. For the video part, we could encode the features as the images themselves, i.e., matrices. Then, a Convolutional Neural Network (covered in chapter <a href="deeplearning.html#deeplearning">8</a>) could be trained directly from those images. For the audio part, statistical features can be extracted and stored into normal feature vectors. In this case, the two representations (views) are different. One is a matrix and the other one a one-dimensional feature vector. Combining them to train a single classifier could be problematic given the nature of the views and their different encoding formats. Instead, we can train two models, one for each view and then combine the results. This is precisely the idea of <em>Multi-view Stacking</em> <span class="citation">(<a href="#ref-garcia2018multiview" role="doc-biblioref">Garcia-Ceja, Galván-Tejada, and Brena 2018</a>)</span>. Train a different model for each view and combine the outputs like in <em>Stacking</em>.</p>
 <p>Here, <em>Multi-view Stacking</em> will be demonstrated using the <em>HOME TASKS</em> dataset. This dataset was collected from two sources. Acceleration and audio. The acceleration was recorded with a wrist-band watch and the audio using a cellphone. This dataset consists of <span class="math inline">\(7\)</span> common home tasks: <em>‘mop floor’</em>, <em>‘sweep floor’</em>, <em>‘type on computer keyboard’</em>, <em>‘brush teeth’</em>, <em>‘wash hands’</em>, <em>‘eat chips’</em>, and <em>‘watch t.v.’</em>. Three volunteers performed each activity for approximately <span class="math inline">\(3\)</span> minutes.</p>
 <p>The acceleration and audio signals were segmented into <span class="math inline">\(3\)</span> sec. windows. From each window, different features were extracted. From the acceleration, <span class="math inline">\(16\)</span> features were extracted from the <span class="math inline">\(3\)</span> axes (<span class="math inline">\(x\)</span>,<span class="math inline">\(y\)</span>,<span class="math inline">\(z\)</span>) such as mean, standard deviation, maximum values, mean magnitude, area under the curve, etc. From the audio signals, <span class="math inline">\(12\)</span> features were extracted, namely, Mel Frequency Cepstral Coefficients (MFCCs). To preserve volunteers’ privacy, the original audio was not released. The dataset already contains the extracted features from acceleration and audio. The first column is the label.</p>
 <p>In order to implement <em>Multi-view Stacking</em>, two Random Forests will be trained, one for each view (acceleration and audio). The predicted outputs will be stacked to form the new training set <span class="math inline">\(D&#39;\)</span> and a Random Forest trained with <span class="math inline">\(D&#39;\)</span> will act as the <em>meta-learner</em>.</p>
@@ -837,6 +863,30 @@ FIGURE 3.6: Confusion matrices.
 
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-breimanBagging1996" class="csl-entry">
+Breiman, Leo. 1996. <span>“Bagging <span>Predictors</span>.”</span> <em>Machine Learning</em> 24 (2): 123–40. <a href="https://doi.org/10.1023/A:1018054314350">https://doi.org/10.1023/A:1018054314350</a>.
+</div>
+<div id="ref-breimanRF" class="csl-entry">
+———. 2001. <span>“Random Forests.”</span> <em>Machine Learning</em> 45 (1): 5–32.
+</div>
+<div id="ref-garcia2018multiview" class="csl-entry">
+Garcia-Ceja, Enrique, Carlos E Galván-Tejada, and Ramon Brena. 2018. <span>“Multi-View Stacking for Activity Recognition with Sound and Accelerometer Data.”</span> <em>Information Fusion</em> 40: 45–56.
+</div>
+<div id="ref-randomForest" class="csl-entry">
+Liaw, Andy, and Matthew Wiener. 2002. <span>“Classification and Regression by randomForest.”</span> <em>R News</em> 2 (3): 18–22. <a href="https://CRAN.R-project.org/doc/Rnews/">https://CRAN.R-project.org/doc/Rnews/</a>.
+</div>
+<div id="ref-molnarInterpretable" class="csl-entry">
+Molnar, Christoph. 2019. <em>Interpretable Machine Learning. A Guide for Making Black Box Models Explainable</em>. Leanpub.
+</div>
+<div id="ref-ting1999" class="csl-entry">
+Ting, Kai Ming, and Ian H Witten. 1999. <span>“Issues in Stacked Generalization.”</span> <em>Journal of Artificial Intelligence Research</em> 10: 271–89.
+</div>
+<div id="ref-wolpertStacked" class="csl-entry">
+Wolpert, David H. 1992. <span>“Stacked Generalization.”</span> <em>Neural Networks</em> 5 (2): 241–59.
+</div>
+</div>
             </section>
 
           </div>
@@ -866,6 +916,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

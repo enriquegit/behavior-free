@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Discovering Behaviors with Unsupervised Learning | Behavior Analysis with Machine Learning Using R</title>
   <meta name="description" content="Chapter 6 Discovering Behaviors with Unsupervised Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Discovering Behaviors with Unsupervised Learning | Behavior Analysis with Machine Learning Using R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:image" content="/images/cover.png" />
   <meta property="og:description" content="Chapter 6 Discovering Behaviors with Unsupervised Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content="Chapter 6 Discovering Behaviors with Unsupervised Learning | Behavior Analysis with Machine Learning Using R" />
   
   <meta name="twitter:description" content="Chapter 6 Discovering Behaviors with Unsupervised Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="twitter:image" content="images/cover.png" />
+  <meta name="twitter:image" content="/images/cover.png" />
 
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-04-03" />
+<meta name="date" content="2021-04-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
 <script src="libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="libs/d3/d3.min.js"></script>
 <link href="libs/d3panels/d3panels.min.css" rel="stylesheet" />
@@ -80,6 +82,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -138,6 +141,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -356,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
 <li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#explore-and-visualize-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Explore and Visualize Trajectories</a></li>
+<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Exploring and Visualizing Trajectories</a></li>
 <li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
 <li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
 <li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC curve and AUC</a></li>
@@ -497,7 +523,7 @@ FIGURE 6.6: Boxplot of ACS variable.
 </div>
 <div id="the-silhouette-index" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> The Silhouette Index</h2>
-<p>As opposed to supervised learning, in unsupervised learning there is <strong>no ground truth</strong> to validate the results. In clustering, one way to validate the resulting groups is to plot them and manually explore the clusters’ data points and look for similarities and/or differences. But sometimes we may also want to automate the process and have a quantitative way to measure how well the clustering algorithm grouped the points with the given set of parameters. If we had such a method we could do parameter optimization, for example, to find the best <span class="math inline">\(k\)</span>. Well, there is something called <em>the silhouette index</em> <span class="citation">(<a href="references.html#ref-rousseeuw1987" role="doc-biblioref">Rousseeuw 1987</a>)</span> and it can be used to measure the correctness of the clusters.</p>
+<p>As opposed to supervised learning, in unsupervised learning there is <strong>no ground truth</strong> to validate the results. In clustering, one way to validate the resulting groups is to plot them and manually explore the clusters’ data points and look for similarities and/or differences. But sometimes we may also want to automate the process and have a quantitative way to measure how well the clustering algorithm grouped the points with the given set of parameters. If we had such a method we could do parameter optimization, for example, to find the best <span class="math inline">\(k\)</span>. Well, there is something called <em>the silhouette index</em> <span class="citation">(<a href="#ref-rousseeuw1987" role="doc-biblioref">Rousseeuw 1987</a>)</span> and it can be used to measure the correctness of the clusters.</p>
 <p>This index is computed for each data point and tells us how well they are clustered. The total silhouette index is the mean of all points’ indices and gives us an idea of how well the points were clustered overall. This index goes from <span class="math inline">\(-1\)</span> to <span class="math inline">\(1\)</span> and I’ll explain in a moment how to interpret it but first let’s see how it is computed.</p>
 <p>To compute the silhouette index two things are needed: the currently created groups and the distances between points. Let:</p>
 <p><span class="math inline">\(a(i)=\)</span> average dissimilarity (distance) of point <span class="math inline">\(i\)</span> to all other points in <span class="math inline">\(A\)</span>, where <span class="math inline">\(A\)</span> is the cluster to which <span class="math inline">\(i\)</span> has been assigned to (Figure <a href="unsupervised.html#fig:3clust">6.7</a>).</p>
@@ -562,14 +588,14 @@ FIGURE 6.9: Silhouette plot when k=7.
 <p>Here, cluster <span class="math inline">\(2\)</span> and <span class="math inline">\(4\)</span> have data points with negative indices and the overall score is <span class="math inline">\(0.26\)</span>. This suggests that <span class="math inline">\(k=4\)</span> produces more coherent clusters as compared to <span class="math inline">\(k=7\)</span>.</p>
 
 <div class="rmdinfo">
-In this section, we used the Silhouette index to validate the clustering results. Over the years, several other clustering validation methods have been developed. In their paper, <span class="citation"><a href="references.html#ref-Halkidi2001" role="doc-biblioref">Halkidi, Batistakis, and Vazirgiannis</a> (<a href="references.html#ref-Halkidi2001" role="doc-biblioref">2001</a>)</span> present an overview of other clustering validation methods.
+In this section, we used the Silhouette index to validate the clustering results. Over the years, several other clustering validation methods have been developed. In their paper, <span class="citation"><a href="#ref-Halkidi2001" role="doc-biblioref">Halkidi, Batistakis, and Vazirgiannis</a> (<a href="#ref-Halkidi2001" role="doc-biblioref">2001</a>)</span> present an overview of other clustering validation methods.
 </div>
 </div>
 <div id="associationrules" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Mining Association Rules</h2>
 <p>Association rule mining consists of a set of methods to extract patterns (rules) from transactional data. For example, shopping behavior can be analyzed by finding rules from customers’ shopping transactions. A <strong>transaction</strong> is an event that involves a set of items. For example, when someone buys a soda, a bag of chips, and a chocolate bar the purchase is registered as <em>one</em> transaction containing <span class="math inline">\(3\)</span> items. I apologize for using this example for those of you with healthy diets. Based on a database that contains many transactions, it is possible to uncover item relationships. Those relationships are usually expressed as implication rules of the form <span class="math inline">\(X \implies Y\)</span> where <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are sets of items. Both sets are disjoint, this means that items in <span class="math inline">\(X\)</span> are not in <span class="math inline">\(Y\)</span> and vice-versa which can be formally represented as <span class="math inline">\(X \cap Y = \emptyset\)</span>. That is, the intersection of the two sets is the empty set. <span class="math inline">\(X \implies Y\)</span> is read as: if <span class="math inline">\(X\)</span> then <span class="math inline">\(Y\)</span>. The left-hand-side (lhs) <span class="math inline">\(X\)</span> is called the <strong>antecedent</strong> and the right-hand-side (rhs) <span class="math inline">\(Y\)</span> is called the <strong>consequent</strong>.</p>
 <p>In the unhealthy supermarket example, a rule like <span class="math inline">\(\{chips, chocolate\} \implies \{soda\}\)</span> can be interpreted as <em>if someone buys chips and chocolate then, it is likely that this same person will also buy soda</em>. These types of rules can be used for targeted advertisements, product placement decisions, etc.</p>
-<p>The possible number of rules that can be generated grows exponentially as the number of items increases. Furthermore, not all rules may be interesting. The most well-known algorithm to find interesting association rules is called <strong>Apriori</strong> <span class="citation">(<a href="references.html#ref-agrawal1994" role="doc-biblioref">Agrawal and Srikant 1994</a>)</span>. To quantify if a rule is interesting or not, this algorithm uses two importance measures: <strong>support</strong> and <strong>confidence</strong>.</p>
+<p>The possible number of rules that can be generated grows exponentially as the number of items increases. Furthermore, not all rules may be interesting. The most well-known algorithm to find interesting association rules is called <strong>Apriori</strong> <span class="citation">(<a href="#ref-agrawal1994" role="doc-biblioref">Agrawal and Srikant 1994</a>)</span>. To quantify if a rule is interesting or not, this algorithm uses two importance measures: <strong>support</strong> and <strong>confidence</strong>.</p>
 <ul>
 <li><p><strong>Support.</strong> The support <span class="math inline">\(\text{supp}(X)\)</span> of an itemset <span class="math inline">\(X\)</span> is the proportion of transactions that contain all the items in <span class="math inline">\(X\)</span>. This quantifies how frequent the itemset is.</p></li>
 <li><p><strong>Confidence.</strong> The confidence of a rule <span class="math inline">\(\text{conf}(X \implies Y)=\text{supp}(X \cup Y)/\text{supp}(X)\)</span> and can be interpreted as the probability that <span class="math inline">\(Y\)</span> occurs given that <span class="math inline">\(X\)</span> is present. This can also be thought of as the probability that a transaction that contains <span class="math inline">\(X\)</span> also contains <span class="math inline">\(Y\)</span>. The <span class="math inline">\(\cup\)</span> operator is the union of two sets. This means taking all elements from both sets and removing repeated elements.</p></li>
@@ -614,7 +640,7 @@ FIGURE 6.11: First rows of preprocessed crimes data frame.
 </p>
 </div>
 <p>Now, we have a data frame that contains only the information that we will use and each row will be used to generate one transaction. An example transaction may be <em>{R.Wife, Knife, Adult}</em>. This one represents the case where the perpetrator is an <em>adult</em> who used a <em>knife</em> to kill his <em>wife</em>. Note the ‘R.’ at the beginning of ‘Wife.’ This ‘R.’ was added for clarity in order to identify that this item is a relationship. One thing to note is that every transaction will consist of exactly <span class="math inline">\(3\)</span> items. This is a bit different than the market basket case in which every transaction can include a varying number of products. Although this item-size constraint was a design decision based on the structure of the original data, this will not prevent us from performing the analysis to find interesting rules.</p>
-<p>To find the association rules, the <code>arules</code> package <span class="citation">(<a href="references.html#ref-arules" role="doc-biblioref">Hahsler et al. 2019</a>)</span> will be used. This package has an interface to an efficient implementation in C of the Apriori algorithm. This package needs the transactions to be stored as an object of type ‘transactions.’ One way to create this object is to use a <strong>logical matrix</strong> and cast it into a transactions object. The rows of the logical matrix represent transactions and columns represent items. The number of columns equals the total number of possible items. A <code>TRUE</code> value indicates that the item is present in the transaction and <code>FALSE</code> otherwise. In our case, the matrix has <span class="math inline">\(46\)</span> columns. The <code>crimes_process.R</code> script has code to generate this matrix <code>M</code>. The <span class="math inline">\(46\)</span> items (columns of <code>M</code>) are:</p>
+<p>To find the association rules, the <code>arules</code> package <span class="citation">(<a href="#ref-arules" role="doc-biblioref">Hahsler et al. 2019</a>)</span> will be used. This package has an interface to an efficient implementation in C of the Apriori algorithm. This package needs the transactions to be stored as an object of type ‘transactions.’ One way to create this object is to use a <strong>logical matrix</strong> and cast it into a transactions object. The rows of the logical matrix represent transactions and columns represent items. The number of columns equals the total number of possible items. A <code>TRUE</code> value indicates that the item is present in the transaction and <code>FALSE</code> otherwise. In our case, the matrix has <span class="math inline">\(46\)</span> columns. The <code>crimes_process.R</code> script has code to generate this matrix <code>M</code>. The <span class="math inline">\(46\)</span> items (columns of <code>M</code>) are:</p>
 <div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="unsupervised.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(<span class="fu">colnames</span>(M))</span>
 <span id="cb127-2"><a href="unsupervised.html#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;R.Acquaintance&quot;         &quot;R.Wife&quot;                 &quot;R.Stranger&quot;            </span></span>
 <span id="cb127-3"><a href="unsupervised.html#cb127-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [4] &quot;R.Girlfriend&quot;           &quot;R.Ex-Husband&quot;           &quot;R.Brother&quot;             </span></span>
@@ -646,7 +672,7 @@ FIGURE 6.11: First rows of preprocessed crimes data frame.
 <span id="cb129-3"><a href="unsupervised.html#cb129-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb129-4"><a href="unsupervised.html#cb129-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load preprocessed data.</span></span>
 <span id="cb129-5"><a href="unsupervised.html#cb129-5" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;transactions.RData&quot;</span>)</span></code></pre></div>
-<p>Note that additionally to the <code>arules</code> package, we also loaded the <code>arulesViz</code> package <span class="citation">(<a href="references.html#ref-ParulesViz" role="doc-biblioref">Hahsler 2019</a>)</span>. This package has several functions to generate cool plots of the learned rules! A summary of the transactions can be printed with the <code>summary()</code> function:</p>
+<p>Note that additionally to the <code>arules</code> package, we also loaded the <code>arulesViz</code> package <span class="citation">(<a href="#ref-ParulesViz" role="doc-biblioref">Hahsler 2019</a>)</span>. This package has several functions to generate cool plots of the learned rules! A summary of the transactions can be printed with the <code>summary()</code> function:</p>
 <div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="unsupervised.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary.</span></span>
 <span id="cb130-2"><a href="unsupervised.html#cb130-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(transactions)</span>
 <span id="cb130-3"><a href="unsupervised.html#cb130-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -728,11 +754,11 @@ FIGURE 6.12: Frequences of the top 15 items.
 FIGURE 6.13: Output of the inspect() function.
 </p>
 </div>
-<p>The first rule with a lift of <span class="math inline">\(4.27\)</span> says that if a homicide was committed by an <em>adult</em> and the victim was the <em>stepson</em>, then is it likely that a <em>blunt object</em> was used for the crime. By looking at the rules one can also note that whenever <em>blunt object</em> appears either in the lhs or rhs the victim was probably an infant. Another thing to note is that when the victim was <em>boyfriend</em>, the crime was likely committed with a <em>knife</em>. This is also mentioned in the reports “Homicide trends in the United States” <span class="citation">(<a href="references.html#ref-cooper2012" role="doc-biblioref">Cooper, Smith, and others 2012</a>)</span>:</p>
+<p>The first rule with a lift of <span class="math inline">\(4.27\)</span> says that if a homicide was committed by an <em>adult</em> and the victim was the <em>stepson</em>, then is it likely that a <em>blunt object</em> was used for the crime. By looking at the rules one can also note that whenever <em>blunt object</em> appears either in the lhs or rhs the victim was probably an infant. Another thing to note is that when the victim was <em>boyfriend</em>, the crime was likely committed with a <em>knife</em>. This is also mentioned in the reports “Homicide trends in the United States” <span class="citation">(<a href="#ref-cooper2012" role="doc-biblioref">Cooper, Smith, and others 2012</a>)</span>:</p>
 <blockquote>
 <p>From 1980 through 2008 “Boyfriends were more likely to be killed by knives than any other group of intimates.”</p>
 </blockquote>
-<p>According to rule <span class="math inline">\(20\)</span>, crimes involving <em>girlfriend</em> have a strong relationship with <em>strangulation</em>. This can also be confirmed in <span class="citation">(<a href="references.html#ref-cooper2012" role="doc-biblioref">Cooper, Smith, and others 2012</a>)</span>:</p>
+<p>According to rule <span class="math inline">\(20\)</span>, crimes involving <em>girlfriend</em> have a strong relationship with <em>strangulation</em>. This can also be confirmed in <span class="citation">(<a href="#ref-cooper2012" role="doc-biblioref">Cooper, Smith, and others 2012</a>)</span>:</p>
 <blockquote>
 <p>From 1980 through 2008 “Girlfriends were more likely to be killed by force…”</p>
 </blockquote>
@@ -745,7 +771,7 @@ FIGURE 6.13: Output of the inspect() function.
 FIGURE 6.14: Scatterplot of rules support v.s. confidence colored by lift.
 </p>
 </div>
-<p>The plot shows that rules with a high <em>lift</em> also have a low <em>support</em> and <em>confidence</em>. <span class="citation"><a href="references.html#ref-Hahsler2017" role="doc-biblioref">Hahsler</a> (<a href="references.html#ref-Hahsler2017" role="doc-biblioref">2017</a>)</span> mentioned that rules with high <em>lift</em> typically have low <em>support</em>. The plot can be customized for example to show the <em>support</em> and <em>lift</em> in the axes and color them by confidence. The axes can be set with the <code>measure</code> parameter and the coloring with the <code>shading</code> parameter. The function also supports different plotting engines including static and interactive. The following code generates a customized interactive plot by setting <code>engine = "htmlwidget"</code>. This is very handy if you want to know which points correspond to which rules. By hovering the mouse on the desired point the corresponding rule is shown as a tooltip box (Figure <a href="unsupervised.html#fig:rulesScatterInt">6.15</a>). The interactive plots also allow to zoom in regions by clicking and dragging.</p>
+<p>The plot shows that rules with a high <em>lift</em> also have a low <em>support</em> and <em>confidence</em>. <span class="citation"><a href="#ref-Hahsler2017" role="doc-biblioref">Hahsler</a> (<a href="#ref-Hahsler2017" role="doc-biblioref">2017</a>)</span> mentioned that rules with high <em>lift</em> typically have low <em>support</em>. The plot can be customized for example to show the <em>support</em> and <em>lift</em> in the axes and color them by confidence. The axes can be set with the <code>measure</code> parameter and the coloring with the <code>shading</code> parameter. The function also supports different plotting engines including static and interactive. The following code generates a customized interactive plot by setting <code>engine = "htmlwidget"</code>. This is very handy if you want to know which points correspond to which rules. By hovering the mouse on the desired point the corresponding rule is shown as a tooltip box (Figure <a href="unsupervised.html#fig:rulesScatterInt">6.15</a>). The interactive plots also allow to zoom in regions by clicking and dragging.</p>
 <div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="unsupervised.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Customize scatterplot to make it interactive</span></span>
 <span id="cb136-2"><a href="unsupervised.html#cb136-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and plot support v.s. lift colored by confidence.</span></span>
 <span id="cb136-3"><a href="unsupervised.html#cb136-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(resrules, <span class="at">engine =</span> <span class="st">&quot;htmlwidget&quot;</span>,</span>
@@ -805,6 +831,30 @@ FIGURE 6.17: Output of the inspect() function.
 
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-agrawal1994" class="csl-entry">
+Agrawal, Rakesh, and Ramakrishnan Srikant. 1994. <span>“Fast Algorithms for Mining Association Rules.”</span> In <em>Proc. 20th Int. Conf. Very Large Data Bases, VLDB</em>, 1215:487–99.
+</div>
+<div id="ref-cooper2012" class="csl-entry">
+Cooper, Alexia, Erica L Smith, and others. 2012. <em>Homicide Trends in the United States, 1980-2008</em>. BiblioGov.
+</div>
+<div id="ref-Hahsler2017" class="csl-entry">
+Hahsler, Michael. 2017. <span>“Arules<span>V</span>iz: <span>I</span>nteractive Visualization of Association Rules with <span>R</span>.”</span> <em>R Journal</em> 9 (2): 163–75. <a href="https://journal.r-project.org/archive/2017/RJ-2017-047/RJ-2017-047.pdf">https://journal.r-project.org/archive/2017/RJ-2017-047/RJ-2017-047.pdf</a>.
+</div>
+<div id="ref-ParulesViz" class="csl-entry">
+———. 2019. <em>arulesViz: Visualizing Association Rules and Frequent Itemsets</em>. <a href="https://CRAN.R-project.org/package=arulesViz">https://CRAN.R-project.org/package=arulesViz</a>.
+</div>
+<div id="ref-arules" class="csl-entry">
+Hahsler, Michael, Christian Buchta, Bettina Gruen, and Kurt Hornik. 2019. <em>Arules: Mining Association Rules and Frequent Itemsets</em>. <a href="https://CRAN.R-project.org/package=arules">https://CRAN.R-project.org/package=arules</a>.
+</div>
+<div id="ref-Halkidi2001" class="csl-entry">
+Halkidi, Maria, Yannis Batistakis, and Michalis Vazirgiannis. 2001. <span>“On Clustering Validation Techniques.”</span> <em>Journal of Intelligent Information Systems</em> 17 (2): 107–45.
+</div>
+<div id="ref-rousseeuw1987" class="csl-entry">
+Rousseeuw, Peter J. 1987. <span>“Silhouettes: A Graphical Aid to the Interpretation and Validation of Cluster Analysis.”</span> <em>Journal of Computational and Applied Mathematics</em> 20: 53–65.
+</div>
+</div>
 <div class="footnotes">
 <hr />
 <ol start="12">
@@ -840,6 +890,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

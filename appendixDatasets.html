@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>B Datasets | Behavior Analysis with Machine Learning Using R</title>
   <meta name="description" content="B Datasets | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="B Datasets | Behavior Analysis with Machine Learning Using R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:image" content="/images/cover.png" />
   <meta property="og:description" content="B Datasets | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content="B Datasets | Behavior Analysis with Machine Learning Using R" />
   
   <meta name="twitter:description" content="B Datasets | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="twitter:image" content="images/cover.png" />
+  <meta name="twitter:image" content="/images/cover.png" />
 
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-04-03" />
+<meta name="date" content="2021-04-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
 <script src="libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="libs/d3/d3.min.js"></script>
 <link href="libs/d3panels/d3panels.min.css" rel="stylesheet" />
@@ -80,6 +82,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -138,6 +141,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -356,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
 <li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#explore-and-visualize-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Explore and Visualize Trajectories</a></li>
+<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Exploring and Visualizing Trajectories</a></li>
 <li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
 <li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
 <li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC curve and AUC</a></li>
@@ -413,86 +439,130 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="appendixDatasets" class="section level1" number="12">
 <h1><span class="header-section-number">B</span> Datasets</h1>
 <p>This Appendix has a list with a description of all the datasets used in this book. A compressed file with a compilation of most of the datasets can be downloaded here: <a href="https://github.com/enriquegit/behavior-free-datasets" class="uri">https://github.com/enriquegit/behavior-free-datasets</a></p>
-<p>I recommend you to download the datasets compilation file and extract its contents to a local directory. Due to some datasets with large file sizes or license restrictions, not all of them are included in the compiled set. But you can download them separately. Even though a dataset may not be included in the compiled set, it will have a corresponding directory with a README file with instructions on how to get it.</p>
+<p>I recommend you to download the datasets compilation file and extract its contents to a local directory. Due to some datasets with large file sizes or license restrictions, not all of them are included in the compiled set. But you can download them separately. Even though a dataset may not be included in the compiled set, it will have a corresponding directory with a README file with instructions on how to obtain it.</p>
 <p>Each dataset in the following list, states whether or not it is included in the compiled set. The datasets are ordered alphabetically.</p>
 <div id="complex-activities" class="section level2" number="12.1">
 <h2><span class="header-section-number">B.1</span> COMPLEX ACTIVITIES</h2>
 <p><strong>Included:</strong> Yes.</p>
-<p>This dataset was collected with a smartphone and contains <span class="math inline">\(5\)</span> complex activities: <strong>commuting</strong>, <strong>working, at home</strong>, <strong>shopping at the supermarket</strong> and <strong>exercising</strong>.
+<p>This dataset was collected with a smartphone and contains <span class="math inline">\(5\)</span> complex activities: <em>‘commuting’</em>, <em>‘working, at home’</em>, <em>‘shopping at the supermarket’</em> and <em>‘exercising’</em>.
 An Android 2.2 application running on a LG Optimus Me cellphone was used to collect the accelerometer data from each of the axes (x,y,z). The sample rate was set at <span class="math inline">\(50\)</span> Hz. The cellphone was placed in the user’s belt. A training and a test set were collected on different days. The duration of the activities varies from about <span class="math inline">\(5\)</span> minutes to a couple of hours. The total recorded data consists of approximately <span class="math inline">\(41\)</span> hours. The data was collected by one user. Each file contains a whole activity.</p>
 </div>
 <div id="depresjon" class="section level2" number="12.2">
 <h2><span class="header-section-number">B.2</span> DEPRESJON</h2>
 <p><strong>Included:</strong> Yes.</p>
-<p>This dataset contains motor activity recordings of <span class="math inline">\(23\)</span> unipolar and bipolar depressed patients and <span class="math inline">\(32\)</span> healthy controls. Motor activity was monitored with an actigraph watch worn at the right wrist (Actiwatch, Cambridge Neurotechnology Ltd, England, model AW4). The sampling frequency was <span class="math inline">\(32\)</span> Hz. The device uses the inertial sensors data to compute an activity count every minute which is stored as an integer value in the memory unit of the actigraph watch. The number of counts is proportional to the intensity of the movement. The dataset also contains some additional information about the patients and the control group. For more details please see <span class="citation"><a href="references.html#ref-Garcia2018mm" role="doc-biblioref">Garcia-Ceja, Riegler, Jakobsen, et al.</a> (<a href="references.html#ref-Garcia2018mm" role="doc-biblioref">2018</a>)</span>.</p>
+<p>This dataset contains motor activity recordings of <span class="math inline">\(23\)</span> unipolar and bipolar depressed patients and <span class="math inline">\(32\)</span> healthy controls. Motor activity was monitored with an actigraph watch worn at the right wrist (Actiwatch, Cambridge Neurotechnology Ltd, England, model AW4). The sampling frequency was <span class="math inline">\(32\)</span> Hz. The device uses the inertial sensors data to compute an activity count every minute which is stored as an integer value in the memory unit of the actigraph watch. The number of counts is proportional to the intensity of the movement. The dataset also contains some additional information about the patients and the control group. For more details please see <span class="citation"><a href="#ref-Garcia2018mm" role="doc-biblioref">Garcia-Ceja, Riegler, Jakobsen, et al.</a> (<a href="#ref-Garcia2018mm" role="doc-biblioref">2018</a>)</span>.</p>
 </div>
 <div id="electromyography" class="section level2" number="12.3">
 <h2><span class="header-section-number">B.3</span> ELECTROMYOGRAPHY</h2>
 <p><strong>Included:</strong> Yes.</p>
 <p>This dataset was made available by Kirill Yashuk. The data was collected using an armband device that has <span class="math inline">\(8\)</span> sensors placed on the skin surface that measure electrical activity from the right forearm at a sampling rate of <span class="math inline">\(200\)</span> Hz. A video of the device can be seen here: <a href="https://youtu.be/1u5-G6DPtkk" class="uri">https://youtu.be/1u5-G6DPtkk</a>.</p>
-<p>The data contains <span class="math inline">\(4\)</span> different gestures: 0-rock, 1-scissors, 2-paper, 3-OK, and has <span class="math inline">\(65\)</span> columns. The last column is the class label from <span class="math inline">\(0\)</span> to <span class="math inline">\(3\)</span>. Each gesture was recorded <span class="math inline">\(6\)</span> times for <span class="math inline">\(20\)</span> seconds. The first <span class="math inline">\(64\)</span> columns are electrical measurements. <span class="math inline">\(8\)</span> consecutive readings for each of the <span class="math inline">\(8\)</span> sensors. For more details, please see <span class="citation"><a href="references.html#ref-kirill" role="doc-biblioref">Yashuk</a> (<a href="references.html#ref-kirill" role="doc-biblioref">2019</a>)</span>.</p>
+<p>The data contains <span class="math inline">\(4\)</span> different gestures: 0-rock, 1-scissors, 2-paper, 3-OK, and has <span class="math inline">\(65\)</span> columns. The last column is the class label from <span class="math inline">\(0\)</span> to <span class="math inline">\(3\)</span>. Each gesture was recorded <span class="math inline">\(6\)</span> times for <span class="math inline">\(20\)</span> seconds. The first <span class="math inline">\(64\)</span> columns are electrical measurements. <span class="math inline">\(8\)</span> consecutive readings for each of the <span class="math inline">\(8\)</span> sensors. For more details, please see <span class="citation"><a href="#ref-kirill" role="doc-biblioref">Yashuk</a> (<a href="#ref-kirill" role="doc-biblioref">2019</a>)</span>.</p>
 </div>
 <div id="fish-trajectories" class="section level2" number="12.4">
 <h2><span class="header-section-number">B.4</span> FISH TRAJECTORIES</h2>
 <p><strong>Included:</strong> Yes.</p>
-<p>The Fish4Knowledge<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a> <span class="citation">(<a href="references.html#ref-Beyan2013" role="doc-biblioref">Beyan and Fisher 2013</a>)</span> project made this database available. It contains <span class="math inline">\(3102\)</span> trajectories belonging to the <em>Dascyllus reticulatus</em> fish observed in the Taiwanese coral reef. Each trajectory is labeled as <em>‘normal’</em> or <em>‘abnormal’</em>. The trajectories were extracted from underwater video. Bounding box’s coordinates over time were extracted from the video. The data does not contain the video images but the final coordinates. The dataset compilation in this book also includes a .csv file with extracted features from the trajectories.</p>
+<p>The Fish4Knowledge<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a> <span class="citation">(<a href="#ref-Beyan2013" role="doc-biblioref">Beyan and Fisher 2013</a>)</span> project made this database available. It contains <span class="math inline">\(3102\)</span> trajectories belonging to the <em>Dascyllus reticulatus</em> fish observed in the Taiwanese coral reef. Each trajectory is labeled as <em>‘normal’</em> or <em>‘abnormal’</em>. The trajectories were extracted from underwater video. Bounding box’s coordinates over time were extracted from the video. The data does not contain the video images but the final coordinates. The dataset compilation in this book also includes a .csv file with extracted features from the trajectories.</p>
 </div>
 <div id="hand-gestures" class="section level2" number="12.5">
 <h2><span class="header-section-number">B.5</span> HAND GESTURES</h2>
 <p><strong>Included:</strong> Yes.</p>
-<p>The data was collected using an LG Optimus Me smartphone using its accelerometer sensor. The data was collected by <span class="math inline">\(10\)</span> subjects which performed <span class="math inline">\(5\)</span> repetitions of <span class="math inline">\(10\)</span> different gestures (<strong>triangle</strong>, <strong>square</strong>, <strong>circle</strong>, <strong>a</strong>, <strong>b</strong>, <strong>c</strong>, <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, <strong>4</strong>) giving a total of <span class="math inline">\(500\)</span> instances. The sensor is a tri-axial accelerometer which returns values for the x, y, and z axes.</p>
-<p>The data was collected by <span class="math inline">\(10\)</span> volunteers who performed <span class="math inline">\(5\)</span> repetitions per gesture. The sampling rate was set at <span class="math inline">\(50\)</span> Hz. To record a gesture the user presses the phone screen with his/her thumb, performs the gesture, and stops pressing the screen. For more information, please see <span class="citation"><a href="references.html#ref-EnriqueGestures2014" role="doc-biblioref">Garcia-Ceja, Brena, and Galván-Tejada</a> (<a href="references.html#ref-EnriqueGestures2014" role="doc-biblioref">2014</a>)</span>.</p>
+<p>The data was collected using an LG Optimus Me smartphone using its accelerometer sensor. The data was collected by <span class="math inline">\(10\)</span> subjects which performed <span class="math inline">\(5\)</span> repetitions for each of the <span class="math inline">\(10\)</span> different gestures (<em>‘triangle’</em>, <em>‘square’</em>, <em>‘circle’</em>, <em>‘a’</em>, <em>‘b’</em>, <em>‘c’</em>, <em>‘1’</em>, <em>‘2’</em>, <em>‘3’</em>, <em>‘4’</em>) giving a total of <span class="math inline">\(500\)</span> instances. The sensor is a tri-axial accelerometer which returns values for the x, y, and z axes. The sampling rate was set at <span class="math inline">\(50\)</span> Hz. To record a gesture the user presses the phone screen with her/his thumb, performs the gesture, and stops pressing the screen. For more information, please see <span class="citation"><a href="#ref-EnriqueGestures2014" role="doc-biblioref">Garcia-Ceja, Brena, and Galván-Tejada</a> (<a href="#ref-EnriqueGestures2014" role="doc-biblioref">2014</a>)</span>.</p>
 </div>
 <div id="home-tasks" class="section level2" number="12.6">
 <h2><span class="header-section-number">B.6</span> HOME TASKS</h2>
 <p><strong>Included:</strong> Yes.</p>
-<p>The sound and accelerometer data were collected by <span class="math inline">\(3\)</span> volunteers while performing <span class="math inline">\(7\)</span> different home task activities: <strong>mop floor</strong>, <strong>sweep floor</strong>, <strong>type on computer keyboard</strong>, <strong>brush teeth</strong>, <strong>wash hands</strong>, <strong>eat chips</strong> and <strong>watch t.v</strong>. Each volunteer performed each activity for approximately <span class="math inline">\(3\)</span> min. If the activity lasted less than <span class="math inline">\(3\)</span> min, another session was recorded until completing the <span class="math inline">\(3\)</span> min. The data were collected with a wrist-band (Microsoft Band 2) and a cellphone. The wrist-band was used to collect accelerometer data and was worn by the volunteers in their dominant hand. The accelerometer sensor returns values from the x, y, and z axes, and the sampling rate was set to <span class="math inline">\(31\)</span> Hz. The cellphone was used to record environmental sound with a sampling rate of <span class="math inline">\(8000\)</span> Hz and it was placed on a table in the same room the user was performing the activity. To preserve privacy, the dataset does not contain the raw recordings but extracted features. <span class="math inline">\(16\)</span> features from the accelerometer sensor and <span class="math inline">\(12\)</span> Mel frequency cepstral coefficients from the audio recordings. For more information, please see <span class="citation"><a href="references.html#ref-garcia2018multiview" role="doc-biblioref">Garcia-Ceja, Galván-Tejada, and Brena</a> (<a href="references.html#ref-garcia2018multiview" role="doc-biblioref">2018</a>)</span>.</p>
+<p>Sound and accelerometer data were collected by <span class="math inline">\(3\)</span> volunteers while performing <span class="math inline">\(7\)</span> different home task activities: <em>‘mop floor’</em>, <em>‘sweep floor’</em>, <em>‘type on computer keyboard’</em>, <em>‘brush teeth’</em>, <em>‘wash hands’</em>, <em>‘eat chips’</em>, and <em>‘watch t.v’</em>. Each volunteer performed each activity for approximately <span class="math inline">\(3\)</span> min. If the activity lasted less than <span class="math inline">\(3\)</span> min, another session was recorded until completing the <span class="math inline">\(3\)</span> min. The data were collected with a wrist-band (Microsoft Band 2) and a cellphone. The wrist-band was used to collect accelerometer data and was worn by the volunteers in their dominant hand. The accelerometer sensor returns values from the x, y, and z axes, and the sampling rate was set to <span class="math inline">\(31\)</span> Hz. A cellphone was used to record environmental sound with a sampling rate of <span class="math inline">\(8000\)</span> Hz and it was placed on a table in the same room the user was performing the activity. To preserve privacy, the dataset does not contain the raw audio recordings but extracted features. <span class="math inline">\(16\)</span> features from the accelerometer sensor and <span class="math inline">\(12\)</span> Mel frequency cepstral coefficients from the audio recordings. For more information, please see <span class="citation"><a href="#ref-garcia2018multiview" role="doc-biblioref">Garcia-Ceja, Galván-Tejada, and Brena</a> (<a href="#ref-garcia2018multiview" role="doc-biblioref">2018</a>)</span>.</p>
 </div>
 <div id="homicide-reports" class="section level2" number="12.7">
 <h2><span class="header-section-number">B.7</span> HOMICIDE REPORTS</h2>
 <p><strong>Included:</strong> Yes.</p>
-<p>This dataset was compiled and made available by the Murder Accountability Project, founded by Thomas Hargrove<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>.
-It contains information about homicides in the United States. This dataset includes the age, race, sex, ethnicity of victims and perpetrators, in addition to the relationship between the victim and perpetrator and weapon used. The original dataset includes the <code>database.csv</code> file. The files <code>processed.csv</code> and <code>transactions.RData</code> were generated with the R scripts included in the examples code to facilitate the analysis.</p>
+<p>This dataset was compiled and made available by the Murder Accountability Project, founded by Thomas Hargrove<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>.
+It contains information about homicides in the United States. This dataset includes the age, race, sex, ethnicity of victims and perpetrators, in addition to the relationship between the victim and perpetrator and weapon used. The original dataset includes the <code>database.csv</code> file. The files <code>processed.csv</code> and <code>transactions.RData</code> were generated with the R scripts included in the examples code of the corresponding sections to facilitate the analysis.</p>
 </div>
 <div id="indoor-location" class="section level2" number="12.8">
 <h2><span class="header-section-number">B.8</span> INDOOR LOCATION</h2>
 <p><strong>Included:</strong> Yes.</p>
-<p>This dataset contains WiFi signal recordings from different locations in a building including the MAC address and signal strength. The data was collected with an Android 2.2 application running on a LG Optimus Me cell phone. To generate a single instance, the device scans and records the MAC address and signal strength of the nearby access points. A delay of <span class="math inline">\(500\)</span> ms is set between scans. For each location, approximately <span class="math inline">\(3\)</span> minutes of data were collected while the user walked around the specific location. The data has four different locations: <strong>bedroomA</strong>, <strong>beadroomB</strong>, <strong>tv room</strong> and the <strong>lobby</strong>. To preserve privacy, the MAC addresses are encoded as integer numbers. For more information, please, see <span class="citation"><a href="references.html#ref-Garcia2012WiFi" role="doc-biblioref">Garcia and Brena</a> (<a href="references.html#ref-Garcia2012WiFi" role="doc-biblioref">2012</a>)</span>.</p>
+<p>This dataset contains WiFi signal recordings fo access points from different locations in a building including their MAC address and signal strength. The data was collected with an Android 2.2 application running on a LG Optimus Me cell phone. To generate a single instance, the device scans and records the MAC address and signal strength of the nearby access points. A delay of <span class="math inline">\(500\)</span> ms is set between scans. For each location, approximately <span class="math inline">\(3\)</span> minutes of data were collected while the user walked around the specific location. The data includes four different locations: <em>‘bedroomA’</em>, <em>‘beadroomB’</em>, <em>‘tv room’</em> and the <em>‘lobby’</em>. To preserve privacy, the MAC addresses are encoded as integer numbers. For more information, please, see <span class="citation"><a href="#ref-Garcia2012WiFi" role="doc-biblioref">Garcia and Brena</a> (<a href="#ref-Garcia2012WiFi" role="doc-biblioref">2012</a>)</span>.</p>
 </div>
 <div id="sheep-goats" class="section level2" number="12.9">
 <h2><span class="header-section-number">B.9</span> SHEEP GOATS</h2>
 <p><strong>Included:</strong> No.</p>
-<p>The dataset was made available by <span class="citation"><a href="references.html#ref-kamminga2017" role="doc-biblioref">Kamminga et al.</a> (<a href="references.html#ref-kamminga2017" role="doc-biblioref">2017</a>)</span> and can be downloaded from <a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:76131" class="uri">https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:76131</a>. The researchers placed inertial sensors on sheep and goats and tracked their behavior during one day. They also video-recorded the session and annotated the data with different types of behaviors such as <strong>grazing</strong>, <strong>fighting</strong>, <strong>scratch-biting</strong>, etc. The device was placed on the neck with random orientation and it collects acceleration, orientation, magnetic field, temperature, and barometric pressure. In this book, only data from one of the sheep is used (<code>Sheep/S1.csv</code>).</p>
+<p>The dataset was made available by <span class="citation"><a href="#ref-kamminga2017" role="doc-biblioref">Kamminga et al.</a> (<a href="#ref-kamminga2017" role="doc-biblioref">2017</a>)</span> and can be downloaded from <a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:76131" class="uri">https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:76131</a>. The researchers placed inertial sensors on sheep and goats and tracked their behavior during one day. They also video-recorded the session and annotated the data with different types of behaviors such as <em>‘grazing’</em>, <em>‘fighting’</em>, <em>‘scratch-biting’</em>, etc. The device was placed on the neck with random orientation and it collects acceleration, orientation, magnetic field, temperature, and barometric pressure. In this book, only data from one of the sheep is used (<code>Sheep/S1.csv</code>).</p>
 </div>
 <div id="skeleton-actions" class="section level2" number="12.10">
 <h2><span class="header-section-number">B.10</span> SKELETON ACTIONS</h2>
 <p><strong>Included:</strong> No.</p>
-<p>The authors of this dataset are <span class="citation"><a href="references.html#ref-chen2015utd" role="doc-biblioref">Chen, Jafari, and Kehtarnavaz</a> (<a href="references.html#ref-chen2015utd" role="doc-biblioref">2015</a>)</span>. The data was recorded by <span class="math inline">\(8\)</span> subjects with a Kinect camera and an inertial sensor unit and each subject repeated each action <span class="math inline">\(4\)</span> times. The number of actions is <span class="math inline">\(27\)</span> and some of the actions are: <strong>right hand wave</strong>, <strong>two hand front clap</strong>, <strong>basketball shoot</strong>, <strong>front boxing</strong>, etc. More information about the collection process and pictures can be consulted on the website <a href="https://personal.utdallas.edu/~kehtar/UTD-MHAD.html" class="uri">https://personal.utdallas.edu/~kehtar/UTD-MHAD.html</a>.</p>
+<p>The authors of this dataset are <span class="citation"><a href="#ref-chen2015utd" role="doc-biblioref">Chen, Jafari, and Kehtarnavaz</a> (<a href="#ref-chen2015utd" role="doc-biblioref">2015</a>)</span>. The data was recorded by <span class="math inline">\(8\)</span> subjects with a Kinect camera and an inertial sensor unit and each subject repeated each action <span class="math inline">\(4\)</span> times. The number of actions is <span class="math inline">\(27\)</span> and some of the actions include: <em>‘right hand wave’</em>, <em>‘two hand front clap’</em>, <em>‘basketball shoot’</em>, <em>‘front boxing’</em>, etc. More information about the collection process and pictures can be consulted on the website <a href="https://personal.utdallas.edu/~kehtar/UTD-MHAD.html" class="uri">https://personal.utdallas.edu/~kehtar/UTD-MHAD.html</a>.</p>
 </div>
 <div id="smartphone-activities" class="section level2" number="12.11">
 <h2><span class="header-section-number">B.11</span> SMARTPHONE ACTIVITIES</h2>
 <p><strong>Included:</strong> Yes.</p>
-<p>This dataset is called WISDM<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a> and was made available by <span class="citation"><a href="references.html#ref-kwapisz2010" role="doc-biblioref">Kwapisz, Weiss, and Moore</a> (<a href="references.html#ref-kwapisz2010" role="doc-biblioref">2010</a>)</span>. The dataset has <span class="math inline">\(6\)</span> different activities: <strong>walking</strong>, <strong>jogging</strong>, <strong>walking upstairs</strong>, <strong>walking downstairs</strong>, <strong>sitting</strong> and <strong>standing</strong>. The data was collected by <span class="math inline">\(36\)</span> volunteers with the accelerometer of an Android phone located in the users’ pants pocket and with a sampling rate of <span class="math inline">\(20\)</span> Hz.</p>
+<p>This dataset is called WISDM<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a> and was made available by <span class="citation"><a href="#ref-kwapisz2010" role="doc-biblioref">Kwapisz, Weiss, and Moore</a> (<a href="#ref-kwapisz2010" role="doc-biblioref">2010</a>)</span>. The dataset includes <span class="math inline">\(6\)</span> different activities: <em>‘walking’</em>, <em>‘jogging’</em>, <em>‘walking upstairs’</em>, <em>‘walking downstairs’</em>, <em>‘sitting’</em> and <em>‘standing’</em>. The data was collected by <span class="math inline">\(36\)</span> volunteers with the accelerometer of an Android phone located in the users’ pants pocket and with a sampling rate of <span class="math inline">\(20\)</span> Hz.</p>
 </div>
 <div id="smiles" class="section level2" number="12.12">
 <h2><span class="header-section-number">B.12</span> SMILES</h2>
 <p><strong>Included:</strong> No.</p>
-<p>This dataset contains color face images of <span class="math inline">\(64 \times 64\)</span> pixels and is published here: <a href="http://conradsanderson.id.au/lfwcrop/" class="uri">http://conradsanderson.id.au/lfwcrop/</a>. This is a cropped version <span class="citation">(<a href="references.html#ref-sanderson2009multi" role="doc-biblioref">Sanderson and Lovell 2009</a>)</span> of the Labeled Faces in the Wild (LFW) database <span class="citation">(<a href="references.html#ref-huang2008labeled" role="doc-biblioref">Gary B. Huang et al. 2008</a>)</span>. Please, download the color version (lfwcrop_color.zip) and copy all ppm files into the <code>faces/</code> directory.</p>
-<p>A subset of the database was labeled by <span class="citation"><a href="references.html#ref-arigbabu2016smile" role="doc-biblioref">O. A. Arigbabu et al.</a> (<a href="references.html#ref-arigbabu2016smile" role="doc-biblioref">2016</a>)</span>, <span class="citation"><a href="references.html#ref-olasimbo" role="doc-biblioref">O. Arigbabu</a> (<a href="references.html#ref-olasimbo" role="doc-biblioref">2017</a>)</span>. The labels are provided as two text files (SMILE_list.txt, NON-SMILE_list.txt), each, containing the list of files that correspond to smiling and non-smiling faces. The smiling set has <span class="math inline">\(600\)</span> pictures and the non-smiling has <span class="math inline">\(603\)</span> pictures.</p>
+<p>This dataset contains color face images of <span class="math inline">\(64 \times 64\)</span> pixels and is published here: <a href="http://conradsanderson.id.au/lfwcrop/" class="uri">http://conradsanderson.id.au/lfwcrop/</a>. This is a cropped version <span class="citation">(<a href="#ref-sanderson2009multi" role="doc-biblioref">Sanderson and Lovell 2009</a>)</span> of the Labeled Faces in the Wild (LFW) database <span class="citation">(<a href="#ref-huang2008labeled" role="doc-biblioref">Gary B. Huang et al. 2008</a>)</span>. Please, download the color version (lfwcrop_color.zip) and copy all ppm files into the <code>faces/</code> directory.</p>
+<p>A subset of the database was labeled by <span class="citation"><a href="#ref-arigbabu2016smile" role="doc-biblioref">O. A. Arigbabu et al.</a> (<a href="#ref-arigbabu2016smile" role="doc-biblioref">2016</a>)</span>, <span class="citation"><a href="#ref-olasimbo" role="doc-biblioref">O. Arigbabu</a> (<a href="#ref-olasimbo" role="doc-biblioref">2017</a>)</span>. The labels are provided as two text files (SMILE_list.txt, NON-SMILE_list.txt), each, containing the list of files that correspond to smiling and non-smiling faces. The smiling set has <span class="math inline">\(600\)</span> pictures and the non-smiling has <span class="math inline">\(603\)</span> pictures.</p>
 </div>
 <div id="students-mental-health" class="section level2" number="12.13">
 <h2><span class="header-section-number">B.13</span> STUDENTS’ MENTAL HEALTH</h2>
 <p><strong>Included:</strong> Yes.</p>
-<p>This dataset contains <span class="math inline">\(268\)</span> survey responses that include variables related to depression, acculturative stress, social connectedness, and help-seeking behaviors reported by international and domestic students at an international university in Japan. For a detailed description, please see <span class="citation">(<a href="references.html#ref-Minh2019" role="doc-biblioref">Nguyen et al. 2019</a>)</span>.</p>
+<p>This dataset contains <span class="math inline">\(268\)</span> survey responses that include variables related to depression, acculturative stress, social connectedness, and help-seeking behaviors reported by international and domestic students at an international university in Japan. For a detailed description, please see <span class="citation">(<a href="#ref-Minh2019" role="doc-biblioref">Nguyen et al. 2019</a>)</span>.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-olasimbo" class="csl-entry">
+Arigbabu, Olasimbo. 2017. <em>Dataset for Smile Detection from Face Images</em>. <a href="http://dx.doi.org/10.17632/yz4v8tb3tp.5">http://dx.doi.org/10.17632/yz4v8tb3tp.5</a>.
+</div>
+<div id="ref-arigbabu2016smile" class="csl-entry">
+Arigbabu, Olasimbo Ayodeji, Saif Mahmood, Sharifah Mumtazah Syed Ahmad, and Abayomi A Arigbabu. 2016. <span>“Smile Detection Using Hybrid Face Representation.”</span> <em>Journal of Ambient Intelligence and Humanized Computing</em> 7 (3): 415–26.
+</div>
+<div id="ref-Beyan2013" class="csl-entry">
+Beyan, Cigdem, and Robert B Fisher. 2013. <span>“Detecting Abnormal Fish Trajectories Using Clustered and Labeled Data.”</span> In <em>2013 <span>IEEE</span> International Conference on Image Processing</em>, 1476–80. <span>IEEE</span>.
+</div>
+<div id="ref-chen2015utd" class="csl-entry">
+Chen, Chen, Roozbeh Jafari, and Nasser Kehtarnavaz. 2015. <span>“UTD-MHAD: A Multimodal Dataset for Human Action Recognition Utilizing a Depth Camera and a Wearable Inertial Sensor.”</span> In <em>2015 IEEE International Conference on Image Processing (ICIP)</em>, 168–72. IEEE.
+</div>
+<div id="ref-Garcia2012WiFi" class="csl-entry">
+Garcia, Enrique A., and Ramon F. Brena. 2012. <span>“Real Time Activity Recognition Using a Cell Phone’s Accelerometer and Wi-Fi.”</span> In <em>Workshop Proceedings of the 8th International Conference on Intelligent Environments</em>, 13:94–103. Ambient Intelligence and Smart Environments. IOS Press. <a href="https://doi.org/10.3233/978-1-61499-080-2-94">https://doi.org/10.3233/978-1-61499-080-2-94</a>.
+</div>
+<div id="ref-EnriqueGestures2014" class="csl-entry">
+Garcia-Ceja, Enrique, Ramon Brena, and CarlosE. Galván-Tejada. 2014. <span>“Contextualized Hand Gesture Recognition with Smartphones.”</span> In <em>Pattern Recognition</em>, edited by JoséFrancisco Martínez-Trinidad, JesúsAriel Carrasco-Ochoa, JoséArturo Olvera-Lopez, Joaquín Salas-Rodríguez, and ChingY. Suen, 8495:122–31. Lecture Notes in Computer Science. Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-07491-7_13">https://doi.org/10.1007/978-3-319-07491-7_13</a>.
+</div>
+<div id="ref-garcia2018multiview" class="csl-entry">
+Garcia-Ceja, Enrique, Carlos E Galván-Tejada, and Ramon Brena. 2018. <span>“Multi-View Stacking for Activity Recognition with Sound and Accelerometer Data.”</span> <em>Information Fusion</em> 40: 45–56.
+</div>
+<div id="ref-Garcia2018mm" class="csl-entry">
+Garcia-Ceja, Enrique, Michael Riegler, Petter Jakobsen, Jim Tørresen, Tine Nordgreen, Ketil J. Oedegaard, and Ole Bernt Fasmer. 2018. <span>“Depresjon: A Motor Activity Database of Depression Episodes in Unipolar and Bipolar Patients.”</span> In <em>Proceedings of the 9th ACM on Multimedia Systems Conference</em>. MMSys’18. Amsterdam, The Netherlands: ACM. <a href="https://doi.org/10.1145/3204949.3208125">https://doi.org/10.1145/3204949.3208125</a>.
+</div>
+<div id="ref-huang2008labeled" class="csl-entry">
+Huang, Gary B, Marwan Mattar, Tamara Berg, and Eric Learned-Miller. 2008. <span>“Labeled Faces in the Wild: A Database Forstudying Face Recognition in Unconstrained Environments.”</span> In.
+</div>
+<div id="ref-kamminga2017" class="csl-entry">
+Kamminga, Jacob W, Helena C Bisby, Duc V Le, Nirvana Meratnia, and Paul JM Havinga. 2017. <span>“Generic Online Animal Activity Recognition on Collar Tags.”</span> In <em>Proceedings of the 2017 ACM International Joint Conference on Pervasive and Ubiquitous Computing and Proceedings of the 2017 ACM International Symposium on Wearable Computers</em>, 597–606.
+</div>
+<div id="ref-kwapisz2010" class="csl-entry">
+Kwapisz, Jennifer R., Gary M. Weiss, and Samuel A. Moore. 2010. <span>“Activity Recognition Using Cell Phone Accelerometers.”</span> In <em>Proceedings of the Fourth International Workshop on Knowledge Discovery from Sensor Data (at <span>KDD</span>-10), Washington <span>DC</span>.</em>
+</div>
+<div id="ref-Minh2019" class="csl-entry">
+Nguyen, Minh-Hoang, Manh-Toan Ho, Quynh-Yen T. Nguyen, and Quan-Hoang Vuong. 2019. <span>“A Dataset of Students’ Mental Health and Help-Seeking Behaviors in a Multicultural Environment.”</span> <em>Data</em> 4 (3). <a href="https://doi.org/10.3390/data4030124">https://doi.org/10.3390/data4030124</a>.
+</div>
+<div id="ref-sanderson2009multi" class="csl-entry">
+Sanderson, Conrad, and Brian C Lovell. 2009. <span>“Multi-Region Probabilistic Histograms for Robust and Scalable Identity Inference.”</span> In <em>International Conference on Biometrics</em>, 199–208. Springer.
+</div>
+<div id="ref-kirill" class="csl-entry">
+Yashuk, Kirill. 2019. <em>Classify Gestures by Reading Muscle Activity: A Recording of Human Hand Muscle Activity Producing Four Different Hand Gestures</em>. <a href="https://www.kaggle.com/kyr7plus/emg-4">https://www.kaggle.com/kyr7plus/emg-4</a>.
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="31">
-<li id="fn31"><p><a href="http://groups.inf.ed.ac.uk/f4k/" class="uri">http://groups.inf.ed.ac.uk/f4k/</a><a href="appendixDatasets.html#fnref31" class="footnote-back">↩︎</a></p></li>
-<li id="fn32"><p><a href="https://www.kaggle.com/murderaccountability/homicide-reports" class="uri">https://www.kaggle.com/murderaccountability/homicide-reports</a><a href="appendixDatasets.html#fnref32" class="footnote-back">↩︎</a></p></li>
-<li id="fn33"><p><a href="http://www.cis.fordham.edu/wisdm/dataset.php" class="uri">http://www.cis.fordham.edu/wisdm/dataset.php</a><a href="appendixDatasets.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<ol start="30">
+<li id="fn30"><p><a href="http://groups.inf.ed.ac.uk/f4k/" class="uri">http://groups.inf.ed.ac.uk/f4k/</a><a href="appendixDatasets.html#fnref30" class="footnote-back">↩︎</a></p></li>
+<li id="fn31"><p><a href="https://www.kaggle.com/murderaccountability/homicide-reports" class="uri">https://www.kaggle.com/murderaccountability/homicide-reports</a><a href="appendixDatasets.html#fnref31" class="footnote-back">↩︎</a></p></li>
+<li id="fn32"><p><a href="http://www.cis.fordham.edu/wisdm/dataset.php" class="uri">http://www.cis.fordham.edu/wisdm/dataset.php</a><a href="appendixDatasets.html#fnref32" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -524,6 +594,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

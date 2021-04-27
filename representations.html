@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning Using R</title>
   <meta name="description" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning Using R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:image" content="/images/cover.png" />
   <meta property="og:description" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning Using R" />
   
   <meta name="twitter:description" content="Chapter 7 Encoding Behavioral Data | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="twitter:image" content="images/cover.png" />
+  <meta name="twitter:image" content="/images/cover.png" />
 
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-04-03" />
+<meta name="date" content="2021-04-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
 <script src="libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="libs/d3/d3.min.js"></script>
 <link href="libs/d3panels/d3panels.min.css" rel="stylesheet" />
@@ -80,6 +82,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -138,6 +141,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -356,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
 <li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#explore-and-visualize-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Explore and Visualize Trajectories</a></li>
+<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Exploring and Visualizing Trajectories</a></li>
 <li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
 <li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
 <li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC curve and AUC</a></li>
@@ -412,7 +438,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="representations" class="section level1" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Encoding Behavioral Data</h1>
-<p>Sensor data comes in many different flavors and shapes. Data stored in databases also have different structures (relational, graph, plain text, etc.). As mentioned in chapter <a href="intro.html#intro">1</a>, before training a predictive model, data goes through a series of steps, from data collection to preprocessing (Figure <a href="intro.html#fig:pipeline">1.6</a>). During those steps, data is transformed and shaped with the aim of easing the operations in the subsequent tasks. Finally, the data needs to be encoded in a very specific format as expected by the predictive model. For example, decision trees and many other classifier methods expect their input data to be formatted as <strong>feature vectors</strong> while Dynamic Time Warping expects the data to be represented as <strong>timeseries</strong>. When working with images, one usually encodes them as <span class="math inline">\(n\)</span>-dimensional matrices and when it comes to social network analysis, a <strong>graph</strong> is the preferred representation.</p>
+<p>Behavioral data comes in many different flavors and shapes. Data stored in databases also have different structures (relational, graph, plain text, etc.). As mentioned in chapter <a href="intro.html#intro">1</a>, before training a predictive model, data goes through a series of steps, from data collection to preprocessing (Figure <a href="intro.html#fig:pipeline">1.6</a>). During those steps, data is transformed and shaped with the aim of easing the operations in the subsequent tasks. Finally, the data needs to be encoded in a very specific format as expected by the predictive model. For example, decision trees and many other classifier methods expect their input data to be formatted as <strong>feature vectors</strong> while Dynamic Time Warping expects the data to be represented as <strong>timeseries</strong>. When working with images, one usually encodes them as <span class="math inline">\(n\)</span>-dimensional matrices and when it comes to social network analysis, a <strong>graph</strong> is the preferred representation.</p>
 <p>So far, I have been mentioning two key terms: <strong>encode</strong> and <strong>representation</strong>. The Cambridge Dictionary<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> defines the verb <em>encode</em> as:</p>
 <blockquote>
 <p><em>“To put information into a form in which it can be stored, and which can only be read using special technology or knowledge…”</em></p>
@@ -454,11 +480,11 @@ FIGURE 7.2: Example of some raw data encoded into different representations.
 FIGURE 7.3: Two different feature vectors for classifying tired and not tired.
 </p>
 </div>
-<p>In R, feature vectors are stored as data frames where rows are individual instances and columns are features. Some of the advantages and limitations of feature vectors are:</p>
+<p>In R, feature vectors are stored as data frames where rows are individual instances and columns are features. Some of the advantages and limitations of feature vectors are listed below.</p>
 <p><strong>Advantages:</strong></p>
 <ul>
 <li>Efficient in terms of memory.</li>
-<li>Most ML algorithms support them.</li>
+<li>Most machine learning algorithms support them.</li>
 <li>Efficient in terms of computations compared to other representations.</li>
 </ul>
 <p><strong>Limitations:</strong></p>
@@ -466,13 +492,13 @@ FIGURE 7.3: Two different feature vectors for classifying tired and not tired.
 <li>Are static in the sense that they cannot capture temporal relationships.</li>
 <li>A lot of information and/or temporal relationships may be lost.</li>
 <li>Some features may be redundant leading to decreased performance.</li>
-<li>Require effort and domain knowledge to extract them.</li>
-<li>Difficult to plot if the dimension is <span class="math inline">\(&gt; 2\)</span> unless some dimensionality reduction method is applied such as Multidimensional Scaling (chapter <a href="edavis.html#edavis">4</a>).</li>
+<li>It requires effort and domain knowledge to extract them.</li>
+<li>They are difficult to plot if the dimension is <span class="math inline">\(&gt; 2\)</span> unless some dimensionality reduction method is applied such as Multidimensional Scaling (chapter <a href="edavis.html#edavis">4</a>).</li>
 </ul>
 </div>
 <div id="sectimeseries" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Timeseries</h2>
-<p>A timeseries is a sequence of data points ordered in time. We have already worked with timeseries data in previous chapters (<a href="classification.html#classification">2</a>) when classifying physical activities and hand gestures. Timeseries can be multi-dimensional. For example, typical inertial sensors capture motion forces in three axes. Timeseries analysis methods can be used to find underlying time-dependent patterns while timeseries forecasting methods aim to predict future data points based on historical data. Timeseries analysis is a very extensive topic and there are already several books that specialize on it. For example, the book “Forecasting: Principles and Practice” by <span class="citation"><a href="references.html#ref-Hyndman2018" role="doc-biblioref">Hyndman and Athanasopoulos</a> (<a href="references.html#ref-Hyndman2018" role="doc-biblioref">2018</a>)</span> focuses on timeseries forecasting with R.</p>
+<p>A timeseries is a sequence of data points ordered in time. We have already worked with timeseries data in previous chapters when classifying physical activities and hand gestures (chapter <a href="classification.html#classification">2</a>). Timeseries can be multi-dimensional. For example, typical inertial sensors capture motion forces in three axes. Timeseries analysis methods can be used to find underlying time-dependent patterns while timeseries forecasting methods aim to predict future data points based on historical data. Timeseries analysis is a very extensive topic and there are already several books that specialize on it. For example, the book “Forecasting: Principles and Practice” by <span class="citation"><a href="#ref-Hyndman2018" role="doc-biblioref">Hyndman and Athanasopoulos</a> (<a href="#ref-Hyndman2018" role="doc-biblioref">2018</a>)</span> focuses on timeseries forecasting with R.</p>
 <p>In this book we mainly use timeseries data collected from sensors in the context of behavior predictions using machine learning. We have already seen how classification models (like decision trees) can be trained with timeseries converted into feature vectors (section <a href="classification.html#activityRecognition">2.3.1</a>) or by using the raw timeseries data with Dynamic Time Warping (section <a href="classification.html#sechandgestures">2.5.1</a>).</p>
 <p><strong>Advantages:</strong></p>
 <ul>
@@ -504,7 +530,8 @@ FIGURE 7.4: Example database with 10 transactions.
 </ul>
 <p><strong>Limitations:</strong></p>
 <ul>
-<li>Can be inefficient to store them as a logical matrix.</li>
+<li>Can be inefficient to store them as a logical matrices.</li>
+<li>There is no order associated with the items or temporal information.</li>
 </ul>
 </div>
 <div id="images" class="section level2" number="7.4">
@@ -514,7 +541,7 @@ FIGURE 7.4: Example database with 10 transactions.
 <code>timeseries_to_images.R</code> <code>plot_activity_images.R</code>
 </div>
 <p>Images are rich visual representations that capture a lot of information –including spatial relationships. Pictures taken from a camera, drawings, scanned documents, etc. already are represented as images. However, other types of non-image data can be converted into images. One of the main advantages of analyzing images is that they retain spatial information (distance between pixels). This information can be useful when using predictive models that can take advantage of those properties such as Convolutional Neural Networks (CNNs) which will be presented in chapter <a href="deeplearning.html#deeplearning">8</a>. CNNs have proven to produce state of the art results in many vision-based tasks and are very flexible models in the sense that they can be adapted for a variety of applications with little effort.</p>
-<p>Before CNNs were introduced by Lecun <span class="citation">(<a href="references.html#ref-lecun1998gradient" role="doc-biblioref">LeCun et al. 1998</a>)</span>, image classification used to be feature-based. One first needed to extract hand-crafted features from images and then use a classifier such as decision trees, <span class="math inline">\(k\)</span>-nn, etc. Also, images can be <em>flattened</em> into one-dimensional arrays where each element represents a pixel (Figure <a href="representations.html#fig:flattening">7.5</a>). Then, those <span class="math inline">\(1\)</span>D arrays can be used as feature vectors to perform training and inference.</p>
+<p>Before CNNs were introduced by Lecun <span class="citation">(<a href="#ref-lecun1998gradient" role="doc-biblioref">LeCun et al. 1998</a>)</span>, image classification used to be feature-based. One first needed to extract hand-crafted features from images and then use a classifier to make predictions. Also, images can be <em>flattened</em> into one-dimensional arrays where each element represents a pixel (Figure <a href="representations.html#fig:flattening">7.5</a>). Then, those <span class="math inline">\(1\)</span>D arrays can be used as feature vectors to perform training and inference.</p>
 <div class="figure" style="text-align: center"><span id="fig:flattening"></span>
 <img src="images/flattening.png" alt="Flattening a matrix into a 1D array." width="80%" />
 <p class="caption">
@@ -522,7 +549,7 @@ FIGURE 7.5: Flattening a matrix into a 1D array.
 </p>
 </div>
 <p>Flattening an image can lead to information loss and the dimension of the resulting vector can be very high, sometimes limiting its applicability and/or performance. Feature extraction from images can also be a complicated task and very application dependent. CNNs have changed that. They take as input raw images, that is, matrices and automatically extract features and perform classification or regression.</p>
-<p>What if our data are not represented as images but we would still want to take advantage of featureless models like CNNs? Depending on the type of data, it may be possible to encode it as an image. For example, timeseries data can be encoded as an image. In fact, a timeseries can already be considered an image with a height of <span class="math inline">\(1\)</span> but they can be reshaped into square matrices.</p>
+<p>What if our data are not represented as images but we would still want to take advantage of featureless models like CNNs? Depending on the type of data, it may be possible to encode it as an image. For example, timeseries data can be encoded as an image. In fact, a timeseries can already be considered an image with a height of <span class="math inline">\(1\)</span> but they can also be reshaped into square matrices.</p>
 <p>Take for example the <em>SMARTPHONE ACTIVITIES</em> dataset which contains accelerometer data for each of the <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span> axes. The script <code>timeseries_to_images.R</code> shows how the acceleration timeseries can be converted to images. A window size of <span class="math inline">\(100\)</span> is defined. Since the sampling rate was <span class="math inline">\(20\)</span> Hz it means each window corresponds to <span class="math inline">\(100/20 = 5\)</span> seconds. For each window, we have <span class="math inline">\(3\)</span> timeseries (<span class="math inline">\(x\)</span>,<span class="math inline">\(y\)</span>,<span class="math inline">\(z\)</span>). We can reshape each of them into <span class="math inline">\(10 \times 10\)</span> matrices by arranging the elements into columns. Then, the three matrices can be stacked to form a <span class="math inline">\(3\)</span>D image similar to an RGB image. Figure <a href="representations.html#fig:seriesToImage">7.6</a> shows the process of reshaping <span class="math inline">\(3\)</span> timeseries of size <span class="math inline">\(9\)</span> into <span class="math inline">\(3 \times 3\)</span> matrices to generate an RGB-like image.</p>
 <div class="figure" style="text-align: center"><span id="fig:seriesToImage"></span>
 <img src="images/series_to_image.png" alt="Encoding 3 accelerometer timeseries as an image." width="90%" />
@@ -553,20 +580,20 @@ FIGURE 7.7: Three activities captured with an accelerometer represented as image
 </div>
 <div id="recurrence-plots" class="section level2" number="7.5">
 <h2><span class="header-section-number">7.5</span> Recurrence Plots</h2>
-<p>Recurrence plots (RPs) are visual representations similar to images but typically they are one-dimensional. They are encoded as <span class="math inline">\(n \times n\)</span> matrices, that is, the same number of rows and columns (a square matrix). Even though these are like a special case of images, I thought it would be worth having them in their own subsection! Just as with images, timeseries can be converted into RPs and then used to train a CNN.</p>
-<p>A recurrence plot (RP) is a visual representation of time patterns of dynamical systems (for example, timeseries). RPs were introduced by <span class="citation"><a href="references.html#ref-eckmann1987recurrence" role="doc-biblioref">Eckmann, Kamphorst, and Ruelle</a> (<a href="references.html#ref-eckmann1987recurrence" role="doc-biblioref">1987</a>)</span> and they depict all the times when a trajectory is roughly in the same state. They are visual representations of the dynamics of a system. Biological systems possess behavioral patterns and activity dynamics that can be captured with RPs, for example, the dynamics of ant colonies <span class="citation">(<a href="references.html#ref-Neves2017" role="doc-biblioref">Neves 2017</a>)</span>.</p>
+<p>Recurrence plots (RPs) are visual representations similar to images but typically they only have one dimension (depth). They are encoded as <span class="math inline">\(n \times n\)</span> matrices, that is, the same number of rows and columns (a square matrix). Even though these are like a special case of images, I thought it would be worth having them in their own subsection! Just as with images, timeseries can be converted into RPs and then used to train a CNN.</p>
+<p>A recurrence plot (RP) is a visual representation of time patterns of dynamical systems (for example, timeseries). RPs were introduced by <span class="citation"><a href="#ref-eckmann1987recurrence" role="doc-biblioref">Eckmann, Kamphorst, and Ruelle</a> (<a href="#ref-eckmann1987recurrence" role="doc-biblioref">1987</a>)</span> and they depict all the times when a trajectory is roughly in the same state. They are visual representations of the dynamics of a system. Biological systems possess behavioral patterns and activity dynamics that can be captured with RPs, for example, the dynamics of ant colonies <span class="citation">(<a href="#ref-Neves2017" role="doc-biblioref">Neves 2017</a>)</span>.</p>
 <p>At this point, you may be curious about how a RP looks like. So let me begin by showing a picture<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a> of <span class="math inline">\(4\)</span> time series with their respective RP (Figure <a href="representations.html#fig:rpExamples">7.8</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:rpExamples"></span>
-<img src="images/RP_examples.png" alt="Four timeseries (top) with their respective RPs (bottom). Source: wikipedia." width="80%" />
+<img src="images/RP_examples.png" alt="Four timeseries (top) with their respective RPs (bottom). source: wikipedia (CC BY-SA 2.0 DE)." width="80%" />
 <p class="caption">
-FIGURE 7.8: Four timeseries (top) with their respective RPs (bottom). Source: wikipedia.
+FIGURE 7.8: Four timeseries (top) with their respective RPs (bottom). source: wikipedia (CC BY-SA 2.0 DE).
 </p>
 </div>
 <p>The first RP (leftmost) does not seem to have a clear pattern (white noise) whereas the other three show some patterns like diagonals of different sizes, some square and circular shapes, and so on. RPs can be characterized by small-scale and large-scale patterns. Examples of small-scale patterns are diagonals, horizontal/vertical lines, dots, etc. Large-scale patterns are called <em>typology</em> and they depict the global characteristics of the dynamic system.<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a></p>
 <p>The visual interpretation of RPs requires some experience and is out of the scope of this book. However, they can be used as a visual pattern extraction tool to represent the data and then, in conjunction with machine learning methods like CNNs, used to solve classification problems.</p>
 
 <div class="rmdinfo">
-There exists an objective way to analyze RPs and is called <strong>recurrence quantification analysis (RQA)</strong> <span class="citation">(<a href="references.html#ref-ZBILUT1992" role="doc-biblioref">Zbilut and Webber 1992</a>)</span>. It introduces several measures<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> like percentage of recurrence points (recurrence rate), percentage of points that form vertical lines (laminarity), average length of diagonal lines, length of the longest diagonal line, etc. Those measures can then be used as features to train classifiers such as decision trees, <span class="math inline">\(k\)</span>-nn, etc.
+There is an objective way to analyze RPs and is called <strong>recurrence quantification analysis (RQA)</strong> <span class="citation">(<a href="#ref-ZBILUT1992" role="doc-biblioref">Zbilut and Webber 1992</a>)</span>. It introduces several measures like percentage of recurrence points (recurrence rate), percentage of points that form vertical lines (laminarity), average length of diagonal lines, length of the longest diagonal line, etc. Those measures can then be used as features to train classification models.
 </div>
 <p>But how are RPs computed? Well, that is the topic of the next section.</p>
 <div id="computing-recurence-plots" class="section level3" number="7.5.1">
@@ -717,19 +744,19 @@ FIGURE 7.14: Table view of two documents as BoW.
 <p>From these representations, it is now easy to build a document classifier. The word-counts table can be used as an input feature vector. That is, each position in the feature vector represents a word and its value is an integer representing the total count for that word.</p>
 
 <div class="rmdgoodpractice">
-Note that in practice documents will differ in length, thus, it is a good idea to use percentages instead of total counts. This can be achieved by dividing each word count by the total number of counts. Also note that some frequent words like ‘the,’ ‘is,’ ‘it’ can cause problems, so some extra preprocessing is needed. This was a simple example but if you are interested in more advanced text processing techniques I refer you to the book “Text Mining with R: A Tidy Approach” by <span class="citation"><a href="references.html#ref-silge2017" role="doc-biblioref">Silge and Robinson</a> (<a href="references.html#ref-silge2017" role="doc-biblioref">2017</a>)</span>.
+Note that in practice documents will differ in length, thus, it is a good idea to use percentages instead of total counts. This can be achieved by dividing each word count by the total number of counts. Also note that some frequent words like ‘the,’ ‘is,’ ‘it’ can cause problems, so some extra preprocessing is needed. This was a simple example but if you are interested in more advanced text processing techniques I refer you to the book “Text Mining with R: A Tidy Approach” by <span class="citation"><a href="#ref-silge2017" role="doc-biblioref">Silge and Robinson</a> (<a href="#ref-silge2017" role="doc-biblioref">2017</a>)</span>.
 </div>
-<p>BoW can also be used for image classification in complex scenarios. For example when dealing with composed scenes like classrooms, parks, shops, streets, etc. First, the scene (document) can be decomposed into smaller elements (words) by identifying objects like trees, chairs, cars, cashiers, etc. In this case, instead of bags of words we have bags of objects but the idea is the same. The object identification part can be done in a <em>supervised</em> manner where there is already a classifier that assigns labels to objects.</p>
-<p>Using a supervised approach can work in some simple cases but is not scalable for more complex ones. <em>Why?</em>. Because the classifier would need to be trained for each type of object. Furthermore, those types of objects need to be manually defined beforehand. If we want to apply this method on scenes where most of their elements do not have a corresponding label in the object classifier we will be missing a lot of information and will end up having incomplete word count tables.</p>
-<p>A possible solution is to instead, use an <em>unsupervised</em> approach. The image scene can be divided into squared (but not necessarily) patches. Conceptually, each patch may represent an independent object (a tree, a chair, etc.). Then, feature extraction can be performed on each patch so ultimately patches are encoded as feature vectors. Again, each feature vector represents an individual possible object inside the complex scene. At this point, those feature vectors do not have a label so we can’t build the BoW (table counts) for the whole scene. Then, how are those <em>unlabeled</em> feature vectors useful? We could use a pre-trained classifier to assign them labels –but we would be relying into the supervised approach along with its aforementioned limitations. Instead, we can use an <em>unsupervised</em> method, for example, <em>K-means</em>! which was presented in chapter <a href="unsupervised.html#unsupervised">6</a>.</p>
+<p>BoW can also be used for image classification in complex scenarios. For example when dealing with composed scenes like classrooms, parks, shops, and streets. First, the scene (document) can be decomposed into smaller elements (words) by identifying objects like trees, chairs, cars, cashiers, etc. In this case, instead of bags of words we have bags of objects but the idea is the same. The object identification part can be done in a <em>supervised</em> manner where there is already a classifier that assigns labels to objects.</p>
+<p>Using a supervised approach can work in some simple cases but is not scalable for more complex ones. <em>Why?</em> Because the classifier would need to be trained for each type of object. Furthermore, those types of objects need to be manually defined beforehand. If we want to apply this method on scenes where most of their elements do not have a corresponding label in the object classifier we will be missing a lot of information and will end up having incomplete word count tables.</p>
+<p>A possible solution is to instead, use an <em>unsupervised</em> approach. The image scene can be divided into squared (but not necessarily) patches. Conceptually, each patch may represent an independent object (a tree, a chair, etc.). Then, feature extraction can be performed on each patch so ultimately patches are encoded as feature vectors. Again, each feature vector represents an individual possible object inside the complex scene. At this point, those feature vectors do not have a label so we can’t build the BoW (table counts) for the whole scene. Then, how are those <em>unlabeled</em> feature vectors useful? We could use a pre-trained classifier to assign them labels –but we would be relying into the supervised approach along with its aforementioned limitations. Instead, we can use an <em>unsupervised</em> method, for example, <em>k-means</em>! which was presented in chapter <a href="unsupervised.html#unsupervised">6</a>.</p>
 <p>We can cluster all the <em>unlabeled</em> feature vectors into <span class="math inline">\(k\)</span> groups where <span class="math inline">\(k\)</span> is the number of possible unique labels. After the clustering, we can compute the centroid of each group. To assign a label to an <em>unlabeled feature vector</em>, we can compute the closest centroid and use its id as the label. The id of each centroid can be an integer number. Intuitively, similar feature vectors will end up in the same group. For example, there could be a group of objects that look like <em>chairs</em> another one for objects that look like <em>cars</em> and so on. Usually, it may happen that elements in the same groups will not look similar for the human eye, but they are similar in the feature space. Also, the objects’ shape inside the groups may not make sense at all for the human eye. If the objective is to classify the complex scene, then we do not necessarily need to understand the individual objects nor they need to have a corresponding mapping into a real-world object.</p>
 <p>Once the feature vectors are labeled, we can now build the word-count table but instead of having ‘meaningful’ words, the entries will be ids with their corresponding counts. As you might have guessed, one limitation is that we do not know how many clusters (labels) there should be for a given problem. One approach is to try for different values of <span class="math inline">\(k\)</span> and use the one that optimizes your performance metric of interest.</p>
 <p>But, what this BoW thing has to do with behavior? Well, we can use this method to decompose complex behaviors into simpler ones and encode them as BoW as we will see in the next subsection for complex activities analysis.</p>
 <p><strong>Advantages</strong></p>
 <ul>
-<li><p>Able to represent complex things by decomposing them into simpler parts.</p></li>
+<li><p>Able to represent complex situations/objects/etc. by decomposing them into simpler elements.</p></li>
 <li><p>The resulting BoW can be very efficient and effective for classification tasks.</p></li>
-<li><p>Can be used in several domains including text, computer vision, sensor data, etc.</p></li>
+<li><p>Can be used in several domains including text, computer vision, sensor data, and so on.</p></li>
 <li><p>The BoW can be constructed in an unsupervised manner.</p></li>
 </ul>
 <p><strong>Limitations</strong></p>
@@ -744,8 +771,8 @@ Note that in practice documents will differ in length, thus, it is a good idea t
 <div class="rmdfolder">
 <code>bagwords/bow_functions.R</code> <code>bagwords/bow_run.R</code>
 </div>
-<p>So far, I have been talking about BoW applications for text and images. In this section, I will show you how to decompose <strong>complex activities</strong> from accelerometer data into simpler activities and encode them as BoW. In chapters <a href="classification.html#classification">2</a> and <a href="ensemble.html#ensemble">3</a> we trained supervised models for <em>simple</em> activity recognition. Those activities were some like: <em>walking</em>, <em>jogging</em>, <em>standing</em>, etc. For those, it is sufficient to divide them into windows of size equivalent to a couple of seconds in order to infer their labels. On the other hand, <em>complex</em> activities happen in longer periods of time and they are composed of many simple activities. One example is the activity <strong>shopping</strong>. When we are shopping we perform many different activities including <em>walking</em>, <em>taking groceries</em>, <em>paying</em>, <em>standing while looking at the stands</em>, and so on. Another example is <strong>commuting</strong>. When we commute, we need to walk but also take the train, or drive, or cycle, etc.</p>
-<p>Using the same approach for simple activity classification on complex ones may not work. Representing a complex activity using fixed-size windows, could cause some conflicts. For example, a window may be covering the time span when the user was <em>walking</em>, but <em>walking</em> can be present in different types of complex activities. If a window happens to be part of a segment when the person was walking, there is not enough information to know which was the complex activity at that time. This is where BoW comes into play. If we represent a complex activity as a bag of <em>simple activities</em> then, a classifier will have an easier time differentiating between classes. For instance, when <strong>exercising</strong>, the frequencies (counts) of high-intensity activities (like running or jogging) will be higher compared to when someone is shopping.</p>
+<p>So far, I have been talking about BoW applications for text and images. In this section, I will show you how to decompose <strong>complex activities</strong> from accelerometer data into simpler activities and encode them as BoW. In chapters <a href="classification.html#classification">2</a> and <a href="ensemble.html#ensemble">3</a> we trained supervised models for <em>simple</em> activity recognition. Those activities were some like: <em>walking</em>, <em>jogging</em>, <em>standing</em>, etc. For those, it is sufficient to divide them into windows of size equivalent to a couple of seconds in order to infer their labels. On the other hand, <em>complex</em> activities happen in longer periods of time and they are composed of many simple activities. One example is the activity <strong>shopping</strong>. When we are shopping we perform many different activities including <em>walking</em>, <em>taking groceries</em>, <em>paying</em>, <em>standing while looking at the stands</em>, and so on. Another example is <strong>commuting</strong>. When we commute, we need to walk but also take the train, or drive, or cycle.</p>
+<p>Using the same approach for simple activity classification on complex ones may not work. Representing a complex activity using fixed-size windows can cause some conflicts. For example, a window may be covering the time span when the user was <em>walking</em>, but <em>walking</em> can be present in different types of complex activities. If a window happens to be part of a segment when the person was walking, there is not enough information to know which was the complex activity at that time. This is where BoW comes into play. If we represent a complex activity as a bag of <em>simple activities</em> then, a classifier will have an easier time differentiating between classes. For instance, when <strong>exercising</strong>, the frequencies (counts) of high-intensity activities (like running or jogging) will be higher compared to when someone is shopping.</p>
 <p>In practice, it would be very tedious to label all the possible simple activities to form the BoW. We will use the unsupervised approach discussed in the previous section to automatically find labels for the simple activities so we only need labels for the complex ones.</p>
 <p>Here, I will use the <em>COMPLEX ACTIVITIES</em> dataset which consists of five complex activities: <em>‘commuting’</em>, <em>‘working’</em>, <em>‘being at home’</em>, <em>‘shopping’</em> and <em>‘exercising’</em>. The duration of the activities varies from some minutes to a couple of hours. Accelerometer data at <span class="math inline">\(50\)</span> Hz. was collected with a cellphone placed in the user’s belt. The dataset has <span class="math inline">\(80\)</span> accelerometer files, each representing a complex activity.</p>
 <p>The task is to go from the raw accelerometer data of the complex activity to a BoW representation where each word will represent a simple activity. The overall steps are as follows:</p>
@@ -772,7 +799,7 @@ FIGURE 7.15: BoW steps. From raw signal to BoW table.
 <p>The second step consists of clustering the extracted feature vectors. To avoid overfitting, this step is only performed on the train set. The function <code>clusterSimpleActivities()</code> implements this step. The feature vectors are grouped into <span class="math inline">\(15\)</span> groups. This can be changed by setting <code>constants$wordsize &lt;- 15</code> to some other value. The function stores all feature vectors from all files in a single data frame and runs k-means. Finally, the resulting centroids are saved in the text file <code>clustering/centroids.txt</code> inside the train set directory.</p>
 <p>The next step is to label each feature vector (simple activity) by assigning it to its closest centroid. The function <code>assignSimpleActivitiesToCluster()</code> reads the centroids from the text file and for each simple activity in the test set it finds the closest centroid using the Euclidean distance. The label (an integer from <span class="math inline">\(1\)</span> to <span class="math inline">\(15\)</span>) of the closest centroid is assigned and the resulting files are saved in the <code>labeled_activities/</code> directory. Each file contains the assigned labels (integers) for the corresponding feature vectors file in the <code>simple_activities/</code> directory. Thus, if a file inside <code>simple_activities/</code> has <span class="math inline">\(100\)</span> feature vectors then, its corresponding file in <code>labeled_activities/</code> should have <span class="math inline">\(100\)</span> labels.</p>
 <p>In the last step, the function <code>convertToHistogram()</code> will generate the bag of words from the labeled activities. The BoW are stored as histograms (encoded as vectors) with each element representing a label and its corresponding counts. In this case, the labels are <span class="math inline">\(w1..w15\)</span>. The <span class="math inline">\(w\)</span> stands for word and was only appended for clarity to show that this is a label. This function will convert the counts into percentages (normalization) in case we want to perform classification, that is, the percentage of time that each word (simple activity) occurred during the entire complex activity. The resulting <code>histograms/histograms.csv</code> file contains the BoW as one histogram per row. One per each complex activity. The first column is the complex activity’s label in text format.</p>
-<p>Figures <a href="representations.html#fig:complexWorking">7.16</a> and <a href="representations.html#fig:complexExercising">7.17</a> show the histogram for <em>‘working’</em> and <em>‘exercising’</em>. The x-axis shows the labels of the simple activities and the y-axis their relative frequencies.</p>
+<p>Figures <a href="representations.html#fig:complexWorking">7.16</a> and <a href="representations.html#fig:complexExercising">7.17</a> show the histogram for one instance of <em>‘working’</em> and <em>‘exercising’</em>. The x-axis shows the labels of the simple activities and the y-axis their relative frequencies.</p>
 <div class="figure" style="text-align: center"><span id="fig:complexWorking"></span>
 <img src="images/complex_working.png" alt="Histogram of working activity." width="90%" />
 <p class="caption">
@@ -796,14 +823,14 @@ Once the complex activities are encoded as BoW (histograms), one could train a c
 <h2><span class="header-section-number">7.7</span> Graphs</h2>
 <p>Graphs are one of the most general data structures (and my favorite one). The two basic components of a graph are its <strong>vertices</strong> and <strong>edges</strong>. Vertices are also called <strong>nodes</strong> and edges are also called <strong>arcs</strong>. Vertices are connected by edges. Figure <a href="representations.html#fig:graphTypes">7.18</a> shows three different types of graphs. Graph (a) is an undirected graph that consists of <span class="math inline">\(3\)</span> vertices and <span class="math inline">\(3\)</span> edges. Graph (b) is a directed graph, that is, its edges have a direction. Graph (c) is a weighted directed graph because its edges have a direction and they also have an associated weight.</p>
 <div class="figure" style="text-align: center"><span id="fig:graphTypes"></span>
-<img src="images/graphs_types.png" alt="Three different types of graphs." width="60%" />
+<img src="images/graphs_types.png" alt="Three different types of graphs." width="70%" />
 <p class="caption">
 FIGURE 7.18: Three different types of graphs.
 </p>
 </div>
 <p>Weights can represent anything, for example, distances between cities or number of messages sent between devices. In the previous graph, the vertices also have a label (integer numbers but could be strings). In general, vertices and edges can have any number of attributes, not just weight and/or labels. Many data structures like binary trees and lists are graphs <em>with constraints</em>. For example, a list is also a graph in which all vertices are connected as a sequence: a-&gt;b-&gt;c. Trees are also graphs with the constraint that there is only one root node and nodes can only have edges to their children. Graphs are very useful to represent many types of real-world things like interactions, social relationships, geographical locations, the world wide web, and so on.</p>
 <p>There are two main ways to encode a graph. The first one is as an <strong>adjacency list</strong>. An adjacency list consists of a list of tuples per each node. The tuples represent edges. The first element of a tuple indicates the target node and the second element the weight of the edge. Figure <a href="representations.html#fig:graphOptions">7.19</a>-b shows the adjacency list representation of the corresponding weighted directed graph in the same figure.</p>
-<p>The second main way to encode a graph is as an <strong>adjacency matrix</strong>. This is a square <span class="math inline">\(n\times n\)</span> matrix where <span class="math inline">\(n\)</span> is the number of nodes. Edges are represented as entries in the matrix. If there is an edge between node <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, the corresponding cell contains the edge’s weight where rows represent the source nodes and columns the destination nodes. Otherwise, it contains a <span class="math inline">\(0\)</span> or just an empty value. Figure <a href="representations.html#fig:graphOptions">7.19</a>-c shows the corresponding adjacency matrix. The disadvantage of the adjacency matrix is that for sparse graphs (many nodes and few edges), a lot of space is wasted. In practice, this can be overcome by using a sparse matrix implementation.</p>
+<p>The second main way to encode a graph is as an <strong>adjacency matrix</strong>. This is a square <span class="math inline">\(n\times n\)</span> matrix where <span class="math inline">\(n\)</span> is the number of nodes. Edges are represented as entries in the matrix. If there is an edge between node <span class="math inline">\(a\)</span> and node <span class="math inline">\(b\)</span>, the corresponding cell contains the edge’s weight where rows represent the source nodes and columns the destination nodes. Otherwise, it contains a <span class="math inline">\(0\)</span> or just an empty value. Figure <a href="representations.html#fig:graphOptions">7.19</a>-c shows the corresponding adjacency matrix. The disadvantage of the adjacency matrix is that for sparse graphs (many nodes and few edges), a lot of space is wasted. In practice, this can be overcome by using a sparse matrix implementation.</p>
 <div class="figure" style="text-align: center"><span id="fig:graphOptions"></span>
 <img src="images/graph_options.png" alt="Different ways to store a graph." width="90%" />
 <p class="caption">
@@ -814,7 +841,7 @@ FIGURE 7.19: Different ways to store a graph.
 <ul>
 <li>Many real-world situations can be naturally represented as graphs.</li>
 <li>Some partial order is preserved.</li>
-<li>Specialized graph analytics can be performed to gain insights and understand the data. See for example the book by <span class="citation"><a href="references.html#ref-samatova2013" role="doc-biblioref">Samatova et al.</a> (<a href="references.html#ref-samatova2013" role="doc-biblioref">2013</a>)</span>.</li>
+<li>Specialized graph analytics can be performed to gain insights and understand the data. See for example the book by <span class="citation"><a href="#ref-samatova2013" role="doc-biblioref">Samatova et al.</a> (<a href="#ref-samatova2013" role="doc-biblioref">2013</a>)</span>.</li>
 <li>Can be plotted and different visual properties can be tuned to convey information such as edge width and colors, vertex size and color, distance between nodes, etc.</li>
 </ul>
 <p><strong>Limitations:</strong></p>
@@ -830,8 +857,8 @@ FIGURE 7.19: Different ways to store a graph.
 <code>plot_graphs.R</code>
 </div>
 <p>In the previous section, it was shown how complex activities can be represented as Bag-of-Words. This was done by decomposing the complex activities into simpler ones. The BoW is composed of the simple activities counts (frequencies). In the process of building the BoW in the previous section, some intermediate text files stored in <code>labeled_activities/</code> were generated. These files contain the sequence of simple activities (their ids as integers) that constitute the complex activity. From these sequences, histograms were generated and in doing so, the order was lost.</p>
-<p>One thing we can do is build a graph where vertices represent simple activities and edges represent the interactions between them. For instance, if we have a sequence of activities ids like: <span class="math inline">\(3,2,2,4\)</span> we can represent this as a graph with <span class="math inline">\(3\)</span> vertices and <span class="math inline">\(3\)</span> edges. One vertex per activity. The first edge would go from vertex <span class="math inline">\(3\)</span> to vertex <span class="math inline">\(2\)</span>, the next one from vertex <span class="math inline">\(2\)</span> to vertex <span class="math inline">\(2\)</span>, and so on. In this way we can use a graph to capture the interactions between simple activities.</p>
-<p>The script <code>plot_graphs.R</code> implements a function named <code>ids.to.graph()</code> that reads the sequence files from <code>labeled_activities/</code> and converts them into weighted directed graphs. The weight of the edge <span class="math inline">\((a,b)\)</span> is equal to the total number of transitions from vertex <span class="math inline">\(a\)</span> to vertex <span class="math inline">\(b\)</span>. The script uses the <code>igraph</code> package <span class="citation">(<a href="references.html#ref-igraph" role="doc-biblioref">Csardi and Nepusz 2006</a>)</span> to store and plot the resulting graphs. The <code>ids.to.graph()</code> function receives as its first argument the sequence of ids. Its second argument indicates whether the edge weights should be normalized or not. If normalized, the sum of all weights will be <span class="math inline">\(1\)</span>.</p>
+<p>One thing we can do is build a graph where vertices represent simple activities and edges represent the interactions between them. For instance, if we have a sequence of simple activities ids like: <span class="math inline">\(3,2,2,4\)</span> we can represent this as a graph with <span class="math inline">\(3\)</span> vertices and <span class="math inline">\(3\)</span> edges. One vertex per activity. The first edge would go from vertex <span class="math inline">\(3\)</span> to vertex <span class="math inline">\(2\)</span>, the next one from vertex <span class="math inline">\(2\)</span> to vertex <span class="math inline">\(2\)</span>, and so on. In this way we can use a graph to capture the interactions between simple activities.</p>
+<p>The script <code>plot_graphs.R</code> implements a function named <code>ids.to.graph()</code> that reads the sequence files from <code>labeled_activities/</code> and converts them into weighted directed graphs. The weight of the edge <span class="math inline">\((a,b)\)</span> is equal to the total number of transitions from vertex <span class="math inline">\(a\)</span> to vertex <span class="math inline">\(b\)</span>. The script uses the <code>igraph</code> package <span class="citation">(<a href="#ref-igraph" role="doc-biblioref">Csardi and Nepusz 2006</a>)</span> to store and plot the resulting graphs. The <code>ids.to.graph()</code> function receives as its first argument the sequence of ids. Its second argument indicates whether the edge weights should be normalized or not. If normalized, the sum of all weights will be <span class="math inline">\(1\)</span>.</p>
 <p>The following code snippet reads one of the sequence files, converts it into a graph, and plots the graph.</p>
 <div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="representations.html#cb148-1" aria-hidden="true" tabindex="-1"></a>datapath <span class="ot">&lt;-</span> <span class="st">&quot;../labeled_activitires/&quot;</span></span>
 <span id="cb148-2"><a href="representations.html#cb148-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -857,13 +884,13 @@ FIGURE 7.19: Different ways to store a graph.
 <span id="cb148-22"><a href="representations.html#cb148-22" aria-hidden="true" tabindex="-1"></a>     <span class="at">edge.label.color =</span> <span class="st">&quot;black&quot;</span>,</span>
 <span id="cb148-23"><a href="representations.html#cb148-23" aria-hidden="true" tabindex="-1"></a>     <span class="at">vertex.color =</span> <span class="st">&quot;skyblue&quot;</span></span>
 <span id="cb148-24"><a href="representations.html#cb148-24" aria-hidden="true" tabindex="-1"></a>     )</span></code></pre></div>
-<p>Figure <a href="representations.html#fig:graphActivity">7.20</a> shows the resulting plot. The plot can be customized to change the vertex and edge color, size, curvature, etc. For more details please read the <code>igraph</code> package documentation.</p>
 <div class="figure" style="text-align: center"><span id="fig:graphActivity"></span>
 <img src="images/graph_activity.png" alt="Complex activity 'working' plotted as a graph. Nodes are simple activities and edges transitions between them." width="60%" />
 <p class="caption">
 FIGURE 7.20: Complex activity ‘working’ plotted as a graph. Nodes are simple activities and edges transitions between them.
 </p>
 </div>
+<p>Figure <a href="representations.html#fig:graphActivity">7.20</a> shows the resulting plot. The plot can be customized to change the vertex and edge color, size, curvature, etc. For more details please read the <code>igraph</code> package documentation.</p>
 <p>The width of the edges is proportional to its weight. For instance, transitions from simple activity <span class="math inline">\(3\)</span> to itself are very frequent (<span class="math inline">\(53.2\%\)</span> of the time) for the <em>‘work’</em> complex activity but transitions from <span class="math inline">\(8\)</span> to <span class="math inline">\(4\)</span> are very infrequent. Note that with this graph representation, some temporal dependencies are preserved but the complete sequence order is lost, still this captures more information compared to BoW. The relationships between consecutive simple activities are preserved.</p>
 <p>It is also possible to get the adjacency matrix with the method <code>as_adjacency_matrix()</code>.</p>
 <div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="representations.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_adjacency_matrix</span>(g)</span>
@@ -890,7 +917,7 @@ FIGURE 7.20: Complex activity ‘working’ plotted as a graph. Nodes are simple
 <p>The adjacency matrices can then be used to train a classifier. Since many classifiers expect one-dimensional vectors and not matrices, one can flatten the matrix. This is left as an exercise for the reader to try. Which representation produces better classification results (adjacency matrix or BoW)?</p>
 
 <div class="rmdinfo">
-The book “Practical graph mining with R” <span class="citation">(<a href="references.html#ref-samatova2013" role="doc-biblioref">Samatova et al. 2013</a>)</span> is a good source to learn more about graph analytics with R.
+The book “Practical graph mining with R” <span class="citation">(<a href="#ref-samatova2013" role="doc-biblioref">Samatova et al. 2013</a>)</span> is a good source to learn more about graph analytics with R.
 </div>
 </div>
 </div>
@@ -909,6 +936,33 @@ The book “Practical graph mining with R” <span class="citation">(<a href="re
 
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-igraph" class="csl-entry">
+Csardi, Gabor, and Tamas Nepusz. 2006. <span>“The Igraph Software Package for Complex Network Research.”</span> <em>InterJournal</em> Complex Systems: 1695. <a href="http://igraph.org">http://igraph.org</a>.
+</div>
+<div id="ref-eckmann1987recurrence" class="csl-entry">
+Eckmann, J-P, S Oliffson Kamphorst, and David Ruelle. 1987. <span>“Recurrence Plots of Dynamical Systems.”</span> <em>EPL (Europhysics Letters)</em> 4 (9): 973.
+</div>
+<div id="ref-Hyndman2018" class="csl-entry">
+Hyndman, Rob J, and George Athanasopoulos. 2018. <em>Forecasting: Principles and Practice</em>. 2nd ed. Melbourne, Australia: OTexts. <a href="https://otexts.com/fpp2/">https://otexts.com/fpp2/</a>.
+</div>
+<div id="ref-lecun1998gradient" class="csl-entry">
+LeCun, Yann, Léon Bottou, Yoshua Bengio, and Patrick Haffner. 1998. <span>“Gradient-Based Learning Applied to Document Recognition.”</span> <em>Proceedings of the IEEE</em> 86 (11): 2278–2324.
+</div>
+<div id="ref-Neves2017" class="csl-entry">
+Neves, Ricardo Luiz AND Pie, Felipe Marcel AND Viana. 2017. <span>“Recurrence Analysis of Ant Activity Patterns.”</span> <em>PLOS ONE</em> 12 (10): 1–15. <a href="https://doi.org/10.1371/journal.pone.0185968">https://doi.org/10.1371/journal.pone.0185968</a>.
+</div>
+<div id="ref-samatova2013" class="csl-entry">
+Samatova, Nagiza F, William Hendrix, John Jenkins, Kanchana Padmanabhan, and Arpan Chakraborty. 2013. <em>Practical Graph Mining with r</em>. CRC Press.
+</div>
+<div id="ref-silge2017" class="csl-entry">
+Silge, Julia, and David Robinson. 2017. <em>Text Mining with r: A Tidy Approach</em>. " O’Reilly Media, Inc.".
+</div>
+<div id="ref-ZBILUT1992" class="csl-entry">
+Zbilut, Joseph P., and Charles L. Webber. 1992. <span>“Embeddings and Delays as Derived from Quantification of Recurrence Plots.”</span> <em>Physics Letters A</em> 171 (3): 199–203. https://doi.org/<a href="https://doi.org/10.1016/0375-9601(92)90426-M">https://doi.org/10.1016/0375-9601(92)90426-M</a>.
+</div>
+</div>
 <div class="footnotes">
 <hr />
 <ol start="13">
@@ -917,7 +971,6 @@ The book “Practical graph mining with R” <span class="citation">(<a href="re
 <li id="fn15"><p><a href="https://dictionary.cambridge.org/dictionary/english/representation" class="uri">https://dictionary.cambridge.org/dictionary/english/representation</a><a href="representations.html#fnref15" class="footnote-back">↩︎</a></p></li>
 <li id="fn16"><p><a href="https://commons.wikimedia.org/wiki/File:Rp_examples740.gif" class="uri">https://commons.wikimedia.org/wiki/File:Rp_examples740.gif</a><a href="representations.html#fnref16" class="footnote-back">↩︎</a></p></li>
 <li id="fn17"><p><a href="http://www.recurrence-plot.tk/glance.php" class="uri">http://www.recurrence-plot.tk/glance.php</a><a href="representations.html#fnref17" class="footnote-back">↩︎</a></p></li>
-<li id="fn18"><p><a href="http://www.recurrence-plot.tk/rqa.php" class="uri">http://www.recurrence-plot.tk/rqa.php</a><a href="representations.html#fnref18" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -949,6 +1002,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

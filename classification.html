@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Predicting Behavior with Classification Models | Behavior Analysis with Machine Learning Using R</title>
   <meta name="description" content="Chapter 2 Predicting Behavior with Classification Models | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Predicting Behavior with Classification Models | Behavior Analysis with Machine Learning Using R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:image" content="/images/cover.png" />
   <meta property="og:description" content="Chapter 2 Predicting Behavior with Classification Models | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content="Chapter 2 Predicting Behavior with Classification Models | Behavior Analysis with Machine Learning Using R" />
   
   <meta name="twitter:description" content="Chapter 2 Predicting Behavior with Classification Models | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="twitter:image" content="images/cover.png" />
+  <meta name="twitter:image" content="/images/cover.png" />
 
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-04-03" />
+<meta name="date" content="2021-04-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
 <script src="libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="libs/d3/d3.min.js"></script>
 <link href="libs/d3panels/d3panels.min.css" rel="stylesheet" />
@@ -80,6 +82,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -138,6 +141,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -356,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
 <li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#explore-and-visualize-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Explore and Visualize Trajectories</a></li>
+<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Exploring and Visualizing Trajectories</a></li>
 <li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
 <li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
 <li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC curve and AUC</a></li>
@@ -432,7 +458,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 FIGURE 2.1: k-NN example for k=3 (inner dashed circle) and k=5 (dotted outer circle).
 </p>
 </div>
-<p>Typical values for <span class="math inline">\(k\)</span> are small odd numbers like <span class="math inline">\(1,2,3,5\)</span>. The <span class="math inline">\(k\)</span>-NN algorithm can also be used for regression with a small modification: Instead of returning the majority class of the nearest neighbors, return the mean value of their response variable. Despite its simplicity, <span class="math inline">\(k\)</span>-NN has proved to perform really well in many tasks including time series classification <span class="citation">(<a href="references.html#ref-xi2006" role="doc-biblioref">Xi et al. 2006</a>)</span>.</p>
+<p>Typical values for <span class="math inline">\(k\)</span> are small odd numbers like <span class="math inline">\(1,2,3,5\)</span>. The <span class="math inline">\(k\)</span>-NN algorithm can also be used for regression with a small modification: Instead of returning the majority class of the nearest neighbors, return the mean value of their response variable. Despite its simplicity, <span class="math inline">\(k\)</span>-NN has proved to perform really well in many tasks including time series classification <span class="citation">(<a href="#ref-xi2006" role="doc-biblioref">Xi et al. 2006</a>)</span>.</p>
 <div id="indoor-location-with-wi-fi-signals" class="section level3" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Indoor Location with Wi-Fi Signals</h3>
 
@@ -806,7 +832,7 @@ FIGURE 2.9: Tree splitting example. Left: tree splits. Right: Highlighted instan
 <p><span class="math inline">\(infoGain(Comedy) = 0\)</span></p>
 <p>The highest information gain is produced by <em>Price</em>, thus, it is selected as the root node. Then, the process continues recursively for each branch but excluding <em>Price</em>. Since branches with values <em>low</em> and <em>high</em> are already done, we only need to further split <em>medium</em>. Sometimes it is not possible to have completely pure nodes like <em>low</em> and <em>high</em>. This can happen for example, when there are no more attributes left or when two or more instances have the same feature values but different labels. In those situations the final prediction is the most common label (majority vote).</p>
 <p>There exist many implementations of decision trees. Some implementations compute variable importance using the entropy (as shown here) but others use the Gini index, for example. Each implementation also treats numeric variables in different ways. Pruning the tree using different techniques is also common in order to reduce its size.</p>
-<p>Some of the most common implementations are C4.5 trees <span class="citation">(<a href="references.html#ref-quinlan2014" role="doc-biblioref">Quinlan 2014</a>)</span> and CART <span class="citation">(<a href="references.html#ref-steinberg2009" role="doc-biblioref">Steinberg and Colla 2009</a>)</span>. The later is implemented in the <code>rpart</code> R package <span class="citation">(<a href="references.html#ref-rpart" role="doc-biblioref">Therneau and Atkinson 2019</a>)</span> which will be used in the following section to build a model that predicts physical activities from smartphones sensor data.</p>
+<p>Some of the most common implementations are C4.5 trees <span class="citation">(<a href="#ref-quinlan2014" role="doc-biblioref">Quinlan 2014</a>)</span> and CART <span class="citation">(<a href="#ref-steinberg2009" role="doc-biblioref">Steinberg and Colla 2009</a>)</span>. The later is implemented in the <code>rpart</code> R package <span class="citation">(<a href="#ref-rpart" role="doc-biblioref">Therneau and Atkinson 2019</a>)</span> which will be used in the following section to build a model that predicts physical activities from smartphones sensor data.</p>
 <div id="activityRecognition" class="section level3" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Activity Recognition with Smartphones</h3>
 
@@ -815,7 +841,7 @@ FIGURE 2.9: Tree splitting example. Left: tree splits. Right: Highlighted instan
 </div>
 <p>As mentioned in the introduction, behavior can be an observable activity in a human. We can easily infer what <strong>physical activity</strong> someone is doing by looking at her/his body movements. Observing physical activities can provide useful behavioral and contextual information about someone. This can also be used as a proxy to, for example, infer someone’s health condition by detecting deviations in activity patterns.</p>
 <p>Nowadays, most smartphones come with a tri-axial accelerometer sensor. This sensor measures gravitational forces from the <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span> axes. This information can be used to capture movement patterns from the user and automate the process of monitoring the type of physical activity being performed.</p>
-<p>In this section, we will use decision trees to automatically classify physical activities from acceleration data. We will use the <em>SMARTPHONE ACTIVITIES</em> dataset that contains acceleration recordings that were collected with a smartphone. This dataset is called WISDM<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> and was made available by <span class="citation"><a href="references.html#ref-kwapisz2010" role="doc-biblioref">Kwapisz, Weiss, and Moore</a> (<a href="references.html#ref-kwapisz2010" role="doc-biblioref">2010</a>)</span>. The dataset has <span class="math inline">\(6\)</span> different activities: <em>‘walking’</em>, <em>‘jogging’</em>, <em>‘walking upstairs’</em>, <em>‘walking downstairs’</em>, <em>‘sitting’</em> and <em>‘standing’</em>. The data was collected by <span class="math inline">\(36\)</span> volunteers with an Android phone located in their pant’s pocket and with a sampling rate of <span class="math inline">\(20\)</span> Hz (<span class="math inline">\(1\)</span> sample every <span class="math inline">\(50\)</span> milliseconds).</p>
+<p>In this section, we will use decision trees to automatically classify physical activities from acceleration data. We will use the <em>SMARTPHONE ACTIVITIES</em> dataset that contains acceleration recordings that were collected with a smartphone. This dataset is called WISDM<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> and was made available by <span class="citation"><a href="#ref-kwapisz2010" role="doc-biblioref">Kwapisz, Weiss, and Moore</a> (<a href="#ref-kwapisz2010" role="doc-biblioref">2010</a>)</span>. The dataset has <span class="math inline">\(6\)</span> different activities: <em>‘walking’</em>, <em>‘jogging’</em>, <em>‘walking upstairs’</em>, <em>‘walking downstairs’</em>, <em>‘sitting’</em> and <em>‘standing’</em>. The data was collected by <span class="math inline">\(36\)</span> volunteers with an Android phone located in their pant’s pocket and with a sampling rate of <span class="math inline">\(20\)</span> Hz (<span class="math inline">\(1\)</span> sample every <span class="math inline">\(50\)</span> milliseconds).</p>
 <p>The dataset contains two types of files. One with the raw accelerometer data and the other one after feature extraction. Figure <a href="classification.html#fig:wisdmFirstLines">2.10</a> shows the first <span class="math inline">\(10\)</span> lines of the raw accelerometer values of the first file. The first column is the id of the user that collected the data and the second column is the class. The third column is the timestamp and the remaining columns are the <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span> accelerometer values, respectively.</p>
 <div class="figure" style="text-align: center"><span id="fig:wisdmFirstLines"></span>
 <img src="images/wisdmFirstLines.png" alt="First 10 lines of raw accelerometer data." width="60%" />
@@ -858,7 +884,7 @@ FIGURE 2.12: The extracted feature vectors are used to train a classifier.
 <span id="cb30-17"><a href="classification.html#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7 0.12 0.12 0.12 0.13 0.15 Upstairs</span></span>
 <span id="cb30-18"><a href="classification.html#cb30-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8 0.10 0.10 0.10 0.10 0.11 Upstairs</span></span>
 <span id="cb30-19"><a href="classification.html#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9 0.08 0.07 0.08 0.08 0.05 Upstairs</span></span></code></pre></div>
-<p>Our aim is to predict the class based on all the numeric features. We will use the <code>rpart</code> package <span class="citation">(<a href="references.html#ref-rpart" role="doc-biblioref">Therneau and Atkinson 2019</a>)</span> which implements classification and regression trees. We will assess the performance of the decision tree with <span class="math inline">\(10\)</span>-fold cross-validation. We can use the <code>sample()</code> function to generate the folds. This function will sample <span class="math inline">\(n\)</span> integers from <span class="math inline">\(1\)</span> to <span class="math inline">\(k\)</span> where <span class="math inline">\(n\)</span> is the number of rows in the data frame.</p>
+<p>Our aim is to predict the class based on all the numeric features. We will use the <code>rpart</code> package <span class="citation">(<a href="#ref-rpart" role="doc-biblioref">Therneau and Atkinson 2019</a>)</span> which implements classification and regression trees. We will assess the performance of the decision tree with <span class="math inline">\(10\)</span>-fold cross-validation. We can use the <code>sample()</code> function to generate the folds. This function will sample <span class="math inline">\(n\)</span> integers from <span class="math inline">\(1\)</span> to <span class="math inline">\(k\)</span> where <span class="math inline">\(n\)</span> is the number of rows in the data frame.</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="classification.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Package with implementations of decision trees.</span></span>
 <span id="cb31-2"><a href="classification.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rpart)</span>
 <span id="cb31-3"><a href="classification.html#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -930,7 +956,7 @@ FIGURE 2.12: The extracted feature vectors are used to train a classifier.
 FIGURE 2.13: Confusion matrix for activities’ predictions.
 </p>
 </div>
-<p>The overall accuracy was <span class="math inline">\(78\%\)</span> and by looking at the individual performance metrics, some classes had low scores like <em>‘walking downstairs’</em> and <em>‘walking upstairs’</em>. From the confusion matrix, it can be seen that those two activities were often confused with each other but also with the <em>‘walking’</em> activity. The package <code>rpart.plot</code> <span class="citation">(<a href="references.html#ref-rpartplot" role="doc-biblioref">Milborrow 2019</a>)</span> can be used to plot the resulting tree.</p>
+<p>The overall accuracy was <span class="math inline">\(78\%\)</span> and by looking at the individual performance metrics, some classes had low scores like <em>‘walking downstairs’</em> and <em>‘walking upstairs’</em>. From the confusion matrix, it can be seen that those two activities were often confused with each other but also with the <em>‘walking’</em> activity. The package <code>rpart.plot</code> <span class="citation">(<a href="#ref-rpartplot" role="doc-biblioref">Milborrow 2019</a>)</span> can be used to plot the resulting tree.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="classification.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rpart.plot)</span>
 <span id="cb34-2"><a href="classification.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the tree from the last fold.</span></span>
 <span id="cb34-3"><a href="classification.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rpart.plot</span>(treeClassifier, <span class="at">fallen.leaves =</span> F,</span>
@@ -1002,7 +1028,7 @@ FIGURE 2.16: Likelihood (0.072) when x=1.7.
   y = \operatorname*{arg max}_{k \in \{1, \dots ,K\}} P(C_k) \prod_{i=1}^{F} P(f_i | C_k)
   \tag{2.13}
 \end{equation}\]</span></p>
-<p>In the following section we will implement our own Naive Bayes algorithm in R and test it on the <em>SMARTPHONE ACTIVITIES</em> dataset. Then, we will compare our implementation with that of the well known <code>e1071</code> package <span class="citation">(<a href="references.html#ref-e1071" role="doc-biblioref">Meyer et al. 2019</a>)</span>.</p>
+<p>In the following section we will implement our own Naive Bayes algorithm in R and test it on the <em>SMARTPHONE ACTIVITIES</em> dataset. Then, we will compare our implementation with that of the well known <code>e1071</code> package <span class="citation">(<a href="#ref-e1071" role="doc-biblioref">Meyer et al. 2019</a>)</span>.</p>
 
 <div class="rmdgoodpractice">
 Naive Bayes works well with missing values since the features are independent. At prediction time, if an instance has one or more missing values then, those features are just ignored and the posterior probability is computed based only on the available variabels. Another advantage of the feature independence assumption is that feature selection algorithms run very fast with Naive Bayes. When building a predictive model, not all features may provide useful information and some features may even degrade the performance. Feature selection algorithms aim to find the best set of features and some of them need to try a huge number of feature combinations. With Naive Bayes, the parameters only need to be learned once and then different combinations of features can be evaluated by ommiting the ones that are not used. With decision trees, for example, we would need to build entire new trees every time we want to try different input features.
@@ -1242,7 +1268,7 @@ FIGURE 2.17: Four datasets with the same correlation of 0.816. Source: wikipedia
 FIGURE 2.18: Time shift example between two sentences.
 </p>
 </div>
-<p>If we wanted to compare two sequences we could use the well known Euclidean distance. However since the two sequences may not be aligned in time, the result could be misleading. Furthermore, the two sequences differ in length. To account for this “time-shift” effect in timeseries data we can use <em>Dynamic Time Warping</em> (DTW) <span class="citation">(<a href="references.html#ref-sakoe1990dynamic" role="doc-biblioref">Sakoe et al. 1990</a>)</span> when comparing two timeseries. DTW is a method that:</p>
+<p>If we wanted to compare two sequences we could use the well known Euclidean distance. However since the two sequences may not be aligned in time, the result could be misleading. Furthermore, the two sequences differ in length. To account for this “time-shift” effect in timeseries data we can use <em>Dynamic Time Warping</em> (DTW) <span class="citation">(<a href="#ref-sakoe1990dynamic" role="doc-biblioref">Sakoe et al. 1990</a>)</span> when comparing two timeseries. DTW is a method that:</p>
 <ul>
 <li>Finds an optimal match between two given time-dependent sequences.</li>
 <li>Computes the dissimilarity between the sequences.</li>
@@ -1260,7 +1286,7 @@ ref&amp;=(2,2,3,3,2)
 FIGURE 2.19: DTW alignment between the query and reference sequences (solid line is the query).
 </p>
 </div>
-<p>The problem of aligning two sequences can be formalized as follows <span class="citation">(<a href="references.html#ref-Rabiner1993" role="doc-biblioref">Rabiner and Juang 1993</a>)</span>. Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two sequences:</p>
+<p>The problem of aligning two sequences can be formalized as follows <span class="citation">(<a href="#ref-Rabiner1993" role="doc-biblioref">Rabiner and Juang 1993</a>)</span>. Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two sequences:</p>
 <p><span class="math display">\[\begin{align*}
 X&amp;=(x_1,x_2,\dots,x_{T_x}) \\
 Y&amp;=(y_1,y_2,\dots,y_{T_y})
@@ -1306,7 +1332,7 @@ i_y&amp;=\phi_y (k), k=1,2,\dots,T.
 \phi_x (k+1) - \phi_x(k) \leq 1 \\
 \phi_y (k+1) - \phi_y(k) \leq 1
 \end{align*}\]</span></p>
-<p>Also, it is possible to apply global constraints, other local constraints, and apply different weights to slopes but the three described above are the most common ones. For a comprehensive list of constraints, please see <span class="citation">(<a href="references.html#ref-Rabiner1993" role="doc-biblioref">Rabiner and Juang 1993</a>)</span>. Now let’s get back to our example and go through the steps to compute the dissimilarity and warping functions between our query (<span class="math inline">\(Q\)</span>) and reference (<span class="math inline">\(R\)</span>) sequences:</p>
+<p>Also, it is possible to apply global constraints, other local constraints, and apply different weights to slopes but the three described above are the most common ones. For a comprehensive list of constraints, please see <span class="citation">(<a href="#ref-Rabiner1993" role="doc-biblioref">Rabiner and Juang 1993</a>)</span>. Now let’s get back to our example and go through the steps to compute the dissimilarity and warping functions between our query (<span class="math inline">\(Q\)</span>) and reference (<span class="math inline">\(R\)</span>) sequences:</p>
 <p><span class="math display">\[\begin{align*}
 Q&amp;=(2,2,2,4,4,3) \\
 R&amp;=(2,2,3,3,2)
@@ -1333,7 +1359,7 @@ FIGURE 2.22: Resulting warping functions.
 </p>
 </div>
 <p>The runtime complexity of DTW is <span class="math inline">\(O(T_x T_y)\)</span> which is the required time to compute the local cost matrix and the dynamic programming table.</p>
-<p>In R, the <code>dtw</code> package <span class="citation">(<a href="references.html#ref-giorgino2009" role="doc-biblioref">Giorgino 2009</a>)</span> has the function <code>dtw()</code> to compute the DTW distance between two sequences. Let’s use this package to solve the previous example.</p>
+<p>In R, the <code>dtw</code> package <span class="citation">(<a href="#ref-giorgino2009" role="doc-biblioref">Giorgino 2009</a>)</span> has the function <code>dtw()</code> to compute the DTW distance between two sequences. Let’s use this package to solve the previous example.</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="classification.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;dtw&quot;</span>)</span>
 <span id="cb52-2"><a href="classification.html#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb52-3"><a href="classification.html#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sequences from the example</span></span>
@@ -1385,7 +1411,7 @@ FIGURE 2.23: Dynamic programming table and backtracking.
 <div class="rmdfolder">
 <code>hand_gestures.R</code>, <code>hand_gestures_auxiliary.R</code>
 </div>
-<p>Gestures are a form of communication. They are often accompanied with speech but can also be used to communicate something independently of speech (like in sign language). Gestures allow us to externalize and emphasize emotions and thoughts. They are based on body movements from arms, hands, fingers, face, head, etc. Gestures can be used as a non-verbal way to identify and study behaviors for different purposes such as for emotion <span class="citation">(<a href="references.html#ref-de2006towards" role="doc-biblioref">De Gelder 2006</a>)</span> or for the identification of developmental disorders like autism <span class="citation">(<a href="references.html#ref-anzulewicz2016toward" role="doc-biblioref">Anzulewicz, Sobota, and Delafield-Butt 2016</a>)</span>.</p>
+<p>Gestures are a form of communication. They are often accompanied with speech but can also be used to communicate something independently of speech (like in sign language). Gestures allow us to externalize and emphasize emotions and thoughts. They are based on body movements from arms, hands, fingers, face, head, etc. Gestures can be used as a non-verbal way to identify and study behaviors for different purposes such as for emotion <span class="citation">(<a href="#ref-de2006towards" role="doc-biblioref">De Gelder 2006</a>)</span> or for the identification of developmental disorders like autism <span class="citation">(<a href="#ref-anzulewicz2016toward" role="doc-biblioref">Anzulewicz, Sobota, and Delafield-Butt 2016</a>)</span>.</p>
 <p>Gestures can also be used to develop user-computer interaction applications. The following video shows an example application of gesture recognition for domotics.</p>
 <iframe src="https://www.youtube.com/embed/47-35YmimN4" width="672" height="400px">
 </iframe>
@@ -1666,6 +1692,45 @@ It is a good practice to compare powerful models against dummy models. If their 
 
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-anzulewicz2016toward" class="csl-entry">
+Anzulewicz, Anna, Krzysztof Sobota, and Jonathan T Delafield-Butt. 2016. <span>“Toward the Autism Motor Signature: Gesture Patterns During Smart Tablet Gameplay Identify Children with Autism.”</span> <em>Scientific Reports</em> 6 (1): 1–13.
+</div>
+<div id="ref-de2006towards" class="csl-entry">
+De Gelder, Beatrice. 2006. <span>“Towards the Neurobiology of Emotional Body Language.”</span> <em>Nature Reviews Neuroscience</em> 7 (3): 242–49.
+</div>
+<div id="ref-giorgino2009" class="csl-entry">
+Giorgino, Toni. 2009. <span>“Computing and Visualizing Dynamic Time Warping Alignments in r: The <span class="nocase">dtw</span> Package.”</span> <em>Journal of Statistical Software</em> 31 (7): 1–24.
+</div>
+<div id="ref-kwapisz2010" class="csl-entry">
+Kwapisz, Jennifer R., Gary M. Weiss, and Samuel A. Moore. 2010. <span>“Activity Recognition Using Cell Phone Accelerometers.”</span> In <em>Proceedings of the Fourth International Workshop on Knowledge Discovery from Sensor Data (at <span>KDD</span>-10), Washington <span>DC</span>.</em>
+</div>
+<div id="ref-e1071" class="csl-entry">
+Meyer, David, Evgenia Dimitriadou, Kurt Hornik, Andreas Weingessel, and Friedrich Leisch. 2019. <em>E1071: Misc Functions of the Department of Statistics, Probability Theory Group (Formerly: E1071), TU Wien</em>. <a href="https://CRAN.R-project.org/package=e1071">https://CRAN.R-project.org/package=e1071</a>.
+</div>
+<div id="ref-rpartplot" class="csl-entry">
+Milborrow, Stephen. 2019. <em>Rpart.plot: Plot ’Rpart’ Models: An Enhanced Version of ’<span class="nocase">plot.rpart</span>’</em>. <a href="https://CRAN.R-project.org/package=rpart.plot">https://CRAN.R-project.org/package=rpart.plot</a>.
+</div>
+<div id="ref-quinlan2014" class="csl-entry">
+Quinlan, J Ross. 2014. <em>C4.5: Programs for Machine Learning</em>. Elsevier.
+</div>
+<div id="ref-Rabiner1993" class="csl-entry">
+Rabiner, Lawrence, and Biing-Hwang Juang. 1993. <em>Fundamentals of Speech Recognition</em>. Prentice hall.
+</div>
+<div id="ref-sakoe1990dynamic" class="csl-entry">
+Sakoe, Hiroaki, Seibi Chiba, A Waibel, and KF Lee. 1990. <span>“Dynamic Programming Algorithm Optimization for Spoken Word Recognition.”</span> <em>Readings in Speech Recognition</em> 159: 224.
+</div>
+<div id="ref-steinberg2009" class="csl-entry">
+Steinberg, Dan, and Phillip Colla. 2009. <span>“CART: Classification and Regression Trees.”</span> <em>The Top Ten Algorithms in Data Mining</em> 9: 179.
+</div>
+<div id="ref-rpart" class="csl-entry">
+Therneau, Terry, and Beth Atkinson. 2019. <em>Rpart: Recursive Partitioning and Regression Trees</em>. <a href="https://CRAN.R-project.org/package=rpart">https://CRAN.R-project.org/package=rpart</a>.
+</div>
+<div id="ref-xi2006" class="csl-entry">
+Xi, Xiaopeng, Eamonn Keogh, Christian Shelton, Li Wei, and Chotirat Ann Ratanamahatana. 2006. <span>“Fast Time Series Classification Using Numerosity Reduction.”</span> In <em>Proceedings of the 23rd International Conference on Machine Learning</em>, 1033–40.
+</div>
+</div>
 <div class="footnotes">
 <hr />
 <ol start="3">
@@ -1703,6 +1768,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

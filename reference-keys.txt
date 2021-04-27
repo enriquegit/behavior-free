@@ -150,8 +150,8 @@ fig:nnLinearity
 eq:sigmoidfunct
 fig:nnSigmoid
 eq:sigmoidunit
-eq:rectifierfunct
 fig:nnRectified
+eq:rectifierfunct
 fig:nnExampleNN
 fig:nnForward
 fig:nnDNN
@@ -189,6 +189,7 @@ fig:sklBasket
 fig:sklFeatures
 fig:loov
 fig:adaptSummary1
+fig:adaptLoss1
 fig:adaptSummary2
 fig:partitionExamle
 fig:anomalyIts
@@ -327,7 +328,7 @@ SummaryMultiUser
 abnormalbehaviors
 isolation-forests
 detecting-abnormal-fish-behaviors
-explore-and-visualize-trajectories
+exploring-and-visualizing-trajectories
 preprocessing-and-feature-extraction
 training-the-model
 roc-curve-and-auc
