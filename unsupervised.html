@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-05-13" />
+<meta name="date" content="2021-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,7 +182,11 @@ div.csl-indent {
 <li><a href="#">Behavior Analysis with Machine Learning Using R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-front-cover"><i class="fa fa-check"></i>About the Front Cover</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#supplemental-material"><i class="fa fa-check"></i>Supplemental Material</a></li>
@@ -213,7 +217,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-nearest Neighbors</a>
+<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-Nearest Neighbors</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="classification.html"><a href="classification.html#indoor-location-with-wi-fi-signals"><i class="fa fa-check"></i><b>2.1.1</b> Indoor Location with Wi-Fi Signals</a></li>
 </ul></li>
@@ -528,11 +532,12 @@ FIGURE 6.6: Boxplot of ACS variable.
 <p>To compute the silhouette index two things are needed: the already created groups and the distances between points. Let:</p>
 <p><span class="math inline">\(a(i)=\)</span> average dissimilarity (distance) of point <span class="math inline">\(i\)</span> to all other points in <span class="math inline">\(A\)</span>, where <span class="math inline">\(A\)</span> is the cluster to which <span class="math inline">\(i\)</span> has been assigned to (Figure <a href="unsupervised.html#fig:3clust">6.7</a>).</p>
 <p><span class="math inline">\(d(i,C)=\)</span> average dissimilarity between <span class="math inline">\(i\)</span> and all points in some cluster <span class="math inline">\(C\)</span>.</p>
-<p><span class="math inline">\(b(i)=\min_{C \neq A}d(i,C)\)</span>. The cluster <span class="math inline">\(B\)</span> for which the minimum is attained is the neighbor of point <span class="math inline">\(i\)</span>. (The second best choice for <span class="math inline">\(i\)</span>).</p>
+<p><span class="math inline">\(b(i)=\min_{C \neq A}d(i,C)\)</span>. The cluster <span class="math inline">\(B\)</span> for which the minimum is obtained is the neighbor of point <span class="math inline">\(i\)</span>. (The second best choice for <span class="math inline">\(i\)</span>).</p>
+
 <div class="figure" style="text-align: center"><span id="fig:3clust"></span>
-<img src="images/3clusters.png" alt="3 resulting clusters: A, B and C." width="80%" />
+<img src="images/3clusters.png" alt="3 resulting clusters: A, B and C. (Reprinted from Journal of computational and applied mathematics Vol. 20, Rousseeuw, P. J., “Silhouettes: a graphical aid to the interpretation and validation of cluster analysis” pp. 53-65, Copyright 1987, with permission from Elsevier. doi:https://doi.org/10.1016/0377-0427(87)90125-7)." width="80%" />
 <p class="caption">
-FIGURE 6.7: 3 resulting clusters: A, B and C.
+FIGURE 6.7: 3 resulting clusters: A, B and C. (Reprinted from <em>Journal of computational and applied mathematics</em> Vol. 20, Rousseeuw, P. J., “Silhouettes: a graphical aid to the interpretation and validation of cluster analysis” pp. 53-65, Copyright 1987, with permission from Elsevier. <a href="doi:https://doi.org/10.1016/0377-0427(87)90125-7" class="uri">doi:https://doi.org/10.1016/0377-0427(87)90125-7</a>).
 </p>
 </div>
 <p>Thus, <span class="math inline">\(s(i)\)</span> (the silhouette index of point <span class="math inline">\(i\)</span>) is obtained with the formula:</p>
@@ -631,12 +636,13 @@ FIGURE 6.10: Example database with 10 transactions.
 <div class="rmdfolder">
 <code>crimes_process.R</code> <code>crimes_rules.R</code>
 </div>
-<p>In this section, we will use association rules mining to find patterns in the <em>HOMICIDE REPORTS</em><a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> dataset. This database contains homicide reports from 1980 to 2014 in the United States. The database is structured as a table with <span class="math inline">\(24\)</span> columns and <span class="math inline">\(638,454\)</span> rows. Each row corresponds to a homicide report that includes city, state, year, month, sex of victim, sex of perpetrator, if the crime was solved or not, weapon used, age of the victim and perpetrator, the relationship type between the victim and the perpetrator, and some other information.</p>
+<p>In this section, we will use association rules mining to find patterns in the <em>HOMICIDE REPORTS</em><a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a> dataset. This database contains homicide reports from 1980 to 2014 in the United States. The database is structured as a table with <span class="math inline">\(24\)</span> columns and <span class="math inline">\(638,454\)</span> rows. Each row corresponds to a homicide report that includes city, state, year, month, sex of victim, sex of perpetrator, if the crime was solved or not, weapon used, age of the victim and perpetrator, the relationship type between the victim and the perpetrator, and some other information.</p>
 <p>Before trying to find rules, the data needs to be preprocessed and converted into transactions. Each homicide report will be a transaction and the items are the possible values of <span class="math inline">\(3\)</span> of the columns: <strong>Relationship</strong>, <strong>Weapon</strong>, and <strong>Perpetrator.Age</strong>. The <strong>Relationship</strong> variable can take values like <em>Stranger</em>, <em>Neighbor</em>, <em>Friend</em>, etc. In total, there are <span class="math inline">\(28\)</span> possible relationship values including <em>Unknown</em>. For the purpose of our analysis, we will remove rows with unknown values in <strong>Relationship</strong> and <strong>Weapon</strong>. Since <strong>Perpetrator.Age</strong> is an integer, we need to convert it into categories. The following age groups are created: child (&lt; <span class="math inline">\(13\)</span> years), teen (<span class="math inline">\(13\)</span> to <span class="math inline">\(17\)</span> years), adult (<span class="math inline">\(18\)</span> to <span class="math inline">\(45\)</span> years) and lateAdulthood (&gt; <span class="math inline">\(45\)</span> years). After these cleaning and preprocessing steps, the dataset has <span class="math inline">\(3\)</span> columns and <span class="math inline">\(328,238\)</span> rows (see Figure <a href="unsupervised.html#fig:tabcrimes">6.11</a>). The script used to perform the preprocessing is <code>crimes_process.R</code>.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:tabcrimes"></span>
-<img src="images/table_crimes.png" alt="First rows of preprocessed crimes data frame." width="50%" />
+<img src="images/table_crimes.png" alt="First rows of preprocessed crimes data frame. Source: Data from the Murder Accountability Project, founded by Thomas Hargrove (CC BY-SA 4.0) [https://creativecommons.org/licenses/by-sa/4.0/legalcode]." width="50%" />
 <p class="caption">
-FIGURE 6.11: First rows of preprocessed crimes data frame.
+FIGURE 6.11: First rows of preprocessed crimes data frame. <em>Source:</em> Data from the Murder Accountability Project, founded by Thomas Hargrove (CC BY-SA 4.0) [<a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" class="uri">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>].
 </p>
 </div>
 <p>Now, we have a data frame that contains only the relevant information. Each row will be used to generate one transaction. An example transaction may be <em>{R.Wife, Knife, Adult}</em>. This one represents the case where the perpetrator is an <em>adult</em> who used a <em>knife</em> to kill his <em>wife</em>. Note the ‘R.’ at the beginning of ‘Wife.’ This ‘R.’ was added for clarity in order to identify that this item is a relationship. One thing to note is that every transaction will consist of exactly <span class="math inline">\(3\)</span> items. This is a bit different than the market basket case in which every transaction can include a varying number of products. Although this item-size constraint was a design decision based on the structure of the original data, this will not prevent us from performing the analysis to find interesting rules.</p>
@@ -857,8 +863,8 @@ Rousseeuw, Peter J. 1987. <span>“Silhouettes: A Graphical Aid to the Interpret
 </div>
 <div class="footnotes">
 <hr />
-<ol start="13">
-<li id="fn13"><p><a href="https://www.kaggle.com/murderaccountability/homicide-reports" class="uri">https://www.kaggle.com/murderaccountability/homicide-reports</a><a href="unsupervised.html#fnref13" class="footnote-back">↩︎</a></p></li>
+<ol start="14">
+<li id="fn14"><p><a href="https://www.kaggle.com/murderaccountability/homicide-reports" class="uri">https://www.kaggle.com/murderaccountability/homicide-reports</a><a href="unsupervised.html#fnref14" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

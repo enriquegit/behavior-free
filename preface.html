@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-05-13" />
+<meta name="date" content="2021-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,7 +182,11 @@ div.csl-indent {
 <li><a href="#">Behavior Analysis with Machine Learning Using R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-front-cover"><i class="fa fa-check"></i>About the Front Cover</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#supplemental-material"><i class="fa fa-check"></i>Supplemental Material</a></li>
@@ -213,7 +217,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-nearest Neighbors</a>
+<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-Nearest Neighbors</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="classification.html"><a href="classification.html#indoor-location-with-wi-fi-signals"><i class="fa fa-check"></i><b>2.1.1</b> Indoor Location with Wi-Fi Signals</a></li>
 </ul></li>
@@ -439,12 +443,12 @@ div.csl-indent {
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
 <p>Automatic behavior monitoring technologies are becoming part of our everyday lives thanks to advances in sensors and machine learning. The automatic analysis and understanding of behavior are being applied to solve problems in several fields, including health care, sports, marketing, ecology, security, and psychology, to name a few. This book provides a practical introduction to machine learning methods applied to behavior analysis with the R programming language. The book does not assume any previous knowledge in machine learning. You should be familiar with the basics of R and some knowledge in basic statistics and high school-level mathematics would be beneficial. Even though the exercises focus on behavior analysis tasks, the covered machine learning underlying concepts and methods can be easily applied in any other domain.</p>
-<div id="supplemental-material" class="section level3 unnumbered">
-<h3>Supplemental Material</h3>
+<div id="supplemental-material" class="section level2 unnumbered">
+<h2>Supplemental Material</h2>
 <p>The supplemental material consists of examples’ code, shiny apps, and datasets. The source code for the examples and the shiny apps can be downloaded from <a href="https://github.com/enriquegit/behavior-free-code" class="uri">https://github.com/enriquegit/behavior-free-code</a>. Instructions on how to set up the code, run shiny apps, and get the datasets are in Appendix <a href="appendixInstall.html#appendixInstall">A</a>. A reference for all the utilized datasets is in Appendix <a href="appendixDatasets.html#appendixDatasets">B</a>.</p>
 </div>
-<div id="conventions" class="section level3 unnumbered">
-<h3>Conventions</h3>
+<div id="conventions" class="section level2 unnumbered">
+<h2>Conventions</h2>
 <p><em>DATASET</em> names are written in uppercase italics. Functions are referred to by their name followed by parenthesis (omitting their arguments), for example: <code>myFunction()</code>. Class labels are written in italics and between single quotes: <em>‘label1’</em>. The following icons are used to provide additional contextual information:</p>
 
 <div class="rmdinfo">
@@ -467,13 +471,14 @@ Lists the R scripts and files used in the corresponding section.
 Interactive shiny app available. Please see Appendix <a href="appendixInstall.html#appendixInstall">A</a> for instructions on how to run shiny apps.
 </div>
 <p>The folder icon will appear at the beginning of a section (if applicable) to indicate which scripts were used for the corresponding examples.</p>
+<div style="page-break-after: always;"></div>
 </div>
-<div id="acknowledgments" class="section level3 unnumbered">
-<h3>Acknowledgments</h3>
-<p>I want to thank Ketil Stølen who reviewed the book and gave me valuable suggestions and the anonymous reviewers who provided me with feedback.</p>
+<div id="acknowledgments" class="section level2 unnumbered">
+<h2>Acknowledgments</h2>
+<p>I want to thank Ketil Stølen and Robert Kabacoff who reviewed the book and gave me valuable suggestions.</p>
 <p>I want to thank Michael Riegler, Darlene E., Jaime Mondragon y Ariana, Viviana M., Linda Sicilia, Ania Aguirre, Anton Aguilar, Aleksander Karlsen, 刘爽, my former master’s and PhD. advisor Ramon F. Brena, and my colleagues at SINTEF.</p>
 <p>I want to thank Vance Capley who brought to life the front cover and comic illustrations, Francescoozzimo who drew the comic for chapter 10, and Katia Liuntova who animated the online front cover. The examples in this book rely heavily on datasets. I want to thank all the people that made all their datasets used here publicly available. Thanks to Yihui Xie who developed the <code>bookdown</code> R package with which this book was written.</p>
-<p>I want to thank all the bands whose music brought me joy during this process: Lionheart, Neaera, Hatebreed, Sworn Enemy, Killswitch Engage, As I Lay Dying, Lamb of God, Himsa, Slipknot, Madball, Fleshgod Apocalypse, Bleeding Through, Caliban, Heaven Shall Burn, Darkest Hour, Demon Hunter, Frente de Ira, Desarmador, ill niño, Soulfly, Walls of Jericho, Arrecife, Corcholata, Amon Amarth, Abinchova, Fit for a King, Annisokay, Sylosis.</p>
+<p>I want to thank all the music bands I listened to during my writing-breaks: Lionheart, Neaera, Hatebreed, Sworn Enemy, Killswitch Engage, As I Lay Dying, Lamb of God, Himsa, Slipknot, Madball, Fleshgod Apocalypse, Bleeding Through, Caliban, Heaven Shall Burn, Darkest Hour, Demon Hunter, Frente de Ira, Desarmador, Después del Odio, ill niño, Soulfly, Walls of Jericho, Arrecife, Corcholata, Amon Amarth, Abinchova, Fit for a King, Annisokay, Sylosis, Meshuggah.</p>
 
 </div>
 </div>

@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-05-13" />
+<meta name="date" content="2021-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,7 +182,11 @@ div.csl-indent {
 <li><a href="#">Behavior Analysis with Machine Learning Using R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-front-cover"><i class="fa fa-check"></i>About the Front Cover</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#supplemental-material"><i class="fa fa-check"></i>Supplemental Material</a></li>
@@ -213,7 +217,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-nearest Neighbors</a>
+<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-Nearest Neighbors</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="classification.html"><a href="classification.html#indoor-location-with-wi-fi-signals"><i class="fa fa-check"></i><b>2.1.1</b> Indoor Location with Wi-Fi Signals</a></li>
 </ul></li>
@@ -438,16 +442,16 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="representations" class="section level1" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Encoding Behavioral Data</h1>
-<p>Behavioral data comes in many different flavors and shapes. Data stored in databases also have different structures (relational, graph, plain text, etc.). As mentioned in chapter <a href="intro.html#intro">1</a>, before training a predictive model, data goes through a series of steps, from data collection to preprocessing (Figure <a href="intro.html#fig:pipeline">1.6</a>). During those steps, data is transformed and shaped with the aim of easing the operations in the subsequent tasks. Finally, the data needs to be encoded in a very specific format as expected by the predictive model. For example, decision trees and many other classifier methods expect their input data to be formatted as <strong>feature vectors</strong> while Dynamic Time Warping expects the data to be represented as <strong>timeseries</strong>. Images are usually encoded as <span class="math inline">\(n\)</span>-dimensional matrices. When it comes to social network analysis, a <strong>graph</strong> is the preferred representation.</p>
-<p>So far, I have been mentioning two key terms: <strong>encode</strong> and <strong>representation</strong>. The Cambridge Dictionary<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a> defines the verb <em>encode</em> as:</p>
+<p>Behavioral data comes in many different flavors and shapes. Data stored in databases also have different structures (relational, graph, plain text, etc.). As mentioned in chapter <a href="intro.html#intro">1</a>, before training a predictive model, data goes through a series of steps, from data collection to preprocessing (Figure <a href="intro.html#fig:pipeline">1.7</a>). During those steps, data is transformed and shaped with the aim of easing the operations in the subsequent tasks. Finally, the data needs to be encoded in a very specific format as expected by the predictive model. For example, decision trees and many other classifier methods expect their input data to be formatted as <strong>feature vectors</strong> while Dynamic Time Warping expects the data to be represented as <strong>timeseries</strong>. Images are usually encoded as <span class="math inline">\(n\)</span>-dimensional matrices. When it comes to social network analysis, a <strong>graph</strong> is the preferred representation.</p>
+<p>So far, I have been mentioning two key terms: <strong>encode</strong> and <strong>representation</strong>. The Cambridge Dictionary<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> defines the verb <em>encode</em> as:</p>
 <blockquote>
 <p><em>“To put information into a form in which it can be stored, and which can only be read using special technology or knowledge…”</em></p>
 </blockquote>
-<p>while TechTerms.com<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> defines it as:</p>
+<p>while TechTerms.com<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a> defines it as:</p>
 <blockquote>
 <p><em>“Encoding is the process of converting data from one form to another.”</em></p>
 </blockquote>
-<p>Both definitions are similar, but in this chapter’s context, the second one makes more sense. The Cambridge Dictionary<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a> defines <em>representation</em> as:</p>
+<p>Both definitions are similar, but in this chapter’s context, the second one makes more sense. The Cambridge Dictionary<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a> defines <em>representation</em> as:</p>
 <blockquote>
 <p><em>“The way that someone or something is shown or described.”</em></p>
 </blockquote>
@@ -582,14 +586,15 @@ FIGURE 7.7: Three activities captured with an accelerometer represented as image
 <h2><span class="header-section-number">7.5</span> Recurrence Plots</h2>
 <p>Recurrence plots (RPs) are visual representations similar to images but typically they only have one dimension (depth). They are encoded as <span class="math inline">\(n \times n\)</span> matrices, that is, the same number of rows and columns (a square matrix). Even though these are like a special case of images, I thought it would be worth having them in their own subsection! Just as with images, timeseries can be converted into RPs and then used to train a CNN.</p>
 <p>A recurrence plot (RP) is a visual representation of time patterns of dynamical systems (for example, timeseries). RPs were introduced by <span class="citation"><a href="#ref-eckmann1987recurrence" role="doc-biblioref">Eckmann, Kamphorst, and Ruelle</a> (<a href="#ref-eckmann1987recurrence" role="doc-biblioref">1987</a>)</span> and they depict all the times when a trajectory is roughly in the same state. They are visual representations of the dynamics of a system. Biological systems possess behavioral patterns and activity dynamics that can be captured with RPs, for example, the dynamics of ant colonies <span class="citation">(<a href="#ref-Neves2017" role="doc-biblioref">Neves 2017</a>)</span>.</p>
-<p>At this point, you may be curious about how a RP looks like. So let me begin by showing a picture<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a> of <span class="math inline">\(4\)</span> time series with their respective RP (Figure <a href="representations.html#fig:rpExamples">7.8</a>).</p>
+<p>At this point, you may be curious about how a RP looks like. So let me begin by showing a picture<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> of <span class="math inline">\(4\)</span> time series with their respective RP (Figure <a href="representations.html#fig:rpExamples">7.8</a>).</p>
+
 <div class="figure" style="text-align: center"><span id="fig:rpExamples"></span>
-<img src="images/RP_examples.png" alt="Four timeseries (top) with their respective RPs (bottom). source: wikipedia (CC BY-SA 2.0 DE)." width="80%" />
+<img src="images/RP_examples.png" alt="Four timeseries (top) with their respective RPs (bottom). (Author: Norbert Marwan / Pucicu at German Wikipedia. Source: Wikipedia (CC BY-SA 3.0) [https://creativecommons.org/licenses/by-sa/3.0/legalcode])." width="80%" />
 <p class="caption">
-FIGURE 7.8: Four timeseries (top) with their respective RPs (bottom). source: wikipedia (CC BY-SA 2.0 DE).
+FIGURE 7.8: Four timeseries (top) with their respective RPs (bottom). (Author: Norbert Marwan / Pucicu at German Wikipedia. Source: Wikipedia (CC BY-SA 3.0) [<a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" class="uri">https://creativecommons.org/licenses/by-sa/3.0/legalcode</a>]).
 </p>
 </div>
-<p>The first RP (leftmost) does not seem to have a clear pattern (white noise) whereas the other three show some patterns like diagonals of different sizes, some square and circular shapes, and so on. RPs can be characterized by small-scale and large-scale patterns. Examples of small-scale patterns are diagonals, horizontal/vertical lines, dots, etc. Large-scale patterns are called <em>typology</em> and they depict the global characteristics of the dynamic system.<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a></p>
+<p>The first RP (leftmost) does not seem to have a clear pattern (white noise) whereas the other three show some patterns like diagonals of different sizes, some square and circular shapes, and so on. RPs can be characterized by small-scale and large-scale patterns. Examples of small-scale patterns are diagonals, horizontal/vertical lines, dots, etc. Large-scale patterns are called <em>typology</em> and they depict the global characteristics of the dynamic system.<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a></p>
 <p>The visual interpretation of RPs requires some experience and is out of the scope of this book. However, they can be used as a visual pattern extraction tool to represent the data and then, in conjunction with machine learning methods like CNNs, used to solve classification problems.</p>
 
 <div class="rmdinfo">
@@ -674,9 +679,10 @@ There is an objective way to analyze RPs known as <strong>recurrence quantificat
 <span id="cb141-32"><a href="representations.html#cb141-32" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>This function first defines two square matrices <code>M</code> and <code>D</code> to store the recurrence plot and the distance matrix, respectively. Then, it iterates the matrices from bottom left to top right and fills the corresponding values for <code>M</code> and <code>D</code>. The distance between elements <code>i</code> and <code>j</code> from the vector is computed. That distance is directly stored in <code>D</code>. To generate the RP we check if the distance is less or equal to the threshold. If that is the case the corresponding entry in <code>M</code> is set to <span class="math inline">\(1\)</span>. Finally, both matrices are returned by the function.</p>
 <p>Now, we can try our <code>rp()</code> function on the <em>HAND GESTURES</em> dataset to convert one of the timeseries into a RP. First, we read one of the gesture files. For example, the first gesture <em>‘1’</em> from user <span class="math inline">\(1\)</span>. We only extract the acceleration from the <span class="math inline">\(x\)</span> axis and store it in variable <code>x</code>.</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="representations.html#cb142-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;../../data/hand_gestures/1/1_20130703-120056.txt&quot;</span>,</span>
-<span id="cb142-2"><a href="representations.html#cb142-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">header =</span> F)</span>
-<span id="cb142-3"><a href="representations.html#cb142-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> df<span class="sc">$</span>V1</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="representations.html#cb142-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.path</span>(datasets_path,</span>
+<span id="cb142-2"><a href="representations.html#cb142-2" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;hand_gestures/1/1_20130703-120056.txt&quot;</span>),</span>
+<span id="cb142-3"><a href="representations.html#cb142-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">header =</span> F)</span>
+<span id="cb142-4"><a href="representations.html#cb142-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> df<span class="sc">$</span>V1</span></code></pre></div>
 <p>If we plot vector <code>x</code> we get something like in Figure <a href="representations.html#fig:gesture1X">7.9</a>.</p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="representations.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot vector x.</span></span>
 <span id="cb143-2"><a href="representations.html#cb143-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">main=</span><span class="st">&quot;Hand gesture 1&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;time&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
@@ -965,12 +971,12 @@ Zbilut, Joseph P., and Charles L. Webber. 1992. <span>“Embeddings and Delays a
 </div>
 <div class="footnotes">
 <hr />
-<ol start="14">
-<li id="fn14"><p><a href="https://dictionary.cambridge.org/dictionary/english/encode" class="uri">https://dictionary.cambridge.org/dictionary/english/encode</a><a href="representations.html#fnref14" class="footnote-back">↩︎</a></p></li>
-<li id="fn15"><p><a href="https://techterms.com/definition/encoding" class="uri">https://techterms.com/definition/encoding</a><a href="representations.html#fnref15" class="footnote-back">↩︎</a></p></li>
-<li id="fn16"><p><a href="https://dictionary.cambridge.org/dictionary/english/representation" class="uri">https://dictionary.cambridge.org/dictionary/english/representation</a><a href="representations.html#fnref16" class="footnote-back">↩︎</a></p></li>
-<li id="fn17"><p><a href="https://commons.wikimedia.org/wiki/File:Rp_examples740.gif" class="uri">https://commons.wikimedia.org/wiki/File:Rp_examples740.gif</a><a href="representations.html#fnref17" class="footnote-back">↩︎</a></p></li>
-<li id="fn18"><p><a href="http://www.recurrence-plot.tk/glance.php" class="uri">http://www.recurrence-plot.tk/glance.php</a><a href="representations.html#fnref18" class="footnote-back">↩︎</a></p></li>
+<ol start="15">
+<li id="fn15"><p><a href="https://dictionary.cambridge.org/dictionary/english/encode" class="uri">https://dictionary.cambridge.org/dictionary/english/encode</a><a href="representations.html#fnref15" class="footnote-back">↩︎</a></p></li>
+<li id="fn16"><p><a href="https://techterms.com/definition/encoding" class="uri">https://techterms.com/definition/encoding</a><a href="representations.html#fnref16" class="footnote-back">↩︎</a></p></li>
+<li id="fn17"><p><a href="https://dictionary.cambridge.org/dictionary/english/representation" class="uri">https://dictionary.cambridge.org/dictionary/english/representation</a><a href="representations.html#fnref17" class="footnote-back">↩︎</a></p></li>
+<li id="fn18"><p><a href="https://commons.wikimedia.org/wiki/File:Rp_examples740.gif" class="uri">https://commons.wikimedia.org/wiki/File:Rp_examples740.gif</a><a href="representations.html#fnref18" class="footnote-back">↩︎</a></p></li>
+<li id="fn19"><p><a href="http://www.recurrence-plot.tk/glance.php" class="uri">http://www.recurrence-plot.tk/glance.php</a><a href="representations.html#fnref19" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

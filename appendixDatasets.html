@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-05-13" />
+<meta name="date" content="2021-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,7 +182,11 @@ div.csl-indent {
 <li><a href="#">Behavior Analysis with Machine Learning Using R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-front-cover"><i class="fa fa-check"></i>About the Front Cover</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#supplemental-material"><i class="fa fa-check"></i>Supplemental Material</a></li>
@@ -213,7 +217,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-nearest Neighbors</a>
+<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-Nearest Neighbors</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="classification.html"><a href="classification.html#indoor-location-with-wi-fi-signals"><i class="fa fa-check"></i><b>2.1.1</b> Indoor Location with Wi-Fi Signals</a></li>
 </ul></li>
@@ -461,7 +465,7 @@ An Android 2.2 application running on a LG Optimus Me cellphone was used to coll
 <div id="fish-trajectories" class="section level2" number="12.4">
 <h2><span class="header-section-number">B.4</span> FISH TRAJECTORIES</h2>
 <p><strong>Included:</strong> Yes.</p>
-<p>The Fish4Knowledge<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a> <span class="citation">(<a href="#ref-Beyan2013" role="doc-biblioref">Beyan and Fisher 2013</a>)</span> project made this database available. It contains <span class="math inline">\(3102\)</span> trajectories belonging to the <em>Dascyllus reticulatus</em> fish observed in the Taiwanese coral reef. Each trajectory is labeled as <em>‘normal’</em> or <em>‘abnormal’</em>. The trajectories were extracted from underwater video. Bounding box’s coordinates over time were extracted from the video. The data does not contain the video images but the final coordinates. The dataset compilation in this book also includes a .csv file with extracted features from the trajectories.</p>
+<p>The Fish4Knowledge<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a> <span class="citation">(<a href="#ref-Beyan2013" role="doc-biblioref">Beyan and Fisher 2013</a>)</span> project made this database available. It contains <span class="math inline">\(3102\)</span> trajectories belonging to the <em>Dascyllus reticulatus</em> fish observed in the Taiwanese coral reef. Each trajectory is labeled as <em>‘normal’</em> or <em>‘abnormal’</em>. The trajectories were extracted from underwater video. Bounding box’s coordinates over time were extracted from the video. The data does not contain the video images but the final coordinates. The dataset compilation in this book also includes a .csv file with extracted features from the trajectories.</p>
 </div>
 <div id="hand-gestures" class="section level2" number="12.5">
 <h2><span class="header-section-number">B.5</span> HAND GESTURES</h2>
@@ -476,7 +480,7 @@ An Android 2.2 application running on a LG Optimus Me cellphone was used to coll
 <div id="homicide-reports" class="section level2" number="12.7">
 <h2><span class="header-section-number">B.7</span> HOMICIDE REPORTS</h2>
 <p><strong>Included:</strong> Yes.</p>
-<p>This dataset was compiled and made available by the Murder Accountability Project, founded by Thomas Hargrove<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>.
+<p>This dataset was compiled and made available by the Murder Accountability Project, founded by Thomas Hargrove<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.
 It contains information about homicides in the United States. This dataset includes the age, race, sex, ethnicity of victims and perpetrators, in addition to the relationship between the victim and perpetrator and weapon used. The original dataset includes the <code>database.csv</code> file. The files <code>processed.csv</code> and <code>transactions.RData</code> were generated with the R scripts included in the examples code of the corresponding sections to facilitate the analysis.</p>
 </div>
 <div id="indoor-location" class="section level2" number="12.8">
@@ -497,13 +501,13 @@ It contains information about homicides in the United States. This dataset inclu
 <div id="smartphone-activities" class="section level2" number="12.11">
 <h2><span class="header-section-number">B.11</span> SMARTPHONE ACTIVITIES</h2>
 <p><strong>Included:</strong> Yes.</p>
-<p>This dataset is called WISDM<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a> and was made available by <span class="citation"><a href="#ref-kwapisz2010" role="doc-biblioref">Kwapisz, Weiss, and Moore</a> (<a href="#ref-kwapisz2010" role="doc-biblioref">2010</a>)</span>. The dataset includes <span class="math inline">\(6\)</span> different activities: <em>‘walking’</em>, <em>‘jogging’</em>, <em>‘walking upstairs’</em>, <em>‘walking downstairs’</em>, <em>‘sitting’</em> and <em>‘standing’</em>. The data was collected by <span class="math inline">\(36\)</span> volunteers with the accelerometer of an Android phone located in the users’ pants pocket and with a sampling rate of <span class="math inline">\(20\)</span> Hz.</p>
+<p>This dataset is called WISDM<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a> and was made available by <span class="citation"><a href="#ref-kwapisz2010" role="doc-biblioref">Kwapisz, Weiss, and Moore</a> (<a href="#ref-kwapisz2010" role="doc-biblioref">2010</a>)</span>. The dataset includes <span class="math inline">\(6\)</span> different activities: <em>‘walking’</em>, <em>‘jogging’</em>, <em>‘walking upstairs’</em>, <em>‘walking downstairs’</em>, <em>‘sitting’</em> and <em>‘standing’</em>. The data was collected by <span class="math inline">\(36\)</span> volunteers with the accelerometer of an Android phone located in the users’ pants pocket and with a sampling rate of <span class="math inline">\(20\)</span> Hz.</p>
 </div>
 <div id="smiles" class="section level2" number="12.12">
 <h2><span class="header-section-number">B.12</span> SMILES</h2>
 <p><strong>Included:</strong> No.</p>
 <p>This dataset contains color face images of <span class="math inline">\(64 \times 64\)</span> pixels and is published here: <a href="http://conradsanderson.id.au/lfwcrop/" class="uri">http://conradsanderson.id.au/lfwcrop/</a>. This is a cropped version <span class="citation">(<a href="#ref-sanderson2009multi" role="doc-biblioref">Sanderson and Lovell 2009</a>)</span> of the Labeled Faces in the Wild (LFW) database <span class="citation">(<a href="#ref-huang2008labeled" role="doc-biblioref">Gary B. Huang et al. 2008</a>)</span>. Please, download the color version (lfwcrop_color.zip) and copy all ppm files into the <code>faces/</code> directory.</p>
-<p>A subset of the database was labeled by <span class="citation"><a href="#ref-arigbabu2016smile" role="doc-biblioref">O. A. Arigbabu et al.</a> (<a href="#ref-arigbabu2016smile" role="doc-biblioref">2016</a>)</span>, <span class="citation"><a href="#ref-olasimbo" role="doc-biblioref">O. Arigbabu</a> (<a href="#ref-olasimbo" role="doc-biblioref">2017</a>)</span>. The labels are provided as two text files (SMILE_list.txt, NON-SMILE_list.txt), each, containing the list of files that correspond to smiling and non-smiling faces. The smiling set has <span class="math inline">\(600\)</span> pictures and the non-smiling has <span class="math inline">\(603\)</span> pictures.</p>
+<p>A subset of the database was labeled by <span class="citation"><a href="#ref-arigbabu2016smile" role="doc-biblioref">O. A. Arigbabu et al.</a> (<a href="#ref-arigbabu2016smile" role="doc-biblioref">2016</a>)</span>, <span class="citation"><a href="#ref-olasimbo" role="doc-biblioref">O. Arigbabu</a> (<a href="#ref-olasimbo" role="doc-biblioref">2017</a>)</span>. The labels are provided as two text files (SMILE_list.txt, NON-SMILE_list.txt), each, containing the list of files that correspond to smiling and non-smiling faces (CC BY 4.0 <a href="https://creativecommons.org/licenses/by/4.0/legalcode" class="uri">https://creativecommons.org/licenses/by/4.0/legalcode</a>). The smiling set has <span class="math inline">\(600\)</span> pictures and the non-smiling has <span class="math inline">\(603\)</span> pictures.</p>
 </div>
 <div id="students-mental-health" class="section level2" number="12.13">
 <h2><span class="header-section-number">B.13</span> STUDENTS’ MENTAL HEALTH</h2>
@@ -559,10 +563,10 @@ Yashuk, Kirill. 2019. <em>Classify Gestures by Reading Muscle Activity: A Record
 </div>
 <div class="footnotes">
 <hr />
-<ol start="31">
-<li id="fn31"><p><a href="http://groups.inf.ed.ac.uk/f4k/" class="uri">http://groups.inf.ed.ac.uk/f4k/</a><a href="appendixDatasets.html#fnref31" class="footnote-back">↩︎</a></p></li>
-<li id="fn32"><p><a href="https://www.kaggle.com/murderaccountability/homicide-reports" class="uri">https://www.kaggle.com/murderaccountability/homicide-reports</a><a href="appendixDatasets.html#fnref32" class="footnote-back">↩︎</a></p></li>
-<li id="fn33"><p><a href="http://www.cis.fordham.edu/wisdm/dataset.php" class="uri">http://www.cis.fordham.edu/wisdm/dataset.php</a><a href="appendixDatasets.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<ol start="32">
+<li id="fn32"><p><a href="http://groups.inf.ed.ac.uk/f4k/" class="uri">http://groups.inf.ed.ac.uk/f4k/</a><a href="appendixDatasets.html#fnref32" class="footnote-back">↩︎</a></p></li>
+<li id="fn33"><p><a href="https://www.kaggle.com/murderaccountability/homicide-reports" class="uri">https://www.kaggle.com/murderaccountability/homicide-reports</a><a href="appendixDatasets.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<li id="fn34"><p><a href="http://www.cis.fordham.edu/wisdm/dataset.php" class="uri">http://www.cis.fordham.edu/wisdm/dataset.php</a><a href="appendixDatasets.html#fnref34" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

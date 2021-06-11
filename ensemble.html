@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-05-13" />
+<meta name="date" content="2021-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,7 +182,11 @@ div.csl-indent {
 <li><a href="#">Behavior Analysis with Machine Learning Using R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-front-cover"><i class="fa fa-check"></i>About the Front Cover</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#supplemental-material"><i class="fa fa-check"></i>Supplemental Material</a></li>
@@ -213,7 +217,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-nearest Neighbors</a>
+<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-Nearest Neighbors</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="classification.html"><a href="classification.html#indoor-location-with-wi-fi-signals"><i class="fa fa-check"></i><b>2.1.1</b> Indoor Location with Wi-Fi Signals</a></li>
 </ul></li>
@@ -665,10 +669,11 @@ FIGURE 3.4: Bagging v.s. Random Forest.
 <li><p>Output the final stacking model <span class="math inline">\(\mathcal{S}:&lt;\mathscr{L},\textit{meta-learner}&gt;\)</span>.</p></li>
 </ol>
 <p>Figure <a href="ensemble.html#fig:stackingProcess">3.5</a> shows the procedure to generate the new training data <span class="math inline">\(\textbf{D}&#39;\)</span> used to train the <em>meta-learner</em>.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:stackingProcess"></span>
-<img src="images/stacking.png" alt="Process to generate the new train set D' by column-binding the predictions of the first-level learners and adding the true labels." width="80%" />
+<img src="images/stacking.png" alt="Process to generate the new train set D’ by column-binding the predictions of the first-level learners and adding the true labels. (Reprinted from Information Fusion Vol. 40, Enrique Garcia-Ceja, Carlos E. Galván-Tejada, and Ramon Brena, “Multi-view stacking for activity recognition with sound and accelerometer data” pp. 45-56, Copyright 2018, with permission from Elsevier. doi: https://doi.org/10.1016/j.inffus.2017.06.004." width="80%" />
 <p class="caption">
-FIGURE 3.5: Process to generate the new train set D’ by column-binding the predictions of the first-level learners and adding the true labels.
+FIGURE 3.5: Process to generate the new train set D’ by column-binding the predictions of the first-level learners and adding the true labels. (Reprinted from <em>Information Fusion</em> Vol. 40, Enrique Garcia-Ceja, Carlos E. Galván-Tejada, and Ramon Brena, “Multi-view stacking for activity recognition with sound and accelerometer data” pp. 45-56, Copyright 2018, with permission from Elsevier. doi: <a href="https://doi.org/10.1016/j.inffus.2017.06.004" class="uri">https://doi.org/10.1016/j.inffus.2017.06.004</a>.
 </p>
 </div>
 <p>Note that steps <span class="math inline">\(2\)</span> and <span class="math inline">\(3\)</span> can lead to overfitting because the predictions are made with the same data used to train the models. To avoid this, steps <span class="math inline">\(2\)</span> and <span class="math inline">\(3\)</span> are usually performed using <span class="math inline">\(k\)</span>-fold cross-validation. After <span class="math inline">\(\textbf{D}&#39;\)</span> has been generated, the learners in <span class="math inline">\(\mathscr{L}\)</span> can be retrained using all data in <span class="math inline">\(\textbf{D}\)</span>.</p>

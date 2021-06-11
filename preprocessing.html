@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-05-13" />
+<meta name="date" content="2021-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,7 +182,11 @@ div.csl-indent {
 <li><a href="#">Behavior Analysis with Machine Learning Using R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-front-cover"><i class="fa fa-check"></i>About the Front Cover</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#supplemental-material"><i class="fa fa-check"></i>Supplemental Material</a></li>
@@ -213,7 +217,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-nearest Neighbors</a>
+<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-Nearest Neighbors</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="classification.html"><a href="classification.html#indoor-location-with-wi-fi-signals"><i class="fa fa-check"></i><b>2.1.1</b> Indoor Location with Wi-Fi Signals</a></li>
 </ul></li>
@@ -458,10 +462,11 @@ Several of the methods presented here can lead to <em>information injection</em>
 <h2><span class="header-section-number">5.1</span> Missing Values</h2>
 <p>Many datasets will have missing values and we need ways to identify and deal with that. Missing data could be due to faulty sensors, processing errors, unavailable information, and so on. In this section, I present some tools that ease the identification of missing values. Later, some imputation methods used to fill in the missing values are presented.</p>
 <p>To demonstrate some of these concepts, the <em>SHEEP GOATS</em> dataset <span class="citation">(<a href="#ref-kamminga2017" role="doc-biblioref">Kamminga et al. 2017</a>)</span> will be used. Due to its big size, the files of this dataset are not included with the accompanying book files but they can be downloaded from <a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:76131" class="uri">https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:76131</a>. The data were released as part of a study about animal behaviors. The researchers placed inertial sensors on sheep and goats and tracked their behavior during one day. They also video-recorded the session and annotated the data with different types of behaviors such as <em>grazing</em>, <em>fighting</em>, <em>scratch-biting</em>, etc. The device was placed on the neck with a random orientation and it collected acceleration, orientation, magnetic field, temperature, and barometric pressure. Figure <a href="preprocessing.html#fig:sheepsensor">5.1</a> shows a schematic view of the setting.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:sheepsensor"></span>
-<img src="images/sheep.png" alt="The device was placed on the neck at a random position." width="50%" />
+<img src="images/sheep.png" alt="Device placed on the neck of the sheep. (Author: LadyofHats. Source: Wikipedia (CC0 1.0))." width="50%" />
 <p class="caption">
-FIGURE 5.1: The device was placed on the neck at a random position.
+FIGURE 5.1: Device placed on the neck of the sheep. (Author: LadyofHats. Source: Wikipedia (CC0 1.0)).
 </p>
 </div>
 <p>We will start by loading a .csv file that corresponds to one of the sheep and check if there are missing values. The <code>naniar</code> package <span class="citation">(<a href="#ref-naniar" role="doc-biblioref">Tierney et al. 2019</a>)</span> offers a set of different functions to explore and deal with missing values. The <code>gg_miss_var()</code> function allows you to quickly check which variables have missing values and how many. The following code loads the data and then plots the number of missing values in each variable.</p>
@@ -495,10 +500,11 @@ FIGURE 5.3: Rows with missing values.
 </div>
 <p>Figure <a href="preprocessing.html#fig:vismiss">5.3</a> shows every observation per row and missing values are black colored (if any). From this image, it seems that missing values are systematic. It looks like there is a clear stripes pattern, especially for the compass variables. Based on these observations, it doesn’t look like random sensor failures or random noise.</p>
 <p>If we explore the data frame’s values, for example with the RStudio viewer (Figure <a href="preprocessing.html#fig:missvaluesdf">5.4</a>), two things can be noted. First, for the compass values, there is a missing value for each present value. Thus, it looks like <span class="math inline">\(50\%\)</span> of compass values are missing. For <em>pressure</em>, it seems that there are <span class="math inline">\(7\)</span> missing values for each available value.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:missvaluesdf"></span>
-<img src="images/missingvalues.png" alt="Displaying the data frame in RStudio." width="100%" />
+<img src="images/missingvalues.png" alt="Displaying the data frame in RStudio. Source: Data from Kamminga, MSc J.W. (University of Twente) (2017): Generic online animal activity recognition on collar tags. DANS. https://doi.org/10.17026/dans-zp6-fmna" width="100%" />
 <p class="caption">
-FIGURE 5.4: Displaying the data frame in RStudio.
+FIGURE 5.4: Displaying the data frame in RStudio. <em>Source:</em> Data from Kamminga, MSc J.W. (University of Twente) (2017): Generic online animal activity recognition on collar tags. DANS. <a href="https://doi.org/10.17026/dans-zp6-fmna" class="uri">https://doi.org/10.17026/dans-zp6-fmna</a>
 </p>
 </div>
 <p>So, what could be the root cause of those missing values? Remember that at the beginning of this chapter it was mentioned that <strong>one of the sources of variation is sampling rate</strong>. If we look at the data set documentation, all sensors have a sampling rate of <span class="math inline">\(200\)</span> Hz except for the compass and the pressure sensor. The compass has a sampling rate of <span class="math inline">\(100\)</span> Hz. That is half compared to the other sensors! This explains why <span class="math inline">\(50\%\)</span> of the rows are missing. Similarly, the pressure sensor has a sampling rate of <span class="math inline">\(25\)</span> Hz. By visualizing and then inspecting the missing data, we have just found out that the missing values are not caused by random noise or sensor failures but because some sensors are not as fast as others!</p>
@@ -534,7 +540,7 @@ FIGURE 5.4: Displaying the data frame in RStudio.
 <span id="cb105-17"><a href="preprocessing.html#cb105-17" aria-hidden="true" tabindex="-1"></a>                    cx <span class="sc">+</span> cy <span class="sc">+</span> cz <span class="sc">+</span> pressure <span class="sc">~</span> . <span class="sc">-</span> cx <span class="sc">-</span> cy <span class="sc">-</span> cz <span class="sc">-</span> pressure)</span>
 <span id="cb105-18"><a href="preprocessing.html#cb105-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary.</span></span>
 <span id="cb105-19"><a href="preprocessing.html#cb105-19" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(imp_df)</span></code></pre></div>
-<p>Originally, the missing values are encoded as <code>NaN</code> but in order to use the <code>simputation</code> package functions, we need them as <code>NA</code>. First, <code>NaNs</code> are replaced with <code>NA</code>. The first argument of <code>impute_lm()</code> is a data frame and the second argument is a formula. We discard the first <span class="math inline">\(4\)</span> variables of the data frame since we do not want to use them as predictors. The left-hand side of the formula (everything before the ~ symbol) specifies the variables we want to impute. The right-hand side specifies the variables used to build the linear models. The ‘.’ indicates that we want to use all variables while the ‘-’ is used to specify variables that we do not want to include. The vignettes<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> of the package contain more detailed examples.</p>
+<p>Originally, the missing values are encoded as <code>NaN</code> but in order to use the <code>simputation</code> package functions, we need them as <code>NA</code>. First, <code>NaNs</code> are replaced with <code>NA</code>. The first argument of <code>impute_lm()</code> is a data frame and the second argument is a formula. We discard the first <span class="math inline">\(4\)</span> variables of the data frame since we do not want to use them as predictors. The left-hand side of the formula (everything before the ~ symbol) specifies the variables we want to impute. The right-hand side specifies the variables used to build the linear models. The ‘.’ indicates that we want to use all variables while the ‘-’ is used to specify variables that we do not want to include. The vignettes<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> of the package contain more detailed examples.</p>
 
 <div class="rmdcaution">
 The mean, median, etc. and the predictive models to infer missing values should be trained using data only from the train set to avoid information injection.
@@ -543,11 +549,12 @@ The mean, median, etc. and the predictive models to infer missing values should 
 </div>
 <div id="smoothing" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Smoothing</h2>
-<p>Smoothing comprises a set of algorithms with the aim of highlighting patterns in the data or as a preprocessing step to clean the data and remove noise. These methods are widely used on timeseries data but also with spatio-temporal data such as images. With timeseries data, they are often used to emphasize long-term patterns and reduce short-term signal artifacts. For example, in Figure <a href="preprocessing.html#fig:smoothingStock">5.5</a><a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> a stock chart was smoothed using two methods: moving average and exponential moving average. The smoothed versions make it easier to spot the overall trend rather than focusing on short-term variations.</p>
+<p>Smoothing comprises a set of algorithms with the aim of highlighting patterns in the data or as a preprocessing step to clean the data and remove noise. These methods are widely used on timeseries data but also with spatio-temporal data such as images. With timeseries data, they are often used to emphasize long-term patterns and reduce short-term signal artifacts. For example, in Figure <a href="preprocessing.html#fig:smoothingStock">5.5</a><a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> a stock chart was smoothed using two methods: moving average and exponential moving average. The smoothed versions make it easier to spot the overall trend rather than focusing on short-term variations.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:smoothingStock"></span>
-<img src="images/smoothing_stock.png" alt="Stock chart with two smoothed versions. One with moving average and the other one with an exponential moving average. source: wikipedia (CC BY-SA 3.0)." width="90%" />
+<img src="images/smoothing_stock.png" alt="Stock chart with two smoothed versions. One with moving average and the other one with an exponential moving average. (Author: Alex Kofman. Source: Wikipedia (CC BY-SA 3.0) [https://creativecommons.org/licenses/by-sa/3.0/legalcode])." width="90%" />
 <p class="caption">
-FIGURE 5.5: Stock chart with two smoothed versions. One with moving average and the other one with an exponential moving average. source: wikipedia (CC BY-SA 3.0).
+FIGURE 5.5: Stock chart with two smoothed versions. One with moving average and the other one with an exponential moving average. (Author: Alex Kofman. Source: Wikipedia (CC BY-SA 3.0) [<a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" class="uri">https://creativecommons.org/licenses/by-sa/3.0/legalcode</a>]).
 </p>
 </div>
 <p>The most common smoothing method for timeseries is the <strong>simple moving average</strong>. With this method, the first element of the resulting smoothed series is computed by taking the average of the elements within a window of predefined size. The window’s position starts at the first element of the original series. The second element is computed in the same way but after moving the window one position to the right. Figure <a href="preprocessing.html#fig:movavgsteps">5.6</a> shows this procedure on a series with <span class="math inline">\(5\)</span> elements and a window size of size <span class="math inline">\(3\)</span>. After the third iteration, it is not possible to move the window one more step to the right while covering <span class="math inline">\(3\)</span> elements since the end of the timeseries has been reached. Because of this, the smoothed series will have some missing values at the end. Specifically, it will have <span class="math inline">\(w-1\)</span> fewer elements where <span class="math inline">\(w\)</span> is the window size. A simple solution is to compute the average of the elements covered by the window even if they are less than the window size.</p>
@@ -593,7 +600,7 @@ FIGURE 5.7: Centered moving average step by step with window size = 3.
 FIGURE 5.8: Original time series and smoothed version using a moving average window of size 21
 </p>
 </div>
-<p>One of the disadvantages of this method is that the arithmetic mean is sensitive to noise. Instead of computing the mean, one can use the median which is more robust against outlier values. There also exist other derived methods (not covered here) such as weighted moving average and exponential moving average<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> which assign more importance to data points closer to the central point in the window. Smoothing a signal before feature extraction is a common practice and is used to remove some of the unwanted noise.</p>
+<p>One of the disadvantages of this method is that the arithmetic mean is sensitive to noise. Instead of computing the mean, one can use the median which is more robust against outlier values. There also exist other derived methods (not covered here) such as weighted moving average and exponential moving average<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> which assign more importance to data points closer to the central point in the window. Smoothing a signal before feature extraction is a common practice and is used to remove some of the unwanted noise.</p>
 </div>
 <div id="normalization" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Normalization</h2>
@@ -758,7 +765,7 @@ FIGURE 5.8: Original time series and smoothed version using a moving average win
 <span id="cb113-9"><a href="preprocessing.html#cb113-9" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(balancedDf<span class="sc">$</span>label)</span>
 <span id="cb113-10"><a href="preprocessing.html#cb113-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; class1 class2 </span></span>
 <span id="cb113-11"><a href="preprocessing.html#cb113-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   200    200 </span></span></code></pre></div>
-<p>The code associated with this chapter includes a shiny app<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> <code>shiny_random-oversampling.Rmd</code>. Shiny apps are interactive web applications. This shiny app graphically demonstrates how random oversampling works. Figure <a href="preprocessing.html#fig:shinyOversampling">5.9</a> depicts the shiny app. The user can move the slider to generate new data points. Please note that the boundaries do not change as the number of instances increases (or decreases). This is because the new points are just duplicates so they overlap with existing ones.</p>
+<p>The code associated with this chapter includes a shiny app<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> <code>shiny_random-oversampling.Rmd</code>. Shiny apps are interactive web applications. This shiny app graphically demonstrates how random oversampling works. Figure <a href="preprocessing.html#fig:shinyOversampling">5.9</a> depicts the shiny app. The user can move the slider to generate new data points. Please note that the boundaries do not change as the number of instances increases (or decreases). This is because the new points are just duplicates so they overlap with existing ones.</p>
 <div class="figure" style="text-align: center"><span id="fig:shinyOversampling"></span>
 <img src="images/shiny_oversampling.png" alt="Shiny app with random oversampling example." width="100%" />
 <p class="caption">
@@ -964,11 +971,11 @@ van der Loo, Mark. 2019. <em>Simputation: Simple Imputation</em>. <a href="https
 </div>
 <div class="footnotes">
 <hr />
-<ol start="9">
-<li id="fn9"><p><a href="https://cran.r-project.org/web/packages/simputation/vignettes/intro.html" class="uri">https://cran.r-project.org/web/packages/simputation/vignettes/intro.html</a><a href="preprocessing.html#fnref9" class="footnote-back">↩︎</a></p></li>
-<li id="fn10"><p><a href="https://commons.wikimedia.org/wiki/File:Moving_Average_Types_comparison_-_Simple_and_Exponential.png" class="uri">https://commons.wikimedia.org/wiki/File:Moving_Average_Types_comparison_-_Simple_and_Exponential.png</a><a href="preprocessing.html#fnref10" class="footnote-back">↩︎</a></p></li>
-<li id="fn11"><p><a href="https://en.wikiversity.org/wiki/Moving_Average" class="uri">https://en.wikiversity.org/wiki/Moving_Average</a><a href="preprocessing.html#fnref11" class="footnote-back">↩︎</a></p></li>
-<li id="fn12"><p><a href="https://shiny.rstudio.com/" class="uri">https://shiny.rstudio.com/</a><a href="preprocessing.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<ol start="10">
+<li id="fn10"><p><a href="https://cran.r-project.org/web/packages/simputation/vignettes/intro.html" class="uri">https://cran.r-project.org/web/packages/simputation/vignettes/intro.html</a><a href="preprocessing.html#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p><a href="https://commons.wikimedia.org/wiki/File:Moving_Average_Types_comparison_-_Simple_and_Exponential.png" class="uri">https://commons.wikimedia.org/wiki/File:Moving_Average_Types_comparison_-_Simple_and_Exponential.png</a><a href="preprocessing.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p><a href="https://en.wikiversity.org/wiki/Moving_Average" class="uri">https://en.wikiversity.org/wiki/Moving_Average</a><a href="preprocessing.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p><a href="https://shiny.rstudio.com/" class="uri">https://shiny.rstudio.com/</a><a href="preprocessing.html#fnref13" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

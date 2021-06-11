@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-05-13" />
+<meta name="date" content="2021-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,7 +182,11 @@ div.csl-indent {
 <li><a href="#">Behavior Analysis with Machine Learning Using R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-front-cover"><i class="fa fa-check"></i>About the Front Cover</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#supplemental-material"><i class="fa fa-check"></i>Supplemental Material</a></li>
@@ -213,7 +217,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-nearest Neighbors</a>
+<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-Nearest Neighbors</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="classification.html"><a href="classification.html#indoor-location-with-wi-fi-signals"><i class="fa fa-check"></i><b>2.1.1</b> Indoor Location with Wi-Fi Signals</a></li>
 </ul></li>
@@ -439,7 +443,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">Behavior Analysis with Machine Learning Using R</h1>
 <p class="author"><em>Enrique Garcia Ceja</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-05-13</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-06-11</em></p>
 </div>
 <div id="welcome" class="section level1 unnumbered">
 <h1>Welcome</h1>
@@ -454,16 +458,20 @@ This is the free html version of the book. The <strong>pdf e-book</strong> versi
 <li>Build <strong>supervised machine learning</strong> models to predict indoor locations based on WiFi signals, recognize physical activities from smartphone sensors and 3D skeleton data, detect hand gestures from accelerometer signals, and so on.</li>
 <li>Use <strong>unsupervised learning</strong> algorithms to discover criminal behavioral patterns.</li>
 <li>Program your own <strong>ensemble learning</strong> methods and use multi-view stacking to fuse signals from heterogeneous data sources.</li>
-<li>Train <strong>deep learning</strong> models such as <em>neural networks</em> to classify muscle activity from electromyography signals and <em>CNNs</em> to detect smiles in images.</li>
+<li>Train <strong>deep learning</strong> models such as <em>neural networks</em> to classify muscle activity from electromyography signals and <em>Convolutional Neural Networks</em> to detect smiles in images.</li>
 <li><strong>Evaluate the performance</strong> of your models in <em>traditional</em> and <em>multi-user</em> settings.</li>
 <li>Train <strong>anomaly detection</strong> models such as <em>Isolation Forests</em> and <em>autoencoders</em> to detect abnormal fish trajectories.</li>
 <li>And much more!</li>
 </ul>
-<p>The accompanying source code for all examples is available at <a href="https://github.com/enriquegit/behavior-free-code" class="uri">https://github.com/enriquegit/behavior-free-code</a>. The book itself was written in R with the <code>bookdown</code> package<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> developed by <a href="https://twitter.com/xieyihui">Yihui Xie</a>. The front cover and summary-comics were illustrated by <a href="http://www.vancecapleyart.com/">Vance Capley</a>.</p>
-<p><strong><span style="color: #0a8a0c;">The front cover</span></strong> depicts two brothers (Biås and Biranz) in what seems to be a typical weekend. They are exploring and enjoying nature as usual. What they don’t know is that their lives are about to change and there is no turning back. Suddenly, Biranz spots a strange object approaching them. As it makes its way out of the rocks, its entire figure is revealed. The brothers have never seen anything like that before. The closest similar image they have in their brains is a hand-sized carnivorous plant they saw at the botanical garden during a school visit several years ago. Without any warning, the creature releases a load of spores into the air. Today, the breeze is not on the brothers’ side and the spores quickly enclose them. After seconds of being exposed, their bodies start to paralyze. Moments later, they can barely move their pupils. The creature’s multiple stems begin to inflate and all of a sudden, multiple thorns are shot. Horrified and incapable, the brothers can only witness how the thorns approach their bodies and they can even hear how the air is being cut by the sharp thorns. At this point, they are only waiting for the worst. After some seconds, it seems that they haven’t felt any impact… Has time just stopped? No — the thorns were repelled by what appears to be a bionic dolphin emitting some type of ultrasonic waves. However, one of the projectiles managed to dodge the sound defense and is heading directly to Biås. While flying almost one mile above sea level, an eagle aims for the elusive thorn and destroys it with surgical precision. But the creature keeps being persistent with its attacks. Will the brothers escape from this crossfire battle?</p>
-<p><strong><span style="color: #0000ff;">About the author.</span></strong> Enrique is a researcher at SINTEF. Please feel free to e-mail him with any questions/comments/feedback, etc.</p>
-<p><strong>e-mail:</strong>
-<img src="images/randimg.png" width="15%" /></p>
+<p>The accompanying source code for all examples is available at <a href="https://github.com/enriquegit/behavior-free-code" class="uri">https://github.com/enriquegit/behavior-free-code</a>. The book itself was written in R with the <code>bookdown</code> package<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> developed by <a href="https://twitter.com/xieyihui">Yihui Xie</a>. The front cover and comics were illustrated by <a href="http://www.vancecapleyart.com/">Vance Capley</a>.</p>
+<div id="about-the-front-cover" class="section level2 unnumbered">
+<h2>About the Front Cover</h2>
+<p><span style="color: #0a8a0c;">The front cover</span> depicts two brothers (Biås and Biranz) in what seems to be a typical weekend. They are exploring and enjoying nature as usual. What they don’t know is that their lives are about to change and there is no turning back. Suddenly, Biranz spots a strange object approaching them. As it makes its way out of the rocks, its entire figure is revealed. The brothers have never seen anything like that before. The closest similar image they have in their brains is a hand-sized carnivorous plant they saw at the botanical garden during a school visit several years ago. Without any warning, the creature releases a load of spores into the air. Today, the breeze is not on the brothers’ side and the spores quickly enclose them. After seconds of being exposed, their bodies start to paralyze. Moments later, they can barely move their pupils. The creature’s multiple stems begin to inflate and all of a sudden, multiple thorns are shot. Horrified and incapable, the brothers can only witness how the thorns approach their bodies and they can even hear how the air is being cut by the sharp thorns. At this point, they are only waiting for the worst. After some seconds, it seems that they haven’t felt any impact… Has time just stopped? No — the thorns were repelled by what appears to be a bionic dolphin emitting some type of ultrasonic waves. However, one of the projectiles managed to dodge the sound defense and is heading directly to Biås. While flying almost one mile above sea level, an eagle aims for the elusive thorn and destroys it with surgical precision. But the creature keeps being persistent with its attacks. Will the brothers escape from this crossfire battle?</p>
+</div>
+<div id="about-the-author" class="section level2 unnumbered">
+<h2>About the Author</h2>
+<p>Enrique is Researcher at SINTEF, Norway. He also worked as a PostDoc at the University of Oslo. For the last 11 years, he has been conducting research on behavior analysis using machine learning. Feel free to contact him for any questions, comments, and feedback.</p>
+<p><strong>e-mail: </strong> <img src='images/randimg.png' width='100' height='20'/></p>
 <p><img src='images/icons/twitter.png' width='25' height='25'/> <a href='https://twitter.com/e_g_mx'>e_g_mx</a></p>
 <p><strong>website:</strong> <a href="http://www.enriquegc.com" class="uri">http://www.enriquegc.com</a></p>
 <p></br>
@@ -472,6 +480,7 @@ This is the free html version of the book. The <strong>pdf e-book</strong> versi
 <img src="images/license.png" /></p>
 <p>The html version of this book is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></p>
 
+</div>
 </div>
 <div class="footnotes">
 <hr />
