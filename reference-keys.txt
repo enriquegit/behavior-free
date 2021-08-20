@@ -30,7 +30,7 @@ eq:metricFscore
 fig:binaryCM
 fig:binaryCM2
 fig:treeExample
-fig:cinemaTable
+fig:concertTable
 fig:treeAlgo1
 fig:treeAlgo2
 eq:entropy
@@ -285,7 +285,7 @@ sectimeseries
 transactions
 images
 recurrence-plots
-computing-recurence-plots
+computing-recurrence-plots
 recurrence-plots-of-hand-gestures
 bag-of-words
 bow-for-complex-activities.
