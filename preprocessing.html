@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-08-20" />
+<meta name="date" content="2021-10-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -595,9 +595,9 @@ FIGURE 5.7: Centered moving average step by step with window size = 3.
 <span id="cb107-9"><a href="preprocessing.html#cb107-9" aria-hidden="true" tabindex="-1"></a>smoothed <span class="ot">&lt;-</span> <span class="fu">movingAvg</span>(x, <span class="at">w =</span> <span class="dv">21</span>)</span></code></pre></div>
 <p>Figure <a href="preprocessing.html#fig:smoothingExample">5.8</a> shows the result after plotting both the original vector and the smoothed one. It can be observed that many of the small peaks are no longer present in the smoothed version. The window size is a parameter that needs to be defined by the user. If it is set too large some important information may be lost from the signal.</p>
 <div class="figure" style="text-align: center"><span id="fig:smoothingExample"></span>
-<img src="images/smoothingExample.png" alt="Original time series and smoothed version using a moving average window of size 21" width="100%" />
+<img src="images/smoothingExample.png" alt="Original time series and smoothed version using a moving average window of size 21." width="100%" />
 <p class="caption">
-FIGURE 5.8: Original time series and smoothed version using a moving average window of size 21
+FIGURE 5.8: Original time series and smoothed version using a moving average window of size 21.
 </p>
 </div>
 <p>One of the disadvantages of this method is that the arithmetic mean is sensitive to noise. Instead of computing the mean, one can use the median which is more robust against outlier values. There also exist other derived methods (not covered here) such as weighted moving average and exponential moving average<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> which assign more importance to data points closer to the central point in the window. Smoothing a signal before feature extraction is a common practice and is used to remove some of the unwanted noise.</p>
