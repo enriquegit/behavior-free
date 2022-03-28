@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2021-12-23" />
+<meta name="date" content="2022-03-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1286,7 +1286,7 @@ FIGURE 2.18: Time shift example between two sentences.
 query&amp;=(2,2,2,4,4,3)\\
 ref&amp;=(2,2,3,3,2)
 \end{align*}\]</span></p>
-<p>The first thing to note is that the sequences differ in length. Figure <a href="classification.html#fig:queryref">2.19</a> shows their plot. The <em>query</em> is the solid line and seems to be shifted to the right one position with respect to the <em>reference</em>. The plot also shows the resulting alignment after applying the DTW algorithm (dashed lines between the sequences). The resulting distance (after aligning) between the sequences is <span class="math inline">\(3\)</span>. In the following, we will see how the problem can be formalized and how it can be computed. Don’t worry if you find the math notation a bit difficult to grasp at this pint. A step by step example will follow which should help to explain how the method works.</p>
+<p>The first thing to note is that the sequences differ in length. Figure <a href="classification.html#fig:queryref">2.19</a> shows their plot. The <em>query</em> is the solid line and seems to be shifted to the right one position with respect to the <em>reference</em>. The plot also shows the resulting alignment after applying the DTW algorithm (dashed lines between the sequences). The resulting distance (after aligning) between the sequences is <span class="math inline">\(3\)</span>. In the following, we will see how the problem can be formalized and how it can be computed. Don’t worry if you find the math notation a bit difficult to grasp at this point. A step by step example will follow which should help to explain how the method works.</p>
 <div class="figure" style="text-align: center"><span id="fig:queryref"></span>
 <img src="images/query_ref.png" alt="DTW alignment between the query and reference sequences (solid line is the query)." width="100%" />
 <p class="caption">
