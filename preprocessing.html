@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Preprocessing Behavioral Data | Behavior Analysis with Machine Learning Using R</title>
   <meta name="description" content="Chapter 5 Preprocessing Behavioral Data | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Preprocessing Behavioral Data | Behavior Analysis with Machine Learning Using R" />
   <meta property="og:type" content="book" />
-  
   <meta property="og:image" content="/images/cover.png" />
   <meta property="og:description" content="Chapter 5 Preprocessing Behavioral Data | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2023-08-29" />
+<meta name="date" content="2023-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="edavis.html"/>
 <link rel="next" href="unsupervised.html"/>
-<script src="libs/header-attrs/header-attrs.js"></script>
-<script src="libs/jquery/jquery.min.js"></script>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +41,6 @@
 <link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -145,6 +143,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 <style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
 div.csl-entry {
@@ -183,247 +185,247 @@ div.csl-indent {
 <li><a href="#">Behavior Analysis with Machine Learning Using R</a></li>
 
 <li class="divider"></li>
-<li><a href="index.html#welcome" id="toc-welcome">Welcome</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
 <ul>
-<li><a href="index.html#about-the-front-cover" id="toc-about-the-front-cover">About the Front Cover</a></li>
-<li><a href="index.html#about-the-author" id="toc-about-the-author">About the Author</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-front-cover"><i class="fa fa-check"></i>About the Front Cover</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
 </ul></li>
-<li><a href="preface.html#preface" id="toc-preface">Preface</a>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li><a href="preface.html#supplemental-material" id="toc-supplemental-material">Supplemental Material</a></li>
-<li><a href="preface.html#conventions" id="toc-conventions">Conventions</a></li>
-<li><a href="preface.html#acknowledgments" id="toc-acknowledgments">Acknowledgments</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#supplemental-material"><i class="fa fa-check"></i>Supplemental Material</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#conventions"><i class="fa fa-check"></i>Conventions</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
 </ul></li>
-<li><a href="intro.html#intro" id="toc-intro"><span class="toc-section-number">1</span> Introduction to Behavior and Machine Learning</a>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Behavior and Machine Learning</a>
 <ul>
-<li><a href="intro.html#what-is-behavior" id="toc-what-is-behavior"><span class="toc-section-number">1.1</span> What Is Behavior?</a></li>
-<li><a href="intro.html#what-is-machine-learning" id="toc-what-is-machine-learning"><span class="toc-section-number">1.2</span> What Is Machine Learning?</a></li>
-<li><a href="intro.html#taxonomy" id="toc-taxonomy"><span class="toc-section-number">1.3</span> Types of Machine Learning</a></li>
-<li><a href="intro.html#terminology" id="toc-terminology"><span class="toc-section-number">1.4</span> Terminology</a>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-behavior"><i class="fa fa-check"></i><b>1.1</b> What Is Behavior?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#what-is-machine-learning"><i class="fa fa-check"></i><b>1.2</b> What Is Machine Learning?</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#taxonomy"><i class="fa fa-check"></i><b>1.3</b> Types of Machine Learning</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#terminology"><i class="fa fa-check"></i><b>1.4</b> Terminology</a>
 <ul>
-<li><a href="intro.html#tables" id="toc-tables"><span class="toc-section-number">1.4.1</span> Tables</a></li>
-<li><a href="intro.html#variable-types" id="toc-variable-types"><span class="toc-section-number">1.4.2</span> Variable Types</a></li>
-<li><a href="intro.html#predictive-models" id="toc-predictive-models"><span class="toc-section-number">1.4.3</span> Predictive Models</a></li>
+<li class="chapter" data-level="1.4.1" data-path="intro.html"><a href="intro.html#tables"><i class="fa fa-check"></i><b>1.4.1</b> Tables</a></li>
+<li class="chapter" data-level="1.4.2" data-path="intro.html"><a href="intro.html#variable-types"><i class="fa fa-check"></i><b>1.4.2</b> Variable Types</a></li>
+<li class="chapter" data-level="1.4.3" data-path="intro.html"><a href="intro.html#predictive-models"><i class="fa fa-check"></i><b>1.4.3</b> Predictive Models</a></li>
 </ul></li>
-<li><a href="intro.html#pipeline" id="toc-pipeline"><span class="toc-section-number">1.5</span> Data Analysis Pipeline</a></li>
-<li><a href="intro.html#trainingeval" id="toc-trainingeval"><span class="toc-section-number">1.6</span> Evaluating Predictive Models</a></li>
-<li><a href="intro.html#simple-classification-example" id="toc-simple-classification-example"><span class="toc-section-number">1.7</span> Simple Classification Example</a>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#pipeline"><i class="fa fa-check"></i><b>1.5</b> Data Analysis Pipeline</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#trainingeval"><i class="fa fa-check"></i><b>1.6</b> Evaluating Predictive Models</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#simple-classification-example"><i class="fa fa-check"></i><b>1.7</b> Simple Classification Example</a>
 <ul>
-<li><a href="intro.html#k-fold-cross-validation-example" id="toc-k-fold-cross-validation-example"><span class="toc-section-number">1.7.1</span> <span class="math inline">\(k\)</span>-fold Cross-validation Example</a></li>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#k-fold-cross-validation-example"><i class="fa fa-check"></i><b>1.7.1</b> <span class="math inline">\(k\)</span>-fold Cross-validation Example</a></li>
 </ul></li>
-<li><a href="intro.html#simple-regression-example" id="toc-simple-regression-example"><span class="toc-section-number">1.8</span> Simple Regression Example</a></li>
-<li><a href="intro.html#underfitting-and-overfitting" id="toc-underfitting-and-overfitting"><span class="toc-section-number">1.9</span> Underfitting and Overfitting</a></li>
-<li><a href="intro.html#bias-and-variance" id="toc-bias-and-variance"><span class="toc-section-number">1.10</span> Bias and Variance</a></li>
-<li><a href="intro.html#SummaryIntro" id="toc-SummaryIntro"><span class="toc-section-number">1.11</span> Summary</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#simple-regression-example"><i class="fa fa-check"></i><b>1.8</b> Simple Regression Example</a></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#underfitting-and-overfitting"><i class="fa fa-check"></i><b>1.9</b> Underfitting and Overfitting</a></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#bias-and-variance"><i class="fa fa-check"></i><b>1.10</b> Bias and Variance</a></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#SummaryIntro"><i class="fa fa-check"></i><b>1.11</b> Summary</a></li>
 </ul></li>
-<li><a href="classification.html#classification" id="toc-classification"><span class="toc-section-number">2</span> Predicting Behavior with Classification Models</a>
+<li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a>
 <ul>
-<li><a href="classification.html#k-nearest-neighbors" id="toc-k-nearest-neighbors"><span class="toc-section-number">2.1</span> <em>k</em>-Nearest Neighbors</a>
+<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-Nearest Neighbors</a>
 <ul>
-<li><a href="classification.html#indoor-location-with-wi-fi-signals" id="toc-indoor-location-with-wi-fi-signals"><span class="toc-section-number">2.1.1</span> Indoor Location with Wi-Fi Signals</a></li>
+<li class="chapter" data-level="2.1.1" data-path="classification.html"><a href="classification.html#indoor-location-with-wi-fi-signals"><i class="fa fa-check"></i><b>2.1.1</b> Indoor Location with Wi-Fi Signals</a></li>
 </ul></li>
-<li><a href="classification.html#performance-metrics" id="toc-performance-metrics"><span class="toc-section-number">2.2</span> Performance Metrics</a>
+<li class="chapter" data-level="2.2" data-path="classification.html"><a href="classification.html#performance-metrics"><i class="fa fa-check"></i><b>2.2</b> Performance Metrics</a>
 <ul>
-<li><a href="classification.html#confusion-matrix" id="toc-confusion-matrix"><span class="toc-section-number">2.2.1</span> Confusion Matrix</a></li>
+<li class="chapter" data-level="2.2.1" data-path="classification.html"><a href="classification.html#confusion-matrix"><i class="fa fa-check"></i><b>2.2.1</b> Confusion Matrix</a></li>
 </ul></li>
-<li><a href="classification.html#decision-trees" id="toc-decision-trees"><span class="toc-section-number">2.3</span> Decision Trees</a>
+<li class="chapter" data-level="2.3" data-path="classification.html"><a href="classification.html#decision-trees"><i class="fa fa-check"></i><b>2.3</b> Decision Trees</a>
 <ul>
-<li><a href="classification.html#activityRecognition" id="toc-activityRecognition"><span class="toc-section-number">2.3.1</span> Activity Recognition with Smartphones</a></li>
+<li class="chapter" data-level="2.3.1" data-path="classification.html"><a href="classification.html#activityRecognition"><i class="fa fa-check"></i><b>2.3.1</b> Activity Recognition with Smartphones</a></li>
 </ul></li>
-<li><a href="classification.html#naive-bayes" id="toc-naive-bayes"><span class="toc-section-number">2.4</span> Naive Bayes</a>
+<li class="chapter" data-level="2.4" data-path="classification.html"><a href="classification.html#naive-bayes"><i class="fa fa-check"></i><b>2.4</b> Naive Bayes</a>
 <ul>
-<li><a href="classification.html#activity-recognition-with-naive-bayes" id="toc-activity-recognition-with-naive-bayes"><span class="toc-section-number">2.4.1</span> Activity Recognition with Naive Bayes</a></li>
+<li class="chapter" data-level="2.4.1" data-path="classification.html"><a href="classification.html#activity-recognition-with-naive-bayes"><i class="fa fa-check"></i><b>2.4.1</b> Activity Recognition with Naive Bayes</a></li>
 </ul></li>
-<li><a href="classification.html#dynamic-time-warping" id="toc-dynamic-time-warping"><span class="toc-section-number">2.5</span> Dynamic Time Warping</a>
+<li class="chapter" data-level="2.5" data-path="classification.html"><a href="classification.html#dynamic-time-warping"><i class="fa fa-check"></i><b>2.5</b> Dynamic Time Warping</a>
 <ul>
-<li><a href="classification.html#sechandgestures" id="toc-sechandgestures"><span class="toc-section-number">2.5.1</span> Hand Gesture Recognition</a></li>
+<li class="chapter" data-level="2.5.1" data-path="classification.html"><a href="classification.html#sechandgestures"><i class="fa fa-check"></i><b>2.5.1</b> Hand Gesture Recognition</a></li>
 </ul></li>
-<li><a href="classification.html#dummy-models" id="toc-dummy-models"><span class="toc-section-number">2.6</span> Dummy Models</a>
+<li class="chapter" data-level="2.6" data-path="classification.html"><a href="classification.html#dummy-models"><i class="fa fa-check"></i><b>2.6</b> Dummy Models</a>
 <ul>
-<li><a href="classification.html#most-frequent-class-classifier" id="toc-most-frequent-class-classifier"><span class="toc-section-number">2.6.1</span> Most-frequent-class Classifier</a></li>
-<li><a href="classification.html#uniform-classifier" id="toc-uniform-classifier"><span class="toc-section-number">2.6.2</span> Uniform Classifier</a></li>
-<li><a href="classification.html#frequency-based-classifier" id="toc-frequency-based-classifier"><span class="toc-section-number">2.6.3</span> Frequency-based Classifier</a></li>
-<li><a href="classification.html#other-dummy-classifiers" id="toc-other-dummy-classifiers"><span class="toc-section-number">2.6.4</span> Other Dummy Classifiers</a></li>
+<li class="chapter" data-level="2.6.1" data-path="classification.html"><a href="classification.html#most-frequent-class-classifier"><i class="fa fa-check"></i><b>2.6.1</b> Most-frequent-class Classifier</a></li>
+<li class="chapter" data-level="2.6.2" data-path="classification.html"><a href="classification.html#uniform-classifier"><i class="fa fa-check"></i><b>2.6.2</b> Uniform Classifier</a></li>
+<li class="chapter" data-level="2.6.3" data-path="classification.html"><a href="classification.html#frequency-based-classifier"><i class="fa fa-check"></i><b>2.6.3</b> Frequency-based Classifier</a></li>
+<li class="chapter" data-level="2.6.4" data-path="classification.html"><a href="classification.html#other-dummy-classifiers"><i class="fa fa-check"></i><b>2.6.4</b> Other Dummy Classifiers</a></li>
 </ul></li>
-<li><a href="classification.html#summaryClassification" id="toc-summaryClassification"><span class="toc-section-number">2.7</span> Summary</a></li>
+<li class="chapter" data-level="2.7" data-path="classification.html"><a href="classification.html#summaryClassification"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
 </ul></li>
-<li><a href="ensemble.html#ensemble" id="toc-ensemble"><span class="toc-section-number">3</span> Predicting Behavior with Ensemble Learning</a>
+<li class="chapter" data-level="3" data-path="ensemble.html"><a href="ensemble.html"><i class="fa fa-check"></i><b>3</b> Predicting Behavior with Ensemble Learning</a>
 <ul>
-<li><a href="ensemble.html#bagging" id="toc-bagging"><span class="toc-section-number">3.1</span> Bagging</a>
+<li class="chapter" data-level="3.1" data-path="ensemble.html"><a href="ensemble.html#bagging"><i class="fa fa-check"></i><b>3.1</b> Bagging</a>
 <ul>
-<li><a href="ensemble.html#activity-recognition-with-bagging" id="toc-activity-recognition-with-bagging"><span class="toc-section-number">3.1.1</span> Activity Recognition with Bagging</a></li>
+<li class="chapter" data-level="3.1.1" data-path="ensemble.html"><a href="ensemble.html#activity-recognition-with-bagging"><i class="fa fa-check"></i><b>3.1.1</b> Activity Recognition with Bagging</a></li>
 </ul></li>
-<li><a href="ensemble.html#random-forest" id="toc-random-forest"><span class="toc-section-number">3.2</span> Random Forest</a></li>
-<li><a href="ensemble.html#stacked-generalization" id="toc-stacked-generalization"><span class="toc-section-number">3.3</span> Stacked Generalization</a></li>
-<li><a href="ensemble.html#multiviewhometasks" id="toc-multiviewhometasks"><span class="toc-section-number">3.4</span> Multi-view Stacking for Home Tasks Recognition</a></li>
-<li><a href="ensemble.html#SummaryEnsemble" id="toc-SummaryEnsemble"><span class="toc-section-number">3.5</span> Summary</a></li>
+<li class="chapter" data-level="3.2" data-path="ensemble.html"><a href="ensemble.html#random-forest"><i class="fa fa-check"></i><b>3.2</b> Random Forest</a></li>
+<li class="chapter" data-level="3.3" data-path="ensemble.html"><a href="ensemble.html#stacked-generalization"><i class="fa fa-check"></i><b>3.3</b> Stacked Generalization</a></li>
+<li class="chapter" data-level="3.4" data-path="ensemble.html"><a href="ensemble.html#multiviewhometasks"><i class="fa fa-check"></i><b>3.4</b> Multi-view Stacking for Home Tasks Recognition</a></li>
+<li class="chapter" data-level="3.5" data-path="ensemble.html"><a href="ensemble.html#SummaryEnsemble"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
-<li><a href="edavis.html#edavis" id="toc-edavis"><span class="toc-section-number">4</span> Exploring and Visualizing Behavioral Data</a>
+<li class="chapter" data-level="4" data-path="edavis.html"><a href="edavis.html"><i class="fa fa-check"></i><b>4</b> Exploring and Visualizing Behavioral Data</a>
 <ul>
-<li><a href="edavis.html#talking-with-field-experts" id="toc-talking-with-field-experts"><span class="toc-section-number">4.1</span> Talking with Field Experts</a></li>
-<li><a href="edavis.html#summary-statistics" id="toc-summary-statistics"><span class="toc-section-number">4.2</span> Summary Statistics</a></li>
-<li><a href="edavis.html#class-distributions" id="toc-class-distributions"><span class="toc-section-number">4.3</span> Class Distributions</a></li>
-<li><a href="edavis.html#user-class-sparsity-matrix" id="toc-user-class-sparsity-matrix"><span class="toc-section-number">4.4</span> User-class Sparsity Matrix</a></li>
-<li><a href="edavis.html#boxplots" id="toc-boxplots"><span class="toc-section-number">4.5</span> Boxplots</a></li>
-<li><a href="edavis.html#correlation-plots" id="toc-correlation-plots"><span class="toc-section-number">4.6</span> Correlation Plots</a>
+<li class="chapter" data-level="4.1" data-path="edavis.html"><a href="edavis.html#talking-with-field-experts"><i class="fa fa-check"></i><b>4.1</b> Talking with Field Experts</a></li>
+<li class="chapter" data-level="4.2" data-path="edavis.html"><a href="edavis.html#summary-statistics"><i class="fa fa-check"></i><b>4.2</b> Summary Statistics</a></li>
+<li class="chapter" data-level="4.3" data-path="edavis.html"><a href="edavis.html#class-distributions"><i class="fa fa-check"></i><b>4.3</b> Class Distributions</a></li>
+<li class="chapter" data-level="4.4" data-path="edavis.html"><a href="edavis.html#user-class-sparsity-matrix"><i class="fa fa-check"></i><b>4.4</b> User-class Sparsity Matrix</a></li>
+<li class="chapter" data-level="4.5" data-path="edavis.html"><a href="edavis.html#boxplots"><i class="fa fa-check"></i><b>4.5</b> Boxplots</a></li>
+<li class="chapter" data-level="4.6" data-path="edavis.html"><a href="edavis.html#correlation-plots"><i class="fa fa-check"></i><b>4.6</b> Correlation Plots</a>
 <ul>
-<li><a href="edavis.html#interactive-correlation-plots" id="toc-interactive-correlation-plots"><span class="toc-section-number">4.6.1</span> Interactive Correlation Plots</a></li>
+<li class="chapter" data-level="4.6.1" data-path="edavis.html"><a href="edavis.html#interactive-correlation-plots"><i class="fa fa-check"></i><b>4.6.1</b> Interactive Correlation Plots</a></li>
 </ul></li>
-<li><a href="edavis.html#timeseries" id="toc-timeseries"><span class="toc-section-number">4.7</span> Timeseries</a>
+<li class="chapter" data-level="4.7" data-path="edavis.html"><a href="edavis.html#timeseries"><i class="fa fa-check"></i><b>4.7</b> Timeseries</a>
 <ul>
-<li><a href="edavis.html#interactive-timeseries" id="toc-interactive-timeseries"><span class="toc-section-number">4.7.1</span> Interactive Timeseries</a></li>
+<li class="chapter" data-level="4.7.1" data-path="edavis.html"><a href="edavis.html#interactive-timeseries"><i class="fa fa-check"></i><b>4.7.1</b> Interactive Timeseries</a></li>
 </ul></li>
-<li><a href="edavis.html#multidimensional-scaling-mds" id="toc-multidimensional-scaling-mds"><span class="toc-section-number">4.8</span> Multidimensional Scaling (MDS)</a></li>
-<li><a href="edavis.html#heatmaps" id="toc-heatmaps"><span class="toc-section-number">4.9</span> Heatmaps</a></li>
-<li><a href="edavis.html#automated-eda" id="toc-automated-eda"><span class="toc-section-number">4.10</span> Automated EDA</a></li>
-<li><a href="edavis.html#SummaryExploratory" id="toc-SummaryExploratory"><span class="toc-section-number">4.11</span> Summary</a></li>
+<li class="chapter" data-level="4.8" data-path="edavis.html"><a href="edavis.html#multidimensional-scaling-mds"><i class="fa fa-check"></i><b>4.8</b> Multidimensional Scaling (MDS)</a></li>
+<li class="chapter" data-level="4.9" data-path="edavis.html"><a href="edavis.html#heatmaps"><i class="fa fa-check"></i><b>4.9</b> Heatmaps</a></li>
+<li class="chapter" data-level="4.10" data-path="edavis.html"><a href="edavis.html#automated-eda"><i class="fa fa-check"></i><b>4.10</b> Automated EDA</a></li>
+<li class="chapter" data-level="4.11" data-path="edavis.html"><a href="edavis.html#SummaryExploratory"><i class="fa fa-check"></i><b>4.11</b> Summary</a></li>
 </ul></li>
-<li><a href="preprocessing.html#preprocessing" id="toc-preprocessing"><span class="toc-section-number">5</span> Preprocessing Behavioral Data</a>
+<li class="chapter" data-level="5" data-path="preprocessing.html"><a href="preprocessing.html"><i class="fa fa-check"></i><b>5</b> Preprocessing Behavioral Data</a>
 <ul>
-<li><a href="preprocessing.html#missing-values" id="toc-missing-values"><span class="toc-section-number">5.1</span> Missing Values</a>
+<li class="chapter" data-level="5.1" data-path="preprocessing.html"><a href="preprocessing.html#missing-values"><i class="fa fa-check"></i><b>5.1</b> Missing Values</a>
 <ul>
-<li><a href="preprocessing.html#imputation" id="toc-imputation"><span class="toc-section-number">5.1.1</span> Imputation</a></li>
+<li class="chapter" data-level="5.1.1" data-path="preprocessing.html"><a href="preprocessing.html#imputation"><i class="fa fa-check"></i><b>5.1.1</b> Imputation</a></li>
 </ul></li>
-<li><a href="preprocessing.html#smoothing" id="toc-smoothing"><span class="toc-section-number">5.2</span> Smoothing</a></li>
-<li><a href="preprocessing.html#normalization" id="toc-normalization"><span class="toc-section-number">5.3</span> Normalization</a></li>
-<li><a href="preprocessing.html#imbalanced-classes" id="toc-imbalanced-classes"><span class="toc-section-number">5.4</span> Imbalanced Classes</a>
+<li class="chapter" data-level="5.2" data-path="preprocessing.html"><a href="preprocessing.html#smoothing"><i class="fa fa-check"></i><b>5.2</b> Smoothing</a></li>
+<li class="chapter" data-level="5.3" data-path="preprocessing.html"><a href="preprocessing.html#normalization"><i class="fa fa-check"></i><b>5.3</b> Normalization</a></li>
+<li class="chapter" data-level="5.4" data-path="preprocessing.html"><a href="preprocessing.html#imbalanced-classes"><i class="fa fa-check"></i><b>5.4</b> Imbalanced Classes</a>
 <ul>
-<li><a href="preprocessing.html#random-oversampling" id="toc-random-oversampling"><span class="toc-section-number">5.4.1</span> Random Oversampling</a></li>
-<li><a href="preprocessing.html#smote" id="toc-smote"><span class="toc-section-number">5.4.2</span> SMOTE</a></li>
+<li class="chapter" data-level="5.4.1" data-path="preprocessing.html"><a href="preprocessing.html#random-oversampling"><i class="fa fa-check"></i><b>5.4.1</b> Random Oversampling</a></li>
+<li class="chapter" data-level="5.4.2" data-path="preprocessing.html"><a href="preprocessing.html#smote"><i class="fa fa-check"></i><b>5.4.2</b> SMOTE</a></li>
 </ul></li>
-<li><a href="preprocessing.html#infoinjection" id="toc-infoinjection"><span class="toc-section-number">5.5</span> Information Injection</a></li>
-<li><a href="preprocessing.html#one-hot-encoding" id="toc-one-hot-encoding"><span class="toc-section-number">5.6</span> One-hot Encoding</a></li>
-<li><a href="preprocessing.html#SummaryPreprocessing" id="toc-SummaryPreprocessing"><span class="toc-section-number">5.7</span> Summary</a></li>
+<li class="chapter" data-level="5.5" data-path="preprocessing.html"><a href="preprocessing.html#infoinjection"><i class="fa fa-check"></i><b>5.5</b> Information Injection</a></li>
+<li class="chapter" data-level="5.6" data-path="preprocessing.html"><a href="preprocessing.html#one-hot-encoding"><i class="fa fa-check"></i><b>5.6</b> One-hot Encoding</a></li>
+<li class="chapter" data-level="5.7" data-path="preprocessing.html"><a href="preprocessing.html#SummaryPreprocessing"><i class="fa fa-check"></i><b>5.7</b> Summary</a></li>
 </ul></li>
-<li><a href="unsupervised.html#unsupervised" id="toc-unsupervised"><span class="toc-section-number">6</span> Discovering Behaviors with Unsupervised Learning</a>
+<li class="chapter" data-level="6" data-path="unsupervised.html"><a href="unsupervised.html"><i class="fa fa-check"></i><b>6</b> Discovering Behaviors with Unsupervised Learning</a>
 <ul>
-<li><a href="unsupervised.html#k-means-clustering" id="toc-k-means-clustering"><span class="toc-section-number">6.1</span> <span class="math inline">\(k\)</span>-means Clustering</a>
+<li class="chapter" data-level="6.1" data-path="unsupervised.html"><a href="unsupervised.html#k-means-clustering"><i class="fa fa-check"></i><b>6.1</b> <span class="math inline">\(k\)</span>-means Clustering</a>
 <ul>
-<li><a href="unsupervised.html#studentresponses" id="toc-studentresponses"><span class="toc-section-number">6.1.1</span> Grouping Student Responses</a></li>
+<li class="chapter" data-level="6.1.1" data-path="unsupervised.html"><a href="unsupervised.html#studentresponses"><i class="fa fa-check"></i><b>6.1.1</b> Grouping Student Responses</a></li>
 </ul></li>
-<li><a href="unsupervised.html#the-silhouette-index" id="toc-the-silhouette-index"><span class="toc-section-number">6.2</span> The Silhouette Index</a></li>
-<li><a href="unsupervised.html#associationrules" id="toc-associationrules"><span class="toc-section-number">6.3</span> Mining Association Rules</a>
+<li class="chapter" data-level="6.2" data-path="unsupervised.html"><a href="unsupervised.html#the-silhouette-index"><i class="fa fa-check"></i><b>6.2</b> The Silhouette Index</a></li>
+<li class="chapter" data-level="6.3" data-path="unsupervised.html"><a href="unsupervised.html#associationrules"><i class="fa fa-check"></i><b>6.3</b> Mining Association Rules</a>
 <ul>
-<li><a href="unsupervised.html#finding-rules-for-criminal-behavior" id="toc-finding-rules-for-criminal-behavior"><span class="toc-section-number">6.3.1</span> Finding Rules for Criminal Behavior</a></li>
+<li class="chapter" data-level="6.3.1" data-path="unsupervised.html"><a href="unsupervised.html#finding-rules-for-criminal-behavior"><i class="fa fa-check"></i><b>6.3.1</b> Finding Rules for Criminal Behavior</a></li>
 </ul></li>
-<li><a href="unsupervised.html#SummaryUnsupervised" id="toc-SummaryUnsupervised"><span class="toc-section-number">6.4</span> Summary</a></li>
+<li class="chapter" data-level="6.4" data-path="unsupervised.html"><a href="unsupervised.html#SummaryUnsupervised"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
 </ul></li>
-<li><a href="representations.html#representations" id="toc-representations"><span class="toc-section-number">7</span> Encoding Behavioral Data</a>
+<li class="chapter" data-level="7" data-path="representations.html"><a href="representations.html"><i class="fa fa-check"></i><b>7</b> Encoding Behavioral Data</a>
 <ul>
-<li><a href="representations.html#feature-vectors" id="toc-feature-vectors"><span class="toc-section-number">7.1</span> Feature Vectors</a></li>
-<li><a href="representations.html#sectimeseries" id="toc-sectimeseries"><span class="toc-section-number">7.2</span> Timeseries</a></li>
-<li><a href="representations.html#transactions" id="toc-transactions"><span class="toc-section-number">7.3</span> Transactions</a></li>
-<li><a href="representations.html#images" id="toc-images"><span class="toc-section-number">7.4</span> Images</a></li>
-<li><a href="representations.html#recurrence-plots" id="toc-recurrence-plots"><span class="toc-section-number">7.5</span> Recurrence Plots</a>
+<li class="chapter" data-level="7.1" data-path="representations.html"><a href="representations.html#feature-vectors"><i class="fa fa-check"></i><b>7.1</b> Feature Vectors</a></li>
+<li class="chapter" data-level="7.2" data-path="representations.html"><a href="representations.html#sectimeseries"><i class="fa fa-check"></i><b>7.2</b> Timeseries</a></li>
+<li class="chapter" data-level="7.3" data-path="representations.html"><a href="representations.html#transactions"><i class="fa fa-check"></i><b>7.3</b> Transactions</a></li>
+<li class="chapter" data-level="7.4" data-path="representations.html"><a href="representations.html#images"><i class="fa fa-check"></i><b>7.4</b> Images</a></li>
+<li class="chapter" data-level="7.5" data-path="representations.html"><a href="representations.html#recurrence-plots"><i class="fa fa-check"></i><b>7.5</b> Recurrence Plots</a>
 <ul>
-<li><a href="representations.html#computing-recurrence-plots" id="toc-computing-recurrence-plots"><span class="toc-section-number">7.5.1</span> Computing Recurrence Plots</a></li>
-<li><a href="representations.html#recurrence-plots-of-hand-gestures" id="toc-recurrence-plots-of-hand-gestures"><span class="toc-section-number">7.5.2</span> Recurrence Plots of Hand Gestures</a></li>
+<li class="chapter" data-level="7.5.1" data-path="representations.html"><a href="representations.html#computing-recurrence-plots"><i class="fa fa-check"></i><b>7.5.1</b> Computing Recurrence Plots</a></li>
+<li class="chapter" data-level="7.5.2" data-path="representations.html"><a href="representations.html#recurrence-plots-of-hand-gestures"><i class="fa fa-check"></i><b>7.5.2</b> Recurrence Plots of Hand Gestures</a></li>
 </ul></li>
-<li><a href="representations.html#bag-of-words" id="toc-bag-of-words"><span class="toc-section-number">7.6</span> Bag-of-Words</a>
+<li class="chapter" data-level="7.6" data-path="representations.html"><a href="representations.html#bag-of-words"><i class="fa fa-check"></i><b>7.6</b> Bag-of-Words</a>
 <ul>
-<li><a href="representations.html#bow-for-complex-activities." id="toc-bow-for-complex-activities."><span class="toc-section-number">7.6.1</span> BoW for Complex Activities.</a></li>
+<li class="chapter" data-level="7.6.1" data-path="representations.html"><a href="representations.html#bow-for-complex-activities."><i class="fa fa-check"></i><b>7.6.1</b> BoW for Complex Activities.</a></li>
 </ul></li>
-<li><a href="representations.html#graphs" id="toc-graphs"><span class="toc-section-number">7.7</span> Graphs</a>
+<li class="chapter" data-level="7.7" data-path="representations.html"><a href="representations.html#graphs"><i class="fa fa-check"></i><b>7.7</b> Graphs</a>
 <ul>
-<li><a href="representations.html#complex-activities-as-graphs" id="toc-complex-activities-as-graphs"><span class="toc-section-number">7.7.1</span> Complex Activities as Graphs</a></li>
+<li class="chapter" data-level="7.7.1" data-path="representations.html"><a href="representations.html#complex-activities-as-graphs"><i class="fa fa-check"></i><b>7.7.1</b> Complex Activities as Graphs</a></li>
 </ul></li>
-<li><a href="representations.html#SummaryRepresentations" id="toc-SummaryRepresentations"><span class="toc-section-number">7.8</span> Summary</a></li>
+<li class="chapter" data-level="7.8" data-path="representations.html"><a href="representations.html#SummaryRepresentations"><i class="fa fa-check"></i><b>7.8</b> Summary</a></li>
 </ul></li>
-<li><a href="deeplearning.html#deeplearning" id="toc-deeplearning"><span class="toc-section-number">8</span> Predicting Behavior with Deep Learning</a>
+<li class="chapter" data-level="8" data-path="deeplearning.html"><a href="deeplearning.html"><i class="fa fa-check"></i><b>8</b> Predicting Behavior with Deep Learning</a>
 <ul>
-<li><a href="deeplearning.html#ann" id="toc-ann"><span class="toc-section-number">8.1</span> Introduction to Artificial Neural Networks</a>
+<li class="chapter" data-level="8.1" data-path="deeplearning.html"><a href="deeplearning.html#ann"><i class="fa fa-check"></i><b>8.1</b> Introduction to Artificial Neural Networks</a>
 <ul>
-<li><a href="deeplearning.html#sigmoid-and-relu-units" id="toc-sigmoid-and-relu-units"><span class="toc-section-number">8.1.1</span> Sigmoid and ReLU Units</a></li>
-<li><a href="deeplearning.html#assembling-units-into-layers" id="toc-assembling-units-into-layers"><span class="toc-section-number">8.1.2</span> Assembling Units into Layers</a></li>
-<li><a href="deeplearning.html#deep-neural-networks" id="toc-deep-neural-networks"><span class="toc-section-number">8.1.3</span> Deep Neural Networks</a></li>
-<li><a href="deeplearning.html#learning-the-parameters" id="toc-learning-the-parameters"><span class="toc-section-number">8.1.4</span> Learning the Parameters</a></li>
-<li><a href="deeplearning.html#parameter-learning-example-in-r" id="toc-parameter-learning-example-in-r"><span class="toc-section-number">8.1.5</span> Parameter Learning Example in R</a></li>
-<li><a href="deeplearning.html#stochastic-gradient-descent" id="toc-stochastic-gradient-descent"><span class="toc-section-number">8.1.6</span> Stochastic Gradient Descent</a></li>
+<li class="chapter" data-level="8.1.1" data-path="deeplearning.html"><a href="deeplearning.html#sigmoid-and-relu-units"><i class="fa fa-check"></i><b>8.1.1</b> Sigmoid and ReLU Units</a></li>
+<li class="chapter" data-level="8.1.2" data-path="deeplearning.html"><a href="deeplearning.html#assembling-units-into-layers"><i class="fa fa-check"></i><b>8.1.2</b> Assembling Units into Layers</a></li>
+<li class="chapter" data-level="8.1.3" data-path="deeplearning.html"><a href="deeplearning.html#deep-neural-networks"><i class="fa fa-check"></i><b>8.1.3</b> Deep Neural Networks</a></li>
+<li class="chapter" data-level="8.1.4" data-path="deeplearning.html"><a href="deeplearning.html#learning-the-parameters"><i class="fa fa-check"></i><b>8.1.4</b> Learning the Parameters</a></li>
+<li class="chapter" data-level="8.1.5" data-path="deeplearning.html"><a href="deeplearning.html#parameter-learning-example-in-r"><i class="fa fa-check"></i><b>8.1.5</b> Parameter Learning Example in R</a></li>
+<li class="chapter" data-level="8.1.6" data-path="deeplearning.html"><a href="deeplearning.html#stochastic-gradient-descent"><i class="fa fa-check"></i><b>8.1.6</b> Stochastic Gradient Descent</a></li>
 </ul></li>
-<li><a href="deeplearning.html#keras-and-tensorflow-with-r" id="toc-keras-and-tensorflow-with-r"><span class="toc-section-number">8.2</span> Keras and TensorFlow with R</a>
+<li class="chapter" data-level="8.2" data-path="deeplearning.html"><a href="deeplearning.html#keras-and-tensorflow-with-r"><i class="fa fa-check"></i><b>8.2</b> Keras and TensorFlow with R</a>
 <ul>
-<li><a href="deeplearning.html#keras-example" id="toc-keras-example"><span class="toc-section-number">8.2.1</span> Keras Example</a></li>
+<li class="chapter" data-level="8.2.1" data-path="deeplearning.html"><a href="deeplearning.html#keras-example"><i class="fa fa-check"></i><b>8.2.1</b> Keras Example</a></li>
 </ul></li>
-<li><a href="deeplearning.html#classification-with-neural-networks" id="toc-classification-with-neural-networks"><span class="toc-section-number">8.3</span> Classification with Neural Networks</a>
+<li class="chapter" data-level="8.3" data-path="deeplearning.html"><a href="deeplearning.html#classification-with-neural-networks"><i class="fa fa-check"></i><b>8.3</b> Classification with Neural Networks</a>
 <ul>
-<li><a href="deeplearning.html#classification-of-electromyography-signals" id="toc-classification-of-electromyography-signals"><span class="toc-section-number">8.3.1</span> Classification of Electromyography Signals</a></li>
+<li class="chapter" data-level="8.3.1" data-path="deeplearning.html"><a href="deeplearning.html#classification-of-electromyography-signals"><i class="fa fa-check"></i><b>8.3.1</b> Classification of Electromyography Signals</a></li>
 </ul></li>
-<li><a href="deeplearning.html#overfitting" id="toc-overfitting"><span class="toc-section-number">8.4</span> Overfitting</a>
+<li class="chapter" data-level="8.4" data-path="deeplearning.html"><a href="deeplearning.html#overfitting"><i class="fa fa-check"></i><b>8.4</b> Overfitting</a>
 <ul>
-<li><a href="deeplearning.html#early-stopping" id="toc-early-stopping"><span class="toc-section-number">8.4.1</span> Early Stopping</a></li>
-<li><a href="deeplearning.html#dropout" id="toc-dropout"><span class="toc-section-number">8.4.2</span> Dropout</a></li>
+<li class="chapter" data-level="8.4.1" data-path="deeplearning.html"><a href="deeplearning.html#early-stopping"><i class="fa fa-check"></i><b>8.4.1</b> Early Stopping</a></li>
+<li class="chapter" data-level="8.4.2" data-path="deeplearning.html"><a href="deeplearning.html#dropout"><i class="fa fa-check"></i><b>8.4.2</b> Dropout</a></li>
 </ul></li>
-<li><a href="deeplearning.html#fine-tuning-a-neural-network" id="toc-fine-tuning-a-neural-network"><span class="toc-section-number">8.5</span> Fine-tuning a Neural Network</a></li>
-<li><a href="deeplearning.html#cnns" id="toc-cnns"><span class="toc-section-number">8.6</span> Convolutional Neural Networks</a>
+<li class="chapter" data-level="8.5" data-path="deeplearning.html"><a href="deeplearning.html#fine-tuning-a-neural-network"><i class="fa fa-check"></i><b>8.5</b> Fine-tuning a Neural Network</a></li>
+<li class="chapter" data-level="8.6" data-path="deeplearning.html"><a href="deeplearning.html#cnns"><i class="fa fa-check"></i><b>8.6</b> Convolutional Neural Networks</a>
 <ul>
-<li><a href="deeplearning.html#convolutions" id="toc-convolutions"><span class="toc-section-number">8.6.1</span> Convolutions</a></li>
-<li><a href="deeplearning.html#pooling-operations" id="toc-pooling-operations"><span class="toc-section-number">8.6.2</span> Pooling Operations</a></li>
+<li class="chapter" data-level="8.6.1" data-path="deeplearning.html"><a href="deeplearning.html#convolutions"><i class="fa fa-check"></i><b>8.6.1</b> Convolutions</a></li>
+<li class="chapter" data-level="8.6.2" data-path="deeplearning.html"><a href="deeplearning.html#pooling-operations"><i class="fa fa-check"></i><b>8.6.2</b> Pooling Operations</a></li>
 </ul></li>
-<li><a href="deeplearning.html#cnns-with-keras" id="toc-cnns-with-keras"><span class="toc-section-number">8.7</span> CNNs with Keras</a>
+<li class="chapter" data-level="8.7" data-path="deeplearning.html"><a href="deeplearning.html#cnns-with-keras"><i class="fa fa-check"></i><b>8.7</b> CNNs with Keras</a>
 <ul>
-<li><a href="deeplearning.html#example-1" id="toc-example-1"><span class="toc-section-number">8.7.1</span> Example 1</a></li>
-<li><a href="deeplearning.html#example-2" id="toc-example-2"><span class="toc-section-number">8.7.2</span> Example 2</a></li>
+<li class="chapter" data-level="8.7.1" data-path="deeplearning.html"><a href="deeplearning.html#example-1"><i class="fa fa-check"></i><b>8.7.1</b> Example 1</a></li>
+<li class="chapter" data-level="8.7.2" data-path="deeplearning.html"><a href="deeplearning.html#example-2"><i class="fa fa-check"></i><b>8.7.2</b> Example 2</a></li>
 </ul></li>
-<li><a href="deeplearning.html#cnnSmile" id="toc-cnnSmile"><span class="toc-section-number">8.8</span> Smiles Detection with a CNN</a></li>
-<li><a href="deeplearning.html#SummaryDeepLearning" id="toc-SummaryDeepLearning"><span class="toc-section-number">8.9</span> Summary</a></li>
+<li class="chapter" data-level="8.8" data-path="deeplearning.html"><a href="deeplearning.html#cnnSmile"><i class="fa fa-check"></i><b>8.8</b> Smiles Detection with a CNN</a></li>
+<li class="chapter" data-level="8.9" data-path="deeplearning.html"><a href="deeplearning.html#SummaryDeepLearning"><i class="fa fa-check"></i><b>8.9</b> Summary</a></li>
 </ul></li>
-<li><a href="multiuser.html#multiuser" id="toc-multiuser"><span class="toc-section-number">9</span> Multi-user Validation</a>
+<li class="chapter" data-level="9" data-path="multiuser.html"><a href="multiuser.html"><i class="fa fa-check"></i><b>9</b> Multi-user Validation</a>
 <ul>
-<li><a href="multiuser.html#mixed-models" id="toc-mixed-models"><span class="toc-section-number">9.1</span> Mixed Models</a>
+<li class="chapter" data-level="9.1" data-path="multiuser.html"><a href="multiuser.html#mixed-models"><i class="fa fa-check"></i><b>9.1</b> Mixed Models</a>
 <ul>
-<li><a href="multiuser.html#skeleton-action-recognition-with-mixed-models" id="toc-skeleton-action-recognition-with-mixed-models"><span class="toc-section-number">9.1.1</span> Skeleton Action Recognition with Mixed Models</a></li>
+<li class="chapter" data-level="9.1.1" data-path="multiuser.html"><a href="multiuser.html#skeleton-action-recognition-with-mixed-models"><i class="fa fa-check"></i><b>9.1.1</b> Skeleton Action Recognition with Mixed Models</a></li>
 </ul></li>
-<li><a href="multiuser.html#user-independent-models" id="toc-user-independent-models"><span class="toc-section-number">9.2</span> User-independent Models</a></li>
-<li><a href="multiuser.html#user-dependent-models" id="toc-user-dependent-models"><span class="toc-section-number">9.3</span> User-dependent Models</a></li>
-<li><a href="multiuser.html#user-adaptive-models" id="toc-user-adaptive-models"><span class="toc-section-number">9.4</span> User-adaptive Models</a>
+<li class="chapter" data-level="9.2" data-path="multiuser.html"><a href="multiuser.html#user-independent-models"><i class="fa fa-check"></i><b>9.2</b> User-independent Models</a></li>
+<li class="chapter" data-level="9.3" data-path="multiuser.html"><a href="multiuser.html#user-dependent-models"><i class="fa fa-check"></i><b>9.3</b> User-dependent Models</a></li>
+<li class="chapter" data-level="9.4" data-path="multiuser.html"><a href="multiuser.html#user-adaptive-models"><i class="fa fa-check"></i><b>9.4</b> User-adaptive Models</a>
 <ul>
-<li><a href="multiuser.html#transfer-learning" id="toc-transfer-learning"><span class="toc-section-number">9.4.1</span> Transfer Learning</a></li>
-<li><a href="multiuser.html#a-user-adaptive-model-for-activity-recognition" id="toc-a-user-adaptive-model-for-activity-recognition"><span class="toc-section-number">9.4.2</span> A User-adaptive Model for Activity Recognition</a></li>
+<li class="chapter" data-level="9.4.1" data-path="multiuser.html"><a href="multiuser.html#transfer-learning"><i class="fa fa-check"></i><b>9.4.1</b> Transfer Learning</a></li>
+<li class="chapter" data-level="9.4.2" data-path="multiuser.html"><a href="multiuser.html#a-user-adaptive-model-for-activity-recognition"><i class="fa fa-check"></i><b>9.4.2</b> A User-adaptive Model for Activity Recognition</a></li>
 </ul></li>
-<li><a href="multiuser.html#SummaryMultiUser" id="toc-SummaryMultiUser"><span class="toc-section-number">9.5</span> Summary</a></li>
+<li class="chapter" data-level="9.5" data-path="multiuser.html"><a href="multiuser.html#SummaryMultiUser"><i class="fa fa-check"></i><b>9.5</b> Summary</a></li>
 </ul></li>
-<li><a href="abnormalbehaviors.html#abnormalbehaviors" id="toc-abnormalbehaviors"><span class="toc-section-number">10</span> Detecting Abnormal Behaviors</a>
+<li class="chapter" data-level="10" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html"><i class="fa fa-check"></i><b>10</b> Detecting Abnormal Behaviors</a>
 <ul>
-<li><a href="abnormalbehaviors.html#isolation-forests" id="toc-isolation-forests"><span class="toc-section-number">10.1</span> Isolation Forests</a></li>
-<li><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors" id="toc-detecting-abnormal-fish-behaviors"><span class="toc-section-number">10.2</span> Detecting Abnormal Fish Behaviors</a>
+<li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
+<li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a>
 <ul>
-<li><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories" id="toc-exploring-and-visualizing-trajectories"><span class="toc-section-number">10.2.1</span> Exploring and Visualizing Trajectories</a></li>
-<li><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction" id="toc-preprocessing-and-feature-extraction"><span class="toc-section-number">10.2.2</span> Preprocessing and Feature Extraction</a></li>
-<li><a href="abnormalbehaviors.html#training-the-model" id="toc-training-the-model"><span class="toc-section-number">10.2.3</span> Training the Model</a></li>
-<li><a href="abnormalbehaviors.html#roc-curve-and-auc" id="toc-roc-curve-and-auc"><span class="toc-section-number">10.2.4</span> ROC Curve and AUC</a></li>
+<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Exploring and Visualizing Trajectories</a></li>
+<li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
+<li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
+<li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC Curve and AUC</a></li>
 </ul></li>
-<li><a href="abnormalbehaviors.html#autoencoders" id="toc-autoencoders"><span class="toc-section-number">10.3</span> Autoencoders</a>
+<li class="chapter" data-level="10.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders"><i class="fa fa-check"></i><b>10.3</b> Autoencoders</a>
 <ul>
-<li><a href="abnormalbehaviors.html#autoencoders-for-anomaly-detection" id="toc-autoencoders-for-anomaly-detection"><span class="toc-section-number">10.3.1</span> Autoencoders for Anomaly Detection</a></li>
+<li class="chapter" data-level="10.3.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders-for-anomaly-detection"><i class="fa fa-check"></i><b>10.3.1</b> Autoencoders for Anomaly Detection</a></li>
 </ul></li>
-<li><a href="abnormalbehaviors.html#SummaryAnomalyDetection" id="toc-SummaryAnomalyDetection"><span class="toc-section-number">10.4</span> Summary</a></li>
+<li class="chapter" data-level="10.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#SummaryAnomalyDetection"><i class="fa fa-check"></i><b>10.4</b> Summary</a></li>
 </ul></li>
-<li><a href="#appendix-appendix" id="toc-appendix-appendix">(APPENDIX) Appendix</a></li>
-<li><a href="appendixInstall.html#appendixInstall" id="toc-appendixInstall"><span class="toc-section-number">11</span> Setup Your Environment</a>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendixInstall.html"><a href="appendixInstall.html"><i class="fa fa-check"></i><b>A</b> Setup Your Environment</a>
 <ul>
-<li><a href="appendixInstall.html#installing-the-datasets" id="toc-installing-the-datasets"><span class="toc-section-number">11.1</span> Installing the Datasets</a></li>
-<li><a href="appendixInstall.html#installing-the-examples-source-code" id="toc-installing-the-examples-source-code"><span class="toc-section-number">11.2</span> Installing the Examples Source Code</a></li>
-<li><a href="appendixInstall.html#running-shiny-apps" id="toc-running-shiny-apps"><span class="toc-section-number">11.3</span> Running Shiny Apps</a></li>
-<li><a href="appendixInstall.html#installing-keras-and-tensorflow" id="toc-installing-keras-and-tensorflow"><span class="toc-section-number">11.4</span> Installing Keras and TensorFlow</a></li>
+<li class="chapter" data-level="A.1" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-datasets"><i class="fa fa-check"></i><b>A.1</b> Installing the Datasets</a></li>
+<li class="chapter" data-level="A.2" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-examples-source-code"><i class="fa fa-check"></i><b>A.2</b> Installing the Examples Source Code</a></li>
+<li class="chapter" data-level="A.3" data-path="appendixInstall.html"><a href="appendixInstall.html#running-shiny-apps"><i class="fa fa-check"></i><b>A.3</b> Running Shiny Apps</a></li>
+<li class="chapter" data-level="A.4" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-keras-and-tensorflow"><i class="fa fa-check"></i><b>A.4</b> Installing Keras and TensorFlow</a></li>
 </ul></li>
-<li><a href="appendixDatasets.html#appendixDatasets" id="toc-appendixDatasets"><span class="toc-section-number">12</span> Datasets</a>
+<li class="chapter" data-level="B" data-path="appendixDatasets.html"><a href="appendixDatasets.html"><i class="fa fa-check"></i><b>B</b> Datasets</a>
 <ul>
-<li><a href="appendixDatasets.html#complex-activities" id="toc-complex-activities"><span class="toc-section-number">12.1</span> COMPLEX ACTIVITIES</a></li>
-<li><a href="appendixDatasets.html#depresjon" id="toc-depresjon"><span class="toc-section-number">12.2</span> DEPRESJON</a></li>
-<li><a href="appendixDatasets.html#electromyography" id="toc-electromyography"><span class="toc-section-number">12.3</span> ELECTROMYOGRAPHY</a></li>
-<li><a href="appendixDatasets.html#fish-trajectories" id="toc-fish-trajectories"><span class="toc-section-number">12.4</span> FISH TRAJECTORIES</a></li>
-<li><a href="appendixDatasets.html#hand-gestures" id="toc-hand-gestures"><span class="toc-section-number">12.5</span> HAND GESTURES</a></li>
-<li><a href="appendixDatasets.html#home-tasks" id="toc-home-tasks"><span class="toc-section-number">12.6</span> HOME TASKS</a></li>
-<li><a href="appendixDatasets.html#homicide-reports" id="toc-homicide-reports"><span class="toc-section-number">12.7</span> HOMICIDE REPORTS</a></li>
-<li><a href="appendixDatasets.html#indoor-location" id="toc-indoor-location"><span class="toc-section-number">12.8</span> INDOOR LOCATION</a></li>
-<li><a href="appendixDatasets.html#sheep-goats" id="toc-sheep-goats"><span class="toc-section-number">12.9</span> SHEEP GOATS</a></li>
-<li><a href="appendixDatasets.html#skeleton-actions" id="toc-skeleton-actions"><span class="toc-section-number">12.10</span> SKELETON ACTIONS</a></li>
-<li><a href="appendixDatasets.html#smartphone-activities" id="toc-smartphone-activities"><span class="toc-section-number">12.11</span> SMARTPHONE ACTIVITIES</a></li>
-<li><a href="appendixDatasets.html#smiles" id="toc-smiles"><span class="toc-section-number">12.12</span> SMILES</a></li>
-<li><a href="appendixDatasets.html#students-mental-health" id="toc-students-mental-health"><span class="toc-section-number">12.13</span> STUDENTS’ MENTAL HEALTH</a></li>
+<li class="chapter" data-level="B.1" data-path="appendixDatasets.html"><a href="appendixDatasets.html#complex-activities"><i class="fa fa-check"></i><b>B.1</b> COMPLEX ACTIVITIES</a></li>
+<li class="chapter" data-level="B.2" data-path="appendixDatasets.html"><a href="appendixDatasets.html#depresjon"><i class="fa fa-check"></i><b>B.2</b> DEPRESJON</a></li>
+<li class="chapter" data-level="B.3" data-path="appendixDatasets.html"><a href="appendixDatasets.html#electromyography"><i class="fa fa-check"></i><b>B.3</b> ELECTROMYOGRAPHY</a></li>
+<li class="chapter" data-level="B.4" data-path="appendixDatasets.html"><a href="appendixDatasets.html#fish-trajectories"><i class="fa fa-check"></i><b>B.4</b> FISH TRAJECTORIES</a></li>
+<li class="chapter" data-level="B.5" data-path="appendixDatasets.html"><a href="appendixDatasets.html#hand-gestures"><i class="fa fa-check"></i><b>B.5</b> HAND GESTURES</a></li>
+<li class="chapter" data-level="B.6" data-path="appendixDatasets.html"><a href="appendixDatasets.html#home-tasks"><i class="fa fa-check"></i><b>B.6</b> HOME TASKS</a></li>
+<li class="chapter" data-level="B.7" data-path="appendixDatasets.html"><a href="appendixDatasets.html#homicide-reports"><i class="fa fa-check"></i><b>B.7</b> HOMICIDE REPORTS</a></li>
+<li class="chapter" data-level="B.8" data-path="appendixDatasets.html"><a href="appendixDatasets.html#indoor-location"><i class="fa fa-check"></i><b>B.8</b> INDOOR LOCATION</a></li>
+<li class="chapter" data-level="B.9" data-path="appendixDatasets.html"><a href="appendixDatasets.html#sheep-goats"><i class="fa fa-check"></i><b>B.9</b> SHEEP GOATS</a></li>
+<li class="chapter" data-level="B.10" data-path="appendixDatasets.html"><a href="appendixDatasets.html#skeleton-actions"><i class="fa fa-check"></i><b>B.10</b> SKELETON ACTIONS</a></li>
+<li class="chapter" data-level="B.11" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smartphone-activities"><i class="fa fa-check"></i><b>B.11</b> SMARTPHONE ACTIVITIES</a></li>
+<li class="chapter" data-level="B.12" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smiles"><i class="fa fa-check"></i><b>B.12</b> SMILES</a></li>
+<li class="chapter" data-level="B.13" data-path="appendixDatasets.html"><a href="appendixDatasets.html#students-mental-health"><i class="fa fa-check"></i><b>B.13</b> STUDENTS’ MENTAL HEALTH</a></li>
 </ul></li>
-<li><a href="citing-this-book.html#citing-this-book" id="toc-citing-this-book">Citing this Book</a></li>
-<li><a href="references.html#references" id="toc-references">References</a></li>
+<li class="chapter" data-level="" data-path="citing-this-book.html"><a href="citing-this-book.html"><i class="fa fa-check"></i>Citing this Book</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
       </nav>
@@ -464,7 +466,7 @@ Several of the methods presented here can lead to <em>information injection</em>
 <p>Many datasets will have missing values and we need ways to identify and deal with that. Missing data could be due to faulty sensors, processing errors, unavailable information, and so on. In this section, I present some tools that ease the identification of missing values. Later, some imputation methods used to fill in the missing values are presented.</p>
 <p>To demonstrate some of these concepts, the <em>SHEEP GOATS</em> dataset <span class="citation">(<a href="#ref-kamminga2017">Kamminga et al. 2017</a>)</span> will be used. Due to its big size, the files of this dataset are not included with the accompanying book files but they can be downloaded from <a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:76131" class="uri">https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:76131</a>. The data were released as part of a study about animal behaviors. The researchers placed inertial sensors on sheep and goats and tracked their behavior during one day. They also video-recorded the session and annotated the data with different types of behaviors such as <em>grazing</em>, <em>fighting</em>, <em>scratch-biting</em>, etc. The device was placed on the neck with a random orientation and it collected acceleration, orientation, magnetic field, temperature, and barometric pressure. Figure <a href="preprocessing.html#fig:sheepsensor">5.1</a> shows a schematic view of the setting.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:sheepsensor"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sheepsensor"></span>
 <img src="images/sheep.png" alt="Device placed on the neck of the sheep. (Author: LadyofHats. Source: Wikipedia (CC0 1.0))." width="50%" />
 <p class="caption">
 FIGURE 5.1: Device placed on the neck of the sheep. (Author: LadyofHats. Source: Wikipedia (CC0 1.0)).
@@ -482,7 +484,7 @@ FIGURE 5.1: Device placed on the neck of the sheep. (Author: LadyofHats. Source:
 <span id="cb103-9"><a href="preprocessing.html#cb103-9" tabindex="-1"></a></span>
 <span id="cb103-10"><a href="preprocessing.html#cb103-10" tabindex="-1"></a><span class="co"># Plot missing values.</span></span>
 <span id="cb103-11"><a href="preprocessing.html#cb103-11" tabindex="-1"></a><span class="fu">gg_miss_var</span>(df)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:ggmissvar"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ggmissvar"></span>
 <img src="images/ggmissvar.png" alt="Missing values counts." width="100%" />
 <p class="caption">
 FIGURE 5.2: Missing values counts.
@@ -493,7 +495,7 @@ FIGURE 5.2: Missing values counts.
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="preprocessing.html#cb104-1" tabindex="-1"></a><span class="co"># Select first 1000 rows.</span></span>
 <span id="cb104-2"><a href="preprocessing.html#cb104-2" tabindex="-1"></a><span class="co"># It can take some time to plot bigger data frames.</span></span>
 <span id="cb104-3"><a href="preprocessing.html#cb104-3" tabindex="-1"></a><span class="fu">vis_miss</span>(df[<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,])</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:vismiss"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:vismiss"></span>
 <img src="images/vismiss.png" alt="Rows with missing values." width="100%" />
 <p class="caption">
 FIGURE 5.3: Rows with missing values.
@@ -502,7 +504,7 @@ FIGURE 5.3: Rows with missing values.
 <p>Figure <a href="preprocessing.html#fig:vismiss">5.3</a> shows every observation per row and missing values are black colored (if any). From this image, it seems that missing values are systematic. It looks like there is a clear stripes pattern, especially for the compass variables. Based on these observations, it doesn’t look like random sensor failures or random noise.</p>
 <p>If we explore the data frame’s values, for example with the RStudio viewer (Figure <a href="preprocessing.html#fig:missvaluesdf">5.4</a>), two things can be noted. First, for the compass values, there is a missing value for each present value. Thus, it looks like <span class="math inline">\(50\%\)</span> of compass values are missing. For <em>pressure</em>, it seems that there are <span class="math inline">\(7\)</span> missing values for each available value.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:missvaluesdf"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:missvaluesdf"></span>
 <img src="images/missingvalues.png" alt="Displaying the data frame in RStudio. Source: Data from Kamminga, MSc J.W. (University of Twente) (2017): Generic online animal activity recognition on collar tags. DANS. https://doi.org/10.17026/dans-zp6-fmna" width="100%" />
 <p class="caption">
 FIGURE 5.4: Displaying the data frame in RStudio. Source: Data from Kamminga, MSc J.W. (University of Twente) (2017): Generic online animal activity recognition on collar tags. DANS. <a href="https://doi.org/10.17026/dans-zp6-fmna" class="uri">https://doi.org/10.17026/dans-zp6-fmna</a>
@@ -541,7 +543,7 @@ FIGURE 5.4: Displaying the data frame in RStudio. Source: Data from Kamminga, MS
 <span id="cb105-17"><a href="preprocessing.html#cb105-17" tabindex="-1"></a>                    cx <span class="sc">+</span> cy <span class="sc">+</span> cz <span class="sc">+</span> pressure <span class="sc">~</span> . <span class="sc">-</span> cx <span class="sc">-</span> cy <span class="sc">-</span> cz <span class="sc">-</span> pressure)</span>
 <span id="cb105-18"><a href="preprocessing.html#cb105-18" tabindex="-1"></a><span class="co"># Print summary.</span></span>
 <span id="cb105-19"><a href="preprocessing.html#cb105-19" tabindex="-1"></a><span class="fu">summary</span>(imp_df)</span></code></pre></div>
-<p>Originally, the missing values are encoded as <code>NaN</code> but in order to use the <code>simputation</code> package functions, we need them as <code>NA</code>. First, <code>NaNs</code> are replaced with <code>NA</code>. The first argument of <code>impute_lm()</code> is a data frame and the second argument is a formula. We discard the first <span class="math inline">\(4\)</span> variables of the data frame since we do not want to use them as predictors. The left-hand side of the formula (everything before the ~ symbol) specifies the variables we want to impute. The right-hand side specifies the variables used to build the linear models. The ‘.’ indicates that we want to use all variables while the ‘-’ is used to specify variables that we do not want to include. The vignettes<a href="references.html#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> of the package contain more detailed examples.</p>
+<p>Originally, the missing values are encoded as <code>NaN</code> but in order to use the <code>simputation</code> package functions, we need them as <code>NA</code>. First, <code>NaNs</code> are replaced with <code>NA</code>. The first argument of <code>impute_lm()</code> is a data frame and the second argument is a formula. We discard the first <span class="math inline">\(4\)</span> variables of the data frame since we do not want to use them as predictors. The left-hand side of the formula (everything before the ~ symbol) specifies the variables we want to impute. The right-hand side specifies the variables used to build the linear models. The ‘.’ indicates that we want to use all variables while the ‘-’ is used to specify variables that we do not want to include. The vignettes<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> of the package contain more detailed examples.</p>
 
 <div class="rmdcaution">
 The mean, median, etc. and the predictive models to infer missing values should be trained using data only from the train set to avoid information injection.
@@ -550,23 +552,23 @@ The mean, median, etc. and the predictive models to infer missing values should 
 </div>
 <div id="smoothing" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Smoothing<a href="preprocessing.html#smoothing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Smoothing comprises a set of algorithms with the aim of highlighting patterns in the data or as a preprocessing step to clean the data and remove noise. These methods are widely used on timeseries data but also with spatio-temporal data such as images. With timeseries data, they are often used to emphasize long-term patterns and reduce short-term signal artifacts. For example, in Figure <a href="preprocessing.html#fig:smoothingStock">5.5</a><a href="references.html#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> a stock chart was smoothed using two methods: moving average and exponential moving average. The smoothed versions make it easier to spot the overall trend rather than focusing on short-term variations.</p>
+<p>Smoothing comprises a set of algorithms with the aim of highlighting patterns in the data or as a preprocessing step to clean the data and remove noise. These methods are widely used on timeseries data but also with spatio-temporal data such as images. With timeseries data, they are often used to emphasize long-term patterns and reduce short-term signal artifacts. For example, in Figure <a href="preprocessing.html#fig:smoothingStock">5.5</a><a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> a stock chart was smoothed using two methods: moving average and exponential moving average. The smoothed versions make it easier to spot the overall trend rather than focusing on short-term variations.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:smoothingStock"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:smoothingStock"></span>
 <img src="images/smoothing_stock.png" alt="Stock chart with two smoothed versions. One with moving average and the other one with an exponential moving average. (Author: Alex Kofman. Source: Wikipedia (CC BY-SA 3.0) [https://creativecommons.org/licenses/by-sa/3.0/legalcode])." width="90%" />
 <p class="caption">
 FIGURE 5.5: Stock chart with two smoothed versions. One with moving average and the other one with an exponential moving average. (Author: Alex Kofman. Source: Wikipedia (CC BY-SA 3.0) [<a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" class="uri">https://creativecommons.org/licenses/by-sa/3.0/legalcode</a>]).
 </p>
 </div>
 <p>The most common smoothing method for timeseries is the <strong>simple moving average</strong>. With this method, the first element of the resulting smoothed series is computed by taking the average of the elements within a window of predefined size. The window’s position starts at the first element of the original series. The second element is computed in the same way but after moving the window one position to the right. Figure <a href="preprocessing.html#fig:movavgsteps">5.6</a> shows this procedure on a series with <span class="math inline">\(5\)</span> elements and a window size of size <span class="math inline">\(3\)</span>. After the third iteration, it is not possible to move the window one more step to the right while covering <span class="math inline">\(3\)</span> elements since the end of the timeseries has been reached. Because of this, the smoothed series will have some missing values at the end. Specifically, it will have <span class="math inline">\(w-1\)</span> fewer elements where <span class="math inline">\(w\)</span> is the window size. A simple solution is to compute the average of the elements covered by the window even if they are less than the window size.</p>
-<div class="figure" style="text-align: center"><span id="fig:movavgsteps"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:movavgsteps"></span>
 <img src="images/movingavgsteps.png" alt="Simple moving average step by step with window size = 3. Top: original array; bottom: smoothed array." width="90%" />
 <p class="caption">
 FIGURE 5.6: Simple moving average step by step with window size = 3. Top: original array; bottom: smoothed array.
 </p>
 </div>
 <p>In the previous example the average is taken from the elements to the right of the pointer. There is a variation called <em>centered moving average</em> in which the center point of the window has the same elements to the left and right (Figure <a href="preprocessing.html#fig:centeredmovavg">5.7</a>). Note that with this version of moving average some values at the beginning and at the end will be empty. Also note that the window size should be odd. In practice, both versions produce very similar results.</p>
-<div class="figure" style="text-align: center"><span id="fig:centeredmovavg"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:centeredmovavg"></span>
 <img src="images/centeredmovavg.png" alt="Centered moving average step by step with window size = 3." width="90%" />
 <p class="caption">
 FIGURE 5.7: Centered moving average step by step with window size = 3.
@@ -595,13 +597,13 @@ FIGURE 5.7: Centered moving average step by step with window size = 3.
 <span id="cb107-8"><a href="preprocessing.html#cb107-8" tabindex="-1"></a><span class="co"># Compute simple moving average with a window of size 21.</span></span>
 <span id="cb107-9"><a href="preprocessing.html#cb107-9" tabindex="-1"></a>smoothed <span class="ot">&lt;-</span> <span class="fu">movingAvg</span>(x, <span class="at">w =</span> <span class="dv">21</span>)</span></code></pre></div>
 <p>Figure <a href="preprocessing.html#fig:smoothingExample">5.8</a> shows the result after plotting both the original vector and the smoothed one. It can be observed that many of the small peaks are no longer present in the smoothed version. The window size is a parameter that needs to be defined by the user. If it is set too large some important information may be lost from the signal.</p>
-<div class="figure" style="text-align: center"><span id="fig:smoothingExample"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:smoothingExample"></span>
 <img src="images/smoothingExample.png" alt="Original time series and smoothed version using a moving average window of size 21." width="100%" />
 <p class="caption">
 FIGURE 5.8: Original time series and smoothed version using a moving average window of size 21.
 </p>
 </div>
-<p>One of the disadvantages of this method is that the arithmetic mean is sensitive to noise. Instead of computing the mean, one can use the median which is more robust against outlier values. There also exist other derived methods (not covered here) such as weighted moving average and exponential moving average<a href="references.html#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> which assign more importance to data points closer to the central point in the window. Smoothing a signal before feature extraction is a common practice and is used to remove some of the unwanted noise.</p>
+<p>One of the disadvantages of this method is that the arithmetic mean is sensitive to noise. Instead of computing the mean, one can use the median which is more robust against outlier values. There also exist other derived methods (not covered here) such as weighted moving average and exponential moving average<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> which assign more importance to data points closer to the central point in the window. Smoothing a signal before feature extraction is a common practice and is used to remove some of the unwanted noise.</p>
 </div>
 <div id="normalization" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Normalization<a href="preprocessing.html#normalization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -766,8 +768,8 @@ FIGURE 5.8: Original time series and smoothed version using a moving average win
 <span id="cb113-9"><a href="preprocessing.html#cb113-9" tabindex="-1"></a><span class="fu">summary</span>(balancedDf<span class="sc">$</span>label)</span>
 <span id="cb113-10"><a href="preprocessing.html#cb113-10" tabindex="-1"></a><span class="co">#&gt; class1 class2 </span></span>
 <span id="cb113-11"><a href="preprocessing.html#cb113-11" tabindex="-1"></a><span class="co">#&gt;   200    200 </span></span></code></pre></div>
-<p>The code associated with this chapter includes a shiny app<a href="references.html#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> <code>shiny_random-oversampling.Rmd</code>. Shiny apps are interactive web applications. This shiny app graphically demonstrates how random oversampling works. Figure <a href="preprocessing.html#fig:shinyOversampling">5.9</a> depicts the shiny app. The user can move the slider to generate new data points. Please note that the boundaries do not change as the number of instances increases (or decreases). This is because the new points are just duplicates so they overlap with existing ones.</p>
-<div class="figure" style="text-align: center"><span id="fig:shinyOversampling"></span>
+<p>The code associated with this chapter includes a shiny app<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> <code>shiny_random-oversampling.Rmd</code>. Shiny apps are interactive web applications. This shiny app graphically demonstrates how random oversampling works. Figure <a href="preprocessing.html#fig:shinyOversampling">5.9</a> depicts the shiny app. The user can move the slider to generate new data points. Please note that the boundaries do not change as the number of instances increases (or decreases). This is because the new points are just duplicates so they overlap with existing ones.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:shinyOversampling"></span>
 <img src="images/shiny_oversampling.png" alt="Shiny app with random oversampling example." width="100%" />
 <p class="caption">
 FIGURE 5.9: Shiny app with random oversampling example.
@@ -787,7 +789,7 @@ It is a common mistake to generate synthetic data on the entire dataset before s
 </div>
 <p>SMOTE is another method that can be used to augment the data points from the minority class <span class="citation">(<a href="#ref-chawla2002smote">Chawla et al. 2002</a>)</span>. One of the limitations of random oversampling is that it creates duplicates. This has the effect of having fixed boundaries and the classifiers can overspecialize. To avoid this, SMOTE creates entirely new data points.</p>
 <p>SMOTE operates on the feature space (on the predictor variables). To generate a new point, take the difference between a given point <span class="math inline">\(a\)</span> (taken from the minority class) and one of its randomly selected nearest neighbors <span class="math inline">\(b\)</span>. The difference is multiplied by a random number between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> and added to <span class="math inline">\(a\)</span>. This has the effect of selecting a point along the line between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. Figure <a href="preprocessing.html#fig:newpoint">5.10</a> illustrates the procedure of generating a new point in two dimensions.</p>
-<div class="figure" style="text-align: center"><span id="fig:newpoint"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:newpoint"></span>
 <img src="images/smote_newpoint.png" alt="Synthetic point generation." width="50%" />
 <p class="caption">
 FIGURE 5.10: Synthetic point generation.
@@ -820,7 +822,7 @@ FIGURE 5.10: Synthetic point generation.
 <span id="cb114-22"><a href="preprocessing.html#cb114-22" tabindex="-1"></a><span class="co">#&gt;    200    195 </span></span></code></pre></div>
 <p>The parameter <code>N</code> is set to <span class="math inline">\(1200\)</span>. This will create <span class="math inline">\(12\)</span> new data points for every minority class instance (<span class="math inline">\(15\)</span>). Thus, the method will return <span class="math inline">\(180\)</span> instances. In this case, <span class="math inline">\(k\)</span> is set to <span class="math inline">\(5\)</span>. Finally, the new points are appended to the imbalanced dataset having a total of <span class="math inline">\(195\)</span> samples of class ‘class2’.</p>
 <p>Again, a shiny app is included with this chapter’s code. Figure <a href="preprocessing.html#fig:shinySMOTE">5.11</a> shows the distribution of the original points and after applying SMOTE. Note how the boundary of <em>‘class2’</em> changes after applying SMOTE. It slightly spans in all directions. This is particularly visible in the lower right corner. This boundary expansion is what allows the classifiers to generalize better as compared to training them using random oversampled data.</p>
-<div class="figure" style="text-align: center"><span id="fig:shinySMOTE"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:shinySMOTE"></span>
 <img src="images/shiny_smote.png" alt="Shiny app with SMOTE example. a) Before applying SMOTE. b) After applying SMOTE." width="100%" />
 <p class="caption">
 FIGURE 5.11: Shiny app with SMOTE example. a) Before applying SMOTE. b) After applying SMOTE.
@@ -836,7 +838,7 @@ FIGURE 5.11: Shiny app with SMOTE example. a) Before applying SMOTE. b) After ap
 Information injection occurs when information from the train set is transferred to the test set. When having train/validation/test sets, information injection occurs when information from the train set leaks into the validation and/or test set. It also happens when information from the validation set is transferred to the test set.
 </div>
 <p>Suppose that as one of the preprocessing steps, you need to subtract the mean value of a feature for each instance. For now, suppose a dataset has a single feature <span class="math inline">\(x\)</span> of numeric type and a categorical response variable <span class="math inline">\(y\)</span>. The dataset has <span class="math inline">\(n\)</span> rows. As a preprocessing step, you decide that you need to subtract the mean of <span class="math inline">\(x\)</span> from each data point. Since you want to predict <span class="math inline">\(y\)</span> given <span class="math inline">\(x\)</span>, you train a classifier by splitting your data into train and test sets as usual. So you proceed with the steps depicted in Figure <a href="preprocessing.html#fig:injection1">5.12</a>.</p>
-<div class="figure" style="text-align: center"><span id="fig:injection1"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:injection1"></span>
 <img src="images/info_injection_1.png" alt="Information injection example. a) Parameters are learned from the entire dataset. b) The dataset is split intro train/test sets. c) The learned parameters are applied to both sets and information injection occurs." width="90%" />
 <p class="caption">
 FIGURE 5.12: Information injection example. a) Parameters are learned from the entire dataset. b) The dataset is split intro train/test sets. c) The learned parameters are applied to both sets and information injection occurs.
@@ -844,7 +846,7 @@ FIGURE 5.12: Information injection example. a) Parameters are learned from the e
 </div>
 <p>First, (a) you compute the <span class="math inline">\(mean\)</span> value of the of variable <span class="math inline">\(x\)</span> from the entire dataset. This <span class="math inline">\(mean\)</span> is known as the parameter. In this case, there is only one parameter but there could be several. For example, we could additionally need to compute the standard deviation. Once we know the mean value, the dataset is divided into train and test sets (b). Finally, the <span class="math inline">\(mean\)</span> is subtracted from each element in both train and test sets (c). Without realizing, we have transferred information from the train set to the test set! But, how did this happen? Well, the <em>mean</em> parameter was computed using information from the <em>entire</em> dataset. Then, that <span class="math inline">\(mean\)</span> parameter was used on the test set, but it was calculated using data points that also belong to that same test set!</p>
 <p>Figure <a href="preprocessing.html#fig:injection2">5.13</a> shows how to correctly do the preprocessing to avoid information injection. The dataset is first split (a). Then, the <span class="math inline">\(mean\)</span> parameter is calculated only with data points from the train set. Finally, the <em>mean</em> parameter is subtracted from both sets. Here, the mean contains information only from the train set.</p>
-<div class="figure" style="text-align: center"><span id="fig:injection2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:injection2"></span>
 <img src="images/info_injection_2.png" alt="No information injection example. a) The dataset is first split into train/test sets. b) Parameters are learned only from the train set. c) The learned parameters are applied to the test set." width="90%" />
 <p class="caption">
 FIGURE 5.13: No information injection example. a) The dataset is first split into train/test sets. b) Parameters are learned only from the train set. c) The learned parameters are applied to the test set.
@@ -856,7 +858,7 @@ FIGURE 5.13: No information injection example. a) The dataset is first split int
 <h2><span class="header-section-number">5.6</span> One-hot Encoding<a href="preprocessing.html#one-hot-encoding" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Several algorithms need some or all of their input variables to be in numeric format, either the response and/or predictor variables. In R, for most classification algorithms, the class is usually encoded as a factor but some implementations may require it to be numeric. Sometimes there may be categorical variables as predictors such as gender (<em>‘male’</em>, <em>‘female’</em>). Some algorithms need those to be in numeric format because they, for example, are based on distance computations such as <span class="math inline">\(k\)</span>-NN. Other models need to perform arithmetic operations on the predictor variables like neural networks.</p>
 <p>One way to convert categorical variables into numeric ones is called <strong>one-hot encoding</strong>. The method works by creating new variables, sometimes called <strong>dummy variables</strong> which are boolean, one for each possible category. Suppose a dataset has a categorical variable <em>Job</em> (Figure <a href="preprocessing.html#fig:onehotenc">5.14</a>) with three possible values: <em>programmer</em>, <em>teacher</em>, and <em>dentist</em>. This variable can be one-hot encoded by creating <span class="math inline">\(3\)</span> new boolean dummy variables and setting them to <span class="math inline">\(1\)</span> for the corresponding category and <span class="math inline">\(0\)</span> for the rest.</p>
-<div class="figure" style="text-align: center"><span id="fig:onehotenc"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:onehotenc"></span>
 <img src="images/onehotenc.png" alt="One-hot encoding example" width="100%" />
 <p class="caption">
 FIGURE 5.14: One-hot encoding example
@@ -867,7 +869,7 @@ FIGURE 5.14: One-hot encoding example
 You should be aware of the dummy variable trap which means that one variable can be predicted from the others. For example, if the possible values are just <em>male</em> and <em>female</em>, then if the dummy variable for <em>male</em> is <span class="math inline">\(1\)</span>, we know that the dummy variable for <em>female</em> must be <span class="math inline">\(0\)</span>. The solution to this is to drop one of the newly created variables. Which one? It does not matter which one. This trap only applies when the variable is a predictor. If it is a response variable, nothing should be dropped.
 </div>
 <p>Figure <a href="preprocessing.html#fig:variableConversion">5.15</a> presents a guideline for how to convert non-numeric variables into numeric ones for classification tasks. This is only a guideline and the actual process will depend on each application.</p>
-<div class="figure" style="text-align: center"><span id="fig:variableConversion"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:variableConversion"></span>
 <img src="images/variable_conversion.png" alt="Variable conversion guidelines." width="100%" />
 <p class="caption">
 FIGURE 5.15: Variable conversion guidelines.
@@ -893,7 +895,7 @@ FIGURE 5.15: Variable conversion guidelines.
 <p>In this case, the condition is <code>~.x %in% common_na_strings</code> which means: replace all fields that contain one of the characters in <code>common_na_strings</code>. The variable <code>common_na_strings</code> contains a set of common strings that can be regarded as missing values, for example ‘NA’, ‘na’, ‘NULL’, empty strings, and so on. Now, we can use the <code>vis_miss()</code> function described in the missing values section to get a visual idea of the missing values.</p>
 <div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="preprocessing.html#cb117-1" tabindex="-1"></a><span class="co"># Visualize missing values.</span></span>
 <span id="cb117-2"><a href="preprocessing.html#cb117-2" tabindex="-1"></a><span class="fu">vis_miss</span>(dataset, <span class="at">warn_large_data =</span> F)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:mentalmissing"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:mentalmissing"></span>
 <img src="images/mentalmissing.png" alt="Missing values in the students mental health dataset." width="90%" />
 <p class="caption">
 FIGURE 5.16: Missing values in the students mental health dataset.
@@ -917,7 +919,7 @@ FIGURE 5.16: Missing values in the students mental health dataset.
 <span id="cb119-11"><a href="preprocessing.html#cb119-11" tabindex="-1"></a>encodedVars <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">predict</span>(dummyObj,</span>
 <span id="cb119-12"><a href="preprocessing.html#cb119-12" tabindex="-1"></a>                                  <span class="at">newdata =</span> dataset))</span></code></pre></div>
 
-<div class="figure" style="text-align: center"><span id="fig:stayCate1"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:stayCate1"></span>
 <img src="images/stay_cate_1.png" alt="One-hot encoded Stay_Cate." width="50%" />
 <p class="caption">
 FIGURE 5.17: One-hot encoded <em>Stay_Cate</em>.
@@ -927,7 +929,7 @@ FIGURE 5.17: One-hot encoded <em>Stay_Cate</em>.
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="preprocessing.html#cb120-1" tabindex="-1"></a>dummyObj <span class="ot">&lt;-</span> <span class="fu">dummyVars</span>( <span class="sc">~</span> Stay_Cate, <span class="at">data =</span> dataset, <span class="at">fullRank =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb120-2"><a href="preprocessing.html#cb120-2" tabindex="-1"></a>encodedVars <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">predict</span>(dummyObj, <span class="at">newdata =</span> dataset))</span></code></pre></div>
 
-<div class="figure" style="text-align: center"><span id="fig:stayCate2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:stayCate2"></span>
 <img src="images/stay_cate_2.png" alt="One-hot encoded Stay_Cate dropping one of the columns." width="40%" />
 <p class="caption">
 FIGURE 5.18: One-hot encoded <em>Stay_Cate</em> dropping one of the columns.
@@ -972,6 +974,15 @@ Tierney, Nicholas, Di Cook, Miles McBain, and Colin Fay. 2019. <em>Naniar: Data 
 van der Loo, Mark. 2019. <em>Simputation: Simple Imputation</em>. <a href="https://CRAN.R-project.org/package=simputation">https://CRAN.R-project.org/package=simputation</a>.
 </div>
 </div>
+<div class="footnotes">
+<hr />
+<ol start="10">
+<li id="fn10"><p><a href="https://cran.r-project.org/web/packages/simputation/vignettes/intro.html" class="uri">https://cran.r-project.org/web/packages/simputation/vignettes/intro.html</a><a href="preprocessing.html#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p><a href="https://commons.wikimedia.org/wiki/File:Moving_Average_Types_comparison_-_Simple_and_Exponential.png" class="uri">https://commons.wikimedia.org/wiki/File:Moving_Average_Types_comparison_-_Simple_and_Exponential.png</a><a href="preprocessing.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p><a href="https://en.wikiversity.org/wiki/Moving_Average" class="uri">https://en.wikiversity.org/wiki/Moving_Average</a><a href="preprocessing.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p><a href="https://shiny.rstudio.com/" class="uri">https://shiny.rstudio.com/</a><a href="preprocessing.html#fnref13" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
@@ -982,7 +993,6 @@ van der Loo, Mark. 2019. <em>Simputation: Simple Imputation</em>. <a href="https
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
-<script src="libs/gitbook/js/lunr.js"></script>
 <script src="libs/gitbook/js/clipboard.min.js"></script>
 <script src="libs/gitbook/js/plugin-search.js"></script>
 <script src="libs/gitbook/js/plugin-sharing.js"></script>
@@ -1022,6 +1032,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "none"
 }
@@ -1035,7 +1049,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

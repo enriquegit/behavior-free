@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Introduction to Behavior and Machine Learning | Behavior Analysis with Machine Learning Using R</title>
   <meta name="description" content="Chapter 1 Introduction to Behavior and Machine Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Introduction to Behavior and Machine Learning | Behavior Analysis with Machine Learning Using R" />
   <meta property="og:type" content="book" />
-  
   <meta property="og:image" content="/images/cover.png" />
   <meta property="og:description" content="Chapter 1 Introduction to Behavior and Machine Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2023-08-29" />
+<meta name="date" content="2023-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="preface.html"/>
 <link rel="next" href="classification.html"/>
-<script src="libs/header-attrs/header-attrs.js"></script>
-<script src="libs/jquery/jquery.min.js"></script>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +41,6 @@
 <link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -145,6 +143,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 <style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
 div.csl-entry {
@@ -183,247 +185,247 @@ div.csl-indent {
 <li><a href="#">Behavior Analysis with Machine Learning Using R</a></li>
 
 <li class="divider"></li>
-<li><a href="index.html#welcome" id="toc-welcome">Welcome</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
 <ul>
-<li><a href="index.html#about-the-front-cover" id="toc-about-the-front-cover">About the Front Cover</a></li>
-<li><a href="index.html#about-the-author" id="toc-about-the-author">About the Author</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-front-cover"><i class="fa fa-check"></i>About the Front Cover</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
 </ul></li>
-<li><a href="preface.html#preface" id="toc-preface">Preface</a>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li><a href="preface.html#supplemental-material" id="toc-supplemental-material">Supplemental Material</a></li>
-<li><a href="preface.html#conventions" id="toc-conventions">Conventions</a></li>
-<li><a href="preface.html#acknowledgments" id="toc-acknowledgments">Acknowledgments</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#supplemental-material"><i class="fa fa-check"></i>Supplemental Material</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#conventions"><i class="fa fa-check"></i>Conventions</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
 </ul></li>
-<li><a href="intro.html#intro" id="toc-intro"><span class="toc-section-number">1</span> Introduction to Behavior and Machine Learning</a>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Behavior and Machine Learning</a>
 <ul>
-<li><a href="intro.html#what-is-behavior" id="toc-what-is-behavior"><span class="toc-section-number">1.1</span> What Is Behavior?</a></li>
-<li><a href="intro.html#what-is-machine-learning" id="toc-what-is-machine-learning"><span class="toc-section-number">1.2</span> What Is Machine Learning?</a></li>
-<li><a href="intro.html#taxonomy" id="toc-taxonomy"><span class="toc-section-number">1.3</span> Types of Machine Learning</a></li>
-<li><a href="intro.html#terminology" id="toc-terminology"><span class="toc-section-number">1.4</span> Terminology</a>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-behavior"><i class="fa fa-check"></i><b>1.1</b> What Is Behavior?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#what-is-machine-learning"><i class="fa fa-check"></i><b>1.2</b> What Is Machine Learning?</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#taxonomy"><i class="fa fa-check"></i><b>1.3</b> Types of Machine Learning</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#terminology"><i class="fa fa-check"></i><b>1.4</b> Terminology</a>
 <ul>
-<li><a href="intro.html#tables" id="toc-tables"><span class="toc-section-number">1.4.1</span> Tables</a></li>
-<li><a href="intro.html#variable-types" id="toc-variable-types"><span class="toc-section-number">1.4.2</span> Variable Types</a></li>
-<li><a href="intro.html#predictive-models" id="toc-predictive-models"><span class="toc-section-number">1.4.3</span> Predictive Models</a></li>
+<li class="chapter" data-level="1.4.1" data-path="intro.html"><a href="intro.html#tables"><i class="fa fa-check"></i><b>1.4.1</b> Tables</a></li>
+<li class="chapter" data-level="1.4.2" data-path="intro.html"><a href="intro.html#variable-types"><i class="fa fa-check"></i><b>1.4.2</b> Variable Types</a></li>
+<li class="chapter" data-level="1.4.3" data-path="intro.html"><a href="intro.html#predictive-models"><i class="fa fa-check"></i><b>1.4.3</b> Predictive Models</a></li>
 </ul></li>
-<li><a href="intro.html#pipeline" id="toc-pipeline"><span class="toc-section-number">1.5</span> Data Analysis Pipeline</a></li>
-<li><a href="intro.html#trainingeval" id="toc-trainingeval"><span class="toc-section-number">1.6</span> Evaluating Predictive Models</a></li>
-<li><a href="intro.html#simple-classification-example" id="toc-simple-classification-example"><span class="toc-section-number">1.7</span> Simple Classification Example</a>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#pipeline"><i class="fa fa-check"></i><b>1.5</b> Data Analysis Pipeline</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#trainingeval"><i class="fa fa-check"></i><b>1.6</b> Evaluating Predictive Models</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#simple-classification-example"><i class="fa fa-check"></i><b>1.7</b> Simple Classification Example</a>
 <ul>
-<li><a href="intro.html#k-fold-cross-validation-example" id="toc-k-fold-cross-validation-example"><span class="toc-section-number">1.7.1</span> <span class="math inline">\(k\)</span>-fold Cross-validation Example</a></li>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#k-fold-cross-validation-example"><i class="fa fa-check"></i><b>1.7.1</b> <span class="math inline">\(k\)</span>-fold Cross-validation Example</a></li>
 </ul></li>
-<li><a href="intro.html#simple-regression-example" id="toc-simple-regression-example"><span class="toc-section-number">1.8</span> Simple Regression Example</a></li>
-<li><a href="intro.html#underfitting-and-overfitting" id="toc-underfitting-and-overfitting"><span class="toc-section-number">1.9</span> Underfitting and Overfitting</a></li>
-<li><a href="intro.html#bias-and-variance" id="toc-bias-and-variance"><span class="toc-section-number">1.10</span> Bias and Variance</a></li>
-<li><a href="intro.html#SummaryIntro" id="toc-SummaryIntro"><span class="toc-section-number">1.11</span> Summary</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#simple-regression-example"><i class="fa fa-check"></i><b>1.8</b> Simple Regression Example</a></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#underfitting-and-overfitting"><i class="fa fa-check"></i><b>1.9</b> Underfitting and Overfitting</a></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#bias-and-variance"><i class="fa fa-check"></i><b>1.10</b> Bias and Variance</a></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#SummaryIntro"><i class="fa fa-check"></i><b>1.11</b> Summary</a></li>
 </ul></li>
-<li><a href="classification.html#classification" id="toc-classification"><span class="toc-section-number">2</span> Predicting Behavior with Classification Models</a>
+<li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a>
 <ul>
-<li><a href="classification.html#k-nearest-neighbors" id="toc-k-nearest-neighbors"><span class="toc-section-number">2.1</span> <em>k</em>-Nearest Neighbors</a>
+<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-Nearest Neighbors</a>
 <ul>
-<li><a href="classification.html#indoor-location-with-wi-fi-signals" id="toc-indoor-location-with-wi-fi-signals"><span class="toc-section-number">2.1.1</span> Indoor Location with Wi-Fi Signals</a></li>
+<li class="chapter" data-level="2.1.1" data-path="classification.html"><a href="classification.html#indoor-location-with-wi-fi-signals"><i class="fa fa-check"></i><b>2.1.1</b> Indoor Location with Wi-Fi Signals</a></li>
 </ul></li>
-<li><a href="classification.html#performance-metrics" id="toc-performance-metrics"><span class="toc-section-number">2.2</span> Performance Metrics</a>
+<li class="chapter" data-level="2.2" data-path="classification.html"><a href="classification.html#performance-metrics"><i class="fa fa-check"></i><b>2.2</b> Performance Metrics</a>
 <ul>
-<li><a href="classification.html#confusion-matrix" id="toc-confusion-matrix"><span class="toc-section-number">2.2.1</span> Confusion Matrix</a></li>
+<li class="chapter" data-level="2.2.1" data-path="classification.html"><a href="classification.html#confusion-matrix"><i class="fa fa-check"></i><b>2.2.1</b> Confusion Matrix</a></li>
 </ul></li>
-<li><a href="classification.html#decision-trees" id="toc-decision-trees"><span class="toc-section-number">2.3</span> Decision Trees</a>
+<li class="chapter" data-level="2.3" data-path="classification.html"><a href="classification.html#decision-trees"><i class="fa fa-check"></i><b>2.3</b> Decision Trees</a>
 <ul>
-<li><a href="classification.html#activityRecognition" id="toc-activityRecognition"><span class="toc-section-number">2.3.1</span> Activity Recognition with Smartphones</a></li>
+<li class="chapter" data-level="2.3.1" data-path="classification.html"><a href="classification.html#activityRecognition"><i class="fa fa-check"></i><b>2.3.1</b> Activity Recognition with Smartphones</a></li>
 </ul></li>
-<li><a href="classification.html#naive-bayes" id="toc-naive-bayes"><span class="toc-section-number">2.4</span> Naive Bayes</a>
+<li class="chapter" data-level="2.4" data-path="classification.html"><a href="classification.html#naive-bayes"><i class="fa fa-check"></i><b>2.4</b> Naive Bayes</a>
 <ul>
-<li><a href="classification.html#activity-recognition-with-naive-bayes" id="toc-activity-recognition-with-naive-bayes"><span class="toc-section-number">2.4.1</span> Activity Recognition with Naive Bayes</a></li>
+<li class="chapter" data-level="2.4.1" data-path="classification.html"><a href="classification.html#activity-recognition-with-naive-bayes"><i class="fa fa-check"></i><b>2.4.1</b> Activity Recognition with Naive Bayes</a></li>
 </ul></li>
-<li><a href="classification.html#dynamic-time-warping" id="toc-dynamic-time-warping"><span class="toc-section-number">2.5</span> Dynamic Time Warping</a>
+<li class="chapter" data-level="2.5" data-path="classification.html"><a href="classification.html#dynamic-time-warping"><i class="fa fa-check"></i><b>2.5</b> Dynamic Time Warping</a>
 <ul>
-<li><a href="classification.html#sechandgestures" id="toc-sechandgestures"><span class="toc-section-number">2.5.1</span> Hand Gesture Recognition</a></li>
+<li class="chapter" data-level="2.5.1" data-path="classification.html"><a href="classification.html#sechandgestures"><i class="fa fa-check"></i><b>2.5.1</b> Hand Gesture Recognition</a></li>
 </ul></li>
-<li><a href="classification.html#dummy-models" id="toc-dummy-models"><span class="toc-section-number">2.6</span> Dummy Models</a>
+<li class="chapter" data-level="2.6" data-path="classification.html"><a href="classification.html#dummy-models"><i class="fa fa-check"></i><b>2.6</b> Dummy Models</a>
 <ul>
-<li><a href="classification.html#most-frequent-class-classifier" id="toc-most-frequent-class-classifier"><span class="toc-section-number">2.6.1</span> Most-frequent-class Classifier</a></li>
-<li><a href="classification.html#uniform-classifier" id="toc-uniform-classifier"><span class="toc-section-number">2.6.2</span> Uniform Classifier</a></li>
-<li><a href="classification.html#frequency-based-classifier" id="toc-frequency-based-classifier"><span class="toc-section-number">2.6.3</span> Frequency-based Classifier</a></li>
-<li><a href="classification.html#other-dummy-classifiers" id="toc-other-dummy-classifiers"><span class="toc-section-number">2.6.4</span> Other Dummy Classifiers</a></li>
+<li class="chapter" data-level="2.6.1" data-path="classification.html"><a href="classification.html#most-frequent-class-classifier"><i class="fa fa-check"></i><b>2.6.1</b> Most-frequent-class Classifier</a></li>
+<li class="chapter" data-level="2.6.2" data-path="classification.html"><a href="classification.html#uniform-classifier"><i class="fa fa-check"></i><b>2.6.2</b> Uniform Classifier</a></li>
+<li class="chapter" data-level="2.6.3" data-path="classification.html"><a href="classification.html#frequency-based-classifier"><i class="fa fa-check"></i><b>2.6.3</b> Frequency-based Classifier</a></li>
+<li class="chapter" data-level="2.6.4" data-path="classification.html"><a href="classification.html#other-dummy-classifiers"><i class="fa fa-check"></i><b>2.6.4</b> Other Dummy Classifiers</a></li>
 </ul></li>
-<li><a href="classification.html#summaryClassification" id="toc-summaryClassification"><span class="toc-section-number">2.7</span> Summary</a></li>
+<li class="chapter" data-level="2.7" data-path="classification.html"><a href="classification.html#summaryClassification"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
 </ul></li>
-<li><a href="ensemble.html#ensemble" id="toc-ensemble"><span class="toc-section-number">3</span> Predicting Behavior with Ensemble Learning</a>
+<li class="chapter" data-level="3" data-path="ensemble.html"><a href="ensemble.html"><i class="fa fa-check"></i><b>3</b> Predicting Behavior with Ensemble Learning</a>
 <ul>
-<li><a href="ensemble.html#bagging" id="toc-bagging"><span class="toc-section-number">3.1</span> Bagging</a>
+<li class="chapter" data-level="3.1" data-path="ensemble.html"><a href="ensemble.html#bagging"><i class="fa fa-check"></i><b>3.1</b> Bagging</a>
 <ul>
-<li><a href="ensemble.html#activity-recognition-with-bagging" id="toc-activity-recognition-with-bagging"><span class="toc-section-number">3.1.1</span> Activity Recognition with Bagging</a></li>
+<li class="chapter" data-level="3.1.1" data-path="ensemble.html"><a href="ensemble.html#activity-recognition-with-bagging"><i class="fa fa-check"></i><b>3.1.1</b> Activity Recognition with Bagging</a></li>
 </ul></li>
-<li><a href="ensemble.html#random-forest" id="toc-random-forest"><span class="toc-section-number">3.2</span> Random Forest</a></li>
-<li><a href="ensemble.html#stacked-generalization" id="toc-stacked-generalization"><span class="toc-section-number">3.3</span> Stacked Generalization</a></li>
-<li><a href="ensemble.html#multiviewhometasks" id="toc-multiviewhometasks"><span class="toc-section-number">3.4</span> Multi-view Stacking for Home Tasks Recognition</a></li>
-<li><a href="ensemble.html#SummaryEnsemble" id="toc-SummaryEnsemble"><span class="toc-section-number">3.5</span> Summary</a></li>
+<li class="chapter" data-level="3.2" data-path="ensemble.html"><a href="ensemble.html#random-forest"><i class="fa fa-check"></i><b>3.2</b> Random Forest</a></li>
+<li class="chapter" data-level="3.3" data-path="ensemble.html"><a href="ensemble.html#stacked-generalization"><i class="fa fa-check"></i><b>3.3</b> Stacked Generalization</a></li>
+<li class="chapter" data-level="3.4" data-path="ensemble.html"><a href="ensemble.html#multiviewhometasks"><i class="fa fa-check"></i><b>3.4</b> Multi-view Stacking for Home Tasks Recognition</a></li>
+<li class="chapter" data-level="3.5" data-path="ensemble.html"><a href="ensemble.html#SummaryEnsemble"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
-<li><a href="edavis.html#edavis" id="toc-edavis"><span class="toc-section-number">4</span> Exploring and Visualizing Behavioral Data</a>
+<li class="chapter" data-level="4" data-path="edavis.html"><a href="edavis.html"><i class="fa fa-check"></i><b>4</b> Exploring and Visualizing Behavioral Data</a>
 <ul>
-<li><a href="edavis.html#talking-with-field-experts" id="toc-talking-with-field-experts"><span class="toc-section-number">4.1</span> Talking with Field Experts</a></li>
-<li><a href="edavis.html#summary-statistics" id="toc-summary-statistics"><span class="toc-section-number">4.2</span> Summary Statistics</a></li>
-<li><a href="edavis.html#class-distributions" id="toc-class-distributions"><span class="toc-section-number">4.3</span> Class Distributions</a></li>
-<li><a href="edavis.html#user-class-sparsity-matrix" id="toc-user-class-sparsity-matrix"><span class="toc-section-number">4.4</span> User-class Sparsity Matrix</a></li>
-<li><a href="edavis.html#boxplots" id="toc-boxplots"><span class="toc-section-number">4.5</span> Boxplots</a></li>
-<li><a href="edavis.html#correlation-plots" id="toc-correlation-plots"><span class="toc-section-number">4.6</span> Correlation Plots</a>
+<li class="chapter" data-level="4.1" data-path="edavis.html"><a href="edavis.html#talking-with-field-experts"><i class="fa fa-check"></i><b>4.1</b> Talking with Field Experts</a></li>
+<li class="chapter" data-level="4.2" data-path="edavis.html"><a href="edavis.html#summary-statistics"><i class="fa fa-check"></i><b>4.2</b> Summary Statistics</a></li>
+<li class="chapter" data-level="4.3" data-path="edavis.html"><a href="edavis.html#class-distributions"><i class="fa fa-check"></i><b>4.3</b> Class Distributions</a></li>
+<li class="chapter" data-level="4.4" data-path="edavis.html"><a href="edavis.html#user-class-sparsity-matrix"><i class="fa fa-check"></i><b>4.4</b> User-class Sparsity Matrix</a></li>
+<li class="chapter" data-level="4.5" data-path="edavis.html"><a href="edavis.html#boxplots"><i class="fa fa-check"></i><b>4.5</b> Boxplots</a></li>
+<li class="chapter" data-level="4.6" data-path="edavis.html"><a href="edavis.html#correlation-plots"><i class="fa fa-check"></i><b>4.6</b> Correlation Plots</a>
 <ul>
-<li><a href="edavis.html#interactive-correlation-plots" id="toc-interactive-correlation-plots"><span class="toc-section-number">4.6.1</span> Interactive Correlation Plots</a></li>
+<li class="chapter" data-level="4.6.1" data-path="edavis.html"><a href="edavis.html#interactive-correlation-plots"><i class="fa fa-check"></i><b>4.6.1</b> Interactive Correlation Plots</a></li>
 </ul></li>
-<li><a href="edavis.html#timeseries" id="toc-timeseries"><span class="toc-section-number">4.7</span> Timeseries</a>
+<li class="chapter" data-level="4.7" data-path="edavis.html"><a href="edavis.html#timeseries"><i class="fa fa-check"></i><b>4.7</b> Timeseries</a>
 <ul>
-<li><a href="edavis.html#interactive-timeseries" id="toc-interactive-timeseries"><span class="toc-section-number">4.7.1</span> Interactive Timeseries</a></li>
+<li class="chapter" data-level="4.7.1" data-path="edavis.html"><a href="edavis.html#interactive-timeseries"><i class="fa fa-check"></i><b>4.7.1</b> Interactive Timeseries</a></li>
 </ul></li>
-<li><a href="edavis.html#multidimensional-scaling-mds" id="toc-multidimensional-scaling-mds"><span class="toc-section-number">4.8</span> Multidimensional Scaling (MDS)</a></li>
-<li><a href="edavis.html#heatmaps" id="toc-heatmaps"><span class="toc-section-number">4.9</span> Heatmaps</a></li>
-<li><a href="edavis.html#automated-eda" id="toc-automated-eda"><span class="toc-section-number">4.10</span> Automated EDA</a></li>
-<li><a href="edavis.html#SummaryExploratory" id="toc-SummaryExploratory"><span class="toc-section-number">4.11</span> Summary</a></li>
+<li class="chapter" data-level="4.8" data-path="edavis.html"><a href="edavis.html#multidimensional-scaling-mds"><i class="fa fa-check"></i><b>4.8</b> Multidimensional Scaling (MDS)</a></li>
+<li class="chapter" data-level="4.9" data-path="edavis.html"><a href="edavis.html#heatmaps"><i class="fa fa-check"></i><b>4.9</b> Heatmaps</a></li>
+<li class="chapter" data-level="4.10" data-path="edavis.html"><a href="edavis.html#automated-eda"><i class="fa fa-check"></i><b>4.10</b> Automated EDA</a></li>
+<li class="chapter" data-level="4.11" data-path="edavis.html"><a href="edavis.html#SummaryExploratory"><i class="fa fa-check"></i><b>4.11</b> Summary</a></li>
 </ul></li>
-<li><a href="preprocessing.html#preprocessing" id="toc-preprocessing"><span class="toc-section-number">5</span> Preprocessing Behavioral Data</a>
+<li class="chapter" data-level="5" data-path="preprocessing.html"><a href="preprocessing.html"><i class="fa fa-check"></i><b>5</b> Preprocessing Behavioral Data</a>
 <ul>
-<li><a href="preprocessing.html#missing-values" id="toc-missing-values"><span class="toc-section-number">5.1</span> Missing Values</a>
+<li class="chapter" data-level="5.1" data-path="preprocessing.html"><a href="preprocessing.html#missing-values"><i class="fa fa-check"></i><b>5.1</b> Missing Values</a>
 <ul>
-<li><a href="preprocessing.html#imputation" id="toc-imputation"><span class="toc-section-number">5.1.1</span> Imputation</a></li>
+<li class="chapter" data-level="5.1.1" data-path="preprocessing.html"><a href="preprocessing.html#imputation"><i class="fa fa-check"></i><b>5.1.1</b> Imputation</a></li>
 </ul></li>
-<li><a href="preprocessing.html#smoothing" id="toc-smoothing"><span class="toc-section-number">5.2</span> Smoothing</a></li>
-<li><a href="preprocessing.html#normalization" id="toc-normalization"><span class="toc-section-number">5.3</span> Normalization</a></li>
-<li><a href="preprocessing.html#imbalanced-classes" id="toc-imbalanced-classes"><span class="toc-section-number">5.4</span> Imbalanced Classes</a>
+<li class="chapter" data-level="5.2" data-path="preprocessing.html"><a href="preprocessing.html#smoothing"><i class="fa fa-check"></i><b>5.2</b> Smoothing</a></li>
+<li class="chapter" data-level="5.3" data-path="preprocessing.html"><a href="preprocessing.html#normalization"><i class="fa fa-check"></i><b>5.3</b> Normalization</a></li>
+<li class="chapter" data-level="5.4" data-path="preprocessing.html"><a href="preprocessing.html#imbalanced-classes"><i class="fa fa-check"></i><b>5.4</b> Imbalanced Classes</a>
 <ul>
-<li><a href="preprocessing.html#random-oversampling" id="toc-random-oversampling"><span class="toc-section-number">5.4.1</span> Random Oversampling</a></li>
-<li><a href="preprocessing.html#smote" id="toc-smote"><span class="toc-section-number">5.4.2</span> SMOTE</a></li>
+<li class="chapter" data-level="5.4.1" data-path="preprocessing.html"><a href="preprocessing.html#random-oversampling"><i class="fa fa-check"></i><b>5.4.1</b> Random Oversampling</a></li>
+<li class="chapter" data-level="5.4.2" data-path="preprocessing.html"><a href="preprocessing.html#smote"><i class="fa fa-check"></i><b>5.4.2</b> SMOTE</a></li>
 </ul></li>
-<li><a href="preprocessing.html#infoinjection" id="toc-infoinjection"><span class="toc-section-number">5.5</span> Information Injection</a></li>
-<li><a href="preprocessing.html#one-hot-encoding" id="toc-one-hot-encoding"><span class="toc-section-number">5.6</span> One-hot Encoding</a></li>
-<li><a href="preprocessing.html#SummaryPreprocessing" id="toc-SummaryPreprocessing"><span class="toc-section-number">5.7</span> Summary</a></li>
+<li class="chapter" data-level="5.5" data-path="preprocessing.html"><a href="preprocessing.html#infoinjection"><i class="fa fa-check"></i><b>5.5</b> Information Injection</a></li>
+<li class="chapter" data-level="5.6" data-path="preprocessing.html"><a href="preprocessing.html#one-hot-encoding"><i class="fa fa-check"></i><b>5.6</b> One-hot Encoding</a></li>
+<li class="chapter" data-level="5.7" data-path="preprocessing.html"><a href="preprocessing.html#SummaryPreprocessing"><i class="fa fa-check"></i><b>5.7</b> Summary</a></li>
 </ul></li>
-<li><a href="unsupervised.html#unsupervised" id="toc-unsupervised"><span class="toc-section-number">6</span> Discovering Behaviors with Unsupervised Learning</a>
+<li class="chapter" data-level="6" data-path="unsupervised.html"><a href="unsupervised.html"><i class="fa fa-check"></i><b>6</b> Discovering Behaviors with Unsupervised Learning</a>
 <ul>
-<li><a href="unsupervised.html#k-means-clustering" id="toc-k-means-clustering"><span class="toc-section-number">6.1</span> <span class="math inline">\(k\)</span>-means Clustering</a>
+<li class="chapter" data-level="6.1" data-path="unsupervised.html"><a href="unsupervised.html#k-means-clustering"><i class="fa fa-check"></i><b>6.1</b> <span class="math inline">\(k\)</span>-means Clustering</a>
 <ul>
-<li><a href="unsupervised.html#studentresponses" id="toc-studentresponses"><span class="toc-section-number">6.1.1</span> Grouping Student Responses</a></li>
+<li class="chapter" data-level="6.1.1" data-path="unsupervised.html"><a href="unsupervised.html#studentresponses"><i class="fa fa-check"></i><b>6.1.1</b> Grouping Student Responses</a></li>
 </ul></li>
-<li><a href="unsupervised.html#the-silhouette-index" id="toc-the-silhouette-index"><span class="toc-section-number">6.2</span> The Silhouette Index</a></li>
-<li><a href="unsupervised.html#associationrules" id="toc-associationrules"><span class="toc-section-number">6.3</span> Mining Association Rules</a>
+<li class="chapter" data-level="6.2" data-path="unsupervised.html"><a href="unsupervised.html#the-silhouette-index"><i class="fa fa-check"></i><b>6.2</b> The Silhouette Index</a></li>
+<li class="chapter" data-level="6.3" data-path="unsupervised.html"><a href="unsupervised.html#associationrules"><i class="fa fa-check"></i><b>6.3</b> Mining Association Rules</a>
 <ul>
-<li><a href="unsupervised.html#finding-rules-for-criminal-behavior" id="toc-finding-rules-for-criminal-behavior"><span class="toc-section-number">6.3.1</span> Finding Rules for Criminal Behavior</a></li>
+<li class="chapter" data-level="6.3.1" data-path="unsupervised.html"><a href="unsupervised.html#finding-rules-for-criminal-behavior"><i class="fa fa-check"></i><b>6.3.1</b> Finding Rules for Criminal Behavior</a></li>
 </ul></li>
-<li><a href="unsupervised.html#SummaryUnsupervised" id="toc-SummaryUnsupervised"><span class="toc-section-number">6.4</span> Summary</a></li>
+<li class="chapter" data-level="6.4" data-path="unsupervised.html"><a href="unsupervised.html#SummaryUnsupervised"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
 </ul></li>
-<li><a href="representations.html#representations" id="toc-representations"><span class="toc-section-number">7</span> Encoding Behavioral Data</a>
+<li class="chapter" data-level="7" data-path="representations.html"><a href="representations.html"><i class="fa fa-check"></i><b>7</b> Encoding Behavioral Data</a>
 <ul>
-<li><a href="representations.html#feature-vectors" id="toc-feature-vectors"><span class="toc-section-number">7.1</span> Feature Vectors</a></li>
-<li><a href="representations.html#sectimeseries" id="toc-sectimeseries"><span class="toc-section-number">7.2</span> Timeseries</a></li>
-<li><a href="representations.html#transactions" id="toc-transactions"><span class="toc-section-number">7.3</span> Transactions</a></li>
-<li><a href="representations.html#images" id="toc-images"><span class="toc-section-number">7.4</span> Images</a></li>
-<li><a href="representations.html#recurrence-plots" id="toc-recurrence-plots"><span class="toc-section-number">7.5</span> Recurrence Plots</a>
+<li class="chapter" data-level="7.1" data-path="representations.html"><a href="representations.html#feature-vectors"><i class="fa fa-check"></i><b>7.1</b> Feature Vectors</a></li>
+<li class="chapter" data-level="7.2" data-path="representations.html"><a href="representations.html#sectimeseries"><i class="fa fa-check"></i><b>7.2</b> Timeseries</a></li>
+<li class="chapter" data-level="7.3" data-path="representations.html"><a href="representations.html#transactions"><i class="fa fa-check"></i><b>7.3</b> Transactions</a></li>
+<li class="chapter" data-level="7.4" data-path="representations.html"><a href="representations.html#images"><i class="fa fa-check"></i><b>7.4</b> Images</a></li>
+<li class="chapter" data-level="7.5" data-path="representations.html"><a href="representations.html#recurrence-plots"><i class="fa fa-check"></i><b>7.5</b> Recurrence Plots</a>
 <ul>
-<li><a href="representations.html#computing-recurrence-plots" id="toc-computing-recurrence-plots"><span class="toc-section-number">7.5.1</span> Computing Recurrence Plots</a></li>
-<li><a href="representations.html#recurrence-plots-of-hand-gestures" id="toc-recurrence-plots-of-hand-gestures"><span class="toc-section-number">7.5.2</span> Recurrence Plots of Hand Gestures</a></li>
+<li class="chapter" data-level="7.5.1" data-path="representations.html"><a href="representations.html#computing-recurrence-plots"><i class="fa fa-check"></i><b>7.5.1</b> Computing Recurrence Plots</a></li>
+<li class="chapter" data-level="7.5.2" data-path="representations.html"><a href="representations.html#recurrence-plots-of-hand-gestures"><i class="fa fa-check"></i><b>7.5.2</b> Recurrence Plots of Hand Gestures</a></li>
 </ul></li>
-<li><a href="representations.html#bag-of-words" id="toc-bag-of-words"><span class="toc-section-number">7.6</span> Bag-of-Words</a>
+<li class="chapter" data-level="7.6" data-path="representations.html"><a href="representations.html#bag-of-words"><i class="fa fa-check"></i><b>7.6</b> Bag-of-Words</a>
 <ul>
-<li><a href="representations.html#bow-for-complex-activities." id="toc-bow-for-complex-activities."><span class="toc-section-number">7.6.1</span> BoW for Complex Activities.</a></li>
+<li class="chapter" data-level="7.6.1" data-path="representations.html"><a href="representations.html#bow-for-complex-activities."><i class="fa fa-check"></i><b>7.6.1</b> BoW for Complex Activities.</a></li>
 </ul></li>
-<li><a href="representations.html#graphs" id="toc-graphs"><span class="toc-section-number">7.7</span> Graphs</a>
+<li class="chapter" data-level="7.7" data-path="representations.html"><a href="representations.html#graphs"><i class="fa fa-check"></i><b>7.7</b> Graphs</a>
 <ul>
-<li><a href="representations.html#complex-activities-as-graphs" id="toc-complex-activities-as-graphs"><span class="toc-section-number">7.7.1</span> Complex Activities as Graphs</a></li>
+<li class="chapter" data-level="7.7.1" data-path="representations.html"><a href="representations.html#complex-activities-as-graphs"><i class="fa fa-check"></i><b>7.7.1</b> Complex Activities as Graphs</a></li>
 </ul></li>
-<li><a href="representations.html#SummaryRepresentations" id="toc-SummaryRepresentations"><span class="toc-section-number">7.8</span> Summary</a></li>
+<li class="chapter" data-level="7.8" data-path="representations.html"><a href="representations.html#SummaryRepresentations"><i class="fa fa-check"></i><b>7.8</b> Summary</a></li>
 </ul></li>
-<li><a href="deeplearning.html#deeplearning" id="toc-deeplearning"><span class="toc-section-number">8</span> Predicting Behavior with Deep Learning</a>
+<li class="chapter" data-level="8" data-path="deeplearning.html"><a href="deeplearning.html"><i class="fa fa-check"></i><b>8</b> Predicting Behavior with Deep Learning</a>
 <ul>
-<li><a href="deeplearning.html#ann" id="toc-ann"><span class="toc-section-number">8.1</span> Introduction to Artificial Neural Networks</a>
+<li class="chapter" data-level="8.1" data-path="deeplearning.html"><a href="deeplearning.html#ann"><i class="fa fa-check"></i><b>8.1</b> Introduction to Artificial Neural Networks</a>
 <ul>
-<li><a href="deeplearning.html#sigmoid-and-relu-units" id="toc-sigmoid-and-relu-units"><span class="toc-section-number">8.1.1</span> Sigmoid and ReLU Units</a></li>
-<li><a href="deeplearning.html#assembling-units-into-layers" id="toc-assembling-units-into-layers"><span class="toc-section-number">8.1.2</span> Assembling Units into Layers</a></li>
-<li><a href="deeplearning.html#deep-neural-networks" id="toc-deep-neural-networks"><span class="toc-section-number">8.1.3</span> Deep Neural Networks</a></li>
-<li><a href="deeplearning.html#learning-the-parameters" id="toc-learning-the-parameters"><span class="toc-section-number">8.1.4</span> Learning the Parameters</a></li>
-<li><a href="deeplearning.html#parameter-learning-example-in-r" id="toc-parameter-learning-example-in-r"><span class="toc-section-number">8.1.5</span> Parameter Learning Example in R</a></li>
-<li><a href="deeplearning.html#stochastic-gradient-descent" id="toc-stochastic-gradient-descent"><span class="toc-section-number">8.1.6</span> Stochastic Gradient Descent</a></li>
+<li class="chapter" data-level="8.1.1" data-path="deeplearning.html"><a href="deeplearning.html#sigmoid-and-relu-units"><i class="fa fa-check"></i><b>8.1.1</b> Sigmoid and ReLU Units</a></li>
+<li class="chapter" data-level="8.1.2" data-path="deeplearning.html"><a href="deeplearning.html#assembling-units-into-layers"><i class="fa fa-check"></i><b>8.1.2</b> Assembling Units into Layers</a></li>
+<li class="chapter" data-level="8.1.3" data-path="deeplearning.html"><a href="deeplearning.html#deep-neural-networks"><i class="fa fa-check"></i><b>8.1.3</b> Deep Neural Networks</a></li>
+<li class="chapter" data-level="8.1.4" data-path="deeplearning.html"><a href="deeplearning.html#learning-the-parameters"><i class="fa fa-check"></i><b>8.1.4</b> Learning the Parameters</a></li>
+<li class="chapter" data-level="8.1.5" data-path="deeplearning.html"><a href="deeplearning.html#parameter-learning-example-in-r"><i class="fa fa-check"></i><b>8.1.5</b> Parameter Learning Example in R</a></li>
+<li class="chapter" data-level="8.1.6" data-path="deeplearning.html"><a href="deeplearning.html#stochastic-gradient-descent"><i class="fa fa-check"></i><b>8.1.6</b> Stochastic Gradient Descent</a></li>
 </ul></li>
-<li><a href="deeplearning.html#keras-and-tensorflow-with-r" id="toc-keras-and-tensorflow-with-r"><span class="toc-section-number">8.2</span> Keras and TensorFlow with R</a>
+<li class="chapter" data-level="8.2" data-path="deeplearning.html"><a href="deeplearning.html#keras-and-tensorflow-with-r"><i class="fa fa-check"></i><b>8.2</b> Keras and TensorFlow with R</a>
 <ul>
-<li><a href="deeplearning.html#keras-example" id="toc-keras-example"><span class="toc-section-number">8.2.1</span> Keras Example</a></li>
+<li class="chapter" data-level="8.2.1" data-path="deeplearning.html"><a href="deeplearning.html#keras-example"><i class="fa fa-check"></i><b>8.2.1</b> Keras Example</a></li>
 </ul></li>
-<li><a href="deeplearning.html#classification-with-neural-networks" id="toc-classification-with-neural-networks"><span class="toc-section-number">8.3</span> Classification with Neural Networks</a>
+<li class="chapter" data-level="8.3" data-path="deeplearning.html"><a href="deeplearning.html#classification-with-neural-networks"><i class="fa fa-check"></i><b>8.3</b> Classification with Neural Networks</a>
 <ul>
-<li><a href="deeplearning.html#classification-of-electromyography-signals" id="toc-classification-of-electromyography-signals"><span class="toc-section-number">8.3.1</span> Classification of Electromyography Signals</a></li>
+<li class="chapter" data-level="8.3.1" data-path="deeplearning.html"><a href="deeplearning.html#classification-of-electromyography-signals"><i class="fa fa-check"></i><b>8.3.1</b> Classification of Electromyography Signals</a></li>
 </ul></li>
-<li><a href="deeplearning.html#overfitting" id="toc-overfitting"><span class="toc-section-number">8.4</span> Overfitting</a>
+<li class="chapter" data-level="8.4" data-path="deeplearning.html"><a href="deeplearning.html#overfitting"><i class="fa fa-check"></i><b>8.4</b> Overfitting</a>
 <ul>
-<li><a href="deeplearning.html#early-stopping" id="toc-early-stopping"><span class="toc-section-number">8.4.1</span> Early Stopping</a></li>
-<li><a href="deeplearning.html#dropout" id="toc-dropout"><span class="toc-section-number">8.4.2</span> Dropout</a></li>
+<li class="chapter" data-level="8.4.1" data-path="deeplearning.html"><a href="deeplearning.html#early-stopping"><i class="fa fa-check"></i><b>8.4.1</b> Early Stopping</a></li>
+<li class="chapter" data-level="8.4.2" data-path="deeplearning.html"><a href="deeplearning.html#dropout"><i class="fa fa-check"></i><b>8.4.2</b> Dropout</a></li>
 </ul></li>
-<li><a href="deeplearning.html#fine-tuning-a-neural-network" id="toc-fine-tuning-a-neural-network"><span class="toc-section-number">8.5</span> Fine-tuning a Neural Network</a></li>
-<li><a href="deeplearning.html#cnns" id="toc-cnns"><span class="toc-section-number">8.6</span> Convolutional Neural Networks</a>
+<li class="chapter" data-level="8.5" data-path="deeplearning.html"><a href="deeplearning.html#fine-tuning-a-neural-network"><i class="fa fa-check"></i><b>8.5</b> Fine-tuning a Neural Network</a></li>
+<li class="chapter" data-level="8.6" data-path="deeplearning.html"><a href="deeplearning.html#cnns"><i class="fa fa-check"></i><b>8.6</b> Convolutional Neural Networks</a>
 <ul>
-<li><a href="deeplearning.html#convolutions" id="toc-convolutions"><span class="toc-section-number">8.6.1</span> Convolutions</a></li>
-<li><a href="deeplearning.html#pooling-operations" id="toc-pooling-operations"><span class="toc-section-number">8.6.2</span> Pooling Operations</a></li>
+<li class="chapter" data-level="8.6.1" data-path="deeplearning.html"><a href="deeplearning.html#convolutions"><i class="fa fa-check"></i><b>8.6.1</b> Convolutions</a></li>
+<li class="chapter" data-level="8.6.2" data-path="deeplearning.html"><a href="deeplearning.html#pooling-operations"><i class="fa fa-check"></i><b>8.6.2</b> Pooling Operations</a></li>
 </ul></li>
-<li><a href="deeplearning.html#cnns-with-keras" id="toc-cnns-with-keras"><span class="toc-section-number">8.7</span> CNNs with Keras</a>
+<li class="chapter" data-level="8.7" data-path="deeplearning.html"><a href="deeplearning.html#cnns-with-keras"><i class="fa fa-check"></i><b>8.7</b> CNNs with Keras</a>
 <ul>
-<li><a href="deeplearning.html#example-1" id="toc-example-1"><span class="toc-section-number">8.7.1</span> Example 1</a></li>
-<li><a href="deeplearning.html#example-2" id="toc-example-2"><span class="toc-section-number">8.7.2</span> Example 2</a></li>
+<li class="chapter" data-level="8.7.1" data-path="deeplearning.html"><a href="deeplearning.html#example-1"><i class="fa fa-check"></i><b>8.7.1</b> Example 1</a></li>
+<li class="chapter" data-level="8.7.2" data-path="deeplearning.html"><a href="deeplearning.html#example-2"><i class="fa fa-check"></i><b>8.7.2</b> Example 2</a></li>
 </ul></li>
-<li><a href="deeplearning.html#cnnSmile" id="toc-cnnSmile"><span class="toc-section-number">8.8</span> Smiles Detection with a CNN</a></li>
-<li><a href="deeplearning.html#SummaryDeepLearning" id="toc-SummaryDeepLearning"><span class="toc-section-number">8.9</span> Summary</a></li>
+<li class="chapter" data-level="8.8" data-path="deeplearning.html"><a href="deeplearning.html#cnnSmile"><i class="fa fa-check"></i><b>8.8</b> Smiles Detection with a CNN</a></li>
+<li class="chapter" data-level="8.9" data-path="deeplearning.html"><a href="deeplearning.html#SummaryDeepLearning"><i class="fa fa-check"></i><b>8.9</b> Summary</a></li>
 </ul></li>
-<li><a href="multiuser.html#multiuser" id="toc-multiuser"><span class="toc-section-number">9</span> Multi-user Validation</a>
+<li class="chapter" data-level="9" data-path="multiuser.html"><a href="multiuser.html"><i class="fa fa-check"></i><b>9</b> Multi-user Validation</a>
 <ul>
-<li><a href="multiuser.html#mixed-models" id="toc-mixed-models"><span class="toc-section-number">9.1</span> Mixed Models</a>
+<li class="chapter" data-level="9.1" data-path="multiuser.html"><a href="multiuser.html#mixed-models"><i class="fa fa-check"></i><b>9.1</b> Mixed Models</a>
 <ul>
-<li><a href="multiuser.html#skeleton-action-recognition-with-mixed-models" id="toc-skeleton-action-recognition-with-mixed-models"><span class="toc-section-number">9.1.1</span> Skeleton Action Recognition with Mixed Models</a></li>
+<li class="chapter" data-level="9.1.1" data-path="multiuser.html"><a href="multiuser.html#skeleton-action-recognition-with-mixed-models"><i class="fa fa-check"></i><b>9.1.1</b> Skeleton Action Recognition with Mixed Models</a></li>
 </ul></li>
-<li><a href="multiuser.html#user-independent-models" id="toc-user-independent-models"><span class="toc-section-number">9.2</span> User-independent Models</a></li>
-<li><a href="multiuser.html#user-dependent-models" id="toc-user-dependent-models"><span class="toc-section-number">9.3</span> User-dependent Models</a></li>
-<li><a href="multiuser.html#user-adaptive-models" id="toc-user-adaptive-models"><span class="toc-section-number">9.4</span> User-adaptive Models</a>
+<li class="chapter" data-level="9.2" data-path="multiuser.html"><a href="multiuser.html#user-independent-models"><i class="fa fa-check"></i><b>9.2</b> User-independent Models</a></li>
+<li class="chapter" data-level="9.3" data-path="multiuser.html"><a href="multiuser.html#user-dependent-models"><i class="fa fa-check"></i><b>9.3</b> User-dependent Models</a></li>
+<li class="chapter" data-level="9.4" data-path="multiuser.html"><a href="multiuser.html#user-adaptive-models"><i class="fa fa-check"></i><b>9.4</b> User-adaptive Models</a>
 <ul>
-<li><a href="multiuser.html#transfer-learning" id="toc-transfer-learning"><span class="toc-section-number">9.4.1</span> Transfer Learning</a></li>
-<li><a href="multiuser.html#a-user-adaptive-model-for-activity-recognition" id="toc-a-user-adaptive-model-for-activity-recognition"><span class="toc-section-number">9.4.2</span> A User-adaptive Model for Activity Recognition</a></li>
+<li class="chapter" data-level="9.4.1" data-path="multiuser.html"><a href="multiuser.html#transfer-learning"><i class="fa fa-check"></i><b>9.4.1</b> Transfer Learning</a></li>
+<li class="chapter" data-level="9.4.2" data-path="multiuser.html"><a href="multiuser.html#a-user-adaptive-model-for-activity-recognition"><i class="fa fa-check"></i><b>9.4.2</b> A User-adaptive Model for Activity Recognition</a></li>
 </ul></li>
-<li><a href="multiuser.html#SummaryMultiUser" id="toc-SummaryMultiUser"><span class="toc-section-number">9.5</span> Summary</a></li>
+<li class="chapter" data-level="9.5" data-path="multiuser.html"><a href="multiuser.html#SummaryMultiUser"><i class="fa fa-check"></i><b>9.5</b> Summary</a></li>
 </ul></li>
-<li><a href="abnormalbehaviors.html#abnormalbehaviors" id="toc-abnormalbehaviors"><span class="toc-section-number">10</span> Detecting Abnormal Behaviors</a>
+<li class="chapter" data-level="10" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html"><i class="fa fa-check"></i><b>10</b> Detecting Abnormal Behaviors</a>
 <ul>
-<li><a href="abnormalbehaviors.html#isolation-forests" id="toc-isolation-forests"><span class="toc-section-number">10.1</span> Isolation Forests</a></li>
-<li><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors" id="toc-detecting-abnormal-fish-behaviors"><span class="toc-section-number">10.2</span> Detecting Abnormal Fish Behaviors</a>
+<li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
+<li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a>
 <ul>
-<li><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories" id="toc-exploring-and-visualizing-trajectories"><span class="toc-section-number">10.2.1</span> Exploring and Visualizing Trajectories</a></li>
-<li><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction" id="toc-preprocessing-and-feature-extraction"><span class="toc-section-number">10.2.2</span> Preprocessing and Feature Extraction</a></li>
-<li><a href="abnormalbehaviors.html#training-the-model" id="toc-training-the-model"><span class="toc-section-number">10.2.3</span> Training the Model</a></li>
-<li><a href="abnormalbehaviors.html#roc-curve-and-auc" id="toc-roc-curve-and-auc"><span class="toc-section-number">10.2.4</span> ROC Curve and AUC</a></li>
+<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Exploring and Visualizing Trajectories</a></li>
+<li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
+<li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
+<li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC Curve and AUC</a></li>
 </ul></li>
-<li><a href="abnormalbehaviors.html#autoencoders" id="toc-autoencoders"><span class="toc-section-number">10.3</span> Autoencoders</a>
+<li class="chapter" data-level="10.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders"><i class="fa fa-check"></i><b>10.3</b> Autoencoders</a>
 <ul>
-<li><a href="abnormalbehaviors.html#autoencoders-for-anomaly-detection" id="toc-autoencoders-for-anomaly-detection"><span class="toc-section-number">10.3.1</span> Autoencoders for Anomaly Detection</a></li>
+<li class="chapter" data-level="10.3.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders-for-anomaly-detection"><i class="fa fa-check"></i><b>10.3.1</b> Autoencoders for Anomaly Detection</a></li>
 </ul></li>
-<li><a href="abnormalbehaviors.html#SummaryAnomalyDetection" id="toc-SummaryAnomalyDetection"><span class="toc-section-number">10.4</span> Summary</a></li>
+<li class="chapter" data-level="10.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#SummaryAnomalyDetection"><i class="fa fa-check"></i><b>10.4</b> Summary</a></li>
 </ul></li>
-<li><a href="#appendix-appendix" id="toc-appendix-appendix">(APPENDIX) Appendix</a></li>
-<li><a href="appendixInstall.html#appendixInstall" id="toc-appendixInstall"><span class="toc-section-number">11</span> Setup Your Environment</a>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendixInstall.html"><a href="appendixInstall.html"><i class="fa fa-check"></i><b>A</b> Setup Your Environment</a>
 <ul>
-<li><a href="appendixInstall.html#installing-the-datasets" id="toc-installing-the-datasets"><span class="toc-section-number">11.1</span> Installing the Datasets</a></li>
-<li><a href="appendixInstall.html#installing-the-examples-source-code" id="toc-installing-the-examples-source-code"><span class="toc-section-number">11.2</span> Installing the Examples Source Code</a></li>
-<li><a href="appendixInstall.html#running-shiny-apps" id="toc-running-shiny-apps"><span class="toc-section-number">11.3</span> Running Shiny Apps</a></li>
-<li><a href="appendixInstall.html#installing-keras-and-tensorflow" id="toc-installing-keras-and-tensorflow"><span class="toc-section-number">11.4</span> Installing Keras and TensorFlow</a></li>
+<li class="chapter" data-level="A.1" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-datasets"><i class="fa fa-check"></i><b>A.1</b> Installing the Datasets</a></li>
+<li class="chapter" data-level="A.2" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-examples-source-code"><i class="fa fa-check"></i><b>A.2</b> Installing the Examples Source Code</a></li>
+<li class="chapter" data-level="A.3" data-path="appendixInstall.html"><a href="appendixInstall.html#running-shiny-apps"><i class="fa fa-check"></i><b>A.3</b> Running Shiny Apps</a></li>
+<li class="chapter" data-level="A.4" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-keras-and-tensorflow"><i class="fa fa-check"></i><b>A.4</b> Installing Keras and TensorFlow</a></li>
 </ul></li>
-<li><a href="appendixDatasets.html#appendixDatasets" id="toc-appendixDatasets"><span class="toc-section-number">12</span> Datasets</a>
+<li class="chapter" data-level="B" data-path="appendixDatasets.html"><a href="appendixDatasets.html"><i class="fa fa-check"></i><b>B</b> Datasets</a>
 <ul>
-<li><a href="appendixDatasets.html#complex-activities" id="toc-complex-activities"><span class="toc-section-number">12.1</span> COMPLEX ACTIVITIES</a></li>
-<li><a href="appendixDatasets.html#depresjon" id="toc-depresjon"><span class="toc-section-number">12.2</span> DEPRESJON</a></li>
-<li><a href="appendixDatasets.html#electromyography" id="toc-electromyography"><span class="toc-section-number">12.3</span> ELECTROMYOGRAPHY</a></li>
-<li><a href="appendixDatasets.html#fish-trajectories" id="toc-fish-trajectories"><span class="toc-section-number">12.4</span> FISH TRAJECTORIES</a></li>
-<li><a href="appendixDatasets.html#hand-gestures" id="toc-hand-gestures"><span class="toc-section-number">12.5</span> HAND GESTURES</a></li>
-<li><a href="appendixDatasets.html#home-tasks" id="toc-home-tasks"><span class="toc-section-number">12.6</span> HOME TASKS</a></li>
-<li><a href="appendixDatasets.html#homicide-reports" id="toc-homicide-reports"><span class="toc-section-number">12.7</span> HOMICIDE REPORTS</a></li>
-<li><a href="appendixDatasets.html#indoor-location" id="toc-indoor-location"><span class="toc-section-number">12.8</span> INDOOR LOCATION</a></li>
-<li><a href="appendixDatasets.html#sheep-goats" id="toc-sheep-goats"><span class="toc-section-number">12.9</span> SHEEP GOATS</a></li>
-<li><a href="appendixDatasets.html#skeleton-actions" id="toc-skeleton-actions"><span class="toc-section-number">12.10</span> SKELETON ACTIONS</a></li>
-<li><a href="appendixDatasets.html#smartphone-activities" id="toc-smartphone-activities"><span class="toc-section-number">12.11</span> SMARTPHONE ACTIVITIES</a></li>
-<li><a href="appendixDatasets.html#smiles" id="toc-smiles"><span class="toc-section-number">12.12</span> SMILES</a></li>
-<li><a href="appendixDatasets.html#students-mental-health" id="toc-students-mental-health"><span class="toc-section-number">12.13</span> STUDENTS’ MENTAL HEALTH</a></li>
+<li class="chapter" data-level="B.1" data-path="appendixDatasets.html"><a href="appendixDatasets.html#complex-activities"><i class="fa fa-check"></i><b>B.1</b> COMPLEX ACTIVITIES</a></li>
+<li class="chapter" data-level="B.2" data-path="appendixDatasets.html"><a href="appendixDatasets.html#depresjon"><i class="fa fa-check"></i><b>B.2</b> DEPRESJON</a></li>
+<li class="chapter" data-level="B.3" data-path="appendixDatasets.html"><a href="appendixDatasets.html#electromyography"><i class="fa fa-check"></i><b>B.3</b> ELECTROMYOGRAPHY</a></li>
+<li class="chapter" data-level="B.4" data-path="appendixDatasets.html"><a href="appendixDatasets.html#fish-trajectories"><i class="fa fa-check"></i><b>B.4</b> FISH TRAJECTORIES</a></li>
+<li class="chapter" data-level="B.5" data-path="appendixDatasets.html"><a href="appendixDatasets.html#hand-gestures"><i class="fa fa-check"></i><b>B.5</b> HAND GESTURES</a></li>
+<li class="chapter" data-level="B.6" data-path="appendixDatasets.html"><a href="appendixDatasets.html#home-tasks"><i class="fa fa-check"></i><b>B.6</b> HOME TASKS</a></li>
+<li class="chapter" data-level="B.7" data-path="appendixDatasets.html"><a href="appendixDatasets.html#homicide-reports"><i class="fa fa-check"></i><b>B.7</b> HOMICIDE REPORTS</a></li>
+<li class="chapter" data-level="B.8" data-path="appendixDatasets.html"><a href="appendixDatasets.html#indoor-location"><i class="fa fa-check"></i><b>B.8</b> INDOOR LOCATION</a></li>
+<li class="chapter" data-level="B.9" data-path="appendixDatasets.html"><a href="appendixDatasets.html#sheep-goats"><i class="fa fa-check"></i><b>B.9</b> SHEEP GOATS</a></li>
+<li class="chapter" data-level="B.10" data-path="appendixDatasets.html"><a href="appendixDatasets.html#skeleton-actions"><i class="fa fa-check"></i><b>B.10</b> SKELETON ACTIONS</a></li>
+<li class="chapter" data-level="B.11" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smartphone-activities"><i class="fa fa-check"></i><b>B.11</b> SMARTPHONE ACTIVITIES</a></li>
+<li class="chapter" data-level="B.12" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smiles"><i class="fa fa-check"></i><b>B.12</b> SMILES</a></li>
+<li class="chapter" data-level="B.13" data-path="appendixDatasets.html"><a href="appendixDatasets.html#students-mental-health"><i class="fa fa-check"></i><b>B.13</b> STUDENTS’ MENTAL HEALTH</a></li>
 </ul></li>
-<li><a href="citing-this-book.html#citing-this-book" id="toc-citing-this-book">Citing this Book</a></li>
-<li><a href="references.html#references" id="toc-references">References</a></li>
+<li class="chapter" data-level="" data-path="citing-this-book.html"><a href="citing-this-book.html"><i class="fa fa-check"></i>Citing this Book</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
       </nav>
@@ -461,7 +463,7 @@ div.csl-indent {
 <li><p><strong>Understand.</strong> Analyzing the behavior of an organism can help us to understand other associated behaviors and processes and to answer research questions. For example, <span class="citation">Williams et al. (<a href="#ref-williams2020">2020</a>)</span> found that <em>Andean condors</em>, the heaviest soaring bird (see Figure <a href="intro.html#fig:condor">1.1</a>), only flap their wings for about <span class="math inline">\(1\%\)</span> of their total flight time. In one of the cases, a condor flew <span class="math inline">\(\approx 172\)</span> km without flapping. Those findings were the result of analyzing the birds’ behavior from data recorded by bio-logging devices. In this book, several examples that make use of inertial devices will be studied.</p></li>
 </ol>
 
-<div class="figure" style="text-align: center"><span id="fig:condor"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:condor"></span>
 <img src="images/condor.jpg" alt="Andean condor. (Hugo Pédel, France, Travail personnel. Cliché réalisé dans le Parc National Argentin Nahuel Huapi, San Carlos de Bariloche, Laguna Tonchek. Source: Wikipedia (CC BY-SA 3.0) [https://creativecommons.org/licenses/by-sa/3.0/legalcode])." width="50%" />
 <p class="caption">
 FIGURE 1.1: Andean condor. (Hugo Pédel, France, Travail personnel. Cliché réalisé dans le Parc National Argentin Nahuel Huapi, San Carlos de Bariloche, Laguna Tonchek. Source: Wikipedia (CC BY-SA 3.0) [<a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" class="uri">https://creativecommons.org/licenses/by-sa/3.0/legalcode</a>]).
@@ -470,7 +472,7 @@ FIGURE 1.1: Andean condor. (Hugo Pédel, France, Travail personnel. Cliché réa
 <ol start="3" style="list-style-type: decimal">
 <li><strong>Document and Archive.</strong> Finally, we may want to document certain behaviors for future use. It could be for evidence purposes or maybe it is not clear how the information can be used now but may come in handy later. Based on the archived information, one could gain new knowledge in the future and use it to react (take decisions/actions), as shown in Figure <a href="intro.html#fig:decisionsActions">1.2</a>. For example, we could document our nutritional habits (what do we eat, how often, etc.). If there is a health issue, a specialist could use this historical information to make a more precise diagnosis and propose actions.</li>
 </ol>
-<div class="figure" style="text-align: center"><span id="fig:decisionsActions"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:decisionsActions"></span>
 <img src="images/decisions.png" alt="Taking decisions from archived behaviors." width="70%" />
 <p class="caption">
 FIGURE 1.2: Taking decisions from archived behaviors.
@@ -491,7 +493,7 @@ FIGURE 1.2: Taking decisions from archived behaviors.
 <span id="cb1-4"><a href="intro.html#cb1-4" tabindex="-1"></a>  return <span class="st">&quot;orange&quot;</span></span></code></pre></div>
 <p>This simple rule should work well and will do the job. Imagine that now your boss tells you that the system needs to recognize <em>green apples</em> as well. Our previous rule will no longer work, and we will need to include additional rules and thresholds. On the other hand, a machine learning algorithm will automatically learn such rules based on the updated data. So, you only need to update your data with examples of <em>green apples</em> and “click” the re-train button!</p>
 <p>The result of <em>learning</em> is <em>knowledge</em> that the system can use to solve new instances of a problem. In this case, when you show a new image to the system, it should be able to recognize the type of fruit. Figure <a href="intro.html#fig:mlPhases">1.3</a> shows this general idea.</p>
-<div class="figure" style="text-align: center"><span id="fig:mlPhases"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:mlPhases"></span>
 <img src="images/ml.png" alt="Overall Machine Learning phases. The '?' represents the new unknown object for which we want to obtain a prediction using the learned model." width="100%" />
 <p class="caption">
 FIGURE 1.3: Overall Machine Learning phases. The ‘?’ represents the new unknown object for which we want to obtain a prediction using the learned model.
@@ -518,7 +520,7 @@ Not every machine learning method needs the expected output or labels (more on t
 <h2><span class="header-section-number">1.3</span> Types of Machine Learning<a href="intro.html#taxonomy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Machine learning methods can be grouped into different types. Figure <a href="intro.html#fig:mlTaxonomy">1.4</a> depicts a categorization of machine learning ‘types’. This figure is based on <span class="citation">(<a href="#ref-biecek2012">Biecek et al. 2012</a>)</span>. The <span class="math inline">\(x\)</span> axis represents the certainty of the labels and the <span class="math inline">\(y\)</span> axis the percent of training data that is labeled. In the previous example, the labels are the names of the fruits associated with each image.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:mlTaxonomy"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:mlTaxonomy"></span>
 <img src="images/taxonomy.png" alt="Machine learning taxonomy. (Adapted from Biecek, Przemyslaw, et al. “The R package bgmm: mixture modeling with uncertain knowledge.” Journal of Statistical Software 47.i03 (2012). (CC BY 3.0) [https://creativecommons.org/licenses/by/3.0/legalcode])." width="70%" />
 <p class="caption">
 FIGURE 1.4: Machine learning taxonomy. (Adapted from Biecek, Przemyslaw, et al. “The R package bgmm: mixture modeling with uncertain knowledge.” <em>Journal of Statistical Software</em> 47.i03 (2012). (CC BY 3.0) [<a href="https://creativecommons.org/licenses/by/3.0/legalcode" class="uri">https://creativecommons.org/licenses/by/3.0/legalcode</a>]).
@@ -538,7 +540,7 @@ FIGURE 1.4: Machine learning taxonomy. (Adapted from Biecek, Przemyslaw, et al.�
 <li><p><strong>Partially-supervised learning.</strong> This is a generalization that encompasses supervised and semi-supervised learning. Here, the examples have uncertain (<em>soft</em>) labels. For example, the label of a fruit image instead of being an <em>‘orange’</em> or <em>‘pear’</em> could be a vector <span class="math inline">\([0.7, 0.3]\)</span> where the first element is the probability that the image corresponds to an orange and the second element is the probability that it’s a pear. Maybe the image was not very clear, and these are the beliefs of the person tagging the images encoded as probabilities. Examples of models that can be used for partially-supervised learning are mixture models with belief functions <span class="citation">(<a href="#ref-comelearning">Côme et al. 2009</a>)</span> and neural networks.</p></li>
 <li><p><strong>Unsupervised learning.</strong> This is the extreme case when none of the training examples have a label. That is, the dataset only has pairs <span class="math inline">\((x,?)\)</span>. Now, you may be wondering: If there are no labels, is it possible to extract information from these data? The answer is <em>yes</em>. Imagine you have fruit images with no labels. What you could try to do is to automatically group them into meaningful categories/groups. The categories could be the types of fruits themselves, i.e., trying to form groups in which images within the same category belong to the same type. In the fruits example, we could infer the true types by visually inspecting the images, but in many cases, visual inspection is difficult and the formed groups may not have an easy interpretation, but still, they can be very useful and can be used as a preprocessing step (like in vector quantization). These types of algorithms that find groups (hierarchical groups in some cases) are called <strong>clustering methods</strong>. Examples of clustering methods are <span class="math inline">\(k\)</span>-means, <span class="math inline">\(k\)</span>-medoids, and hierarchical clustering. Clustering algorithms are not the only unsupervised learning methods. Association rules, word embeddings, and autoencoders are examples of other unsupervised learning methods. <em>Note:</em> Some people may claim that word embeddings and autoencoders are not fully unsupervised methods but for practical purposes, this is not relevant.</p></li>
 </ul>
-<p>Additionally, there is another type of machine learning called <strong>Reinforcement Learning (RL)</strong> which has substantial differences from the previous ones. This type of learning does not rely on example data as the previous ones but on stimuli from an agent’s environment. At any given point in time, an agent can perform an action which will lead it to a new state where a <em>reward</em> is collected. The aim is to learn the sequence of actions that maximize the reward. This type of learning is not covered in this book. A good introduction to the topic can be consulted here<a href="references.html#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+<p>Additionally, there is another type of machine learning called <strong>Reinforcement Learning (RL)</strong> which has substantial differences from the previous ones. This type of learning does not rely on example data as the previous ones but on stimuli from an agent’s environment. At any given point in time, an agent can perform an action which will lead it to a new state where a <em>reward</em> is collected. The aim is to learn the sequence of actions that maximize the reward. This type of learning is not covered in this book. A good introduction to the topic can be consulted here<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
 <p>This book will mainly cover supervised learning problems and more specifically, classification problems. For example, given a set of wearable sensor readings, we want to predict contextual information about a given user such as location, current activity, mood, and so on. Unsupervised learning methods (clustering and association rules) will be covered in chapter <a href="unsupervised.html#unsupervised">6</a> and autoencoders are introduced in chapter <a href="abnormalbehaviors.html#abnormalbehaviors">10</a>.</p>
 </div>
 <div id="terminology" class="section level2 hasAnchor" number="1.4">
@@ -546,9 +548,9 @@ FIGURE 1.4: Machine learning taxonomy. (Adapted from Biecek, Przemyslaw, et al.�
 <p>This section introduces some basic terminology that will be helpful for the rest of the book.</p>
 <div id="tables" class="section level3 hasAnchor" number="1.4.1">
 <h3><span class="header-section-number">1.4.1</span> Tables<a href="intro.html#tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Since data is the most important ingredient in machine learning, let’s start with some related terms. First, data needs to be stored/structured so it can be easily manipulated and processed. Most of the time, datasets will be stored as <em>tables</em> or in R terminology, <em>data frames</em>. Figure <a href="intro.html#fig:terminology1">1.5</a> shows the classic <code>mtcars</code> dataset<a href="references.html#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> stored in a data frame.</p>
+<p>Since data is the most important ingredient in machine learning, let’s start with some related terms. First, data needs to be stored/structured so it can be easily manipulated and processed. Most of the time, datasets will be stored as <em>tables</em> or in R terminology, <em>data frames</em>. Figure <a href="intro.html#fig:terminology1">1.5</a> shows the classic <code>mtcars</code> dataset<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> stored in a data frame.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:terminology1"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:terminology1"></span>
 <img src="images/terminologyTable.png" alt="Table/Data frame components. Source: Data from the 1974 Motor Trend US magazine." width="90%" />
 <p class="caption">
 FIGURE 1.5: Table/Data frame components. Source: Data from the 1974 Motor Trend US magazine.
@@ -558,7 +560,7 @@ FIGURE 1.5: Table/Data frame components. Source: Data from the 1974 Motor Trend 
 <p>Figure <a href="intro.html#fig:terminology2">1.6</a> shows a data frame for the <code>iris</code> dataset which consists of different kinds of plants <span class="citation">(<a href="#ref-Fisher1936">Fisher 1936</a>)</span>. Suppose that we are interested in predicting the <em>Species</em> based on the other variables. In machine learning terminology, the variable of interest (the one that depends on the others) is called the <em>class</em> or <em>label</em> for classification problems. For regression, it is often referred to as <em>y</em>. In statistics, it is more commonly known as the <em>response</em>, <em>dependent</em>, or <em>y</em> variable, for both classification and regression.</p>
 <p>In machine learning terminology, the rest of the variables are called <em>features</em> or <em>attributes</em>. In statistics, they are called <em>predictors</em>, <em>independent variables</em>, or just <em>X</em>. From the context, most of the time it should be easy to identify dependent from independent variables regardless of the used terminology. The word <strong>feature vector</strong> is also very common in machine learning. A feature vector is just a structure containing the features of a given instance. For example, the features of the first instance in Figure <a href="intro.html#fig:terminology2">1.6</a> can be stored as a feature vector <span class="math inline">\([5.4,3.9,1.3,0.4]\)</span> of size <span class="math inline">\(4\)</span>. In a programming language, this can be implemented with an array.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:terminology2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:terminology2"></span>
 <img src="images/terminologyTable2.png" alt="Table/Data frame components (cont.). Source: Data from Fisher, Ronald A., “The Use of Multiple Measurements in Taxonomic Problems.” Annals of Eugenics 7, no. 2 (1936): 179–88." width="90%" />
 <p class="caption">
 FIGURE 1.6: Table/Data frame components (cont.). Source: Data from Fisher, Ronald A., “The Use of Multiple Measurements in Taxonomic Problems.” <em>Annals of Eugenics</em> 7, no. 2 (1936): 179–88.
@@ -583,7 +585,7 @@ FIGURE 1.6: Table/Data frame components (cont.). Source: Data from Fisher, Ronal
 <div id="pipeline" class="section level2 hasAnchor" number="1.5">
 <h2><span class="header-section-number">1.5</span> Data Analysis Pipeline<a href="intro.html#pipeline" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Usually, the data analysis pipeline consists of several steps which are depicted in Figure <a href="intro.html#fig:pipeline">1.7</a>. This is not a complete list but includes the most common steps. It all starts with the data collection. Then the data exploration and so on, until the results are presented. These steps can be followed in sequence, but you can always jump from one step to another one. In fact, most of the time you will end up using an iterative approach by going from one step to the other (forward or backward) as needed.</p>
-<div class="figure" style="text-align: center"><span id="fig:pipeline"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pipeline"></span>
 <img src="images/pipeline.png" alt="Data analysis pipeline." width="100%" />
 <p class="caption">
 FIGURE 1.7: Data analysis pipeline.
@@ -604,7 +606,7 @@ FIGURE 1.7: Data analysis pipeline.
 <p>Once you have trained a model (with a training set), that is, finding the best function <span class="math inline">\(f\)</span> that maps inputs to their corresponding outputs, you may want to estimate how good the model is at solving a particular problem when presented with examples it has never seen before (that were not part of the training set). This estimate of how good the model is at predicting the output of new examples is called the <strong>generalization performance</strong>.</p>
 <p>To estimate the generalization performance of a model, a dataset is usually divided into a <em>train set</em> and a <em>test set</em>. As the name implies, the train set is used to train the model (learn its parameters) and the test set is used to evaluate/test its generalization performance. We need independent sets because when deploying models in the wild, they will be presented with new instances never seen before. By dividing the dataset into two subsets, we are simulating this scenario where the test set instances were never seen by the model at training time so the performance estimate will be more accurate rather than if we used the same set to train and then to evaluate the performance. There are two main validation methods that differ in the way the dataset is divided into train and test sets: <em>hold-out validation</em> and <em>k-fold cross validation</em>.</p>
 <p><strong>1) Hold-out validation.</strong> This method randomly splits the dataset into train and test sets based on some predefined percentages. For example, randomly select <span class="math inline">\(70\%\)</span> of the instances and use them as the train set and use the remaining <span class="math inline">\(30\%\)</span> of the examples for the test set. This will vary depending on the application and the amount of data, but typical splits are <span class="math inline">\(50/50\)</span> and <span class="math inline">\(70/30\)</span> percent for the train and test sets, respectively. Figure <a href="intro.html#fig:holdout">1.8</a> shows an example of a dataset divided into <span class="math inline">\(70/30\)</span>.</p>
-<div class="figure" style="text-align: center"><span id="fig:holdout"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:holdout"></span>
 <img src="images/holdout.png" alt="Hold-out validation." width="70%" />
 <p class="caption">
 FIGURE 1.8: Hold-out validation.
@@ -618,7 +620,7 @@ It is a good practice to estimate the performance on both, the train and test se
 <p><strong>2) <span class="math inline">\(k\)</span>-fold cross-validation.</strong> Hold-out validation is a good way to evaluate your models when you have a lot of data. However, in many cases, your data will be limited. In those cases, you want to make efficient use of the data. With hold-out validation, each instance is included either in the train or test set. <span class="math inline">\(k\)</span>-fold cross-validation provides a way in which instances take part in both, the test and train set, thus making more efficient use of the data.</p>
 <p>This method consists of randomly assigning each instance into one of <span class="math inline">\(k\)</span> folds (subsets) with approximately the same size. Then, <span class="math inline">\(k\)</span> iterations are performed. In each iteration, one of the folds is used to test the model while the remaining ones are used to train it. Each fold is used once as the test set and <span class="math inline">\(k-1\)</span> times as part of the train set. Typical values for <span class="math inline">\(k\)</span> are <span class="math inline">\(3\)</span>, <span class="math inline">\(5\)</span>, and <span class="math inline">\(10\)</span>. In the extreme case where <span class="math inline">\(k\)</span> is equal to the total number of instances in the dataset, it is called leave-one-out cross-validation (LOOCV). Figure <a href="intro.html#fig:holdout">1.8</a> shows an example of cross-validation with <span class="math inline">\(k=5\)</span>.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:crossvalidation"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:crossvalidation"></span>
 <img src="images/crossvalidation.png" alt="\(k\)-fold cross validation with \(k=5\) and \(5\) iterations." width="90%" />
 <p class="caption">
 FIGURE 1.9: <span class="math inline">\(k\)</span>-fold cross validation with <span class="math inline">\(k=5\)</span> and <span class="math inline">\(5\)</span> iterations.
@@ -641,7 +643,7 @@ simple_model.R
 </div>
 <p>So far, a lot of terminology and concepts have been introduced. In this section, we will work through a practical example that will demonstrate how most of these concepts fit together. Here you will build (from scratch) your first classification and regression models! Furthermore, you will learn how to evaluate their generalization performance.</p>
 <p>Suppose you have a dataset that contains information about felines including their maximum speed in km/hr and their specific type. For the sake of the example, suppose that these two variables are the only ones that we can observe. As for the types, consider that there are two possibilities: <em>‘tiger’</em> and <em>‘leopard’</em>. Figure <a href="intro.html#fig:felinesTable">1.10</a> shows the first <span class="math inline">\(10\)</span> instances (rows) of the dataset.</p>
-<div class="figure" style="text-align: center"><span id="fig:felinesTable"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:felinesTable"></span>
 <img src="images/felines_table.png" alt="First 10 instances of felines dataset." width="25%" />
 <p class="caption">
 FIGURE 1.10: First 10 instances of felines dataset.
@@ -673,7 +675,7 @@ FIGURE 1.10: First 10 instances of felines dataset.
 <p>Now, imagine that you are asked to build a model that is able to predict the type of feline based on the observed attributes. In this case, the only thing we can observe is the <em>speed</em>. Our task is to build a function that maps speed measurements to classes. That is, we want to be able to predict the type of feline based on how fast it runs. According to the terminology presented in section <a href="intro.html#terminology">1.4</a>, <em>speed</em> would be a <strong>feature</strong> variable and <em>class</em> would be the <strong>class</strong> variable.</p>
 <p>Based on the types of machine learning methods presented in section <a href="intro.html#taxonomy">1.3</a>, this one is a <strong>supervised learning</strong> problem because for each instance, the class is available. And, specifically, since we want to predict a category, this is a <strong>classification</strong> problem.</p>
 <p>Before building our classification model, it would be worth plotting the data. Figure <a href="intro.html#fig:felineSpeeds">1.11</a> shows the speeds for both tigers and leopards.</p>
-<div class="figure" style="text-align: center"><span id="fig:felineSpeeds"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:felineSpeeds"></span>
 <img src="images/felineSpeeds.png" alt="Feline speeds with vertical dashed lines at the means." width="100%" />
 <p class="caption">
 FIGURE 1.11: Feline speeds with vertical dashed lines at the means.
@@ -917,7 +919,7 @@ simple_model.R
 <span id="cb17-6"><a href="intro.html#cb17-6" tabindex="-1"></a><span class="fu">head</span>(test.predictions)</span>
 <span id="cb17-7"><a href="intro.html#cb17-7" tabindex="-1"></a><span class="co">#&gt; 48.88246 54.58369 54.58369 48.88246 48.88246 54.58369 </span></span></code></pre></div>
 <p>Since these are numeric predictions, we cannot use accuracy as in the classification case to evaluate the performance. One way to evaluate the performance of regression models is by computing the <strong>mean absolute error (MAE)</strong>. This measure tells you, on average, how much each prediction deviates from its true value. It is computed by subtracting each prediction from its real value and taking the absolute value: <span class="math inline">\(|predicted - realValue|\)</span>. This can be visualized in Figure <a href="intro.html#fig:maeExample">1.12</a>. The distances between the true and predicted values are the errors and the MAE is the average of all those errors.</p>
-<div class="figure" style="text-align: center"><span id="fig:maeExample"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:maeExample"></span>
 <img src="images/mae.png" alt="Prediction errors." width="40%" />
 <p class="caption">
 FIGURE 1.12: Prediction errors.
@@ -942,7 +944,7 @@ FIGURE 1.12: Prediction errors.
 <div id="underfitting-and-overfitting" class="section level2 hasAnchor" number="1.9">
 <h2><span class="header-section-number">1.9</span> Underfitting and Overfitting<a href="intro.html#underfitting-and-overfitting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>From the felines classification example, we saw how we can separate two classes by computing the mean for each class. For the two-class problem, this is equivalent to having a decision line between the two means (Figure <a href="intro.html#fig:boundary">1.13</a>). Everything to the right of this decision line will be closer to the mean that corresponds to <em>‘leopard’</em> and everything to the left to <em>‘tiger’</em>. In this case, the classification function is a vertical line. During learning, the position of the line that reduces the classification error is searched for. We implicitly estimated the position of the line by finding the <em>mean values</em> for each of the classes.</p>
-<div class="figure" style="text-align: center"><span id="fig:boundary"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:boundary"></span>
 <img src="images/boundary.png" alt="Decision line between the two classes." width="100%" />
 <p class="caption">
 FIGURE 1.13: Decision line between the two classes.
@@ -951,7 +953,7 @@ FIGURE 1.13: Decision line between the two classes.
 <p>Now, imagine that we do not only have access to the <em>speed</em> but also to the felines’ <em>age</em>. This extra information could help us reduce the prediction error since age plays an important role in how fast a feline is. Figure <a href="intro.html#fig:underOverFitting">1.14</a> (left) shows how it will look like if we plot <em>age</em> in the x-axis and <em>speed</em> in the y-axis. Here, we can see that for both, tigers and leopards, the <em>speed</em> seems to increase as <em>age</em> increases. Then, at some point, as <em>age</em> increases the <em>speed</em> begins to decrease.</p>
 <p>Constructing a classifier with a single vertical line as we did before will not work in this <span class="math inline">\(2\)</span>-dimensional case where we have <span class="math inline">\(2\)</span> predictors. Now we will need a more complex decision boundary (function) to separate the two classes. One approach would be to use a line as before but this time we allow the line to have a slope (angle). Everything below the line is classified as <em>‘tiger’</em> and everything else as <em>‘leopard’</em>. Thus, the learning phase involves finding the line’s <em>position</em> and its <em>slope</em> that achieves the smallest error.</p>
 <p>Figure <a href="intro.html#fig:underOverFitting">1.14</a> (left) shows a possible decision line. Even though this function is more complex than a vertical line, it will still produce a lot of misclassifications (it does not clearly separate both classes). This is called <strong>underfitting</strong>, that is, the model is so simple that it is not able to capture the underlying data patterns.</p>
-<div class="figure" style="text-align: center"><span id="fig:underOverFitting"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:underOverFitting"></span>
 <img src="images/under_over_fit.png" alt="Underfitting and overfitting." width="100%" />
 <p class="caption">
 FIGURE 1.14: Underfitting and overfitting.
@@ -960,7 +962,7 @@ FIGURE 1.14: Underfitting and overfitting.
 <p>Let’s try a more complex function, for example, a curve. Figure <a href="intro.html#fig:underOverFitting">1.14</a> (middle) shows that a curve does a better job at separating the two classes with fewer misclassifications but still, <span class="math inline">\(3\)</span> leopards are misclassified as tigers and <span class="math inline">\(1\)</span> tiger is misclassified as leopard. Can we do better than that? Yes, just keep increasing the complexity of the decision function.</p>
 <p>Figure <a href="intro.html#fig:underOverFitting">1.14</a> (right) shows a more complex function that was able to separate the two classes with <span class="math inline">\(100\%\)</span> accuracy or equivalently, with a <span class="math inline">\(0\%\)</span> error. However, there is a problem. This function learned how to accurately separate the <em>training data</em>, but it is likely that it will not do as well with a new <em>test set</em>. This function became so specialized with respect to this particular data that it failed to capture the overall pattern. This is called <strong>overfitting</strong>. In this case, the model ‘memorizes’ the train set instead of finding general patterns applicable to new unseen instances. If we were to choose a model, the best one would be the one in the middle. Even if it is not perfect on the train data, it will do better than the other models when evaluated on new test data.</p>
 <p>Overfitting is a common problem in machine learning. One way to know if a model is overfitting is by checking if the error in the train set is low while it is high on a new set (can be a test or validation set). Figure <a href="intro.html#fig:modelComplexity">1.15</a> illustrates this idea. Too-simple models will produce a high error for both, the train and validation sets (underfitting). As the complexity of the model increases, the errors on both sets are reduced. Then, at some point, the complexity of a model becomes so high that it gets too specific on the train set and fails to perform well on a new independent set (overfitting).</p>
-<div class="figure" style="text-align: center"><span id="fig:modelComplexity"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:modelComplexity"></span>
 <img src="images/model_complexity.png" alt="Model complexity vs. train and validation error." width="60%" />
 <p class="caption">
 FIGURE 1.15: Model complexity vs. train and validation error.
@@ -977,7 +979,7 @@ FIGURE 1.15: Model complexity vs. train and validation error.
 <p><strong>Variance.</strong> How much the predictions change for a given data point when training a model using a different train set each time.</p>
 <p>Bias and variance are closely related to underfitting and overfitting. High variance is a sign of overfitting. That is, a model is so complex that it will fit a particular train set very well. Every time it is trained with a different train set, the <em>train error</em> will be low, but it will likely generate very different predictions for the same test points and a much higher <em>test error</em>.</p>
 <p>Figure <a href="intro.html#fig:overfittingVariance">1.16</a> illustrates the relation between overfitting and high variance with a regression problem.</p>
-<div class="figure" style="text-align: center"><span id="fig:overfittingVariance"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:overfittingVariance"></span>
 <img src="images/overfitting_variance.png" alt="High variance and overfitting." width="100%" />
 <p class="caption">
 FIGURE 1.16: High variance and overfitting.
@@ -1048,6 +1050,13 @@ Triguero, Isaac, Salvador García, and Francisco Herrera. 2013. <span>“Self-La
 Williams, HJ, ELC Shepard, Mark D Holton, PAE Alarcón, RP Wilson, and SA Lambertucci. 2020. <span>“Physical Limits of Flight Performance in the Heaviest Soaring Bird.”</span> <em>Proceedings of the National Academy of Sciences</em>.
 </div>
 </div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p><a href="http://www.scholarpedia.org/article/Reinforcement_learning" class="uri">http://www.scholarpedia.org/article/Reinforcement_learning</a><a href="intro.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>mtcars dataset <a href="https://stat.ethz.ch/R-manual/R-patched/library/datasets/html/mtcars.html" class="uri">https://stat.ethz.ch/R-manual/R-patched/library/datasets/html/mtcars.html</a> extracted from the 1974 Motor Trend US magazine.<a href="intro.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
@@ -1058,7 +1067,6 @@ Williams, HJ, ELC Shepard, Mark D Holton, PAE Alarcón, RP Wilson, and SA Lamber
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
-<script src="libs/gitbook/js/lunr.js"></script>
 <script src="libs/gitbook/js/clipboard.min.js"></script>
 <script src="libs/gitbook/js/plugin-search.js"></script>
 <script src="libs/gitbook/js/plugin-sharing.js"></script>
@@ -1098,6 +1106,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "none"
 }
@@ -1111,7 +1123,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Predicting Behavior with Deep Learning | Behavior Analysis with Machine Learning Using R</title>
   <meta name="description" content="Chapter 8 Predicting Behavior with Deep Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Predicting Behavior with Deep Learning | Behavior Analysis with Machine Learning Using R" />
   <meta property="og:type" content="book" />
-  
   <meta property="og:image" content="/images/cover.png" />
   <meta property="og:description" content="Chapter 8 Predicting Behavior with Deep Learning | Behavior Analysis with Machine Learning Using R teaches you how to train machine learning models in the R programming language to make sense of behavioral data collected with sensors and stored in electronic records. This book introduces machine learning concepts and algorithms applied to a diverse set of behavior analysis problems by focusing on practical aspects. Some of the topics include how to: Build supervised models to predict indoor locations based on Wi-Fi signals, recognize physical activities from smartphone sensors, use unsupervised learning to discover criminal behavioral patterns, build deep learning models to analyze electromyography signals, CNNs to detect smiles in images and much more." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Enrique Garcia Ceja" />
 
 
-<meta name="date" content="2023-08-29" />
+<meta name="date" content="2023-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="representations.html"/>
 <link rel="next" href="multiuser.html"/>
-<script src="libs/header-attrs/header-attrs.js"></script>
-<script src="libs/jquery/jquery.min.js"></script>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +41,6 @@
 <link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -145,6 +143,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 <style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
 div.csl-entry {
@@ -183,247 +185,247 @@ div.csl-indent {
 <li><a href="#">Behavior Analysis with Machine Learning Using R</a></li>
 
 <li class="divider"></li>
-<li><a href="index.html#welcome" id="toc-welcome">Welcome</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
 <ul>
-<li><a href="index.html#about-the-front-cover" id="toc-about-the-front-cover">About the Front Cover</a></li>
-<li><a href="index.html#about-the-author" id="toc-about-the-author">About the Author</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-front-cover"><i class="fa fa-check"></i>About the Front Cover</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
 </ul></li>
-<li><a href="preface.html#preface" id="toc-preface">Preface</a>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li><a href="preface.html#supplemental-material" id="toc-supplemental-material">Supplemental Material</a></li>
-<li><a href="preface.html#conventions" id="toc-conventions">Conventions</a></li>
-<li><a href="preface.html#acknowledgments" id="toc-acknowledgments">Acknowledgments</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#supplemental-material"><i class="fa fa-check"></i>Supplemental Material</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#conventions"><i class="fa fa-check"></i>Conventions</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
 </ul></li>
-<li><a href="intro.html#intro" id="toc-intro"><span class="toc-section-number">1</span> Introduction to Behavior and Machine Learning</a>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Behavior and Machine Learning</a>
 <ul>
-<li><a href="intro.html#what-is-behavior" id="toc-what-is-behavior"><span class="toc-section-number">1.1</span> What Is Behavior?</a></li>
-<li><a href="intro.html#what-is-machine-learning" id="toc-what-is-machine-learning"><span class="toc-section-number">1.2</span> What Is Machine Learning?</a></li>
-<li><a href="intro.html#taxonomy" id="toc-taxonomy"><span class="toc-section-number">1.3</span> Types of Machine Learning</a></li>
-<li><a href="intro.html#terminology" id="toc-terminology"><span class="toc-section-number">1.4</span> Terminology</a>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-behavior"><i class="fa fa-check"></i><b>1.1</b> What Is Behavior?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#what-is-machine-learning"><i class="fa fa-check"></i><b>1.2</b> What Is Machine Learning?</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#taxonomy"><i class="fa fa-check"></i><b>1.3</b> Types of Machine Learning</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#terminology"><i class="fa fa-check"></i><b>1.4</b> Terminology</a>
 <ul>
-<li><a href="intro.html#tables" id="toc-tables"><span class="toc-section-number">1.4.1</span> Tables</a></li>
-<li><a href="intro.html#variable-types" id="toc-variable-types"><span class="toc-section-number">1.4.2</span> Variable Types</a></li>
-<li><a href="intro.html#predictive-models" id="toc-predictive-models"><span class="toc-section-number">1.4.3</span> Predictive Models</a></li>
+<li class="chapter" data-level="1.4.1" data-path="intro.html"><a href="intro.html#tables"><i class="fa fa-check"></i><b>1.4.1</b> Tables</a></li>
+<li class="chapter" data-level="1.4.2" data-path="intro.html"><a href="intro.html#variable-types"><i class="fa fa-check"></i><b>1.4.2</b> Variable Types</a></li>
+<li class="chapter" data-level="1.4.3" data-path="intro.html"><a href="intro.html#predictive-models"><i class="fa fa-check"></i><b>1.4.3</b> Predictive Models</a></li>
 </ul></li>
-<li><a href="intro.html#pipeline" id="toc-pipeline"><span class="toc-section-number">1.5</span> Data Analysis Pipeline</a></li>
-<li><a href="intro.html#trainingeval" id="toc-trainingeval"><span class="toc-section-number">1.6</span> Evaluating Predictive Models</a></li>
-<li><a href="intro.html#simple-classification-example" id="toc-simple-classification-example"><span class="toc-section-number">1.7</span> Simple Classification Example</a>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#pipeline"><i class="fa fa-check"></i><b>1.5</b> Data Analysis Pipeline</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#trainingeval"><i class="fa fa-check"></i><b>1.6</b> Evaluating Predictive Models</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#simple-classification-example"><i class="fa fa-check"></i><b>1.7</b> Simple Classification Example</a>
 <ul>
-<li><a href="intro.html#k-fold-cross-validation-example" id="toc-k-fold-cross-validation-example"><span class="toc-section-number">1.7.1</span> <span class="math inline">\(k\)</span>-fold Cross-validation Example</a></li>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#k-fold-cross-validation-example"><i class="fa fa-check"></i><b>1.7.1</b> <span class="math inline">\(k\)</span>-fold Cross-validation Example</a></li>
 </ul></li>
-<li><a href="intro.html#simple-regression-example" id="toc-simple-regression-example"><span class="toc-section-number">1.8</span> Simple Regression Example</a></li>
-<li><a href="intro.html#underfitting-and-overfitting" id="toc-underfitting-and-overfitting"><span class="toc-section-number">1.9</span> Underfitting and Overfitting</a></li>
-<li><a href="intro.html#bias-and-variance" id="toc-bias-and-variance"><span class="toc-section-number">1.10</span> Bias and Variance</a></li>
-<li><a href="intro.html#SummaryIntro" id="toc-SummaryIntro"><span class="toc-section-number">1.11</span> Summary</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#simple-regression-example"><i class="fa fa-check"></i><b>1.8</b> Simple Regression Example</a></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#underfitting-and-overfitting"><i class="fa fa-check"></i><b>1.9</b> Underfitting and Overfitting</a></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#bias-and-variance"><i class="fa fa-check"></i><b>1.10</b> Bias and Variance</a></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#SummaryIntro"><i class="fa fa-check"></i><b>1.11</b> Summary</a></li>
 </ul></li>
-<li><a href="classification.html#classification" id="toc-classification"><span class="toc-section-number">2</span> Predicting Behavior with Classification Models</a>
+<li class="chapter" data-level="2" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>2</b> Predicting Behavior with Classification Models</a>
 <ul>
-<li><a href="classification.html#k-nearest-neighbors" id="toc-k-nearest-neighbors"><span class="toc-section-number">2.1</span> <em>k</em>-Nearest Neighbors</a>
+<li class="chapter" data-level="2.1" data-path="classification.html"><a href="classification.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-Nearest Neighbors</a>
 <ul>
-<li><a href="classification.html#indoor-location-with-wi-fi-signals" id="toc-indoor-location-with-wi-fi-signals"><span class="toc-section-number">2.1.1</span> Indoor Location with Wi-Fi Signals</a></li>
+<li class="chapter" data-level="2.1.1" data-path="classification.html"><a href="classification.html#indoor-location-with-wi-fi-signals"><i class="fa fa-check"></i><b>2.1.1</b> Indoor Location with Wi-Fi Signals</a></li>
 </ul></li>
-<li><a href="classification.html#performance-metrics" id="toc-performance-metrics"><span class="toc-section-number">2.2</span> Performance Metrics</a>
+<li class="chapter" data-level="2.2" data-path="classification.html"><a href="classification.html#performance-metrics"><i class="fa fa-check"></i><b>2.2</b> Performance Metrics</a>
 <ul>
-<li><a href="classification.html#confusion-matrix" id="toc-confusion-matrix"><span class="toc-section-number">2.2.1</span> Confusion Matrix</a></li>
+<li class="chapter" data-level="2.2.1" data-path="classification.html"><a href="classification.html#confusion-matrix"><i class="fa fa-check"></i><b>2.2.1</b> Confusion Matrix</a></li>
 </ul></li>
-<li><a href="classification.html#decision-trees" id="toc-decision-trees"><span class="toc-section-number">2.3</span> Decision Trees</a>
+<li class="chapter" data-level="2.3" data-path="classification.html"><a href="classification.html#decision-trees"><i class="fa fa-check"></i><b>2.3</b> Decision Trees</a>
 <ul>
-<li><a href="classification.html#activityRecognition" id="toc-activityRecognition"><span class="toc-section-number">2.3.1</span> Activity Recognition with Smartphones</a></li>
+<li class="chapter" data-level="2.3.1" data-path="classification.html"><a href="classification.html#activityRecognition"><i class="fa fa-check"></i><b>2.3.1</b> Activity Recognition with Smartphones</a></li>
 </ul></li>
-<li><a href="classification.html#naive-bayes" id="toc-naive-bayes"><span class="toc-section-number">2.4</span> Naive Bayes</a>
+<li class="chapter" data-level="2.4" data-path="classification.html"><a href="classification.html#naive-bayes"><i class="fa fa-check"></i><b>2.4</b> Naive Bayes</a>
 <ul>
-<li><a href="classification.html#activity-recognition-with-naive-bayes" id="toc-activity-recognition-with-naive-bayes"><span class="toc-section-number">2.4.1</span> Activity Recognition with Naive Bayes</a></li>
+<li class="chapter" data-level="2.4.1" data-path="classification.html"><a href="classification.html#activity-recognition-with-naive-bayes"><i class="fa fa-check"></i><b>2.4.1</b> Activity Recognition with Naive Bayes</a></li>
 </ul></li>
-<li><a href="classification.html#dynamic-time-warping" id="toc-dynamic-time-warping"><span class="toc-section-number">2.5</span> Dynamic Time Warping</a>
+<li class="chapter" data-level="2.5" data-path="classification.html"><a href="classification.html#dynamic-time-warping"><i class="fa fa-check"></i><b>2.5</b> Dynamic Time Warping</a>
 <ul>
-<li><a href="classification.html#sechandgestures" id="toc-sechandgestures"><span class="toc-section-number">2.5.1</span> Hand Gesture Recognition</a></li>
+<li class="chapter" data-level="2.5.1" data-path="classification.html"><a href="classification.html#sechandgestures"><i class="fa fa-check"></i><b>2.5.1</b> Hand Gesture Recognition</a></li>
 </ul></li>
-<li><a href="classification.html#dummy-models" id="toc-dummy-models"><span class="toc-section-number">2.6</span> Dummy Models</a>
+<li class="chapter" data-level="2.6" data-path="classification.html"><a href="classification.html#dummy-models"><i class="fa fa-check"></i><b>2.6</b> Dummy Models</a>
 <ul>
-<li><a href="classification.html#most-frequent-class-classifier" id="toc-most-frequent-class-classifier"><span class="toc-section-number">2.6.1</span> Most-frequent-class Classifier</a></li>
-<li><a href="classification.html#uniform-classifier" id="toc-uniform-classifier"><span class="toc-section-number">2.6.2</span> Uniform Classifier</a></li>
-<li><a href="classification.html#frequency-based-classifier" id="toc-frequency-based-classifier"><span class="toc-section-number">2.6.3</span> Frequency-based Classifier</a></li>
-<li><a href="classification.html#other-dummy-classifiers" id="toc-other-dummy-classifiers"><span class="toc-section-number">2.6.4</span> Other Dummy Classifiers</a></li>
+<li class="chapter" data-level="2.6.1" data-path="classification.html"><a href="classification.html#most-frequent-class-classifier"><i class="fa fa-check"></i><b>2.6.1</b> Most-frequent-class Classifier</a></li>
+<li class="chapter" data-level="2.6.2" data-path="classification.html"><a href="classification.html#uniform-classifier"><i class="fa fa-check"></i><b>2.6.2</b> Uniform Classifier</a></li>
+<li class="chapter" data-level="2.6.3" data-path="classification.html"><a href="classification.html#frequency-based-classifier"><i class="fa fa-check"></i><b>2.6.3</b> Frequency-based Classifier</a></li>
+<li class="chapter" data-level="2.6.4" data-path="classification.html"><a href="classification.html#other-dummy-classifiers"><i class="fa fa-check"></i><b>2.6.4</b> Other Dummy Classifiers</a></li>
 </ul></li>
-<li><a href="classification.html#summaryClassification" id="toc-summaryClassification"><span class="toc-section-number">2.7</span> Summary</a></li>
+<li class="chapter" data-level="2.7" data-path="classification.html"><a href="classification.html#summaryClassification"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
 </ul></li>
-<li><a href="ensemble.html#ensemble" id="toc-ensemble"><span class="toc-section-number">3</span> Predicting Behavior with Ensemble Learning</a>
+<li class="chapter" data-level="3" data-path="ensemble.html"><a href="ensemble.html"><i class="fa fa-check"></i><b>3</b> Predicting Behavior with Ensemble Learning</a>
 <ul>
-<li><a href="ensemble.html#bagging" id="toc-bagging"><span class="toc-section-number">3.1</span> Bagging</a>
+<li class="chapter" data-level="3.1" data-path="ensemble.html"><a href="ensemble.html#bagging"><i class="fa fa-check"></i><b>3.1</b> Bagging</a>
 <ul>
-<li><a href="ensemble.html#activity-recognition-with-bagging" id="toc-activity-recognition-with-bagging"><span class="toc-section-number">3.1.1</span> Activity Recognition with Bagging</a></li>
+<li class="chapter" data-level="3.1.1" data-path="ensemble.html"><a href="ensemble.html#activity-recognition-with-bagging"><i class="fa fa-check"></i><b>3.1.1</b> Activity Recognition with Bagging</a></li>
 </ul></li>
-<li><a href="ensemble.html#random-forest" id="toc-random-forest"><span class="toc-section-number">3.2</span> Random Forest</a></li>
-<li><a href="ensemble.html#stacked-generalization" id="toc-stacked-generalization"><span class="toc-section-number">3.3</span> Stacked Generalization</a></li>
-<li><a href="ensemble.html#multiviewhometasks" id="toc-multiviewhometasks"><span class="toc-section-number">3.4</span> Multi-view Stacking for Home Tasks Recognition</a></li>
-<li><a href="ensemble.html#SummaryEnsemble" id="toc-SummaryEnsemble"><span class="toc-section-number">3.5</span> Summary</a></li>
+<li class="chapter" data-level="3.2" data-path="ensemble.html"><a href="ensemble.html#random-forest"><i class="fa fa-check"></i><b>3.2</b> Random Forest</a></li>
+<li class="chapter" data-level="3.3" data-path="ensemble.html"><a href="ensemble.html#stacked-generalization"><i class="fa fa-check"></i><b>3.3</b> Stacked Generalization</a></li>
+<li class="chapter" data-level="3.4" data-path="ensemble.html"><a href="ensemble.html#multiviewhometasks"><i class="fa fa-check"></i><b>3.4</b> Multi-view Stacking for Home Tasks Recognition</a></li>
+<li class="chapter" data-level="3.5" data-path="ensemble.html"><a href="ensemble.html#SummaryEnsemble"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
-<li><a href="edavis.html#edavis" id="toc-edavis"><span class="toc-section-number">4</span> Exploring and Visualizing Behavioral Data</a>
+<li class="chapter" data-level="4" data-path="edavis.html"><a href="edavis.html"><i class="fa fa-check"></i><b>4</b> Exploring and Visualizing Behavioral Data</a>
 <ul>
-<li><a href="edavis.html#talking-with-field-experts" id="toc-talking-with-field-experts"><span class="toc-section-number">4.1</span> Talking with Field Experts</a></li>
-<li><a href="edavis.html#summary-statistics" id="toc-summary-statistics"><span class="toc-section-number">4.2</span> Summary Statistics</a></li>
-<li><a href="edavis.html#class-distributions" id="toc-class-distributions"><span class="toc-section-number">4.3</span> Class Distributions</a></li>
-<li><a href="edavis.html#user-class-sparsity-matrix" id="toc-user-class-sparsity-matrix"><span class="toc-section-number">4.4</span> User-class Sparsity Matrix</a></li>
-<li><a href="edavis.html#boxplots" id="toc-boxplots"><span class="toc-section-number">4.5</span> Boxplots</a></li>
-<li><a href="edavis.html#correlation-plots" id="toc-correlation-plots"><span class="toc-section-number">4.6</span> Correlation Plots</a>
+<li class="chapter" data-level="4.1" data-path="edavis.html"><a href="edavis.html#talking-with-field-experts"><i class="fa fa-check"></i><b>4.1</b> Talking with Field Experts</a></li>
+<li class="chapter" data-level="4.2" data-path="edavis.html"><a href="edavis.html#summary-statistics"><i class="fa fa-check"></i><b>4.2</b> Summary Statistics</a></li>
+<li class="chapter" data-level="4.3" data-path="edavis.html"><a href="edavis.html#class-distributions"><i class="fa fa-check"></i><b>4.3</b> Class Distributions</a></li>
+<li class="chapter" data-level="4.4" data-path="edavis.html"><a href="edavis.html#user-class-sparsity-matrix"><i class="fa fa-check"></i><b>4.4</b> User-class Sparsity Matrix</a></li>
+<li class="chapter" data-level="4.5" data-path="edavis.html"><a href="edavis.html#boxplots"><i class="fa fa-check"></i><b>4.5</b> Boxplots</a></li>
+<li class="chapter" data-level="4.6" data-path="edavis.html"><a href="edavis.html#correlation-plots"><i class="fa fa-check"></i><b>4.6</b> Correlation Plots</a>
 <ul>
-<li><a href="edavis.html#interactive-correlation-plots" id="toc-interactive-correlation-plots"><span class="toc-section-number">4.6.1</span> Interactive Correlation Plots</a></li>
+<li class="chapter" data-level="4.6.1" data-path="edavis.html"><a href="edavis.html#interactive-correlation-plots"><i class="fa fa-check"></i><b>4.6.1</b> Interactive Correlation Plots</a></li>
 </ul></li>
-<li><a href="edavis.html#timeseries" id="toc-timeseries"><span class="toc-section-number">4.7</span> Timeseries</a>
+<li class="chapter" data-level="4.7" data-path="edavis.html"><a href="edavis.html#timeseries"><i class="fa fa-check"></i><b>4.7</b> Timeseries</a>
 <ul>
-<li><a href="edavis.html#interactive-timeseries" id="toc-interactive-timeseries"><span class="toc-section-number">4.7.1</span> Interactive Timeseries</a></li>
+<li class="chapter" data-level="4.7.1" data-path="edavis.html"><a href="edavis.html#interactive-timeseries"><i class="fa fa-check"></i><b>4.7.1</b> Interactive Timeseries</a></li>
 </ul></li>
-<li><a href="edavis.html#multidimensional-scaling-mds" id="toc-multidimensional-scaling-mds"><span class="toc-section-number">4.8</span> Multidimensional Scaling (MDS)</a></li>
-<li><a href="edavis.html#heatmaps" id="toc-heatmaps"><span class="toc-section-number">4.9</span> Heatmaps</a></li>
-<li><a href="edavis.html#automated-eda" id="toc-automated-eda"><span class="toc-section-number">4.10</span> Automated EDA</a></li>
-<li><a href="edavis.html#SummaryExploratory" id="toc-SummaryExploratory"><span class="toc-section-number">4.11</span> Summary</a></li>
+<li class="chapter" data-level="4.8" data-path="edavis.html"><a href="edavis.html#multidimensional-scaling-mds"><i class="fa fa-check"></i><b>4.8</b> Multidimensional Scaling (MDS)</a></li>
+<li class="chapter" data-level="4.9" data-path="edavis.html"><a href="edavis.html#heatmaps"><i class="fa fa-check"></i><b>4.9</b> Heatmaps</a></li>
+<li class="chapter" data-level="4.10" data-path="edavis.html"><a href="edavis.html#automated-eda"><i class="fa fa-check"></i><b>4.10</b> Automated EDA</a></li>
+<li class="chapter" data-level="4.11" data-path="edavis.html"><a href="edavis.html#SummaryExploratory"><i class="fa fa-check"></i><b>4.11</b> Summary</a></li>
 </ul></li>
-<li><a href="preprocessing.html#preprocessing" id="toc-preprocessing"><span class="toc-section-number">5</span> Preprocessing Behavioral Data</a>
+<li class="chapter" data-level="5" data-path="preprocessing.html"><a href="preprocessing.html"><i class="fa fa-check"></i><b>5</b> Preprocessing Behavioral Data</a>
 <ul>
-<li><a href="preprocessing.html#missing-values" id="toc-missing-values"><span class="toc-section-number">5.1</span> Missing Values</a>
+<li class="chapter" data-level="5.1" data-path="preprocessing.html"><a href="preprocessing.html#missing-values"><i class="fa fa-check"></i><b>5.1</b> Missing Values</a>
 <ul>
-<li><a href="preprocessing.html#imputation" id="toc-imputation"><span class="toc-section-number">5.1.1</span> Imputation</a></li>
+<li class="chapter" data-level="5.1.1" data-path="preprocessing.html"><a href="preprocessing.html#imputation"><i class="fa fa-check"></i><b>5.1.1</b> Imputation</a></li>
 </ul></li>
-<li><a href="preprocessing.html#smoothing" id="toc-smoothing"><span class="toc-section-number">5.2</span> Smoothing</a></li>
-<li><a href="preprocessing.html#normalization" id="toc-normalization"><span class="toc-section-number">5.3</span> Normalization</a></li>
-<li><a href="preprocessing.html#imbalanced-classes" id="toc-imbalanced-classes"><span class="toc-section-number">5.4</span> Imbalanced Classes</a>
+<li class="chapter" data-level="5.2" data-path="preprocessing.html"><a href="preprocessing.html#smoothing"><i class="fa fa-check"></i><b>5.2</b> Smoothing</a></li>
+<li class="chapter" data-level="5.3" data-path="preprocessing.html"><a href="preprocessing.html#normalization"><i class="fa fa-check"></i><b>5.3</b> Normalization</a></li>
+<li class="chapter" data-level="5.4" data-path="preprocessing.html"><a href="preprocessing.html#imbalanced-classes"><i class="fa fa-check"></i><b>5.4</b> Imbalanced Classes</a>
 <ul>
-<li><a href="preprocessing.html#random-oversampling" id="toc-random-oversampling"><span class="toc-section-number">5.4.1</span> Random Oversampling</a></li>
-<li><a href="preprocessing.html#smote" id="toc-smote"><span class="toc-section-number">5.4.2</span> SMOTE</a></li>
+<li class="chapter" data-level="5.4.1" data-path="preprocessing.html"><a href="preprocessing.html#random-oversampling"><i class="fa fa-check"></i><b>5.4.1</b> Random Oversampling</a></li>
+<li class="chapter" data-level="5.4.2" data-path="preprocessing.html"><a href="preprocessing.html#smote"><i class="fa fa-check"></i><b>5.4.2</b> SMOTE</a></li>
 </ul></li>
-<li><a href="preprocessing.html#infoinjection" id="toc-infoinjection"><span class="toc-section-number">5.5</span> Information Injection</a></li>
-<li><a href="preprocessing.html#one-hot-encoding" id="toc-one-hot-encoding"><span class="toc-section-number">5.6</span> One-hot Encoding</a></li>
-<li><a href="preprocessing.html#SummaryPreprocessing" id="toc-SummaryPreprocessing"><span class="toc-section-number">5.7</span> Summary</a></li>
+<li class="chapter" data-level="5.5" data-path="preprocessing.html"><a href="preprocessing.html#infoinjection"><i class="fa fa-check"></i><b>5.5</b> Information Injection</a></li>
+<li class="chapter" data-level="5.6" data-path="preprocessing.html"><a href="preprocessing.html#one-hot-encoding"><i class="fa fa-check"></i><b>5.6</b> One-hot Encoding</a></li>
+<li class="chapter" data-level="5.7" data-path="preprocessing.html"><a href="preprocessing.html#SummaryPreprocessing"><i class="fa fa-check"></i><b>5.7</b> Summary</a></li>
 </ul></li>
-<li><a href="unsupervised.html#unsupervised" id="toc-unsupervised"><span class="toc-section-number">6</span> Discovering Behaviors with Unsupervised Learning</a>
+<li class="chapter" data-level="6" data-path="unsupervised.html"><a href="unsupervised.html"><i class="fa fa-check"></i><b>6</b> Discovering Behaviors with Unsupervised Learning</a>
 <ul>
-<li><a href="unsupervised.html#k-means-clustering" id="toc-k-means-clustering"><span class="toc-section-number">6.1</span> <span class="math inline">\(k\)</span>-means Clustering</a>
+<li class="chapter" data-level="6.1" data-path="unsupervised.html"><a href="unsupervised.html#k-means-clustering"><i class="fa fa-check"></i><b>6.1</b> <span class="math inline">\(k\)</span>-means Clustering</a>
 <ul>
-<li><a href="unsupervised.html#studentresponses" id="toc-studentresponses"><span class="toc-section-number">6.1.1</span> Grouping Student Responses</a></li>
+<li class="chapter" data-level="6.1.1" data-path="unsupervised.html"><a href="unsupervised.html#studentresponses"><i class="fa fa-check"></i><b>6.1.1</b> Grouping Student Responses</a></li>
 </ul></li>
-<li><a href="unsupervised.html#the-silhouette-index" id="toc-the-silhouette-index"><span class="toc-section-number">6.2</span> The Silhouette Index</a></li>
-<li><a href="unsupervised.html#associationrules" id="toc-associationrules"><span class="toc-section-number">6.3</span> Mining Association Rules</a>
+<li class="chapter" data-level="6.2" data-path="unsupervised.html"><a href="unsupervised.html#the-silhouette-index"><i class="fa fa-check"></i><b>6.2</b> The Silhouette Index</a></li>
+<li class="chapter" data-level="6.3" data-path="unsupervised.html"><a href="unsupervised.html#associationrules"><i class="fa fa-check"></i><b>6.3</b> Mining Association Rules</a>
 <ul>
-<li><a href="unsupervised.html#finding-rules-for-criminal-behavior" id="toc-finding-rules-for-criminal-behavior"><span class="toc-section-number">6.3.1</span> Finding Rules for Criminal Behavior</a></li>
+<li class="chapter" data-level="6.3.1" data-path="unsupervised.html"><a href="unsupervised.html#finding-rules-for-criminal-behavior"><i class="fa fa-check"></i><b>6.3.1</b> Finding Rules for Criminal Behavior</a></li>
 </ul></li>
-<li><a href="unsupervised.html#SummaryUnsupervised" id="toc-SummaryUnsupervised"><span class="toc-section-number">6.4</span> Summary</a></li>
+<li class="chapter" data-level="6.4" data-path="unsupervised.html"><a href="unsupervised.html#SummaryUnsupervised"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
 </ul></li>
-<li><a href="representations.html#representations" id="toc-representations"><span class="toc-section-number">7</span> Encoding Behavioral Data</a>
+<li class="chapter" data-level="7" data-path="representations.html"><a href="representations.html"><i class="fa fa-check"></i><b>7</b> Encoding Behavioral Data</a>
 <ul>
-<li><a href="representations.html#feature-vectors" id="toc-feature-vectors"><span class="toc-section-number">7.1</span> Feature Vectors</a></li>
-<li><a href="representations.html#sectimeseries" id="toc-sectimeseries"><span class="toc-section-number">7.2</span> Timeseries</a></li>
-<li><a href="representations.html#transactions" id="toc-transactions"><span class="toc-section-number">7.3</span> Transactions</a></li>
-<li><a href="representations.html#images" id="toc-images"><span class="toc-section-number">7.4</span> Images</a></li>
-<li><a href="representations.html#recurrence-plots" id="toc-recurrence-plots"><span class="toc-section-number">7.5</span> Recurrence Plots</a>
+<li class="chapter" data-level="7.1" data-path="representations.html"><a href="representations.html#feature-vectors"><i class="fa fa-check"></i><b>7.1</b> Feature Vectors</a></li>
+<li class="chapter" data-level="7.2" data-path="representations.html"><a href="representations.html#sectimeseries"><i class="fa fa-check"></i><b>7.2</b> Timeseries</a></li>
+<li class="chapter" data-level="7.3" data-path="representations.html"><a href="representations.html#transactions"><i class="fa fa-check"></i><b>7.3</b> Transactions</a></li>
+<li class="chapter" data-level="7.4" data-path="representations.html"><a href="representations.html#images"><i class="fa fa-check"></i><b>7.4</b> Images</a></li>
+<li class="chapter" data-level="7.5" data-path="representations.html"><a href="representations.html#recurrence-plots"><i class="fa fa-check"></i><b>7.5</b> Recurrence Plots</a>
 <ul>
-<li><a href="representations.html#computing-recurrence-plots" id="toc-computing-recurrence-plots"><span class="toc-section-number">7.5.1</span> Computing Recurrence Plots</a></li>
-<li><a href="representations.html#recurrence-plots-of-hand-gestures" id="toc-recurrence-plots-of-hand-gestures"><span class="toc-section-number">7.5.2</span> Recurrence Plots of Hand Gestures</a></li>
+<li class="chapter" data-level="7.5.1" data-path="representations.html"><a href="representations.html#computing-recurrence-plots"><i class="fa fa-check"></i><b>7.5.1</b> Computing Recurrence Plots</a></li>
+<li class="chapter" data-level="7.5.2" data-path="representations.html"><a href="representations.html#recurrence-plots-of-hand-gestures"><i class="fa fa-check"></i><b>7.5.2</b> Recurrence Plots of Hand Gestures</a></li>
 </ul></li>
-<li><a href="representations.html#bag-of-words" id="toc-bag-of-words"><span class="toc-section-number">7.6</span> Bag-of-Words</a>
+<li class="chapter" data-level="7.6" data-path="representations.html"><a href="representations.html#bag-of-words"><i class="fa fa-check"></i><b>7.6</b> Bag-of-Words</a>
 <ul>
-<li><a href="representations.html#bow-for-complex-activities." id="toc-bow-for-complex-activities."><span class="toc-section-number">7.6.1</span> BoW for Complex Activities.</a></li>
+<li class="chapter" data-level="7.6.1" data-path="representations.html"><a href="representations.html#bow-for-complex-activities."><i class="fa fa-check"></i><b>7.6.1</b> BoW for Complex Activities.</a></li>
 </ul></li>
-<li><a href="representations.html#graphs" id="toc-graphs"><span class="toc-section-number">7.7</span> Graphs</a>
+<li class="chapter" data-level="7.7" data-path="representations.html"><a href="representations.html#graphs"><i class="fa fa-check"></i><b>7.7</b> Graphs</a>
 <ul>
-<li><a href="representations.html#complex-activities-as-graphs" id="toc-complex-activities-as-graphs"><span class="toc-section-number">7.7.1</span> Complex Activities as Graphs</a></li>
+<li class="chapter" data-level="7.7.1" data-path="representations.html"><a href="representations.html#complex-activities-as-graphs"><i class="fa fa-check"></i><b>7.7.1</b> Complex Activities as Graphs</a></li>
 </ul></li>
-<li><a href="representations.html#SummaryRepresentations" id="toc-SummaryRepresentations"><span class="toc-section-number">7.8</span> Summary</a></li>
+<li class="chapter" data-level="7.8" data-path="representations.html"><a href="representations.html#SummaryRepresentations"><i class="fa fa-check"></i><b>7.8</b> Summary</a></li>
 </ul></li>
-<li><a href="deeplearning.html#deeplearning" id="toc-deeplearning"><span class="toc-section-number">8</span> Predicting Behavior with Deep Learning</a>
+<li class="chapter" data-level="8" data-path="deeplearning.html"><a href="deeplearning.html"><i class="fa fa-check"></i><b>8</b> Predicting Behavior with Deep Learning</a>
 <ul>
-<li><a href="deeplearning.html#ann" id="toc-ann"><span class="toc-section-number">8.1</span> Introduction to Artificial Neural Networks</a>
+<li class="chapter" data-level="8.1" data-path="deeplearning.html"><a href="deeplearning.html#ann"><i class="fa fa-check"></i><b>8.1</b> Introduction to Artificial Neural Networks</a>
 <ul>
-<li><a href="deeplearning.html#sigmoid-and-relu-units" id="toc-sigmoid-and-relu-units"><span class="toc-section-number">8.1.1</span> Sigmoid and ReLU Units</a></li>
-<li><a href="deeplearning.html#assembling-units-into-layers" id="toc-assembling-units-into-layers"><span class="toc-section-number">8.1.2</span> Assembling Units into Layers</a></li>
-<li><a href="deeplearning.html#deep-neural-networks" id="toc-deep-neural-networks"><span class="toc-section-number">8.1.3</span> Deep Neural Networks</a></li>
-<li><a href="deeplearning.html#learning-the-parameters" id="toc-learning-the-parameters"><span class="toc-section-number">8.1.4</span> Learning the Parameters</a></li>
-<li><a href="deeplearning.html#parameter-learning-example-in-r" id="toc-parameter-learning-example-in-r"><span class="toc-section-number">8.1.5</span> Parameter Learning Example in R</a></li>
-<li><a href="deeplearning.html#stochastic-gradient-descent" id="toc-stochastic-gradient-descent"><span class="toc-section-number">8.1.6</span> Stochastic Gradient Descent</a></li>
+<li class="chapter" data-level="8.1.1" data-path="deeplearning.html"><a href="deeplearning.html#sigmoid-and-relu-units"><i class="fa fa-check"></i><b>8.1.1</b> Sigmoid and ReLU Units</a></li>
+<li class="chapter" data-level="8.1.2" data-path="deeplearning.html"><a href="deeplearning.html#assembling-units-into-layers"><i class="fa fa-check"></i><b>8.1.2</b> Assembling Units into Layers</a></li>
+<li class="chapter" data-level="8.1.3" data-path="deeplearning.html"><a href="deeplearning.html#deep-neural-networks"><i class="fa fa-check"></i><b>8.1.3</b> Deep Neural Networks</a></li>
+<li class="chapter" data-level="8.1.4" data-path="deeplearning.html"><a href="deeplearning.html#learning-the-parameters"><i class="fa fa-check"></i><b>8.1.4</b> Learning the Parameters</a></li>
+<li class="chapter" data-level="8.1.5" data-path="deeplearning.html"><a href="deeplearning.html#parameter-learning-example-in-r"><i class="fa fa-check"></i><b>8.1.5</b> Parameter Learning Example in R</a></li>
+<li class="chapter" data-level="8.1.6" data-path="deeplearning.html"><a href="deeplearning.html#stochastic-gradient-descent"><i class="fa fa-check"></i><b>8.1.6</b> Stochastic Gradient Descent</a></li>
 </ul></li>
-<li><a href="deeplearning.html#keras-and-tensorflow-with-r" id="toc-keras-and-tensorflow-with-r"><span class="toc-section-number">8.2</span> Keras and TensorFlow with R</a>
+<li class="chapter" data-level="8.2" data-path="deeplearning.html"><a href="deeplearning.html#keras-and-tensorflow-with-r"><i class="fa fa-check"></i><b>8.2</b> Keras and TensorFlow with R</a>
 <ul>
-<li><a href="deeplearning.html#keras-example" id="toc-keras-example"><span class="toc-section-number">8.2.1</span> Keras Example</a></li>
+<li class="chapter" data-level="8.2.1" data-path="deeplearning.html"><a href="deeplearning.html#keras-example"><i class="fa fa-check"></i><b>8.2.1</b> Keras Example</a></li>
 </ul></li>
-<li><a href="deeplearning.html#classification-with-neural-networks" id="toc-classification-with-neural-networks"><span class="toc-section-number">8.3</span> Classification with Neural Networks</a>
+<li class="chapter" data-level="8.3" data-path="deeplearning.html"><a href="deeplearning.html#classification-with-neural-networks"><i class="fa fa-check"></i><b>8.3</b> Classification with Neural Networks</a>
 <ul>
-<li><a href="deeplearning.html#classification-of-electromyography-signals" id="toc-classification-of-electromyography-signals"><span class="toc-section-number">8.3.1</span> Classification of Electromyography Signals</a></li>
+<li class="chapter" data-level="8.3.1" data-path="deeplearning.html"><a href="deeplearning.html#classification-of-electromyography-signals"><i class="fa fa-check"></i><b>8.3.1</b> Classification of Electromyography Signals</a></li>
 </ul></li>
-<li><a href="deeplearning.html#overfitting" id="toc-overfitting"><span class="toc-section-number">8.4</span> Overfitting</a>
+<li class="chapter" data-level="8.4" data-path="deeplearning.html"><a href="deeplearning.html#overfitting"><i class="fa fa-check"></i><b>8.4</b> Overfitting</a>
 <ul>
-<li><a href="deeplearning.html#early-stopping" id="toc-early-stopping"><span class="toc-section-number">8.4.1</span> Early Stopping</a></li>
-<li><a href="deeplearning.html#dropout" id="toc-dropout"><span class="toc-section-number">8.4.2</span> Dropout</a></li>
+<li class="chapter" data-level="8.4.1" data-path="deeplearning.html"><a href="deeplearning.html#early-stopping"><i class="fa fa-check"></i><b>8.4.1</b> Early Stopping</a></li>
+<li class="chapter" data-level="8.4.2" data-path="deeplearning.html"><a href="deeplearning.html#dropout"><i class="fa fa-check"></i><b>8.4.2</b> Dropout</a></li>
 </ul></li>
-<li><a href="deeplearning.html#fine-tuning-a-neural-network" id="toc-fine-tuning-a-neural-network"><span class="toc-section-number">8.5</span> Fine-tuning a Neural Network</a></li>
-<li><a href="deeplearning.html#cnns" id="toc-cnns"><span class="toc-section-number">8.6</span> Convolutional Neural Networks</a>
+<li class="chapter" data-level="8.5" data-path="deeplearning.html"><a href="deeplearning.html#fine-tuning-a-neural-network"><i class="fa fa-check"></i><b>8.5</b> Fine-tuning a Neural Network</a></li>
+<li class="chapter" data-level="8.6" data-path="deeplearning.html"><a href="deeplearning.html#cnns"><i class="fa fa-check"></i><b>8.6</b> Convolutional Neural Networks</a>
 <ul>
-<li><a href="deeplearning.html#convolutions" id="toc-convolutions"><span class="toc-section-number">8.6.1</span> Convolutions</a></li>
-<li><a href="deeplearning.html#pooling-operations" id="toc-pooling-operations"><span class="toc-section-number">8.6.2</span> Pooling Operations</a></li>
+<li class="chapter" data-level="8.6.1" data-path="deeplearning.html"><a href="deeplearning.html#convolutions"><i class="fa fa-check"></i><b>8.6.1</b> Convolutions</a></li>
+<li class="chapter" data-level="8.6.2" data-path="deeplearning.html"><a href="deeplearning.html#pooling-operations"><i class="fa fa-check"></i><b>8.6.2</b> Pooling Operations</a></li>
 </ul></li>
-<li><a href="deeplearning.html#cnns-with-keras" id="toc-cnns-with-keras"><span class="toc-section-number">8.7</span> CNNs with Keras</a>
+<li class="chapter" data-level="8.7" data-path="deeplearning.html"><a href="deeplearning.html#cnns-with-keras"><i class="fa fa-check"></i><b>8.7</b> CNNs with Keras</a>
 <ul>
-<li><a href="deeplearning.html#example-1" id="toc-example-1"><span class="toc-section-number">8.7.1</span> Example 1</a></li>
-<li><a href="deeplearning.html#example-2" id="toc-example-2"><span class="toc-section-number">8.7.2</span> Example 2</a></li>
+<li class="chapter" data-level="8.7.1" data-path="deeplearning.html"><a href="deeplearning.html#example-1"><i class="fa fa-check"></i><b>8.7.1</b> Example 1</a></li>
+<li class="chapter" data-level="8.7.2" data-path="deeplearning.html"><a href="deeplearning.html#example-2"><i class="fa fa-check"></i><b>8.7.2</b> Example 2</a></li>
 </ul></li>
-<li><a href="deeplearning.html#cnnSmile" id="toc-cnnSmile"><span class="toc-section-number">8.8</span> Smiles Detection with a CNN</a></li>
-<li><a href="deeplearning.html#SummaryDeepLearning" id="toc-SummaryDeepLearning"><span class="toc-section-number">8.9</span> Summary</a></li>
+<li class="chapter" data-level="8.8" data-path="deeplearning.html"><a href="deeplearning.html#cnnSmile"><i class="fa fa-check"></i><b>8.8</b> Smiles Detection with a CNN</a></li>
+<li class="chapter" data-level="8.9" data-path="deeplearning.html"><a href="deeplearning.html#SummaryDeepLearning"><i class="fa fa-check"></i><b>8.9</b> Summary</a></li>
 </ul></li>
-<li><a href="multiuser.html#multiuser" id="toc-multiuser"><span class="toc-section-number">9</span> Multi-user Validation</a>
+<li class="chapter" data-level="9" data-path="multiuser.html"><a href="multiuser.html"><i class="fa fa-check"></i><b>9</b> Multi-user Validation</a>
 <ul>
-<li><a href="multiuser.html#mixed-models" id="toc-mixed-models"><span class="toc-section-number">9.1</span> Mixed Models</a>
+<li class="chapter" data-level="9.1" data-path="multiuser.html"><a href="multiuser.html#mixed-models"><i class="fa fa-check"></i><b>9.1</b> Mixed Models</a>
 <ul>
-<li><a href="multiuser.html#skeleton-action-recognition-with-mixed-models" id="toc-skeleton-action-recognition-with-mixed-models"><span class="toc-section-number">9.1.1</span> Skeleton Action Recognition with Mixed Models</a></li>
+<li class="chapter" data-level="9.1.1" data-path="multiuser.html"><a href="multiuser.html#skeleton-action-recognition-with-mixed-models"><i class="fa fa-check"></i><b>9.1.1</b> Skeleton Action Recognition with Mixed Models</a></li>
 </ul></li>
-<li><a href="multiuser.html#user-independent-models" id="toc-user-independent-models"><span class="toc-section-number">9.2</span> User-independent Models</a></li>
-<li><a href="multiuser.html#user-dependent-models" id="toc-user-dependent-models"><span class="toc-section-number">9.3</span> User-dependent Models</a></li>
-<li><a href="multiuser.html#user-adaptive-models" id="toc-user-adaptive-models"><span class="toc-section-number">9.4</span> User-adaptive Models</a>
+<li class="chapter" data-level="9.2" data-path="multiuser.html"><a href="multiuser.html#user-independent-models"><i class="fa fa-check"></i><b>9.2</b> User-independent Models</a></li>
+<li class="chapter" data-level="9.3" data-path="multiuser.html"><a href="multiuser.html#user-dependent-models"><i class="fa fa-check"></i><b>9.3</b> User-dependent Models</a></li>
+<li class="chapter" data-level="9.4" data-path="multiuser.html"><a href="multiuser.html#user-adaptive-models"><i class="fa fa-check"></i><b>9.4</b> User-adaptive Models</a>
 <ul>
-<li><a href="multiuser.html#transfer-learning" id="toc-transfer-learning"><span class="toc-section-number">9.4.1</span> Transfer Learning</a></li>
-<li><a href="multiuser.html#a-user-adaptive-model-for-activity-recognition" id="toc-a-user-adaptive-model-for-activity-recognition"><span class="toc-section-number">9.4.2</span> A User-adaptive Model for Activity Recognition</a></li>
+<li class="chapter" data-level="9.4.1" data-path="multiuser.html"><a href="multiuser.html#transfer-learning"><i class="fa fa-check"></i><b>9.4.1</b> Transfer Learning</a></li>
+<li class="chapter" data-level="9.4.2" data-path="multiuser.html"><a href="multiuser.html#a-user-adaptive-model-for-activity-recognition"><i class="fa fa-check"></i><b>9.4.2</b> A User-adaptive Model for Activity Recognition</a></li>
 </ul></li>
-<li><a href="multiuser.html#SummaryMultiUser" id="toc-SummaryMultiUser"><span class="toc-section-number">9.5</span> Summary</a></li>
+<li class="chapter" data-level="9.5" data-path="multiuser.html"><a href="multiuser.html#SummaryMultiUser"><i class="fa fa-check"></i><b>9.5</b> Summary</a></li>
 </ul></li>
-<li><a href="abnormalbehaviors.html#abnormalbehaviors" id="toc-abnormalbehaviors"><span class="toc-section-number">10</span> Detecting Abnormal Behaviors</a>
+<li class="chapter" data-level="10" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html"><i class="fa fa-check"></i><b>10</b> Detecting Abnormal Behaviors</a>
 <ul>
-<li><a href="abnormalbehaviors.html#isolation-forests" id="toc-isolation-forests"><span class="toc-section-number">10.1</span> Isolation Forests</a></li>
-<li><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors" id="toc-detecting-abnormal-fish-behaviors"><span class="toc-section-number">10.2</span> Detecting Abnormal Fish Behaviors</a>
+<li class="chapter" data-level="10.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#isolation-forests"><i class="fa fa-check"></i><b>10.1</b> Isolation Forests</a></li>
+<li class="chapter" data-level="10.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#detecting-abnormal-fish-behaviors"><i class="fa fa-check"></i><b>10.2</b> Detecting Abnormal Fish Behaviors</a>
 <ul>
-<li><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories" id="toc-exploring-and-visualizing-trajectories"><span class="toc-section-number">10.2.1</span> Exploring and Visualizing Trajectories</a></li>
-<li><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction" id="toc-preprocessing-and-feature-extraction"><span class="toc-section-number">10.2.2</span> Preprocessing and Feature Extraction</a></li>
-<li><a href="abnormalbehaviors.html#training-the-model" id="toc-training-the-model"><span class="toc-section-number">10.2.3</span> Training the Model</a></li>
-<li><a href="abnormalbehaviors.html#roc-curve-and-auc" id="toc-roc-curve-and-auc"><span class="toc-section-number">10.2.4</span> ROC Curve and AUC</a></li>
+<li class="chapter" data-level="10.2.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#exploring-and-visualizing-trajectories"><i class="fa fa-check"></i><b>10.2.1</b> Exploring and Visualizing Trajectories</a></li>
+<li class="chapter" data-level="10.2.2" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#preprocessing-and-feature-extraction"><i class="fa fa-check"></i><b>10.2.2</b> Preprocessing and Feature Extraction</a></li>
+<li class="chapter" data-level="10.2.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#training-the-model"><i class="fa fa-check"></i><b>10.2.3</b> Training the Model</a></li>
+<li class="chapter" data-level="10.2.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#roc-curve-and-auc"><i class="fa fa-check"></i><b>10.2.4</b> ROC Curve and AUC</a></li>
 </ul></li>
-<li><a href="abnormalbehaviors.html#autoencoders" id="toc-autoencoders"><span class="toc-section-number">10.3</span> Autoencoders</a>
+<li class="chapter" data-level="10.3" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders"><i class="fa fa-check"></i><b>10.3</b> Autoencoders</a>
 <ul>
-<li><a href="abnormalbehaviors.html#autoencoders-for-anomaly-detection" id="toc-autoencoders-for-anomaly-detection"><span class="toc-section-number">10.3.1</span> Autoencoders for Anomaly Detection</a></li>
+<li class="chapter" data-level="10.3.1" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#autoencoders-for-anomaly-detection"><i class="fa fa-check"></i><b>10.3.1</b> Autoencoders for Anomaly Detection</a></li>
 </ul></li>
-<li><a href="abnormalbehaviors.html#SummaryAnomalyDetection" id="toc-SummaryAnomalyDetection"><span class="toc-section-number">10.4</span> Summary</a></li>
+<li class="chapter" data-level="10.4" data-path="abnormalbehaviors.html"><a href="abnormalbehaviors.html#SummaryAnomalyDetection"><i class="fa fa-check"></i><b>10.4</b> Summary</a></li>
 </ul></li>
-<li><a href="#appendix-appendix" id="toc-appendix-appendix">(APPENDIX) Appendix</a></li>
-<li><a href="appendixInstall.html#appendixInstall" id="toc-appendixInstall"><span class="toc-section-number">11</span> Setup Your Environment</a>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendixInstall.html"><a href="appendixInstall.html"><i class="fa fa-check"></i><b>A</b> Setup Your Environment</a>
 <ul>
-<li><a href="appendixInstall.html#installing-the-datasets" id="toc-installing-the-datasets"><span class="toc-section-number">11.1</span> Installing the Datasets</a></li>
-<li><a href="appendixInstall.html#installing-the-examples-source-code" id="toc-installing-the-examples-source-code"><span class="toc-section-number">11.2</span> Installing the Examples Source Code</a></li>
-<li><a href="appendixInstall.html#running-shiny-apps" id="toc-running-shiny-apps"><span class="toc-section-number">11.3</span> Running Shiny Apps</a></li>
-<li><a href="appendixInstall.html#installing-keras-and-tensorflow" id="toc-installing-keras-and-tensorflow"><span class="toc-section-number">11.4</span> Installing Keras and TensorFlow</a></li>
+<li class="chapter" data-level="A.1" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-datasets"><i class="fa fa-check"></i><b>A.1</b> Installing the Datasets</a></li>
+<li class="chapter" data-level="A.2" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-the-examples-source-code"><i class="fa fa-check"></i><b>A.2</b> Installing the Examples Source Code</a></li>
+<li class="chapter" data-level="A.3" data-path="appendixInstall.html"><a href="appendixInstall.html#running-shiny-apps"><i class="fa fa-check"></i><b>A.3</b> Running Shiny Apps</a></li>
+<li class="chapter" data-level="A.4" data-path="appendixInstall.html"><a href="appendixInstall.html#installing-keras-and-tensorflow"><i class="fa fa-check"></i><b>A.4</b> Installing Keras and TensorFlow</a></li>
 </ul></li>
-<li><a href="appendixDatasets.html#appendixDatasets" id="toc-appendixDatasets"><span class="toc-section-number">12</span> Datasets</a>
+<li class="chapter" data-level="B" data-path="appendixDatasets.html"><a href="appendixDatasets.html"><i class="fa fa-check"></i><b>B</b> Datasets</a>
 <ul>
-<li><a href="appendixDatasets.html#complex-activities" id="toc-complex-activities"><span class="toc-section-number">12.1</span> COMPLEX ACTIVITIES</a></li>
-<li><a href="appendixDatasets.html#depresjon" id="toc-depresjon"><span class="toc-section-number">12.2</span> DEPRESJON</a></li>
-<li><a href="appendixDatasets.html#electromyography" id="toc-electromyography"><span class="toc-section-number">12.3</span> ELECTROMYOGRAPHY</a></li>
-<li><a href="appendixDatasets.html#fish-trajectories" id="toc-fish-trajectories"><span class="toc-section-number">12.4</span> FISH TRAJECTORIES</a></li>
-<li><a href="appendixDatasets.html#hand-gestures" id="toc-hand-gestures"><span class="toc-section-number">12.5</span> HAND GESTURES</a></li>
-<li><a href="appendixDatasets.html#home-tasks" id="toc-home-tasks"><span class="toc-section-number">12.6</span> HOME TASKS</a></li>
-<li><a href="appendixDatasets.html#homicide-reports" id="toc-homicide-reports"><span class="toc-section-number">12.7</span> HOMICIDE REPORTS</a></li>
-<li><a href="appendixDatasets.html#indoor-location" id="toc-indoor-location"><span class="toc-section-number">12.8</span> INDOOR LOCATION</a></li>
-<li><a href="appendixDatasets.html#sheep-goats" id="toc-sheep-goats"><span class="toc-section-number">12.9</span> SHEEP GOATS</a></li>
-<li><a href="appendixDatasets.html#skeleton-actions" id="toc-skeleton-actions"><span class="toc-section-number">12.10</span> SKELETON ACTIONS</a></li>
-<li><a href="appendixDatasets.html#smartphone-activities" id="toc-smartphone-activities"><span class="toc-section-number">12.11</span> SMARTPHONE ACTIVITIES</a></li>
-<li><a href="appendixDatasets.html#smiles" id="toc-smiles"><span class="toc-section-number">12.12</span> SMILES</a></li>
-<li><a href="appendixDatasets.html#students-mental-health" id="toc-students-mental-health"><span class="toc-section-number">12.13</span> STUDENTS’ MENTAL HEALTH</a></li>
+<li class="chapter" data-level="B.1" data-path="appendixDatasets.html"><a href="appendixDatasets.html#complex-activities"><i class="fa fa-check"></i><b>B.1</b> COMPLEX ACTIVITIES</a></li>
+<li class="chapter" data-level="B.2" data-path="appendixDatasets.html"><a href="appendixDatasets.html#depresjon"><i class="fa fa-check"></i><b>B.2</b> DEPRESJON</a></li>
+<li class="chapter" data-level="B.3" data-path="appendixDatasets.html"><a href="appendixDatasets.html#electromyography"><i class="fa fa-check"></i><b>B.3</b> ELECTROMYOGRAPHY</a></li>
+<li class="chapter" data-level="B.4" data-path="appendixDatasets.html"><a href="appendixDatasets.html#fish-trajectories"><i class="fa fa-check"></i><b>B.4</b> FISH TRAJECTORIES</a></li>
+<li class="chapter" data-level="B.5" data-path="appendixDatasets.html"><a href="appendixDatasets.html#hand-gestures"><i class="fa fa-check"></i><b>B.5</b> HAND GESTURES</a></li>
+<li class="chapter" data-level="B.6" data-path="appendixDatasets.html"><a href="appendixDatasets.html#home-tasks"><i class="fa fa-check"></i><b>B.6</b> HOME TASKS</a></li>
+<li class="chapter" data-level="B.7" data-path="appendixDatasets.html"><a href="appendixDatasets.html#homicide-reports"><i class="fa fa-check"></i><b>B.7</b> HOMICIDE REPORTS</a></li>
+<li class="chapter" data-level="B.8" data-path="appendixDatasets.html"><a href="appendixDatasets.html#indoor-location"><i class="fa fa-check"></i><b>B.8</b> INDOOR LOCATION</a></li>
+<li class="chapter" data-level="B.9" data-path="appendixDatasets.html"><a href="appendixDatasets.html#sheep-goats"><i class="fa fa-check"></i><b>B.9</b> SHEEP GOATS</a></li>
+<li class="chapter" data-level="B.10" data-path="appendixDatasets.html"><a href="appendixDatasets.html#skeleton-actions"><i class="fa fa-check"></i><b>B.10</b> SKELETON ACTIONS</a></li>
+<li class="chapter" data-level="B.11" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smartphone-activities"><i class="fa fa-check"></i><b>B.11</b> SMARTPHONE ACTIVITIES</a></li>
+<li class="chapter" data-level="B.12" data-path="appendixDatasets.html"><a href="appendixDatasets.html#smiles"><i class="fa fa-check"></i><b>B.12</b> SMILES</a></li>
+<li class="chapter" data-level="B.13" data-path="appendixDatasets.html"><a href="appendixDatasets.html#students-mental-health"><i class="fa fa-check"></i><b>B.13</b> STUDENTS’ MENTAL HEALTH</a></li>
 </ul></li>
-<li><a href="citing-this-book.html#citing-this-book" id="toc-citing-this-book">Citing this Book</a></li>
-<li><a href="references.html#references" id="toc-references">References</a></li>
+<li class="chapter" data-level="" data-path="citing-this-book.html"><a href="citing-this-book.html"><i class="fa fa-check"></i>Citing this Book</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
       </nav>
@@ -454,7 +456,7 @@ div.csl-indent {
 For the rest of the chapter I will mostly use the term <strong>units</strong> to refer to neurons/nodes. I will also use the term <strong>network</strong> to refer to artificial neural networks.
 </div>
 <p>Before going into details of how multi-layer ANNs work, let’s start with a very simple neural network consisting of a <strong>single unit</strong>. See Figure <a href="deeplearning.html#fig:nnPerceptron">8.1</a>. Even though this network only has one node, it is already composed of several interesting elements which are the basis of more complex networks. First, it has <span class="math inline">\(n\)</span> input variables <span class="math inline">\(x_1 \ldots x_n\)</span> which are real numbers. Second, the unit has a set of <span class="math inline">\(n\)</span> weights <span class="math inline">\(w_1 \ldots w_n\)</span> associated with each input. These weights can take real numbers as values. Finally, there is an output <span class="math inline">\(y&#39;\)</span> which is binary (it can take two values: <span class="math inline">\(1\)</span> or <span class="math inline">\(0\)</span>).</p>
-<div class="figure" style="text-align: center"><span id="fig:nnPerceptron"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnPerceptron"></span>
 <img src="images/nn_perceptron.png" alt="A neural network composed of a single unit (perceptron)." width="50%" />
 <p class="caption">
 FIGURE 8.1: A neural network composed of a single unit (perceptron).
@@ -484,7 +486,7 @@ This simple network consisting of one unit with a binary output is called a <str
 <li>You don’t like horror movies.</li>
 </ol>
 <p>This decision-making process can be modeled with the perceptron of Figure <a href="deeplearning.html#fig:nnMovies">8.2</a>. This perceptron has two binary input variables: <em>money</em> and <em>horror</em>. Each variable has an associated weight. Suppose there is a decision threshold of <span class="math inline">\(t=3\)</span>. Finally, there is a binary output: <span class="math inline">\(1\)</span> means you should go to the movies and <span class="math inline">\(0\)</span> indicates that you should not go.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnMovies"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnMovies"></span>
 <img src="images/nn_movies.png" alt="Perceptron to decide whether or not to go to the movies based on two input variables." width="50%" />
 <p class="caption">
 FIGURE 8.2: Perceptron to decide whether or not to go to the movies based on two input variables.
@@ -535,7 +537,7 @@ In this example, the weights (<span class="math inline">\(5\)</span> and <span c
   \tag{8.3}
 \end{equation}\]</span></p>
 <p>Figure <a href="deeplearning.html#fig:nnStep">8.3</a> shows the plot of the step function.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnStep"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnStep"></span>
 <img src="images/nn_step.png" alt="The step function." width="100%" />
 <p class="caption">
 FIGURE 8.3: The step function.
@@ -547,7 +549,7 @@ FIGURE 8.3: The step function.
 <li>Perceptrons are linear functions.</li>
 </ol>
 <p>The first limitation imposes some restrictions on its applicability. For example, a perceptron cannot be used to predict real-valued outputs which is a fundamental aspect for regression problems. The second limitation makes the perceptron only capable of solving linear problems. Figure <a href="deeplearning.html#fig:nnLinearity">8.4</a> graphically shows this limitation. In the first case, the outputs of the OR logical operator can be classified (separated) using a line. On the other hand, it is not possible to classify the output of the XOR function using a single line.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnLinearity"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnLinearity"></span>
 <img src="images/nn_linearity.png" alt="The OR and the XOR logical operators." width="80%" />
 <p class="caption">
 FIGURE 8.4: The OR and the XOR logical operators.
@@ -562,7 +564,7 @@ FIGURE 8.4: The OR and the XOR logical operators.
   \tag{8.4}
 \end{equation}\]</span></p>
 <p>This function has an ‘S’ shape (Figure <a href="deeplearning.html#fig:nnSigmoid">8.5</a>) and as opposed to a step function, this one is smooth. The range of this function is from <span class="math inline">\(0\)</span> to <span class="math inline">\(1\)</span>.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnSigmoid"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnSigmoid"></span>
 <img src="images/nn_sigmoid.png" alt="Sigmoid function." width="100%" />
 <p class="caption">
 FIGURE 8.5: Sigmoid function.
@@ -575,7 +577,7 @@ FIGURE 8.5: Sigmoid function.
 \end{equation}\]</span></p>
 <p>Sigmoid units have been one of the most commonly used types of units when building bigger neural networks. Another advantage is that the outputs are real values that can be interpreted as probabilities. For instance, if we want to make binary decisions we can set a threshold. For example, if the output of the sigmoid unit is <span class="math inline">\(&gt; 0.5\)</span> then return a <span class="math inline">\(1\)</span>. Of course, that threshold would depend on the application. If we need more confidence about the result we can set a higher threshold.</p>
 <p>In the last years, another type of unit has been successfully applied to train neural networks, the <strong>rectified linear unit</strong> or <strong>ReLU</strong> for short (Figure <a href="deeplearning.html#fig:nnRectified">8.6</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:nnRectified"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnRectified"></span>
 <img src="images/nn_relu.png" alt="Rectifier function." width="100%" />
 <p class="caption">
 FIGURE 8.6: Rectifier function.
@@ -600,7 +602,7 @@ In practice, many other activation functions are used but the most common ones a
 <div id="assembling-units-into-layers" class="section level3 hasAnchor" number="8.1.2">
 <h3><span class="header-section-number">8.1.2</span> Assembling Units into Layers<a href="deeplearning.html#assembling-units-into-layers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Perceptrons, sigmoid, and ReLU units can be thought of as very simple neural networks. By connecting several units, one can build more complex neural networks. For historical reasons, neural networks are also called <strong>multilayer perceptrons</strong> regardless whether the units are perceptrons or not. Typically, units are grouped into layers. Figure <a href="deeplearning.html#fig:nnExampleNN">8.7</a> shows an example neural network with <span class="math inline">\(3\)</span> layers. An <strong>input layer</strong> with <span class="math inline">\(3\)</span> nodes, a <strong>hidden layer</strong> with <span class="math inline">\(2\)</span> nodes, and an <strong>output layer</strong> with <span class="math inline">\(1\)</span> node.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnExampleNN"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnExampleNN"></span>
 <img src="images/nn_example_nn.png" alt="Example neural network." width="50%" />
 <p class="caption">
 FIGURE 8.7: Example neural network.
@@ -616,7 +618,7 @@ In this type of diagram, the nodes represent units (perceptrons, sigmoids, ReLUs
 For each specific problem, we need to define several building blocks for the network. For example, the number of layers, the number of units in each layer, the type of units (sigmoid, ReLU, etc.), and so on. This is known as the <strong>architecture</strong> of the network. Choosing a good architecture for a given problem is not a trivial task. It is advised to start with an architecture that was used to solve a similar problem and then fine-tune it for your specific problem. There exist some automatic ways to optimize the network architecture but those methods are out of the scope of this book.
 </div>
 <p>We already saw how a unit can produce a result based on the inputs by using <em>forward propagation</em>. For more complex networks the process is the same! Consider the network shown in Figure <a href="deeplearning.html#fig:nnForward">8.8</a>. It consists of two inputs and one output. It also has one hidden layer with <span class="math inline">\(2\)</span> units.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnForward"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnForward"></span>
 <img src="images/nn_forward.png" alt="Example of forward propagation." width="50%" />
 <p class="caption">
 FIGURE 8.8: Example of forward propagation.
@@ -633,7 +635,7 @@ The two input values are <span class="math inline">\(1\)</span> and <span class=
 <div id="deep-neural-networks" class="section level3 hasAnchor" number="8.1.3">
 <h3><span class="header-section-number">8.1.3</span> Deep Neural Networks<a href="deeplearning.html#deep-neural-networks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>By increasing the number of layers and the number of units in each layer, one can build more complex networks. But what is a deep neural network (DNN)? There is not a strict rule but some people say that a network with more than <span class="math inline">\(2\)</span> hidden layers is a deep network. Yes, that’s all it takes to build a DNN! Figure <a href="deeplearning.html#fig:nnDNN">8.9</a> shows an example of a deep neural network.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnDNN"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnDNN"></span>
 <img src="images/nn_dnn.png" alt="Example of a deep neural network." width="50%" />
 <p class="caption">
 FIGURE 8.9: Example of a deep neural network.
@@ -663,14 +665,14 @@ The mean squared error (MSE) loss function is commonly used for regression probl
 <p>This notation means: find and return the weights and biases that make the loss function be as small as possible.</p>
 <p>The most common method to train neural networks is called <strong>gradient descent</strong>. The algorithm updates the parameters in an iterative fashion based on the loss. This algorithm is suitable for complex functions with millions of parameters.</p>
 <p>Suppose there is a network with only <span class="math inline">\(1\)</span> weight and no bias with MSE as loss function (Equation <a href="deeplearning.html#eq:lossMSE">(8.7)</a>). Figure <a href="deeplearning.html#fig:nnGD">8.10</a> shows a plot of the loss function. This is a quadratic function that only depends on the value of <span class="math inline">\(w\)</span>. The task is to find the <span class="math inline">\(w\)</span> where the function is at its minimum.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnGD"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnGD"></span>
 <img src="images/nn_gd.png" alt="Gradient descent in action." width="50%" />
 <p class="caption">
 FIGURE 8.10: Gradient descent in action.
 </p>
 </div>
 <p>Gradient descent starts by assigning <span class="math inline">\(w\)</span> a random value. Then, at each step and based on the error, <span class="math inline">\(w\)</span> is updated in the direction that minimizes the loss function. In the previous figure, the <strong>global minimum</strong> is found after <span class="math inline">\(5\)</span> iterations. In practice, loss functions are more complex and have many <strong>local minima</strong> (Figure <a href="deeplearning.html#fig:nnLM">8.11</a>). For complex functions, it is difficult to find a global minimum but gradient descent can find a local minimum that is good enough to solve the problem at hand.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnLM"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnLM"></span>
 <img src="images/nn_lm.png" alt="Function with 1 global minimum and several local minima." width="50%" />
 <p class="caption">
 FIGURE 8.11: Function with 1 global minimum and several local minima.
@@ -682,7 +684,7 @@ FIGURE 8.11: Function with 1 global minimum and several local minima.
      <span class="math inline">\(w_i = w_i - \alpha \frac{\partial L(W)}{\partial w_i}\)</span><br />
 </div>
 <p>The outer loop is run until the algorithm converges or until a predefined number of iterations is reached. Each iteration is also called an <strong>epoch</strong>. Each weight is updated with the rule: <span class="math inline">\(w_i = w_i - \alpha \frac{\partial L(W)}{\partial w_i}\)</span>. The derivative part will give us the direction and magnitude. The <span class="math inline">\(\alpha\)</span> is called the <strong>learning rate</strong> and it controls how ‘fast’ we move. The learning rate is a constant defined by the user, thus, it is a <strong>hyperparameter</strong>. A high learning rate can cause the algorithm to miss the local minima and the loss can start to increase. A small learning rate will cause the algorithm to take more time to converge. Figure <a href="deeplearning.html#fig:nnLR">8.12</a> illustrates both scenarios.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnLR"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnLR"></span>
 <img src="images/nn_lr.png" alt="Comparison between high and low learning rates. a) Big learning rate. b) Small learning rate." width="100%" />
 <p class="caption">
 FIGURE 8.12: Comparison between high and low learning rates. a) Big learning rate. b) Small learning rate.
@@ -690,7 +692,7 @@ FIGURE 8.12: Comparison between high and low learning rates. a) Big learning rat
 </div>
 <p>Selecting an appropriate learning rate will depend on the application but common values are between <span class="math inline">\(0.0001\)</span> and <span class="math inline">\(0.05\)</span>.</p>
 <p>Let’s see how gradient descent works with a step by step example. Consider a very simple neural network consisting of an input layer with only one input feature and an output layer with one unit and no bias. To make it even simpler, the activation function of the output unit is the identity function <span class="math inline">\(f(x)=x\)</span>. Assume that as training data we have a single data point. Figure <a href="deeplearning.html#fig:nnStepExample">8.13</a> shows the simple network and the training data. The training data point only has one input variable (<span class="math inline">\(x\)</span>) and an output (<span class="math inline">\(y\)</span>). We want to train this network such that it can make predictions on new data points. The training point has an input feature of <span class="math inline">\(x=3\)</span> and the expected output is <span class="math inline">\(y=1.5\)</span>. For this particular training point, it seems that the output is equal to the input divided by <span class="math inline">\(2\)</span>. Thus, based on this single training data point the network should learn how to divide any other input by <span class="math inline">\(2\)</span>.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnStepExample"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnStepExample"></span>
 <img src="images/nn_step_example.png" alt="a) A simple neural network consisting of one unit. b) The training data with only one row." width="100%" />
 <p class="caption">
 FIGURE 8.13: a) A simple neural network consisting of one unit. b) The training data with only one row.
@@ -715,14 +717,14 @@ FIGURE 8.13: a) A simple neural network consisting of one unit. b) The training 
   w = w - \alpha 2x(xw - y)
 \end{equation}\]</span></p>
 <p>We already know that <span class="math inline">\(\alpha=0.05\)</span>, the input value is <span class="math inline">\(x=3\)</span>, the output is <span class="math inline">\(y=1.5\)</span> and the initial weight is <span class="math inline">\(w=2\)</span>. So we can start updating <span class="math inline">\(w\)</span>. Figure <a href="deeplearning.html#fig:nnTrainProgress">8.14</a> shows the initial state (iteration 0) and <span class="math inline">\(3\)</span> additional iterations. In the initial state, <span class="math inline">\(w=2\)</span> and with that weight the loss is <span class="math inline">\(20.25\)</span>. In iteration <span class="math inline">\(1\)</span>, the weight is updated and now its value is <span class="math inline">\(0.65\)</span>. With this new weight, the loss is <span class="math inline">\(0.2025\)</span>. That was a substantial reduction in the error! After three iterations we see that the final weight is <span class="math inline">\(w=0.501\)</span> and the loss is very close to zero.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnTrainProgress"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnTrainProgress"></span>
 <img src="images/nn_train_progress.png" alt="First 3 gradient descent iterations (epochs)." width="100%" />
 <p class="caption">
 FIGURE 8.14: First 3 gradient descent iterations (epochs).
 </p>
 </div>
 <p>Now, we can start doing predictions with our very simple neural network! To do so, we use forward propagation on the new input data using the learned weight <span class="math inline">\(w=0.501\)</span>. Figure <a href="deeplearning.html#fig:nnExamplePredictions">8.15</a> shows the predictions on new training data points that were never seen before by the network.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnExamplePredictions"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnExamplePredictions"></span>
 <img src="images/nn_example_predictions.png" alt="Example predictions on new data points." width="60%" />
 <p class="caption">
 FIGURE 8.15: Example predictions on new data points.
@@ -827,7 +829,7 @@ FIGURE 8.15: Example predictions on new data points.
 <p>Now, you can try to change the training set to make the network learn a different arithmetic operation!</p>
 <p>In the previous example, we considered a very simple neural network consisting of a single unit. In this case, the partial derivative with respect to the single weight was calculated directly. For bigger networks with more layers and activations, the final output becomes a composition of functions. That is, the activation values of a layer <span class="math inline">\(l\)</span> depend on its weights which are also affected by the previous layer’s <span class="math inline">\(l-1\)</span> weights and so on. So, the derivatives (gradients) can be computed using the chain rule <span class="math inline">\(f(g(x))&#39; = f&#39;(g(x)) \cdot g&#39;(x)\)</span>. This can be performed efficiently by an algorithm known as <strong>backpropagation</strong>.</p>
 <blockquote>
-<p>“What backpropagation actually lets us do is compute the partial derivatives <span class="math inline">\(\partial C_x / \partial w\)</span> and <span class="math inline">\(\partial C_x / \partial b\)</span> for a single training example”. (Michael Nielsen, 2019)<a href="references.html#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.</p>
+<p>“What backpropagation actually lets us do is compute the partial derivatives <span class="math inline">\(\partial C_x / \partial w\)</span> and <span class="math inline">\(\partial C_x / \partial b\)</span> for a single training example”. (Michael Nielsen, 2019)<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.</p>
 </blockquote>
 <p>Here, <span class="math inline">\(C\)</span> refers to the loss function which is also called the cost function. In modern deep learning libraries like TensorFlow, this procedure is efficiently implemented with a computational graph. If you want to learn the details about backpropagation I recommend you to check this post by DEEPLIZARD (<a href="https://deeplizard.com/learn/video/XE3krf3CQls" class="uri">https://deeplizard.com/learn/video/XE3krf3CQls</a>) which consists of <span class="math inline">\(5\)</span> parts including videos.</p>
 </div>
@@ -855,8 +857,8 @@ Be aware that when using GPUs, a big batch size can cause out of memory errors s
 </div>
 <div id="keras-and-tensorflow-with-r" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Keras and TensorFlow with R<a href="deeplearning.html#keras-and-tensorflow-with-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>TensorFlow<a href="references.html#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a> is an open-source computational library used mainly for machine learning and more specifically, for deep learning. It has many available tools and extensions to perform a wide variety of tasks such as data pre-processing, model optimization, reinforcement learning, probabilistic reasoning, to name a few. TensorFlow is very flexible and is used for research, development, and in production environments. It provides an API that contains the necessary building blocks to build different types of neural networks including CNNs, autoencoders, Recurrent Neural Networks, etc. It has two main versions. A CPU version and a GPU version. The latter allows the execution of programs by taking advantage of the computational power of graphic processing units. This makes training models much faster. Despite all this flexibility and power, it can take some time to learn the basics. Sometimes you need a way to build and test machine learning models in a simple way, for example, when trying new ideas or prototyping. Fortunately, there exists an interface to TensorFlow called Keras<a href="references.html#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.</p>
-<p>Keras offers an API that abstracts many of the TensorFlow’s details making it easier to build and train machine learning models. Keras is what I will use when building deep learning models in this book. Keras does not only provide an interface to TensorFlow but also to other deep learning engines such as Theano<a href="references.html#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>, Microsoft Cognitive Toolkit<a href="references.html#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>, etc. Keras was developed by François Chollet and later, it was integrated with TensorFlow.</p>
+<p>TensorFlow<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a> is an open-source computational library used mainly for machine learning and more specifically, for deep learning. It has many available tools and extensions to perform a wide variety of tasks such as data pre-processing, model optimization, reinforcement learning, probabilistic reasoning, to name a few. TensorFlow is very flexible and is used for research, development, and in production environments. It provides an API that contains the necessary building blocks to build different types of neural networks including CNNs, autoencoders, Recurrent Neural Networks, etc. It has two main versions. A CPU version and a GPU version. The latter allows the execution of programs by taking advantage of the computational power of graphic processing units. This makes training models much faster. Despite all this flexibility and power, it can take some time to learn the basics. Sometimes you need a way to build and test machine learning models in a simple way, for example, when trying new ideas or prototyping. Fortunately, there exists an interface to TensorFlow called Keras<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.</p>
+<p>Keras offers an API that abstracts many of the TensorFlow’s details making it easier to build and train machine learning models. Keras is what I will use when building deep learning models in this book. Keras does not only provide an interface to TensorFlow but also to other deep learning engines such as Theano<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>, Microsoft Cognitive Toolkit<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>, etc. Keras was developed by François Chollet and later, it was integrated with TensorFlow.</p>
 <p>Most of the time its API should be enough to do common tasks and it provides ways to add extensions in case that is not enough. In this book, we will only use a subset of the available Keras functions but that will be enough for our purposes of building models to predict behaviors. If you want to learn more about Keras, I recommend the book <em>“Deep Learning with R”</em> by <span class="citation">Chollet and Allaire (<a href="#ref-Chollet2018">2018</a>)</span>.</p>
 <p>Examples in this book will use Keras with TensorFlow as the backend. In R, we can access Keras through the <code>keras</code> package <span class="citation">(<a href="#ref-keras">Allaire and Chollet 2019</a>)</span>.</p>
 
@@ -896,7 +898,7 @@ Instructions on how to install Keras and TensorFlow can be found in Appendix <a 
 <span id="cb158-4"><a href="deeplearning.html#cb158-4" tabindex="-1"></a>  <span class="at">metrics =</span> <span class="fu">list</span>(<span class="st">&#39;mse&#39;</span>,<span class="st">&#39;mae&#39;</span>)</span>
 <span id="cb158-5"><a href="deeplearning.html#cb158-5" tabindex="-1"></a>)</span>
 <span id="cb158-6"><a href="deeplearning.html#cb158-6" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:simpleSummary"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:simpleSummary"></span>
 <img src="images/nn_simple_summary.png" alt="Summary of the simple neural network." width="80%" />
 <p class="caption">
 FIGURE 8.16: Summary of the simple neural network.
@@ -914,7 +916,7 @@ To start the actual training procedure we need to call the <code>fit()</code> fu
 <span id="cb159-7"><a href="deeplearning.html#cb159-7" tabindex="-1"></a>  <span class="at">view_metrics =</span> <span class="cn">TRUE</span></span>
 <span id="cb159-8"><a href="deeplearning.html#cb159-8" tabindex="-1"></a>)</span></code></pre></div>
 <p>Figure <a href="deeplearning.html#fig:nnEpochs">8.17</a> presents the output of the <code>fit()</code> function in RStudio. In the console, the training loss, mean squared error, and mean absolute error are printed during each epoch. In the viewer pane, plots of the same metrics are shown. Here, we can see that the loss is nicely decreasing over time. The loss at epoch <span class="math inline">\(30\)</span> should be close to <span class="math inline">\(0\)</span>.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnEpochs"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnEpochs"></span>
 <img src="images/nn_epochs.png" alt="fit() function output." width="100%" />
 <p class="caption">
 FIGURE 8.17: fit() function output.
@@ -947,7 +949,7 @@ One practical thing to note is that if you make any changes in the <code>compile
 <li>Use <strong>average cross-entropy</strong> as the loss function.</li>
 </ol>
 <p>Let’s start with point number <span class="math inline">\(1\)</span> (add more units to the output layer). This means that if the number of classes is <span class="math inline">\(k\)</span>, then the last layer needs to have <span class="math inline">\(k\)</span> units, one for each class. That’s it! Figure <a href="deeplearning.html#fig:nnCrossEntropy">8.18</a> shows an example of a neural network with an output layer having <span class="math inline">\(3\)</span> units. Each unit predicts a score for each of the <span class="math inline">\(3\)</span> classes. Let’s call the vector of predicted scores <span class="math inline">\(y&#39;\)</span>.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnCrossEntropy"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnCrossEntropy"></span>
 <img src="images/nn_cross-entropy.png" alt="Neural network with 3 output scores. Softmax is applied to the scores and the cross-entropy with the true scores is calculated. This gives us an estimate of the similarity between the network's predictions and the true values." width="100%" />
 <p class="caption">
 FIGURE 8.18: Neural network with 3 output scores. Softmax is applied to the scores and the cross-entropy with the true scores is calculated. This gives us an estimate of the similarity between the network’s predictions and the true values.
@@ -1056,7 +1058,7 @@ Be aware that when computing the cross-entropy with equation <a href="deeplearni
 <p>Now we can call our function to create the model. This one will have <span class="math inline">\(64\)</span> inputs and <span class="math inline">\(4\)</span> outputs and the learning rate is set to <span class="math inline">\(0.01\)</span>. It is always useful to print a summary of the model with the <code>summary()</code> function.</p>
 <div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="deeplearning.html#cb166-1" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">get.nn</span>(<span class="dv">64</span>, <span class="dv">4</span>, <span class="at">lr =</span> <span class="fl">0.01</span>)</span>
 <span id="cb166-2"><a href="deeplearning.html#cb166-2" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:nnEMGSummary"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnEMGSummary"></span>
 <img src="images/nn_emg_summary.png" alt="Summary of the network." width="90%" />
 <p class="caption">
 FIGURE 8.19: Summary of the network.
@@ -1093,7 +1095,7 @@ The source code files include the trained models used in this book in case you w
 Due to some version incompatibilities with the h5py underlying library, you may get the following error when trying to load the <code>hdf5</code> files. <code>AttributeError: 'str' object has no attribute 'decode'</code>. If you encounter this error, load the models in <code>SavedModel</code> format using the <code>load_model_tf()</code> method instead.
 </div>
 <p>Figure <a href="deeplearning.html#fig:nnEMGloss">8.20</a> shows the train and validation loss and accuracy as produced by <code>plot(history)</code>. We see that both the training and validation loss are decreasing over time. The accuracy increases over time.</p>
-<div class="figure" style="text-align: center"><span id="fig:nnEMGloss"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nnEMGloss"></span>
 <img src="images/nn_emg_loss.png" alt="Loss and accuracy of the electromyography model." width="100%" />
 <p class="caption">
 FIGURE 8.20: Loss and accuracy of the electromyography model.
@@ -1156,7 +1158,7 @@ FIGURE 8.20: Loss and accuracy of the electromyography model.
 <div id="overfitting" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> Overfitting<a href="deeplearning.html#overfitting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>One important thing to look at when training a network is <strong>overfitting</strong>. That is, when the model memorizes instead of learning (see chapter <a href="intro.html#intro">1</a>). Overfitting means that the model becomes very specialized at mapping inputs to outputs from the <em>train set</em> but fails to do so with new <em>test samples</em>. One reason is that a model can become too complex and with so many parameters that it will perfectly adapt to its training data but will miss more general patterns preventing it to perform well on unseen instances. To diagnose this, one can plot loss/accuracy curves during training epochs.</p>
-<div class="figure" style="text-align: center"><span id="fig:lossAccuracy"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:lossAccuracy"></span>
 <img src="images/nn_loss_accuracy_curves.png" alt="Loss and accuracy curves." width="100%" />
 <p class="caption">
 FIGURE 8.21: Loss and accuracy curves.
@@ -1197,7 +1199,7 @@ FIGURE 8.21: Loss and accuracy curves.
 <span id="cb177-16"><a href="deeplearning.html#cb177-16" tabindex="-1"></a>  <span class="at">callbacks =</span> <span class="fu">list</span>(my_callback)</span>
 <span id="cb177-17"><a href="deeplearning.html#cb177-17" tabindex="-1"></a>)</span></code></pre></div>
 <p>This code will cause the training to stop if after <span class="math inline">\(50\)</span> epochs there is no improvement in accuracy of at least <span class="math inline">\(1\%\)</span> and will restore the model’s weights to the ones during the epoch with the highest accuracy. Figure <a href="deeplearning.html#fig:earlyStopping">8.22</a> shows how the training stopped at epoch <span class="math inline">\(241\)</span>.</p>
-<div class="figure" style="text-align: center"><span id="fig:earlyStopping"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:earlyStopping"></span>
 <img src="images/nn_earlystopping.png" alt="Early stopping example." width="90%" />
 <p class="caption">
 FIGURE 8.22: Early stopping example.
@@ -1216,7 +1218,7 @@ FIGURE 8.22: Early stopping example.
 <div id="dropout" class="section level3 hasAnchor" number="8.4.2">
 <h3><span class="header-section-number">8.4.2</span> Dropout<a href="deeplearning.html#dropout" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Dropout is another technique to reduce overfitting proposed by <span class="citation">Srivastava et al. (<a href="#ref-srivastava14">2014</a>)</span>. It consists of ‘dropping’ some of the units from a hidden layer for each sample during training. In theory, it can also be applied to input and output layers but that is not very common. The incoming and outgoing connections of a dropped unit are discarded. Figure <a href="deeplearning.html#fig:imgDropout">8.23</a> shows an example of applying dropout to a network. In Figure <a href="deeplearning.html#fig:imgDropout">8.23</a> b, the middle unit was removed from the network whereas in Figure <a href="deeplearning.html#fig:imgDropout">8.23</a> c, the top and bottom units were removed.</p>
-<div class="figure" style="text-align: center"><span id="fig:imgDropout"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:imgDropout"></span>
 <img src="images/nn_dropout.png" alt="Dropout example." width="100%" />
 <p class="caption">
 FIGURE 8.23: Dropout example.
@@ -1224,7 +1226,7 @@ FIGURE 8.23: Dropout example.
 </div>
 <p>Each unit has an associated probability <span class="math inline">\(p\)</span> (independent of other units) of being dropped. This probability is another hyperparameter but typically it is set to <span class="math inline">\(0.5\)</span>. Thus, during each iteration and for each sample, half of the units are discarded. The effect of this, is having more simple networks (see Figure <a href="deeplearning.html#fig:imgDropout">8.23</a>) and thus, less prone to overfitting. Intuitively, you can also think of dropout as training an <strong>ensemble of neural networks</strong>, each having a slightly different structure.</p>
 <p>From the perspective of one unit that receives inputs from the previous hidden layer with dropout, approximately half of its incoming connections will be gone (if <span class="math inline">\(p=0.5\)</span>). See Figure <a href="deeplearning.html#fig:dropoutUnit">8.24</a>.</p>
-<div class="figure" style="text-align: center"><span id="fig:dropoutUnit"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dropoutUnit"></span>
 <img src="images/nn_dropout_unit.png" alt="Incoming connections to one unit when the previous layer has dropout." width="20%" />
 <p class="caption">
 FIGURE 8.24: Incoming connections to one unit when the previous layer has dropout.
@@ -1259,10 +1261,10 @@ there is no need to apply dropout. The predictions are done as usual. In Keras, 
 <p><strong>Number of hidden layers.</strong>
 Most of the time one or two hidden layers are enough to solve not too complex problems. One advice is to start with one hidden layer and if that one is not enough to capture the complexity of the problem, add another layer and so on.</p>
 <p><strong>Number of units.</strong>
-If a network has too few units it can underfit, that is, the model will be too simple to capture the underlying data patterns. If the network has too many units this can result in overfitting. Also, it will take more time to learn the parameters. Some guidelines mention that the number of units should be somewhere between the number of input features and the number of units in the output layer<a href="references.html#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>. <span class="citation">Guang-Bin Huang (<a href="#ref-huang2003">2003</a>)</span> has even proposed a formula for the two-hidden layer case to calculate the number of units that are enough to learn <span class="math inline">\(N\)</span> samples: <span class="math inline">\(2\sqrt{(m+2)N}\)</span> where <span class="math inline">\(m\)</span> is the number of output units.</p>
+If a network has too few units it can underfit, that is, the model will be too simple to capture the underlying data patterns. If the network has too many units this can result in overfitting. Also, it will take more time to learn the parameters. Some guidelines mention that the number of units should be somewhere between the number of input features and the number of units in the output layer<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>. <span class="citation">Guang-Bin Huang (<a href="#ref-huang2003">2003</a>)</span> has even proposed a formula for the two-hidden layer case to calculate the number of units that are enough to learn <span class="math inline">\(N\)</span> samples: <span class="math inline">\(2\sqrt{(m+2)N}\)</span> where <span class="math inline">\(m\)</span> is the number of output units.</p>
 <p>My suggestion is to first gain some practice and intuition with simple problems. A good way to do so is with the TensorFlow playground (<a href="https://playground.tensorflow.org/" class="uri">https://playground.tensorflow.org/</a>) created by Daniel Smilkov and Shan Carter. This is a web-based implementation of a neural network that you can fine-tune to solve a predefined set of classification and regression problems. For example, Figure <a href="deeplearning.html#fig:playground">8.25</a> shows how I tried to solve the XOR problem with a neural network with <span class="math inline">\(1\)</span> hidden layer and <span class="math inline">\(1\)</span> unit with a sigmoid activation function. After more than <span class="math inline">\(1,000\)</span> epochs the loss is still quite high (<span class="math inline">\(0.38\)</span>). Try to add more neurons and/or hidden layers and see if you can solve the XOR problem with fewer epochs.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:playground"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:playground"></span>
 <img src="images/playground.png" alt="Screenshot of the TensorFlow playground. (Daniel Smilkov and Shan Carter, https://github.com/tensorflow/playground (Apache License 2.0))." width="100%" />
 <p class="caption">
 FIGURE 8.25: Screenshot of the TensorFlow playground. (Daniel Smilkov and Shan Carter, <a href="https://github.com/tensorflow/playground" class="uri">https://github.com/tensorflow/playground</a> (Apache License 2.0)).
@@ -1271,7 +1273,7 @@ FIGURE 8.25: Screenshot of the TensorFlow playground. (Daniel Smilkov and Shan C
 <p><strong>Batch size.</strong>
 Batch sizes typically range between <span class="math inline">\(4\)</span> and <span class="math inline">\(512\)</span>. Big batch sizes provide a better estimate of the gradient but are more computationally expensive. On the other hand, small batch sizes are faster to compute but will incur in more noise in the gradient estimation requiring more epochs to converge. When using a GPU or other specialized hardware, the computations can be performed in parallel thus, allowing bigger batch sizes to be computed in a reasonable time. Some people argue that the noise introduced with small batch sizes is good to escape from local minima. <span class="citation">Keskar et al. (<a href="#ref-keskar2016">2016</a>)</span> showed that in practice, big batch sizes can result in degraded models. A good starting point is <span class="math inline">\(32\)</span> which is the default in Keras.</p>
 <p><strong>Learning rate.</strong>
-This is one of the most important hyperparameters. The learning rate specifies how fast gradient descent ‘moves’ when trying to find an optimal minimum. However, this doesn’t mean that the algorithm will <em>learn</em> faster if the learning rate is set to a high value. If it is too high, the loss can start oscillating. If it is too low, the learning will take a lot of time. One way to fine-tune it, is to start with the default one. In Keras, the default learning rate for stochastic gradient descent is <span class="math inline">\(0.01\)</span>. Then, based on the loss plot across epochs, you can decrease/increase it. If learning is taking long, try to increase it. If the loss seems to be oscillating or stuck, try reducing it. Typical values are <span class="math inline">\(0.1\)</span>, <span class="math inline">\(0.01\)</span>, <span class="math inline">\(0.001\)</span>, <span class="math inline">\(0.0001\)</span>, <span class="math inline">\(0.00001\)</span>. Additionally to stochastic gradient descent, Keras provides implementations of other optimizers<a href="references.html#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a> like Adam<a href="references.html#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a> which have adaptive learning rates, but still, one needs to specify an initial one.</p>
+This is one of the most important hyperparameters. The learning rate specifies how fast gradient descent ‘moves’ when trying to find an optimal minimum. However, this doesn’t mean that the algorithm will <em>learn</em> faster if the learning rate is set to a high value. If it is too high, the loss can start oscillating. If it is too low, the learning will take a lot of time. One way to fine-tune it, is to start with the default one. In Keras, the default learning rate for stochastic gradient descent is <span class="math inline">\(0.01\)</span>. Then, based on the loss plot across epochs, you can decrease/increase it. If learning is taking long, try to increase it. If the loss seems to be oscillating or stuck, try reducing it. Typical values are <span class="math inline">\(0.1\)</span>, <span class="math inline">\(0.01\)</span>, <span class="math inline">\(0.001\)</span>, <span class="math inline">\(0.0001\)</span>, <span class="math inline">\(0.00001\)</span>. Additionally to stochastic gradient descent, Keras provides implementations of other optimizers<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a> like Adam<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a> which have adaptive learning rates, but still, one needs to specify an initial one.</p>
 
 <div class="rmdgoodpractice">
 Before training a network it is a good practice to shuffle the rows of the train set if the data points are independent. Neural networks tend to ‘forget’ patterns learned from previous points during training as the wights are updated. For example, if the train set happens to be oredered by class labels, the network may ‘forget’ how to identify the first classes and will put more emphasis on the last ones.
@@ -1305,7 +1307,7 @@ It is also a good practice to normalize the input features before training a net
 </ol>
 <p>Figure <a href="deeplearning.html#fig:cnnArchitecture">8.26</a> shows a simple CNN and its basic components. First, the input image goes through a convolution layer with <span class="math inline">\(4\)</span> kernels (details about the convolution operation are described in the next subsection). This layer is in charge of extracting features by applying the kernels on top of the image. The result of this operation is a convolved image, also known as <strong>feature maps</strong>. The number of feature maps is equal to the number of kernels, in this case, <span class="math inline">\(4\)</span>. Then, a <strong>pooling operation</strong> is applied on top of the feature maps. This operation reduces the size of the feature maps by downsampling them (details on this in a following subsection). The output of the pooling operation is a set of feature maps with reduced size. Here, the outputs are <span class="math inline">\(4\)</span> reduced feature maps since the pooling operation is applied to each feature map independently of the others. Then, the feature maps are flattened into a one-dimensional array. Conceptually, this array represents all the features extracted from the previous steps. These features are then used as inputs to a neural network with its respective input, hidden, and output layers. An ’*’ and underlined text means that parameter learning occurs in that layer. For example, in the convolution layer, the parameters of the kernels need to be learned. On the other hand, the pooling operation does not require parameter learning since it is a fixed operation. Finally, the parameters of the neural network are learned too, including the hidden layers and the output layer.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:cnnArchitecture"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cnnArchitecture"></span>
 <img src="images/cnn_architecture.png" alt="Simple CNN architecture. An `*’ indicates that parameter learning occurs." width="100%" />
 <p class="caption">
 FIGURE 8.26: Simple CNN architecture. An `*’ indicates that parameter learning occurs.
@@ -1321,7 +1323,7 @@ Each kernel in a convolution layer can have an associated bias which is also a p
 <h3><span class="header-section-number">8.6.1</span> Convolutions<a href="deeplearning.html#convolutions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Convolutions are used to automatically extract feature maps from images. A convolution operation consists of a <strong>kernel</strong> also known as a <strong>filter</strong> which is a matrix with real values. Kernels are usually much smaller than the original image. For example, for a grayscale image of height and width of <span class="math inline">\(100\)</span>x<span class="math inline">\(100\)</span> a typical kernel size would be <span class="math inline">\(3\)</span>x<span class="math inline">\(3\)</span>. The size of the kernel is a hyperparameter. The convolution operation consists of applying the kernel over the image starting at the upper left corner and moving forward row by row until reaching the bottom right corner. The <strong>stride</strong> controls how many elements the kernel is moved at a time and this is also a hyperparameter. A typical value for the stride is <span class="math inline">\(1\)</span>.</p>
 <p>The convolution operation computes the sum of the element-wise product between the kernel and the image region it is covering. The output of this operation is used to generate the convolved image (feature map). Figure <a href="deeplearning.html#fig:cnnConv">8.27</a> shows the first two iterations and the final iteration of the convolution operation on an image. In this case, the kernel is a <span class="math inline">\(3\)</span>x<span class="math inline">\(3\)</span> matrix with <span class="math inline">\(1\)</span>s in its first row and <span class="math inline">\(0\)</span>s elsewhere. The original image has a size of <span class="math inline">\(5\)</span>x<span class="math inline">\(5\)</span>x<span class="math inline">\(1\)</span> (height, width, depth) and it seems to be a number <span class="math inline">\(7\)</span>.</p>
-<div class="figure" style="text-align: center"><span id="fig:cnnConv"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cnnConv"></span>
 <img src="images/cnn_conv_ites.png" alt="Convolution operation with a kernel of size 3x3 and stride=1. Iterations 1, 2, and 9." width="100%" />
 <p class="caption">
 FIGURE 8.27: Convolution operation with a kernel of size 3x3 and stride=1. Iterations 1, 2, and 9.
@@ -1331,7 +1333,7 @@ FIGURE 8.27: Convolution operation with a kernel of size 3x3 and stride=1. Itera
 <p>Now, the convolved image (feature map) represents the features extracted by this particular kernel. Also, note that the feature map is a <span class="math inline">\(3\)</span>x<span class="math inline">\(3\)</span> matrix which is smaller than the original image. It is also possible to force the feature map to have the same size as the original image by padding it with zeros.</p>
 <p>Before learning starts, the kernel values are initialized at random. In this example, the kernel has <span class="math inline">\(1\)</span>s in the first row and it has <span class="math inline">\(3\)</span>x<span class="math inline">\(3=9\)</span> parameters. This is what makes CNNs so efficient since the same kernel is applied to the entire image. This is known as ‘parameter sharing’. Our kernel has <span class="math inline">\(1\)</span>s at the top and <span class="math inline">\(0\)</span>s elsewhere so it seems that this kernel learned to detect horizontal lines. If we look at the final convolved image, we see that the horizontal lines were emphasized by this kernel. This would be a good candidate kernel to differentiate between <span class="math inline">\(7\)</span>s and <span class="math inline">\(0\)</span>s, for example. Since <span class="math inline">\(0\)</span>s does not have long horizontal lines. But maybe it will have difficulties discriminating between <span class="math inline">\(7\)</span>s and <span class="math inline">\(5\)</span>s since both have horizontal lines at the top.</p>
 <p>In this example, only <span class="math inline">\(1\)</span> kernel was used but in practice, you may want more kernels, each in charge of identifying the best features for the given problem. For example, another kernel could learn to identify diagonal lines which would be useful to differentiate between <span class="math inline">\(7\)</span>s and <span class="math inline">\(5\)</span>s. The number of kernels per convolution layer is a hyperparameter. In the previous example, we could have defined to have <span class="math inline">\(4\)</span> kernels instead of one. In that case, the output of that layer would have been <span class="math inline">\(4\)</span> feature maps of size <span class="math inline">\(3\)</span>x<span class="math inline">\(3\)</span> each (Figure <a href="deeplearning.html#fig:cnn4kernels">8.28</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:cnn4kernels"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cnn4kernels"></span>
 <img src="images/cnn_4kernels.png" alt="A convolution with 4 kernels. The output is 4 feature maps." width="90%" />
 <p class="caption">
 FIGURE 8.28: A convolution with 4 kernels. The output is 4 feature maps.
@@ -1343,7 +1345,7 @@ FIGURE 8.28: A convolution with 4 kernels. The output is 4 feature maps.
 <h3><span class="header-section-number">8.6.2</span> Pooling Operations<a href="deeplearning.html#pooling-operations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Pooling operations are typically applied after convolution layers. Their purpose is to reduce the size of the data and to emphasize important regions. These operations perform a fixed computation on the image and do no have learnable parameters. Similar to kernels, we need to define a window size. Then, this window is moved throughout the image and a computation is performed on the pixels covered by the window. The difference with kernels is that this window is just a guide but does not have parameters to be learned. The most common pooling operation is <strong>max pooling</strong> which consists of selecting the highest value.
 Figure <a href="deeplearning.html#fig:cnnMaxPooling">8.29</a> shows an example of a max pooling operation on a <span class="math inline">\(4\)</span>x<span class="math inline">\(4\)</span> image. The window size is <span class="math inline">\(2\)</span>x<span class="math inline">\(2\)</span> and the stride is <span class="math inline">\(2\)</span>. The latter means that the window moves <span class="math inline">\(2\)</span> places at a time.</p>
-<div class="figure" style="text-align: center"><span id="fig:cnnMaxPooling"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cnnMaxPooling"></span>
 <img src="images/cnn_maxpooling.png" alt="Max pooling with a window of size 2x2 and stride = 2." width="100%" />
 <p class="caption">
 FIGURE 8.29: Max pooling with a window of size 2x2 and stride = 2.
@@ -1396,7 +1398,7 @@ In Keras, if the stride is not specified, it defaults to the window size (<code>
 <span id="cb182-14"><a href="deeplearning.html#cb182-14" tabindex="-1"></a>  <span class="fu">layer_dense</span>(<span class="at">units =</span> <span class="dv">2</span>, <span class="at">activation =</span> <span class="st">&#39;softmax&#39;</span>)</span>
 <span id="cb182-15"><a href="deeplearning.html#cb182-15" tabindex="-1"></a></span>
 <span id="cb182-16"><a href="deeplearning.html#cb182-16" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:cnnEx1"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cnnEx1"></span>
 <img src="images/cnn_summaryEx1.png" alt="Output of summary()." width="90%" />
 <p class="caption">
 FIGURE 8.30: Output of summary().
@@ -1425,7 +1427,7 @@ FIGURE 8.30: Output of summary().
 <span id="cb183-12"><a href="deeplearning.html#cb183-12" tabindex="-1"></a>  <span class="fu">layer_dense</span>(<span class="at">units =</span> <span class="dv">5</span>, <span class="at">activation =</span> <span class="st">&#39;softmax&#39;</span>)</span>
 <span id="cb183-13"><a href="deeplearning.html#cb183-13" tabindex="-1"></a></span>
 <span id="cb183-14"><a href="deeplearning.html#cb183-14" tabindex="-1"></a><span class="fu">summary</span>(model2)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:cnnEx2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cnnEx2"></span>
 <img src="images/cnn_summaryEx2.png" alt="Output of summary()." width="90%" />
 <p class="caption">
 FIGURE 8.31: Output of summary().
@@ -1444,7 +1446,7 @@ keras_smile_detection.R
 <p>In this section, we will build a CNN that detects smiling and non-smiling faces from pictures from the <em>SMILES</em> dataset. This information could be used, for example, to analyze smiling patterns during job interviews, exams, etc. For this task, we will use a cropped <span class="citation">(<a href="#ref-sanderson2009multi">Sanderson and Lovell 2009</a>)</span> version of the Labeled Faces in the Wild (LFW) database <span class="citation">(<a href="#ref-huang2008labeled">Gary B. Huang et al. 2008</a>)</span>. A subset of the database was labeled by <span class="citation">O. A. Arigbabu et al. (<a href="#ref-arigbabu2016smile">2016</a>)</span>, <span class="citation">O. Arigbabu (<a href="#ref-olasimbo">2017</a>)</span>. The labels are provided as two text files, each, containing the list of files that correspond to smiling and non-smiling faces. The dataset can be downloaded from: <a href="http://conradsanderson.id.au/lfwcrop/" class="uri">http://conradsanderson.id.au/lfwcrop/</a> and the labels list from: <a href="https://data.mendeley.com/datasets/yz4v8tb3tp/5" class="uri">https://data.mendeley.com/datasets/yz4v8tb3tp/5</a>. See Appendix <a href="appendixDatasets.html#appendixDatasets">B</a> for instructions on how to setup the dataset.</p>
 <p>The smiling set has <span class="math inline">\(600\)</span> pictures and the non-smiling has <span class="math inline">\(603\)</span> pictures. Figure <a href="deeplearning.html#fig:cnnSmileNotSmile">8.32</a> shows an example of one image from each of the sets.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:cnnSmileNotSmile"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cnnSmileNotSmile"></span>
 <img src="images/cnn_smilenosmile.png" alt="Example of a smiling and a non-smiling face. (Adapted from the LFWcrop Face Dataset: C. Sanderson, B.C. Lovell. “Multi-Region Probabilistic Histograms for Robust and Scalable Identity Inference.” Lecture Notes in Computer Science (LNCS), Vol. 5558, pp. 199-208, 2009. doi: https://doi.org/10.1007/978-3-642-01793-3_21)." width="60%" />
 <p class="caption">
 FIGURE 8.32: Example of a smiling and a non-smiling face. (Adapted from the LFWcrop Face Dataset: C. Sanderson, B.C. Lovell. “Multi-Region Probabilistic Histograms for Robust and Scalable Identity Inference.” <em>Lecture Notes in Computer Science (LNCS)</em>, Vol. 5558, pp. 199-208, 2009. doi: <a href="https://doi.org/10.1007/978-3-642-01793-3_21" class="uri">https://doi.org/10.1007/978-3-642-01793-3_21</a>).
@@ -1529,7 +1531,7 @@ FIGURE 8.32: Example of a smiling and a non-smiling face. (Adapted from the LFWc
 <span id="cb189-16"><a href="deeplearning.html#cb189-16" tabindex="-1"></a>)</span></code></pre></div>
 <p>We are using a stochastic gradient descent optimizer with a learning rate of <span class="math inline">\(0.01\)</span> and cross-entropy as the loss function. We can use <span class="math inline">\(10\%\)</span> of the train set as the validation set by setting <code>validation_split = 0.10</code>. Once the training is done, we can plot the <em>loss</em> and <em>accuracy</em> of each epoch.</p>
 <div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="deeplearning.html#cb190-1" tabindex="-1"></a><span class="fu">plot</span>(history)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:cnnSmilesLoss"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cnnSmilesLoss"></span>
 <img src="images/cnn_smiles_loss.png" alt="Train/test loss and accuracy." width="90%" />
 <p class="caption">
 FIGURE 8.33: Train/test loss and accuracy.
@@ -1545,7 +1547,7 @@ FIGURE 8.33: Train/test loss and accuracy.
 <span id="cb191-7"><a href="deeplearning.html#cb191-7" tabindex="-1"></a><span class="co">#&gt; [1] 0.9222222</span></span></code></pre></div>
 <p>An accuracy of <span class="math inline">\(92\%\)</span> is pretty decent if we take into account that we didn’t have to do any image preprocessing or feature extraction! We can print the predictions of the first <span class="math inline">\(16\)</span> test images (see Figure <a href="deeplearning.html#fig:cnnSmileResults">8.34</a>).</p>
 
-<div class="figure" style="text-align: center"><span id="fig:cnnSmileResults"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cnnSmileResults"></span>
 <img src="images/cnn_smile_predictions.png" alt="Predictions of the first \(16\) test set images. Correct predictions are in green and incorrect ones in red. (Adapted from the LFWcrop Face Dataset: C. Sanderson, B.C. Lovell. “Multi-Region Probabilistic Histograms for Robust and Scalable Identity Inference.” Lecture Notes in Computer Science (LNCS), Vol. 5558, pp. 199-208, 2009. doi: https://doi.org/10.1007/978-3-642-01793-3_21)." width="90%" />
 <p class="caption">
 FIGURE 8.34: Predictions of the first <span class="math inline">\(16\)</span> test set images. Correct predictions are in green and incorrect ones in red. (Adapted from the LFWcrop Face Dataset: C. Sanderson, B.C. Lovell. “Multi-Region Probabilistic Histograms for Robust and Scalable Identity Inference.” <em>Lecture Notes in Computer Science (LNCS)</em>, Vol. 5558, pp. 199-208, 2009. doi: <a href="https://doi.org/10.1007/978-3-642-01793-3_21" class="uri">https://doi.org/10.1007/978-3-642-01793-3_21</a>).
@@ -1611,6 +1613,19 @@ Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
 Yashuk, Kirill. 2019. <em>Classify Gestures by Reading Muscle Activity: A Recording of Human Hand Muscle Activity Producing Four Different Hand Gestures</em>. <a href="https://www.kaggle.com/kyr7plus/emg-4">https://www.kaggle.com/kyr7plus/emg-4</a>.
 </div>
 </div>
+<div class="footnotes">
+<hr />
+<ol start="20">
+<li id="fn20"><p><a href="http://neuralnetworksanddeeplearning.com/chap2.html" class="uri">http://neuralnetworksanddeeplearning.com/chap2.html</a><a href="deeplearning.html#fnref20" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p><a href="https://www.tensorflow.org" class="uri">https://www.tensorflow.org</a><a href="deeplearning.html#fnref21" class="footnote-back">↩︎</a></p></li>
+<li id="fn22"><p><a href="https://keras.io/" class="uri">https://keras.io/</a><a href="deeplearning.html#fnref22" class="footnote-back">↩︎</a></p></li>
+<li id="fn23"><p><a href="https://en.wikipedia.org/wiki/Theano_(software)" class="uri">https://en.wikipedia.org/wiki/Theano_(software)</a><a href="deeplearning.html#fnref23" class="footnote-back">↩︎</a></p></li>
+<li id="fn24"><p><a href="https://en.wikipedia.org/wiki/Microsoft_Cognitive_Toolkit" class="uri">https://en.wikipedia.org/wiki/Microsoft_Cognitive_Toolkit</a><a href="deeplearning.html#fnref24" class="footnote-back">↩︎</a></p></li>
+<li id="fn25"><p><a href="https://www.heatonresearch.com/2017/06/01/hidden-layers.html" class="uri">https://www.heatonresearch.com/2017/06/01/hidden-layers.html</a><a href="deeplearning.html#fnref25" class="footnote-back">↩︎</a></p></li>
+<li id="fn26"><p><a href="https://keras.io/api/optimizers/" class="uri">https://keras.io/api/optimizers/</a><a href="deeplearning.html#fnref26" class="footnote-back">↩︎</a></p></li>
+<li id="fn27"><p><a href="https://keras.io/api/optimizers/adam/" class="uri">https://keras.io/api/optimizers/adam/</a><a href="deeplearning.html#fnref27" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
@@ -1621,7 +1636,6 @@ Yashuk, Kirill. 2019. <em>Classify Gestures by Reading Muscle Activity: A Record
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
-<script src="libs/gitbook/js/lunr.js"></script>
 <script src="libs/gitbook/js/clipboard.min.js"></script>
 <script src="libs/gitbook/js/plugin-search.js"></script>
 <script src="libs/gitbook/js/plugin-sharing.js"></script>
@@ -1661,6 +1675,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "none"
 }
@@ -1674,7 +1692,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
